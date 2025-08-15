@@ -7,6 +7,6 @@ public class PlayerInputController : MonoBehaviour
 
     public void Init(Level level)
     {
-        spawnIngredientButton.onClick.AddListener(level.ItemsSpawner.ActivateNewSlot);
+        spawnIngredientButton.onClick.AddListener(level.ItemsSpawner.SpawnIngredient);
     }
 }
