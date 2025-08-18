@@ -31,5 +31,6 @@ public class ItemsSpawner : MonoBehaviour
         item.transform.parent = slot.transform;
         item.transform.localPosition = Vector3.zero;
         slot.SetItem(item);
+        item.SetSlot(slot);
     }
 }

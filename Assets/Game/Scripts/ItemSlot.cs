@@ -7,6 +7,7 @@ public class ItemSlot : MonoBehaviour
     public void SetItem(Item item)
     {
         this.item = item;
-        item.transform.position = transform.position;
+        item.transform.parent = transform;
+        item.transform.localPosition = Vector3.zero;
     }
 }
