@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,32 +6,31 @@ using UnityEngine.EventSystems;
 public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     private ItemSlot slot;
-    [SerializeField] private MovementState movementState = MovementState.placedInSlot;
+    private MovementState movementState = MovementState.placedInSlot;
 
     public void SetSlot(ItemSlot slot) => this.slot = slot;
 
     public void OnPointerDown(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left) 
-            TryToGrab(eventData);
+            SingleLMBDownHandler(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
-            TryToDrag(eventData);
+            DragByLMBClickHandler(eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-            TryToReleaseDraggingCard();
-            TryToReleaseGrabbedCard();
+            SingleLMBUpHandler();
         }
     }
 
-    private async void TryToGrab(PointerEventData eventData)
+    private async void SingleLMBDownHandler(PointerEventData eventData)
     {
         if (movementState == MovementState.placedInSlot)
             movementState = MovementState.preparedForGrabbing;
@@ -43,27 +41,19 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         }
     }
 
-    private async void TryToReleaseDraggingCard()
+    private async void SingleLMBUpHandler()
     {
-        if (movementState == MovementState.dragged)
-            await GoBackToTheLastSlot();
-    }
-
-    private async void TryToReleaseGrabbedCard()
-    {
-        if (movementState == MovementState.grabbed)
-        {
-            await GoBackToTheLastSlot();
-            return;
-        }
-
         if (movementState == MovementState.preparedForGrabbing)
         {
             movementState = MovementState.grabbed;
+            return;
         }
+
+        if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
+            await GoBackToTheLastSlot();
     }
 
-    private void TryToDrag(PointerEventData eventData)
+    private void DragByLMBClickHandler(PointerEventData eventData)
     {
         if (movementState == MovementState.goingBackToLastSlot)
             return;
@@ -84,7 +74,6 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     {
         if(movementState == MovementState.grabbed)
         {
-            //transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = Input.mousePosition;
         }
     }
