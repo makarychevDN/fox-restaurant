@@ -56,6 +56,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         if (movementState == MovementState.preparedForGrabbing)
         {
             movementState = MovementState.grabbed;
+            transform.parent = level.ParentForItemsMovement;
             slot.SetItem(null);
             return;
         }
@@ -72,6 +73,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         if (movementState == MovementState.goingBackToLastSlot)
             return;
 
+        transform.parent = level.ParentForItemsMovement;
         movementState = MovementState.dragged;
         slot.SetItem(null);
     }
