@@ -11,6 +11,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
     public void SetSlot(ItemSlot slot) => this.slot = slot;
     public Level Level => level;
+    public ItemSlot Slot => slot;
 
     public void Init(Level level)
     {
@@ -56,15 +57,15 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         if (movementState == MovementState.preparedForGrabbing)
         {
             movementState = MovementState.grabbed;
+            slot.SetItem(null);
             return;
         }
 
         if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
-            var closestAvailableSlot = level.SlotsManager.GetClosestAvailableSlot(this);
+            var closestAvailableSlot = level.SlotsManager.GetSlotToPlaceItem(this);
             if (closestAvailableSlot != null)
             {
-                slot.SetItem(null);
                 PlaceItemInSlot(closestAvailableSlot);
             }
             else
@@ -78,6 +79,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
             return;
 
         movementState = MovementState.dragged;
+        slot.SetItem(null);
     }
 
     private void PlaceItemInSlot(ItemSlot slot)
@@ -100,7 +102,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         {
             transform.position = Input.mousePosition;
 
-            var test = level.SlotsManager.GetClosestAvailableSlot(this);
+            var test = level.SlotsManager.GetSlotToPlaceItem(this);
 
             if(test != null)
             {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SlotsManager : MonoBehaviour
@@ -8,23 +9,34 @@ public class SlotsManager : MonoBehaviour
     public void AddSlot(ItemSlot slot) => slots.Add(slot);
     public void RemoveSlot(ItemSlot slot) => slots.Remove(slot);
 
-    public ItemSlot GetClosestAvailableSlot(Item item)
+    public ItemSlot GetSlotToPlaceItem(Item item)
     {
-        slots.Sort((a, b) =>
+        ItemSlot slot = GetClosestAvailableSlot(item);
+
+        if(slot == null) 
+            slot = item.Slot;
+
+        return slot;
+    }
+
+    private ItemSlot GetClosestAvailableSlot(Item item)
+    {
+        var abailableSlots = slots.Where(slot => slot.Available).ToList();
+        abailableSlots.Sort((a, b) =>
             (a.transform.position - item.transform.position).sqrMagnitude.CompareTo(
             (b.transform.position - item.transform.position).sqrMagnitude));
 
-        if (slots.Count == 0)
+        if (abailableSlots.Count == 0)
             return null;
 
-        if (slots.Count == 1)
-            return slots[0];
+        if (abailableSlots.Count == 1)
+            return abailableSlots[0];
 
-        var distanceToClosestSlot = Vector3.Distance(slots[0].transform.position, item.transform.position);
-        var distanceToSecondClosestSlot = Vector3.Distance(slots[1].transform.position, item.transform.position);
+        var distanceToClosestSlot = Vector3.Distance(abailableSlots[0].transform.position, item.transform.position);
+        var distanceToSecondClosestSlot = Vector3.Distance(abailableSlots[1].transform.position, item.transform.position);
         if (distanceToSecondClosestSlot / distanceToClosestSlot > 2)
         {
-            return slots[0];
+            return abailableSlots[0];
         }
 
         return null;

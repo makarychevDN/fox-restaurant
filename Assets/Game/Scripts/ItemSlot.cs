@@ -7,6 +7,7 @@ public class ItemSlot : MonoBehaviour
 
     public void Activate() => level.SlotsManager.AddSlot(this);
     public void Deactivate() => level.SlotsManager.RemoveSlot(this);
+    public bool Available => item == null;
 
     public void SetItem(Item item)
     {
