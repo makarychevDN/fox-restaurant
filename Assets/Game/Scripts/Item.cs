@@ -61,7 +61,14 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
         if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
-            await GoBackToTheLastSlot();
+            var closestAvailableSlot = level.SlotsManager.GetClosestAvailableSlot(this);
+            if (closestAvailableSlot != null)
+            {
+                slot.SetItem(null);
+                PlaceItemInSlot(closestAvailableSlot);
+            }
+            else
+                await GoBackToTheLastSlot();
         }
     }
 
@@ -73,8 +80,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         movementState = MovementState.dragged;
     }
 
-    private void PlaceItemInSlot()
+    private void PlaceItemInSlot(ItemSlot slot)
     {
+        this.slot = slot;
         slot.SetItem(this);
         movementState = MovementState.placedInSlot;
     }
@@ -83,7 +91,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     {
         movementState = MovementState.goingBackToLastSlot;
         await transform.DOMove(slot.transform.position, 0.1f).AsyncWaitForCompletion();
-        PlaceItemInSlot();
+        PlaceItemInSlot(slot);
     }
 
     private void Update()
@@ -92,10 +100,12 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         {
             transform.position = Input.mousePosition;
 
-            var test = level.GetClosestAvailableSlot(this);
+            var test = level.SlotsManager.GetClosestAvailableSlot(this);
 
             if(test != null)
-            print(level.GetClosestAvailableSlot(this).name);
+            {
+                print(test.name);
+            }
         }
     }
 
