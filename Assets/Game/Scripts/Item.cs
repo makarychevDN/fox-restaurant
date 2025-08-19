@@ -45,11 +45,6 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
         if (movementState == MovementState.placedInSlot)
             movementState = MovementState.preparedForGrabbing;
-
-        if (movementState == MovementState.grabbed)
-        {
-            await GoBackToTheLastSlot();
-        }
     }
 
     private async void SingleLMBUpHandler()
@@ -63,13 +58,11 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
         if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
-            var closestAvailableSlot = level.SlotsManager.GetSlotToPlaceItem(this);
-            if (closestAvailableSlot != null)
+            var targetSlot = level.SlotsManager.GetSlotToPlaceItem(this);
+            if (targetSlot != null)
             {
-                PlaceItemInSlot(closestAvailableSlot);
+                await GoToSlot(targetSlot);
             }
-            else
-                await GoBackToTheLastSlot();
         }
     }
 
@@ -82,18 +75,15 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         slot.SetItem(null);
     }
 
-    private void PlaceItemInSlot(ItemSlot slot)
+    private async Task GoToSlot(ItemSlot slot)
     {
+        movementState = MovementState.goingBackToLastSlot;
+
+        await transform.DOMove(slot.transform.position, 0.1f).AsyncWaitForCompletion();
+
         this.slot = slot;
         slot.SetItem(this);
         movementState = MovementState.placedInSlot;
-    }
-
-    private async Task GoBackToTheLastSlot()
-    {
-        movementState = MovementState.goingBackToLastSlot;
-        await transform.DOMove(slot.transform.position, 0.1f).AsyncWaitForCompletion();
-        PlaceItemInSlot(slot);
     }
 
     private void Update()
