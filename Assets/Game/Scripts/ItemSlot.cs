@@ -31,7 +31,8 @@ public class ItemSlot : MonoBehaviour
     public void Hover(Item item)
     {
         hoveredItemRenderer.enabled = true;
-        boxOnHoverRenderer.SetActive(true);
+        if (!boxOnHoverRenderer.activeInHierarchy)
+            boxOnHoverRenderer.SetActive(true);
         hoveredItemRenderer.sprite = item.Image.sprite;
         hoveredItemRenderer.rectTransform.sizeDelta = item.Image.rectTransform.sizeDelta;
     }

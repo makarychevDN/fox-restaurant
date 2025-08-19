@@ -46,4 +46,9 @@ public class SlotsManager : MonoBehaviour
     {
         slots.ForEach(slot => slot.Unhover());
     }
+
+    public void UnhoverAllSlotsExcept(ItemSlot exceptionSlot)
+    {
+        slots.ForEach(slot => { if (exceptionSlot != slot) slot.Unhover(); });
+    }
 }

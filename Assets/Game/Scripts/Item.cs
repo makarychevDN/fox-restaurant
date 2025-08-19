@@ -92,8 +92,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         if(movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
             transform.position = Input.mousePosition;
-            level.SlotsManager.UnhoverAllSlots();
-            level.SlotsManager.GetSlotToPlaceItem(this).Hover(this);
+            var slotToPlaceItem = level.SlotsManager.GetSlotToPlaceItem(this);
+            level.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
+            slotToPlaceItem.Hover(this);
         }
     }
 
