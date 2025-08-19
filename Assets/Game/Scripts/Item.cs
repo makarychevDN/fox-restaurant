@@ -2,9 +2,12 @@ using DG.Tweening;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
+    [SerializeField] private Image image;
+
     private ItemSlot slot;
     private MovementState movementState = MovementState.placedInSlot;
     private Level level;
@@ -12,6 +15,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     public void SetSlot(ItemSlot slot) => this.slot = slot;
     public Level Level => level;
     public ItemSlot Slot => slot;
+    public Image Image => image;
 
     public void Init(Level level)
     {
@@ -38,7 +42,7 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         }
     }
 
-    private async void SingleLMBDownHandler(PointerEventData eventData)
+    private void SingleLMBDownHandler(PointerEventData eventData)
     {
         if (movementState == MovementState.goingBackToLastSlot)
             return;
@@ -58,11 +62,8 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
         if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
-            var targetSlot = level.SlotsManager.GetSlotToPlaceItem(this);
-            if (targetSlot != null)
-            {
-                await GoToSlot(targetSlot);
-            }
+            level.SlotsManager.UnhoverAllSlots();
+            await GoToSlot(level.SlotsManager.GetSlotToPlaceItem(this));
         }
     }
 
@@ -91,13 +92,8 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         if(movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
             transform.position = Input.mousePosition;
-
-            var test = level.SlotsManager.GetSlotToPlaceItem(this);
-
-            if(test != null)
-            {
-                print(test.name);
-            }
+            level.SlotsManager.UnhoverAllSlots();
+            level.SlotsManager.GetSlotToPlaceItem(this).Hover(this);
         }
     }
 

@@ -41,4 +41,9 @@ public class SlotsManager : MonoBehaviour
 
         return null;
     }
+
+    public void UnhoverAllSlots()
+    {
+        slots.ForEach(slot => slot.Unhover());
+    }
 }
