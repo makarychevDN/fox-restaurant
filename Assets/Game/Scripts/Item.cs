@@ -7,8 +7,15 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 {
     private ItemSlot slot;
     private MovementState movementState = MovementState.placedInSlot;
+    private Level level;
 
     public void SetSlot(ItemSlot slot) => this.slot = slot;
+    public Level Level => level;
+
+    public void Init(Level level)
+    {
+        this.level = level;
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -32,6 +39,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
 
     private async void SingleLMBDownHandler(PointerEventData eventData)
     {
+        if (movementState == MovementState.goingBackToLastSlot)
+            return;
+
         if (movementState == MovementState.placedInSlot)
             movementState = MovementState.preparedForGrabbing;
 
@@ -50,7 +60,9 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
         }
 
         if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
+        {
             await GoBackToTheLastSlot();
+        }
     }
 
     private void DragByLMBClickHandler(PointerEventData eventData)
@@ -59,22 +71,31 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
             return;
 
         movementState = MovementState.dragged;
-        transform.position = eventData.position;
+    }
+
+    private void PlaceItemInSlot()
+    {
+        slot.SetItem(this);
+        movementState = MovementState.placedInSlot;
     }
 
     private async Task GoBackToTheLastSlot()
     {
         movementState = MovementState.goingBackToLastSlot;
         await transform.DOMove(slot.transform.position, 0.1f).AsyncWaitForCompletion();
-        slot.SetItem(this);
-        movementState = MovementState.placedInSlot;
+        PlaceItemInSlot();
     }
 
     private void Update()
     {
-        if(movementState == MovementState.grabbed)
+        if(movementState == MovementState.grabbed || movementState == MovementState.dragged)
         {
             transform.position = Input.mousePosition;
+
+            var test = level.GetClosestAvailableSlot(this);
+
+            if(test != null)
+            print(level.GetClosestAvailableSlot(this).name);
         }
     }
 

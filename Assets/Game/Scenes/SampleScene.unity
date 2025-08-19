@@ -1346,6 +1346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsSpawner: {fileID: 542761378}
   playerInputController: {fileID: 445895215}
+  slots: []
 --- !u!1 &1650326666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1600,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4088236799823987148, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
       propertyPath: m_Name
-      value: desk item slot
+      value: "\u0436\u0435\u0441\u0442\u044C"
       objectReference: {fileID: 0}
     - target: {fileID: 7646786284729736732, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
       propertyPath: m_Pivot.x
@@ -1667,7 +1668,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7646786284729736732, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.6
+      value: -13.599976
       objectReference: {fileID: 0}
     - target: {fileID: 7646786284729736732, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
