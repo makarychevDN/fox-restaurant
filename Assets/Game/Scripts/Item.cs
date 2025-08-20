@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class Item : MonoBehaviour
 {
     [SerializeField] private Image image;
+    [SerializeField] private ItemMouseInputController inputController;
 
     private ItemSlot slot;
     private MovementState movementState = MovementState.placedInSlot;
@@ -20,29 +21,10 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
     public void Init(Level level)
     {
         this.level = level;
+        inputController.Init(this);
     }
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left) 
-            SingleLMBDownHandler(eventData);
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-            DragByLMBClickHandler(eventData);
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        if (eventData.button == PointerEventData.InputButton.Left)
-        {
-            SingleLMBUpHandler();
-        }
-    }
-
-    private void SingleLMBDownHandler(PointerEventData eventData)
+    public void OnSelect()
     {
         if (movementState == MovementState.goingBackToLastSlot)
             return;
@@ -51,7 +33,17 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
             movementState = MovementState.preparedForGrabbing;
     }
 
-    private async void SingleLMBUpHandler()
+    public void OnDrag()
+    {
+        if (movementState == MovementState.goingBackToLastSlot)
+            return;
+
+        transform.parent = level.ParentForItemsMovement;
+        movementState = MovementState.dragged;
+        slot.SetItem(null);
+    }
+
+    public async void OnRelease()
     {
         if (movementState == MovementState.preparedForGrabbing)
         {
@@ -66,16 +58,6 @@ public class Item : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUp
             level.SlotsManager.UnhoverAllSlots();
             await GoToSlot(level.SlotsManager.GetSlotToPlaceItem(this));
         }
-    }
-
-    private void DragByLMBClickHandler(PointerEventData eventData)
-    {
-        if (movementState == MovementState.goingBackToLastSlot)
-            return;
-
-        transform.parent = level.ParentForItemsMovement;
-        movementState = MovementState.dragged;
-        slot.SetItem(null);
     }
 
     private async Task GoToSlot(ItemSlot slot)
