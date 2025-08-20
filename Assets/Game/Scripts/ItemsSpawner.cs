@@ -17,7 +17,7 @@ public class ItemsSpawner : MonoBehaviour
 
     public ItemSlot ActivateItemSlot()
     {
-        ItemSlot slot = slots.FirstOrDefault(slot => !slot.gameObject.activeSelf);
+        ItemSlot slot = slots.FirstOrDefault(slot => !slot.gameObject.activeSelf || slot.Available);
 
         if (slot == null)
         {
