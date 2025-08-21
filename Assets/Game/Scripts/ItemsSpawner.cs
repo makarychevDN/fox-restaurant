@@ -28,6 +28,7 @@ public class ItemsSpawner : MonoBehaviour
         }
 
         slot.transform.parent = slotsParent;
+        slot.transform.localScale = Vector3.one;
         slot.gameObject.SetActive(true);
         return slot;
     }
@@ -39,6 +40,7 @@ public class ItemsSpawner : MonoBehaviour
         var slot = ActivateItemSlot();
         item.transform.parent = slot.transform;
         item.transform.localPosition = Vector3.zero;
+        item.transform.localScale = Vector3.one;
         slot.SetItem(item);
         item.SetSlot(slot);
     }
