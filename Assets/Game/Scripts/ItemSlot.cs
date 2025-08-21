@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
@@ -8,9 +9,17 @@ public class ItemSlot : MonoBehaviour
     private Item item;
     private Level level;
 
+    public UnityEvent OnHasBeenOccupied;
+    public UnityEvent<Item> OnItemHasBeenPlaced;
+
+    public bool Available => item == null;
     public void Activate() => level.SlotsManager.AddSlot(this);
     public void Deactivate() => level.SlotsManager.RemoveSlot(this);
-    public bool Available => item == null;
+
+    public void Init(Level level)
+    {
+        this.level = level;
+    }
 
     public void SetItem(Item item)
     {
@@ -21,11 +30,14 @@ public class ItemSlot : MonoBehaviour
 
         item.transform.parent = transform;
         item.transform.localPosition = Vector3.zero;
+        OnHasBeenOccupied.Invoke();
+        OnItemHasBeenPlaced.Invoke(item);
     }
 
-    public void Init(Level level)
+    public void Clear()
     {
-        this.level = level;
+        Destroy(item.gameObject);
+        SetItem(null);
     }
 
     public void Hover(Item item)
