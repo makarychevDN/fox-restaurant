@@ -30,10 +30,11 @@ public class Customer : MonoBehaviour
         return slot;
     }
 
-    public void SetOrder(CustomerData customerData)
+    public void SetCustomerData(CustomerData customerData)
     {
         hungerPoints = customerData.HungerPoints;
         patience = customerData.Patience;
+        spriteRenderer.sprite = customerData.Sprite;
         MakeOrder();
     }
 
