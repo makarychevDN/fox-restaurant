@@ -13,12 +13,13 @@ public class ItemSlot : MonoBehaviour
     public UnityEvent<Item> OnItemHasBeenPlaced;
 
     public bool Available => item == null;
-    public void Activate() => level.SlotsManager.AddSlot(this);
-    public void Deactivate() => level.SlotsManager.RemoveSlot(this);
+    //public void Activate() => level.SlotsManager.AddSlot(this);
+    //public void Deactivate() => level.SlotsManager.RemoveSlot(this);
 
     public void Init(Level level)
     {
         this.level = level;
+        level.SlotsManager.AddSlot(this);
     }
 
     public void SetItem(Item item)

@@ -24,7 +24,6 @@ public class ItemsSpawner : MonoBehaviour
             slot = Instantiate(deskSlotPrefab);
             slots.Add(slot);
             slot.Init(level);
-            slot.Activate();
         }
 
         slot.transform.parent = slotsParent;
