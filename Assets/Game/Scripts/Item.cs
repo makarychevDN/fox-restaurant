@@ -31,6 +31,8 @@ public class Item : MonoBehaviour
 
         if (movementState == MovementState.placedInSlot)
             movementState = MovementState.preparedForGrabbing;
+
+        transform.localScale = Vector3.one;
     }
 
     public void OnDrag()
@@ -64,6 +66,7 @@ public class Item : MonoBehaviour
     {
         movementState = MovementState.goingBackToLastSlot;
 
+        transform.DOScale(slot.transform.localScale, 0.1f);
         await transform.DOMove(slot.transform.position, 0.1f).AsyncWaitForCompletion();
 
         this.slot = slot;
