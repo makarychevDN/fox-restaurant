@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -6,6 +7,7 @@ public class Level : MonoBehaviour
     [SerializeField] private PlayerInputController playerInputController;
     [SerializeField] private SlotsManager slotsManager;
     [SerializeField] private Transform parentForItemsMovement;
+    [SerializeField] private CustomerSpawner customerSpawner;
 
     public ItemsSpawner ItemsSpawner => itemsSpawner;
     public SlotsManager SlotsManager => slotsManager;
@@ -15,5 +17,6 @@ public class Level : MonoBehaviour
     {
         playerInputController.Init(this);
         itemsSpawner.Init(this);
+        customerSpawner.Init(this);
     }
 }
