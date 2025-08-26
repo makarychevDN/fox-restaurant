@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ba3f002a8d9e1144a94a737b5b7e92de
+guid: 299aa3b36abffae4389dc537c2e5d143
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8841490917199087839
-    second: table_0
+      213: -2788346501981717010
+    second: cooker slot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 2
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: table_0
+      name: cooker slot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 140
-        height: 40
+        width: 182
+        height: 98
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1277183ead6bc4580800000000000000
-      internalID: -8841490917199087839
+      spriteID: eed3da631adcd49d0800000000000000
+      internalID: -2788346501981717010
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      table_0: -8841490917199087839
+      cooker slot_0: -2788346501981717010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
