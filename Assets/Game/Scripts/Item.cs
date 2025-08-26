@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Item : MonoBehaviour
@@ -67,7 +66,7 @@ public class Item : MonoBehaviour
         movementState = MovementState.goingBackToLastSlot;
 
         transform.DOScale(slot.transform.localScale, 0.1f);
-        await transform.DOMove(slot.transform.position, 0.1f).AsyncWaitForCompletion();
+        await transform.DOMove(slot.CenterForItem.position, 0.1f).AsyncWaitForCompletion();
 
         this.slot = slot;
         slot.SetItem(this);

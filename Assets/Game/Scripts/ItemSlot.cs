@@ -6,6 +6,7 @@ public class ItemSlot : MonoBehaviour
 {
     [SerializeField] private Image hoveredItemRenderer;
     [SerializeField] private GameObject boxOnHoverRenderer;
+    [SerializeField] private Transform centerForItem;
     private Item item;
     private Level level;
 
@@ -13,6 +14,7 @@ public class ItemSlot : MonoBehaviour
     public UnityEvent<Item> OnItemHasBeenPlaced;
 
     public bool Available => item == null;
+    public Transform CenterForItem => centerForItem;
     //public void Activate() => level.SlotsManager.AddSlot(this);
     //public void Deactivate() => level.SlotsManager.RemoveSlot(this);
 
@@ -20,6 +22,9 @@ public class ItemSlot : MonoBehaviour
     {
         this.level = level;
         level.SlotsManager.AddSlot(this);
+
+        if (centerForItem == null)
+            centerForItem = transform;
     }
 
     public void SetItem(Item item)
@@ -29,7 +34,7 @@ public class ItemSlot : MonoBehaviour
         if (item == null)
             return;
 
-        item.transform.parent = transform;
+        item.transform.parent = centerForItem;
         item.transform.localPosition = Vector3.zero;
         OnHasBeenOccupied.Invoke();
         OnItemHasBeenPlaced.Invoke(item);
