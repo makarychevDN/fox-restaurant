@@ -898,7 +898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 70174714543612391, guid: ba328eb7545c6ad4b996dd8b60777acb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8848268605516085336, guid: ba328eb7545c6ad4b996dd8b60777acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1503,8 +1503,6 @@ MonoBehaviour:
   maxYCursorDistance: 5
   maxXPositionDistance: 0.3
   maxYPositionDistance: 0.125
-  xPositionMultiplier: 1
-  yPositionMultiplier: 1
 --- !u!1 &780957455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,7 +1895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 70174714543612391, guid: ba328eb7545c6ad4b996dd8b60777acb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8848268605516085336, guid: ba328eb7545c6ad4b996dd8b60777acb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2065,8 +2063,6 @@ MonoBehaviour:
   maxYCursorDistance: 5
   maxXPositionDistance: 0.15
   maxYPositionDistance: 0.08
-  xPositionMultiplier: 1
-  yPositionMultiplier: 1
 --- !u!1 &1377037217
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,8 +3067,6 @@ MonoBehaviour:
   maxYCursorDistance: 5
   maxXPositionDistance: 0.3
   maxYPositionDistance: 0.125
-  xPositionMultiplier: 1
-  yPositionMultiplier: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
