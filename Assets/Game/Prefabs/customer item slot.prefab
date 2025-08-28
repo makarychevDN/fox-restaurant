@@ -235,6 +235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredItemRenderer: {fileID: 7489536669080516305}
   boxOnHoverRenderer: {fileID: 1193125051319482973}
+  centerForItem: {fileID: 0}
+  slotType: 10
   OnHasBeenOccupied:
     m_PersistentCalls:
       m_Calls: []

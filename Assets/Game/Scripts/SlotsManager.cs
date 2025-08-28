@@ -8,6 +8,7 @@ public class SlotsManager : MonoBehaviour
 
     public void AddSlot(ItemSlot slot) => slots.Add(slot);
     public void RemoveSlot(ItemSlot slot) => slots.Remove(slot);
+    public List<ItemSlot> CookerSlots => slots.Where(slot => slot.SlotType == SlotType.Cooker).ToList();
 
     public ItemSlot GetSlotToPlaceItem(Item item)
     {

@@ -836,6 +836,52 @@ SpriteMask:
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
   m_MaskSource: 0
+--- !u!1 &539983009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 539983010}
+  - component: {fileID: 539983011}
+  m_Layer: 0
+  m_Name: cooker slots spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &539983010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539983009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1531918935}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539983011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539983009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc00edc25491504896fe475069388c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookerSlotPrefab: {fileID: 5498270339331870369, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
+  slotsParent: {fileID: 1919201684}
 --- !u!1 &542761376
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,10 +926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f808ff157c74542849c7d0936214b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deskSlotPrefab: {fileID: 5498270339331870369, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
   itemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
-  slotsParent: {fileID: 1919201684}
-  slots: []
 --- !u!1001 &565983366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2129,6 +2172,7 @@ Transform:
   - {fileID: 542761377}
   - {fileID: 2059132091}
   - {fileID: 299938904}
+  - {fileID: 539983010}
   - {fileID: 445895214}
   - {fileID: 615923725}
   - {fileID: 1733791605}
@@ -2153,6 +2197,8 @@ MonoBehaviour:
   slotsManager: {fileID: 299938903}
   parentForItemsMovement: {fileID: 175698712}
   customerSpawner: {fileID: 2059132092}
+  cookerSlotSpawner: {fileID: 539983011}
+  cookerSlotsCount: 4
 --- !u!1 &1650326666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,7 +2629,7 @@ GameObject:
   - component: {fileID: 1919201685}
   - component: {fileID: 1919201686}
   m_Layer: 5
-  m_Name: desk slots
+  m_Name: cooker slots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2874,6 +2920,9 @@ MonoBehaviour:
   - {fileID: 1224146555}
   availableCustomersData:
   - {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
+  OnCustomerSpawningRejected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2082116438
 GameObject:
   m_ObjectHideFlags: 0
