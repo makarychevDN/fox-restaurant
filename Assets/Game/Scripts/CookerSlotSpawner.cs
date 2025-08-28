@@ -11,16 +11,17 @@ public class CookerSlotSpawner : MonoBehaviour
         this.level = level;
     }
 
-    public void SpawnCookerSlot()
+    public ItemSlot SpawnCookerSlot()
     {
         var slot = Instantiate(cookerSlotPrefab);
 
         slot.Init(level);
-        level.SlotsManager.AddSlot(slot);
 
         slot.transform.parent = slotsParent;
         slot.transform.localScale = Vector3.one;
         slot.gameObject.SetActive(true);
+
+        return slot;
     }
 
 }

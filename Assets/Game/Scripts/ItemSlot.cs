@@ -13,6 +13,7 @@ public class ItemSlot : MonoBehaviour
 
     public UnityEvent OnHasBeenOccupied;
     public UnityEvent<Item> OnItemHasBeenPlaced;
+    public UnityEvent OnItemHovered;
 
     public bool Available => item == null;
     public SlotType SlotType => slotType;

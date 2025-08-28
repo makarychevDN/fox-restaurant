@@ -61,6 +61,11 @@ public class Item : MonoBehaviour
         }
     }
 
+    public void OnHover()
+    {
+        slot.OnItemHovered.Invoke();
+    }
+
     private async Task GoToSlot(ItemSlot slot)
     {
         movementState = MovementState.goingBackToLastSlot;

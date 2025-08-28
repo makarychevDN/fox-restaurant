@@ -1,7 +1,8 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
+public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler
 {
     private Item item;
 
@@ -28,5 +29,10 @@ public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDra
         {
             item.OnRelease();
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        item.OnHover();
     }
 }

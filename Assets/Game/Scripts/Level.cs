@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
     [SerializeField] private Transform parentForItemsMovement;
     [SerializeField] private CustomerSpawner customerSpawner;
     [SerializeField] private CookerSlotSpawner cookerSlotSpawner;
+    [SerializeField] private CookPositionController cookPositionController;
 
     [Space]
     [SerializeField] private int cookerSlotsCount;
@@ -26,7 +27,8 @@ public class Level : MonoBehaviour
 
         for(int i = 0; i < cookerSlotsCount; i++)
         {
-            cookerSlotSpawner.SpawnCookerSlot();
+            var cookerSlot = cookerSlotSpawner.SpawnCookerSlot();
+            cookerSlot.OnItemHovered.AddListener(() => cookPositionController.HoverSlot(cookerSlot));
         }
     }
 }
