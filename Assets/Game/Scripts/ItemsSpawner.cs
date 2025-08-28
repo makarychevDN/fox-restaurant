@@ -19,11 +19,11 @@ public class ItemsSpawner : MonoBehaviour
             return;
 
         Item item = Instantiate(itemPrefab);
-        item.Init(level);
         item.transform.parent = cookerSlot.transform;
         item.transform.localPosition = Vector3.zero;
         item.transform.localScale = Vector3.one;
         cookerSlot.SetItem(item);
         item.SetSlot(cookerSlot);
+        item.Init(level);
     }
 }

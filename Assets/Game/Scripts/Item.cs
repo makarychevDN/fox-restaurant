@@ -21,6 +21,8 @@ public class Item : MonoBehaviour
     {
         this.level = level;
         inputController.Init(this);
+        transform.localPosition = new Vector2(0, -100);
+        transform.DOLocalMove(Vector3.zero, 0.1f);
     }
 
     public void OnSelect()
@@ -30,8 +32,6 @@ public class Item : MonoBehaviour
 
         if (movementState == MovementState.placedInSlot)
             movementState = MovementState.preparedForGrabbing;
-
-        transform.localScale = Vector3.one;
     }
 
     public void OnDrag()
@@ -39,8 +39,9 @@ public class Item : MonoBehaviour
         if (movementState == MovementState.goingBackToLastSlot)
             return;
 
-        transform.parent = level.ParentForItemsMovement;
         movementState = MovementState.dragged;
+        transform.parent = level.ParentForItemsMovement;
+        transform.localScale = Vector3.one;
         slot.SetItem(null);
     }
 
@@ -50,6 +51,7 @@ public class Item : MonoBehaviour
         {
             movementState = MovementState.grabbed;
             transform.parent = level.ParentForItemsMovement;
+            transform.localScale = Vector3.one;
             slot.SetItem(null);
             return;
         }
@@ -64,6 +66,12 @@ public class Item : MonoBehaviour
     public void OnHover()
     {
         slot.OnItemHovered.Invoke();
+        transform.DOScale(new Vector3(1.15f, 1.15f, 1), 0.05f);
+    }
+
+    public void OnUnhover()
+    {
+        transform.DOScale(Vector3.one, 0.05f);
     }
 
     private async Task GoToSlot(ItemSlot slot)
