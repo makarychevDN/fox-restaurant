@@ -259,7 +259,6 @@ GameObject:
   - component: {fileID: 7646786284729736732}
   - component: {fileID: 6120079086125704944}
   - component: {fileID: 5498270339331870369}
-  - component: {fileID: 7069217588746629347}
   m_Layer: 5
   m_Name: cooker item slot
   m_TagString: Untagged
@@ -318,28 +317,9 @@ MonoBehaviour:
   OnItemHasBeenPlaced:
     m_PersistentCalls:
       m_Calls: []
---- !u!95 &7069217588746629347
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4088236799823987148}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a9c5f36c13a2c3a499ca724013382041, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  OnItemHovered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6990588412259763332
 GameObject:
   m_ObjectHideFlags: 0
