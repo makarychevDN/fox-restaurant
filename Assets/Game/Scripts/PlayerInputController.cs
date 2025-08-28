@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerInputController : MonoBehaviour
+namespace foxRestaurant
 {
-    [SerializeField] private Button spawnIngredientButton;
-
-    public void Init(Level level)
+    public class PlayerInputController : MonoBehaviour
     {
-        spawnIngredientButton.onClick.AddListener(level.ItemsSpawner.SpawnIngredient);
+        [SerializeField] private Button spawnIngredientButton;
+
+        public void Init(Level level)
+        {
+            spawnIngredientButton.onClick.AddListener(level.ItemsSpawner.SpawnIngredient);
+        }
     }
 }

@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class LookForCursorController : MonoBehaviour
+namespace foxRestaurant
 {
-    [SerializeField] private float maxXCursorDistance;
-    [SerializeField] private float maxYCursorDistance;
-    [SerializeField] private float maxXPositionDistance;
-    [SerializeField] private float maxYPositionDistance;
-
-    void Update()
+    public class LookForCursorController : MonoBehaviour
     {
-        Vector3 cursorWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
-        Vector3 delta = cursorWorldPosition - transform.parent.position;
+        [SerializeField] private float maxXCursorDistance;
+        [SerializeField] private float maxYCursorDistance;
+        [SerializeField] private float maxXPositionDistance;
+        [SerializeField] private float maxYPositionDistance;
 
-        float xDistance = Mathf.Lerp(0, maxXPositionDistance, delta.magnitude / maxXCursorDistance);
-        float yDistance = Mathf.Lerp(0, maxYPositionDistance, delta.magnitude / maxYCursorDistance);
+        void Update()
+        {
+            Vector3 cursorWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
+            Vector3 delta = cursorWorldPosition - transform.parent.position;
 
-        transform.localPosition = new Vector3(delta.normalized.x * xDistance, delta.normalized.y * yDistance);
+            float xDistance = Mathf.Lerp(0, maxXPositionDistance, delta.magnitude / maxXCursorDistance);
+            float yDistance = Mathf.Lerp(0, maxYPositionDistance, delta.magnitude / maxYCursorDistance);
+
+            transform.localPosition = new Vector3(delta.normalized.x * xDistance, delta.normalized.y * yDistance);
+        }
     }
 }

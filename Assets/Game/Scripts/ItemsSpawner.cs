@@ -1,29 +1,31 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ItemsSpawner : MonoBehaviour
+namespace foxRestaurant
 {
-    [SerializeField] private Item itemPrefab;
-    private Level level;
-
-    public void Init(Level level)
+    public class ItemsSpawner : MonoBehaviour
     {
-        this.level = level;
-    }
+        [SerializeField] private Item itemPrefab;
+        private Level level;
 
-    public void SpawnIngredient()
-    {
-        var cookerSlot = level.SlotsManager.CookerSlots.FirstOrDefault(slot => !slot.gameObject.activeSelf || slot.Available);
-        if (cookerSlot == null)
-            return;
+        public void Init(Level level)
+        {
+            this.level = level;
+        }
 
-        Item item = Instantiate(itemPrefab);
-        item.transform.parent = cookerSlot.transform;
-        item.transform.localPosition = Vector3.zero;
-        item.transform.localScale = Vector3.one;
-        cookerSlot.SetItem(item);
-        item.SetSlot(cookerSlot);
-        item.Init(level);
+        public void SpawnIngredient()
+        {
+            var cookerSlot = level.SlotsManager.CookerSlots.FirstOrDefault(slot => !slot.gameObject.activeSelf || slot.Available);
+            if (cookerSlot == null)
+                return;
+
+            Item item = Instantiate(itemPrefab);
+            item.transform.parent = cookerSlot.transform;
+            item.transform.localPosition = Vector3.zero;
+            item.transform.localScale = Vector3.one;
+            cookerSlot.SetItem(item);
+            item.SetSlot(cookerSlot);
+            item.Init(level);
+        }
     }
 }
