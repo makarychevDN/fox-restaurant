@@ -55,8 +55,9 @@ namespace foxRestaurant
 
         public void Clear()
         {
+            var oldItem = item;
             SetItem(null);
-            Destroy(item.gameObject);
+            Destroy(oldItem.gameObject);
         }
 
         public void Hover(Item item)
