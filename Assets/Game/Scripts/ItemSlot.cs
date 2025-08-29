@@ -10,23 +10,27 @@ namespace foxRestaurant
         [SerializeField] private GameObject boxOnHoverRenderer;
         [SerializeField] private Transform centerForItem;
         [SerializeField] private SlotType slotType;
+        [SerializeField] private Cooker cooker;
         private Item item;
         private Level level;
 
         public UnityEvent OnHasBeenOccupied;
         public UnityEvent<Item> OnItemHasBeenPlaced;
+        public UnityEvent<Item> OnItemHasBeenRemoved;
         public UnityEvent OnItemHovered;
 
         public bool Available => item == null;
         public SlotType SlotType => slotType;
         public Transform CenterForItem => centerForItem;
-        //public void Activate() => level.SlotsManager.AddSlot(this);
-        //public void Deactivate() => level.SlotsManager.RemoveSlot(this);
+        public Item Item => item;
 
         public void Init(Level level)
         {
             this.level = level;
             level.SlotsManager.AddSlot(this);
+
+            if (centerForItem != null)
+                cooker.Init(this);
 
             if (centerForItem == null)
                 centerForItem = transform;

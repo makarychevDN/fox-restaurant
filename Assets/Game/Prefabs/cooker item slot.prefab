@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 7646786284729736732}
   - component: {fileID: 6120079086125704944}
   - component: {fileID: 5498270339331870369}
+  - component: {fileID: 2101748042784495745}
   m_Layer: 5
   m_Name: cooker item slot
   m_TagString: Untagged
@@ -312,6 +313,7 @@ MonoBehaviour:
   boxOnHoverRenderer: {fileID: 1193125051319482973}
   centerForItem: {fileID: 1029340224870688873}
   slotType: 20
+  cooker: {fileID: 2101748042784495745}
   OnHasBeenOccupied:
     m_PersistentCalls:
       m_Calls: []
@@ -321,6 +323,18 @@ MonoBehaviour:
   OnItemHovered:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2101748042784495745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4088236799823987148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca86f1315229e1840956054c75737f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6550691569562331336
 GameObject:
   m_ObjectHideFlags: 0

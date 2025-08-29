@@ -6,7 +6,7 @@ namespace foxRestaurant
     public class ItemData : ScriptableObject
     {
         [field: SerializeField] public Sprite Sprite { get; set; }
-        [field: SerializeField] public Sprite OutlineSprite { get; set; }
-        [field: SerializeField] public ItemData CookingResult { get; set; }
+        [field: SerializeField] public ItemData FryingResult { get; set; }
+        [field: SerializeField] public ItemData SlicinggResult { get; set; }
     }
 }
