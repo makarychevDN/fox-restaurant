@@ -38,10 +38,14 @@ namespace foxRestaurant
 
         public void SetItem(Item item)
         {
+            var oldItem = this.item;
             this.item = item;
 
             if (item == null)
+            {
+                OnItemHasBeenRemoved.Invoke(oldItem);
                 return;
+            }
 
             item.transform.parent = centerForItem;
             item.transform.localPosition = Vector3.zero;
@@ -51,8 +55,8 @@ namespace foxRestaurant
 
         public void Clear()
         {
-            Destroy(item.gameObject);
             SetItem(null);
+            Destroy(item.gameObject);
         }
 
         public void Hover(Item item)

@@ -17,6 +17,8 @@ namespace foxRestaurant
         public void SetSlot(ItemSlot slot) => Slot = slot;
         public Image Image => image;
         public float FryingTimer => fryingTimer;
+        public float TimeToFry => timeToFry;
+        public float TimeToFryLeft => timeToFry - fryingTimer;
 
         public void Init(Level level)
         {
