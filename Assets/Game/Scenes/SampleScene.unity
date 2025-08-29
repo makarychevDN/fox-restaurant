@@ -927,6 +927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
+  availvableItemData:
+  - {fileID: 11400000, guid: c4eedcc4a9674fb42af4fad8e1824387, type: 2}
+  - {fileID: 11400000, guid: e4ca40160e30a944e9c874a95c63aa5d, type: 2}
 --- !u!1 &557930254
 GameObject:
   m_ObjectHideFlags: 0

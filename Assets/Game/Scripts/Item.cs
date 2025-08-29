@@ -13,6 +13,7 @@ namespace foxRestaurant
         [SerializeField] private float timeToFry = 5f;
         private float fryingTimer;
         private Level level;
+        private ItemData itemData;
 
         public void SetSlot(ItemSlot slot) => Slot = slot;
         public Image Image => image;
@@ -20,11 +21,26 @@ namespace foxRestaurant
         public float TimeToFry => timeToFry;
         public float TimeToFryLeft => timeToFry - fryingTimer;
 
-        public void Init(Level level)
+        public void Init(Level level, ItemData itemData)
         {
             this.level = level;
             itemMovement.Init(level, this);
             inputController.Init(itemMovement);
+
+            SetItemData(itemData);
+        }
+
+        public void SetItemData(ItemData itemData)
+        {
+            this.itemData = itemData;
+            image.sprite = itemData.Sprite;
+
+            Vector3 itemSpriteSize = itemData.Sprite.bounds.size;
+            float pixelsPerUnit = itemData.Sprite.pixelsPerUnit;
+            itemSpriteSize.y *= pixelsPerUnit;
+            itemSpriteSize.x *= pixelsPerUnit;
+            itemSpriteSize.z = 1;
+            image.rectTransform.sizeDelta = itemSpriteSize;
         }
 
         public void Fry(float time)
@@ -34,7 +50,9 @@ namespace foxRestaurant
             if(fryingTimer >= timeToFry)
             {
                 fryingTimer = 0;
-                print("fried!");
+
+                if(itemData.FryingResult != null)
+                    SetItemData(itemData.FryingResult);
             }
         }
     }
