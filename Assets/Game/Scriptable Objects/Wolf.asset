@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d42e557c25537db43b599e2c0d65fefd, type: 3}
-  m_Name: Wolf
+  m_Name: wolf
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 623c98ea2cdb7fb41a4c083f314b1fe9, type: 3}
   <HungerPoints>k__BackingField: 5
