@@ -140,7 +140,7 @@ MonoBehaviour:
   image: {fileID: 440576134149140121}
   itemMovement: {fileID: 6488208657373315716}
   inputController: {fileID: 5014418370827727440}
-  timeToFry: 30
+  timeToFry: 10
 --- !u!114 &5014418370827727440
 MonoBehaviour:
   m_ObjectHideFlags: 0
