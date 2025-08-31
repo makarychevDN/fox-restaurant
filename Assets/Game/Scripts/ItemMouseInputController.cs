@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace foxRestaurant
@@ -7,16 +6,21 @@ namespace foxRestaurant
     public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
         private ItemMovement itemMovement;
+        private Item item;
 
-        public void Init(ItemMovement item)
+        public void Init(ItemMovement itemMovement, Item item)
         {
-            this.itemMovement = item;
+            this.itemMovement = itemMovement;
+            this.item = item;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
                 itemMovement.OnSelect();
+
+            if (eventData.button == PointerEventData.InputButton.Right)
+                item.Slice();
         }
 
         public void OnDrag(PointerEventData eventData)

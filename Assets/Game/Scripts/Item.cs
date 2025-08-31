@@ -25,7 +25,7 @@ namespace foxRestaurant
         {
             this.level = level;
             itemMovement.Init(level, this);
-            inputController.Init(itemMovement);
+            inputController.Init(itemMovement, this);
 
             SetItemData(itemData);
         }
@@ -54,6 +54,12 @@ namespace foxRestaurant
                 if(itemData.FryingResult != null)
                     SetItemData(itemData.FryingResult);
             }
+        }
+
+        public void Slice()
+        {
+            if (itemData.SlicingResult != null)
+                SetItemData(itemData.SlicingResult);
         }
     }
 }
