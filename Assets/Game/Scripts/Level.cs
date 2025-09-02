@@ -11,12 +11,14 @@ namespace foxRestaurant
         [SerializeField] private CustomerSpawner customerSpawner;
         [SerializeField] private CookerSlotSpawner cookerSlotSpawner;
         [SerializeField] private CookPositionController cookPositionController;
+        [SerializeField] private Ticker ticker;
 
         [Space]
         [SerializeField] private int cookerSlotsCount;
 
         public ItemsSpawner ItemsSpawner => itemsSpawner;
         public SlotsManager SlotsManager => slotsManager;
+        public Ticker Ticker => ticker;
         public Transform ParentForItemsMovement => parentForItemsMovement;
 
         private void Awake()

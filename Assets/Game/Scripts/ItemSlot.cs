@@ -30,7 +30,7 @@ namespace foxRestaurant
             level.SlotsManager.AddSlot(this);
 
             if (centerForItem != null)
-                cooker.Init(this);
+                cooker.Init(this, level);
 
             if (centerForItem == null)
                 centerForItem = transform;

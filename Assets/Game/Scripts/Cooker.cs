@@ -12,11 +12,12 @@ namespace foxRestaurant
 
         private ItemSlot slot;
 
-        public void Init(ItemSlot slot)
+        public void Init(ItemSlot slot, Level level)
         {
             this.slot = slot;
             slot.OnItemHasBeenPlaced.AddListener(ItemSettedInSlotHandler);
             slot.OnItemHasBeenRemoved.AddListener(ClearIndicators);
+            level.Ticker.AddTickable(this);
         }
 
         public void Tick(float deltaTime)
@@ -32,6 +33,7 @@ namespace foxRestaurant
         private void ItemSettedInSlotHandler(Item item)
         {
             timeLeftSliderIndicator.maxValue = item.TimeToFry;
+            timeLefTextIndicator.text = item.TimeToFry.ToString();
             sLetter.text = "s";
         }
 
@@ -40,11 +42,6 @@ namespace foxRestaurant
             timeLefTextIndicator.text = "-";
             timeLeftSliderIndicator.value = 0;
             sLetter.text = "";
-        }
-
-        private void Update()
-        {
-            Tick(Time.deltaTime);
         }
     }
 }
