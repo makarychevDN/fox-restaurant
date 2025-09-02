@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Slot>k__BackingField: {fileID: 0}
   image: {fileID: 440576134149140121}
-  itemMovement: {fileID: 6488208657373315716}
+  itemStateController: {fileID: 6488208657373315716}
   inputController: {fileID: 5014418370827727440}
   timeToFry: 10
 --- !u!114 &5014418370827727440

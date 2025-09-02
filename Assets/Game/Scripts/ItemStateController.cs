@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace foxRestaurant
 {
-    public class ItemMovement : MonoBehaviour
+    public class ItemStateController : MonoBehaviour
     {
         private MovementState movementState = MovementState.placedInSlot;
         private Level level;
@@ -77,6 +77,14 @@ namespace foxRestaurant
             item.Slot = slot;
             slot.SetItem(item);
             movementState = MovementState.placedInSlot;
+        }
+
+        public void TryToSlice()
+        {
+            if (movementState != MovementState.placedInSlot)
+                return;
+
+            item.Slice();
         }
 
         private void Update()
