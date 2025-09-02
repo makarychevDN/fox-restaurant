@@ -12,6 +12,8 @@ namespace foxRestaurant
         [SerializeField] private int hungerPoints;
         [SerializeField] private int patience;
         [SerializeField] private Image orderImage;
+        [SerializeField] private Transform slotPositionPoint;
+        [SerializeField] private Animator animator;
         private Item requiredItem;
 
         public void Init(Level level, CustomerData customerData)
@@ -28,7 +30,7 @@ namespace foxRestaurant
             var slot = Instantiate(itemSlotPrefab);
             slot.Init(level);
             slot.transform.parent = level.CustomerSlotsParent;
-            slot.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+            slot.transform.position = Camera.main.WorldToScreenPoint(slotPositionPoint.position);
             return slot;
         }
 
@@ -42,6 +44,7 @@ namespace foxRestaurant
 
         public void TryToEat(Item item)
         {
+            animator.SetTrigger("onEat");
             eatingSound.Play();
         }
 
