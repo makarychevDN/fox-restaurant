@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace foxRestaurant
 {
@@ -10,6 +11,7 @@ namespace foxRestaurant
         [SerializeField] private AudioSource eatingSound;
         [SerializeField] private int hungerPoints;
         [SerializeField] private int patience;
+        [SerializeField] private Image orderImage;
         private Item requiredItem;
 
         public void Init(Level level, CustomerData customerData)
@@ -17,7 +19,8 @@ namespace foxRestaurant
             slotToPlaceFood = SpawnSlot(level);
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
-            SetCustomerData(customerData);
+            SetCustomerData(customerData);            
+            orderImage.transform.rotation = Quaternion.identity;
         }
 
         private ItemSlot SpawnSlot(Level level)

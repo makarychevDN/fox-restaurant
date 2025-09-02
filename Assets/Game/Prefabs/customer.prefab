@@ -53,6 +53,7 @@ MonoBehaviour:
   eatingSound: {fileID: 3197204169755092243}
   hungerPoints: 0
   patience: 0
+  orderImage: {fileID: 545002675538599931}
 --- !u!1 &509775029239388872
 GameObject:
   m_ObjectHideFlags: 0
