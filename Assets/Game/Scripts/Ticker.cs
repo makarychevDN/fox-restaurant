@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class Ticker : MonoBehaviour
 {
+    [SerializeField] private int sliceTimeCost;
     private List<ITickable> tickables = new List<ITickable>();
-    private TickingMode tickingMode = TickingMode.pause;
+    private TickingMode tickingMode = TickingMode.regular;
 
     public void AddTickable(ITickable tickable)
     {
@@ -15,6 +16,8 @@ public class Ticker : MonoBehaviour
     {
         tickables.ForEach(tickable => tickable.Tick(tick));
     }
+
+    public void TickOnSlice() => TickAllTickables(sliceTimeCost);
 
     private void Update()
     {

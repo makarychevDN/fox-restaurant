@@ -60,6 +60,8 @@ namespace foxRestaurant
         {
             if (itemData.SlicingResult != null)
                 SetItemData(itemData.SlicingResult);
+
+            level.Ticker.TickOnSlice();
         }
     }
 }
