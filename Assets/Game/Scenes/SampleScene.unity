@@ -2106,7 +2106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7fd0473f0990cd428fda6940bbb74d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliceTimeCost: 0
+  sliceTimeCost: 3
 --- !u!1 &1038514693
 GameObject:
   m_ObjectHideFlags: 0
