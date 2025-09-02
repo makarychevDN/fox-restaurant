@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 08bcdf8acadeb9840a0805a46b5b4aec
+guid: ff6f667121fa7294c816c568a4f11059
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1292103146064027224
-    second: raw meat_0
+      213: -3871545054786519145
+    second: customer's order box_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: raw meat_0
+      name: customer's order box_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 109
-        height: 50
+        width: 72
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8a160b5d807811ee0800000000000000
-      internalID: -1292103146064027224
+      spriteID: 79f7785f842854ac0800000000000000
+      internalID: -3871545054786519145
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      raw meat_0: -1292103146064027224
+      customer's order box_0: -3871545054786519145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
