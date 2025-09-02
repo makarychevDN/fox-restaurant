@@ -10,24 +10,21 @@ namespace foxRestaurant
         [SerializeField] private AudioSource eatingSound;
         [SerializeField] private int hungerPoints;
         [SerializeField] private int patience;
-        private Transform customerSlotsParent;
         private Item requiredItem;
-        private Level level;
 
-        public void Init(Level level, Transform customerSlotsParent)
+        public void Init(Level level, CustomerData customerData)
         {
-            this.level = level;
-            this.customerSlotsParent = customerSlotsParent;
-            slotToPlaceFood = SpawnSlot();
+            slotToPlaceFood = SpawnSlot(level);
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
+            SetCustomerData(customerData);
         }
 
-        private ItemSlot SpawnSlot()
+        private ItemSlot SpawnSlot(Level level)
         {
             var slot = Instantiate(itemSlotPrefab);
             slot.Init(level);
-            slot.transform.parent = customerSlotsParent;
+            slot.transform.parent = level.CustomerSlotsParent;
             slot.transform.position = Camera.main.WorldToScreenPoint(transform.position);
             return slot;
         }
