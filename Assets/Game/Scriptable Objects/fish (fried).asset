@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef442539802fb94380527bd3b844d05, type: 3}
-  m_Name: meat
+  m_Name: fish (fried)
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: b88cb4be953d1ca41b6499c3b602c6bf, type: 3}
-  <FryingResult>k__BackingField: {fileID: 11400000, guid: 3b12d8cbcc5e03b4781a67d23904b046, type: 2}
-  <SlicinggResult>k__BackingField: {fileID: 0}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: ebb6ec59c391ef14098d5d8f7fa7e978, type: 3}
+  <FryingResult>k__BackingField: {fileID: 0}
+  <SlicingResult>k__BackingField: {fileID: 11400000, guid: ae1e9548af3ff4d4bac7dcf9f89c084d, type: 2}

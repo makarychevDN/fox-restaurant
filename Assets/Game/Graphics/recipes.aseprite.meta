@@ -125,7 +125,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: recipes
     originalName: 
-    pivot: {x: 0.5382004, y: -0.006134969}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -133,8 +133,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 589
-      height: 326
+      width: 1024
+      height: 1024
     spriteID: 492ca2ef4572cb542a211b7eb32998b9
     spriteBone: []
     spriteOutline: []
@@ -157,10 +157,10 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 2
-        y: 2
-        width: 589
-        height: 326
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       spriteId: 492ca2ef4572cb542a211b7eb32998b9
     linkedCells: []
     parentIndex: -1
@@ -180,5 +180,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 638, y: 348}
-  previousTextureSize: {x: 1024, y: 512}
+  canvasSize: {x: 1024, y: 1024}
+  previousTextureSize: {x: 2048, y: 2048}
