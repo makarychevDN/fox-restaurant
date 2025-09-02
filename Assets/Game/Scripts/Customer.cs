@@ -1,28 +1,41 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace foxRestaurant
 {
-    public class Customer : MonoBehaviour
+    public class Customer : MonoBehaviour, ITickable
     {
-        [SerializeField] private ItemSlot slotToPlaceFood;
+        [Header("stats")]
+        [SerializeField] private int hungerPoints;
+        [SerializeField] private float patience;
+        [Header("assets links")]
         [SerializeField] private ItemSlot itemSlotPrefab;
+        [Header("prefab links")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private AudioSource eatingSound;
-        [SerializeField] private int hungerPoints;
-        [SerializeField] private int patience;
-        [SerializeField] private Image orderImage;
-        [SerializeField] private Transform slotPositionPoint;
         [SerializeField] private Animator animator;
+        [SerializeField] private Transform slotPositionPoint;
+        [SerializeField] private Transform uiStatsRoot;
+        [Header("ui links")]
+        [SerializeField] private Image orderImage;
+        [SerializeField] private TMP_Text patienceIndicator;
+
         private Item requiredItem;
+        private ItemSlot slotToPlaceFood;
 
         public void Init(Level level, CustomerData customerData)
         {
             slotToPlaceFood = SpawnSlot(level);
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
-            SetCustomerData(customerData);            
+
+            SetCustomerData(customerData);   
+            
             orderImage.transform.rotation = Quaternion.identity;
+            uiStatsRoot.rotation = Quaternion.identity;
+
+            level.Ticker.AddTickable(this);
         }
 
         private ItemSlot SpawnSlot(Level level)
@@ -51,6 +64,12 @@ namespace foxRestaurant
         public void MakeOrder()
         {
 
+        }
+
+        public void Tick(float deltaTime)
+        {
+            patience -= deltaTime;
+            patienceIndicator.text = patience.ToString("0");
         }
     }
 }
