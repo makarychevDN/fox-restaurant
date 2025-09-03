@@ -1,19 +1,19 @@
-using foxRestaurant;
 using UnityEngine;
 
-public class Scenario : MonoBehaviour
+namespace foxRestaurant
 {
-    [SerializeField] private CustomerData wolfData;
-    private CustomerSpawner customerSpawner;
-
-    public void Init(CustomerSpawner customerSpawner)
+    public class Scenario : MonoBehaviour
     {
-        this.customerSpawner = customerSpawner;
-        customerSpawner.TryToSpawnCustomer(wolfData);
-        customerSpawner.TryToSpawnCustomer(wolfData);
-        customerSpawner.TryToSpawnCustomer(wolfData);
-        customerSpawner.TryToSpawnCustomer(wolfData);
-        customerSpawner.TryToSpawnCustomer(wolfData);
-        customerSpawner.TryToSpawnCustomer(wolfData);
+        [SerializeField] private CustomerData wolfData;
+        private CustomerSpawner customerSpawner;
+
+        public void Init(CustomerSpawner customerSpawner)
+        {
+            this.customerSpawner = customerSpawner;
+            customerSpawner.TryToSpawnCustomer(wolfData);
+            customerSpawner.TryToSpawnCustomer(wolfData);
+            customerSpawner.TryToSpawnCustomer(wolfData);
+            customerSpawner.TryToSpawnCustomer(wolfData);
+        }
     }
 }
