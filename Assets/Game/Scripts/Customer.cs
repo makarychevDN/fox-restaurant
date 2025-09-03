@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,21 +22,24 @@ namespace foxRestaurant
         [SerializeField] private Image orderImage;
         [SerializeField] private TMP_Text patienceIndicator;
 
-        private Item requiredItem;
+        private ItemData requiredIteData;
         private ItemSlot slotToPlaceFood;
+        private Func<ItemData> getItemDataToOrderFunc;
 
-        public void Init(Level level, CustomerData customerData)
+        public void Init(Level level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
+            this.getItemDataToOrderFunc = getItemDataToOrderFunc;
+            level.Ticker.AddTickable(this);
+
             slotToPlaceFood = SpawnSlot(level);
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
 
-            SetCustomerData(customerData);   
-            
+            SetCustomerData(customerData);
+            MakeOrder();
+
             orderImage.transform.rotation = Quaternion.identity;
             uiStatsRoot.rotation = Quaternion.identity;
-
-            level.Ticker.AddTickable(this);
         }
 
         private ItemSlot SpawnSlot(Level level)
@@ -52,7 +56,12 @@ namespace foxRestaurant
             hungerPoints = customerData.HungerPoints;
             patience = customerData.Patience;
             spriteRenderer.sprite = customerData.Sprite;
-            MakeOrder();
+        }
+
+        private void SetOrderData(ItemData itemData)
+        {
+            orderImage.sprite = itemData.Sprite;
+            requiredIteData = itemData;
         }
 
         public void TryToEat(Item item)
@@ -63,7 +72,7 @@ namespace foxRestaurant
 
         public void MakeOrder()
         {
-
+            SetOrderData(getItemDataToOrderFunc());
         }
 
         public void Tick(float deltaTime)

@@ -14,6 +14,7 @@ namespace foxRestaurant
         [SerializeField] private Ticker ticker;
         [SerializeField] private Transform customerSlotsParent;
         [SerializeField] private Scenario scenario;
+        [SerializeField] private DecksManager decksManager;
 
         [Space]
         [SerializeField] private int cookerSlotsCount;
@@ -23,6 +24,7 @@ namespace foxRestaurant
         public Ticker Ticker => ticker;
         public Transform ParentForItemsMovement => parentForItemsMovement;
         public Transform CustomerSlotsParent => customerSlotsParent;
+        public DecksManager DecksManager => decksManager;
 
         private void Awake()
         {
@@ -30,7 +32,8 @@ namespace foxRestaurant
             itemsSpawner.Init(this);
             customerSpawner.Init(this);
             cookerSlotSpawner.Init(this);
-            scenario.Init(customerSpawner);
+            decksManager.Init();
+            scenario.Init(customerSpawner, this);
 
             for (int i = 0; i < cookerSlotsCount; i++)
             {

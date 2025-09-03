@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -19,28 +20,32 @@ namespace foxRestaurant
             this.level = level;
         }
 
-        public void SpawnCustomer(Transform parentToPlaceCustomer, CustomerData customerData)
+        public Customer SpawnCustomer(Transform parentToPlaceCustomer, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             var customer = Instantiate(customerPrefab);
             customer.transform.parent = parentToPlaceCustomer;
             customer.transform.localPosition = Vector3.zero;
             customer.transform.localScale = Vector3.one;
             customer.transform.localRotation = Quaternion.identity;
-            customer.Init(level, customerData);
+            customer.Init(level, customerData, getItemDataToOrderFunc);
+            return customer;
         }
 
-        public void TryToSpawnCustomer(CustomerData customerData)
+        public Customer TryToSpawnCustomer(CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             var parentToSpawnCustomer = 
                 customerParents.Where(customerParent => customerParent.childCount == 0).ToList().GetRandomElement();
 
             if (parentToSpawnCustomer == null)
-                return;
+                return null;
 
-            SpawnCustomer(
-                customerParents.Where(customerParent => customerParent.childCount == 0).ToList().GetRandomElement(), 
-                customerData
+            var customer = SpawnCustomer(
+                parentToSpawnCustomer, 
+                customerData,
+                getItemDataToOrderFunc
             );
+
+            return customer;
         }
     }
 }
