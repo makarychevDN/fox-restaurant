@@ -24,7 +24,7 @@ namespace foxRestaurant
 
         private ItemSlot GetClosestAvailableSlot(Item item)
         {
-            var abailableSlots = slots.Where(slot => slot.Available).ToList();
+            var abailableSlots = slots.Where(slot => slot.AvailableToPlaceItem(item)).ToList();
             abailableSlots.Sort((a, b) =>
                 (a.transform.position - item.transform.position).sqrMagnitude.CompareTo(
                 (b.transform.position - item.transform.position).sqrMagnitude));

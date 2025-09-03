@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,17 +13,17 @@ namespace foxRestaurant
         [SerializeField] private SlotType slotType;
         [SerializeField] private Cooker cooker;
         private Item item;
+        private ItemData requiredItemData;
         private Level level;
 
         public UnityEvent OnHasBeenOccupied;
         public UnityEvent<Item> OnItemHasBeenPlaced;
         public UnityEvent<Item> OnItemHasBeenRemoved;
         public UnityEvent OnItemHovered;
-
-        public bool Available => item == null;
         public SlotType SlotType => slotType;
         public Transform CenterForItem => centerForItem;
         public Item Item => item;
+        public bool Empty => item == null;
 
         public void Init(Level level)
         {
@@ -53,6 +54,11 @@ namespace foxRestaurant
             OnItemHasBeenPlaced.Invoke(item);
         }
 
+        public void SetRequiredItemData(ItemData requiredItemData)
+        {
+            this.requiredItemData = requiredItemData;
+        }
+
         public void Clear()
         {
             var oldItem = item;
@@ -67,6 +73,11 @@ namespace foxRestaurant
                 boxOnHoverRenderer.SetActive(true);
             hoveredItemRenderer.sprite = item.Image.sprite;
             hoveredItemRenderer.rectTransform.sizeDelta = item.Image.rectTransform.sizeDelta;
+        }
+
+        public bool AvailableToPlaceItem(Item placingItem)
+        {
+            return Empty && (requiredItemData == null || placingItem.ItemData == requiredItemData);
         }
 
         public void Unhover()

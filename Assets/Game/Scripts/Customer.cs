@@ -22,7 +22,7 @@ namespace foxRestaurant
         [SerializeField] private Image orderImage;
         [SerializeField] private TMP_Text patienceIndicator;
 
-        private ItemData requiredIteData;
+        private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
 
@@ -61,7 +61,7 @@ namespace foxRestaurant
         private void SetOrderData(ItemData itemData)
         {
             orderImage.sprite = itemData.Sprite;
-            requiredIteData = itemData;
+            requiredItemData = itemData;
         }
 
         public void TryToEat(Item item)
@@ -73,6 +73,7 @@ namespace foxRestaurant
         public void MakeOrder()
         {
             SetOrderData(getItemDataToOrderFunc());
+            slotToPlaceFood.SetRequiredItemData(requiredItemData);
         }
 
         public void Tick(float deltaTime)

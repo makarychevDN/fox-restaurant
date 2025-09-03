@@ -20,6 +20,7 @@ namespace foxRestaurant
         public float FryingTimer => fryingTimer;
         public float TimeToFry => timeToFry;
         public float TimeToFryLeft => timeToFry - fryingTimer;
+        public ItemData ItemData => itemData;
 
         public void Init(Level level, ItemData itemData)
         {
