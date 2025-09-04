@@ -959,9 +959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
-  availvableItemData:
-  - {fileID: 11400000, guid: c4eedcc4a9674fb42af4fad8e1824387, type: 2}
-  - {fileID: 11400000, guid: e4ca40160e30a944e9c874a95c63aa5d, type: 2}
 --- !u!1 &557930254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,7 +1151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: e90ff3cf1c16f5548ab09fa324b6a79a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2117,7 +2114,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50958aefe36250544a9c8d299b93d3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wolfData: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
 --- !u!4 &1038514695
 Transform:
   m_ObjectHideFlags: 0
