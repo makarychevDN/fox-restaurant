@@ -4,41 +4,33 @@ namespace foxRestaurant
 {
     public class Level : MonoBehaviour
     {
-        [SerializeField] private ItemsSpawner itemsSpawner;
-        [SerializeField] private PlayerInputController playerInputController;
-        [SerializeField] private SlotsManager slotsManager;
-        [SerializeField] private Transform parentForItemsMovement;
-        [SerializeField] private CustomerSpawner customerSpawner;
-        [SerializeField] private CookerSlotSpawner cookerSlotSpawner;
-        [SerializeField] private CookPositionController cookPositionController;
-        [SerializeField] private Ticker ticker;
-        [SerializeField] private Transform customerSlotsParent;
-        [SerializeField] private Scenario scenario;
-        [SerializeField] private DecksManager decksManager;
-
+        [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
+        [field: SerializeField] public PlayerInputController PlayerInputController { get; private set; }
+        [field: SerializeField] public SlotsManager SlotsManager { get; private set; }
+        [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
+        [field: SerializeField] public CustomerSpawner CustomerSpawner { get; private set; }
+        [field: SerializeField] public CookerSlotSpawner CookerSlotSpawner { get; private set; }
+        [field: SerializeField] public CookPositionController CookPositionController { get; private set; }
+        [field: SerializeField] public Ticker Ticker { get; private set; }
+        [field: SerializeField] public Transform CustomerSlotsParent { get; private set; }
+        [field: SerializeField] public Scenario Scenario { get; private set; }
+        [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [Space]
         [SerializeField] private int cookerSlotsCount;
 
-        public ItemsSpawner ItemsSpawner => itemsSpawner;
-        public SlotsManager SlotsManager => slotsManager;
-        public Ticker Ticker => ticker;
-        public Transform ParentForItemsMovement => parentForItemsMovement;
-        public Transform CustomerSlotsParent => customerSlotsParent;
-        public DecksManager DecksManager => decksManager;
-
         private void Awake()
         {
-            playerInputController.Init(this);
-            itemsSpawner.Init(this);
-            customerSpawner.Init(this);
-            cookerSlotSpawner.Init(this);
-            decksManager.Init();
-            scenario.Init(customerSpawner, this);
+            PlayerInputController.Init(this);
+            ItemsSpawner.Init(this);
+            CustomerSpawner.Init(this);
+            CookerSlotSpawner.Init(this);
+            DecksManager.Init();
+            Scenario.Init(CustomerSpawner, this);
 
             for (int i = 0; i < cookerSlotsCount; i++)
             {
-                var cookerSlot = cookerSlotSpawner.SpawnCookerSlot();
-                cookerSlot.OnItemHovered.AddListener(() => cookPositionController.HoverSlot(cookerSlot));
+                var cookerSlot = CookerSlotSpawner.SpawnCookerSlot();
+                cookerSlot.OnItemHovered.AddListener(() => CookPositionController.HoverSlot(cookerSlot));
             }
         }
     }

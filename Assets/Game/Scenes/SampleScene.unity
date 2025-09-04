@@ -2380,17 +2380,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29337348385e13548998331fb00524cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsSpawner: {fileID: 542761378}
-  playerInputController: {fileID: 445895215}
-  slotsManager: {fileID: 299938903}
-  parentForItemsMovement: {fileID: 175698712}
-  customerSpawner: {fileID: 2059132092}
-  cookerSlotSpawner: {fileID: 539983011}
-  cookPositionController: {fileID: 557930255}
-  ticker: {fileID: 1028591363}
-  customerSlotsParent: {fileID: 975836795}
-  scenario: {fileID: 1038514694}
-  decksManager: {fileID: 808956419}
+  <ItemsSpawner>k__BackingField: {fileID: 542761378}
+  <PlayerInputController>k__BackingField: {fileID: 445895215}
+  <SlotsManager>k__BackingField: {fileID: 299938903}
+  <ParentForItemsMovement>k__BackingField: {fileID: 175698712}
+  <CustomerSpawner>k__BackingField: {fileID: 2059132092}
+  <CookerSlotSpawner>k__BackingField: {fileID: 539983011}
+  <CookPositionController>k__BackingField: {fileID: 557930255}
+  <Ticker>k__BackingField: {fileID: 1028591363}
+  <CustomerSlotsParent>k__BackingField: {fileID: 975836795}
+  <Scenario>k__BackingField: {fileID: 1038514694}
+  <DecksManager>k__BackingField: {fileID: 808956419}
   cookerSlotsCount: 4
 --- !u!1 &1644755504
 GameObject:
