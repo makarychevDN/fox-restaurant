@@ -30,7 +30,7 @@ namespace foxRestaurant
             this.level = level;
             level.SlotsManager.AddSlot(this);
 
-            if (centerForItem != null)
+            if (cooker != null)
                 cooker.Init(this, level);
 
             if (centerForItem == null)
@@ -90,6 +90,7 @@ namespace foxRestaurant
     public enum SlotType
     {
         Customer = 10,
-        Cooker = 20
+        Cooker = 20,
+        Additional = 30
     }
 }

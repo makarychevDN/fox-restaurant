@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace foxRestaurant
 {
-    public class CookerSlotSpawner : MonoBehaviour
+    public class SlotSpawner : MonoBehaviour
     {
         [SerializeField] private ItemSlot cookerSlotPrefab;
         [SerializeField] private Transform slotsParent;
@@ -13,7 +13,7 @@ namespace foxRestaurant
             this.level = level;
         }
 
-        public ItemSlot SpawnCookerSlot()
+        public ItemSlot SpawnSlot()
         {
             var slot = Instantiate(cookerSlotPrefab);
 
