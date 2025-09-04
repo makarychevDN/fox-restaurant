@@ -21,6 +21,6 @@ namespace foxRestaurant
 
         public ItemData GetRandomIngredient() => ingredientsDeck.Draw();
         public ItemData GetRandomDish() => dishesDeck.Draw();
-        public CustomerData GetRandomCustomerh() => customersDeck.Draw();
+        public CustomerData GetRandomCustomer() => customersDeck.Draw();
     }
 }

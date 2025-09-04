@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6937133098145844286f5b522d5a49e0, type: 3}
-  m_Name: DishesList (level 0)
+  m_Name: ingredients Llst (level 0)
   m_EditorClassIdentifier: 
   <DataList>k__BackingField:
-  - {fileID: 11400000, guid: d4ad72f40355fd04092afdd26c7fda4e, type: 2}
   - {fileID: 11400000, guid: c4eedcc4a9674fb42af4fad8e1824387, type: 2}
-  - {fileID: 11400000, guid: 3b12d8cbcc5e03b4781a67d23904b046, type: 2}
   - {fileID: 11400000, guid: e4ca40160e30a944e9c874a95c63aa5d, type: 2}
+  - {fileID: 11400000, guid: 389248da26e964d4585875599d61c549, type: 2}
+  - {fileID: 11400000, guid: 62ac4221e1398624a8cb142f27e2f98a, type: 2}

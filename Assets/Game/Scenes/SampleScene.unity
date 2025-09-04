@@ -1682,7 +1682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6535a62851a8b458243c65f7a4844f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientsToSpawnAsset: {fileID: 11400000, guid: fcdae95b4c7b8664bbe528c3b808fd2d, type: 2}
+  ingredientsToSpawnAsset: {fileID: 11400000, guid: b3efe3f8ae91efa499d4a28c1bcb9f3b, type: 2}
   dishesToOrderAsset: {fileID: 11400000, guid: fcdae95b4c7b8664bbe528c3b808fd2d, type: 2}
   customersToSpawnAsset: {fileID: 11400000, guid: e55878a03d0833040b5294ac0cf9b8e8, type: 2}
 --- !u!1 &907346842

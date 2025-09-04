@@ -7,7 +7,6 @@ namespace foxRestaurant
     public class ItemsSpawner : MonoBehaviour
     {
         [SerializeField] private Item itemPrefab;
-        [SerializeField] private List<ItemData> availvableItemData;
         private Level level;
 
         public void Init(Level level)
@@ -27,7 +26,7 @@ namespace foxRestaurant
             item.transform.localScale = Vector3.one;
             cookerSlot.SetItem(item);
             item.SetSlot(cookerSlot);
-            item.Init(level, availvableItemData.GetRandomElement());
+            item.Init(level, level.DecksManager.GetRandomIngredient());
         }
     }
 }
