@@ -9,13 +9,13 @@ namespace foxRestaurant
         private MovementState movementState = MovementState.placedInSlot;
         private Level level;
         private Item item;
-        private ItemArrow itemArrow;
+        private ItemsFusionDisplayer fusionDisplayer;
 
-        public void Init(Level level, Item item, ItemArrow itemArrow)
+        public void Init(Level level, Item item, ItemsFusionDisplayer fusionDisplayer)
         {
             this.level = level;
             this.item = item;
-            this.itemArrow = itemArrow;
+            this.fusionDisplayer = fusionDisplayer;
             transform.localPosition = new Vector2(0, -100);
             transform.DOLocalMove(Vector3.zero, 0.1f);
         }
@@ -96,15 +96,20 @@ namespace foxRestaurant
                 transform.position = Input.mousePosition;
                 var slotToPlaceItem = level.SlotsManager.GetSlotToPlaceItem(item);
                 level.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
-                slotToPlaceItem.Hover(item);
-                itemArrow.PointOnSlot(item, slotToPlaceItem);
 
-                if(!itemArrow.gameObject.activeSelf)
-                    itemArrow.gameObject.SetActive(true);
+                fusionDisplayer.gameObject.SetActive(!slotToPlaceItem.Empty);
+                if (slotToPlaceItem.Empty)
+                {
+                    slotToPlaceItem.Hover(item);
+                }
+                else
+                {
+                    fusionDisplayer.DisplayPlus(slotToPlaceItem);
+                }
             }
             else
             {
-                itemArrow.gameObject.SetActive(false);
+                fusionDisplayer.gameObject.SetActive(false);
             }
         }
 

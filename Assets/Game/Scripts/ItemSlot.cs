@@ -77,7 +77,8 @@ namespace foxRestaurant
 
         public bool AvailableToPlaceItem(Item placingItem)
         {
-            return Empty && (requiredItemData == null || placingItem.ItemData == requiredItemData);
+            //return Empty && (requiredItemData == null || placingItem.ItemData == requiredItemData);
+            return true;
         }
 
         public void Unhover()

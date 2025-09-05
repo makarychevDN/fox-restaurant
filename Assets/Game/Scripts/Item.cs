@@ -10,7 +10,7 @@ namespace foxRestaurant
         [SerializeField] private Image image;
         [SerializeField] private ItemStateController itemStateController;
         [SerializeField] private ItemMouseInputController inputController;
-        [SerializeField] private ItemArrow itemArrow;
+        [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
         [SerializeField] private float timeToFry = 5f;
         private float fryingTimer;
         private Level level;
@@ -26,7 +26,7 @@ namespace foxRestaurant
         public void Init(Level level, ItemData itemData)
         {
             this.level = level;
-            itemStateController.Init(level, this, itemArrow);
+            itemStateController.Init(level, this, fusionDisplayer);
             inputController.Init(itemStateController, this);
 
             SetItemData(itemData);
