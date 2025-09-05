@@ -9,13 +9,11 @@ namespace foxRestaurant
         private MovementState movementState = MovementState.placedInSlot;
         private Level level;
         private Item item;
-        private ItemArrow itemArrow;
 
-        public void Init(Level level, Item item, ItemArrow itemArrow)
+        public void Init(Level level, Item item)
         {
             this.level = level;
             this.item = item;
-            this.itemArrow = itemArrow;
             transform.localPosition = new Vector2(0, -100);
             transform.DOLocalMove(Vector3.zero, 0.1f);
         }
@@ -97,14 +95,6 @@ namespace foxRestaurant
                 var slotToPlaceItem = level.SlotsManager.GetSlotToPlaceItem(item);
                 level.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
                 slotToPlaceItem.Hover(item);
-                itemArrow.PointOnSlot(item, slotToPlaceItem);
-
-                if(!itemArrow.gameObject.activeSelf)
-                    itemArrow.gameObject.SetActive(true);
-            }
-            else
-            {
-                itemArrow.gameObject.SetActive(false);
             }
         }
 

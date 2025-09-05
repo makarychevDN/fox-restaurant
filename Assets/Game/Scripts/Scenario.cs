@@ -10,7 +10,7 @@ namespace foxRestaurant
         {
             this.customerSpawner = customerSpawner;
 
-            for(int i = 0; i < 6; i++)
+            for(int i = 0; i < 4; i++)
             {
                 customerSpawner.TryToSpawnCustomer(level.DecksManager.GetRandomCustomer(), () => level.DecksManager.GetRandomDish());
             }
