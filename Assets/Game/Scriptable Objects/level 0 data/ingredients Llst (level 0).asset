@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6937133098145844286f5b522d5a49e0, type: 3}
-  m_Name: ingredients Llst (level 0)
+  m_Name: ingredients llst (level 0)
   m_EditorClassIdentifier: 
   <DataList>k__BackingField:
   - {fileID: 11400000, guid: c4eedcc4a9674fb42af4fad8e1824387, type: 2}

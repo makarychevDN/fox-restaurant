@@ -32,17 +32,7 @@ namespace foxRestaurant
             if (abailableSlots.Count == 0)
                 return null;
 
-            if (abailableSlots.Count == 1)
-                return abailableSlots[0];
-
-            var distanceToClosestSlot = Vector3.Distance(abailableSlots[0].transform.position, item.transform.position);
-            var distanceToSecondClosestSlot = Vector3.Distance(abailableSlots[1].transform.position, item.transform.position);
-            if (distanceToSecondClosestSlot / distanceToClosestSlot > 2)
-            {
-                return abailableSlots[0];
-            }
-
-            return null;
+            return abailableSlots[0];
         }
 
         public void UnhoverAllSlots()
