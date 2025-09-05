@@ -27,6 +27,7 @@ namespace foxRestaurant
         {
             this.level = level;
             itemStateController.Init(level, this, fusionDisplayer);
+            fusionDisplayer.Init(level, this);
             inputController.Init(itemStateController, this);
 
             SetItemData(itemData);

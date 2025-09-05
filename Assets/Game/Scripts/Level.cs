@@ -16,6 +16,7 @@ namespace foxRestaurant
         [field: SerializeField] public Transform CustomerSlotsParent { get; private set; }
         [field: SerializeField] public Scenario Scenario { get; private set; }
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
+        [field: SerializeField] public RecipesList RecipesList { get; private set; }
         [Space]
         [SerializeField] private int cookerSlotsCount;
 

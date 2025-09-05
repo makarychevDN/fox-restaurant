@@ -320,6 +320,7 @@ MonoBehaviour:
   plusIcon: {fileID: 415774079527211694}
   equalIcon: {fileID: 875964527807020574}
   resultIcon: {fileID: 6220659915739098243}
+  redCross: {fileID: 21300000, guid: 6070637c734034d4d8396491746fafbb, type: 3}
   animator: {fileID: 4088663883552071726}
 --- !u!95 &4088663883552071726
 Animator:

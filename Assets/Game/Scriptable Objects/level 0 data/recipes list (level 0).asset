@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3d8ad4465b7564598d4c41b354ac4f, type: 3}
   m_Name: recipes list (level 0)
   m_EditorClassIdentifier: 
-  <Recipes>k__BackingField: []
+  <Recipes>k__BackingField:
+  - {fileID: 11400000, guid: 77d86d3b77e8aa94fb252c04b48a889b, type: 2}
+  - {fileID: 11400000, guid: 0789999fb63cd6142814d21833d72e7f, type: 2}

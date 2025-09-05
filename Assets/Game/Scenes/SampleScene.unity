@@ -2436,6 +2436,7 @@ MonoBehaviour:
   <CustomerSlotsParent>k__BackingField: {fileID: 975836795}
   <Scenario>k__BackingField: {fileID: 1038514694}
   <DecksManager>k__BackingField: {fileID: 808956419}
+  <RecipesList>k__BackingField: {fileID: 11400000, guid: 512062e25c64e7d4597a028baed438bd, type: 2}
   cookerSlotsCount: 4
 --- !u!1 &1644755504
 GameObject:
