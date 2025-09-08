@@ -16,8 +16,7 @@ namespace foxRestaurant
             this.level = level;
             this.item = item;
             this.fusionDisplayer = fusionDisplayer;
-            transform.localPosition = new Vector2(0, -100);
-            transform.DOLocalMove(Vector3.zero, 0.1f);
+            transform.localPosition = Vector2.zero;
         }
 
         public void OnSelect()
