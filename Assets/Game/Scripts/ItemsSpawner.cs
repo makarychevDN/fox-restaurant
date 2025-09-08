@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -20,13 +19,20 @@ namespace foxRestaurant
             if (cookerSlot == null)
                 return;
 
+            SpawnItem(level, level.DecksManager.GetRandomIngredient(), cookerSlot);
+        }
+
+        public void SpawnItem(Level level, ItemData itemData, ItemSlot itemSlot)
+        {
             Item item = Instantiate(itemPrefab);
-            item.transform.parent = cookerSlot.transform;
+
+            itemSlot.SetItem(item);
+            item.SetSlot(itemSlot);
+            item.Init(level, itemData);
+
+            item.transform.parent = itemSlot.transform;
             item.transform.localPosition = Vector3.zero;
             item.transform.localScale = Vector3.one;
-            cookerSlot.SetItem(item);
-            item.SetSlot(cookerSlot);
-            item.Init(level, level.DecksManager.GetRandomIngredient());
         }
     }
 }
