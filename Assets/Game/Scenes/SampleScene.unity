@@ -2040,6 +2040,7 @@ Transform:
   - {fileID: 1028591362}
   - {fileID: 1038514695}
   - {fileID: 808956418}
+  - {fileID: 1825542313}
   m_Father: {fileID: 1531918935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028591361
@@ -2436,7 +2437,7 @@ MonoBehaviour:
   <CustomerSlotsParent>k__BackingField: {fileID: 975836795}
   <Scenario>k__BackingField: {fileID: 1038514694}
   <DecksManager>k__BackingField: {fileID: 808956419}
-  <RecipesList>k__BackingField: {fileID: 11400000, guid: 512062e25c64e7d4597a028baed438bd, type: 2}
+  <RecipesManager>k__BackingField: {fileID: 1825542314}
   cookerSlotsCount: 4
 --- !u!1 &1644755504
 GameObject:
@@ -2888,6 +2889,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1825542312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1825542313}
+  - component: {fileID: 1825542314}
+  m_Layer: 0
+  m_Name: recipes manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1825542313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825542312}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1020387309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1825542314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825542312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e12193cb113e74c84d69a66b132a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipesList: {fileID: 11400000, guid: 512062e25c64e7d4597a028baed438bd, type: 2}
+  coal: {fileID: 11400000, guid: d9e2a447bbf960144951ecb5b56cb596, type: 2}
 --- !u!1 &1908632369
 GameObject:
   m_ObjectHideFlags: 0
@@ -3301,8 +3348,6 @@ MonoBehaviour:
   - {fileID: 932091743}
   - {fileID: 362151776}
   - {fileID: 1908632370}
-  - {fileID: 1382940981}
-  - {fileID: 1644755505}
   OnCustomerSpawningRejected:
     m_PersistentCalls:
       m_Calls: []

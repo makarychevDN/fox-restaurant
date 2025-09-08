@@ -42,8 +42,7 @@ namespace foxRestaurant
             equalIcon.transform.position = equalIconPosition;
             resultIcon.transform.position = resultIconPosition;
 
-            var fusionResult = level.RecipesList.Recipes.FirstOrDefault(r => r.Matches(item.ItemData, targetSlot.Item.ItemData));
-            var resultSprite = fusionResult != null ? fusionResult.result.Sprite : redCross;
+            var resultSprite = level.RecipesManager.Fuse(item.ItemData, targetSlot.Item.ItemData).Sprite;
 
             Vector3 itemSpriteSize = resultSprite.bounds.size;
             float pixelsPerUnit = resultSprite.pixelsPerUnit;
