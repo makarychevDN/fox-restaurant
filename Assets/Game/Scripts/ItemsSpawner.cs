@@ -31,7 +31,7 @@ namespace foxRestaurant
             item.Init(level, itemData);
 
             item.transform.parent = itemSlot.transform;
-            item.transform.localPosition = Vector3.zero;
+            item.transform.position = itemSlot.CenterForItem.position;
             item.transform.localScale = Vector3.one;
         }
     }
