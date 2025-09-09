@@ -5,27 +5,30 @@ namespace foxRestaurant
 {
     public class Item : MonoBehaviour
     {
+        [field: Header("Stats")]
+        [field: SerializeField] public int Satiety { get; private set; }
+        [field: SerializeField] public float TimeToFry { get; private set; }
+
+        [field: Header("Dynamic Links")]
+        [field: SerializeField] public ItemData ItemData { get; private set; }
         [field: SerializeField] public ItemSlot Slot { get; set; }
 
-        [SerializeField] private Image image;
+        [field: Header("Setup")]
+        [field: SerializeField] public Image Image { get; private set; }
         [SerializeField] private ItemStateController itemStateController;
         [SerializeField] private ItemMouseInputController inputController;
         [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
-        [SerializeField] private float timeToFry = 5f;
+
         private float fryingTimer;
         private Level level;
-        private ItemData itemData;
 
-        public void SetSlot(ItemSlot slot) => Slot = slot;
-        public Image Image => image;
         public float FryingTimer => fryingTimer;
-        public float TimeToFry => timeToFry;
-        public float TimeToFryLeft => timeToFry - fryingTimer;
-        public ItemData ItemData => itemData;
+        public float TimeToFryLeft => TimeToFry - fryingTimer;
 
-        public void Init(Level level, ItemData itemData)
+        public void Init(Level level, ItemData itemData, int satiety)
         {
             this.level = level;
+            Satiety = satiety;
             itemStateController.Init(level, this, fusionDisplayer);
             fusionDisplayer.Init(level, this);
             inputController.Init(itemStateController, this);
@@ -35,36 +38,38 @@ namespace foxRestaurant
 
         public void SetItemData(ItemData itemData)
         {
-            this.itemData = itemData;
-            image.sprite = itemData.Sprite;
+            ItemData = itemData;
+            Image.sprite = itemData.Sprite;
 
             Vector3 itemSpriteSize = itemData.Sprite.bounds.size;
             float pixelsPerUnit = itemData.Sprite.pixelsPerUnit;
             itemSpriteSize.y *= pixelsPerUnit;
             itemSpriteSize.x *= pixelsPerUnit;
             itemSpriteSize.z = 1;
-            image.rectTransform.sizeDelta = itemSpriteSize;
+            Image.rectTransform.sizeDelta = itemSpriteSize;
         }
 
         public void Fry(float time)
         {
             fryingTimer += time;
 
-            if(fryingTimer >= timeToFry)
+            if(fryingTimer >= TimeToFry)
             {
                 fryingTimer = 0;
+                Satiety++;
 
-                if(itemData.FryingResult != null)
-                    SetItemData(itemData.FryingResult);
+                if (ItemData.FryingResult != null)
+                    SetItemData(ItemData.FryingResult);
             }
         }
 
         public void Slice()
         {
-            if (itemData.SlicingResult != null)
-                SetItemData(itemData.SlicingResult);
+            if (ItemData.SlicingResult != null)
+                SetItemData(ItemData.SlicingResult);
 
             level.Ticker.TickOnSlice();
+            Satiety++;
         }
     }
 }

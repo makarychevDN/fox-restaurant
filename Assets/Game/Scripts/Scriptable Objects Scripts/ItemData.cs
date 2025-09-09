@@ -8,5 +8,6 @@ namespace foxRestaurant
         [field: SerializeField] public Sprite Sprite { get; set; }
         [field: SerializeField] public ItemData FryingResult { get; set; }
         [field: SerializeField] public ItemData SlicingResult { get; set; }
+        [field: SerializeField] public int AdditionalSatiety { get; set; }
     }
 }

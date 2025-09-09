@@ -407,12 +407,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac58b5297909fa84b92dd810a5ab23df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Satiety>k__BackingField: 0
+  <TimeToFry>k__BackingField: 10
+  <ItemData>k__BackingField: {fileID: 0}
   <Slot>k__BackingField: {fileID: 0}
-  image: {fileID: 440576134149140121}
+  <Image>k__BackingField: {fileID: 440576134149140121}
   itemStateController: {fileID: 6488208657373315716}
   inputController: {fileID: 5014418370827727440}
   fusionDisplayer: {fileID: 368958920882439249}
-  timeToFry: 10
 --- !u!114 &5014418370827727440
 MonoBehaviour:
   m_ObjectHideFlags: 0

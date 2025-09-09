@@ -19,16 +19,17 @@ namespace foxRestaurant
             if (cookerSlot == null)
                 return;
 
-            SpawnItem(level, level.DecksManager.GetRandomIngredient(), cookerSlot);
+            var itemData = level.DecksManager.GetRandomIngredient();
+            SpawnItem(level, itemData, cookerSlot, 1 + itemData.AdditionalSatiety);
         }
 
-        public void SpawnItem(Level level, ItemData itemData, ItemSlot itemSlot)
+        public void SpawnItem(Level level, ItemData itemData, ItemSlot itemSlot, int satiety)
         {
             Item item = Instantiate(itemPrefab);
 
             itemSlot.SetItem(item);
-            item.SetSlot(itemSlot);
-            item.Init(level, itemData);
+            item.Slot = itemSlot;
+            item.Init(level, itemData, satiety);
 
             item.transform.parent = itemSlot.transform;
             item.transform.position = itemSlot.CenterForItem.position;

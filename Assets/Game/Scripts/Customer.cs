@@ -10,14 +10,17 @@ namespace foxRestaurant
         [Header("stats")]
         [SerializeField] private int hungerPoints;
         [SerializeField] private float patience;
+
         [Header("assets links")]
         [SerializeField] private ItemSlot itemSlotPrefab;
-        [Header("prefab links")]
+
+        [Header("links")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private AudioSource eatingSound;
         [SerializeField] private Animator animator;
         [SerializeField] private Transform slotPositionPoint;
         [SerializeField] private Transform uiStatsRoot;
+
         [Header("ui links")]
         [SerializeField] private Image orderImage;
         [SerializeField] private TMP_Text patienceIndicator;
@@ -66,7 +69,10 @@ namespace foxRestaurant
 
         public void TryToEat(Item item)
         {
-            animator.SetTrigger("onEat");
+            if(item.ItemData == requiredItemData)
+            {
+                hungerPoints -= item.Satiety;
+            }
             eatingSound.Play();
         }
 

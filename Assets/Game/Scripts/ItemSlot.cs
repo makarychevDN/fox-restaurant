@@ -63,14 +63,15 @@ namespace foxRestaurant
 
         private void TryToFuseItems(Item item1, Item item2)
         {
-            Destroy(item1.gameObject);
-            Destroy(item2.gameObject);
-
             level.ItemsSpawner.SpawnItem(
                 level, 
                 level.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
-                this
+                this,
+                item1.Satiety + item2.Satiety
             );
+
+            Destroy(item1.gameObject);
+            Destroy(item2.gameObject);
         }
 
         public void SetRequiredItemData(ItemData requiredItemData)
