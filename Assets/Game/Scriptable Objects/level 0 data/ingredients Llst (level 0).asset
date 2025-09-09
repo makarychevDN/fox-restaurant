@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: ingredients llst (level 0)
   m_EditorClassIdentifier: 
   <DataList>k__BackingField:
-  - {fileID: 11400000, guid: c4eedcc4a9674fb42af4fad8e1824387, type: 2}
   - {fileID: 11400000, guid: dc2b7c664aa464348b614a293a11646f, type: 2}
-  - {fileID: 11400000, guid: 389248da26e964d4585875599d61c549, type: 2}
   - {fileID: 11400000, guid: 62ac4221e1398624a8cb142f27e2f98a, type: 2}

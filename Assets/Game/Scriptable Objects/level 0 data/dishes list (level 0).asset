@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: dishes list (level 0)
   m_EditorClassIdentifier: 
   <DataList>k__BackingField:
-  - {fileID: 11400000, guid: d4ad72f40355fd04092afdd26c7fda4e, type: 2}
-  - {fileID: 11400000, guid: c4eedcc4a9674fb42af4fad8e1824387, type: 2}
-  - {fileID: 11400000, guid: 3b12d8cbcc5e03b4781a67d23904b046, type: 2}
-  - {fileID: 11400000, guid: e4ca40160e30a944e9c874a95c63aa5d, type: 2}
+  - {fileID: 11400000, guid: 83d2662e44adeab449d7e827ab05369a, type: 2}
