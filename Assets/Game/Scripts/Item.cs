@@ -21,6 +21,7 @@ namespace foxRestaurant
         [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
         [SerializeField] private ItemUI itemUI;
         [SerializeField] private ParticleSystem poofParticles;
+        [SerializeField] private AudioSource friedSound;
 
         private float fryingTimer;
         private Level level;
@@ -60,7 +61,10 @@ namespace foxRestaurant
                 OnSatietyUpdated.Invoke(Satiety);
 
                 if (ItemData.FryingResult != null)
+                {
                     SetItemData(ItemData.FryingResult);
+                    friedSound.Play();
+                }
             }
         }
 
