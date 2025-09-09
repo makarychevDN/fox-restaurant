@@ -567,6 +567,7 @@ MonoBehaviour:
   inputController: {fileID: 5014418370827727440}
   fusionDisplayer: {fileID: 368958920882439249}
   itemUI: {fileID: 5157530908565993188}
+  poofParticles: {fileID: 890590293719608030}
   OnSatietyUpdated:
     m_PersistentCalls:
       m_Calls: []
@@ -812,6 +813,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4ef686447f5ace46a2d4193cc8dd490, type: 3}
+--- !u!198 &890590293719608030 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 265766274217486953, guid: f4ef686447f5ace46a2d4193cc8dd490, type: 3}
+  m_PrefabInstance: {fileID: 1147347134762336439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1049969382336363244 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 107540711077034587, guid: f4ef686447f5ace46a2d4193cc8dd490, type: 3}
