@@ -5,7 +5,7 @@ namespace foxRestaurant
 {
     public class ItemUI : MonoBehaviour
     {
-        [SerializeField] private TMP_Text valueDisplayer;
+        [SerializeField] private TMP_Text satienseIndicator;
 
         public void Init(Item item)
         {
@@ -15,7 +15,7 @@ namespace foxRestaurant
 
         private void UpdateDisplayingValue(int value)
         {
-            valueDisplayer.text = value.ToString();
+            satienseIndicator.text = value.ToString();
         }
     }
 }

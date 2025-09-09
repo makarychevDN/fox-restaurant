@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace foxRestaurant
@@ -8,8 +9,8 @@ namespace foxRestaurant
     public class Customer : MonoBehaviour, ITickable
     {
         [Header("stats")]
-        [SerializeField] private int hungerPoints;
-        [SerializeField] private float patience;
+        [field: SerializeField] public int HungerPoints { get; private set; }
+        [field: SerializeField] public float Patience { get; private set; }
 
         [Header("assets links")]
         [SerializeField] private ItemSlot itemSlotPrefab;
@@ -23,11 +24,14 @@ namespace foxRestaurant
 
         [Header("ui links")]
         [SerializeField] private Image orderImage;
-        [SerializeField] private TMP_Text patienceIndicator;
+        [SerializeField] private CustomersUI customersUI;
 
         private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
+
+        public UnityEvent<float> OnPatienceChanged;
+        public UnityEvent<int> OnHungerPointsChanged;
 
         public void Init(Level level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
@@ -40,6 +44,7 @@ namespace foxRestaurant
 
             SetCustomerData(customerData);
             MakeOrder();
+            customersUI.Init(this);
 
             orderImage.transform.rotation = Quaternion.identity;
             uiStatsRoot.rotation = Quaternion.identity;
@@ -56,8 +61,8 @@ namespace foxRestaurant
 
         public void SetCustomerData(CustomerData customerData)
         {
-            hungerPoints = customerData.HungerPoints;
-            patience = customerData.Patience;
+            HungerPoints = customerData.HungerPoints;
+            Patience = customerData.Patience;
             spriteRenderer.sprite = customerData.Sprite;
         }
 
@@ -71,9 +76,17 @@ namespace foxRestaurant
         {
             if(item.ItemData == requiredItemData)
             {
-                hungerPoints -= item.Satiety;
+                HungerPoints -= item.Satiety;
+                OnHungerPointsChanged.Invoke(HungerPoints);
             }
+            else
+            {
+                Patience += item.Satiety;
+                OnPatienceChanged.Invoke(Patience);
+            }
+
             eatingSound.Play();
+            animator.SetTrigger("onEat");
         }
 
         public void MakeOrder()
@@ -84,8 +97,8 @@ namespace foxRestaurant
 
         public void Tick(float deltaTime)
         {
-            patience -= deltaTime;
-            patienceIndicator.text = patience.ToString("0");
+            Patience -= deltaTime;
+            OnPatienceChanged.Invoke(Patience);
         }
     }
 }
