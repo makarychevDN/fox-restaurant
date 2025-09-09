@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace foxRestaurant
@@ -18,9 +19,12 @@ namespace foxRestaurant
         [SerializeField] private ItemStateController itemStateController;
         [SerializeField] private ItemMouseInputController inputController;
         [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
+        [SerializeField] private ItemUI itemUI;
 
         private float fryingTimer;
         private Level level;
+
+        public UnityEvent<int> OnSatietyUpdated;
 
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
@@ -32,8 +36,9 @@ namespace foxRestaurant
             itemStateController.Init(level, this, fusionDisplayer);
             fusionDisplayer.Init(level, this);
             inputController.Init(itemStateController, this);
-
             SetItemData(itemData);
+            OnSatietyUpdated.Invoke(Satiety);
+            itemUI.Init(this);
         }
 
         public void SetItemData(ItemData itemData)
@@ -57,6 +62,7 @@ namespace foxRestaurant
             {
                 fryingTimer = 0;
                 Satiety++;
+                OnSatietyUpdated.Invoke(Satiety);
 
                 if (ItemData.FryingResult != null)
                     SetItemData(ItemData.FryingResult);
@@ -70,6 +76,7 @@ namespace foxRestaurant
 
             level.Ticker.TickOnSlice();
             Satiety++;
+            OnSatietyUpdated.Invoke(Satiety);
         }
     }
 }
