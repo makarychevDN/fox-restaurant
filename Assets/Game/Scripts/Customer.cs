@@ -70,6 +70,7 @@ namespace foxRestaurant
         {
             orderImage.sprite = itemData.Sprite;
             requiredItemData = itemData;
+            orderImage.rectTransform.sizeDelta = itemData.Sprite.GetSpriteSizeInPixels() * 0.5f;
         }
 
         public void TryToEat(Item item)
