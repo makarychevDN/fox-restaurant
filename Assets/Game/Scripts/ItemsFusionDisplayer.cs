@@ -42,15 +42,8 @@ namespace foxRestaurant
             equalIcon.transform.position = equalIconPosition;
             resultIcon.transform.position = resultIconPosition;
 
-            var resultSprite = level.RecipesManager.Fuse(item.ItemData, targetSlot.Item.ItemData).Sprite;
-
-            Vector3 itemSpriteSize = resultSprite.bounds.size;
-            float pixelsPerUnit = resultSprite.pixelsPerUnit;
-            itemSpriteSize.y *= pixelsPerUnit;
-            itemSpriteSize.x *= pixelsPerUnit;
-            itemSpriteSize.z = 1;
-            resultIcon.rectTransform.sizeDelta = itemSpriteSize;
-            resultIcon.sprite = resultSprite;
+            resultIcon.sprite = level.RecipesManager.Fuse(item.ItemData, targetSlot.Item.ItemData).Sprite;
+            resultIcon.rectTransform.sizeDelta = resultIcon.sprite.GetSpriteSizeInPixels();
         }
     }
 }

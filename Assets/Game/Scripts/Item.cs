@@ -20,6 +20,7 @@ namespace foxRestaurant
         [SerializeField] private ItemMouseInputController inputController;
         [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
         [SerializeField] private ItemUI itemUI;
+        [SerializeField] private ParticleSystem poofParticles;
 
         private float fryingTimer;
         private Level level;
@@ -45,13 +46,7 @@ namespace foxRestaurant
         {
             ItemData = itemData;
             Image.sprite = itemData.Sprite;
-
-            Vector3 itemSpriteSize = itemData.Sprite.bounds.size;
-            float pixelsPerUnit = itemData.Sprite.pixelsPerUnit;
-            itemSpriteSize.y *= pixelsPerUnit;
-            itemSpriteSize.x *= pixelsPerUnit;
-            itemSpriteSize.z = 1;
-            Image.rectTransform.sizeDelta = itemSpriteSize;
+            Image.rectTransform.sizeDelta = itemData.Sprite.GetSpriteSizeInPixels();
         }
 
         public void Fry(float time)
@@ -75,6 +70,7 @@ namespace foxRestaurant
                 SetItemData(ItemData.SlicingResult);
 
             level.Ticker.TickOnSlice();
+            fryingTimer = 0;
             Satiety++;
             OnSatietyUpdated.Invoke(Satiety);
         }

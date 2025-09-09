@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Security.Cryptography;
+using UnityEngine;
 
 namespace foxRestaurant
 {
@@ -27,6 +29,15 @@ namespace foxRestaurant
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+        public static UnityEngine.Vector2 GetSpriteSizeInPixels(this Sprite sprite)
+        {
+            UnityEngine.Vector2 itemSpriteSize = sprite.bounds.size;
+            float pixelsPerUnit = sprite.pixelsPerUnit;
+            itemSpriteSize.y *= pixelsPerUnit;
+            itemSpriteSize.x *= pixelsPerUnit;
+            return itemSpriteSize;
         }
     }
 }
