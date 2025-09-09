@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -21,6 +22,7 @@ namespace foxRestaurant
         [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
         [SerializeField] private ItemUI itemUI;
         [SerializeField] private ParticleSystem poofParticles;
+        [SerializeField] private List<ParticleSystem> fryingParticles;
         [SerializeField] private AudioSource friedSound;
 
         private float fryingTimer;
@@ -64,6 +66,7 @@ namespace foxRestaurant
                 {
                     SetItemData(ItemData.FryingResult);
                     friedSound.Play();
+                    fryingParticles.ForEach(p => p.Play());
                 }
             }
         }
