@@ -42,6 +42,13 @@ namespace foxRestaurant
             var oldItem = this.item;
             this.item = item;
 
+            if (oldItem != null && item != null)
+            {
+                this.item = null;
+                TryToFuseItems(oldItem, item);
+                return;
+            }
+
             if (item == null)
             {
                 OnItemHasBeenRemoved.Invoke(oldItem);
@@ -52,6 +59,18 @@ namespace foxRestaurant
             item.transform.localPosition = Vector3.zero;
             OnHasBeenOccupied.Invoke();
             OnItemHasBeenPlaced.Invoke(item);
+        }
+
+        private void TryToFuseItems(Item item1, Item item2)
+        {
+            Destroy(item1.gameObject);
+            Destroy(item2.gameObject);
+
+            level.ItemsSpawner.SpawnItem(
+                level, 
+                level.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
+                this
+            );
         }
 
         public void SetRequiredItemData(ItemData requiredItemData)
