@@ -24,6 +24,7 @@ namespace foxRestaurant
         [SerializeField] private ParticleSystem poofParticles;
         [SerializeField] private List<ParticleSystem> fryingParticles;
         [SerializeField] private AudioSource friedSound;
+        [SerializeField] private AudioSource appearSound;
 
         private float fryingTimer;
         private Level level;
@@ -43,6 +44,7 @@ namespace foxRestaurant
             SetItemData(itemData);
             OnSatietyUpdated.Invoke(Satiety);
             itemUI.Init(this);
+            appearSound.pitch = Random.Range(0.7f, 1.3f);
         }
 
         public void SetItemData(ItemData itemData)
@@ -65,6 +67,7 @@ namespace foxRestaurant
                 if (ItemData.FryingResult != null)
                 {
                     SetItemData(ItemData.FryingResult);
+                    friedSound.pitch = Random.Range(0.7f, 1.3f);
                     friedSound.Play();
                     fryingParticles.ForEach(p => p.Play());
                 }
