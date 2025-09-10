@@ -86,7 +86,10 @@ namespace foxRestaurant
             animator.SetTrigger("onEat");
 
             if (IsSatisfied)
-                DestroyCustomer();
+            {
+                Uninit();
+                Invoke(nameof(GoAway), 2f);
+            }
             else
                 MakeOrder();
         }
@@ -105,15 +108,15 @@ namespace foxRestaurant
 
         private bool IsSatisfied => HungerPoints <= 0;
 
-        public void DestroyCustomer()
+        public void Uninit()
         {
             level.Ticker.RemoveTickable(this);
 
             slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
             Destroy(slotToPlaceFood.gameObject);
-
-            Destroy(gameObject);
         }
+
+        public void GoAway() => Destroy(gameObject);
     }
 }
