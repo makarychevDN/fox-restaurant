@@ -22,6 +22,7 @@ namespace foxRestaurant
         [SerializeField] private Transform uiStatsRoot;
 
         [Header("ui links")]
+        [SerializeField] private GameObject orderBox;
         [SerializeField] private Image orderImage;
         [SerializeField] private CustomersUI customersUI;
 
@@ -111,10 +112,11 @@ namespace foxRestaurant
         public void Uninit()
         {
             level.Ticker.RemoveTickable(this);
-
             slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
             Destroy(slotToPlaceFood.gameObject);
+
+            orderBox.SetActive(false);
         }
 
         public void GoAway() => Destroy(gameObject);

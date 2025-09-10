@@ -57,12 +57,16 @@ MonoBehaviour:
   animator: {fileID: 8153659440555309590}
   slotPositionPoint: {fileID: 6952867010230834956}
   uiStatsRoot: {fileID: 94233778491039677}
+  orderBox: {fileID: 2983156621401428726}
   orderImage: {fileID: 545002675538599931}
   customersUI: {fileID: 6404370924393288913}
   OnPatienceChanged:
     m_PersistentCalls:
       m_Calls: []
   OnHungerPointsChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEaten:
     m_PersistentCalls:
       m_Calls: []
 --- !u!95 &8153659440555309590
