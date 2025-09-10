@@ -14,6 +14,7 @@ namespace foxRestaurant
         private Item item;
         private ItemData requiredItemData;
         private Level level;
+        private bool selectedForItemMovement;
 
         public UnityEvent OnHasBeenOccupied;
         public UnityEvent<Item> OnItemHasBeenPlaced;
@@ -60,6 +61,8 @@ namespace foxRestaurant
             OnItemHasBeenPlaced.Invoke(item);
         }
 
+        public void SetSelectedForItemMovement(bool value) => selectedForItemMovement = value;
+
         private void TryToFuseItems(Item item1, Item item2)
         {
             level.ItemsSpawner.SpawnItem(
@@ -96,8 +99,7 @@ namespace foxRestaurant
 
         public bool AvailableToPlaceItem(Item placingItem)
         {
-            //return Empty && (requiredItemData == null || placingItem.ItemData == requiredItemData);
-            return true;
+            return !selectedForItemMovement;
         }
 
         public void Unhover()

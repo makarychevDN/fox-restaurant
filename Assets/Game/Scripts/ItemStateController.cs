@@ -71,10 +71,12 @@ namespace foxRestaurant
         private async Task GoToSlot(ItemSlot slot)
         {
             movementState = MovementState.goingBackToLastSlot;
+            slot.SetSelectedForItemMovement(true);
 
             transform.DOScale(slot.transform.localScale, 0.1f);
             await transform.DOMove(slot.CenterForItem.position, 0.1f).AsyncWaitForCompletion();
 
+            slot.SetSelectedForItemMovement(false);
             item.Slot = slot;
             slot.SetItem(item);
             movementState = MovementState.placedInSlot;
