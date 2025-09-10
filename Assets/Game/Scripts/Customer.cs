@@ -28,16 +28,20 @@ namespace foxRestaurant
         private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
+        private Level level;
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
+        public UnityEvent OnEaten;
 
         public void Init(Level level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             this.getItemDataToOrderFunc = getItemDataToOrderFunc;
             level.Ticker.AddTickable(this);
+            this.level = level;
 
-            slotToPlaceFood = SpawnSlot(level);
+            slotToPlaceFood = level.CustomerlSlotSpawner.SpawnSlot();
+            slotToPlaceFood.transform.position = Camera.main.WorldToScreenPoint(slotPositionPoint.position);
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
 
@@ -47,15 +51,6 @@ namespace foxRestaurant
 
             orderImage.transform.rotation = Quaternion.identity;
             uiStatsRoot.rotation = Quaternion.identity;
-        }
-
-        private ItemSlot SpawnSlot(Level level)
-        {
-            var slot = Instantiate(itemSlotPrefab);
-            slot.Init(level);
-            slot.transform.parent = level.CustomerSlotsParent;
-            slot.transform.position = Camera.main.WorldToScreenPoint(slotPositionPoint.position);
-            return slot;
         }
 
         public void SetCustomerData(CustomerData customerData)
@@ -74,7 +69,9 @@ namespace foxRestaurant
 
         public void TryToEat(Item item)
         {
-            if(item.ItemData == requiredItemData)
+            OnEaten.Invoke();
+
+            if (item.ItemData == requiredItemData)
             {
                 HungerPoints -= item.Satiety;
                 OnHungerPointsChanged.Invoke(HungerPoints);
@@ -87,6 +84,11 @@ namespace foxRestaurant
 
             eatingSound.Play();
             animator.SetTrigger("onEat");
+
+            if (IsSatisfied)
+                DestroyCustomer();
+            else
+                MakeOrder();
         }
 
         public void MakeOrder()
@@ -99,6 +101,19 @@ namespace foxRestaurant
         {
             Patience -= deltaTime;
             OnPatienceChanged.Invoke(Patience);
+        }
+
+        private bool IsSatisfied => HungerPoints <= 0;
+
+        public void DestroyCustomer()
+        {
+            level.Ticker.RemoveTickable(this);
+
+            slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
+            slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
+            Destroy(slotToPlaceFood.gameObject);
+
+            Destroy(gameObject);
         }
     }
 }

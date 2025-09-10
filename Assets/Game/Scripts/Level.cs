@@ -11,14 +11,15 @@ namespace foxRestaurant
         [field: SerializeField] public CustomerSpawner CustomerSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CookerSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner AdditionalSlotSpawner { get; private set; }
+        [field: SerializeField] public SlotSpawner CustomerlSlotSpawner { get; private set; }
         [field: SerializeField] public CookPositionController CookPositionController { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }
-        [field: SerializeField] public Transform CustomerSlotsParent { get; private set; }
         [field: SerializeField] public Scenario Scenario { get; private set; }
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public RecipesManager RecipesManager { get; private set; }
         [Space]
         [SerializeField] private int cookerSlotsCount;
+        [SerializeField] private int additionalSlotsCount;
 
         private void Awake()
         {
@@ -27,6 +28,7 @@ namespace foxRestaurant
             CustomerSpawner.Init(this);
             CookerSlotSpawner.Init(this);
             AdditionalSlotSpawner.Init(this);
+            CustomerlSlotSpawner.Init(this);
             DecksManager.Init();
             Scenario.Init(CustomerSpawner, this);
 
@@ -36,7 +38,7 @@ namespace foxRestaurant
                 cookerSlot.OnItemHovered.AddListener(() => CookPositionController.HoverSlot(cookerSlot));
             }
 
-            for (int i = 0; i < cookerSlotsCount; i++)
+            for (int i = 0; i < additionalSlotsCount; i++)
             {
                 var additionalSlot = AdditionalSlotSpawner.SpawnSlot();
             }

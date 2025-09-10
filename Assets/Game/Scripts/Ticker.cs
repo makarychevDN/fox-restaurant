@@ -9,10 +9,8 @@ namespace foxRestaurant
         private List<ITickable> tickables = new List<ITickable>();
         private TickingMode tickingMode = TickingMode.regular;
 
-        public void AddTickable(ITickable tickable)
-        {
-            tickables.Add(tickable);
-        }
+        public void AddTickable(ITickable tickable) => tickables.Add(tickable);
+        public void RemoveTickable(ITickable tickable) => tickables.Remove(tickable);
 
         public void TickAllTickables(float tick)
         {

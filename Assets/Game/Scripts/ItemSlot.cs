@@ -105,6 +105,11 @@ namespace foxRestaurant
             hoveredItemRenderer.enabled = false;
             boxOnHoverRenderer.SetActive(false);
         }
+
+        private void OnDestroy()
+        {
+            level.SlotsManager.RemoveSlot(this);
+        }
     }
 
     public enum SlotType
