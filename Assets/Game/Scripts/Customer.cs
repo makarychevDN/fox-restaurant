@@ -33,7 +33,8 @@ namespace foxRestaurant
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
-        public UnityEvent OnEaten;
+        public UnityEvent OnAte;
+        public UnityEvent OnLeft;
 
         public void Init(Level level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
@@ -70,7 +71,7 @@ namespace foxRestaurant
 
         public void TryToEat(Item item)
         {
-            OnEaten.Invoke();
+            OnAte.Invoke();
 
             if (item.ItemData == requiredItemData)
             {
@@ -89,7 +90,7 @@ namespace foxRestaurant
             if (IsSatisfied)
             {
                 Uninit();
-                Invoke(nameof(GoAway), 2f);
+                Invoke(nameof(Leave), 2f);
             }
             else
                 MakeOrder();
@@ -119,6 +120,10 @@ namespace foxRestaurant
             orderBox.SetActive(false);
         }
 
-        public void GoAway() => Destroy(gameObject);
+        public void Leave()
+        {
+            OnLeft.Invoke();
+            Destroy(gameObject);
+        }
     }
 }

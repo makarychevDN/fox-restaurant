@@ -10,7 +10,7 @@ namespace foxRestaurant
     public class CustomerSpawner : MonoBehaviour
     {
         [SerializeField] private Customer customerPrefab;
-        [SerializeField] private List<Transform> customerParents;
+        [SerializeField] private List<SeatPlace> seatPlaces;
         private Level level;
 
         public UnityEvent OnCustomerSpawningRejected;
@@ -20,10 +20,11 @@ namespace foxRestaurant
             this.level = level;
         }
 
-        public Customer SpawnCustomer(Transform parentToPlaceCustomer, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
+        public Customer SpawnCustomer(SeatPlace seatPlace, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             var customer = Instantiate(customerPrefab);
-            customer.transform.parent = parentToPlaceCustomer;
+            seatPlace.SetCustomer(customer);
+            customer.transform.parent = seatPlace.transform;
             customer.transform.localPosition = Vector3.zero;
             customer.transform.localScale = Vector3.one;
             customer.transform.localRotation = Quaternion.identity;
@@ -33,14 +34,14 @@ namespace foxRestaurant
 
         public Customer TryToSpawnCustomer(CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
-            var parentToSpawnCustomer = 
-                customerParents.Where(customerParent => customerParent.childCount == 0).ToList().GetRandomElement();
+            var seatPlaceToSpawn = 
+                seatPlaces.Where(seatPlace => !seatPlace.IsTaken).ToList().GetRandomElement();
 
-            if (parentToSpawnCustomer == null)
+            if (seatPlaceToSpawn == null)
                 return null;
 
             var customer = SpawnCustomer(
-                parentToSpawnCustomer, 
+                seatPlaceToSpawn, 
                 customerData,
                 getItemDataToOrderFunc
             );
