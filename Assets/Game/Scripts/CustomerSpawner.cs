@@ -11,6 +11,7 @@ namespace foxRestaurant
     {
         [SerializeField] private Customer customerPrefab;
         [SerializeField] private List<SeatPlace> seatPlaces;
+        [SerializeField] private AudioSource customerCameSound;
         private Level level;
 
         public UnityEvent OnCustomerSpawningRejected;
@@ -22,6 +23,8 @@ namespace foxRestaurant
 
         public Customer SpawnCustomer(SeatPlace seatPlace, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
+            customerCameSound.Play();
+
             var customer = Instantiate(customerPrefab);
             seatPlace.SetCustomer(customer);
             customer.transform.parent = seatPlace.transform;

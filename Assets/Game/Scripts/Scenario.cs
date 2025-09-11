@@ -5,15 +5,21 @@ namespace foxRestaurant
     public class Scenario : MonoBehaviour
     {
         private CustomerSpawner customerSpawner;
+        Level level;
 
         public void Init(CustomerSpawner customerSpawner, Level level)
         {
             this.customerSpawner = customerSpawner;
+            this.level = level;
 
-            for(int i = 0; i < 6; i++)
-            {
-                customerSpawner.TryToSpawnCustomer(level.DecksManager.GetRandomCustomer(), () => level.DecksManager.GetRandomDish());
-            }
+            SpawnCustomer();
+        }
+
+        [ContextMenu("Spawn Customer")]
+        public void SpawnCustomer()
+        {
+            customerSpawner.TryToSpawnCustomer(level.DecksManager.GetRandomCustomer(), () => level.DecksManager.GetRandomDish());
+            Invoke(nameof(SpawnCustomer), 5f);
         }
     }
 }
