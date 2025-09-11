@@ -118,17 +118,6 @@ namespace foxRestaurant
             }
         }
 
-        private void HandlePatienceChanged(float patience)
-        {
-            if (Patience <= 0)
-            {
-                timeIsUpSound.Play();
-                animator.SetTrigger("onEat");
-                Uninit();
-                Invoke(nameof(LeaveUnsatisfied), 2f);
-            }
-        }
-
         private bool IsSatisfied => HungerPoints <= 0;
 
         public void Uninit()
