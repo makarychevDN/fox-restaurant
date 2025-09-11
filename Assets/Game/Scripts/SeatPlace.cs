@@ -7,6 +7,7 @@ namespace foxRestaurant
     {
         [SerializeField] private ParticleSystem particles;
         [SerializeField] private AudioSource payMoneySound;
+        [SerializeField] private AudioSource bonkSound;
         private Customer customer;
 
         public UnityEvent OnCustomerTookSeat;
@@ -29,10 +30,14 @@ namespace foxRestaurant
             this.customer = customer;
         }
 
-        private void CustomerLeftHandler()
+        private void CustomerLeftHandler(bool customerIsSatisfied)
         {
             particles.Play();
-            payMoneySound.Play();
+
+            if(customerIsSatisfied)
+                payMoneySound.Play();
+            else
+                bonkSound.Play();
             SetCustomer(null);
         }
     }

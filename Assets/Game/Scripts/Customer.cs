@@ -34,8 +34,8 @@ namespace foxRestaurant
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
+        public UnityEvent<bool> OnLeft;
         public UnityEvent OnAte;
-        public UnityEvent OnLeft;
 
         public void Init(Level level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
@@ -92,7 +92,7 @@ namespace foxRestaurant
             if (IsSatisfied)
             {
                 Uninit();
-                Invoke(nameof(Leave), 2f);
+                Invoke(nameof(LeaveSatisfied), 2f);
             }
             else
                 MakeOrder();
@@ -114,7 +114,18 @@ namespace foxRestaurant
                 timeIsUpSound.Play();
                 animator.SetTrigger("onEat");
                 Uninit();
-                Invoke(nameof(Leave), 2f);
+                Invoke(nameof(LeaveUnsatisfied), 2f);
+            }
+        }
+
+        private void HandlePatienceChanged(float patience)
+        {
+            if (Patience <= 0)
+            {
+                timeIsUpSound.Play();
+                animator.SetTrigger("onEat");
+                Uninit();
+                Invoke(nameof(LeaveUnsatisfied), 2f);
             }
         }
 
@@ -130,9 +141,15 @@ namespace foxRestaurant
             orderBox.SetActive(false);
         }
 
-        public void Leave()
+        public void LeaveSatisfied()
         {
-            OnLeft.Invoke();
+            OnLeft.Invoke(true);
+            Destroy(gameObject);
+        }
+
+        public void LeaveUnsatisfied()
+        {
+            OnLeft.Invoke(false);
             Destroy(gameObject);
         }
     }
