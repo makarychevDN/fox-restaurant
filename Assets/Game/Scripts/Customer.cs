@@ -17,6 +17,7 @@ namespace foxRestaurant
         [Header("links")]
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private AudioSource eatingSound;
+        [SerializeField] private AudioSource timeIsUpSound;
         [SerializeField] private Animator animator;
         [SerializeField] private Transform slotPositionPoint;
         [SerializeField] private Transform uiStatsRoot;
@@ -107,6 +108,14 @@ namespace foxRestaurant
         {
             Patience -= deltaTime;
             OnPatienceChanged.Invoke(Patience);
+
+            if(Patience <= 0)
+            {
+                timeIsUpSound.Play();
+                animator.SetTrigger("onEat");
+                Uninit();
+                Invoke(nameof(Leave), 2f);
+            }
         }
 
         private bool IsSatisfied => HungerPoints <= 0;
