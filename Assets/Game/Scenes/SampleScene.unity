@@ -2437,12 +2437,11 @@ MonoBehaviour:
   <CustomerlSlotSpawner>k__BackingField: {fileID: 2068816716}
   <CookPositionController>k__BackingField: {fileID: 557930255}
   <Ticker>k__BackingField: {fileID: 1028591363}
-  <CustomerSlotsParent>k__BackingField: {fileID: 975836795}
   <Scenario>k__BackingField: {fileID: 1038514694}
   <DecksManager>k__BackingField: {fileID: 808956419}
   <RecipesManager>k__BackingField: {fileID: 1825542314}
   cookerSlotsCount: 4
-  additionalSlotsCount: 0
+  additionalSlotsCount: 3
 --- !u!82 &1531918937
 AudioSource:
   m_ObjectHideFlags: 0
