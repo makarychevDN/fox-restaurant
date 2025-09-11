@@ -76,6 +76,7 @@ namespace foxRestaurant
             if (item.ItemData == requiredItemData)
             {
                 HungerPoints -= item.Satiety;
+                HungerPoints = Math.Clamp(HungerPoints, 0, 100);
                 OnHungerPointsChanged.Invoke(HungerPoints);
             }
             else
