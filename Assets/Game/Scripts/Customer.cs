@@ -107,6 +107,7 @@ namespace foxRestaurant
         public void Tick(float deltaTime)
         {
             Patience -= deltaTime;
+            Patience = Math.Clamp(Patience, 0, 1000);
             OnPatienceChanged.Invoke(Patience);
 
             if(Patience <= 0)
