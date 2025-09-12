@@ -39,5 +39,18 @@ namespace foxRestaurant
             itemSpriteSize.x *= pixelsPerUnit;
             return itemSpriteSize;
         }
+
+        public static (int x, int y) IndexOf<T>(this T[,] array, T value)
+        {
+            int rows = array.GetLength(0);
+            int cols = array.GetLength(1);
+
+            for (int i = 0; i < rows; i++)
+                for (int j = 0; j < cols; j++)
+                    if (EqualityComparer<T>.Default.Equals(array[i, j], value))
+                        return (i, j);
+
+            return (-1, -1);
+        }
     }
 }
