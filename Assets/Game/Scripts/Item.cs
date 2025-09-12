@@ -64,9 +64,10 @@ namespace foxRestaurant
                 Satiety++;
                 OnSatietyUpdated.Invoke(Satiety);
 
-                if (ItemData.FryingResult != null)
+                ItemData fryingResult = level.ItemTransitionsManager.GetFryingResult(ItemData);
+                if (fryingResult != null)
                 {
-                    SetItemData(ItemData.FryingResult);
+                    SetItemData(fryingResult);
                     friedSound.pitch = Random.Range(0.7f, 1.3f);
                     friedSound.Play();
                     fryingParticles.ForEach(p => p.Play());
@@ -76,8 +77,9 @@ namespace foxRestaurant
 
         public void Slice()
         {
-            if (ItemData.SlicingResult != null)
-                SetItemData(ItemData.SlicingResult);
+            ItemData slicingResult = level.ItemTransitionsManager.GetFryingResult(ItemData);
+            if (slicingResult != null)
+                SetItemData(slicingResult);
 
             level.Ticker.TickOnSlice();
             fryingTimer = 0;
