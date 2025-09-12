@@ -5,12 +5,17 @@ namespace foxRestaurant
 {
     public class RecipesManager : MonoBehaviour
     {
-        [SerializeField] private RecipesList recipesList;
         [SerializeField] private ItemData coal;
+        private Level level;
+
+        public void Init(Level level)
+        {
+            this.level = level;
+        }
 
         public ItemData Fuse(ItemData itemData1, ItemData itemData2)
         {
-            var matchesResipe = recipesList.Recipes.FirstOrDefault(r => r.Matches(itemData1, itemData2));
+            var matchesResipe = level.DataBase.Recipes.FirstOrDefault(r => r.Matches(itemData1, itemData2));
             var fusionResult = matchesResipe == null ? coal : matchesResipe.Result;
             return fusionResult;
         }
