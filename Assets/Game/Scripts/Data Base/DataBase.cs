@@ -29,20 +29,6 @@ namespace foxRestaurant
             FindRecepies();
         }
 
-        private void DisplayData()
-        {
-            for(int i = 0; i < data.GetLength(0); i++)
-            {
-                StringBuilder sb = new StringBuilder();
-                for (int j = 0; j < data.GetLength(1); j++)
-                {
-                    sb.Append(data[i, j].ToString()).Append("|");
-                }
-
-                Debug.Log(sb.ToString());
-            }
-        }
-
         private void FillItemsDictionary(List<ItemData> allPossibleItemData)
         {
             foreach (ItemData itemData in allPossibleItemData)
