@@ -2751,6 +2751,7 @@ MonoBehaviour:
   <ParentForItemsMovement>k__BackingField: {fileID: 175698712}
   <RecipesManager>k__BackingField: {fileID: 1825542314}
   <ItemTransitionsManager>k__BackingField: {fileID: 649459102}
+  <levelData>k__BackingField: {fileID: 11400000, guid: 5bc0f2ec985f9bc4c93f380bc4b2c71e, type: 2}
 --- !u!82 &1531918937
 AudioSource:
   m_ObjectHideFlags: 0
