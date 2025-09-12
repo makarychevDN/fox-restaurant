@@ -1382,6 +1382,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &649459101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649459103}
+  - component: {fileID: 649459102}
+  m_Layer: 0
+  m_Name: item transitions manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &649459102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649459101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1c4ed277fd51741a29bdb09596571c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &649459103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649459101}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1020387309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &698098419
 GameObject:
   m_ObjectHideFlags: 0
@@ -2263,6 +2307,7 @@ Transform:
   - {fileID: 1038514695}
   - {fileID: 808956418}
   - {fileID: 1825542313}
+  - {fileID: 649459103}
   m_Father: {fileID: 1531918935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028591361
@@ -2690,21 +2735,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29337348385e13548998331fb00524cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ItemsSpawner>k__BackingField: {fileID: 542761378}
+  cookerSlotsCount: 4
+  additionalSlotsCount: 3
   <PlayerInputController>k__BackingField: {fileID: 445895215}
   <SlotsManager>k__BackingField: {fileID: 299938903}
-  <ParentForItemsMovement>k__BackingField: {fileID: 175698712}
+  <CookPositionController>k__BackingField: {fileID: 557930255}
+  <DecksManager>k__BackingField: {fileID: 808956419}
+  <Ticker>k__BackingField: {fileID: 1028591363}
+  <Scenario>k__BackingField: {fileID: 1038514694}
+  <ItemsSpawner>k__BackingField: {fileID: 542761378}
   <CustomerSpawner>k__BackingField: {fileID: 2059132092}
   <CookerSlotSpawner>k__BackingField: {fileID: 539983011}
   <AdditionalSlotSpawner>k__BackingField: {fileID: 1132049939}
   <CustomerlSlotSpawner>k__BackingField: {fileID: 2068816716}
-  <CookPositionController>k__BackingField: {fileID: 557930255}
-  <Ticker>k__BackingField: {fileID: 1028591363}
-  <Scenario>k__BackingField: {fileID: 1038514694}
-  <DecksManager>k__BackingField: {fileID: 808956419}
+  <ParentForItemsMovement>k__BackingField: {fileID: 175698712}
   <RecipesManager>k__BackingField: {fileID: 1825542314}
-  cookerSlotsCount: 4
-  additionalSlotsCount: 3
+  <ItemTransitionsManager>k__BackingField: {fileID: 649459102}
 --- !u!82 &1531918937
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3296,7 +3342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e12193cb113e74c84d69a66b132a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipesList: {fileID: 11400000, guid: 512062e25c64e7d4597a028baed438bd, type: 2}
   coal: {fileID: 11400000, guid: d9e2a447bbf960144951ecb5b56cb596, type: 2}
 --- !u!1001 &1861000872
 PrefabInstance:
