@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -30,9 +32,16 @@ namespace foxRestaurant
         [field: SerializeField] public RecipesManager RecipesManager { get; private set; }
         //todo transitions manager like recipes manager
         public DataBase DataBase { get; private set; }
+        public LevelData levelData { get; private set; }
 
-        private void Awake()
+        private List<ItemData> allPossibleItemData;
+
+
+        public void Init(LevelData levelData)
         {
+            allPossibleItemData = levelData.AllPossibleItemData.DataList;
+            UpdateDataBase(levelData.CsvFile);
+
             PlayerInputController.Init(this);
             ItemsSpawner.Init(this);
             CustomerSpawner.Init(this);
@@ -52,6 +61,16 @@ namespace foxRestaurant
             {
                 var additionalSlot = AdditionalSlotSpawner.SpawnSlot();
             }
+        }
+
+        public void UpdateDataBase(TextAsset csvFile)
+        {
+            DataBase = new DataBase(csvFile.ToStringsArray(), allPossibleItemData);
+        }
+
+        private void Awake()
+        {
+            Init(levelData);
         }
     }
 }
