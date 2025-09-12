@@ -30,9 +30,9 @@ namespace foxRestaurant
 
         [field: Header("Data Base")]
         [field: SerializeField] public RecipesManager RecipesManager { get; private set; }
-        //todo transitions manager like recipes manager
+        [field: SerializeField] public ItemTransitionsManager ItemTransitionsManager { get; private set; }
+        [field: SerializeField] public LevelData levelData { get; private set; }
         public DataBase DataBase { get; private set; }
-        public LevelData levelData { get; private set; }
 
         private List<ItemData> allPossibleItemData;
 
@@ -50,6 +50,9 @@ namespace foxRestaurant
             CustomerlSlotSpawner.Init(this);
             DecksManager.Init();
             Scenario.Init(CustomerSpawner, this);
+
+            RecipesManager.Init(this);
+            ItemTransitionsManager.Init(this);
 
             for (int i = 0; i < cookerSlotsCount; i++)
             {
