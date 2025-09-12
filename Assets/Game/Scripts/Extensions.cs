@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Numerics;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -51,6 +50,36 @@ namespace foxRestaurant
                         return (i, j);
 
             return (-1, -1);
+        }
+
+        public static string[,] ToStringsArray(this TextAsset csvFile, char delimiter = ',')
+        {
+            if (csvFile == null || string.IsNullOrWhiteSpace(csvFile.text))
+                return new string[0, 0];
+
+            string[] lines = csvFile.text.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+            int rows = lines.Length;
+            int cols = 0;
+
+            foreach (string line in lines)
+            {
+                int count = line.Split(delimiter).Length;
+                if (count > cols) cols = count;
+            }
+
+            string[,] result = new string[rows, cols];
+
+            for (int r = 0; r < rows; r++)
+            {
+                string[] values = lines[r].Split(delimiter);
+                for (int c = 0; c < values.Length; c++)
+                {
+                    result[r, c] = values[c].Trim();
+                }
+            }
+
+            return result;
         }
     }
 }
