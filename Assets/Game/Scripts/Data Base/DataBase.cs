@@ -14,13 +14,17 @@ namespace foxRestaurant
         {
             this.data = data;
 
+            FillItemsDictionary(allPossibleItemData);
+            FindIngredientTransitions();
+            FindRecepies();
+        }
+
+        private void FillItemsDictionary(List<ItemData> allPossibleItemData)
+        {
             foreach (ItemData itemData in allPossibleItemData)
             {
                 items.Add(itemData.name, itemData);
             }
-
-            FindIngredientTransitions();
-            FindRecepies();
         }
 
         private void FindIngredientTransitions()
