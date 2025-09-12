@@ -77,7 +77,8 @@ namespace foxRestaurant
 
         public void Slice()
         {
-            ItemData slicingResult = level.ItemTransitionsManager.GetFryingResult(ItemData);
+            ItemData slicingResult = level.ItemTransitionsManager.GetSlicingResult(ItemData);
+            print(slicingResult);
             if (slicingResult != null)
                 SetItemData(slicingResult);
 
