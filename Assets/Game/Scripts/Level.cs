@@ -4,22 +4,32 @@ namespace foxRestaurant
 {
     public class Level : MonoBehaviour
     {
-        [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
+        [field: Header("Stats")]
+        [SerializeField] private int cookerSlotsCount;
+        [SerializeField] private int additionalSlotsCount;
+
+        [field: Header("Controllers And Managers")]
         [field: SerializeField] public PlayerInputController PlayerInputController { get; private set; }
         [field: SerializeField] public SlotsManager SlotsManager { get; private set; }
-        [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
+        [field: SerializeField] public CookPositionController CookPositionController { get; private set; }
+        [field: SerializeField] public DecksManager DecksManager { get; private set; }
+        [field: SerializeField] public Ticker Ticker { get; private set; }
+        [field: SerializeField] public Scenario Scenario { get; private set; }
+
+        [field: Header("Spawners")]
+        [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
         [field: SerializeField] public CustomerSpawner CustomerSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CookerSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner AdditionalSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CustomerlSlotSpawner { get; private set; }
-        [field: SerializeField] public CookPositionController CookPositionController { get; private set; }
-        [field: SerializeField] public Ticker Ticker { get; private set; }
-        [field: SerializeField] public Scenario Scenario { get; private set; }
-        [field: SerializeField] public DecksManager DecksManager { get; private set; }
+
+        [field: Header("Parent Objects")]
+        [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
+
+        [field: Header("Data Base")]
         [field: SerializeField] public RecipesManager RecipesManager { get; private set; }
-        [Space]
-        [SerializeField] private int cookerSlotsCount;
-        [SerializeField] private int additionalSlotsCount;
+        //todo transitions manager like recipes manager
+        public DataBase DataBase { get; private set; }
 
         private void Awake()
         {
