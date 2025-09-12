@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
 
 namespace foxRestaurant
 {
@@ -17,10 +19,28 @@ namespace foxRestaurant
         public DataBase(string[,] data, List<ItemData> allPossibleItemData)
         {
             this.data = data;
+            items = new();
+            slicingResults = new();
+            fryingResults = new();
+            recipes = new();
 
             FillItemsDictionary(allPossibleItemData);
             FindIngredientTransitions();
             FindRecepies();
+        }
+
+        private void DisplayData()
+        {
+            for(int i = 0; i < data.GetLength(0); i++)
+            {
+                StringBuilder sb = new StringBuilder();
+                for (int j = 0; j < data.GetLength(1); j++)
+                {
+                    sb.Append(data[i, j].ToString()).Append("|");
+                }
+
+                Debug.Log(sb.ToString());
+            }
         }
 
         private void FillItemsDictionary(List<ItemData> allPossibleItemData)
@@ -34,9 +54,9 @@ namespace foxRestaurant
         private void FindIngredientTransitions()
         {
             (int, int) startIndexes = data.IndexOf("ingredient transitions (start)");
-            (int, int) endIndexes = data.IndexOf("ingredient transitions (start)");
+            (int, int) endIndexes = data.IndexOf("ingredient transitions (end)");
 
-            for(int i = startIndexes.Item1 + 1; i < endIndexes.Item1 - 1; i++)
+            for (int i = startIndexes.Item1 + 1; i < endIndexes.Item1 - 1; i++)
             {
                 if (data[i, 0] != "" && data[i + 1, 0] != "")
                     slicingResults.Add(items[data[i, 0]], items[data[i + 1, 0]]);
@@ -55,7 +75,7 @@ namespace foxRestaurant
         {
             (int, int) startIndexes = data.IndexOf("recipes");
 
-            for(int i = startIndexes.Item1 + 1; i < data.Length; i++)
+            for(int i = startIndexes.Item1 + 1; i < data.GetLength(0); i++)
             {
                 recipes.Add(new Recipe
                 (
