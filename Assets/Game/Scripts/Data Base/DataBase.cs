@@ -10,6 +10,10 @@ namespace foxRestaurant
         private Dictionary<ItemData, ItemData> fryingResults;
         private List<Recipe> recipes;
 
+        public List<Recipe> Recipes => recipes;
+        public Dictionary<ItemData, ItemData> SlicingResults => slicingResults;
+        public Dictionary<ItemData, ItemData> FryingResults => fryingResults;
+
         public DataBase(string[,] data, List<ItemData> allPossibleItemData)
         {
             this.data = data;
