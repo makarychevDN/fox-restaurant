@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnIngredientButton: {fileID: 267925792}
+  recipeBook: {fileID: 983709741}
 --- !u!1 &466776006
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2014,7 @@ GameObject:
   - component: {fileID: 983709740}
   - component: {fileID: 983709739}
   - component: {fileID: 983709738}
+  - component: {fileID: 983709741}
   m_Layer: 5
   m_Name: recipe book
   m_TagString: Untagged
@@ -2121,6 +2123,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983709736}
   m_CullTransparentMesh: 1
+--- !u!114 &983709741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983709736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423640a91fcd39a4f99c2f7a726fc95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combinationsBlackBoard: {fileID: 0}
+  fringBlackBoard: {fileID: 0}
 --- !u!1 &1008957679
 GameObject:
   m_ObjectHideFlags: 0
@@ -2689,7 +2705,6 @@ MonoBehaviour:
   <RecipesManager>k__BackingField: {fileID: 1825542314}
   cookerSlotsCount: 4
   additionalSlotsCount: 3
-  recipeBook: {fileID: 983709738}
 --- !u!82 &1531918937
 AudioSource:
   m_ObjectHideFlags: 0
