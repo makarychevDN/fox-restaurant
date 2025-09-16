@@ -42,6 +42,7 @@ namespace foxRestaurant
         {
             var recipePanel = Instantiate(recipePanelPrefab);
             recipePanel.transform.parent = parentForPanels;
+            recipePanel.transform.localScale = Vector3.one;
 
             recipePanels.Add(recipePanel);
 
