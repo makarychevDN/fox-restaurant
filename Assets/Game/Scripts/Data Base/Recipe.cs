@@ -7,6 +7,8 @@ namespace foxRestaurant
         private ItemData result;
 
         public ItemData Result => result;
+        public ItemData IngredientA => ingredientA;
+        public ItemData IngredientB => ingredientB;
 
         public Recipe(ItemData result, ItemData ingredientA, ItemData ingredientB)
         {

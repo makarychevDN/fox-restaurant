@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace foxRestaurant
 {
@@ -25,6 +26,9 @@ namespace foxRestaurant
         [field: SerializeField] public SlotSpawner AdditionalSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CustomerlSlotSpawner { get; private set; }
 
+        [field: Header("UI")]
+        [field: SerializeField] public RecipeBlackBoard RecipeBlackBoard { get; private set; }
+
         [field: Header("Parent Objects")]
         [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
 
@@ -36,10 +40,13 @@ namespace foxRestaurant
 
         private List<ItemData> allPossibleItemData;
 
+        public UnityEvent<DataBase> OnDataBaseUpdated;
+
 
         public void Init(LevelData levelData)
         {
             allPossibleItemData = levelData.AllPossibleItemData.DataList;
+            RecipeBlackBoard.Init(this);
             UpdateDataBase(levelData.CsvFile);
 
             PlayerInputController.Init(this);
@@ -69,6 +76,7 @@ namespace foxRestaurant
         public void UpdateDataBase(TextAsset csvFile)
         {
             DataBase = new DataBase(csvFile.ToStringsArray(), allPossibleItemData);
+            OnDataBaseUpdated.Invoke(DataBase);
         }
 
         private void Awake()

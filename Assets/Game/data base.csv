@@ -17,15 +17,15 @@ mashed potato slices (raw),mashed potato (cooked),
 ingredient transitions (end),,
 ,,
 recipes,,
-beer plate,meat slices (cooked),potato slices (cooked)
+fish kebab,fish (cooked),potato (cooked)
+sandwich with sprats,fish (cooked),bread
 burger,meat (cooked),bread
+steak and potatoes,potato (cooked),meat (cooked)
 fish and chips,fish slices (cooked),potato slices (cooked)
 fish burrito,fish slices (cooked),flatbread (cooked)
-fish kebab,fish (cooked),potato (cooked)
-mashed potato with a kotlet,mashed potato (cooked),minced fish (cooked)
-sandwich with sprats,fish (cooked),bread
-shepherd's pie,mashed potato (cooked),minced meat (cooked)
-spaghetti with meatballs,minced meat (cooked),spaghetti (cooked)
-spaghetti with minced fish,minced fish (cooked),spaghetti (cooked)
-steak and potatoes,potato (cooked),meat (cooked)
 taco,flatbread (cooked),fish slices (cooked)
+beer plate,meat slices (cooked),potato slices (cooked)
+mashed potato with a kotlet,mashed potato (cooked),minced fish (cooked)
+spaghetti with minced fish,minced fish (cooked),spaghetti (cooked)
+spaghetti with meatballs,minced meat (cooked),spaghetti (cooked)
+shepherd's pie,mashed potato (cooked),minced meat (cooked)
