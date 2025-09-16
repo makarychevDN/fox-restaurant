@@ -8,11 +8,11 @@ namespace foxRestaurant
 
         public ItemData Result => result;
 
-        public Recipe(ItemData ingredientA, ItemData ingredientB, ItemData result)
+        public Recipe(ItemData result, ItemData ingredientA, ItemData ingredientB)
         {
+            this.result = result;
             this.ingredientA = ingredientA;
             this.ingredientB = ingredientB;
-            this.result = result;
         }
 
         public bool Matches(ItemData a, ItemData b)

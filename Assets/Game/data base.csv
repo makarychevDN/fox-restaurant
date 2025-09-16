@@ -5,7 +5,7 @@ minced meat (raw),minced meat (cooked),
 ,,
 dough,bread,
 flatbread (raw),flatbread (cooked),
-spagetti (raw),spagetti (cooked),
+spaghetti (raw),spaghetti (cooked),
 ,,
 fish (raw),fish (cooked),
 fish slices (raw),fish slices (cooked),
@@ -17,4 +17,15 @@ mashed potato slices (raw),mashed potato (cooked),
 ingredient transitions (end),,
 ,,
 recipes,,
-meat (cooked),bread,burger
+beer plate,meat slices (cooked),potato slices (cooked)
+burger,meat (cooked),bread
+fish and chips,fish slices (cooked),potato slices (cooked)
+fish burrito,fish slices (cooked),flatbread (cooked)
+fish kebab,fish (cooked),potato (cooked)
+mashed potato with a kotlet,mashed potato (cooked),minced fish (cooked)
+sandwich with sprats,fish (cooked),bread
+shepherd's pie,mashed potato (cooked),minced meat (cooked)
+spaghetti with meatballs,minced meat (cooked),spaghetti (cooked)
+spaghetti with minced fish,minced fish (cooked),spaghetti (cooked)
+steak and potatoes,potato (cooked),meat (cooked)
+taco,flatbread (cooked),fish slices (cooked)

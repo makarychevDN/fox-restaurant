@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ef442539802fb94380527bd3b844d05, type: 3}
-  m_Name: spagetti (raw)
+  m_Name: taco
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 30715227f7dd1074bb598f21254a54c0, type: 3}
-  <FryingResult>k__BackingField: {fileID: 11400000, guid: a8b2daad727be534cbd5ed1809ab5206, type: 2}
-  <SlicingResult>k__BackingField: {fileID: 0}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 2aaecd9065771294eae4cd63db2ee19a, type: 3}
+  <AdditionalSatiety>k__BackingField: 0
