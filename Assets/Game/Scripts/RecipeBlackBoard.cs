@@ -7,7 +7,11 @@ namespace foxRestaurant
     {
         [SerializeField] private Transform parentForPanels;
         [SerializeField] private RecipePanel recipePanelPrefab;
+        [SerializeField] private Animator animator;
         private List<RecipePanel> recipePanels = new List<RecipePanel>();
+
+        public void Appear() => animator.SetBool("Appeared", true);
+        public void Disappear() => animator.SetBool("Appeared", false);
 
         public void Init(Level level)
         {

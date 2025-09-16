@@ -5,25 +5,24 @@ namespace foxRestaurant
 {
     public class RecipeBook : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
-        [SerializeField] private GameObject combinationsBlackBoard;
+        [SerializeField] private RecipeBlackBoard recipeBlackBoard;
         [SerializeField] private GameObject fringBlackBoard;
         private Level level;
 
         public void Init(Level level)
         {
             this.level = level;
-            //level.RecipesManager.RecipeList.Recipes.ForEach(recipe =>)
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            combinationsBlackBoard.SetActive(true);
+            recipeBlackBoard.Appear();
             fringBlackBoard.SetActive(true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            combinationsBlackBoard.SetActive(false);
+            recipeBlackBoard.Disappear();
             fringBlackBoard.SetActive(false);
         }
     }
