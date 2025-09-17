@@ -6,7 +6,7 @@ namespace foxRestaurant
     public class RecipeBook : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] private RecipeBlackBoard recipeBlackBoard;
-        [SerializeField] private GameObject fringBlackBoard;
+        [SerializeField] private TransitionsBlackBoard transitionsBlackBoard;
         private Level level;
 
         public void Init(Level level)
@@ -17,13 +17,13 @@ namespace foxRestaurant
         public void OnPointerEnter(PointerEventData eventData)
         {
             recipeBlackBoard.Appear();
-            fringBlackBoard.SetActive(true);
+            transitionsBlackBoard.Appear();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             recipeBlackBoard.Disappear();
-            fringBlackBoard.SetActive(false);
+            transitionsBlackBoard.Disappear();
         }
     }
 }
