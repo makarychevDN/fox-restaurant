@@ -7,7 +7,7 @@ namespace foxRestaurant
     /// ”ниверсальный компонент дл€ повтор€ющихс€ UI элементов (панелей).
     /// </summary>
     public abstract class UIRepeater<TPanel, TData> : MonoBehaviour
-        where TPanel : MonoBehaviour
+        where TPanel : Component
     {
         [SerializeField] private Transform parentForPanels;
         [SerializeField] private TPanel panelPrefab;
