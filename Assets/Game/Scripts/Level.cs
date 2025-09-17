@@ -28,6 +28,7 @@ namespace foxRestaurant
 
         [field: Header("UI")]
         [field: SerializeField] public RecipeBlackBoard RecipeBlackBoard { get; private set; }
+        [field: SerializeField] public TransitionsBlackBoard TransitionsBlackBoard { get; private set; }
 
         [field: Header("Parent Objects")]
         [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
@@ -47,6 +48,7 @@ namespace foxRestaurant
         {
             allPossibleItemData = levelData.AllPossibleItemData.DataList;
             RecipeBlackBoard.Init(this);
+            TransitionsBlackBoard.Init(this);
             UpdateDataBase(levelData.CsvFile);
 
             PlayerInputController.Init(this);
