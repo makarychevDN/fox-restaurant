@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4869571402841016147}
-  - component: {fileID: 6627761130490438822}
+  - component: {fileID: 9141760989985462474}
   m_Layer: 5
-  m_Name: pack of transitions
+  m_Name: row of transitions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6627761130490438822
+--- !u!114 &9141760989985462474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,8 +45,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 854911655408784905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd68eebaeebe06d45a34cb21832551fa, type: 3}
+  m_Script: {fileID: 11500000, guid: b3196173973b473438dffd685f37631e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentForPanels: {fileID: 4869571402841016147}
-  panelPrefab: {fileID: 9141760989985462474, guid: 0ac0b64b3cef0e34c9c26625a47df60f, type: 3}
