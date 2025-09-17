@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentForPanels: {fileID: 2147466496}
-  recipePanelPrefab: {fileID: 1587721820515828415, guid: 402e857b88679c044a51b39871411765, type: 3}
+  panelPrefab: {fileID: 1587721820515828415, guid: 402e857b88679c044a51b39871411765, type: 3}
   animator: {fileID: 1186480727}
 --- !u!95 &1186480727
 Animator:

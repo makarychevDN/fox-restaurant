@@ -1,14 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace foxRestaurant
 {
-    public class RecipeBlackBoard : MonoBehaviour
+    public class RecipeBlackBoard : UIRepeater<RecipePanel, Recipe>
     {
-        [SerializeField] private Transform parentForPanels;
-        [SerializeField] private RecipePanel recipePanelPrefab;
         [SerializeField] private Animator animator;
-        private List<RecipePanel> recipePanels = new List<RecipePanel>();
 
         public void Appear() => animator.SetBool("Appeared", true);
         public void Disappear() => animator.SetBool("Appeared", false);
@@ -18,39 +14,17 @@ namespace foxRestaurant
             level.OnDataBaseUpdated.AddListener(UpdatePanels);
         }
 
+        /// <summary>
+        /// Реализация привязки Recipe -> RecipePanel
+        /// </summary>
+        protected override void Bind(RecipePanel panel, Recipe data)
+        {
+            panel.SetRecipe(data);
+        }
+
         public void UpdatePanels(DataBase dataBase)
         {
-            int panelsCount = Mathf.Max(dataBase.Recipes.Count, recipePanels.Count);
-
-            for (int i = 0; i < panelsCount; i++)
-            {
-                if (i < dataBase.Recipes.Count)
-                {
-                    var panel = GetRecipePanel(i);
-                    panel.SetRecipe(dataBase.Recipes[i]);
-                    panel.gameObject.SetActive(true);
-                }
-                else
-                {
-                    recipePanels[i].gameObject.SetActive(false);
-                }
-            }
-        }
-
-        private RecipePanel GetRecipePanel(int index)
-        {
-            return recipePanels.Count > index ? recipePanels[index] : SpawnRecipePanel();
-        }
-
-        private RecipePanel SpawnRecipePanel()
-        {
-            var recipePanel = Instantiate(recipePanelPrefab);
-            recipePanel.transform.parent = parentForPanels;
-            recipePanel.transform.localScale = Vector3.one;
-
-            recipePanels.Add(recipePanel);
-
-            return recipePanel;
+            UpdatePanels(dataBase.Recipes); // вызываем базовый UpdatePanels
         }
     }
 }
