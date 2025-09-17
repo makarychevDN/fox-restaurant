@@ -48,3 +48,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3196173973b473438dffd685f37631e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentForPanels: {fileID: 4869571402841016147}
+  panelPrefab: {fileID: 2468028880086814377, guid: 7853acc4513b360448d2e3deef4b671c, type: 3}

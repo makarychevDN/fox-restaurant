@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace foxRestaurant
 {
@@ -30,7 +29,7 @@ namespace foxRestaurant
 
         protected override void Bind(RowOfTransitionsPanel panel, List<ItemData> itemsData)
         {
-            panel.UpdatePanels(itemsData);
+            panel.SetItems(itemsData);
         }
     }
 }

@@ -1,19 +1,20 @@
 using System.Collections.Generic;
 using System.Text;
-using UnityEngine;
+using UnityEngine.UI;
 
 namespace foxRestaurant
 {
-    public class RowOfTransitionsPanel : MonoBehaviour
+    public class RowOfTransitionsPanel : UIRepeater<Image, ItemData>
     {
-        public void UpdatePanels(List<ItemData> itemsData)
+        public void SetItems(List<ItemData> itemsData)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (ItemData item in itemsData)
-            {
-                sb.Append(item.name).Append(" ");
-            }
-            print(sb.ToString());
+            UpdatePanels(itemsData);
+        }
+
+        protected override void Bind(Image panel, ItemData data)
+        {
+            panel.sprite = data.Sprite;
+            panel.rectTransform.sizeDelta = data.Sprite.GetSpriteSizeInPixels() * 0.5f;
         }
     }
 }
