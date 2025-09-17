@@ -11,8 +11,10 @@ namespace foxRestaurant
     {
         [SerializeField] private Transform parentForPanels;
         [SerializeField] private TPanel panelPrefab;
+        [SerializeField] private GameObject separatorPrefab;
 
         private readonly List<TPanel> panels = new List<TPanel>();
+        private readonly List<GameObject> separators = new List<GameObject>();
 
         /// <summary>
         /// Обновить список UI элементов по данным.
@@ -28,6 +30,12 @@ namespace foxRestaurant
                     var panel = GetPanel(i);
                     Bind(panel, dataList[i]);
                     panel.gameObject.SetActive(true);
+
+                    if (separatorPrefab != null && i != panelsCount - 1)
+                    {
+                        var separator = GetSeparator(i);
+                        separator.gameObject.SetActive(true);
+                    }
                 }
                 else
                 {
@@ -47,6 +55,19 @@ namespace foxRestaurant
             panel.transform.localScale = Vector3.one;
             panels.Add(panel);
             return panel;
+        }
+
+        private GameObject GetSeparator(int index)
+        {
+            return separators.Count > index ? separators[index] : SpawnSeparator();
+        }
+
+        private GameObject SpawnSeparator()
+        {
+            var separator = Instantiate(separatorPrefab, parentForPanels);
+            separator.transform.localScale = Vector3.one;
+            separators.Add(separator);
+            return separator;
         }
 
         /// <summary>

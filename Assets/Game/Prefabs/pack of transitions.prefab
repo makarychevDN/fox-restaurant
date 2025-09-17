@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentForPanels: {fileID: 4869571402841016147}
   panelPrefab: {fileID: 9141760989985462474, guid: 0ac0b64b3cef0e34c9c26625a47df60f, type: 3}
+  separatorPrefab: {fileID: 2521128747561530431, guid: 975eee95fab965240ad93925f0a9f84e, type: 3}
 --- !u!114 &5018731451710745559
 MonoBehaviour:
   m_ObjectHideFlags: 0

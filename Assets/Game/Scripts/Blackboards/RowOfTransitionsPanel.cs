@@ -6,8 +6,6 @@ namespace foxRestaurant
 {
     public class RowOfTransitionsPanel : UIRepeater<RectTransform, ItemData>
     {
-        private Image image;
-
         public void SetItems(List<ItemData> itemsData)
         {
             UpdatePanels(itemsData);
@@ -15,7 +13,7 @@ namespace foxRestaurant
 
         protected override void Bind(RectTransform panel, ItemData data)
         {
-            image = panel.GetComponentInChildren<Image>();
+            var image = panel.GetComponentInChildren<Image>();
             image.sprite = data.Sprite;
             image.rectTransform.sizeDelta = data.Sprite.GetSpriteSizeInPixels() * 0.5f;
         }
