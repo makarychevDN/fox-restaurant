@@ -7,6 +7,8 @@ namespace foxRestaurant
     {
         [SerializeField] private RecipeBlackBoard recipeBlackBoard;
         [SerializeField] private TransitionsBlackBoard transitionsBlackBoard;
+        [SerializeField] private AudioSource openBookSound;
+        [SerializeField] private AudioSource closeBookSound;
         private Level level;
 
         public void Init(Level level)
@@ -18,12 +20,14 @@ namespace foxRestaurant
         {
             recipeBlackBoard.Appear();
             transitionsBlackBoard.Appear();
+            openBookSound.Play();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
             recipeBlackBoard.Disappear();
             transitionsBlackBoard.Disappear();
+            closeBookSound.Play();
         }
     }
 }
