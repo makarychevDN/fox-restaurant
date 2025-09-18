@@ -70,6 +70,7 @@ namespace foxRestaurant
                 var cookerSlot = CookerSlotSpawner.SpawnSlot();
 
                 cookerSlot.OnItemHovered.AddListener(() => CookPositionController.HoverSlot(cookerSlot));
+                cookerSlot.OnItemUnhovered.AddListener(CookPositionController.Unhover);
 
                 cookerSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(cookerSlot));
                 cookerSlot.OnItemHovered.AddListener(() => RMBItemHintsDisplayer.ShowHint(cookerSlot));
