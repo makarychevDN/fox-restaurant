@@ -65,6 +65,7 @@ namespace foxRestaurant
 
         public void OnUnhover()
         {
+            item.Slot.OnItemUnhovered.Invoke();
             transform.DOScale(Vector3.one, 0.05f);
         }
 

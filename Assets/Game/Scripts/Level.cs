@@ -18,6 +18,8 @@ namespace foxRestaurant
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }
         [field: SerializeField] public Scenario Scenario { get; private set; }
+        [field: SerializeField] public ItemHintsDisplayer LMBItemHintsDisplayer { get; private set; }
+        [field: SerializeField] public ItemHintsDisplayer RMBItemHintsDisplayer { get; private set; }
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
@@ -66,12 +68,23 @@ namespace foxRestaurant
             for (int i = 0; i < cookerSlotsCount; i++)
             {
                 var cookerSlot = CookerSlotSpawner.SpawnSlot();
+
                 cookerSlot.OnItemHovered.AddListener(() => CookPositionController.HoverSlot(cookerSlot));
+
+                cookerSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(cookerSlot));
+                cookerSlot.OnItemHovered.AddListener(() => RMBItemHintsDisplayer.ShowHint(cookerSlot));
+
+                cookerSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
+                cookerSlot.OnItemUnhovered.AddListener(RMBItemHintsDisplayer.HideHint);
+
             }
 
             for (int i = 0; i < additionalSlotsCount; i++)
             {
                 var additionalSlot = AdditionalSlotSpawner.SpawnSlot();
+
+                additionalSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(additionalSlot));
+                additionalSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
             }
         }
 
