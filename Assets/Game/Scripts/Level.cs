@@ -18,8 +18,6 @@ namespace foxRestaurant
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }
         [field: SerializeField] public Scenario Scenario { get; private set; }
-        [field: SerializeField] public ItemHintsDisplayer LMBItemHintsDisplayer { get; private set; }
-        [field: SerializeField] public ItemHintsDisplayer RMBItemHintsDisplayer { get; private set; }
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
@@ -31,6 +29,8 @@ namespace foxRestaurant
         [field: Header("UI")]
         [field: SerializeField] public RecipeBlackBoard RecipeBlackBoard { get; private set; }
         [field: SerializeField] public TransitionsBlackBoard TransitionsBlackBoard { get; private set; }
+        [field: SerializeField] public ItemHintsDisplayer LMBItemHintsDisplayer { get; private set; }
+        [field: SerializeField] public ItemHintsDisplayer RMBItemHintsDisplayer { get; private set; }
 
         [field: Header("Parent Objects")]
         [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
