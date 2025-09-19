@@ -7,9 +7,13 @@ namespace foxRestaurant
     public class SliceEffectDisplayer : MonoBehaviour
     {
         [SerializeField] private Image sliceEffect;
+        [SerializeField] private AudioSource sliceEffectSound;
 
         public async void Play(ItemSlot itemSlot)
         {
+            sliceEffectSound.pitch = Random.Range(0.7f, 1.3f);
+            sliceEffectSound.Play();
+
             sliceEffect.transform.position = itemSlot.CenterForItem.position;
             sliceEffect.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(-25, 25));
             sliceEffect.transform.localScale = new Vector3(Random.Range(0.8f, 1.2f), Random.Range(0.8f, 1.2f), 1f);
