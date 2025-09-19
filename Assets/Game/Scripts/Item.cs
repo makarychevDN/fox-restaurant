@@ -86,6 +86,7 @@ namespace foxRestaurant
             Satiety++;
             OnSatietyUpdated.Invoke(Satiety);
             Slot.OnItemSliced.Invoke();
+            poofParticles.Play();
         }
     }
 }
