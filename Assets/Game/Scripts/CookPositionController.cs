@@ -7,12 +7,11 @@ namespace foxRestaurant
     {
         [SerializeField] private Animator animator;
 
-        public async void HoverSlot(ItemSlot itemSlot)
+        public void HoverSlot(ItemSlot itemSlot)
         {
             animator.SetBool("readyToSlice", true);
             transform.DOMove(Camera.main.ScreenToWorldPoint(itemSlot.transform.position + Vector3.forward * 10), 0.1f);
-            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).AsyncWaitForCompletion();
-            await transform.DOScale(1f, 0.1f).AsyncWaitForCompletion();
+            Squeeze();
         }
 
         public void Unhover()
@@ -20,12 +19,17 @@ namespace foxRestaurant
             animator.SetBool("readyToSlice", false);
         }
 
-        private void Update()
+        public async void Slice()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                animator.SetTrigger("slice");
-            }
+            animator.SetTrigger("slice");
+            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).AsyncWaitForCompletion();
+            await transform.DOScale(1f, 0.1f).AsyncWaitForCompletion();
+        }
+
+        private async void Squeeze()
+        {
+            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).AsyncWaitForCompletion();
+            await transform.DOScale(1f, 0.1f).AsyncWaitForCompletion();
         }
     }
 }

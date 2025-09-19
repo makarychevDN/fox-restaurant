@@ -21,6 +21,7 @@ namespace foxRestaurant
         public UnityEvent<Item> OnItemHasBeenRemoved;
         public UnityEvent OnItemHovered;
         public UnityEvent OnItemUnhovered;
+        public UnityEvent OnItemSliced;
 
         public SlotType SlotType => slotType;
         public Transform CenterForItem => centerForItem;

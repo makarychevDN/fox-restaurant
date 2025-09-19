@@ -85,6 +85,7 @@ namespace foxRestaurant
             fryingTimer = 0;
             Satiety++;
             OnSatietyUpdated.Invoke(Satiety);
+            Slot.OnItemSliced.Invoke();
         }
     }
 }

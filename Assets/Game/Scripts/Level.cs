@@ -31,6 +31,7 @@ namespace foxRestaurant
         [field: SerializeField] public TransitionsBlackBoard TransitionsBlackBoard { get; private set; }
         [field: SerializeField] public ItemHintsDisplayer LMBItemHintsDisplayer { get; private set; }
         [field: SerializeField] public ItemHintsDisplayer RMBItemHintsDisplayer { get; private set; }
+        [field: SerializeField] public SliceEffectDisplayer SliceEffectDisplayer { get; private set; }
 
         [field: Header("Parent Objects")]
         [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
@@ -77,6 +78,9 @@ namespace foxRestaurant
 
                 cookerSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
                 cookerSlot.OnItemUnhovered.AddListener(RMBItemHintsDisplayer.HideHint);
+
+                cookerSlot.OnItemSliced.AddListener(() => SliceEffectDisplayer.Play(cookerSlot));
+                cookerSlot.OnItemSliced.AddListener(CookPositionController.Slice);
 
             }
 
