@@ -14,7 +14,7 @@ namespace foxRestaurant
             {ReservedColors.YellowUI, Extensions.HexToColor("#d3c82a") }
         };
 
-        public void SpawnDynamicText(Vector3 canvasPosition, string text, Color color)
+        public void SpawnDynamicText(Vector3 canvasPosition, string text, Color color, Vector3 endPosition)
         {
             var spawnedObject = spawnedDynamicTextList.FirstOrDefault(x => !x.gameObject.activeSelf);
 
@@ -23,11 +23,16 @@ namespace foxRestaurant
 
             spawnedObject.gameObject.SetActive(true);
             spawnedObject.transform.position = canvasPosition;
-            spawnedObject.Init(text, color);
+            spawnedObject.Init(text, color, endPosition);
         }
 
+        public void SpawnDynamicText(Vector3 canvasPosition, string text, ReservedColors reservedColor, Vector3 endPosition) =>
+            SpawnDynamicText(canvasPosition, text, colorsDictionary[reservedColor], endPosition);
+
         public void SpawnDynamicText(Vector3 canvasPosition, string text, ReservedColors reservedColor) =>
-            SpawnDynamicText(canvasPosition, text, colorsDictionary[reservedColor]);
+            SpawnDynamicText(canvasPosition, text, colorsDictionary[reservedColor], Vector3.zero);
+        public void SpawnDynamicText(Vector3 canvasPosition, string text, Color color) =>
+            SpawnDynamicText(canvasPosition, text, color, Vector3.zero);
 
         private DynamicText InstantiateText()
         {

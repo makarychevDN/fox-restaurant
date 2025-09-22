@@ -10,10 +10,16 @@ namespace foxRestaurant
 
         public async void Init(string text, Color startColor)
         {
+            Init(text, startColor, Vector3.zero);
+        }
+
+        public async void Init(string text, Color startColor, Vector3 endPosition)
+        {
             label.text = text;
             label.color = startColor;
 
             transform.localScale = Vector3.zero;
+            transform.DOMove(endPosition, 0.15f);
             await transform.DOScale(Vector3.one, 0.15f).AsyncWaitForCompletion();
 
             var endColor = new Color(startColor.r, startColor.g, startColor.b, 0);

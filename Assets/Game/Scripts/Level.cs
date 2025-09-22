@@ -105,13 +105,5 @@ namespace foxRestaurant
         {
             Init(levelData);
         }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                DynamicTextManager.SpawnDynamicText(new Vector3(700, 500), "5 sec", ReservedColors.YellowUI);
-            }
-        }
     }
 }
