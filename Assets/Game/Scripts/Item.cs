@@ -82,7 +82,6 @@ namespace foxRestaurant
                 SetItemData(slicingResult);
 
             level.Ticker.TickOnSlice();
-            fryingTimer = 0;
             Satiety++;
             OnSatietyUpdated.Invoke(Satiety);
             Slot.OnItemSliced.Invoke();
