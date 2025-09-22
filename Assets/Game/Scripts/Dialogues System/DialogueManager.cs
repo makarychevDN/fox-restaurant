@@ -19,7 +19,9 @@ namespace foxRestaurant
         {
             commands = new Dictionary<string, Action<string>>()
             {
-                { "pause", Pause }
+                { "pause", Pause },
+                { "delay", SetDelay },
+                { "color", SetTextColor }
             };
 
             DisplayDialogueLine(test);
@@ -50,7 +52,7 @@ namespace foxRestaurant
                 await MakeDelayBetweenChunks();
             }
 
-            dialogueDisplayer.Hide();
+            //dialogueDisplayer.Hide();
         }
 
         private async Task MakeDelayBetweenChunks()
@@ -86,5 +88,7 @@ namespace foxRestaurant
         }
 
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
+        private void SetDelay(string delay) => delayBetweenChunks = delay.ParseFloatSafe();
+        private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>");
     }
 }
