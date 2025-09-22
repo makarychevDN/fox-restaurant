@@ -280,7 +280,7 @@ MonoBehaviour:
   dialogueDisplayer: {fileID: 168054167}
   lettersPerOnceCount: 3
   delayBetweenChunks: 0.1
-  test: text te<x2:20>st, test test <x2:30>. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  test: text te<pause:1>st, test test <pause:0.9>. AAAAAAAAAAAAA<pause:5>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 --- !u!1 &168054164
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &168054165
 RectTransform:
   m_ObjectHideFlags: 0

@@ -11,13 +11,15 @@ namespace foxRestaurant
         [SerializeField] private int lettersPerOnceCount;
         [SerializeField] private float delayBetweenChunks = 0.1f;
         [SerializeField] private string test;
+
         private Dictionary<string, Action<string>> commands;
+        private float pauseTime;
 
         private void Awake()
         {
             commands = new Dictionary<string, Action<string>>()
             {
-                { "x2", X2 }
+                { "pause", Pause }
             };
 
             DisplayDialogueLine(test);
@@ -25,6 +27,8 @@ namespace foxRestaurant
 
         public async Task DisplayDialogueLine(string text)
         {
+            dialogueDisplayer.Show();
+
             for(int i = 0; i < text.Length;)
             {
                 int nextCommandIndex = text.IndexOf('<', i);
@@ -42,13 +46,17 @@ namespace foxRestaurant
                 {
                     i += TryToExecuteCommand(text, i);
                 }
-                await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
+
+                await MakeDelayBetweenChunks();
             }
+
+            dialogueDisplayer.Hide();
         }
 
-        private void X2(string x)
+        private async Task MakeDelayBetweenChunks()
         {
-            print(Convert.ToInt32(x) * 2);
+            await Task.Delay(TimeSpan.FromSeconds(pauseTime == 0 ? delayBetweenChunks : pauseTime));
+            pauseTime = 0;
         }
 
         private int TryToExecuteCommand(string text, int startIndex)
@@ -76,5 +84,7 @@ namespace foxRestaurant
 
             return endIndex - startIndex + 1;
         }
+
+        private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
     }
 }
