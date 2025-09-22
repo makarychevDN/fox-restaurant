@@ -30,13 +30,13 @@ namespace foxRestaurant
 
         public void TickOnSlice() => TickAllTickables(sliceTimeCost);
 
-        /*private void Update()
+        private void Update()
         {
             if (tickingMode == TickingMode.pause)
                 return;
 
             TickAllTickables(Time.deltaTime * (int)tickingMode);
-        }*/
+        }
 
         private enum TickingMode
         {
