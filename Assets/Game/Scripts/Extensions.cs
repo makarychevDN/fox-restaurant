@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -91,6 +92,26 @@ namespace foxRestaurant
 
             Debug.LogWarning($"incorrect hex-color: {hex}. Return Color.white");
             return Color.white;
+        }
+
+        public static float ParseFloatSafe(this string raw, float fallback = 0f)
+        {
+            if (string.IsNullOrWhiteSpace(raw))
+            {
+                Debug.LogWarning("[ParseUtils] Пустая строка для парсинга float. Использую fallback.");
+                return fallback;
+            }
+
+            raw = raw.Trim();
+
+            if (float.TryParse(raw, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out float result))
+                return result;
+
+            if (float.TryParse(raw, NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.CurrentCulture, out result))
+                return result;
+
+            Debug.LogWarning($"[ParseUtils] Не удалось распарсить float из строки '{raw}'. Использую fallback {fallback}.");
+            return fallback;
         }
     }
 }

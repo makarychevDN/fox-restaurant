@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using foxRestaurant;
 
 namespace Doublsb.Dialog
 {
@@ -181,7 +182,7 @@ namespace Doublsb.Dialog
                     break;
 
                 default:
-                    _currentDelay = float.Parse(speed);
+                    _currentDelay = speed.ParseFloatSafe();
                     break;
             }
 
@@ -308,7 +309,7 @@ namespace Doublsb.Dialog
                         yield break;
 
                     case Command.wait:
-                        yield return new WaitForSeconds(float.Parse(item.Context));
+                        yield return new WaitForSeconds(item.Context.ParseFloatSafe());
                         break;
                 }
             }
