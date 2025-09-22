@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,6 +19,7 @@ namespace foxRestaurant
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }
         [field: SerializeField] public Scenario Scenario { get; private set; }
+        [field: SerializeField] public DynamicTextManager DynamicTextManager { get; private set; }
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
@@ -102,6 +104,14 @@ namespace foxRestaurant
         private void Awake()
         {
             Init(levelData);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                DynamicTextManager.SpawnDynamicText(new Vector3(700, 500), "5 sec");
+            }
         }
     }
 }

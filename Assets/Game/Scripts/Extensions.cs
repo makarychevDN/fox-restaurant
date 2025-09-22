@@ -81,5 +81,16 @@ namespace foxRestaurant
 
             return result;
         }
+
+        public static Color HexToColor(string hex)
+        {
+            if (ColorUtility.TryParseHtmlString(hex, out Color color))
+            {
+                return color;
+            }
+
+            Debug.LogWarning($"incorrect hex-color: {hex}. Return Color.white");
+            return Color.white;
+        }
     }
 }
