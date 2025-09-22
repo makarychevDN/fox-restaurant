@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -10,8 +9,12 @@ namespace foxRestaurant
         [SerializeField] private Transform textsParent;
         [SerializeField] private DynamicText dinamicTextPrefab;
         private List<DynamicText> spawnedDynamicTextList = new();
+        private Dictionary<ReservedColors, Color> colorsDictionary = new()
+        {
+            {ReservedColors.YellowUI, Extensions.HexToColor("#d3c82a") }
+        };
 
-        public void SpawnDynamicText(Vector3 canvasPosition, string text)
+        public void SpawnDynamicText(Vector3 canvasPosition, string text, Color color)
         {
             var spawnedObject = spawnedDynamicTextList.FirstOrDefault(x => !x.gameObject.activeSelf);
 
@@ -20,9 +23,11 @@ namespace foxRestaurant
 
             spawnedObject.gameObject.SetActive(true);
             spawnedObject.transform.position = canvasPosition;
-            var color = Extensions.HexToColor("#d3c82a");
             spawnedObject.Init(text, color);
         }
+
+        public void SpawnDynamicText(Vector3 canvasPosition, string text, ReservedColors reservedColor) =>
+            SpawnDynamicText(canvasPosition, text, colorsDictionary[reservedColor]);
 
         private DynamicText InstantiateText()
         {
@@ -31,5 +36,12 @@ namespace foxRestaurant
             spawnedDynamicTextList.Add(spawnedObject);
             return spawnedObject;
         }
+    }
+
+    public enum ReservedColors
+    {
+        YellowUI = 0,
+        GreenUI = 10,
+        OrangeUI = 20
     }
 }

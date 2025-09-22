@@ -110,7 +110,7 @@ namespace foxRestaurant
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                DynamicTextManager.SpawnDynamicText(new Vector3(700, 500), "5 sec");
+                DynamicTextManager.SpawnDynamicText(new Vector3(700, 500), "5 sec", ReservedColors.YellowUI);
             }
         }
     }
