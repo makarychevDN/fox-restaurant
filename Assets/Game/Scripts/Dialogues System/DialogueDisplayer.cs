@@ -9,8 +9,8 @@ namespace foxRestaurant
         [SerializeField] private GameObject panel;
         [SerializeField] private AudioSource audioSource;
 
-        private float pitchDelta;
-        private float pitch;
+        private float pitchDelta = 0;
+        private float pitch = 1;
 
         public void Clear() => label.text = "";
         public void SetSound(AudioClip sound) => audioSource.clip = sound;

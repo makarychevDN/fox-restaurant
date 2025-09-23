@@ -10,11 +10,13 @@ namespace foxRestaurant
     public class DialogueManager : MonoBehaviour
     {
         [SerializeField] private DialogueDisplayer dialogueDisplayer;
+        [SerializeField] private List<VoiceKeyPair> voices;
         [SerializeField] private int chunkSize = 3;
         [SerializeField] private float delayBetweenChunks = 0.1f;
         [SerializeField, TextArea(4, 10)] private string test;
 
         private Dictionary<string, Action<string>> commands;
+        private Dictionary<string, AudioClip> voiceMap;
         private float pauseTime;
         private Stopwatch stopWatch = new Stopwatch();
 
@@ -34,11 +36,18 @@ namespace foxRestaurant
                 { "timer stop", StopTimer },
                 { "chunk", SetChunkSize },
                 { "emote", OnChangeEmotion.Invoke },
-                //{ "voice", SetVoice }
+                { "voice", SetVoice },
                 { "volume", SetVolume },
                 { "pitch", SetPitch },
                 { "pitch delta", SetPitchDelta }
             };
+
+            voiceMap = new();
+            foreach (var v in voices)
+            {
+                if (!string.IsNullOrEmpty(v.key) && v.voice != null)
+                    voiceMap[v.key] = v.voice;
+            }
 
             DisplayDialogueLine(test);
         }
@@ -106,7 +115,7 @@ namespace foxRestaurant
         private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>", false);
         private void StartTimer(string color) => stopWatch.Start();
         private void SetChunkSize(string size) => chunkSize = Math.Clamp(Convert.ToInt32(size), 1, 10);
-        //private void SetVoice(string voiceKey) => chunkSize = Math.Clamp(Convert.ToInt32(voiceKey), 1, 10);
+        private void SetVoice(string voiceKey) => dialogueDisplayer.SetSound(voiceMap[voiceKey]);
         private void SetVolume(string voiceKey) => dialogueDisplayer.SetVolume(voiceKey);
         private void SetPitch(string voiceKey) => dialogueDisplayer.SetPitch(voiceKey);
         private void SetPitchDelta(string voiceKey) => dialogueDisplayer.SetPitchDelta(voiceKey);
@@ -119,5 +128,12 @@ namespace foxRestaurant
                 ts.Milliseconds / 10);
             print("RunTime " + elapsedTime);
         }
+    }
+
+    [Serializable]
+    public struct VoiceKeyPair
+    {
+        public string key;
+        public AudioClip voice;
     }
 }
