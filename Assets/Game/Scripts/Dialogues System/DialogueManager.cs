@@ -3,30 +3,41 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace foxRestaurant
 {
     public class DialogueManager : MonoBehaviour
     {
         [SerializeField] private DialogueDisplayer dialogueDisplayer;
-        [SerializeField] private int lettersPerOnceCount;
+        [SerializeField] private int chunkSize = 3;
         [SerializeField] private float delayBetweenChunks = 0.1f;
         [SerializeField, TextArea(4, 10)] private string test;
-
 
         private Dictionary<string, Action<string>> commands;
         private float pauseTime;
         private Stopwatch stopWatch = new Stopwatch();
 
+        public UnityEvent<string> OnChangeEmotion;
+
         private void Awake()
         {
+            if (chunkSize <= 0)
+                chunkSize = 1;
+
             commands = new Dictionary<string, Action<string>>()
             {
                 { "pause", Pause },
                 { "delay", SetDelay },
                 { "color", SetTextColor },
                 { "timer start", StartTimer },
-                { "timer stop", StopTimer }
+                { "timer stop", StopTimer },
+                { "chunk", SetChunkSize },
+                { "emote", OnChangeEmotion.Invoke },
+                //{ "voice", SetVoice }
+                { "volume", SetVolume },
+                { "pitch", SetPitch },
+                { "pitch delta", SetPitchDelta }
             };
 
             DisplayDialogueLine(test);
@@ -53,7 +64,7 @@ namespace foxRestaurant
                     int nextCommandIndex = text.IndexOf('<', i);
                     if (nextCommandIndex == -1) nextCommandIndex = text.Length;
 
-                    int chunkLength = Math.Min(lettersPerOnceCount, nextCommandIndex - i);
+                    int chunkLength = Math.Min(chunkSize, nextCommandIndex - i);
                     string chunk = text.Substring(i, chunkLength);
 
                     dialogueDisplayer.Print(chunk);
@@ -94,11 +105,16 @@ namespace foxRestaurant
         private void SetDelay(string delay) => delayBetweenChunks = delay.ParseFloatSafe();
         private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>", false);
         private void StartTimer(string color) => stopWatch.Start();
+        private void SetChunkSize(string size) => chunkSize = Math.Clamp(Convert.ToInt32(size), 1, 10);
+        //private void SetVoice(string voiceKey) => chunkSize = Math.Clamp(Convert.ToInt32(voiceKey), 1, 10);
+        private void SetVolume(string voiceKey) => dialogueDisplayer.SetVolume(voiceKey);
+        private void SetPitch(string voiceKey) => dialogueDisplayer.SetPitch(voiceKey);
+        private void SetPitchDelta(string voiceKey) => dialogueDisplayer.SetPitchDelta(voiceKey);
         private void StopTimer(string color)
         {
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds / 10);
             print("RunTime " + elapsedTime);
