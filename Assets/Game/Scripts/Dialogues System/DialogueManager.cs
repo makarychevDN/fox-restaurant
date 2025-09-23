@@ -75,6 +75,9 @@ namespace foxRestaurant
                     await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
                 }
             }
+
+            await WaitForMouseClick();
+            dialogueDisplayer.Hide();
         }
 
         private int TryToExecuteCommand(string text, int startIndex)
@@ -101,6 +104,14 @@ namespace foxRestaurant
             commands[commandKey](parameter);
 
             return endIndex - startIndex + 1;
+        }
+
+        private async Task WaitForMouseClick()
+        {
+            while (!Input.GetMouseButtonDown(0))
+            {
+                await Task.Yield();
+            }
         }
 
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
