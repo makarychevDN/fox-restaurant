@@ -12,10 +12,12 @@ namespace foxRestaurant
         public void Clear() => label.text = "";
         public void SetSound(AudioClip sound) => audioSource.clip = sound;
 
-        public void Print(string substring)
+        public void Print(string substring, bool playSound = true)
         {
             label.text += substring;
-            audioSource.Play();
+
+            if(playSound)
+                audioSource.Play();
         }
 
         public void Show()

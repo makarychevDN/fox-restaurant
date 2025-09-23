@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -10,10 +11,12 @@ namespace foxRestaurant
         [SerializeField] private DialogueDisplayer dialogueDisplayer;
         [SerializeField] private int lettersPerOnceCount;
         [SerializeField] private float delayBetweenChunks = 0.1f;
-        [SerializeField] private string test;
+        [SerializeField, TextArea(4, 10)] private string test;
+
 
         private Dictionary<string, Action<string>> commands;
         private float pauseTime;
+        private Stopwatch stopWatch = new Stopwatch();
 
         private void Awake()
         {
@@ -21,7 +24,9 @@ namespace foxRestaurant
             {
                 { "pause", Pause },
                 { "delay", SetDelay },
-                { "color", SetTextColor }
+                { "color", SetTextColor },
+                { "timer start", StartTimer },
+                { "timer stop", StopTimer }
             };
 
             DisplayDialogueLine(test);
@@ -31,34 +36,32 @@ namespace foxRestaurant
         {
             dialogueDisplayer.Show();
 
-            for(int i = 0; i < text.Length;)
+            for (int i = 0; i < text.Length;)
             {
-                int nextCommandIndex = text.IndexOf('<', i);
-                if (nextCommandIndex == -1) nextCommandIndex = text.Length;
-
-                int chunkLength = Math.Min(lettersPerOnceCount, nextCommandIndex - i);
-
-                if (chunkLength > 0)
+                if (text[i] == '<')
                 {
-                    string chunk = text.Substring(i, chunkLength);
-                    dialogueDisplayer.Print(chunk);
-                    i += chunkLength;
+                    i += TryToExecuteCommand(text, i);
+
+                    if (pauseTime > 0)
+                    {
+                        await Task.Delay(TimeSpan.FromSeconds(pauseTime));
+                        pauseTime = 0;
+                    }
                 }
                 else
                 {
-                    i += TryToExecuteCommand(text, i);
+                    int nextCommandIndex = text.IndexOf('<', i);
+                    if (nextCommandIndex == -1) nextCommandIndex = text.Length;
+
+                    int chunkLength = Math.Min(lettersPerOnceCount, nextCommandIndex - i);
+                    string chunk = text.Substring(i, chunkLength);
+
+                    dialogueDisplayer.Print(chunk);
+                    i += chunkLength;
+
+                    await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
                 }
-
-                await MakeDelayBetweenChunks();
             }
-
-            //dialogueDisplayer.Hide();
-        }
-
-        private async Task MakeDelayBetweenChunks()
-        {
-            await Task.Delay(TimeSpan.FromSeconds(pauseTime == 0 ? delayBetweenChunks : pauseTime));
-            pauseTime = 0;
         }
 
         private int TryToExecuteCommand(string text, int startIndex)
@@ -89,6 +92,16 @@ namespace foxRestaurant
 
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
         private void SetDelay(string delay) => delayBetweenChunks = delay.ParseFloatSafe();
-        private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>");
+        private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>", false);
+        private void StartTimer(string color) => stopWatch.Start();
+        private void StopTimer(string color)
+        {
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            print("RunTime " + elapsedTime);
+        }
     }
 }
