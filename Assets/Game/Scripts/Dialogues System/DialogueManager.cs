@@ -16,6 +16,7 @@ namespace foxRestaurant
         private Dictionary<string, Action<string>> commands;
         private Dictionary<string, AudioClip> voiceMap;
         private float pauseTime;
+        private bool skipRequested;
 
         public UnityEvent<string> OnChangeEmotion;
 
@@ -48,6 +49,7 @@ namespace foxRestaurant
         public async Task DisplayDialogueLine(string text)
         {
             dialogueDisplayer.Show();
+            skipRequested = false;
 
             for (int i = 0; i < text.Length;)
             {
@@ -55,7 +57,7 @@ namespace foxRestaurant
                 {
                     i += TryToExecuteCommand(text, i);
 
-                    if (pauseTime > 0)
+                    if (pauseTime > 0 && !skipRequested)
                     {
                         await Task.Delay(TimeSpan.FromSeconds(pauseTime));
                         pauseTime = 0;
@@ -72,7 +74,8 @@ namespace foxRestaurant
                     dialogueDisplayer.Print(chunk);
                     i += chunkLength;
 
-                    await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
+                    if(!skipRequested)
+                        await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
                 }
             }
 
@@ -111,6 +114,14 @@ namespace foxRestaurant
             while (!Input.GetMouseButtonDown(0))
             {
                 await Task.Yield();
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                skipRequested = true;
             }
         }
 
