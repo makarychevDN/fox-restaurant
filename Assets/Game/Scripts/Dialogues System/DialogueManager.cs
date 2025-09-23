@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,12 +12,10 @@ namespace foxRestaurant
         [SerializeField] private List<VoiceKeyPair> voices;
         [SerializeField] private int chunkSize = 3;
         [SerializeField] private float delayBetweenChunks = 0.1f;
-        [SerializeField, TextArea(4, 10)] private string test;
 
         private Dictionary<string, Action<string>> commands;
         private Dictionary<string, AudioClip> voiceMap;
         private float pauseTime;
-        private Stopwatch stopWatch = new Stopwatch();
 
         public UnityEvent<string> OnChangeEmotion;
 
@@ -32,8 +29,6 @@ namespace foxRestaurant
                 { "pause", Pause },
                 { "delay", SetDelay },
                 { "color", SetTextColor },
-                { "timer start", StartTimer },
-                { "timer stop", StopTimer },
                 { "chunk", SetChunkSize },
                 { "emote", OnChangeEmotion.Invoke },
                 { "voice", SetVoice },
@@ -48,8 +43,6 @@ namespace foxRestaurant
                 if (!string.IsNullOrEmpty(v.key) && v.voice != null)
                     voiceMap[v.key] = v.voice;
             }
-
-            DisplayDialogueLine(test);
         }
 
         public async Task DisplayDialogueLine(string text)
@@ -113,21 +106,11 @@ namespace foxRestaurant
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
         private void SetDelay(string delay) => delayBetweenChunks = delay.ParseFloatSafe();
         private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>", false);
-        private void StartTimer(string color) => stopWatch.Start();
         private void SetChunkSize(string size) => chunkSize = Math.Clamp(Convert.ToInt32(size), 1, 10);
         private void SetVoice(string voiceKey) => dialogueDisplayer.SetSound(voiceMap[voiceKey]);
         private void SetVolume(string voiceKey) => dialogueDisplayer.SetVolume(voiceKey);
         private void SetPitch(string voiceKey) => dialogueDisplayer.SetPitch(voiceKey);
         private void SetPitchDelta(string voiceKey) => dialogueDisplayer.SetPitchDelta(voiceKey);
-        private void StopTimer(string color)
-        {
-            stopWatch.Stop();
-            TimeSpan ts = stopWatch.Elapsed;
-            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                ts.Hours, ts.Minutes, ts.Seconds,
-                ts.Milliseconds / 10);
-            print("RunTime " + elapsedTime);
-        }
     }
 
     [Serializable]
