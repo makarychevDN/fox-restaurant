@@ -39,7 +39,7 @@ namespace foxRestaurant
         [field: Header("Data Base")]
         [field: SerializeField] public RecipesManager RecipesManager { get; private set; }
         [field: SerializeField] public ItemTransitionsManager ItemTransitionsManager { get; private set; }
-        [field: SerializeField] public LevelData levelData { get; private set; }
+        [field: SerializeField] public RestaurantEncounterData levelData { get; private set; }
         public DataBase DataBase { get; private set; }
 
         private List<ItemData> allPossibleItemData;
@@ -47,7 +47,7 @@ namespace foxRestaurant
         public UnityEvent<DataBase> OnDataBaseUpdated;
 
 
-        public void Init(LevelData levelData)
+        public void Init(RestaurantEncounterData levelData)
         {
             allPossibleItemData = levelData.AllPossibleItemData.DataList;
             RecipeBlackBoard.Init(this);
