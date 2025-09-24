@@ -8,10 +8,10 @@ namespace foxRestaurant
         [SerializeField] private Button spawnIngredientButton;
         [SerializeField] private RecipeBook recipeBook;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            spawnIngredientButton.onClick.AddListener(level.ItemsSpawner.SpawnIngredient);
-            recipeBook.Init(level);
+            spawnIngredientButton.onClick.AddListener(restaurantEncounter.ItemsSpawner.SpawnIngredient);
+            recipeBook.Init(restaurantEncounter);
         }
     }
 }

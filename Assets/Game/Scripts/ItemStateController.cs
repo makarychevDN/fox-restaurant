@@ -7,13 +7,13 @@ namespace foxRestaurant
     public class ItemStateController : MonoBehaviour
     {
         private MovementState movementState = MovementState.placedInSlot;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
         private Item item;
         private ItemsFusionDisplayer fusionDisplayer;
 
-        public void Init(RestaurantEncounter level, Item item, ItemsFusionDisplayer fusionDisplayer)
+        public void Init(RestaurantEncounter restaurantEncounter, Item item, ItemsFusionDisplayer fusionDisplayer)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
             this.item = item;
             this.fusionDisplayer = fusionDisplayer;
             transform.localPosition = Vector2.zero;
@@ -34,7 +34,7 @@ namespace foxRestaurant
                 return;
 
             movementState = MovementState.dragged;
-            transform.parent = level.ParentForItemsMovement;
+            transform.parent = restaurantEncounter.ParentForItemsMovement;
             transform.localScale = Vector3.one;
             item.Slot.SetItem(null);
         }
@@ -44,7 +44,7 @@ namespace foxRestaurant
             if (movementState == MovementState.preparedForGrabbing)
             {
                 movementState = MovementState.grabbed;
-                transform.parent = level.ParentForItemsMovement;
+                transform.parent = restaurantEncounter.ParentForItemsMovement;
                 transform.localScale = Vector3.one;
                 item.Slot.SetItem(null);
                 return;
@@ -52,8 +52,8 @@ namespace foxRestaurant
 
             if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
             {
-                level.SlotsManager.UnhoverAllSlots();
-                await GoToSlot(level.SlotsManager.GetSlotToPlaceItem(item));
+                restaurantEncounter.SlotsManager.UnhoverAllSlots();
+                await GoToSlot(restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item));
             }
         }
 
@@ -96,8 +96,8 @@ namespace foxRestaurant
             if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
             {
                 transform.position = Input.mousePosition;
-                var slotToPlaceItem = level.SlotsManager.GetSlotToPlaceItem(item);
-                level.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
+                var slotToPlaceItem = restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item);
+                restaurantEncounter.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
 
                 fusionDisplayer.gameObject.SetActive(!slotToPlaceItem.Empty);
                 if (slotToPlaceItem.Empty)

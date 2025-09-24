@@ -6,18 +6,18 @@ namespace foxRestaurant
     {
         [SerializeField] private ItemSlot cookerSlotPrefab;
         [SerializeField] private Transform slotsParent;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
         }
 
         public ItemSlot SpawnSlot()
         {
             var slot = Instantiate(cookerSlotPrefab);
 
-            slot.Init(level);
+            slot.Init(restaurantEncounter);
 
             slot.transform.parent = slotsParent;
             slot.transform.localScale = Vector3.one;

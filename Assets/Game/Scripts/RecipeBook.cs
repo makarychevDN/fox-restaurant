@@ -9,11 +9,11 @@ namespace foxRestaurant
         [SerializeField] private TransitionsBlackBoard transitionsBlackBoard;
         [SerializeField] private AudioSource openBookSound;
         [SerializeField] private AudioSource closeBookSound;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
         }
 
         public void OnPointerEnter(PointerEventData eventData)

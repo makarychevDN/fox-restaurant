@@ -13,7 +13,7 @@ namespace foxRestaurant
         [SerializeField] private Cooker cooker;
         private Item item;
         private ItemData requiredItemData;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
         private bool selectedForItemMovement;
 
         public UnityEvent OnHasBeenOccupied;
@@ -28,13 +28,13 @@ namespace foxRestaurant
         public Item Item => item;
         public bool Empty => item == null;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.level = level;
-            level.SlotsManager.AddSlot(this);
+            this.restaurantEncounter = restaurantEncounter;
+            restaurantEncounter.SlotsManager.AddSlot(this);
 
             if (cooker != null)
-                cooker.Init(this, level);
+                cooker.Init(this, restaurantEncounter);
 
             if (centerForItem == null)
                 centerForItem = transform;
@@ -68,9 +68,9 @@ namespace foxRestaurant
 
         private void TryToFuseItems(Item item1, Item item2)
         {
-            level.ItemsSpawner.SpawnItem(
-                level, 
-                level.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
+            restaurantEncounter.ItemsSpawner.SpawnItem(
+                restaurantEncounter, 
+                restaurantEncounter.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
                 this,
                 item1.Satiety + item2.Satiety
             );
@@ -113,7 +113,7 @@ namespace foxRestaurant
 
         private void OnDestroy()
         {
-            level.SlotsManager.RemoveSlot(this);
+            restaurantEncounter.SlotsManager.RemoveSlot(this);
         }
     }
 

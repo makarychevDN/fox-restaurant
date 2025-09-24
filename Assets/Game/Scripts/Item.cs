@@ -27,19 +27,19 @@ namespace foxRestaurant
         [SerializeField] private AudioSource appearSound;
 
         private float fryingTimer;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
         public UnityEvent<int> OnSatietyUpdated;
 
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
 
-        public void Init(RestaurantEncounter level, ItemData itemData, int satiety)
+        public void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
             Satiety = satiety;
-            itemStateController.Init(level, this, fusionDisplayer);
-            fusionDisplayer.Init(level, this);
+            itemStateController.Init(restaurantEncounter, this, fusionDisplayer);
+            fusionDisplayer.Init(restaurantEncounter, this);
             inputController.Init(itemStateController, this);
             SetItemData(itemData);
             OnSatietyUpdated.Invoke(Satiety);
@@ -64,7 +64,7 @@ namespace foxRestaurant
                 Satiety++;
                 OnSatietyUpdated.Invoke(Satiety);
 
-                ItemData fryingResult = level.ItemTransitionsManager.GetFryingResult(ItemData);
+                ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
                 if (fryingResult != null)
                 {
                     SetItemData(fryingResult);
@@ -77,11 +77,11 @@ namespace foxRestaurant
 
         public void Slice()
         {
-            ItemData slicingResult = level.ItemTransitionsManager.GetSlicingResult(ItemData);
+            ItemData slicingResult = restaurantEncounter.ItemTransitionsManager.GetSlicingResult(ItemData);
             if (slicingResult != null)
                 SetItemData(slicingResult);
 
-            level.Ticker.TickOnSlice();
+            restaurantEncounter.Ticker.TickOnSlice();
             Satiety++;
             OnSatietyUpdated.Invoke(Satiety);
             Slot.OnItemSliced.Invoke();

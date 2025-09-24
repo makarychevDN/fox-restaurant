@@ -11,12 +11,12 @@ namespace foxRestaurant
         [SerializeField] private Sprite redCross;
         [SerializeField] private Animator animator;
         private Item hashedTargetItem;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
         private Item item;
 
-        public void Init(RestaurantEncounter level, Item item)
+        public void Init(RestaurantEncounter restaurantEncounter, Item item)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
             this.item = item;
         }
 
@@ -40,7 +40,7 @@ namespace foxRestaurant
             equalIcon.transform.position = equalIconPosition;
             resultIcon.transform.position = resultIconPosition;
 
-            resultIcon.sprite = level.RecipesManager.Fuse(item.ItemData, targetSlot.Item.ItemData).Sprite;
+            resultIcon.sprite = restaurantEncounter.RecipesManager.Fuse(item.ItemData, targetSlot.Item.ItemData).Sprite;
             resultIcon.rectTransform.sizeDelta = resultIcon.sprite.GetSpriteSizeInPixels();
         }
     }

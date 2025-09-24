@@ -39,7 +39,7 @@ namespace foxRestaurant
         [field: Header("Data Base")]
         [field: SerializeField] public RecipesManager RecipesManager { get; private set; }
         [field: SerializeField] public ItemTransitionsManager ItemTransitionsManager { get; private set; }
-        [field: SerializeField] public RestaurantEncounterData levelData { get; private set; }
+        [field: SerializeField] public RestaurantEncounterData restaurantEncounterData { get; private set; }
         public DataBase DataBase { get; private set; }
 
         private List<ItemData> allPossibleItemData;
@@ -47,12 +47,12 @@ namespace foxRestaurant
         public UnityEvent<DataBase> OnDataBaseUpdated;
 
 
-        public void Init(RestaurantEncounterData levelData)
+        public void Init(RestaurantEncounterData restaurantEncounterData)
         {
-            allPossibleItemData = levelData.AllPossibleItemData.DataList;
+            allPossibleItemData = restaurantEncounterData.AllPossibleItemData.DataList;
             RecipeBlackBoard.Init(this);
             TransitionsBlackBoard.Init(this);
-            UpdateDataBase(levelData.CsvFile);
+            UpdateDataBase(restaurantEncounterData.CsvFile);
 
             PlayerInputController.Init(this);
             ItemsSpawner.Init(this);
@@ -101,7 +101,7 @@ namespace foxRestaurant
 
         private void Awake()
         {
-            Init(levelData);
+            Init(restaurantEncounterData);
         }
     }
 }

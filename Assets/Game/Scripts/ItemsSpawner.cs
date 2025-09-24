@@ -6,30 +6,30 @@ namespace foxRestaurant
     public class ItemsSpawner : MonoBehaviour
     {
         [SerializeField] private Item itemPrefab;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
         }
 
         public void SpawnIngredient()
         {
-            var cookerSlot = level.SlotsManager.CookerSlots.FirstOrDefault(slot => !slot.gameObject.activeSelf || slot.Empty);
+            var cookerSlot = restaurantEncounter.SlotsManager.CookerSlots.FirstOrDefault(slot => !slot.gameObject.activeSelf || slot.Empty);
             if (cookerSlot == null)
                 return;
 
-            var itemData = level.DecksManager.GetRandomIngredient();
-            SpawnItem(level, itemData, cookerSlot, 1 + itemData.AdditionalSatiety);
+            var itemData = restaurantEncounter.DecksManager.GetRandomIngredient();
+            SpawnItem(restaurantEncounter, itemData, cookerSlot, 1 + itemData.AdditionalSatiety);
         }
 
-        public void SpawnItem(RestaurantEncounter level, ItemData itemData, ItemSlot itemSlot, int satiety)
+        public void SpawnItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot, int satiety)
         {
             Item item = Instantiate(itemPrefab);
 
             itemSlot.SetItem(item);
             item.Slot = itemSlot;
-            item.Init(level, itemData, satiety);
+            item.Init(restaurantEncounter, itemData, satiety);
 
             item.transform.parent = itemSlot.transform;
             item.transform.position = itemSlot.CenterForItem.position;

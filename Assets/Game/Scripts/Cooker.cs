@@ -12,12 +12,12 @@ namespace foxRestaurant
 
         private ItemSlot slot;
 
-        public void Init(ItemSlot slot, RestaurantEncounter level)
+        public void Init(ItemSlot slot, RestaurantEncounter restaurantEncounter)
         {
             this.slot = slot;
             slot.OnItemHasBeenPlaced.AddListener(ItemSettedInSlotHandler);
             slot.OnItemHasBeenRemoved.AddListener(ClearIndicators);
-            level.Ticker.AddTickable(this);
+            restaurantEncounter.Ticker.AddTickable(this);
         }
 
         public void Tick(float deltaTime)

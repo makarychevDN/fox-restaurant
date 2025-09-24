@@ -9,9 +9,9 @@ namespace foxRestaurant
         public void Appear() => animator.SetBool("Appeared", true);
         public void Disappear() => animator.SetBool("Appeared", false);
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            level.OnDataBaseUpdated.AddListener(UpdatePanels);
+            restaurantEncounter.OnDataBaseUpdated.AddListener(UpdatePanels);
         }
 
         /// <summary>

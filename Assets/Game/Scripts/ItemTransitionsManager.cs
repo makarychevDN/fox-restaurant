@@ -4,22 +4,22 @@ namespace foxRestaurant
 {
     public class ItemTransitionsManager : MonoBehaviour
     {
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
         }
 
         public ItemData GetFryingResult(ItemData itemData)
         {
-            level.DataBase.FryingResults.TryGetValue(itemData, out ItemData fryingResult);
+            restaurantEncounter.DataBase.FryingResults.TryGetValue(itemData, out ItemData fryingResult);
             return fryingResult;
         }
 
         public ItemData GetSlicingResult(ItemData itemData)
         {
-            level.DataBase.SlicingResults.TryGetValue(itemData, out ItemData slicingResult);
+            restaurantEncounter.DataBase.SlicingResults.TryGetValue(itemData, out ItemData slicingResult);
             return slicingResult;
         }
     }

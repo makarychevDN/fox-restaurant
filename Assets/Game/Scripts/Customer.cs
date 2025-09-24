@@ -30,20 +30,20 @@ namespace foxRestaurant
         private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
         public UnityEvent<bool> OnLeft;
         public UnityEvent OnAte;
 
-        public void Init(RestaurantEncounter level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
+        public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             this.getItemDataToOrderFunc = getItemDataToOrderFunc;
-            level.Ticker.AddTickable(this);
-            this.level = level;
+            restaurantEncounter.Ticker.AddTickable(this);
+            this.restaurantEncounter = restaurantEncounter;
 
-            slotToPlaceFood = level.CustomerlSlotSpawner.SpawnSlot();
+            slotToPlaceFood = restaurantEncounter.CustomerlSlotSpawner.SpawnSlot();
             slotToPlaceFood.transform.position = Camera.main.WorldToScreenPoint(slotPositionPoint.position);
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
@@ -123,7 +123,7 @@ namespace foxRestaurant
 
         public void Uninit()
         {
-            level.Ticker.RemoveTickable(this);
+            restaurantEncounter.Ticker.RemoveTickable(this);
             slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
             Destroy(slotToPlaceFood.gameObject);

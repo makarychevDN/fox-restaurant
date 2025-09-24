@@ -12,13 +12,13 @@ namespace foxRestaurant
         [SerializeField] private Customer customerPrefab;
         [SerializeField] private List<SeatPlace> seatPlaces;
         [SerializeField] private AudioSource customerCameSound;
-        private RestaurantEncounter level;
+        private RestaurantEncounter restaurantEncounter;
 
         public UnityEvent OnCustomerSpawningRejected;
 
-        public void Init(RestaurantEncounter level)
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.level = level;
+            this.restaurantEncounter = restaurantEncounter;
         }
 
         public Customer SpawnCustomer(SeatPlace seatPlace, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
@@ -31,7 +31,7 @@ namespace foxRestaurant
             customer.transform.localPosition = Vector3.zero;
             customer.transform.localScale = Vector3.one;
             customer.transform.localRotation = Quaternion.identity;
-            customer.Init(level, customerData, getItemDataToOrderFunc);
+            customer.Init(restaurantEncounter, customerData, getItemDataToOrderFunc);
             return customer;
         }
 
