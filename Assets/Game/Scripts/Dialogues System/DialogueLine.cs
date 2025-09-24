@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace foxRestaurant
 {
     public class DialogueLine
