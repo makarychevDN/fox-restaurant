@@ -5,9 +5,9 @@ namespace foxRestaurant
     public class Scenario : MonoBehaviour
     {
         private CustomerSpawner customerSpawner;
-        Level level;
+        RestaurantEncounter level;
 
-        public void Init(CustomerSpawner customerSpawner, Level level)
+        public void Init(CustomerSpawner customerSpawner, RestaurantEncounter level)
         {
             this.customerSpawner = customerSpawner;
             this.level = level;

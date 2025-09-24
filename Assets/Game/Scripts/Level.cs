@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace foxRestaurant
 {
-    public class Level : MonoBehaviour
+    public class RestaurantEncounter : MonoBehaviour
     {
         [field: Header("Stats")]
         [SerializeField] private int cookerSlotsCount;

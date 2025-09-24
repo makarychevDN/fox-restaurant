@@ -12,11 +12,11 @@ namespace foxRestaurant
         [SerializeField] private Customer customerPrefab;
         [SerializeField] private List<SeatPlace> seatPlaces;
         [SerializeField] private AudioSource customerCameSound;
-        private Level level;
+        private RestaurantEncounter level;
 
         public UnityEvent OnCustomerSpawningRejected;
 
-        public void Init(Level level)
+        public void Init(RestaurantEncounter level)
         {
             this.level = level;
         }

@@ -30,14 +30,14 @@ namespace foxRestaurant
         private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
-        private Level level;
+        private RestaurantEncounter level;
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
         public UnityEvent<bool> OnLeft;
         public UnityEvent OnAte;
 
-        public void Init(Level level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
+        public void Init(RestaurantEncounter level, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             this.getItemDataToOrderFunc = getItemDataToOrderFunc;
             level.Ticker.AddTickable(this);

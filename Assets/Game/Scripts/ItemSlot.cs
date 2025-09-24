@@ -13,7 +13,7 @@ namespace foxRestaurant
         [SerializeField] private Cooker cooker;
         private Item item;
         private ItemData requiredItemData;
-        private Level level;
+        private RestaurantEncounter level;
         private bool selectedForItemMovement;
 
         public UnityEvent OnHasBeenOccupied;
@@ -28,7 +28,7 @@ namespace foxRestaurant
         public Item Item => item;
         public bool Empty => item == null;
 
-        public void Init(Level level)
+        public void Init(RestaurantEncounter level)
         {
             this.level = level;
             level.SlotsManager.AddSlot(this);

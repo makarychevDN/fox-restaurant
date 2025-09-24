@@ -4,9 +4,9 @@ namespace foxRestaurant
 {
     public class ItemTransitionsManager : MonoBehaviour
     {
-        private Level level;
+        private RestaurantEncounter level;
 
-        public void Init(Level level)
+        public void Init(RestaurantEncounter level)
         {
             this.level = level;
         }

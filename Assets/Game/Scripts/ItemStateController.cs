@@ -7,11 +7,11 @@ namespace foxRestaurant
     public class ItemStateController : MonoBehaviour
     {
         private MovementState movementState = MovementState.placedInSlot;
-        private Level level;
+        private RestaurantEncounter level;
         private Item item;
         private ItemsFusionDisplayer fusionDisplayer;
 
-        public void Init(Level level, Item item, ItemsFusionDisplayer fusionDisplayer)
+        public void Init(RestaurantEncounter level, Item item, ItemsFusionDisplayer fusionDisplayer)
         {
             this.level = level;
             this.item = item;

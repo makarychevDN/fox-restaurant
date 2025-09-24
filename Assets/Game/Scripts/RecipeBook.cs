@@ -9,9 +9,9 @@ namespace foxRestaurant
         [SerializeField] private TransitionsBlackBoard transitionsBlackBoard;
         [SerializeField] private AudioSource openBookSound;
         [SerializeField] private AudioSource closeBookSound;
-        private Level level;
+        private RestaurantEncounter level;
 
-        public void Init(Level level)
+        public void Init(RestaurantEncounter level)
         {
             this.level = level;
         }

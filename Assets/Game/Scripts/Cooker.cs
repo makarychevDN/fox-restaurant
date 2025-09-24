@@ -12,7 +12,7 @@ namespace foxRestaurant
 
         private ItemSlot slot;
 
-        public void Init(ItemSlot slot, Level level)
+        public void Init(ItemSlot slot, RestaurantEncounter level)
         {
             this.slot = slot;
             slot.OnItemHasBeenPlaced.AddListener(ItemSettedInSlotHandler);

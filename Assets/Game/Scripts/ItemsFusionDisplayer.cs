@@ -11,10 +11,10 @@ namespace foxRestaurant
         [SerializeField] private Sprite redCross;
         [SerializeField] private Animator animator;
         private Item hashedTargetItem;
-        private Level level;
+        private RestaurantEncounter level;
         private Item item;
 
-        public void Init(Level level, Item item)
+        public void Init(RestaurantEncounter level, Item item)
         {
             this.level = level;
             this.item = item;

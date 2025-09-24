@@ -27,14 +27,14 @@ namespace foxRestaurant
         [SerializeField] private AudioSource appearSound;
 
         private float fryingTimer;
-        private Level level;
+        private RestaurantEncounter level;
 
         public UnityEvent<int> OnSatietyUpdated;
 
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
 
-        public void Init(Level level, ItemData itemData, int satiety)
+        public void Init(RestaurantEncounter level, ItemData itemData, int satiety)
         {
             this.level = level;
             Satiety = satiety;

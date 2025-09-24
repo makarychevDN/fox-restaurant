@@ -6,9 +6,9 @@ namespace foxRestaurant
     public class ItemsSpawner : MonoBehaviour
     {
         [SerializeField] private Item itemPrefab;
-        private Level level;
+        private RestaurantEncounter level;
 
-        public void Init(Level level)
+        public void Init(RestaurantEncounter level)
         {
             this.level = level;
         }
@@ -23,7 +23,7 @@ namespace foxRestaurant
             SpawnItem(level, itemData, cookerSlot, 1 + itemData.AdditionalSatiety);
         }
 
-        public void SpawnItem(Level level, ItemData itemData, ItemSlot itemSlot, int satiety)
+        public void SpawnItem(RestaurantEncounter level, ItemData itemData, ItemSlot itemSlot, int satiety)
         {
             Item item = Instantiate(itemPrefab);
 

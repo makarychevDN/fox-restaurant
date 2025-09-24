@@ -6,9 +6,9 @@ namespace foxRestaurant
     public class RecipesManager : MonoBehaviour
     {
         [SerializeField] private ItemData coal;
-        private Level level;
+        private RestaurantEncounter level;
 
-        public void Init(Level level)
+        public void Init(RestaurantEncounter level)
         {
             this.level = level;
         }
