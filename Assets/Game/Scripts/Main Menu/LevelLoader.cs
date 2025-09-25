@@ -1,15 +1,21 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace foxRestaurant
 {
     public class LevelLoader : MonoBehaviour
     {
-        private EncountersList encountersList;
-        public void SetEncaunters(EncountersList encountersList) => this.encountersList = encountersList;
+        [SerializeField] private Object gameplayScene;
+        [SerializeField] private DataBetweenScenesContainer dataBetweenScenesContainer;
+
+        private EncountersListAsset encountersList;
+        public void SetEncaunters(EncountersListAsset encountersList) => this.encountersList = encountersList;
 
         public void LoadLevel()
         {
-            print(encountersList.name);
+            print("load " + encountersList.name);
+            dataBetweenScenesContainer.EncountersList = encountersList;
+            SceneManager.LoadScene(gameplayScene.name);
         }
     }
 }

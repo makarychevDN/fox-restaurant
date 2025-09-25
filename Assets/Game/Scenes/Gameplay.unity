@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eb22f7464beead4c94e4fee5e8e6265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  encounters: []
+  dataBetweenScenesContainer: {fileID: 11400000, guid: 773bcc4a22338204a952ba17abedc923, type: 2}
 --- !u!1 &2011988220
 GameObject:
   m_ObjectHideFlags: 0

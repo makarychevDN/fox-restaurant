@@ -6,9 +6,9 @@ namespace foxRestaurant
     public class CalendarCell : MonoBehaviour
     {
         [SerializeField] private Button button;
-        [SerializeField] private EncountersList encountersList;
+        [SerializeField] private EncountersListAsset encountersList;
 
         public Button Button => button;
-        public EncountersList EncountersList => encountersList;
+        public EncountersListAsset EncountersList => encountersList;
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 namespace foxRestaurant
 {
     [CreateAssetMenu(fileName = "EncountersList", menuName = "Scriptable Objects/EncountersList")]
-    public class EncountersList : ScriptableObject
+    public class EncountersListAsset : ScriptableObject
     {
-        [SerializeField] private List<Encounter> encounterPrefabs;
+        [SerializeField] public List<Encounter> Encounters {  get; private set; }
     }
 }
