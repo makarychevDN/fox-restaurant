@@ -15,7 +15,7 @@ namespace foxRestaurant
         [SerializeField] private ItemSlot itemSlotPrefab;
 
         [Header("links")]
-        [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private Character character;
         [SerializeField] private AudioSource eatingSound;
         [SerializeField] private AudioSource timeIsUpSound;
         [SerializeField] private Animator animator;
@@ -60,7 +60,7 @@ namespace foxRestaurant
         {
             HungerPoints = customerData.HungerPoints;
             Patience = customerData.Patience;
-            spriteRenderer.sprite = customerData.Sprite;
+            character.SetSprite(customerData.Sprite);
         }
 
         private void SetOrderData(ItemData itemData)
