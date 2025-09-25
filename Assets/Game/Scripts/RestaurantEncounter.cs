@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace foxRestaurant
 {
-    public class RestaurantEncounter : MonoBehaviour
+    public class RestaurantEncounter : Encounter
     {
         [field: Header("Stats")]
         [SerializeField] private int cookerSlotsCount;
@@ -99,9 +100,10 @@ namespace foxRestaurant
             OnDataBaseUpdated.Invoke(DataBase);
         }
 
-        private void Awake()
+        public override async Task StartEncounter()
         {
             Init(restaurantEncounterData);
+            await Task.Delay(1000);
         }
     }
 }
