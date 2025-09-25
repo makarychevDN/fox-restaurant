@@ -25,6 +25,7 @@ namespace foxRestaurant
                 var spawnedEncaunter = Instantiate(encounterPrefab);
                 encounters.Add(spawnedEncaunter);
                 spawnedEncaunter.gameObject.SetActive(false);
+                spawnedEncaunter.transform.parent = transform;
             }
         }
 
