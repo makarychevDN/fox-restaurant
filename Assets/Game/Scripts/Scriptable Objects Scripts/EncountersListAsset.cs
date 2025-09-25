@@ -6,6 +6,6 @@ namespace foxRestaurant
     [CreateAssetMenu(fileName = "EncountersList", menuName = "Scriptable Objects/EncountersList")]
     public class EncountersListAsset : ScriptableObject
     {
-        [SerializeField] public List<Encounter> Encounters {  get; private set; }
+        [field : SerializeField] public List<Encounter> Encounters {  get; private set; }
     }
 }
