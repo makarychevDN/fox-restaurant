@@ -12,9 +12,8 @@ namespace foxRestaurant
         [SerializeField] private GameObject panel;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private List<RectTransform> contentSizeFitters;
-
-        private float pitchDelta = 0;
-        private float pitch = 1;
+        [SerializeField] private float pitchDelta = 0;
+        [SerializeField] private float pitch = 1;
 
         public void SetSound(AudioClip sound) => audioSource.clip = sound;
         public void SetPitch(string inputValue) => pitch = inputValue.ParseFloatSafe();

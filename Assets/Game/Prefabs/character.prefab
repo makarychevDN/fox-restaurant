@@ -443,6 +443,8 @@ MonoBehaviour:
   - {fileID: 5543393827682177290}
   - {fileID: 5616585743371153026}
   - {fileID: 1656767919487678752}
+  pitchDelta: 0.05
+  pitch: 1
 --- !u!114 &6540028763305435803
 MonoBehaviour:
   m_ObjectHideFlags: 0
