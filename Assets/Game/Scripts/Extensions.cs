@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -112,6 +113,15 @@ namespace foxRestaurant
 
             Debug.LogWarning($"[ParseUtils] Не удалось распарсить float из строки '{raw}'. Использую fallback {fallback}.");
             return fallback;
+        }
+
+        public static string RemoveTags(this string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            // Регулярка ищет <...>
+            return Regex.Replace(input, "<.*?>", string.Empty);
         }
     }
 }

@@ -1,18 +1,21 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace foxRestaurant
 {
     public class DialogueDisplayer : MonoBehaviour
     {
-        [SerializeField] private TMP_Text label;
+        [SerializeField] private TMP_Text actualText;
+        [SerializeField] private TMP_Text transparentText;
         [SerializeField] private GameObject panel;
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private List<RectTransform> contentSizeFitters;
 
         private float pitchDelta = 0;
         private float pitch = 1;
 
-        public void Clear() => label.text = "";
         public void SetSound(AudioClip sound) => audioSource.clip = sound;
         public void SetPitch(string inputValue) => pitch = inputValue.ParseFloatSafe();
         public void SetPitchDelta(string inputValue) => pitchDelta = inputValue.ParseFloatSafe();
@@ -20,7 +23,7 @@ namespace foxRestaurant
 
         public void Print(string substring, bool playSound = true)
         {
-            label.text += substring;
+            actualText.text += substring;
 
             if (playSound)
             {
@@ -29,15 +32,25 @@ namespace foxRestaurant
             }
         }
 
-        public void Show()
+        public void Show(string wholeString)
         {
             panel.SetActive(true);
-            label.text = "";
+            actualText.text = "";
+            transparentText.text = wholeString.RemoveTags();
+            RebuildContentSizeFitters();
         }
 
         public void Hide()
         {
             panel.SetActive(false);
+        }
+
+        private void RebuildContentSizeFitters()
+        {
+            foreach(var fitter in contentSizeFitters)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(fitter);
+            }
         }
     }
 }

@@ -48,7 +48,7 @@ namespace foxRestaurant
 
         public async Task DisplayDialogueLine(string text)
         {
-            dialogueDisplayer.Show();
+            dialogueDisplayer.Show(text);
             skipRequested = false;
 
             for (int i = 0; i < text.Length;)
