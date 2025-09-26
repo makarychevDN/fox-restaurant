@@ -32,6 +32,7 @@ namespace foxRestaurant
         public void Show()
         {
             panel.SetActive(true);
+            label.text = "";
         }
 
         public void Hide()

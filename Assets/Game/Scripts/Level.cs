@@ -34,6 +34,7 @@ namespace foxRestaurant
             while (currentIndex < encounters.Count)
             {
                 Encounter encounter = encounters[currentIndex];
+                encounter.gameObject.SetActive(true);
                 await encounter.StartEncounter();
                 currentIndex++;
             }

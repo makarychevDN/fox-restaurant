@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0fdd8431f9bfb4aa939566cd9e35ba, type: 3}
   m_Name: EncountersList lvl 1
   m_EditorClassIdentifier: 
-  encounterPrefabs: []
+  <Encounters>k__BackingField:
+  - {fileID: 1797538484258871691, guid: 4ebdd116a7af6934e82d546acd0ca157, type: 3}

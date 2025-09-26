@@ -13,7 +13,7 @@ namespace foxRestaurant
             spriteRenderer.sprite = sprite;
         }
 
-        public async Task SayAsync(string text)
+        public async Task Say(string text)
         {
             await dialogueManager.DisplayDialogueLine(text);
         }
