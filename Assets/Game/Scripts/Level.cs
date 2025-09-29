@@ -36,6 +36,7 @@ namespace foxRestaurant
                 Encounter encounter = encounters[currentIndex];
                 encounter.gameObject.SetActive(true);
                 await encounter.StartEncounter();
+                encounter.gameObject.SetActive(false);
                 currentIndex++;
             }
         }
