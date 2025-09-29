@@ -87,6 +87,7 @@ namespace foxRestaurant
                 return 1;
 
             int endIndex = text.IndexOf('>', startIndex);
+            if (endIndex == -1) endIndex = text.Length;
             int splitterIndex = text.IndexOf(':', startIndex, endIndex - startIndex);
 
             string commandKey;
