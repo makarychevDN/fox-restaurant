@@ -29,7 +29,6 @@ namespace foxRestaurant
             {
                 { "pause", Pause },
                 { "delay", SetDelay },
-                { "color", SetTextColor },
                 { "chunk", SetChunkSize },
                 { "emote", OnChangeEmotion.Invoke },
                 { "voice", SetVoice },
@@ -67,14 +66,13 @@ namespace foxRestaurant
                 {
                     int nextCommandIndex = text.IndexOf('<', i);
                     if (nextCommandIndex == -1) nextCommandIndex = text.Length;
-
                     int chunkLength = Math.Min(chunkSize, nextCommandIndex - i);
-                    string chunk = text.Substring(i, chunkLength);
 
-                    dialogueDisplayer.Print(chunk);
+                    dialogueDisplayer.Print(chunkLength);
+
                     i += chunkLength;
 
-                    if(!skipRequested)
+                    if (!skipRequested)
                         await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
                 }
             }
@@ -104,7 +102,10 @@ namespace foxRestaurant
                 commandKey = text.Substring(startIndex + 1, endIndex - startIndex - 1);
             }
 
-            commands[commandKey](parameter);
+            Action<string> command;
+            commands.TryGetValue(commandKey, out command);
+            if(command != null)
+                command(parameter);
 
             return endIndex - startIndex + 1;
         }
@@ -127,7 +128,6 @@ namespace foxRestaurant
 
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
         private void SetDelay(string delay) => delayBetweenChunks = delay.ParseFloatSafe();
-        private void SetTextColor(string color) => dialogueDisplayer.Print($"<color={color}>", false);
         private void SetChunkSize(string size) => chunkSize = Math.Clamp(Convert.ToInt32(size), 1, 10);
         private void SetVoice(string voiceKey) => dialogueDisplayer.SetSound(voiceMap[voiceKey]);
         private void SetVolume(string voiceKey) => dialogueDisplayer.SetVolume(voiceKey);

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,6 @@ namespace foxRestaurant
     public class DialogueDisplayer : MonoBehaviour
     {
         [SerializeField] private TMP_Text actualText;
-        [SerializeField] private TMP_Text transparentText;
         [SerializeField] private GameObject panel;
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private List<RectTransform> contentSizeFitters;
@@ -20,9 +20,9 @@ namespace foxRestaurant
         public void SetPitchDelta(string inputValue) => pitchDelta = inputValue.ParseFloatSafe();
         public void SetVolume(string inputValue) => audioSource.volume = inputValue.ParseFloatSafe();
 
-        public void Print(string substring, bool playSound = true)
+        public void Print(int substringLength, bool playSound = true)
         {
-            actualText.text += substring;
+            actualText.maxVisibleCharacters += substringLength;
 
             if (playSound)
             {
@@ -34,8 +34,8 @@ namespace foxRestaurant
         public void Show(string wholeString)
         {
             panel.SetActive(true);
-            actualText.text = "";
-            transparentText.text = wholeString.RemoveTags();
+            actualText.text = PreprocessText(wholeString);
+            actualText.maxVisibleCharacters = 0;
             RebuildContentSizeFitters();
         }
 
@@ -50,6 +50,17 @@ namespace foxRestaurant
             {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(fitter);
             }
+        }
+
+        public string PreprocessText(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+
+            string processed = Regex.Replace(input, @"<color:([^>]+)>", "<color=$1>");
+            processed = Regex.Replace(processed, @"<(pause|delay|voice|chunk|emote|pitch|volume|pitch delta)(:[^>]*)?>", string.Empty);
+
+            return processed;
         }
     }
 }
