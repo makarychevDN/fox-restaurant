@@ -103,9 +103,8 @@ namespace foxRestaurant
                 commandKey = text.Substring(startIndex + 1, endIndex - startIndex - 1);
             }
 
-            Action<string> command;
-            commands.TryGetValue(commandKey, out command);
-            if(command != null)
+            commands.TryGetValue(commandKey, out Action<string> command);
+            if (command != null)
                 command(parameter);
 
             return endIndex - startIndex + 1;
