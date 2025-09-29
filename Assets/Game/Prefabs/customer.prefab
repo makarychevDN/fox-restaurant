@@ -53,7 +53,7 @@ MonoBehaviour:
   <HungerPoints>k__BackingField: 0
   <Patience>k__BackingField: 0
   itemSlotPrefab: {fileID: 5498270339331870369, guid: 93a5253740c3e134baa4e80ac40b82c1, type: 3}
-  character: {fileID: 0}
+  character: {fileID: 7041731887450620140}
   eatingSound: {fileID: 3197204169755092243}
   timeIsUpSound: {fileID: 1880447083934669911}
   animator: {fileID: 8153659440555309590}
@@ -1264,6 +1264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: character
       objectReference: {fileID: 0}
+    - target: {fileID: 5878775946053094455, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1274,3 +1278,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1436747950515984894, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
   m_PrefabInstance: {fileID: 5311131301225403388}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7041731887450620140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2886152123885982480, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+  m_PrefabInstance: {fileID: 5311131301225403388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a853fb76a2f234fa682286aad6e9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
