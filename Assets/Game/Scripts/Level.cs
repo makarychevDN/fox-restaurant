@@ -40,24 +40,12 @@ namespace foxRestaurant
             {
                 Encounter encounter = encounters[currentIndex];
                 encounter.gameObject.SetActive(true);
-                FadeOut();
+                await fading.FadeOut();
                 await encounter.StartEncounter();
-                await FadeIn();
+                await fading.FadeIn();
                 encounter.gameObject.SetActive(false);
                 currentIndex++;
             }
-        }
-
-        public async Task FadeIn()
-        {
-            Tween tween = fading.DOFade(1f, 0.4f);
-            await tween.AsyncWaitForCompletion();
-        }
-
-        public async Task FadeOut()
-        {
-            Tween tween = fading.DOFade(0f, 0.4f);
-            await tween.AsyncWaitForCompletion();
         }
     }
 }

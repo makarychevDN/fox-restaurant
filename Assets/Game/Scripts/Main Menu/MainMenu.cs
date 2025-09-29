@@ -1,4 +1,6 @@
+using DG.Tweening;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +11,7 @@ namespace foxRestaurant
         [SerializeField] private List<CalendarCell> calendarCells;
         [SerializeField] private LevelLoader levelLoader;
         [SerializeField] private Button launchLevelButton;
+        [SerializeField] private Image fading;
 
         private void Awake()
         {
@@ -17,7 +20,13 @@ namespace foxRestaurant
                 cell.Button.onClick.AddListener(() => levelLoader.SetEncaunters(cell.EncountersList));
             }
 
-            launchLevelButton.onClick.AddListener(levelLoader.LoadLevel);
+            launchLevelButton.onClick.AddListener(LaunchButtonClickedHandler);
+        }
+
+        private async void LaunchButtonClickedHandler()
+        {
+            await fading.FadeIn();
+            levelLoader.LoadLevel();
         }
     }
 }

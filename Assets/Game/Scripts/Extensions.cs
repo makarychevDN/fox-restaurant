@@ -1,9 +1,13 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements.Experimental;
 
 namespace foxRestaurant
 {
@@ -113,6 +117,18 @@ namespace foxRestaurant
 
             Debug.LogWarning($"[ParseUtils] Не удалось распарсить float из строки '{raw}'. Использую fallback {fallback}.");
             return fallback;
+        }
+
+        public static async Task FadeIn(this Image image)
+        {
+            Tween tween = image.DOFade(1f, 0.4f);
+            await tween.AsyncWaitForCompletion();
+        }
+
+        public static async Task FadeOut(this Image image)
+        {
+            Tween tween = image.DOFade(0f, 0.4f);
+            await tween.AsyncWaitForCompletion();
         }
     }
 }
