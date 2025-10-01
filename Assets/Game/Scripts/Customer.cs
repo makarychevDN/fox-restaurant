@@ -44,7 +44,7 @@ namespace foxRestaurant
             this.restaurantEncounter = restaurantEncounter;
 
             slotToPlaceFood = restaurantEncounter.CustomerlSlotSpawner.SpawnSlot();
-            slotToPlaceFood.transform.position = Camera.main.WorldToScreenPoint(slotPositionPoint.position);
+            slotToPlaceFood.transform.position = slotPositionPoint.position;
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
 

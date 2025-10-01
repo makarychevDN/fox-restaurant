@@ -10,7 +10,7 @@ namespace foxRestaurant
         public void HoverSlot(ItemSlot itemSlot)
         {
             animator.SetBool("readyToSlice", true);
-            transform.DOMove(Camera.main.ScreenToWorldPoint(itemSlot.transform.position + Vector3.forward * 10), 0.1f);
+            transform.DOMove(itemSlot.transform.position + Vector3.forward * 10, 0.1f);
             Squeeze();
         }
 

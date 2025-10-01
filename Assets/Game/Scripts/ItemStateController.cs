@@ -95,7 +95,7 @@ namespace foxRestaurant
         {
             if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
             {
-                transform.position = Input.mousePosition;
+                transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
                 var slotToPlaceItem = restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item);
                 restaurantEncounter.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
 
