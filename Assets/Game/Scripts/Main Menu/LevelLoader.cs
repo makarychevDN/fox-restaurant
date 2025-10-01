@@ -5,7 +5,7 @@ namespace foxRestaurant
 {
     public class LevelLoader : MonoBehaviour
     {
-        [SerializeField] private Object gameplayScene;
+        [SerializeField] private string gameplaySceneName = "Gameplay";
         [SerializeField] private DataBetweenScenesContainer dataBetweenScenesContainer;
 
         private EncountersListAsset encountersList;
@@ -15,7 +15,7 @@ namespace foxRestaurant
         {
             print("load " + encountersList.name);
             dataBetweenScenesContainer.EncountersList = encountersList;
-            SceneManager.LoadScene(gameplayScene.name);
+            SceneManager.LoadScene(gameplaySceneName);
         }
     }
 }

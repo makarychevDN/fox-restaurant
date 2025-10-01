@@ -1,4 +1,5 @@
 using DG.Tweening;
+using NUnit.Framework.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -128,6 +129,23 @@ namespace foxRestaurant
         public static async Task FadeOut(this Image image)
         {
             Tween tween = image.DOFade(0f, 0.4f);
+            await tween.AsyncWaitForCompletion();
+        }
+
+        public static async Task AnimateThreshold(this Material runtimeMaterial, string propertyName, float from, float to, float duration)
+        {
+            // Сначала устанавливаем стартовое значение
+            runtimeMaterial.SetFloat(propertyName, from);
+
+            // Создаём твин
+            Tween tween = DOTween.To(
+                () => runtimeMaterial.GetFloat(propertyName),
+                x => runtimeMaterial.SetFloat(propertyName, x),
+                to,
+                duration
+            );
+
+            // Ждём завершения
             await tween.AsyncWaitForCompletion();
         }
     }

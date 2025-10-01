@@ -16,6 +16,8 @@ namespace foxRestaurant
 
         private async void Start()
         {
+            fading.material = new Material(fading.material);
+
             Init(dataBetweenScenesContainer.EncountersList);
             print(dataBetweenScenesContainer.EncountersList.name + " is loaded");
             await RunLevel();
@@ -40,9 +42,9 @@ namespace foxRestaurant
             {
                 Encounter encounter = encounters[currentIndex];
                 encounter.gameObject.SetActive(true);
-                await fading.FadeOut();
+                await fading.material.AnimateThreshold("_Fading", 1, 0, 1f);
                 await encounter.StartEncounter();
-                await fading.FadeIn();
+                await fading.material.AnimateThreshold("_Fading", 0, 1, 1f);
                 encounter.gameObject.SetActive(false);
                 currentIndex++;
             }
