@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,29 +5,26 @@ namespace foxRestaurant
 {
     public class MainMenu : MonoBehaviour
     {
-        [SerializeField] private List<CalendarCell> calendarCells;
-        [SerializeField] private LevelLoader levelLoader;
-        [SerializeField] private Button launchLevelButton;
-        [SerializeField] private Image fading;
-        private Material material;
+        [field: SerializeField] public StartMenuPanel StartMenuPanel { get; private set; }
+        [field: SerializeField] public CalendarMenuPanel CalendarMenuPanel { get; private set; }
+        [field: SerializeField] public Image Fading { get; private set; }
+
 
         private void Awake()
         {
-            fading.material = new Material(fading.material);
-            fading.material.AnimateThreshold("_Fading", 1, 0, 1f);
+            Fading.material = new Material(Fading.material);
+            Fading.FadeOut();
 
-            foreach (var cell in calendarCells)
-            {
-                cell.Button.onClick.AddListener(() => levelLoader.SetEncaunters(cell.EncountersList));
-            }
-
-            launchLevelButton.onClick.AddListener(LaunchButtonClickedHandler);
+            CalendarMenuPanel.Init(this);
+            StartMenuPanel.Init(this);
         }
 
-        private async void LaunchButtonClickedHandler()
+        public async void EnablePanel(MonoBehaviour currentPanel, MonoBehaviour nextPanel)
         {
-            await fading.material.AnimateThreshold("_Fading", 0, 1, 1f);
-            levelLoader.LoadLevel();
+            await Fading.FadeIn();
+            currentPanel.gameObject.SetActive(false);
+            nextPanel.gameObject.SetActive(true);
+            await Fading.FadeOut();
         }
     }
 }

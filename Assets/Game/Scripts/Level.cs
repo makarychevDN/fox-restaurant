@@ -42,9 +42,9 @@ namespace foxRestaurant
             {
                 Encounter encounter = encounters[currentIndex];
                 encounter.gameObject.SetActive(true);
-                await fading.material.AnimateThreshold("_Fading", 1, 0, 1f);
+                await fading.FadeOut();
                 await encounter.StartEncounter();
-                await fading.material.AnimateThreshold("_Fading", 0, 1, 1f);
+                await fading.FadeIn();
                 encounter.gameObject.SetActive(false);
                 currentIndex++;
             }

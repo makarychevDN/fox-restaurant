@@ -120,33 +120,42 @@ namespace foxRestaurant
             return fallback;
         }
 
-        public static async Task FadeIn(this Image image)
-        {
-            Tween tween = image.DOFade(1f, 0.4f);
-            await tween.AsyncWaitForCompletion();
-        }
-
-        public static async Task FadeOut(this Image image)
-        {
-            Tween tween = image.DOFade(0f, 0.4f);
-            await tween.AsyncWaitForCompletion();
-        }
-
-        public static async Task AnimateThreshold(this Material runtimeMaterial, string propertyName, float from, float to, float duration)
+        public static async Task AnimateThreshold(this Image image, string propertyName, float from, float to, float duration)
         {
             // Сначала устанавливаем стартовое значение
-            runtimeMaterial.SetFloat(propertyName, from);
+            image.raycastTarget = true;
+            image.material.SetFloat(propertyName, from);
 
             // Создаём твин
             Tween tween = DOTween.To(
-                () => runtimeMaterial.GetFloat(propertyName),
-                x => runtimeMaterial.SetFloat(propertyName, x),
+                () => image.material.GetFloat(propertyName),
+                x => image.material.SetFloat(propertyName, x),
                 to,
                 duration
             );
 
             // Ждём завершения
             await tween.AsyncWaitForCompletion();
+            image.raycastTarget = false;
+        }
+
+        public static async Task FadeIn(this Image image)
+        {
+            await image.AnimateThreshold("_Fading", 0, 1, 1f);
+        }
+
+        public static async Task FadeOut(this Image image)
+        {
+            await image.AnimateThreshold("_Fading", 1, 0, 1f);
+        }
+
+        public static void Quit()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit ();
+#endif
         }
     }
 }
