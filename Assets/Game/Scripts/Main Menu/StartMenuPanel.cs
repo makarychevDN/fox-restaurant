@@ -12,6 +12,7 @@ namespace foxRestaurant
         public void Init(MainMenu mainMenu)
         {
             playButton.onClick.AddListener(() => mainMenu.EnablePanel(this, mainMenu.CalendarMenuPanel));
+            settingsButton.onClick.AddListener(() => mainMenu.EnablePanel(this, mainMenu.SettingsMenuPanel));
             exitButton.onClick.AddListener(Extensions.Quit);
         }
     }

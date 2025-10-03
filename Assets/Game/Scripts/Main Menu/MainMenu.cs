@@ -7,6 +7,7 @@ namespace foxRestaurant
     {
         [field: SerializeField] public StartMenuPanel StartMenuPanel { get; private set; }
         [field: SerializeField] public CalendarMenuPanel CalendarMenuPanel { get; private set; }
+        [field: SerializeField] public SettingsMenuPanel SettingsMenuPanel { get; private set; }
         [field: SerializeField] public Image Fading { get; private set; }
 
 
@@ -16,6 +17,7 @@ namespace foxRestaurant
             Fading.FadeOut();
 
             CalendarMenuPanel.Init(this);
+            SettingsMenuPanel.Init(this);
             StartMenuPanel.Init(this);
         }
 
