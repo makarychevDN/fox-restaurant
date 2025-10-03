@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e7bf9b80a45a4409370d2722f70aa8, type: 3}
   m_Name: DataBetweenScenesContainer
   m_EditorClassIdentifier: 
+  <EncountersList>k__BackingField: {fileID: 11400000, guid: 25cbd9a35a1b69b47bea5ea5c2e63278, type: 2}

@@ -49,7 +49,7 @@ namespace foxRestaurant
         public UnityEvent<DataBase> OnDataBaseUpdated;
 
 
-        public void Init(RestaurantEncounterData restaurantEncounterData)
+        public override void Init()
         {
             allPossibleItemData = restaurantEncounterData.AllPossibleItemData.DataList;
             RecipeBlackBoard.Init(this);
@@ -103,7 +103,6 @@ namespace foxRestaurant
 
         public override async Task StartEncounter()
         {
-            Init(restaurantEncounterData);
             await completionSource.Task;
         }
 

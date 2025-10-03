@@ -42,6 +42,7 @@ namespace foxRestaurant
             {
                 Encounter encounter = encounters[currentIndex];
                 encounter.gameObject.SetActive(true);
+                encounter.Init();
                 await fading.FadeOut();
                 await encounter.StartEncounter();
                 await fading.FadeIn();

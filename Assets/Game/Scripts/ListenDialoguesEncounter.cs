@@ -7,6 +7,8 @@ namespace foxRestaurant
     {
         [SerializeField] private Character wolf;
 
+        public override void Init() { }
+
         public override async Task StartEncounter()
         {
             await wolf.Say("Привет!<pause:0.4> Я крутой волчара.<pause:0.4> Накормишь меня <color:#bf623f>колбаской?");
