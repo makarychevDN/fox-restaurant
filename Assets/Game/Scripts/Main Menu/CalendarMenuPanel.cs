@@ -9,6 +9,7 @@ namespace foxRestaurant
         [SerializeField] private List<CalendarCell> calendarCells;
         [SerializeField] private LevelLoader levelLoader;
         [SerializeField] private Button launchLevelButton;
+        [SerializeField] private Button backButton;
         private MainMenu mainMenu;
 
         public void Init(MainMenu mainMenu)
@@ -21,6 +22,7 @@ namespace foxRestaurant
             }
 
             launchLevelButton.onClick.AddListener(LaunchButtonClickedHandler);
+            backButton.onClick.AddListener(() => mainMenu.EnablePanel(this, mainMenu.StartMenuPanel));
         }
 
         private async void LaunchButtonClickedHandler()
