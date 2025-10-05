@@ -1,12 +1,13 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 namespace foxRestaurant
 {
     public class Cooker : MonoBehaviour, ITickable
     {
-        [SerializeField] private TMP_Text timeLefTextIndicator;
+        [SerializeField] private TMP_Text timeLeftTextIndicator;
         [SerializeField] private Slider timeLeftSliderIndicator;
         [SerializeField] private Image image;
         [SerializeField] private Sprite coldCookerSprite;
@@ -27,21 +28,30 @@ namespace foxRestaurant
             if (slot.Item == null)
                 return;
 
-            timeLefTextIndicator.text = slot.Item.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>");
+            if (slot.Item.IsReady)
+            {
+                timeLeftTextIndicator.text = "<mspace=1em>done</mspace>";
+                timeLeftTextIndicator.color = Extensions.HexToColor("#c19a47");
+                return;
+            }
+
+            slot.Item.Fry(deltaTime); 
+            timeLeftTextIndicator.text = slot.Item.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
             timeLeftSliderIndicator.value = slot.Item.FryingTimer;
-            slot.Item.Fry(deltaTime);
         }
 
         private void ItemSettedInSlotHandler(Item item)
         {
             timeLeftSliderIndicator.maxValue = item.TimeToFry;
-            timeLefTextIndicator.text = item.TimeToFry.ToString();
+            timeLeftTextIndicator.text = item.TimeToFry.ToString();
+            timeLeftTextIndicator.color = Extensions.HexToColor(item.IsReady ? "#c19a47" : "#848f2e");
         }
 
         private void ClearIndicators(Item item)
         {
-            timeLefTextIndicator.text = "";
+            timeLeftTextIndicator.text = "<mspace=1em>0:0s</mspace>";
             timeLeftSliderIndicator.value = 0;
+            timeLeftTextIndicator.color = Extensions.HexToColor("#4e5615");
         }
     }
 }

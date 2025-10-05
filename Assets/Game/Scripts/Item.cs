@@ -28,11 +28,13 @@ namespace foxRestaurant
 
         private float fryingTimer;
         private RestaurantEncounter restaurantEncounter;
+        private bool isReady;
 
         public UnityEvent<int> OnSatietyUpdated;
 
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
+        public bool IsReady => isReady;
 
         public void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
         {
@@ -56,22 +58,22 @@ namespace foxRestaurant
 
         public void Fry(float time)
         {
+            ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
+            if (fryingResult == null)
+                return;
+
             fryingTimer += time;
 
             if(fryingTimer >= TimeToFry)
             {
+                isReady = true;
                 fryingTimer = 0;
                 Satiety++;
                 OnSatietyUpdated.Invoke(Satiety);
-
-                ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
-                if (fryingResult != null)
-                {
-                    SetItemData(fryingResult);
-                    friedSound.pitch = Random.Range(0.7f, 1.3f);
-                    friedSound.Play();
-                    fryingParticles.ForEach(p => p.Play());
-                }
+                SetItemData(fryingResult);
+                friedSound.pitch = Random.Range(0.7f, 1.3f);
+                friedSound.Play();
+                fryingParticles.ForEach(p => p.Play());
             }
         }
 
