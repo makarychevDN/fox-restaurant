@@ -7,8 +7,10 @@ namespace foxRestaurant
     public class Cooker : MonoBehaviour, ITickable
     {
         [SerializeField] private TMP_Text timeLefTextIndicator;
-        [SerializeField] private TMP_Text sLetter;
         [SerializeField] private Slider timeLeftSliderIndicator;
+        [SerializeField] private Image image;
+        [SerializeField] private Sprite coldCookerSprite;
+        [SerializeField] private Sprite hotCookerSprite;
 
         private ItemSlot slot;
 
@@ -25,7 +27,7 @@ namespace foxRestaurant
             if (slot.Item == null)
                 return;
 
-            timeLefTextIndicator.text = slot.Item.TimeToFryLeft.ToString("0.0");
+            timeLefTextIndicator.text = slot.Item.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>");
             timeLeftSliderIndicator.value = slot.Item.FryingTimer;
             slot.Item.Fry(deltaTime);
         }
@@ -34,14 +36,12 @@ namespace foxRestaurant
         {
             timeLeftSliderIndicator.maxValue = item.TimeToFry;
             timeLefTextIndicator.text = item.TimeToFry.ToString();
-            sLetter.text = "s";
         }
 
         private void ClearIndicators(Item item)
         {
-            timeLefTextIndicator.text = "-";
+            timeLefTextIndicator.text = "";
             timeLeftSliderIndicator.value = 0;
-            sLetter.text = "";
         }
     }
 }
