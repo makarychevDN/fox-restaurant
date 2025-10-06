@@ -23,6 +23,7 @@ namespace foxRestaurant
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
+        [field: SerializeField] public ItemSpawnTimer ItemSpawnTimer { get; private set; }
         [field: SerializeField] public CustomerSpawner CustomerSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CookerSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner SpawnItemSlotSpawner { get; private set; }
@@ -60,6 +61,7 @@ namespace foxRestaurant
 
             PlayerInputController.Init(this);
             ItemsSpawner.Init(this);
+            ItemSpawnTimer.Init(this);
             CustomerSpawner.Init(this);
             CookerSlotSpawner.Init(this);
             SpawnItemSlotSpawner.Init(this);

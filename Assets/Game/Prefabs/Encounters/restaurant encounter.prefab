@@ -331,6 +331,7 @@ MonoBehaviour:
   <Scenario>k__BackingField: {fileID: 73931861159657960}
   <DynamicTextManager>k__BackingField: {fileID: 1124546090868896487}
   <ItemsSpawner>k__BackingField: {fileID: 7088981166269214873}
+  <ItemSpawnTimer>k__BackingField: {fileID: 4603569617256824294}
   <CustomerSpawner>k__BackingField: {fileID: 7153153446249404665}
   <CookerSlotSpawner>k__BackingField: {fileID: 1614397463357948524}
   <SpawnItemSlotSpawner>k__BackingField: {fileID: 5295689450324062385}
@@ -3769,6 +3770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2232361145097130408}
   - component: {fileID: 7088981166269214873}
+  - component: {fileID: 4603569617256824294}
   m_Layer: 0
   m_Name: food spawner
   m_TagString: Untagged
@@ -3804,6 +3806,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
+--- !u!114 &4603569617256824294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597726993527394952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88eebc4831039a146a48617b13537c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 7088981166269214873}
+  spawnInterval: 5
 --- !u!1 &6676755067828278483
 GameObject:
   m_ObjectHideFlags: 0
