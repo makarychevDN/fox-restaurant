@@ -61,7 +61,6 @@ namespace foxRestaurant
 
             PlayerInputController.Init(this);
             ItemsSpawner.Init(this);
-            ItemSpawnTimer.Init(this);
             CustomerSpawner.Init(this);
             CookerSlotSpawner.Init(this);
             SpawnItemSlotSpawner.Init(this);
@@ -106,6 +105,8 @@ namespace foxRestaurant
                 spawnItemSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(spawnItemSlot));
                 spawnItemSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
             }
+
+            ItemSpawnTimer.Init(this);
         }
 
         public void UpdateDataBase(TextAsset csvFile)

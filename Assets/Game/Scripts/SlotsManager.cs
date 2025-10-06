@@ -10,7 +10,7 @@ namespace foxRestaurant
 
         public void AddSlot(ItemSlot slot) => slots.Add(slot);
         public void RemoveSlot(ItemSlot slot) => slots.Remove(slot);
-        public List<ItemSlot> CookerSlots => slots.Where(slot => slot.SlotType == SlotType.ItemSpawner).ToList();
+        public List<ItemSlot> SpawningSlots => slots.Where(slot => slot.SlotType == SlotType.ItemSpawner).ToList();
 
         public ItemSlot GetSlotToPlaceItem(Item item)
         {
