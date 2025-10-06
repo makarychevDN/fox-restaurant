@@ -121,6 +121,7 @@ namespace foxRestaurant
     {
         Customer = 10,
         Cooker = 20,
-        Additional = 30
+        Additional = 30,
+        ItemSpawner = 40
     }
 }
