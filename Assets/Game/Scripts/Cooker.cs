@@ -28,14 +28,20 @@ namespace foxRestaurant
             if (slot.Item == null)
                 return;
 
-            if (slot.Item.IsReady)
+            slot.Item.Fry(deltaTime);
+            DisplayInfo(slot.Item);
+        }
+
+        private void DisplayInfo(Item item)
+        {
+            if (!item.CanBeFried())
             {
                 timeLeftTextIndicator.text = "<mspace=1em>done</mspace>";
                 timeLeftTextIndicator.color = Extensions.HexToColor("#c19a47");
                 return;
             }
 
-            slot.Item.Fry(deltaTime); 
+            timeLeftTextIndicator.color = Extensions.HexToColor("#848f2e");
             timeLeftTextIndicator.text = slot.Item.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
             timeLeftSliderIndicator.value = slot.Item.FryingTimer;
         }
@@ -44,7 +50,7 @@ namespace foxRestaurant
         {
             timeLeftSliderIndicator.maxValue = item.TimeToFry;
             timeLeftTextIndicator.text = item.TimeToFry.ToString();
-            timeLeftTextIndicator.color = Extensions.HexToColor(item.IsReady ? "#c19a47" : "#848f2e");
+            timeLeftTextIndicator.color = Extensions.HexToColor(item.CanBeFried() ? "#848f2e" : "#c19a47");
         }
 
         private void ClearIndicators(Item item)

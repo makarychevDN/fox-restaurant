@@ -27,9 +27,9 @@ namespace foxRestaurant
         {
             Item item = Instantiate(itemPrefab);
 
+            item.Init(restaurantEncounter, itemData, satiety);
             itemSlot.SetItem(item);
             item.Slot = itemSlot;
-            item.Init(restaurantEncounter, itemData, satiety);
 
             item.transform.parent = itemSlot.transform;
             item.transform.position = itemSlot.CenterForItem.position;

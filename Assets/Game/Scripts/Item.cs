@@ -34,7 +34,11 @@ namespace foxRestaurant
 
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
-        public bool IsReady => isReady;
+        public bool CanBeFried()
+        {
+            ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
+            return fryingResult != null;
+        }
 
         public void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
         {
