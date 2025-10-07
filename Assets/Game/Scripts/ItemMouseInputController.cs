@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace foxRestaurant
 {
-    public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+    public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler
     {
         private ItemStateController itemStateController;
 
@@ -21,11 +21,7 @@ namespace foxRestaurant
                 itemStateController.TryToSlice();
         }
 
-        public void OnDrag(PointerEventData eventData)
-        {
-            if (eventData.button == PointerEventData.InputButton.Left)
-                itemStateController.OnDrag();
-        }
+        public void OnDrag(PointerEventData eventData) { }
 
         public void OnPointerUp(PointerEventData eventData)
         {
@@ -43,6 +39,12 @@ namespace foxRestaurant
         public void OnPointerExit(PointerEventData eventData)
         {
             itemStateController.OnUnhover();
+        }
+
+        public void OnBeginDrag(PointerEventData eventData)
+        {
+            if (eventData.button == PointerEventData.InputButton.Left)
+                itemStateController.OnBeginDrag();
         }
     }
 }

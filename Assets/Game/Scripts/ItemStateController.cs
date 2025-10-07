@@ -6,7 +6,7 @@ namespace foxRestaurant
 {
     public class ItemStateController : MonoBehaviour
     {
-        private MovementState movementState = MovementState.placedInSlot;
+        [SerializeField] private MovementState movementState = MovementState.placedInSlot;
         private RestaurantEncounter restaurantEncounter;
         private Item item;
         private ItemsFusionDisplayer fusionDisplayer;
@@ -28,7 +28,7 @@ namespace foxRestaurant
                 movementState = MovementState.preparedForGrabbing;
         }
 
-        public void OnDrag()
+        public void OnBeginDrag()
         {
             if (movementState == MovementState.goingBackToLastSlot)
                 return;
