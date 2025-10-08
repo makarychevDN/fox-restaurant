@@ -7,6 +7,7 @@ namespace foxRestaurant
     public class ItemStateController : MonoBehaviour
     {
         [SerializeField] private MovementState movementState = MovementState.placedInSlot;
+        [SerializeField] private AudioSource pickItUpSound;
         private RestaurantEncounter restaurantEncounter;
         private Item item;
         private ItemsFusionDisplayer fusionDisplayer;
@@ -33,20 +34,14 @@ namespace foxRestaurant
             if (movementState == MovementState.goingBackToLastSlot)
                 return;
 
-            movementState = MovementState.dragged;
-            transform.parent = restaurantEncounter.ParentForItemsMovement;
-            transform.localScale = Vector3.one;
-            item.Slot.SetItem(null);
+            BeginMovementHandler(MovementState.dragged);
         }
 
         public async void OnRelease()
         {
             if (movementState == MovementState.preparedForGrabbing)
             {
-                movementState = MovementState.grabbed;
-                transform.parent = restaurantEncounter.ParentForItemsMovement;
-                transform.localScale = Vector3.one;
-                item.Slot.SetItem(null);
+                BeginMovementHandler(MovementState.grabbed);
                 return;
             }
 
@@ -55,6 +50,15 @@ namespace foxRestaurant
                 restaurantEncounter.SlotsManager.UnhoverAllSlots();
                 await GoToSlot(restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item));
             }
+        }
+
+        private void BeginMovementHandler(MovementState actualState)
+        {
+            pickItUpSound.Play();
+            movementState = actualState;
+            transform.parent = restaurantEncounter.ParentForItemsMovement;
+            transform.localScale = Vector3.one;
+            item.Slot.SetItem(null);
         }
 
         public void OnHover()
