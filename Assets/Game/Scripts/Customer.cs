@@ -16,7 +16,6 @@ namespace foxRestaurant
 
         [Header("links")]
         [SerializeField] private Character character;
-        [SerializeField] private AudioSource eatingSound;
         [SerializeField] private AudioSource timeIsUpSound;
         [SerializeField] private Animator animator;
         [SerializeField] private Transform slotPositionPoint;
@@ -86,7 +85,6 @@ namespace foxRestaurant
                 OnPatienceChanged.Invoke(Patience);
             }
 
-            eatingSound.Play();
             animator.SetTrigger("onEat");
 
             if (IsSatisfied)

@@ -11,6 +11,7 @@ namespace foxRestaurant
         [SerializeField] private Transform centerForItem;
         [SerializeField] private SlotType slotType;
         [SerializeField] private Cooker cooker;
+        [SerializeField] private AudioSource onItemPlacedSound;
         private Item item;
         private ItemData requiredItemData;
         private RestaurantEncounter restaurantEncounter;
@@ -62,6 +63,7 @@ namespace foxRestaurant
             item.transform.localPosition = Vector3.zero;
             OnHasBeenOccupied.Invoke();
             OnItemHasBeenPlaced.Invoke(item);
+            onItemPlacedSound.Play();
         }
 
         public void SetSelectedForItemMovement(bool value) => selectedForItemMovement = value;

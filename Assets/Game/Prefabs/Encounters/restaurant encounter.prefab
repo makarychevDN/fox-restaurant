@@ -4076,6 +4076,7 @@ MonoBehaviour:
   centerForItem: {fileID: 8052870101757572172}
   slotType: 20
   cooker: {fileID: 0}
+  onItemPlacedSound: {fileID: 8884148042732382775}
   OnHasBeenOccupied:
     m_PersistentCalls:
       m_Calls: []
@@ -4107,7 +4108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slot: {fileID: 3297970232619881092}
-  itemThrownAwaySound: {fileID: 8884148042732382775}
   itemDisappearParticles: {fileID: 664454444622739907}
 --- !u!82 &8884148042732382775
 AudioSource:
@@ -4119,8 +4119,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c14086e00ad54b8499c47001ec2b24bd, type: 3}
+  m_Resource: {fileID: 8300000, guid: c14086e00ad54b8499c47001ec2b24bd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
