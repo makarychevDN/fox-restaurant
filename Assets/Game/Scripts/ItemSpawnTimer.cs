@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -8,9 +9,12 @@ namespace foxRestaurant
     {
         [SerializeField] private ItemsSpawner spawner;
         [SerializeField] private float spawnInterval = 5f;
+        [SerializeField] private AudioSource errorSound;
+        [SerializeField] private Transform tranformToShake;
         private float timer;
         private TMP_Text timerDisplayer;
         private RestaurantEncounter restaurantEncounter;
+        private bool errorDisplayedAlready;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
@@ -26,13 +30,20 @@ namespace foxRestaurant
             {
                 if (restaurantEncounter.SlotsManager.SpawningSlots.Where(slot => slot.Empty).Count() == 0)
                 {
+                    if(errorDisplayedAlready)
+                        return;
+
                     timerDisplayer.text = "<mspace=1em>ERROR</mspace>";
                     timerDisplayer.color = Extensions.HexToColor("#9c2d2d");
+                    errorSound.Play();
+                    errorDisplayedAlready = true;
+                    tranformToShake.DOShakeScale(0.1f, 0.25f, 10, 0);
                     return;
                 }
 
                 timer = 0f;
                 spawner.SpawnIngredient();
+                errorDisplayedAlready = false;
             }
 
             timerDisplayer.text = (spawnInterval - timer).ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
