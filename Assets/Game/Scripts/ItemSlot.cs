@@ -10,6 +10,7 @@ namespace foxRestaurant
         [SerializeField] private GameObject boxOnHoverRenderer;
         [SerializeField] private Transform centerForItem;
         [SerializeField] private SlotType slotType;
+        [SerializeField] private ItemType requiredItemsType;
         [SerializeField] private Cooker cooker;
         [SerializeField] private AudioSource onItemPlacedSound;
         private Item item;
@@ -25,6 +26,7 @@ namespace foxRestaurant
         public UnityEvent OnItemSliced;
 
         public SlotType SlotType => slotType;
+        public ItemType RequiredItemsType => requiredItemsType;
         public Transform CenterForItem => centerForItem;
         public Item Item => item;
         public bool Empty => item == null;
@@ -104,7 +106,10 @@ namespace foxRestaurant
 
         public bool AvailableToPlaceItem(Item placingItem)
         {
-            return !selectedForItemMovement;
+            if (selectedForItemMovement)
+                return false;
+
+            return placingItem.ItemType == requiredItemsType;
         }
 
         public void Unhover()
@@ -121,10 +126,7 @@ namespace foxRestaurant
 
     public enum SlotType
     {
-        Customer = 10,
-        Cooker = 20,
-        Additional = 30,
-        ItemSpawner = 40,
-        GarbageCan = 50
+        Generic = 10,
+        Spawner = 20
     }
 }

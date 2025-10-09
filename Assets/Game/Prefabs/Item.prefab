@@ -977,6 +977,7 @@ MonoBehaviour:
   - {fileID: 782235645029786288}
   friedSound: {fileID: 1168548114720153526}
   appearSound: {fileID: 2849396425350000302}
+  itemType: 5
   OnSatietyUpdated:
     m_PersistentCalls:
       m_Calls: []

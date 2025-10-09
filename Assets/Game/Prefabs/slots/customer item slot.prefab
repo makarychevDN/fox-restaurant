@@ -237,6 +237,7 @@ MonoBehaviour:
   boxOnHoverRenderer: {fileID: 1193125051319482973}
   centerForItem: {fileID: 0}
   slotType: 10
+  requiredItemsType: 5
   cooker: {fileID: 0}
   onItemPlacedSound: {fileID: 9217481834050045920}
   OnHasBeenOccupied:

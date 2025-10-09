@@ -4807,7 +4807,8 @@ MonoBehaviour:
   hoveredItemRenderer: {fileID: 466496538212952820}
   boxOnHoverRenderer: {fileID: 8144668820136257144}
   centerForItem: {fileID: 8052870101757572172}
-  slotType: 20
+  slotType: 10
+  requiredItemsType: 5
   cooker: {fileID: 0}
   onItemPlacedSound: {fileID: 8884148042732382775}
   OnHasBeenOccupied:

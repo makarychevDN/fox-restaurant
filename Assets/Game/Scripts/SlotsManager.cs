@@ -8,9 +8,35 @@ namespace foxRestaurant
     {
         [SerializeField] private List<ItemSlot> slots;
 
-        public void AddSlot(ItemSlot slot) => slots.Add(slot);
-        public void RemoveSlot(ItemSlot slot) => slots.Remove(slot);
-        public List<ItemSlot> SpawningSlots => slots.Where(slot => slot.SlotType == SlotType.ItemSpawner).ToList();
+        private List<ItemSlot> itemSpawnerSlots = new();
+        private List<ItemSlot> customerSpawnerSlots = new();
+        public List<ItemSlot> SpawningSlots => itemSpawnerSlots;
+
+        public void AddSlot(ItemSlot slot)
+        {
+            slots.Add(slot);
+
+            if(slot.SlotType == SlotType.Spawner)
+            {
+                if(slot.RequiredItemsType == ItemType.Food)
+                    itemSpawnerSlots.Add(slot);
+                else
+                    customerSpawnerSlots.Add(slot);
+            }
+        }
+
+        public void RemoveSlot(ItemSlot slot)
+        {
+            slots.Remove(slot);
+
+            if (slot.SlotType == SlotType.Spawner)
+            {
+                if (slot.RequiredItemsType == ItemType.Food)
+                    itemSpawnerSlots.Remove(slot);
+                else
+                    customerSpawnerSlots.Remove(slot);
+            }
+        }
 
         public ItemSlot GetSlotToPlaceItem(Item item)
         {

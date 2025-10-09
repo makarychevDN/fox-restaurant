@@ -25,6 +25,7 @@ namespace foxRestaurant
         [SerializeField] private List<ParticleSystem> fryingParticles;
         [SerializeField] private AudioSource friedSound;
         [SerializeField] private AudioSource appearSound;
+        [SerializeField] private ItemType itemType;
 
         private float fryingTimer;
         private RestaurantEncounter restaurantEncounter;
@@ -34,6 +35,8 @@ namespace foxRestaurant
 
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
+        public ItemType ItemType => itemType;
+
         public bool CanBeFried()
         {
             ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
@@ -93,5 +96,11 @@ namespace foxRestaurant
             Slot.OnItemSliced.Invoke();
             poofParticles.Play();
         }
+    }
+
+    public enum ItemType
+    {
+        Food = 5,
+        Customer = 9
     }
 }
