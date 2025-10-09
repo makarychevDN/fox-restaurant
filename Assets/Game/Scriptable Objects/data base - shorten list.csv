@@ -1,0 +1,26 @@
+ingredient transitions (start),,
+meat (raw),meat (cooked),
+meat slices (raw),meat slices (cooked),
+minced meat (raw),minced meat (cooked),
+,,
+dough,bread,
+flatbread (raw),flatbread (cooked),
+spaghetti (raw),spaghetti (cooked),
+,,
+fish (raw),fish (cooked),
+fish slices (raw),fish slices (cooked),
+minced fish (raw),minced fish (cooked),
+,,
+potato (raw),potato (cooked),
+potato slices (raw),potato slices (cooked),
+mashed potato slices (raw),mashed potato (cooked),
+,,
+ingredient transitions (end),,
+,,
+recipes,,
+fish kebab,fish (cooked),potato (cooked)
+burger,meat (cooked),bread
+fish burrito,fish slices (cooked),flatbread (cooked)
+beer plate,meat slices (cooked),potato slices (cooked)
+mashed potato with a kotlet,mashed potato (cooked),minced fish (cooked)
+spaghetti with meatballs,minced meat (cooked),spaghetti (cooked)
