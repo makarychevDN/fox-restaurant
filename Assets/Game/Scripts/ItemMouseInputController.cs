@@ -5,20 +5,20 @@ namespace foxRestaurant
 {
     public class ItemMouseInputController : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler
     {
-        private ItemStateController itemStateController;
+        private Item item;
 
-        public void Init(ItemStateController itemStateController, Item item)
+        public void Init(Item item)
         {
-            this.itemStateController = itemStateController;
+            this.item = item;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
-                itemStateController.OnSelect();
+                item.OnSelect();
 
             if (eventData.button == PointerEventData.InputButton.Right)
-                itemStateController.TryToSlice();
+                item.TryToSlice();
         }
 
         public void OnDrag(PointerEventData eventData) { }
@@ -27,24 +27,24 @@ namespace foxRestaurant
         {
             if (eventData.button == PointerEventData.InputButton.Left)
             {
-                itemStateController.OnRelease();
+                item.OnRelease();
             }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            itemStateController.OnHover();
+            item.OnHover();
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            itemStateController.OnUnhover();
+            item.OnUnhover();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Left)
-                itemStateController.OnBeginDrag();
+                item.OnBeginDrag();
         }
     }
 }

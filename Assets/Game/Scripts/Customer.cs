@@ -69,19 +69,19 @@ namespace foxRestaurant
             orderImage.rectTransform.sizeDelta = itemData.Sprite.GetSpriteSizeInPixels() * 0.5f;
         }
 
-        public void TryToEat(Item item)
+        public void TryToEat(FoodItemExtension foodItemExtension)
         {
             OnAte.Invoke();
 
-            if (item.ItemData == requiredItemData)
+            if (foodItemExtension.ItemData == requiredItemData)
             {
-                HungerPoints -= item.Satiety;
+                HungerPoints -= foodItemExtension.Satiety;
                 HungerPoints = Math.Clamp(HungerPoints, 0, 100);
                 OnHungerPointsChanged.Invoke(HungerPoints);
             }
             else
             {
-                Patience += item.Satiety;
+                Patience += foodItemExtension.Satiety;
                 OnPatienceChanged.Invoke(Patience);
             }
 

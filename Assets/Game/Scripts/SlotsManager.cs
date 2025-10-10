@@ -38,22 +38,22 @@ namespace foxRestaurant
             }
         }
 
-        public ItemSlot GetSlotToPlaceItem(Item item)
+        public ItemSlot GetSlotToPlaceItem(FoodItemExtension foodItemExtension)
         {
-            ItemSlot slot = GetClosestAvailableSlot(item);
+            ItemSlot slot = GetClosestAvailableSlot(foodItemExtension);
 
             if (slot == null)
-                slot = item.Slot;
+                slot = foodItemExtension.Slot;
 
             return slot;
         }
 
-        private ItemSlot GetClosestAvailableSlot(Item item)
+        private ItemSlot GetClosestAvailableSlot(FoodItemExtension foodItemExtension)
         {
-            var abailableSlots = slots.Where(slot => slot.AvailableToPlaceItem(item)).ToList();
+            var abailableSlots = slots.Where(slot => slot.AvailableToPlaceItem(foodItemExtension)).ToList();
             abailableSlots.Sort((a, b) =>
-                (a.transform.position - item.transform.position).sqrMagnitude.CompareTo(
-                (b.transform.position - item.transform.position).sqrMagnitude));
+                (a.transform.position - foodItemExtension.transform.position).sqrMagnitude.CompareTo(
+                (b.transform.position - foodItemExtension.transform.position).sqrMagnitude));
 
             if (abailableSlots.Count == 0)
                 return null;

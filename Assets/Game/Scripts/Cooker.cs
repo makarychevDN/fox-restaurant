@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace foxRestaurant
 {
@@ -25,16 +24,16 @@ namespace foxRestaurant
 
         public void Tick(float deltaTime)
         {
-            if (slot.Item == null)
+            if (slot.FoodItemExtension == null)
                 return;
 
-            slot.Item.Fry(deltaTime);
-            DisplayInfo(slot.Item);
+            slot.FoodItemExtension.Fry(deltaTime);
+            DisplayInfo(slot.FoodItemExtension);
         }
 
-        private void DisplayInfo(Item item)
+        private void DisplayInfo(FoodItemExtension foodItemExtension)
         {
-            if (!item.CanBeFried())
+            if (!foodItemExtension.CanBeFried())
             {
                 timeLeftTextIndicator.text = "<mspace=1em>done</mspace>";
                 timeLeftTextIndicator.color = Extensions.HexToColor("#c19a47");
@@ -42,18 +41,18 @@ namespace foxRestaurant
             }
 
             timeLeftTextIndicator.color = Extensions.HexToColor("#848f2e");
-            timeLeftTextIndicator.text = slot.Item.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
-            timeLeftSliderIndicator.value = slot.Item.FryingTimer;
+            timeLeftTextIndicator.text = slot.FoodItemExtension.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
+            timeLeftSliderIndicator.value = slot.FoodItemExtension.FryingTimer;
         }
 
-        private void ItemSettedInSlotHandler(Item item)
+        private void ItemSettedInSlotHandler(FoodItemExtension foodItemExtension)
         {
-            timeLeftSliderIndicator.maxValue = item.TimeToFry;
-            timeLeftTextIndicator.text = item.TimeToFry.ToString();
-            timeLeftTextIndicator.color = Extensions.HexToColor(item.CanBeFried() ? "#848f2e" : "#c19a47");
+            timeLeftSliderIndicator.maxValue = foodItemExtension.TimeToFry;
+            timeLeftTextIndicator.text = foodItemExtension.TimeToFry.ToString();
+            timeLeftTextIndicator.color = Extensions.HexToColor(foodItemExtension.CanBeFried() ? "#848f2e" : "#c19a47");
         }
 
-        private void ClearIndicators(Item item)
+        private void ClearIndicators(FoodItemExtension foodItemExtension)
         {
             timeLeftTextIndicator.text = "<mspace=1em>0:0s</mspace>";
             timeLeftSliderIndicator.value = 0;

@@ -5,7 +5,7 @@ namespace foxRestaurant
 {
     public class ItemsSpawner : MonoBehaviour
     {
-        [SerializeField] private Item itemPrefab;
+        [SerializeField] private FoodItemExtension itemPrefab;
         private RestaurantEncounter restaurantEncounter;
 
         public void Init(RestaurantEncounter restaurantEncounter)
@@ -25,15 +25,15 @@ namespace foxRestaurant
 
         public void SpawnItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot, int satiety)
         {
-            Item item = Instantiate(itemPrefab);
+            FoodItemExtension foodItemExtension = Instantiate(itemPrefab);
 
-            item.Init(restaurantEncounter, itemData, satiety);
-            itemSlot.SetItem(item);
-            item.Slot = itemSlot;
+            foodItemExtension.Init(restaurantEncounter, itemData, satiety);
+            itemSlot.SetItem(foodItemExtension);
+            foodItemExtension.Slot = itemSlot;
 
-            item.transform.parent = itemSlot.transform;
-            item.transform.position = itemSlot.CenterForItem.position;
-            item.transform.localScale = Vector3.one;
+            foodItemExtension.transform.parent = itemSlot.transform;
+            foodItemExtension.transform.position = itemSlot.CenterForItem.position;
+            foodItemExtension.transform.localScale = Vector3.one;
         }
     }
 }

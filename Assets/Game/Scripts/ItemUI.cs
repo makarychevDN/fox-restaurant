@@ -7,10 +7,10 @@ namespace foxRestaurant
     {
         [SerializeField] private TMP_Text satienseIndicator;
 
-        public void Init(Item item)
+        public void Init(FoodItemExtension foodItemExtension)
         {
-            item.OnSatietyUpdated.AddListener(UpdateDisplayingValue);
-            UpdateDisplayingValue(item.Satiety);
+            foodItemExtension.OnSatietyUpdated.AddListener(UpdateDisplayingValue);
+            UpdateDisplayingValue(foodItemExtension.Satiety);
         }
 
         private void UpdateDisplayingValue(int value)
