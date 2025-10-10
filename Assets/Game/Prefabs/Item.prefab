@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 4052859061520349911}
   - component: {fileID: 1647624810004963297}
   - component: {fileID: 9215618473170150502}
+  - component: {fileID: 1064963399402126405}
   - component: {fileID: 5014418370827727440}
   - component: {fileID: 6488208657373315716}
   - component: {fileID: 4452322358335530365}
@@ -961,23 +962,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac58b5297909fa84b92dd810a5ab23df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Satiety>k__BackingField: 0
-  <TimeToFry>k__BackingField: 30
-  <ItemData>k__BackingField: {fileID: 0}
   <Slot>k__BackingField: {fileID: 0}
+  <ItemData>k__BackingField: {fileID: 0}
   <Image>k__BackingField: {fileID: 440576134149140121}
   itemStateController: {fileID: 6488208657373315716}
   inputController: {fileID: 5014418370827727440}
-  fusionDisplayer: {fileID: 368958920882439249}
-  itemUI: {fileID: 5157530908565993188}
   poofParticles: {fileID: 890590293719608030}
+  appearSound: {fileID: 2849396425350000302}
+  itemType: 5
+  foodItemExtension: {fileID: 1064963399402126405}
+--- !u!114 &1064963399402126405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657618390103732315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838b84d7754a99f4f943a723e0fff185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Satiety>k__BackingField: 1
+  <TimeToFry>k__BackingField: 10
+  fusionDisplayer: {fileID: 368958920882439249}
   fryingParticles:
   - {fileID: 7650617691126390664}
   - {fileID: 1575905155086617132}
   - {fileID: 782235645029786288}
   friedSound: {fileID: 1168548114720153526}
-  appearSound: {fileID: 2849396425350000302}
-  itemType: 5
+  itemUI: {fileID: 5157530908565993188}
   OnSatietyUpdated:
     m_PersistentCalls:
       m_Calls: []

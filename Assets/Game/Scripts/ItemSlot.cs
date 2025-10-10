@@ -76,7 +76,7 @@ namespace foxRestaurant
                 restaurantEncounter, 
                 restaurantEncounter.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
                 this,
-                item1.Satiety + item2.Satiety
+                item1.FoodItemExtension.Satiety + item2.FoodItemExtension.Satiety
             );
 
             Destroy(item1.gameObject);

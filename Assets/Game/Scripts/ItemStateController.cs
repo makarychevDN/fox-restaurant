@@ -103,6 +103,9 @@ namespace foxRestaurant
                 var slotToPlaceItem = restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item);
                 restaurantEncounter.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
 
+                if (fusionDisplayer == null)
+                    return;
+
                 fusionDisplayer.gameObject.SetActive(!slotToPlaceItem.Empty);
                 if (slotToPlaceItem.Empty)
                 {

@@ -7,53 +7,36 @@ namespace foxRestaurant
 {
     public class Item : MonoBehaviour
     {
-        [field: Header("Stats")]
-        [field: SerializeField] public int Satiety { get; private set; }
-        [field: SerializeField] public float TimeToFry { get; private set; }
-
         [field: Header("Dynamic Links")]
-        [field: SerializeField] public ItemData ItemData { get; private set; }
         [field: SerializeField] public ItemSlot Slot { get; set; }
+        [field: SerializeField] public ItemData ItemData { get; private set; }
 
         [field: Header("Setup")]
         [field: SerializeField] public Image Image { get; private set; }
         [SerializeField] private ItemStateController itemStateController;
         [SerializeField] private ItemMouseInputController inputController;
-        [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
-        [SerializeField] private ItemUI itemUI;
         [SerializeField] private ParticleSystem poofParticles;
-        [SerializeField] private List<ParticleSystem> fryingParticles;
-        [SerializeField] private AudioSource friedSound;
         [SerializeField] private AudioSource appearSound;
         [SerializeField] private ItemType itemType;
-
-        private float fryingTimer;
+        [SerializeField] private FoodItemExtension foodItemExtension;
         private RestaurantEncounter restaurantEncounter;
-        private bool isReady;
 
-        public UnityEvent<int> OnSatietyUpdated;
-
-        public float FryingTimer => fryingTimer;
-        public float TimeToFryLeft => TimeToFry - fryingTimer;
         public ItemType ItemType => itemType;
-
-        public bool CanBeFried()
-        {
-            ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
-            return fryingResult != null;
-        }
+        public FoodItemExtension FoodItemExtension => foodItemExtension;
 
         public void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
         {
             this.restaurantEncounter = restaurantEncounter;
-            Satiety = satiety;
-            itemStateController.Init(restaurantEncounter, this, fusionDisplayer);
-            fusionDisplayer.Init(restaurantEncounter, this);
+            itemStateController.Init(restaurantEncounter, this, foodItemExtension == null ? null : foodItemExtension.FusionDisplayer);
             inputController.Init(itemStateController, this);
             SetItemData(itemData);
-            OnSatietyUpdated.Invoke(Satiety);
-            itemUI.Init(this);
             appearSound.pitch = Random.Range(0.7f, 1.3f);
+
+            if (FoodItemExtension != null)
+            {
+                foodItemExtension.Init(this, restaurantEncounter);
+                foodItemExtension.SetSatiety(satiety);
+            }
         }
 
         public void SetItemData(ItemData itemData)
@@ -65,35 +48,18 @@ namespace foxRestaurant
 
         public void Fry(float time)
         {
-            ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
-            if (fryingResult == null)
-                return;
-
-            fryingTimer += time;
-
-            if(fryingTimer >= TimeToFry)
-            {
-                isReady = true;
-                fryingTimer = 0;
-                Satiety++;
-                OnSatietyUpdated.Invoke(Satiety);
-                SetItemData(fryingResult);
-                friedSound.pitch = Random.Range(0.7f, 1.3f);
-                friedSound.Play();
-                fryingParticles.ForEach(p => p.Play());
-            }
+            if(foodItemExtension != null)
+                foodItemExtension.Fry(time);
         }
 
         public void Slice()
         {
-            ItemData slicingResult = restaurantEncounter.ItemTransitionsManager.GetSlicingResult(ItemData);
-            if (slicingResult != null)
-                SetItemData(slicingResult);
+            if (foodItemExtension != null)
+                foodItemExtension.Slice();
+        }
 
-            restaurantEncounter.Ticker.TickOnSlice();
-            Satiety++;
-            OnSatietyUpdated.Invoke(Satiety);
-            Slot.OnItemSliced.Invoke();
+        public void PlayPoofParticles()
+        {
             poofParticles.Play();
         }
     }

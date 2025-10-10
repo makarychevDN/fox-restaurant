@@ -75,13 +75,13 @@ namespace foxRestaurant
 
             if (item.ItemData == requiredItemData)
             {
-                HungerPoints -= item.Satiety;
+                HungerPoints -= item.FoodItemExtension.Satiety;
                 HungerPoints = Math.Clamp(HungerPoints, 0, 100);
                 OnHungerPointsChanged.Invoke(HungerPoints);
             }
             else
             {
-                Patience += item.Satiety;
+                Patience += item.FoodItemExtension.Satiety;
                 OnPatienceChanged.Invoke(Patience);
             }
 

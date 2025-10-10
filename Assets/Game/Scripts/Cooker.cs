@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace foxRestaurant
 {
@@ -34,7 +33,7 @@ namespace foxRestaurant
 
         private void DisplayInfo(Item item)
         {
-            if (!item.CanBeFried())
+            if (!item.FoodItemExtension.CanBeFried())
             {
                 timeLeftTextIndicator.text = "<mspace=1em>done</mspace>";
                 timeLeftTextIndicator.color = Extensions.HexToColor("#c19a47");
@@ -42,15 +41,16 @@ namespace foxRestaurant
             }
 
             timeLeftTextIndicator.color = Extensions.HexToColor("#848f2e");
-            timeLeftTextIndicator.text = slot.Item.TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
-            timeLeftSliderIndicator.value = slot.Item.FryingTimer;
+            timeLeftTextIndicator.text = slot.Item.FoodItemExtension.
+                TimeToFryLeft.ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
+            timeLeftSliderIndicator.value = slot.Item.FoodItemExtension.FryingTimer;
         }
 
         private void ItemSettedInSlotHandler(Item item)
         {
-            timeLeftSliderIndicator.maxValue = item.TimeToFry;
-            timeLeftTextIndicator.text = item.TimeToFry.ToString();
-            timeLeftTextIndicator.color = Extensions.HexToColor(item.CanBeFried() ? "#848f2e" : "#c19a47");
+            timeLeftSliderIndicator.maxValue = item.FoodItemExtension.TimeToFry;
+            timeLeftTextIndicator.text = item.FoodItemExtension.TimeToFry.ToString();
+            timeLeftTextIndicator.color = Extensions.HexToColor(item.FoodItemExtension.CanBeFried() ? "#848f2e" : "#c19a47");
         }
 
         private void ClearIndicators(Item item)
