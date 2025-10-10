@@ -1,131 +1,106 @@
-using DG.Tweening;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace foxRestaurant
 {
     public class Item : MonoBehaviour
     {
-        [SerializeField] private MovementState movementState = MovementState.placedInSlot;
-        [SerializeField] private AudioSource pickItUpSound;
-        private RestaurantEncounter restaurantEncounter;
-        private FoodItemExtension item;
-        private ItemsFusionDisplayer fusionDisplayer;
+        [field: Header("Stats")]
+        [field: SerializeField] public int Satiety { get; private set; }
+        [field: SerializeField] public float TimeToFry { get; private set; }
 
-        public void Init(RestaurantEncounter restaurantEncounter, FoodItemExtension item, ItemsFusionDisplayer fusionDisplayer)
+        [field: Header("Dynamic Links")]
+        [field: SerializeField] public ItemData ItemData { get; private set; }
+        [field: SerializeField] public ItemSlot Slot { get; set; }
+
+        [field: Header("Setup")]
+        [field: SerializeField] public Image Image { get; private set; }
+        [SerializeField] private ItemStateController itemStateController;
+        [SerializeField] private ItemMouseInputController inputController;
+        [SerializeField] private ItemsFusionDisplayer fusionDisplayer;
+        [SerializeField] private ItemUI itemUI;
+        [SerializeField] private ParticleSystem poofParticles;
+        [SerializeField] private List<ParticleSystem> fryingParticles;
+        [SerializeField] private AudioSource friedSound;
+        [SerializeField] private AudioSource appearSound;
+        [SerializeField] private ItemType itemType;
+
+        private float fryingTimer;
+        private RestaurantEncounter restaurantEncounter;
+        private bool isReady;
+
+        public UnityEvent<int> OnSatietyUpdated;
+
+        public float FryingTimer => fryingTimer;
+        public float TimeToFryLeft => TimeToFry - fryingTimer;
+        public ItemType ItemType => itemType;
+
+        public bool CanBeFried()
+        {
+            ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
+            return fryingResult != null;
+        }
+
+        public void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
         {
             this.restaurantEncounter = restaurantEncounter;
-            this.item = item;
-            this.fusionDisplayer = fusionDisplayer;
-            transform.localPosition = Vector2.zero;
+            Satiety = satiety;
+            itemStateController.Init(restaurantEncounter, this, fusionDisplayer);
+            fusionDisplayer.Init(restaurantEncounter, this);
+            inputController.Init(itemStateController, this);
+            SetItemData(itemData);
+            OnSatietyUpdated.Invoke(Satiety);
+            itemUI.Init(this);
+            appearSound.pitch = Random.Range(0.7f, 1.3f);
         }
 
-        public void OnSelect()
+        public void SetItemData(ItemData itemData)
         {
-            if (movementState == MovementState.goingBackToLastSlot)
+            ItemData = itemData;
+            Image.sprite = itemData.Sprite;
+            Image.rectTransform.sizeDelta = itemData.Sprite.GetSpriteSizeInPixels();
+        }
+
+        public void Fry(float time)
+        {
+            ItemData fryingResult = restaurantEncounter.ItemTransitionsManager.GetFryingResult(ItemData);
+            if (fryingResult == null)
                 return;
 
-            if (movementState == MovementState.placedInSlot)
-                movementState = MovementState.preparedForGrabbing;
-        }
+            fryingTimer += time;
 
-        public void OnBeginDrag()
-        {
-            if (movementState == MovementState.goingBackToLastSlot)
-                return;
-
-            BeginMovementHandler(MovementState.dragged);
-        }
-
-        public async void OnRelease()
-        {
-            if (movementState == MovementState.preparedForGrabbing)
+            if(fryingTimer >= TimeToFry)
             {
-                BeginMovementHandler(MovementState.grabbed);
-                return;
-            }
-
-            if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
-            {
-                restaurantEncounter.SlotsManager.UnhoverAllSlots();
-                await GoToSlot(restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item));
-            }
-        }
-
-        private void BeginMovementHandler(MovementState actualState)
-        {
-            pickItUpSound.Play();
-            movementState = actualState;
-            transform.parent = restaurantEncounter.ParentForItemsMovement;
-            transform.localScale = Vector3.one;
-            item.Slot.SetItem(null);
-        }
-
-        public void OnHover()
-        {
-            item.Slot.OnItemHovered.Invoke();
-            transform.DOScale(new Vector3(1.15f, 1.15f, 1), 0.05f);
-        }
-
-        public void OnUnhover()
-        {
-            item.Slot.OnItemUnhovered.Invoke();
-            transform.DOScale(Vector3.one, 0.05f);
-        }
-
-        private async Task GoToSlot(ItemSlot slot)
-        {
-            movementState = MovementState.goingBackToLastSlot;
-            slot.SetSelectedForItemMovement(true);
-
-            transform.DOScale(slot.transform.localScale, 0.1f);
-            await transform.DOMove(slot.CenterForItem.position, 0.1f).AsyncWaitForCompletion();
-
-            slot.SetSelectedForItemMovement(false);
-            item.Slot = slot;
-            slot.SetItem(item);
-            movementState = MovementState.placedInSlot;
-        }
-
-        public void TryToSlice()
-        {
-            if (movementState != MovementState.placedInSlot)
-                return;
-
-            item.Slice();
-        }
-
-        private void Update()
-        {
-            if (movementState == MovementState.grabbed || movementState == MovementState.dragged)
-            {
-                transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
-                var slotToPlaceItem = restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item);
-                restaurantEncounter.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
-
-                fusionDisplayer.gameObject.SetActive(!slotToPlaceItem.Empty);
-                if (slotToPlaceItem.Empty)
-                {
-                    slotToPlaceItem.Hover(item);
-                }
-                else
-                {
-                    fusionDisplayer.DisplayPlus(slotToPlaceItem);
-                }
-            }
-            else
-            {
-                fusionDisplayer.gameObject.SetActive(false);
+                isReady = true;
+                fryingTimer = 0;
+                Satiety++;
+                OnSatietyUpdated.Invoke(Satiety);
+                SetItemData(fryingResult);
+                friedSound.pitch = Random.Range(0.7f, 1.3f);
+                friedSound.Play();
+                fryingParticles.ForEach(p => p.Play());
             }
         }
 
-        private enum MovementState
+        public void Slice()
         {
-            placedInSlot,
-            dragged,
-            preparedForGrabbing,
-            grabbed,
-            goingBackToLastSlot
+            ItemData slicingResult = restaurantEncounter.ItemTransitionsManager.GetSlicingResult(ItemData);
+            if (slicingResult != null)
+                SetItemData(slicingResult);
+
+            restaurantEncounter.Ticker.TickOnSlice();
+            Satiety++;
+            OnSatietyUpdated.Invoke(Satiety);
+            Slot.OnItemSliced.Invoke();
+            poofParticles.Play();
         }
+    }
+
+    public enum ItemType
+    {
+        Food = 5,
+        Customer = 9
     }
 }

@@ -13,14 +13,14 @@ namespace foxRestaurant
         [SerializeField] private ItemType requiredItemsType;
         [SerializeField] private Cooker cooker;
         [SerializeField] private AudioSource onItemPlacedSound;
-        private FoodItemExtension foodItemExtension;
+        private Item item;
         private ItemData requiredItemData;
         private RestaurantEncounter restaurantEncounter;
         private bool selectedForItemMovement;
 
         public UnityEvent OnHasBeenOccupied;
-        public UnityEvent<FoodItemExtension> OnItemHasBeenPlaced;
-        public UnityEvent<FoodItemExtension> OnItemHasBeenRemoved;
+        public UnityEvent<Item> OnItemHasBeenPlaced;
+        public UnityEvent<Item> OnItemHasBeenRemoved;
         public UnityEvent OnItemHovered;
         public UnityEvent OnItemUnhovered;
         public UnityEvent OnItemSliced;
@@ -28,8 +28,8 @@ namespace foxRestaurant
         public SlotType SlotType => slotType;
         public ItemType RequiredItemsType => requiredItemsType;
         public Transform CenterForItem => centerForItem;
-        public FoodItemExtension FoodItemExtension => foodItemExtension;
-        public bool Empty => foodItemExtension == null;
+        public Item Item => item;
+        public bool Empty => item == null;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
@@ -43,44 +43,44 @@ namespace foxRestaurant
                 centerForItem = transform;
         }
 
-        public void SetItem(FoodItemExtension foodItemExtension)
+        public void SetItem(Item item)
         {
-            var oldItem = this.foodItemExtension;
-            this.foodItemExtension = foodItemExtension;
+            var oldItem = this.item;
+            this.item = item;
 
-            if (oldItem != null && foodItemExtension != null)
+            if (oldItem != null && item != null)
             {
-                this.foodItemExtension = null;
-                TryToFuseItems(oldItem, foodItemExtension);
+                this.item = null;
+                TryToFuseItems(oldItem, item);
                 return;
             }
 
-            if (foodItemExtension == null)
+            if (item == null)
             {
                 OnItemHasBeenRemoved.Invoke(oldItem);
                 return;
             }
 
-            foodItemExtension.transform.parent = centerForItem;
-            foodItemExtension.transform.localPosition = Vector3.zero;
+            item.transform.parent = centerForItem;
+            item.transform.localPosition = Vector3.zero;
             OnHasBeenOccupied.Invoke();
-            OnItemHasBeenPlaced.Invoke(foodItemExtension);
+            OnItemHasBeenPlaced.Invoke(item);
             onItemPlacedSound.Play();
         }
 
         public void SetSelectedForItemMovement(bool value) => selectedForItemMovement = value;
 
-        private void TryToFuseItems(FoodItemExtension food1, FoodItemExtension food2)
+        private void TryToFuseItems(Item item1, Item item2)
         {
             restaurantEncounter.ItemsSpawner.SpawnItem(
                 restaurantEncounter, 
-                restaurantEncounter.RecipesManager.Fuse(food1.ItemData, food2.ItemData), 
+                restaurantEncounter.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
                 this,
-                food1.Satiety + food2.Satiety
+                item1.Satiety + item2.Satiety
             );
 
-            Destroy(food1.gameObject);
-            Destroy(food2.gameObject);
+            Destroy(item1.gameObject);
+            Destroy(item2.gameObject);
         }
 
         public void SetRequiredItemData(ItemData requiredItemData)
@@ -90,26 +90,26 @@ namespace foxRestaurant
 
         public void Clear()
         {
-            var oldItem = foodItemExtension;
+            var oldItem = item;
             SetItem(null);
             Destroy(oldItem.gameObject);
         }
 
-        public void Hover(FoodItemExtension foodItemExtension)
+        public void Hover(Item item)
         {
             hoveredItemRenderer.enabled = true;
             if (!boxOnHoverRenderer.activeInHierarchy)
                 boxOnHoverRenderer.SetActive(true);
-            hoveredItemRenderer.sprite = foodItemExtension.Image.sprite;
-            hoveredItemRenderer.rectTransform.sizeDelta = foodItemExtension.Image.rectTransform.sizeDelta;
+            hoveredItemRenderer.sprite = item.Image.sprite;
+            hoveredItemRenderer.rectTransform.sizeDelta = item.Image.rectTransform.sizeDelta;
         }
 
-        public bool AvailableToPlaceItem(FoodItemExtension placingFood)
+        public bool AvailableToPlaceItem(Item placingItem)
         {
             if (selectedForItemMovement)
                 return false;
 
-            return placingFood.ItemType == requiredItemsType;
+            return placingItem.ItemType == requiredItemsType;
         }
 
         public void Unhover()

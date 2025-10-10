@@ -10,14 +10,14 @@ namespace foxRestaurant
         [SerializeField] private Image resultIcon;
         [SerializeField] private Sprite redCross;
         [SerializeField] private Animator animator;
-        private FoodItemExtension hashedTarget;
+        private Item hashedTargetItem;
         private RestaurantEncounter restaurantEncounter;
-        private FoodItemExtension foodItemExtension;
+        private Item item;
 
-        public void Init(RestaurantEncounter restaurantEncounter, FoodItemExtension foodItemExtension)
+        public void Init(RestaurantEncounter restaurantEncounter, Item item)
         {
             this.restaurantEncounter = restaurantEncounter;
-            this.foodItemExtension = foodItemExtension;
+            this.item = item;
         }
 
         public void DisplayPlus(Vector3 startPosition, Vector3 endPosition)
@@ -28,9 +28,9 @@ namespace foxRestaurant
 
         public void DisplayPlus(ItemSlot targetSlot)
         {
-            if (targetSlot.FoodItemExtension != hashedTarget)
+            if (targetSlot.Item != hashedTargetItem)
                 animator.SetTrigger("appear");
-            hashedTarget = targetSlot.FoodItemExtension;
+            hashedTargetItem = targetSlot.Item;
 
             Vector3 resultIconPosition = (transform.position - targetSlot.transform.position) + transform.position;
             Vector3 plusIconPosition = (targetSlot.transform.position + transform.position) * 0.5f;
@@ -40,7 +40,7 @@ namespace foxRestaurant
             equalIcon.transform.position = equalIconPosition;
             resultIcon.transform.position = resultIconPosition;
 
-            resultIcon.sprite = restaurantEncounter.RecipesManager.Fuse(foodItemExtension.ItemData, targetSlot.FoodItemExtension.ItemData).Sprite;
+            resultIcon.sprite = restaurantEncounter.RecipesManager.Fuse(item.ItemData, targetSlot.Item.ItemData).Sprite;
             resultIcon.rectTransform.sizeDelta = resultIcon.sprite.GetSpriteSizeInPixels();
         }
     }
