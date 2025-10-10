@@ -42,7 +42,7 @@ namespace foxRestaurant
             restaurantEncounter.Ticker.AddTickable(this);
             this.restaurantEncounter = restaurantEncounter;
 
-            slotToPlaceFood = restaurantEncounter.CustomerlSlotSpawner.SpawnSlot();
+            slotToPlaceFood = restaurantEncounter.CustomerSlotsToPlaceFoodSpawner.SpawnSlot();
             slotToPlaceFood.transform.position = slotPositionPoint.position;
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);

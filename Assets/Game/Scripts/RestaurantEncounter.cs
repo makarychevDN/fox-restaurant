@@ -11,6 +11,7 @@ namespace foxRestaurant
         [SerializeField] private int cookerSlotsCount;
         [SerializeField] private int additionalSlotsCount;
         [SerializeField] private int spawnItemSlotsCount;
+        [SerializeField] private int spawnCustomerSlotsCount;
 
         [field: Header("Controllers And Managers")]
         [field: SerializeField] public PlayerInputController PlayerInputController { get; private set; }
@@ -26,9 +27,10 @@ namespace foxRestaurant
         [field: SerializeField] public ItemSpawnTimer ItemSpawnTimer { get; private set; }
         [field: SerializeField] public CustomerSpawner CustomerSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CookerSlotSpawner { get; private set; }
-        [field: SerializeField] public SlotSpawner SpawnItemSlotSpawner { get; private set; }
-        [field: SerializeField] public SlotSpawner AdditionalSlotSpawner { get; private set; }
-        [field: SerializeField] public SlotSpawner CustomerlSlotSpawner { get; private set; }
+        [field: SerializeField] public SlotSpawner SlotsToSpawnFoodSpawner { get; private set; }
+        [field: SerializeField] public SlotSpawner CustomerSlotsToPlaceFoodSpawner { get; private set; }
+        [field: SerializeField] public SlotSpawner AdditionalFoodSlotSpawner { get; private set; }
+        [field: SerializeField] public SlotSpawner SlotsToSpawnCustomerItemsSpawner { get; private set; }
         [field: SerializeField] public ItemSlot GarbageCanSlot { get; private set; }
 
         [field: Header("UI")]
@@ -64,9 +66,11 @@ namespace foxRestaurant
             ItemsSpawner.Init(this);
             CustomerSpawner.Init(this);
             CookerSlotSpawner.Init(this);
-            SpawnItemSlotSpawner.Init(this);
-            AdditionalSlotSpawner.Init(this);
-            CustomerlSlotSpawner.Init(this);
+            SlotsToSpawnFoodSpawner.Init(this);
+
+            AdditionalFoodSlotSpawner.Init(this);
+            CustomerSlotsToPlaceFoodSpawner.Init(this);
+            SlotsToSpawnCustomerItemsSpawner.Init(this);
             GarbageCanSlot.Init(this);
             DecksManager.Init();
             Scenario.Init(CustomerSpawner, this);
@@ -92,23 +96,22 @@ namespace foxRestaurant
 
             }
 
-            for (int i = 0; i < additionalSlotsCount; i++)
-            {
-                var additionalSlot = AdditionalSlotSpawner.SpawnSlot();
-
-                additionalSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(additionalSlot));
-                additionalSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
-            }
-
-            for (int i = 0; i < spawnItemSlotsCount; i++)
-            {
-                var spawnItemSlot = SpawnItemSlotSpawner.SpawnSlot();
-
-                spawnItemSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(spawnItemSlot));
-                spawnItemSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
-            }
+            SpawnSlots(AdditionalFoodSlotSpawner, additionalSlotsCount);
+            SpawnSlots(SlotsToSpawnFoodSpawner, spawnItemSlotsCount);
+            SpawnSlots(SlotsToSpawnCustomerItemsSpawner, spawnCustomerSlotsCount);
 
             ItemSpawnTimer.Init(this);
+        }
+
+        private void SpawnSlots(SlotSpawner slotSpawner, int slotsAmount)
+        {
+            for (int i = 0; i < slotsAmount; i++)
+            {
+                var spawnedSlot = slotSpawner.SpawnSlot();
+
+                spawnedSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(spawnedSlot));
+                spawnedSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
+            }
         }
 
         public void UpdateDataBase(TextAsset csvFile)

@@ -4,7 +4,7 @@ namespace foxRestaurant
 {
     public class SlotSpawner : MonoBehaviour
     {
-        [SerializeField] private ItemSlot cookerSlotPrefab;
+        [SerializeField] private ItemSlot slotPrefab;
         [SerializeField] private Transform slotsParent;
         private RestaurantEncounter restaurantEncounter;
 
@@ -15,7 +15,7 @@ namespace foxRestaurant
 
         public ItemSlot SpawnSlot()
         {
-            var slot = Instantiate(cookerSlotPrefab);
+            var slot = Instantiate(slotPrefab);
 
             slot.Init(restaurantEncounter);
 
