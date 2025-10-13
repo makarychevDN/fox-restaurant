@@ -72,7 +72,7 @@ namespace foxRestaurant
 
         private void TryToFuseItems(FoodItem item1, FoodItem item2)
         {
-            var fusion = restaurantEncounter.ItemsSpawner.SpawnItem(
+            var fusion = restaurantEncounter.ItemsSpawner.SpawnFoodItem(
                 restaurantEncounter, 
                 restaurantEncounter.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
                 this

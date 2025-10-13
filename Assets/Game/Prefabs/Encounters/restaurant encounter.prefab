@@ -512,6 +512,7 @@ MonoBehaviour:
   <CustomerSlotsToPlaceFoodSpawner>k__BackingField: {fileID: 3193035049333253123}
   <AdditionalFoodSlotSpawner>k__BackingField: {fileID: 2297787356013107275}
   <SlotsToSpawnCustomerItemsSpawner>k__BackingField: {fileID: 9092998177571689674}
+  <SlotsToPlaceCustomerItemsSpawner>k__BackingField: {fileID: 6096514790514222849}
   <GarbageCanSlot>k__BackingField: {fileID: 3297970232619881092}
   <RecipeBlackBoard>k__BackingField: {fileID: 8620325272800186986}
   <TransitionsBlackBoard>k__BackingField: {fileID: 6686876591745980028}
@@ -2877,6 +2878,7 @@ Transform:
   - {fileID: 7695803640733253364}
   - {fileID: 522097447749502384}
   - {fileID: 5244598054570240018}
+  - {fileID: 5053691116894362897}
   - {fileID: 3859241868356626908}
   - {fileID: 2986118290524629650}
   - {fileID: 7448450813208767063}
@@ -2925,6 +2927,7 @@ RectTransform:
   - {fileID: 5140623103516689191}
   - {fileID: 7952208328555144063}
   - {fileID: 2999984115557810985}
+  - {fileID: 4182965875236709090}
   - {fileID: 9159402733653918336}
   - {fileID: 8478754538065473891}
   - {fileID: 2025760398335399665}
@@ -3725,6 +3728,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3575516600492757718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5053691116894362897}
+  - component: {fileID: 6096514790514222849}
+  m_Layer: 0
+  m_Name: slots to place customer items spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5053691116894362897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575516600492757718}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2879740804358350818}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6096514790514222849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3575516600492757718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc00edc25491504896fe475069388c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotPrefab: {fileID: 5498270339331870369, guid: 6897b59c52d2af34bb835bba728553a6, type: 3}
+  slotsParent: {fileID: 4182965875236709090}
 --- !u!1 &3744480748785772882
 GameObject:
   m_ObjectHideFlags: 0
@@ -5249,7 +5298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f808ff157c74542849c7d0936214b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
+  customerItemPrefab: {fileID: 9215618473170150502, guid: 0675301922acd5343a3b1dd1b686dbf2, type: 3}
+  foodItemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
+  wolf: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
 --- !u!114 &4603569617256824294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6374,6 +6425,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slotPrefab: {fileID: 5498270339331870369, guid: 4a44ba95d57cf254ab025007d1c01390, type: 3}
   slotsParent: {fileID: 2359099262221511942}
+--- !u!1 &7854085695164721224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4182965875236709090}
+  m_Layer: 5
+  m_Name: customer item slots parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4182965875236709090
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7854085695164721224}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5006562538035018776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7903020544900563267
 GameObject:
   m_ObjectHideFlags: 0

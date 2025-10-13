@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-
 namespace foxRestaurant
 {
     public class CustomerSpawner : MonoBehaviour
@@ -19,6 +18,7 @@ namespace foxRestaurant
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
+            seatPlaces.ForEach(seatPlace => seatPlace.Init(restaurantEncounter));
         }
 
         public Customer SpawnCustomer(SeatPlace seatPlace, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)

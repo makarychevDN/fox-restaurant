@@ -31,6 +31,7 @@ namespace foxRestaurant
         [field: SerializeField] public SlotSpawner CustomerSlotsToPlaceFoodSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner AdditionalFoodSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner SlotsToSpawnCustomerItemsSpawner { get; private set; }
+        [field: SerializeField] public SlotSpawner SlotsToPlaceCustomerItemsSpawner { get; private set; }
         [field: SerializeField] public ItemSlot GarbageCanSlot { get; private set; }
 
         [field: Header("UI")]
@@ -63,17 +64,16 @@ namespace foxRestaurant
             UpdateDataBase(restaurantEncounterData.CsvFile);
 
             PlayerInputController.Init(this);
-            ItemsSpawner.Init(this);
-            CustomerSpawner.Init(this);
             CookerSlotSpawner.Init(this);
             SlotsToSpawnFoodSpawner.Init(this);
-
             AdditionalFoodSlotSpawner.Init(this);
             CustomerSlotsToPlaceFoodSpawner.Init(this);
             SlotsToSpawnCustomerItemsSpawner.Init(this);
+            SlotsToPlaceCustomerItemsSpawner.Init(this);
+            CustomerSpawner.Init(this);
+            ItemsSpawner.Init(this);
             GarbageCanSlot.Init(this);
             DecksManager.Init();
-            Scenario.Init(CustomerSpawner, this);
 
             RecipesManager.Init(this);
             ItemTransitionsManager.Init(this);
@@ -101,6 +101,8 @@ namespace foxRestaurant
             SpawnSlots(SlotsToSpawnCustomerItemsSpawner, spawnCustomerSlotsCount);
 
             ItemSpawnTimer.Init(this);
+
+            Scenario.Init(CustomerSpawner, this);
         }
 
         private void SpawnSlots(SlotSpawner slotSpawner, int slotsAmount)

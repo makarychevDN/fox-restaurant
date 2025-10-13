@@ -11,15 +11,7 @@ namespace foxRestaurant
         {
             this.customerSpawner = customerSpawner;
             this.restaurantEncounter = restaurantEncounter;
-
-            SpawnCustomer();
-        }
-
-        [ContextMenu("Spawn Customer")]
-        public void SpawnCustomer()
-        {
-            customerSpawner.TryToSpawnCustomer(restaurantEncounter.DecksManager.GetRandomCustomer(), () => restaurantEncounter.DecksManager.GetRandomDish());
-            Invoke(nameof(SpawnCustomer), 5f);
+            restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
         }
     }
 }
