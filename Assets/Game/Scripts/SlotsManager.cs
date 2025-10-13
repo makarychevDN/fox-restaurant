@@ -8,9 +8,9 @@ namespace foxRestaurant
     {
         [SerializeField] private List<ItemSlot> slots;
 
-        private List<ItemSlot> itemSpawnerSlots = new();
+        private List<ItemSlot> foodSpawnerSlots = new();
         private List<ItemSlot> customerSpawnerSlots = new();
-        public List<ItemSlot> SpawningSlots => itemSpawnerSlots;
+        public List<ItemSlot> FoodSpawningSlots => foodSpawnerSlots;
 
         public void AddSlot(ItemSlot slot)
         {
@@ -19,7 +19,7 @@ namespace foxRestaurant
             if(slot.SlotType == SlotType.Spawner)
             {
                 if(slot.RequiredItemsType == ItemType.Food)
-                    itemSpawnerSlots.Add(slot);
+                    foodSpawnerSlots.Add(slot);
                 else
                     customerSpawnerSlots.Add(slot);
             }
@@ -32,7 +32,7 @@ namespace foxRestaurant
             if (slot.SlotType == SlotType.Spawner)
             {
                 if (slot.RequiredItemsType == ItemType.Food)
-                    itemSpawnerSlots.Remove(slot);
+                    foodSpawnerSlots.Remove(slot);
                 else
                     customerSpawnerSlots.Remove(slot);
             }

@@ -15,7 +15,7 @@ namespace foxRestaurant
 
         public void SpawnIngredient()
         {
-            var cookerSlot = restaurantEncounter.SlotsManager.SpawningSlots.FirstOrDefault(slot => slot.Empty);
+            var cookerSlot = restaurantEncounter.SlotsManager.FoodSpawningSlots.FirstOrDefault(slot => slot.Empty);
             if (cookerSlot == null)
                 return;
 
