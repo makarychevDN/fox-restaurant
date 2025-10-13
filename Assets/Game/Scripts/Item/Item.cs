@@ -18,25 +18,19 @@ namespace foxRestaurant
         [SerializeField] private ParticleSystem poofParticles;
         [SerializeField] private AudioSource appearSound;
         [SerializeField] private ItemType itemType;
-        [SerializeField] private FoodItemExtension foodItemExtension;
-        private RestaurantEncounter restaurantEncounter;
+
+        protected RestaurantEncounter restaurantEncounter;
 
         public ItemType ItemType => itemType;
-        public FoodItemExtension FoodItemExtension => foodItemExtension;
+        public ItemStateController ItemStateController => itemStateController;
 
-        public void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
+        public virtual void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
         {
             this.restaurantEncounter = restaurantEncounter;
-            itemStateController.Init(restaurantEncounter, this, foodItemExtension == null ? null : foodItemExtension.FusionDisplayer);
+            itemStateController.Init(restaurantEncounter, this);
             inputController.Init(itemStateController, this);
             SetItemData(itemData);
             appearSound.pitch = Random.Range(0.7f, 1.3f);
-
-            if (FoodItemExtension != null)
-            {
-                foodItemExtension.Init(this, restaurantEncounter);
-                foodItemExtension.SetSatiety(satiety);
-            }
         }
 
         public void SetItemData(ItemData itemData)
@@ -44,18 +38,6 @@ namespace foxRestaurant
             ItemData = itemData;
             Image.sprite = itemData.Sprite;
             Image.rectTransform.sizeDelta = itemData.Sprite.GetSpriteSizeInPixels();
-        }
-
-        public void Fry(float time)
-        {
-            if(foodItemExtension != null)
-                foodItemExtension.Fry(time);
-        }
-
-        public void Slice()
-        {
-            if (foodItemExtension != null)
-                foodItemExtension.Slice();
         }
 
         public void PlayPoofParticles()

@@ -51,7 +51,7 @@ namespace foxRestaurant
             if (oldItem != null && item != null)
             {
                 this.item = null;
-                TryToFuseItems(oldItem, item);
+                TryToFuseItems((FoodItem)oldItem, (FoodItem)item);
                 return;
             }
 
@@ -70,13 +70,13 @@ namespace foxRestaurant
 
         public void SetSelectedForItemMovement(bool value) => selectedForItemMovement = value;
 
-        private void TryToFuseItems(Item item1, Item item2)
+        private void TryToFuseItems(FoodItem item1, FoodItem item2)
         {
             restaurantEncounter.ItemsSpawner.SpawnItem(
                 restaurantEncounter, 
                 restaurantEncounter.RecipesManager.Fuse(item1.ItemData, item2.ItemData), 
                 this,
-                item1.FoodItemExtension.Satiety + item2.FoodItemExtension.Satiety
+                item1.Satiety + item2.Satiety
             );
 
             Destroy(item1.gameObject);

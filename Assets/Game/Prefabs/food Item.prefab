@@ -904,12 +904,11 @@ GameObject:
   - component: {fileID: 4052859061520349911}
   - component: {fileID: 1647624810004963297}
   - component: {fileID: 9215618473170150502}
-  - component: {fileID: 1064963399402126405}
   - component: {fileID: 5014418370827727440}
   - component: {fileID: 6488208657373315716}
   - component: {fileID: 4452322358335530365}
   m_Layer: 5
-  m_Name: Item
+  m_Name: food Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -959,7 +958,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6657618390103732315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac58b5297909fa84b92dd810a5ab23df, type: 3}
+  m_Script: {fileID: 11500000, guid: da19bb35d7ecd4c4ebab5870026e2a6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Slot>k__BackingField: {fileID: 0}
@@ -970,19 +969,6 @@ MonoBehaviour:
   poofParticles: {fileID: 890590293719608030}
   appearSound: {fileID: 2849396425350000302}
   itemType: 5
-  foodItemExtension: {fileID: 1064963399402126405}
---- !u!114 &1064963399402126405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6657618390103732315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838b84d7754a99f4f943a723e0fff185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   <Satiety>k__BackingField: 1
   <TimeToFry>k__BackingField: 10
   fusionDisplayer: {fileID: 368958920882439249}
@@ -1021,6 +1007,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementState: 0
   pickItUpSound: {fileID: 5323311025310216222}
+  OnItemWasHoveredByThisItem:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4452322358335530365
 MonoBehaviour:
   m_ObjectHideFlags: 0

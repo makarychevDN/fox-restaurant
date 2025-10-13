@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace foxRestaurant
 {
-    public class ItemUI : MonoBehaviour
+    public class FoodItemUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text satienseIndicator;
 
-        public void Init(FoodItemExtension foodItemExtension)
+        public void Init(FoodItem foodItem)
         {
-            foodItemExtension.OnSatietyUpdated.AddListener(UpdateDisplayingValue);
-            UpdateDisplayingValue(foodItemExtension.Satiety);
+            foodItem.OnSatietyUpdated.AddListener(UpdateDisplayingValue);
+            UpdateDisplayingValue(foodItem.Satiety);
         }
 
         private void UpdateDisplayingValue(int value)

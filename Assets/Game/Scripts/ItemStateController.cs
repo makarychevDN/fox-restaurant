@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace foxRestaurant
 {
@@ -10,13 +11,13 @@ namespace foxRestaurant
         [SerializeField] private AudioSource pickItUpSound;
         private RestaurantEncounter restaurantEncounter;
         private Item item;
-        private ItemsFusionDisplayer fusionDisplayer;
 
-        public void Init(RestaurantEncounter restaurantEncounter, Item item, ItemsFusionDisplayer fusionDisplayer)
+        public UnityEvent<ItemSlot> OnItemWasHoveredByThisItem;
+
+        public void Init(RestaurantEncounter restaurantEncounter, Item item)
         {
             this.restaurantEncounter = restaurantEncounter;
             this.item = item;
-            this.fusionDisplayer = fusionDisplayer;
             transform.localPosition = Vector2.zero;
         }
 
@@ -92,7 +93,11 @@ namespace foxRestaurant
             if (movementState != MovementState.placedInSlot)
                 return;
 
-            item.Slice();
+            var foodItem = item as FoodItem;
+            if (foodItem == null)
+                return;
+
+            foodItem.Slice();
         }
 
         private void Update()
@@ -102,23 +107,10 @@ namespace foxRestaurant
                 transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + Vector3.forward * 10);
                 var slotToPlaceItem = restaurantEncounter.SlotsManager.GetSlotToPlaceItem(item);
                 restaurantEncounter.SlotsManager.UnhoverAllSlotsExcept(slotToPlaceItem);
+                OnItemWasHoveredByThisItem.Invoke(slotToPlaceItem);
 
-                if (fusionDisplayer == null)
-                    return;
-
-                fusionDisplayer.gameObject.SetActive(!slotToPlaceItem.Empty);
                 if (slotToPlaceItem.Empty)
-                {
                     slotToPlaceItem.Hover(item);
-                }
-                else
-                {
-                    fusionDisplayer.DisplayPlus(slotToPlaceItem);
-                }
-            }
-            else
-            {
-                fusionDisplayer.gameObject.SetActive(false);
             }
         }
 

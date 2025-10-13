@@ -18,6 +18,7 @@ namespace foxRestaurant
         {
             this.restaurantEncounter = restaurantEncounter;
             this.item = item;
+            item.ItemStateController.OnItemWasHoveredByThisItem.AddListener(DisplayPlus);
         }
 
         public void DisplayPlus(Vector3 startPosition, Vector3 endPosition)
@@ -28,6 +29,14 @@ namespace foxRestaurant
 
         public void DisplayPlus(ItemSlot targetSlot)
         {
+            if(targetSlot.Item == null)
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+
+            gameObject.SetActive(true);
+
             if (targetSlot.Item != hashedTargetItem)
                 animator.SetTrigger("appear");
             hashedTargetItem = targetSlot.Item;

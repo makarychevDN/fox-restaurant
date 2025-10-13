@@ -71,17 +71,18 @@ namespace foxRestaurant
 
         public void TryToEat(Item item)
         {
+            var food = item as FoodItem;
             OnAte.Invoke();
 
             if (item.ItemData == requiredItemData)
             {
-                HungerPoints -= item.FoodItemExtension.Satiety;
+                HungerPoints -= food.Satiety;
                 HungerPoints = Math.Clamp(HungerPoints, 0, 100);
                 OnHungerPointsChanged.Invoke(HungerPoints);
             }
             else
             {
-                Patience += item.FoodItemExtension.Satiety;
+                Patience += food.Satiety;
                 OnPatienceChanged.Invoke(Patience);
             }
 
