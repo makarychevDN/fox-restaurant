@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using static UnityEditor.Progress;
 
 namespace foxRestaurant
 {
@@ -16,17 +15,17 @@ namespace foxRestaurant
         [SerializeField] private AudioSource friedSound;
         [SerializeField] private FoodItemUI itemUI;
 
+        private float fryingTimer;
+
         public float FryingTimer => fryingTimer;
         public float TimeToFryLeft => TimeToFry - fryingTimer;
         public ItemsFusionDisplayer FusionDisplayer => fusionDisplayer;
 
-        private float fryingTimer;
-
         public UnityEvent<int> OnSatietyUpdated;
 
-        public override void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
+        public override void Init(RestaurantEncounter restaurantEncounter, ItemData itemData)
         {
-            base.Init(restaurantEncounter, itemData, satiety);
+            base.Init(restaurantEncounter, itemData);
             itemUI.Init(this);
             fusionDisplayer.Init(restaurantEncounter, this);
         }

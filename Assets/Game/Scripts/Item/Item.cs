@@ -24,7 +24,7 @@ namespace foxRestaurant
         public ItemType ItemType => itemType;
         public ItemStateController ItemStateController => itemStateController;
 
-        public virtual void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, int satiety)
+        public virtual void Init(RestaurantEncounter restaurantEncounter, ItemData itemData)
         {
             this.restaurantEncounter = restaurantEncounter;
             itemStateController.Init(restaurantEncounter, this);

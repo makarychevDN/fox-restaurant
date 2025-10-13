@@ -20,20 +20,22 @@ namespace foxRestaurant
                 return;
 
             var itemData = restaurantEncounter.DecksManager.GetRandomIngredient();
-            SpawnItem(restaurantEncounter, itemData, cookerSlot, 1 + itemData.AdditionalSatiety);
+            SpawnItem(restaurantEncounter, itemData, cookerSlot);
         }
 
-        public void SpawnItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot, int satiety)
+        public Item SpawnItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot)
         {
             Item item = Instantiate(itemPrefab);
 
-            item.Init(restaurantEncounter, itemData, satiety);
+            item.Init(restaurantEncounter, itemData);
             itemSlot.SetItem(item);
             item.Slot = itemSlot;
 
             item.transform.parent = itemSlot.transform;
             item.transform.position = itemSlot.CenterForItem.position;
             item.transform.localScale = Vector3.one;
+
+            return item;
         }
     }
 }
