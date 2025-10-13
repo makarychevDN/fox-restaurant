@@ -6,6 +6,5 @@ namespace foxRestaurant
     public class ItemData : ScriptableObject
     {
         [field: SerializeField] public Sprite Sprite { get; private set; }
-        [field: SerializeField] public int AdditionalSatiety { get; private set; }
     }
 }

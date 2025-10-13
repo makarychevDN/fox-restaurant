@@ -3,9 +3,8 @@ using UnityEngine;
 namespace foxRestaurant
 {
     [CreateAssetMenu(fileName = "CustomerData", menuName = "Scriptable Objects/CustomerData")]
-    public class CustomerData : ScriptableObject
+    public class CustomerData : ItemData
     {
-        [field: SerializeField] public Sprite Sprite { get; set; }
         [field: SerializeField] public int HungerPoints { get; set; }
         [field: SerializeField] public float Patience { get; set; }
     }
