@@ -11,7 +11,14 @@ namespace foxRestaurant
         {
             this.customerSpawner = customerSpawner;
             this.restaurantEncounter = restaurantEncounter;
-            restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
+            var customerItem = restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
+            customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
+        }
+
+        public void CustomerItemPlacedHandler()
+        {
+            var customerItem = restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
+            customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
         }
     }
 }

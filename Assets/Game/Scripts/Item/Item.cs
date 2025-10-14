@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -20,6 +19,8 @@ namespace foxRestaurant
         [SerializeField] private ItemType itemType;
 
         protected RestaurantEncounter restaurantEncounter;
+
+        public UnityEvent OnDestroyed;
 
         public ItemType ItemType => itemType;
         public ItemStateController ItemStateController => itemStateController;
@@ -43,6 +44,12 @@ namespace foxRestaurant
         public void PlayPoofParticles()
         {
             poofParticles.Play();
+        }
+
+        private void OnDestroy()
+        {
+            OnDestroyed.Invoke();
+            OnDestroyed.RemoveAllListeners();
         }
     }
 
