@@ -7,7 +7,6 @@ namespace foxRestaurant
     {
         [SerializeField] private Item customerItemPrefab;
         [SerializeField] private Item foodItemPrefab;
-        [SerializeField] private CustomerData wolf;
         private RestaurantEncounter restaurantEncounter;
 
         public void Init(RestaurantEncounter restaurantEncounter)
@@ -25,14 +24,14 @@ namespace foxRestaurant
             SpawnFoodItem(restaurantEncounter, itemData, cookerSlot);
         }
 
-        public void SpawnCustomerItem()
+        public Item SpawnCustomerItem()
         {
             var customerSpawnSlot = restaurantEncounter.SlotsManager.CustomerSpawnerSlots.FirstOrDefault(slot => slot.Empty);
             if (customerSpawnSlot == null)
-                return;
+                return null;
 
-            var itemData = wolf;
-            SpawnItem(customerItemPrefab, restaurantEncounter, itemData, customerSpawnSlot);
+            var itemData = restaurantEncounter.DecksManager.GetRandomCustomer();
+            return SpawnItem(customerItemPrefab, restaurantEncounter, itemData, customerSpawnSlot);
         }
 
         public Item SpawnFoodItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot) =>
