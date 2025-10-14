@@ -26,7 +26,6 @@ namespace foxRestaurant
             customerCameSound.Play();
 
             var customer = Instantiate(customerPrefab);
-            seatPlace.SetCustomer(customer);
             customer.transform.parent = seatPlace.transform;
             customer.transform.localPosition = Vector3.zero;
             customer.transform.localScale = Vector3.one;
