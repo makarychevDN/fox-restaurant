@@ -110,7 +110,7 @@ namespace foxRestaurant
             if (selectedForItemMovement)
                 return false;
 
-            return placingItem.ItemType == requiredItemsType;
+            return placingItem.ItemType == requiredItemsType && gameObject.activeSelf;
         }
 
         public void Unhover()
