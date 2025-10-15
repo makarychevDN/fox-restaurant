@@ -18,6 +18,10 @@ namespace foxRestaurant
         public void CustomerItemPlacedHandler()
         {
             var customerItem = restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
+
+            if (customerItem == null)
+                return;
+
             customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
         }
     }
