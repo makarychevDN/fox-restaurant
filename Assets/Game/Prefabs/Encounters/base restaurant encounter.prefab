@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 4990535663065894151}
   - component: {fileID: 4953268104366404968}
   m_Layer: 0
-  m_Name: restaurant encounter
+  m_Name: base restaurant encounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -366,7 +366,7 @@ MonoBehaviour:
   <CookPositionController>k__BackingField: {fileID: 2019005021990881474}
   <DecksManager>k__BackingField: {fileID: 3084318393536024252}
   <Ticker>k__BackingField: {fileID: 1693044783131133519}
-  <Scenario>k__BackingField: {fileID: 73931861159657960}
+  <Scenario>k__BackingField: {fileID: 0}
   <DynamicTextManager>k__BackingField: {fileID: 1124546090868896487}
   <ItemsSpawner>k__BackingField: {fileID: 7088981166269214873}
   <ItemSpawnTimer>k__BackingField: {fileID: 4603569617256824294}
@@ -3882,7 +3882,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7448450813208767063}
-  - component: {fileID: 73931861159657960}
   m_Layer: 0
   m_Name: scenario
   m_TagString: Untagged
@@ -3905,18 +3904,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2879740804358350818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &73931861159657960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4041198558596732359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50958aefe36250544a9c8d299b93d3ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4316357711978697358
 GameObject:
   m_ObjectHideFlags: 0
