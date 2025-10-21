@@ -12,6 +12,7 @@ namespace foxRestaurant
         private List<ItemSlot> customerSpawnerSlots = new();
         public List<ItemSlot> FoodSpawningSlots => foodSpawnerSlots;
         public List<ItemSlot> CustomerSpawnerSlots => customerSpawnerSlots;
+        public List<ItemSlot> Slots => slots;
 
         public void AddSlot(ItemSlot slot)
         {

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,15 +9,29 @@ namespace foxRestaurant
         [SerializeField] private Item customerItemPrefab;
         [SerializeField] private Item foodItemPrefab;
         private RestaurantEncounter restaurantEncounter;
+        private List<ItemSlot> customerItemSpawnSlots;
+        private List<ItemSlot> foodItemSpawnSlots;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
+            foodItemSpawnSlots = restaurantEncounter.SlotsManager.FoodSpawningSlots;
+            customerItemSpawnSlots = restaurantEncounter.SlotsManager.CustomerSpawnerSlots;
+        }
+
+        public void SetFoodItemSpawnSlots(List<ItemSlot> itemSlots)
+        {
+            foodItemSpawnSlots = itemSlots;
+        }
+
+        public void SetCustomerItemSpawnSlots(List<ItemSlot> itemSlots)
+        {
+            customerItemSpawnSlots = itemSlots;
         }
 
         public void SpawnIngredient()
         {
-            var cookerSlot = restaurantEncounter.SlotsManager.FoodSpawningSlots.FirstOrDefault(slot => slot.Empty);
+            var cookerSlot = foodItemSpawnSlots.FirstOrDefault(slot => slot.Empty);
             if (cookerSlot == null)
                 return;
 
@@ -26,7 +41,7 @@ namespace foxRestaurant
 
         public Item SpawnCustomerItem()
         {
-            var customerSpawnSlot = restaurantEncounter.SlotsManager.CustomerSpawnerSlots.FirstOrDefault(slot => slot.Empty);
+            var customerSpawnSlot = customerItemSpawnSlots.FirstOrDefault(slot => slot.Empty);
             if (customerSpawnSlot == null)
                 return null;
 
