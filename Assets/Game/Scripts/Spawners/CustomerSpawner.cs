@@ -9,15 +9,16 @@ namespace foxRestaurant
     public class CustomerSpawner : MonoBehaviour
     {
         [SerializeField] private Customer customerPrefab;
-        [SerializeField] private List<SeatPlace> seatPlaces;
         [SerializeField] private AudioSource customerCameSound;
         private RestaurantEncounter restaurantEncounter;
+        private List<SeatPlace> seatPlaces;
 
         public UnityEvent OnCustomerSpawningRejected;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
+            seatPlaces = FindObjectsByType<SeatPlace>(FindObjectsSortMode.None).ToList();
             seatPlaces.ForEach(seatPlace => seatPlace.Init(restaurantEncounter));
         }
 

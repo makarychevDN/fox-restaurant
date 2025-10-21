@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EncountersList lvl 1
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
-  - {fileID: 2202273766668462489, guid: 90761ac1fd87bb741ac692e7d8ad8f25, type: 3}
+  - {fileID: 6401530632892275797, guid: bc302a25fc1ed904da85044ba4ddd10d, type: 3}

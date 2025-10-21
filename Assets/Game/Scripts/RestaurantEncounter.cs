@@ -102,8 +102,8 @@ namespace foxRestaurant
 
             if(ItemSpawnTimer != null) 
                 ItemSpawnTimer.Init(this);
-
-            Scenario.Init(this);
+            if(Scenario != null)
+                Scenario.Init(this);
         }
 
         private void SpawnSlots(SlotSpawner slotSpawner, int slotsAmount)
