@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -51,7 +50,7 @@ namespace foxRestaurant
         public DataBase DataBase { get; private set; }
 
         private List<ItemData> allPossibleItemData;
-        private TaskCompletionSource<bool> completionSource = new TaskCompletionSource<bool>();
+        //private TaskCompletionSource<bool> completionSource = new TaskCompletionSource<bool>();
 
         public UnityEvent<DataBase> OnDataBaseUpdated;
 
@@ -102,8 +101,6 @@ namespace foxRestaurant
 
             if(ItemSpawnTimer != null) 
                 ItemSpawnTimer.Init(this);
-            if(Scenario != null)
-                Scenario.Init(this);
         }
 
         private void SpawnSlots(SlotSpawner slotSpawner, int slotsAmount)
@@ -123,7 +120,7 @@ namespace foxRestaurant
             OnDataBaseUpdated.Invoke(DataBase);
         }
 
-        public override async Task StartEncounter()
+        /*public override async Task StartEncounter()
         {
             await completionSource.Task;
         }
@@ -142,6 +139,6 @@ namespace foxRestaurant
             {
                 Complete();
             }
-        }
+        }*/
     }
 }

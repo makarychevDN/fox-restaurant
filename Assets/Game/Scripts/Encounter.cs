@@ -5,7 +5,8 @@ namespace foxRestaurant
 {
     public abstract class Encounter : MonoBehaviour
     {
+        public BaseScenario scenario;
+
         public abstract void Init();
-        public abstract Task StartEncounter();
     }
 }

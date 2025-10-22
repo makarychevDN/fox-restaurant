@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -5,13 +6,6 @@ namespace foxRestaurant
     public class DefaultRestaurantEncounterScenario : RestaurantScenario
     {
         RestaurantEncounter restaurantEncounter;
-
-        public override void Init(RestaurantEncounter restaurantEncounter)
-        {
-            this.restaurantEncounter = restaurantEncounter;
-            var customerItem = restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
-            customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
-        }
 
         public void CustomerItemPlacedHandler()
         {
@@ -21,6 +15,15 @@ namespace foxRestaurant
                 return;
 
             customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
+        }
+
+        protected override async Task StartScenarioTyped(RestaurantEncounter ecnounter)
+        {
+            ecnounter = restaurantEncounter;
+            var customerItem = restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
+            customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
+
+            await Task.Delay(1000);
         }
     }
 }

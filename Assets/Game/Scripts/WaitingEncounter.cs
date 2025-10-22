@@ -8,10 +8,5 @@ namespace foxRestaurant
         [SerializeField] private float duration = 3f;
 
         public override void Init() { }
-
-        public override async Task StartEncounter()
-        {
-            await Task.Delay((int)(duration * 1000));
-        }
     }
 }
