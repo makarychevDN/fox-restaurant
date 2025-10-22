@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: customers list (level 0)
   m_EditorClassIdentifier: 
   <DataList>k__BackingField:
-  - {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
-  - {fileID: 11400000, guid: 40c3ed5200658e3479102abbcd4e550f, type: 2}
-  - {fileID: 11400000, guid: 0da883b7bf777274f844eec91b283db9, type: 2}
-  - {fileID: 11400000, guid: 45f5d8257b8184945987aca87e33447c, type: 2}
+  - {fileID: 11400000, guid: 30f720480acb93c44b15887566919e9a, type: 2}
+  - {fileID: 11400000, guid: 86ab3080b8e967d40a848f4133e2b7a3, type: 2}
+  - {fileID: 11400000, guid: b4f2271fcc1c0ae40a02577471f3643c, type: 2}
