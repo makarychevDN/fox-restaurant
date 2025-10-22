@@ -32,6 +32,7 @@ namespace foxRestaurant
             customer.transform.localScale = Vector3.one;
             customer.transform.localRotation = Quaternion.identity;
             customer.Init(restaurantEncounter, customerData, getItemDataToOrderFunc);
+            seatPlace.SetCustomer(customer);
             return customer;
         }
 

@@ -33,7 +33,6 @@ namespace foxRestaurant
                 return;
 
             customer = restaurantEncounter.CustomerSpawner.SpawnCustomer(this, (CustomerData)item.ItemData, () => restaurantEncounter.DecksManager.GetRandomDish());
-            SetCustomer(customer);
 
             customerItemSlot.Clear();
             customerItemSlot.gameObject.SetActive(false);
