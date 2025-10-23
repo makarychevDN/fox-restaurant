@@ -50,8 +50,6 @@ namespace foxRestaurant
         public DataBase DataBase { get; private set; }
 
         private List<ItemData> allPossibleItemData;
-        //private TaskCompletionSource<bool> completionSource = new TaskCompletionSource<bool>();
-
         public UnityEvent<DataBase> OnDataBaseUpdated;
 
 
@@ -119,26 +117,5 @@ namespace foxRestaurant
             DataBase = new DataBase(csvFile.ToStringsArray(), allPossibleItemData);
             OnDataBaseUpdated.Invoke(DataBase);
         }
-
-        /*public override async Task StartEncounter()
-        {
-            await completionSource.Task;
-        }
-
-        public void Complete()
-        {
-            if (completionSource != null && !completionSource.Task.IsCompleted)
-            {
-                completionSource.SetResult(true);
-            }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Complete();
-            }
-        }*/
     }
 }
