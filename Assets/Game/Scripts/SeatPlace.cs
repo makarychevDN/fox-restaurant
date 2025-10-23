@@ -42,27 +42,38 @@ namespace foxRestaurant
         {
             if(customer == null)
             {
-                this.customer.OnLeft.RemoveListener(CustomerLeftHandler);
+                this.customer.OnLeftSatisfied.RemoveListener(CustomerLeftHandler);
+                this.customer.OnLeftSatisfied.RemoveListener(PlayPayMoneySoundSound);
+                this.customer.OnLeftUnsatisfied.RemoveListener(CustomerLeftHandler);
+                this.customer.OnLeftUnsatisfied.RemoveListener(PlayBonkSound);
             }
             else
             {
                 particles.Play();
-                customer.OnLeft.AddListener(CustomerLeftHandler);
+                customer.OnLeftSatisfied.AddListener(CustomerLeftHandler);
+                customer.OnLeftSatisfied.AddListener(PlayPayMoneySoundSound);
+                customer.OnLeftUnsatisfied.AddListener(CustomerLeftHandler);
+                customer.OnLeftUnsatisfied.AddListener(PlayBonkSound);
             }
 
             this.customer = customer;
         }
 
-        private void CustomerLeftHandler(bool customerIsSatisfied)
+        private void CustomerLeftSatisfiedHandler()
         {
             particles.Play();
-
-            if(customerIsSatisfied)
-                payMoneySound.Play();
-            else
-                bonkSound.Play();
             SetCustomer(null);
             customerItemSlot.gameObject.SetActive(true);
         }
+
+        private void CustomerLeftHandler()
+        {
+            particles.Play();
+            SetCustomer(null);
+            customerItemSlot.gameObject.SetActive(true);
+        }
+
+        private void PlayPayMoneySoundSound() => payMoneySound.Play();
+        private void PlayBonkSound() => bonkSound.Play();
     }
 }

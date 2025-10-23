@@ -33,7 +33,8 @@ namespace foxRestaurant
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
-        public UnityEvent<bool> OnLeft;
+        public UnityEvent OnLeftSatisfied;
+        public UnityEvent OnLeftUnsatisfied;
         public UnityEvent OnAte;
 
         public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
@@ -132,13 +133,13 @@ namespace foxRestaurant
 
         public void LeaveSatisfied()
         {
-            OnLeft.Invoke(true);
+            OnLeftSatisfied.Invoke();
             Destroy(gameObject);
         }
 
         public void LeaveUnsatisfied()
         {
-            OnLeft.Invoke(false);
+            OnLeftUnsatisfied.Invoke();
             Destroy(gameObject);
         }
     }
