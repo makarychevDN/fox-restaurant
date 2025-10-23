@@ -505,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 3360389868133734922}
     - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: cookerSlotsCount
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: spawnItemSlotsCount
@@ -607,6 +607,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 807181464718763575, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
   m_PrefabInstance: {fileID: 6616348517698462878}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6420699931444699582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 201278238129620256, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+  m_PrefabInstance: {fileID: 6616348517698462878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a853fb76a2f234fa682286aad6e9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7189087790374842713 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4041198558596732359, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
@@ -628,6 +639,8 @@ MonoBehaviour:
   iceCreamPlateData: {fileID: 11400000, guid: 222380821bbff1645a695f9b2dc7a830, type: 2}
   cherrySyrupData: {fileID: 11400000, guid: 95162b9f9696a624cbb71564a55a2539, type: 2}
   cherryIceCreamPlateData: {fileID: 11400000, guid: be38da74d1fff764db420eb6138c7e8c, type: 2}
+  itemSlots: []
+  redTheCook: {fileID: 6420699931444699582}
 --- !u!4 &8611058892264965217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3193436537240248575, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
