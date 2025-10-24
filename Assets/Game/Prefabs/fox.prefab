@@ -1124,6 +1124,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2959519563098566168, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: m_Pitch
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959519563098566168, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 145a1a355a34614458bc40e68b4f5d1d, type: 3}
+    - target: {fileID: 2959519563098566168, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 145a1a355a34614458bc40e68b4f5d1d, type: 3}
     - target: {fileID: 3060301661698862336, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
