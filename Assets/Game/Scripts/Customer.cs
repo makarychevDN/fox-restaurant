@@ -129,7 +129,7 @@ namespace foxRestaurant
             restaurantEncounter.Ticker.RemoveTickable(this);
             slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
-            Destroy(slotToPlaceFood.gameObject);
+            slotToPlaceFood.PreDestroy();
 
             orderBox.SetActive(false);
         }
@@ -137,12 +137,14 @@ namespace foxRestaurant
         public void LeaveSatisfied()
         {
             OnLeft.Invoke(true);
+            Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);
         }
 
         public void LeaveUnsatisfied()
         {
             OnLeft.Invoke(false);
+            Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);
         }
     }

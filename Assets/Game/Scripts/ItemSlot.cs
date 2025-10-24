@@ -17,6 +17,7 @@ namespace foxRestaurant
         private ItemData requiredItemData;
         private RestaurantEncounter restaurantEncounter;
         private bool selectedForItemMovement;
+        private bool preDestroyed;
 
         public UnityEvent OnHasBeenOccupied;
         public UnityEvent<Item> OnItemHasBeenPlaced;
@@ -107,7 +108,7 @@ namespace foxRestaurant
 
         public bool AvailableToPlaceItem(Item placingItem)
         {
-            if (selectedForItemMovement)
+            if (selectedForItemMovement || preDestroyed)
                 return false;
 
             return placingItem.ItemType == requiredItemsType && gameObject.activeSelf;
@@ -117,6 +118,11 @@ namespace foxRestaurant
         {
             hoveredItemRenderer.enabled = false;
             boxOnHoverRenderer.SetActive(false);
+        }
+
+        public void PreDestroy()
+        {
+            preDestroyed = true;
         }
 
         private void OnDestroy()
