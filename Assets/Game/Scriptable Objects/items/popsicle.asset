@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42e557c25537db43b599e2c0d65fefd, type: 3}
-  m_Name: kiddo doggo
+  m_Script: {fileID: 11500000, guid: 2ef442539802fb94380527bd3b844d05, type: 3}
+  m_Name: popsicle
   m_EditorClassIdentifier: 
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 75d48f51e61c9ba45812fd53c4fe31ad, type: 3}
-  <HungerPoints>k__BackingField: 1
-  <Patience>k__BackingField: 60
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 3d21ea5695b2b784eab213e27b512141, type: 3}
