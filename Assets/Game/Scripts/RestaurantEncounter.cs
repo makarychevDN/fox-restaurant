@@ -18,7 +18,6 @@ namespace foxRestaurant
         [field: SerializeField] public CookPositionController CookPositionController { get; private set; }
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }
-        [field: SerializeField] public RestaurantScenario Scenario { get; private set; }
         [field: SerializeField] public DynamicTextManager DynamicTextManager { get; private set; }
 
         [field: Header("Spawners")]
