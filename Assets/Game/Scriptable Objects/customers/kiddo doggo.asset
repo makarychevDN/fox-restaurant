@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: kiddo doggo
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 75d48f51e61c9ba45812fd53c4fe31ad, type: 3}
-  <HungerPoints>k__BackingField: 1
+  <HungerPoints>k__BackingField: 2
   <Patience>k__BackingField: 60
