@@ -33,6 +33,10 @@ namespace foxRestaurant
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
+        /// <summary>
+        /// It is called when the customer leaves.
+        /// if satisfied, argument = true, else argument = false.
+        /// </summary>
         public UnityEvent<bool> OnLeft;
         public UnityEvent OnAte;
 
