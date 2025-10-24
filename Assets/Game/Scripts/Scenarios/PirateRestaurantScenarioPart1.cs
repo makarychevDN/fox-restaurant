@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,57 +18,73 @@ namespace foxRestaurant
         [SerializeField] private CustomerData kitty;
         [SerializeField] private CustomerData duck;
 
-        [SerializeField] private List<ItemSlot> itemSlots;
-
         [SerializeField] private Character redTheCook;
 
-        private TaskCompletionSource<bool> completionSource = new();
         private List<Customer> customersToFeed = new();
+        private List<ItemSlot> itemSlots;
+        private TaskCompletionSource<bool> completionSource = new();
+        private int switchConeAndPopsicleCount;
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
 
             await Task.Delay(500);
-            await redTheCook.Say("*sigh*<pause:1> Another day, another dollar");
+            await redTheCook.Say("*sigh*<pause:1> Another day, another dollar.");
 
-            await FirstWave(encounter);
+            await FixWave(encounter, new List<ItemData> { iceCreamConeData, iceCreamConeData }, "", 
+                (duck, () => iceCreamConeData), (kitty, () => iceCreamConeData));
+            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData }, "",
+                (duck, () => iceCreamConeData), (kitty, () => popsicleData));
+            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData },
+                "Damn,<pause:0.5> this kiddo seems tough,<pause:0.5> he needs at least two icecreams.",
+                (doggo, SwitchConeAndPopsicle));
+            await redTheCook.Say("Big boy, huh?<pause:0.75> The bigger they are, the harder they fall.");
 
             await completionSource.Task;
         }
 
-        private async Task FirstWave(RestaurantEncounter encounter)
+        private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, string commentary, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
             bool success = false;
             while (!success)
             {
-                for (int i = 0; i < 2; i++)
+                customersToFeed.Clear();
+
+                for (int i = 0; i < itemsToSpawnData.Count; i++)
                 {
                     await Task.Delay(500);
-                    encounter.ItemsSpawner.SpawnFoodItem(encounter, iceCreamConeData, itemSlots[i + 1]);
+                    encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], itemSlots[i]);
                 }
 
-                for (int i = 0; i < 2; i++)
+                foreach(var customerAndOrder in customersAndTheirOrders)
                 {
                     await Task.Delay(500);
 
                     var customer = encounter.CustomerSpawner.TryToSpawnCustomer(
-                        encounter.DecksManager.GetRandomCustomer(),
-                        () => iceCreamConeData
+                        customerAndOrder.Item1,
+                        customerAndOrder.Item2
                     );
 
                     customersToFeed.Add(customer);
                 }
+
+                if (commentary != "")
+                    await redTheCook.Say(commentary);
 
                 var tasks = customersToFeed.Select(WaitForCustomerToLeave).ToArray();
                 var results = await Task.WhenAll(tasks);
 
                 success = results.All(r => r);
                 if (!success)
-                    await redTheCook.Say("damn...<pause:1> ok, let's try again");
-                else
-                    await redTheCook.Say("Hell yeah!");
+                    await redTheCook.Say("damn...<pause:1> Ok, let's try again");
             }
+        }
+
+        private ItemData SwitchConeAndPopsicle()
+        {
+            switchConeAndPopsicleCount++;
+            return switchConeAndPopsicleCount % 2 == 0 ? popsicleData : iceCreamConeData;
         }
 
         private Task<bool> WaitForCustomerToLeave(Customer customer)

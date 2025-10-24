@@ -520,10 +520,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
-      propertyPath: <Scenario>k__BackingField
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: <ItemSpawnTimer>k__BackingField
       value: 
       objectReference: {fileID: 0}
@@ -636,9 +632,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   iceCreamConeData: {fileID: 11400000, guid: 0ecbdab4c0c8ea64399db0079c6ae0af, type: 2}
+  popsicleData: {fileID: 11400000, guid: 8273250e1e35cfa44aefb166d5e632f1, type: 2}
   iceCreamPlateData: {fileID: 11400000, guid: 222380821bbff1645a695f9b2dc7a830, type: 2}
   cherrySyrupData: {fileID: 11400000, guid: 95162b9f9696a624cbb71564a55a2539, type: 2}
   cherryIceCreamPlateData: {fileID: 11400000, guid: be38da74d1fff764db420eb6138c7e8c, type: 2}
+  doggo: {fileID: 11400000, guid: 30f720480acb93c44b15887566919e9a, type: 2}
+  kitty: {fileID: 11400000, guid: b4f2271fcc1c0ae40a02577471f3643c, type: 2}
+  duck: {fileID: 11400000, guid: 86ab3080b8e967d40a848f4133e2b7a3, type: 2}
   itemSlots: []
   redTheCook: {fileID: 6420699931444699582}
 --- !u!4 &8611058892264965217 stripped
