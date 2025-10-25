@@ -13,6 +13,7 @@ namespace foxRestaurant
         [SerializeField] private ItemData iceCreamPlateData;
         [SerializeField] private ItemData cherrySyrupData;
         [SerializeField] private ItemData cherryIceCreamPlateData;
+        [SerializeField] private ItemData coalData;
 
         [SerializeField] private CustomerData doggo;
         [SerializeField] private CustomerData kitty;
@@ -34,12 +35,23 @@ namespace foxRestaurant
 
             await FixWave(encounter, new List<ItemData> { iceCreamConeData, iceCreamConeData }, "", 
                 (duck, () => iceCreamConeData), (kitty, () => iceCreamConeData));
+
             await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData }, "",
                 (duck, () => iceCreamConeData), (kitty, () => popsicleData));
+
             await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData },
                 "Damn,<pause:0.5> this kiddo seems tough,<pause:0.5> he needs at least two icecreams.",
                 (doggo, SwitchConeAndPopsicle));
+
             await redTheCook.Say("Big boy, huh?<pause:0.75> The bigger they are, the harder they fall.");
+
+            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }, "",
+                (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData));
+
+            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }, "",
+                (doggo, SwitchConeAndPopsicle), (doggo, SwitchConeAndPopsicle));
+
+            await redTheCook.Say("Hell yeah!");
 
             await completionSource.Task;
         }
