@@ -39,7 +39,7 @@ namespace foxRestaurant
         public Customer TryToSpawnCustomer(CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             var seatPlaceToSpawn = 
-                seatPlaces.Where(seatPlace => !seatPlace.IsTaken).ToList().GetRandomElement();
+                seatPlaces.Where(seatPlace => !seatPlace.IsTaken && seatPlace.gameObject.activeSelf).ToList().GetRandomElement();
 
             if (seatPlaceToSpawn == null)
                 return null;

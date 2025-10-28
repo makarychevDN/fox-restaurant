@@ -13,6 +13,7 @@ namespace foxRestaurant
         public List<Recipe> Recipes => recipes;
         public Dictionary<ItemData, ItemData> SlicingResults => slicingResults;
         public Dictionary<ItemData, ItemData> FryingResults => fryingResults;
+        public Dictionary<string, ItemData> Items => items;
 
         public DataBase(string[,] data, List<ItemData> allPossibleItemData)
         {

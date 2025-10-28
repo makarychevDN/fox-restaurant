@@ -40,6 +40,8 @@ namespace foxRestaurant
         public UnityEvent<bool> OnLeft;
         public UnityEvent OnAte;
 
+        public Character Character => character;
+
         public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             this.getItemDataToOrderFunc = getItemDataToOrderFunc;
