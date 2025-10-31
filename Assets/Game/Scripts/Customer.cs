@@ -31,7 +31,7 @@ namespace foxRestaurant
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
         private RestaurantEncounter restaurantEncounter;
-        private List<ICustomerEffectInstance> effects = new();
+        private List<ITickable> activeEffects = new();
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
@@ -72,7 +72,7 @@ namespace foxRestaurant
             foreach (ICustomerEffect effect in customerData.Effects)
             {
                 var instance = effect.CreateInstance();
-                effects.Add(instance);
+                if(instance is ITickable) activeEffects.Add(instance as ITickable);
                 instance.Apply(this);                
             }
         }
@@ -123,6 +123,11 @@ namespace foxRestaurant
             Patience -= deltaTime;
             Patience = Math.Clamp(Patience, 0, 1000);
             OnPatienceChanged.Invoke(Patience);
+
+            for(int i = 0; i < activeEffects.Count; i++)
+            {
+                activeEffects[i].Tick(deltaTime);
+            }
 
             if(Patience <= 0)
             {
