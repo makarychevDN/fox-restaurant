@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 20b0caed71a456142ba905010765a12b, type: 3}
   <HungerPoints>k__BackingField: 5
-  <Patience>k__BackingField: 60
+  <Patience>k__BackingField: 120

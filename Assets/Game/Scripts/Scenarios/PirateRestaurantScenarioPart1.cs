@@ -62,10 +62,10 @@ namespace foxRestaurant
             await GarbageCanTutorial(encounter);
             await Task.Delay(500);
             await TeachToFuseIngredients(encounter);
+            await Task.Delay(500);
+            await TeachToManageSpawnedItems(encounter);
             await Task.Delay(500);*/
-            //await TeachToManageSpawnedItems(encounter);
-            await Task.Delay(1500);
-
+            await MiniBossDialogue(encounter);
             await MiniBossWave(encounter);
             await completionSource.Task;
         }
@@ -142,13 +142,29 @@ namespace foxRestaurant
             await Task.Delay(500);
             await redTheCook.Say("Oh.<pause:0.5> The real game begins.");
             await redTheCook.Say("It's easy.<pause:0.5> This thing spawns items,<pause:0.5> I use them.");
-            await redTheCook.Say("And rememver:<pause:0.5> don't let it get clogged up.");
+            await redTheCook.Say("And remember,<pause:0.5> don't let it get clogged up.");
             itemSpawnTimer.Init(encounter);
+
+            await FixWave(encounter, new List<ItemData>(),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
+
+            await FixWave(encounter, new List<ItemData>(),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
+
+            await FixWave(encounter, new List<ItemData>(),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
         }
 
 
-        private async Task MiniBossWave(RestaurantEncounter encounter)
+        private async Task MiniBossDialogue(RestaurantEncounter encounter)
         {
+            encounter.Ticker.Pause();
             await HeavyStep(0.25f, 0.25f);
             await Task.Delay(750);
             await redTheCook.Say("*sigh*<pause:1> Everyday in the same time");
@@ -179,8 +195,18 @@ namespace foxRestaurant
             blinkAnimator.SetTrigger("blink");
             await Task.Delay(1000);
             await bearMiniBoss.Character.Say("And I need some calories to be in the perfect shape.<pause:0.5> So, hurry up, Red <pause:0.5>NOT<pause:0.5> a Cook.");
-            bearMiniBoss.Init(encounter, bearMiniBossData, () => iceCreamConeData);
-            bearsUI.gameObject.SetActive(true);
+            bearMiniBoss.gameObject.SetActive(false);
+            miniBossSeatPlace.gameObject.SetActive(true);
+            encounter.Ticker.SetRegularTickingSpeed();
+        }
+
+        private async Task MiniBossWave(RestaurantEncounter encounter)
+        {
+            await FixWave(encounter, new List<ItemData>(),
+                (bearMiniBossData, encounter.DecksManager.GetRandomDish),
+                (doggo, encounter.DecksManager.GetRandomDish),
+                (kitty, encounter.DecksManager.GetRandomDish),
+                (duck, encounter.DecksManager.GetRandomDish));
         }
 
         private Task WaitForAllItemsToBeDisposed(List<Item> itemsToDispose)
