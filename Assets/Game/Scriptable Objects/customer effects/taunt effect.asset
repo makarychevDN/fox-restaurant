@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83be24e82e83744ab1d4045a509ed8a, type: 3}
   m_Name: taunt effect
   m_EditorClassIdentifier: 
+  cooldown: 6

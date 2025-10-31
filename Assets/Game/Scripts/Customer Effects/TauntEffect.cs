@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -19,16 +20,18 @@ namespace foxRestaurant
         private float timer;
         private float cooldown;
 
+        public event Action<float, float> OnTick;
+        public event Action<bool> OnStateChanged;
+
         public TauntEffectInstance(float cooldown)
         {
             this.cooldown = cooldown;
-            this.timer = cooldown;
+            timer = cooldown;
         }
 
         public void Apply(Customer customer)
         {
-            Debug.Log($"muhaha, Taunt from {customer}");
-            customer.OnAte.AddListener(TurnOffTheTaunt);
+            customer.OnAte.AddListener(TurnOffTaunt);
         }
 
         public void Tick(float deltaTime)
@@ -38,21 +41,19 @@ namespace foxRestaurant
 
             timer -= deltaTime;
             timer = Mathf.Clamp(timer, 0, cooldown);
+            OnTick?.Invoke(timer, cooldown);
 
             if (timer == 0)
-                TurnOnTheTaunt();
+                TurnOnTaunt();
         }
 
-        public void TurnOffTheTaunt()
-        {
-            isActive = false;
-            Debug.Log("I tired of this, I need some rest");
-        }
+        private void TurnOnTaunt() => SetActiveState(true);
+        private void TurnOffTaunt() => SetActiveState(false);
 
-        public void TurnOnTheTaunt()
+        private void SetActiveState(bool state)
         {
-            isActive = true;
-            Debug.Log("my taunt is back!!!");
+            isActive = state;
+            OnStateChanged.Invoke(isActive);
         }
     }
 }
