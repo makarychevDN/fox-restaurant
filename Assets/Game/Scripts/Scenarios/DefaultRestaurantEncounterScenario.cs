@@ -19,11 +19,11 @@ namespace foxRestaurant
 
         protected override async Task StartScenarioTyped(RestaurantEncounter ecnounter)
         {
-            ecnounter = restaurantEncounter;
+            restaurantEncounter = ecnounter;
             var customerItem = restaurantEncounter.ItemsSpawner.SpawnCustomerItem();
             customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
 
-            await Task.Delay(1000);
+            await Task.Delay(100000);
         }
     }
 }
