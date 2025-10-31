@@ -146,6 +146,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -12
       objectReference: {fileID: 0}
+    - target: {fileID: 3084318393536024252, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: dishesToOrderAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f9d3f1cdd02b3749bb50a8b8198df6f, type: 2}
+    - target: {fileID: 3084318393536024252, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: customersToSpawnAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3575353009976494aaa3c051f0b991f7, type: 2}
+    - target: {fileID: 3084318393536024252, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: ingredientsToSpawnAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 57256771bd314cd409bcb63bbaffe9fc, type: 2}
     - target: {fileID: 3914248060966615546, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -155,8 +167,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: scenario
+      value: 
+      objectReference: {fileID: 6174056854483714052}
+    - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: cookerSlotsCount
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: spawnItemSlotsCount
@@ -202,6 +218,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 99971ad85f8ece94fab10fbf6aab4e3b, type: 3}
+    - target: {fileID: 6686876591745980028, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: rootIngredients
+      value: 
+      objectReference: {fileID: 11400000, guid: 57256771bd314cd409bcb63bbaffe9fc, type: 2}
     - target: {fileID: 8176221175540996245, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0

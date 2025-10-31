@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6937133098145844286f5b522d5a49e0, type: 3}
+  m_Name: dishes list (level 1)
+  m_EditorClassIdentifier: 
+  <DataList>k__BackingField:
+  - {fileID: 11400000, guid: 83d2662e44adeab449d7e827ab05369a, type: 2}
+  - {fileID: 11400000, guid: 59351a894edbbf74c88b45742709f5ab, type: 2}
+  - {fileID: 11400000, guid: e7d1c7a734d8a5249943034f7e44268b, type: 2}
+  - {fileID: 11400000, guid: ab6d096e9e84c9d47813a27bd37a19b6, type: 2}
+  - {fileID: 11400000, guid: adb47aecc2c90a1408f44b122bb67d36, type: 2}
+  - {fileID: 11400000, guid: 9b6301191ec23bd4f820940673d6e8a7, type: 2}
