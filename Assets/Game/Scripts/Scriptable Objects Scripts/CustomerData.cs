@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -7,5 +9,8 @@ namespace foxRestaurant
     {
         [field: SerializeField] public int HungerPoints { get; set; }
         [field: SerializeField] public float Patience { get; set; }
+        [SerializeField] private List<ScriptableObject> effects;
+
+        public IEnumerable<ICustomerEffect> Effects => effects.OfType<ICustomerEffect>();
     }
 }

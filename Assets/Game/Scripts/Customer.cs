@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -30,6 +31,7 @@ namespace foxRestaurant
         private ItemSlot slotToPlaceFood;
         private Func<ItemData> getItemDataToOrderFunc;
         private RestaurantEncounter restaurantEncounter;
+        private List<ICustomerEffectInstance> effects = new();
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
@@ -66,6 +68,13 @@ namespace foxRestaurant
             HungerPoints = customerData.HungerPoints;
             Patience = customerData.Patience;
             character.SetSprite(customerData.Sprite);
+
+            foreach (ICustomerEffect effect in customerData.Effects)
+            {
+                var instance = effect.CreateInstance();
+                effects.Add(instance);
+                instance.Apply(this);                
+            }
         }
 
         private void SetOrderData(ItemData itemData)
