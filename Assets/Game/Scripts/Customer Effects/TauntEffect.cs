@@ -47,14 +47,15 @@ namespace foxRestaurant
             OnTick?.Invoke(timer, cooldown);
 
             if (timer == 0)
-            {
                 TurnOnTaunt();
-                timer = cooldown;
-            }
         }
 
         private void TurnOnTaunt() => SetActiveState(true);
-        private void TurnOffTaunt() => SetActiveState(false);
+        private void TurnOffTaunt()
+        {
+            SetActiveState(false);
+            timer = cooldown;
+        }
 
         private void SetActiveState(bool state)
         {
