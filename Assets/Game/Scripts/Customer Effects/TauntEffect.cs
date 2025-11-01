@@ -32,7 +32,7 @@ namespace foxRestaurant
             timer = cooldown;
         }
 
-        public void Apply(Customer customer)
+        public void Apply(Customer customer, RestaurantEncounter encounter)
         {
             customer.OnAte.AddListener(TurnOffTaunt);
         }

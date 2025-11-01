@@ -2,6 +2,6 @@ namespace foxRestaurant
 {
     public interface ICustomerEffectInstance
     {
-        public void Apply(Customer customer);
+        public void Apply(Customer customer, RestaurantEncounter encounter);
     }
 }
