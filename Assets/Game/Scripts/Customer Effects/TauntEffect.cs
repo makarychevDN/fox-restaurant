@@ -4,14 +4,17 @@ using UnityEngine;
 namespace foxRestaurant
 {
     [CreateAssetMenu(fileName = "taunt effect", menuName = "Scriptable Objects/Customer Effects/taunt effect")]
-    public class TauntEffect : ScriptableObject, ICustomerEffect
+    public class TauntEffect : ScriptableObject, ICustomerEffect, IAbleToReturnViewPrefab
     {
         [SerializeField] private float cooldown;
+        [SerializeField] private GameObject viewPrefab;
 
         public ICustomerEffectInstance CreateInstance()
         {
             return new TauntEffectInstance(cooldown);
         }
+
+        public GameObject GetViewPrefab() => viewPrefab;
     }
 
     public class TauntEffectInstance : ICustomerEffectInstance, ITickable
@@ -44,7 +47,10 @@ namespace foxRestaurant
             OnTick?.Invoke(timer, cooldown);
 
             if (timer == 0)
+            {
                 TurnOnTaunt();
+                timer = cooldown;
+            }
         }
 
         private void TurnOnTaunt() => SetActiveState(true);

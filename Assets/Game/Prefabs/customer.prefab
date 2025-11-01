@@ -54,7 +54,6 @@ MonoBehaviour:
   <Patience>k__BackingField: 0
   itemSlotPrefab: {fileID: 5498270339331870369, guid: 93a5253740c3e134baa4e80ac40b82c1, type: 3}
   character: {fileID: 7041731887450620140}
-  eatingSound: {fileID: 3197204169755092243}
   timeIsUpSound: {fileID: 1880447083934669911}
   animator: {fileID: 8153659440555309590}
   slotPositionPoint: {fileID: 6952867010230834956}

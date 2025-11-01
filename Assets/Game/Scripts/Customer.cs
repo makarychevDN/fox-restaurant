@@ -73,7 +73,18 @@ namespace foxRestaurant
             {
                 var instance = effect.CreateInstance();
                 if(instance is ITickable) activeEffects.Add(instance as ITickable);
-                instance.Apply(this);                
+                instance.Apply(this);
+
+                if (effect is IAbleToReturnViewPrefab ableToReturnViewPrefab)
+                {
+                    var prefab = ableToReturnViewPrefab.GetViewPrefab();
+                    var viewGO = Instantiate(prefab, uiStatsRoot);
+
+                    if (viewGO.TryGetComponent<ICustomerEffectView>(out var view))
+                    {
+                        view.InitBase(instance);
+                    }
+                }
             }
         }
 

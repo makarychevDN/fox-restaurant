@@ -62,10 +62,10 @@ namespace foxRestaurant
             await GarbageCanTutorial(encounter);
             await Task.Delay(500);
             await TeachToFuseIngredients(encounter);
-            await Task.Delay(500);
-            await TeachToManageSpawnedItems(encounter);
             await Task.Delay(500);*/
-            await MiniBossDialogue(encounter);
+            await TeachToManageSpawnedItems(encounter);
+            //await Task.Delay(500);
+            //await MiniBossDialogue(encounter);
             await MiniBossWave(encounter);
             await completionSource.Task;
         }
@@ -145,7 +145,7 @@ namespace foxRestaurant
             await redTheCook.Say("And remember,<pause:0.5> don't let it get clogged up.");
             itemSpawnTimer.Init(encounter);
 
-            await FixWave(encounter, new List<ItemData>(),
+            /*await FixWave(encounter, new List<ItemData>(),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
 
@@ -158,7 +158,7 @@ namespace foxRestaurant
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));*/
         }
 
 

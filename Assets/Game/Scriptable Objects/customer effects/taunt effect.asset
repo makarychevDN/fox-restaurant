@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: taunt effect
   m_EditorClassIdentifier: 
   cooldown: 6
+  viewPrefab: {fileID: 7648464826878185303, guid: 9f365e63b3aca894d989e9cf356a3668, type: 3}

@@ -11,7 +11,6 @@ namespace foxRestaurant
 
         protected override void OnInit()
         {
-            tauntIsActiveIcon.SetActive(false);
             Instance.OnStateChanged += StateChangedHandler;
             Instance.OnTick += TickHandler;
         }
