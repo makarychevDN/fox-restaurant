@@ -203,9 +203,9 @@ namespace foxRestaurant
         private async Task MiniBossWave(RestaurantEncounter encounter)
         {
             await FixWave(encounter, new List<ItemData>(),
-                (bearMiniBossData, encounter.DecksManager.GetRandomDish),
                 (doggo, encounter.DecksManager.GetRandomDish),
                 (kitty, encounter.DecksManager.GetRandomDish),
+                (bearMiniBossData, encounter.DecksManager.GetRandomDish),
                 (duck, encounter.DecksManager.GetRandomDish));
         }
 

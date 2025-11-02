@@ -8,6 +8,7 @@ namespace foxRestaurant
     {
         [SerializeField] private Image hoveredItemRenderer;
         [SerializeField] private GameObject boxOnHoverRenderer;
+        [SerializeField] private GameObject redCross;
         [SerializeField] private Transform centerForItem;
         [SerializeField] private SlotType slotType;
         [SerializeField] private ItemType requiredItemsType;
@@ -18,6 +19,7 @@ namespace foxRestaurant
         private RestaurantEncounter restaurantEncounter;
         private bool selectedForItemMovement;
         private bool preDestroyed;
+        private bool blocked;
 
         public UnityEvent OnHasBeenOccupied;
         public UnityEvent<Item> OnItemHasBeenPlaced;
@@ -108,7 +110,7 @@ namespace foxRestaurant
 
         public bool AvailableToPlaceItem(Item placingItem)
         {
-            if (selectedForItemMovement || preDestroyed)
+            if (blocked || selectedForItemMovement || preDestroyed)
                 return false;
 
             return placingItem.ItemType == requiredItemsType && gameObject.activeInHierarchy;
@@ -123,6 +125,12 @@ namespace foxRestaurant
         public void PreDestroy()
         {
             preDestroyed = true;
+        }
+
+        public void SetBlockedValue(bool blockedValue)
+        {
+            blocked = blockedValue;
+            redCross.SetActive(blockedValue);
         }
 
         private void OnDestroy()

@@ -270,16 +270,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29337348385e13548998331fb00524cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scenario: {fileID: 0}
   cookerSlotsCount: 0
   additionalSlotsCount: 0
   spawnItemSlotsCount: 1
   spawnCustomerSlotsCount: 0
   <PlayerInputController>k__BackingField: {fileID: 2242288789340019621}
   <SlotsManager>k__BackingField: {fileID: 8668560589748269554}
+  <CustomersManager>k__BackingField: {fileID: 2184359704294211641}
   <CookPositionController>k__BackingField: {fileID: 2019005021990881474}
   <DecksManager>k__BackingField: {fileID: 3084318393536024252}
   <Ticker>k__BackingField: {fileID: 1693044783131133519}
-  <Scenario>k__BackingField: {fileID: 0}
   <DynamicTextManager>k__BackingField: {fileID: 1124546090868896487}
   <ItemsSpawner>k__BackingField: {fileID: 7088981166269214873}
   <ItemSpawnTimer>k__BackingField: {fileID: 4603569617256824294}
@@ -1977,6 +1978,7 @@ Transform:
   - {fileID: 2232361145097130408}
   - {fileID: 2215334740822648195}
   - {fileID: 1002337144026859847}
+  - {fileID: 5649638480911148046}
   - {fileID: 2416654871146082799}
   - {fileID: 7695803640733253364}
   - {fileID: 522097447749502384}
@@ -3613,6 +3615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredItemRenderer: {fileID: 466496538212952820}
   boxOnHoverRenderer: {fileID: 8144668820136257144}
+  redCross: {fileID: 0}
   centerForItem: {fileID: 8052870101757572172}
   slotType: 10
   requiredItemsType: 5
@@ -4330,6 +4333,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7539943824515564740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5649638480911148046}
+  - component: {fileID: 2184359704294211641}
+  m_Layer: 0
+  m_Name: customers manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5649638480911148046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539943824515564740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2879740804358350818}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2184359704294211641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7539943824515564740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfb2e6a79058d94ea797fdb28f2012f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7549327235117975624
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -48,6 +49,7 @@ namespace foxRestaurant
         {
             this.getItemDataToOrderFunc = getItemDataToOrderFunc;
             restaurantEncounter.Ticker.AddTickable(this);
+            restaurantEncounter.CustomersManager.AddCustomer(this);
             this.restaurantEncounter = restaurantEncounter;
 
             slotToPlaceFood = restaurantEncounter.CustomerSlotsToPlaceFoodSpawner.SpawnSlot();
@@ -154,6 +156,7 @@ namespace foxRestaurant
         public void Uninit()
         {
             restaurantEncounter.Ticker.RemoveTickable(this);
+            restaurantEncounter.CustomersManager.RemoveCustomer(this);
             slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
             slotToPlaceFood.PreDestroy();
@@ -174,5 +177,12 @@ namespace foxRestaurant
             Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);
         }
+
+        public void SetBlockedByTauntOnAnotherCustomer(bool value)
+        {
+            slotToPlaceFood.SetBlockedValue(value);
+        }
+
+        public bool HasTauntEffect => activeEffects.Any(effect => effect is TauntEffectInstance);
     }
 }

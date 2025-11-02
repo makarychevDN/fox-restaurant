@@ -15,6 +15,7 @@ namespace foxRestaurant
         [field: Header("Controllers And Managers")]
         [field: SerializeField] public PlayerInputController PlayerInputController { get; private set; }
         [field: SerializeField] public SlotsManager SlotsManager { get; private set; }
+        [field: SerializeField] public CustomersManager CustomersManager { get; private set; }
         [field: SerializeField] public CookPositionController CookPositionController { get; private set; }
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }

@@ -22,6 +22,7 @@ namespace foxRestaurant
         private bool isActive = true;
         private float timer;
         private float cooldown;
+        private RestaurantEncounter encounter;
 
         public event Action<float, float> OnTick;
         public event Action<bool> OnStateChanged;
@@ -34,7 +35,10 @@ namespace foxRestaurant
 
         public void Apply(Customer customer, RestaurantEncounter encounter)
         {
+            this.encounter = encounter;
             customer.OnAte.AddListener(TurnOffTaunt);
+            encounter.CustomersManager.OnCertainCustomerAdded.AddListener(UpdateStateForCustomer); //todo it breaks everything work when someone appears after taunt customer
+            UpdateStateForCustomers();
         }
 
         public void Tick(float deltaTime)
@@ -61,6 +65,26 @@ namespace foxRestaurant
         {
             isActive = state;
             OnStateChanged.Invoke(isActive);
+            UpdateStateForCustomers();
+        }
+
+        private void UpdateStateForCustomers()
+        {
+            foreach (var customer in encounter.CustomersManager.Customers)
+            {
+                if (customer.HasTauntEffect)
+                    return;
+
+                UpdateStateForCustomer(customer);
+            }
+        }
+
+        private void UpdateStateForCustomer(Customer customer)
+        {
+            if (customer.HasTauntEffect)
+                return;
+
+            customer.SetBlockedByTauntOnAnotherCustomer(isActive);
         }
     }
 }
