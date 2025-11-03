@@ -47,15 +47,15 @@ namespace foxRestaurant
 
         public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
-            this.getItemDataToOrderFunc = getItemDataToOrderFunc;
-            restaurantEncounter.Ticker.AddTickable(this);
-            restaurantEncounter.CustomersManager.AddCustomer(this);
-            this.restaurantEncounter = restaurantEncounter;
-
             slotToPlaceFood = restaurantEncounter.CustomerSlotsToPlaceFoodSpawner.SpawnSlot();
             slotToPlaceFood.transform.position = slotPositionPoint.position;
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
+
+            this.getItemDataToOrderFunc = getItemDataToOrderFunc;
+            restaurantEncounter.Ticker.AddTickable(this);
+            restaurantEncounter.CustomersManager.AddCustomer(this);
+            this.restaurantEncounter = restaurantEncounter;
 
             SetCustomerData(customerData);
             MakeOrder();

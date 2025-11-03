@@ -72,9 +72,6 @@ namespace foxRestaurant
         {
             foreach (var customer in encounter.CustomersManager.Customers)
             {
-                if (customer.HasTauntEffect)
-                    return;
-
                 UpdateStateForCustomer(customer);
             }
         }
