@@ -167,14 +167,16 @@ namespace foxRestaurant
         public void LeaveSatisfied()
         {
             OnLeft.Invoke(true);
-            Destroy(slotToPlaceFood.gameObject);
+            if (slotToPlaceFood != null)
+                Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);
         }
 
         public void LeaveUnsatisfied()
         {
             OnLeft.Invoke(false);
-            Destroy(slotToPlaceFood.gameObject);
+            if(slotToPlaceFood != null)
+                Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);
         }
 

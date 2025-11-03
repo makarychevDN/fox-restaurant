@@ -62,7 +62,9 @@ namespace foxRestaurant
             else
                 bonkSound.Play();
             SetCustomer(null);
-            customerItemSlot.gameObject.SetActive(true);
+
+            if(customerItemSlot != null)
+                customerItemSlot.gameObject.SetActive(true);
         }
     }
 }
