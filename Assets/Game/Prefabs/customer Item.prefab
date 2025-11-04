@@ -45,7 +45,7 @@ AudioSource:
   m_GameObject: {fileID: 124345395784612944}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2939266076966348809, guid: 0c8b34b11143813499f535f39a56c45f, type: 2}
   m_audioClip: {fileID: 8300000, guid: c14086e00ad54b8499c47001ec2b24bd, type: 3}
   m_Resource: {fileID: 8300000, guid: c14086e00ad54b8499c47001ec2b24bd, type: 3}
   m_PlayOnAwake: 1
@@ -178,7 +178,7 @@ AudioSource:
   m_GameObject: {fileID: 2690643975340445248}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2939266076966348809, guid: 0c8b34b11143813499f535f39a56c45f, type: 2}
   m_audioClip: {fileID: 8300000, guid: 875d525b53b76f845af3fb0ee2a25971, type: 3}
   m_Resource: {fileID: 8300000, guid: 875d525b53b76f845af3fb0ee2a25971, type: 3}
   m_PlayOnAwake: 0
@@ -413,6 +413,9 @@ MonoBehaviour:
   poofParticles: {fileID: 890590293719608030}
   appearSound: {fileID: 2849396425350000302}
   itemType: 9
+  OnDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5014418370827727440
 MonoBehaviour:
   m_ObjectHideFlags: 0

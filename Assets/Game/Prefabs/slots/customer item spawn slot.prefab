@@ -310,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoveredItemRenderer: {fileID: 7489536669080516305}
   boxOnHoverRenderer: {fileID: 1193125051319482973}
+  redCross: {fileID: 0}
   centerForItem: {fileID: 1029340224870688873}
   slotType: 20
   requiredItemsType: 9
@@ -342,7 +343,7 @@ AudioSource:
   m_GameObject: {fileID: 4088236799823987148}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2939266076966348809, guid: 0c8b34b11143813499f535f39a56c45f, type: 2}
   m_audioClip: {fileID: 8300000, guid: 673ee6c410c193d4d8409356a9b896e4, type: 3}
   m_Resource: {fileID: 8300000, guid: 673ee6c410c193d4d8409356a9b896e4, type: 3}
   m_PlayOnAwake: 0
