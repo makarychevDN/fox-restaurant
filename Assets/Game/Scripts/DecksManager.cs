@@ -14,9 +14,9 @@ namespace foxRestaurant
 
         public void Init()
         {
-            ingredientsDeck = new Deck<ItemData>(ingredientsToSpawnAsset.DataList);
-            dishesDeck = new Deck<ItemData>(dishesToOrderAsset.DataList);
-            customersDeck = new Deck<CustomerData> (customersToSpawnAsset.DataList);
+            ingredientsDeck = new Deck<ItemData>(ingredientsToSpawnAsset.DataList, 1);
+            dishesDeck = new Deck<ItemData>(dishesToOrderAsset.DataList, 2);
+            customersDeck = new Deck<CustomerData> (customersToSpawnAsset.DataList, 2);
         }
 
         public ItemData GetRandomIngredient() => ingredientsDeck.Draw();

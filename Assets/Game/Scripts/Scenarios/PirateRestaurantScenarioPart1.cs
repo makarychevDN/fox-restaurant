@@ -33,11 +33,17 @@ namespace foxRestaurant
         [SerializeField] private SeatPlace miniBossSeatPlace;
         [SerializeField] private AudioSource heavyStepSound;
 
+        [Header("music")]
+        [SerializeField] private AudioSource regularMusic;
+        [SerializeField] private AudioSource bossMusic;
+
         [Header("other links")]
         [SerializeField] private ItemSlot garbageCan;
         [SerializeField] private Transform parentOfBottomItemSlots;
         [SerializeField] private Character redTheCook;
         [SerializeField] private AudioSource brokenSound;
+        [SerializeField] private AudioSource successSound;
+        [SerializeField] private AudioSource hornSound;
 
         [SerializeField] private ItemSpawnTimer itemSpawnTimer;
         [SerializeField] private GameObject slotsToSpawnFoodParent;
@@ -53,7 +59,7 @@ namespace foxRestaurant
         {
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
 
-            /*await Task.Delay(500);
+            await Task.Delay(500);
             await redTheCook.Say("*sigh*<pause:1> Another day, another dollar.");
             await TeachToFeedCustomers(encounter);
             await Task.Delay(500);
@@ -62,12 +68,12 @@ namespace foxRestaurant
             await GarbageCanTutorial(encounter);
             await Task.Delay(500);
             await TeachToFuseIngredients(encounter);
-            await Task.Delay(500);*/
+            await Task.Delay(500);
             await TeachToManageSpawnedItems(encounter);
-            //await Task.Delay(500);
-            //await MiniBossDialogue(encounter);
+            await Task.Delay(500);
+            await MiniBossDialogue(encounter);
             await MiniBossWave(encounter);
-            await completionSource.Task;
+            await MiniBossDialogueAfterWave(encounter);
         }
 
         private async Task TeachToFeedCustomers(RestaurantEncounter encounter)
@@ -145,7 +151,7 @@ namespace foxRestaurant
             await redTheCook.Say("And remember,<pause:0.5> don't let it get clogged up.");
             itemSpawnTimer.Init(encounter);
 
-            /*await FixWave(encounter, new List<ItemData>(),
+            await FixWave(encounter, new List<ItemData>(),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
 
@@ -158,12 +164,13 @@ namespace foxRestaurant
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                 (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));*/
+                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
         }
 
 
         private async Task MiniBossDialogue(RestaurantEncounter encounter)
         {
+            regularMusic.Stop();
             encounter.Ticker.Pause();
             await HeavyStep(0.25f, 0.25f);
             await Task.Delay(750);
@@ -202,10 +209,11 @@ namespace foxRestaurant
 
         private async Task MiniBossWave(RestaurantEncounter encounter)
         {
+            bossMusic.Play();
             await FixWave(encounter, new List<ItemData>(),
-                (doggo, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish),
                 (bearMiniBossData, encounter.DecksManager.GetRandomDish),
+                (doggo, encounter.DecksManager.GetRandomDish),
+                (kitty, encounter.DecksManager.GetRandomDish),                
                 (duck, encounter.DecksManager.GetRandomDish));
         }
 
@@ -230,6 +238,32 @@ namespace foxRestaurant
 
             garbageCan.OnItemHasBeenPlaced.AddListener(OnItemDisposed);
             return tcs.Task;
+        }
+
+        private async Task MiniBossDialogueAfterWave(RestaurantEncounter encounter)
+        {
+            bossMusic.Stop();
+            encounter.Ticker.Pause();
+            miniBossSeatPlace.gameObject.SetActive(true);
+            bearMiniBoss.gameObject.SetActive(true);
+            await HeavyStep(1f, 1);
+            await Task.Delay(1000);
+            await bearMiniBoss.Character.Say("Pfft.<pause: 0.5> If you've done it doesn't meen you've done it well,<pause: 0.5> Red <pause:0.5>NOT<pause:0.5> a cook.");
+            await redTheCook.Say("Yarrr,<pause: 0.5> we hope to see you again soon, young sailor!");
+            await bearMiniBoss.Character.Say("Oh, <pause:0.5>YEAH, <pause:0.5>do<pause: 0.5> NOT<pause: 0.5> hesitate.<pause:1> You will see me soon.");
+            blinkSound.Play();
+            blinkAnimator.SetTrigger("blink");
+            await Task.Delay(1000);
+            await bearMiniBoss.Character.Say("And I won't be so easy on you next time.");
+            await bearMiniBoss.Character.Say("See you later, Red <pause:0.5>NOT<pause:0.5> a cook.");
+            bearMiniBoss.LeaveSatisfied();
+            await Task.Delay(1000);
+            await redTheCook.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Finally.");
+            successSound.Play();
+            await Task.Delay(3000);
+            hornSound.Play();
+            await Task.Delay(3000);
+            await redTheCook.Say("Whoa,<pause:0.5> break time already.");
         }
 
         private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)

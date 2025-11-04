@@ -8,7 +8,7 @@ namespace foxRestaurant
         private readonly int copiesCount;
         private List<T> deck;
 
-        public Deck(List<T> source, int copiesCount = 2)
+        public Deck(List<T> source, int copiesCount)
         {
             this.source = source;
             this.copiesCount = copiesCount;
