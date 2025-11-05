@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace foxRestaurant
 {
@@ -50,6 +51,9 @@ namespace foxRestaurant
         [SerializeField] private GameObject effectOnSlotsToSpawnFoodAppear;
         [SerializeField] private AudioSource soundOnSlotsToSpawnFoodAppear;
 
+        [Header("Dialogue Lines")]
+        [SerializeField] List<LocalizedString> dialogueLines;
+
         private List<Customer> customersToFeed = new();
         private List<ItemSlot> itemSlots;
         private TaskCompletionSource<bool> completionSource = new();
@@ -60,7 +64,7 @@ namespace foxRestaurant
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
 
             await Task.Delay(500);
-            await redTheCook.Say("*sigh*<pause:1> Another day, another dollar.");
+            await redTheCook.Say(dialogueLines[0]);
             await TeachToFeedCustomers(encounter);
             await Task.Delay(500);
             await TeachToUnderstandHPMechanic(encounter);
@@ -88,10 +92,10 @@ namespace foxRestaurant
         private async Task TeachToUnderstandHPMechanic(RestaurantEncounter encounter)
         {
             await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData },
-                "Damn,<pause:0.5> this kiddo seems tough,<pause:0.5> he needs at least two icecreams.",
+                dialogueLines[1].GetLocalizedString(),
                 (doggo, SwitchConeAndPopsicle));
 
-            await redTheCook.Say("Big boy, huh?<pause:0.75> The bigger they are, the harder they fall.");
+            await redTheCook.Say(dialogueLines[2].GetLocalizedString());
 
             await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData },
                 (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData));
@@ -103,11 +107,11 @@ namespace foxRestaurant
         private async Task TeachToFuseIngredients(RestaurantEncounter encounter)
         {
             await FixWave(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData },
-                new List<string> { "Oh,<pause:0.5> wow.<pause:0.5> The first complex order for today.",
-                "Still too easy though.",
-                "Need to mix the ingredients." },
+                new List<string> { dialogueLines[8].GetLocalizedString(),
+                dialogueLines[9].GetLocalizedString(),
+                dialogueLines[10].GetLocalizedString() },
                 (duck, () => cherryIceCreamPlateData));
-            await redTheCook.Say("*sigh*<pause:1> I wonder what it's like to cook real dishes?");
+            await redTheCook.Say(dialogueLines[11].GetLocalizedString());
 
             await FixWave(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData, chocolateSyrupData, iceCreamPlateData },
                 (doggo, () => cherryIceCreamPlateData), (kitty, () => chocolateIceCreamPlateData));
@@ -130,14 +134,14 @@ namespace foxRestaurant
             }
 
             await Task.Delay(500);
-            await redTheCook.Say("Stupid old junk.");
-            await redTheCook.Say("Have to clean up the mess.");
-            await redTheCook.Say("Where is the garbage can?");
+            await redTheCook.Say(dialogueLines[3].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[4].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[5].GetLocalizedString());
             garbageCan.gameObject.SetActive(true);
             await Task.Delay(500);
-            await redTheCook.Say("Oh,<pause:0.5> there you are.");
+            await redTheCook.Say(dialogueLines[6].GetLocalizedString());
             await WaitForAllItemsToBeDisposed(spawnedItems);
-            await redTheCook.Say("Shoo,<pause:0.5> small stinkers.");
+            await redTheCook.Say(dialogueLines[7].GetLocalizedString());
         }
 
         private async Task TeachToManageSpawnedItems(RestaurantEncounter encounter)
@@ -146,9 +150,9 @@ namespace foxRestaurant
             effectOnSlotsToSpawnFoodAppear.SetActive(true);
             soundOnSlotsToSpawnFoodAppear.Play();
             await Task.Delay(500);
-            await redTheCook.Say("Oh.<pause:0.5> The real game begins.");
-            await redTheCook.Say("It's easy.<pause:0.5> This thing spawns items,<pause:0.5> I use them.");
-            await redTheCook.Say("And remember,<pause:0.5> don't let it get clogged up.");
+            await redTheCook.Say(dialogueLines[12].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[13].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[14].GetLocalizedString());
             itemSpawnTimer.Init(encounter);
 
             await FixWave(encounter, new List<ItemData>(),
@@ -174,7 +178,7 @@ namespace foxRestaurant
             encounter.Ticker.Pause();
             await HeavyStep(0.25f, 0.25f);
             await Task.Delay(750);
-            await redTheCook.Say("*sigh*<pause:1> Everyday in the same time");
+            await redTheCook.Say(dialogueLines[15].GetLocalizedString());
             await HeavyStep(0.5f, 0.5f);
             await Task.Delay(750);
             await HeavyStep(0.75f, 0.75f);
@@ -189,19 +193,19 @@ namespace foxRestaurant
             blinkSound.Play();
             blinkAnimator.SetTrigger("blink");
             await Task.Delay(1000);
-            await bearMiniBoss.Character.Say("Oh,<pause: 0.5> it's you again, Red <pause:0.5>NOT<pause:0.5> a Cook.");
-            await redTheCook.Say("Yarrr,<pause: 0.5> welcome aboard, young sailor.");
-            await bearMiniBoss.Character.Say("I don't need your greetings, Red <pause:0.5>NOT<pause:0.5> a Cook.");
-            await bearMiniBoss.Character.Say("I need you to work faster, not louder.");
-            await redTheCook.Say("Do you know that this is a restaurant for kids?");
-            await bearMiniBoss.Character.Say("Pfft.<pause:0.5> This place is full of pirates.");
-            await bearMiniBoss.Character.Say("Pirates are too scary for them,<pause:0.5> so <pause:0.5>YEAH,<pause:0.5> it's clearly for adults.");
-            await redTheCook.Say("At least you are not too old for this.");
-            await bearMiniBoss.Character.Say("I'm at the perfect age for this place, so, <pause:0.5>YEAH.<pause:0.5>");
+            await bearMiniBoss.Character.Say(dialogueLines[16].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[17].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[18].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[19].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[20].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[21].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[22].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[23].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[24].GetLocalizedString());
             blinkSound.Play();
             blinkAnimator.SetTrigger("blink");
             await Task.Delay(1000);
-            await bearMiniBoss.Character.Say("And I need some calories to be in the perfect shape.<pause:0.5> So, hurry up, Red <pause:0.5>NOT<pause:0.5> a Cook.");
+            await bearMiniBoss.Character.Say(dialogueLines[25].GetLocalizedString());
             bearMiniBoss.gameObject.SetActive(false);
             miniBossSeatPlace.gameObject.SetActive(true);
             encounter.Ticker.SetRegularTickingSpeed();
@@ -248,22 +252,22 @@ namespace foxRestaurant
             bearMiniBoss.gameObject.SetActive(true);
             await HeavyStep(1f, 1);
             await Task.Delay(1000);
-            await bearMiniBoss.Character.Say("Pfft.<pause: 0.5> If you've done it doesn't meen you've done it well,<pause: 0.5> Red <pause:0.5>NOT<pause:0.5> a cook.");
-            await redTheCook.Say("Yarrr,<pause: 0.5> we hope to see you again soon, young sailor!");
-            await bearMiniBoss.Character.Say("Oh, <pause:0.5>YEAH, <pause:0.5>do<pause: 0.5> NOT<pause: 0.5> hesitate.<pause:1> You will see me soon.");
+            await bearMiniBoss.Character.Say(dialogueLines[26].GetLocalizedString());
+            await redTheCook.Say(dialogueLines[27].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[28].GetLocalizedString());
             blinkSound.Play();
             blinkAnimator.SetTrigger("blink");
             await Task.Delay(1000);
-            await bearMiniBoss.Character.Say("And I won't be so easy on you next time.");
-            await bearMiniBoss.Character.Say("See you later, Red <pause:0.5>NOT<pause:0.5> a cook.");
+            await bearMiniBoss.Character.Say(dialogueLines[29].GetLocalizedString());
+            await bearMiniBoss.Character.Say(dialogueLines[30].GetLocalizedString());
             bearMiniBoss.LeaveSatisfied();
             await Task.Delay(1000);
-            await redTheCook.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Finally.");
+            await redTheCook.Say(dialogueLines[31].GetLocalizedString());
             successSound.Play();
             await Task.Delay(3000);
             hornSound.Play();
             await Task.Delay(3000);
-            await redTheCook.Say("Whoa,<pause:0.5> break time already.");
+            await redTheCook.Say(dialogueLines[32].GetLocalizedString());
         }
 
         private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)

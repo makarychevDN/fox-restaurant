@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Dialogues Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Dialogues
+  m_TableCollectionNameGuidString: 76c0caf3be1b6134fac28638aa766eea
+  m_Entries:
+  - m_Id: 96960955703296
+    m_Key: Red 1.1.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102732733243392
+    m_Key: Red 1.2.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102851926974464
+    m_Key: Red 1.2.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102931308371968
+    m_Key: Red 1.3.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103157167448064
+    m_Key: Red 1.3.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103200687546368
+    m_Key: Red 1.3.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103255913947136
+    m_Key: Red 1.3.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103266819137536
+    m_Key: Red 1.3.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103795813146624
+    m_Key: Red 1.4.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103882635239424
+    m_Key: Red 1.4.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103985789952000
+    m_Key: Red 1.4.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104019986112512
+    m_Key: Red 1.4.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104142648532992
+    m_Key: Red 1.5.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104186449649664
+    m_Key: Red 1.5.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104222092845056
+    m_Key: Red 1.5.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104300811542528
+    m_Key: Red 1.6.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104452712456192
+    m_Key: Bear 1.6.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104546270601216
+    m_Key: Red 1.6.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104596988125184
+    m_Key: Bear 1.6.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104702047051776
+    m_Key: Bear 1.6.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104734192197632
+    m_Key: Red 1.6.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104799568814080
+    m_Key: Bear 1.6.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851519463424
+    m_Key: Bear 1.6.8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104919387496448
+    m_Key: Red 1.6.9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105019983683584
+    m_Key: Bear 1.6.10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105266793308160
+    m_Key: Bear 1.6.11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105471504703488
+    m_Key: Bear 1.7.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105543625760768
+    m_Key: Red 1.7.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105608289345536
+    m_Key: Bear 1.7.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105693555351552
+    m_Key: Bear 1.7.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105789357449216
+    m_Key: Bear 1.7.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107592824283136
+    m_Key: Red 1.7.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107662542004224
+    m_Key: Red 1.7.7
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4071483982033715328
+  references:
+    version: 2
+    RefIds:
+    - rid: 4071483982033715328
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1762331997896

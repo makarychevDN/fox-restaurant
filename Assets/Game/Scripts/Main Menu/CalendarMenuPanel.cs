@@ -10,6 +10,7 @@ namespace foxRestaurant
         [SerializeField] private LevelLoader levelLoader;
         [SerializeField] private Button launchLevelButton;
         [SerializeField] private Button backButton;
+        [SerializeField] private EncountersListAsset firstLevelEncountersListAsset;
         private MainMenu mainMenu;
 
         public void Init(MainMenu mainMenu)
@@ -27,6 +28,13 @@ namespace foxRestaurant
 
         private async void LaunchButtonClickedHandler()
         {
+            await mainMenu.Fading.FadeIn();
+            levelLoader.LoadLevel();
+        }
+
+        public async void LaunchTheFirstLevel()
+        {
+            levelLoader.SetEncaunters(firstLevelEncountersListAsset);
             await mainMenu.Fading.FadeIn();
             levelLoader.LoadLevel();
         }

@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace foxRestaurant
 {
@@ -16,6 +17,11 @@ namespace foxRestaurant
         public async Task Say(string text)
         {
             await dialogueManager.DisplayDialogueLine(text);
+        }
+
+        public async Task Say(LocalizedString text)
+        {
+            await dialogueManager.DisplayDialogueLine(text.GetLocalizedString());
         }
     }
 }

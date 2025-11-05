@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 76c0caf3be1b6134fac28638aa766eea, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 96960955703296
+    m_Localized: '*sigh*<pause:1> Another day, another dollar.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102732733243392
+    m_Localized: Damn,<pause:0.5> this kiddo seems tough,<pause:0.5> he needs at
+      least two icecreams.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102851926974464
+    m_Localized: Big boy, huh?<pause:0.75> The bigger they are, the harder they fall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102931308371968
+    m_Localized: Stupid old junk.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103157167448064
+    m_Localized: Have to clean up the mess.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103200687546368
+    m_Localized: Where is the garbage can?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103255913947136
+    m_Localized: Oh,<pause:0.5> there you are.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103266819137536
+    m_Localized: Shoo,<pause:0.5> small stinkers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103795813146624
+    m_Localized: Oh,<pause:0.5> wow.<pause:0.5> The first complex order for today.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103882635239424
+    m_Localized: Still too easy though.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103985789952000
+    m_Localized: Need to mix the ingredients.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104019986112512
+    m_Localized: '*sigh*<pause:1> I wonder what it''s like to cook real dishes?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104142648532992
+    m_Localized: Oh,<pause:0.5> the real game begins.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104186449649664
+    m_Localized: It's easy.<pause:0.5> This thing spawns items,<pause:0.5> I use
+      them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104222092845056
+    m_Localized: And remember,<pause:0.5> don't let it get clogged up.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104300811542528
+    m_Localized: '*sigh*<pause:1> Everyday in the same time.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104452712456192
+    m_Localized: 'Oh,<pause: 0.5> it''s you again, Red <pause:0.5>NOT<pause:0.5>
+      a Cook.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104546270601216
+    m_Localized: 'Yarrr,<pause: 0.5> welcome aboard, young sailor.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104596988125184
+    m_Localized: I don't need your greetings, Red <pause:0.5>NOT<pause:0.5> a Cook.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104702047051776
+    m_Localized: I need you to work faster, not louder.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104734192197632
+    m_Localized: Do you know that this is a restaurant for kids?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104799568814080
+    m_Localized: Pfft.<pause:0.5> This place is full of pirates.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851519463424
+    m_Localized: Pirates are too scary for them,<pause:0.5> so <pause:0.5>YEAH,<pause:0.5>
+      it's clearly for adults.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104919387496448
+    m_Localized: At least you are not too old for this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105019983683584
+    m_Localized: I'm at the perfect age for this place, so, <pause:0.5>YEAH.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105266793308160
+    m_Localized: And I need some calories to be in the perfect shape.<pause:0.5>
+      So, hurry up, Red <pause:0.5>NOT<pause:0.5> a Cook.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105471504703488
+    m_Localized: 'Pfft.<pause: 0.5> If you''ve done it doesn''t meen you''ve done
+      it well,<pause: 0.5> Red <pause:0.5>NOT<pause:0.5> a cook.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105543625760768
+    m_Localized: 'Yarrr,<pause: 0.5> we hope to see you again soon, young sailor.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105608289345536
+    m_Localized: 'Oh, <pause:0.5>YEAH, <pause:0.5>do<pause: 0.5> NOT<pause: 0.5>
+      hesitate.<pause:1> You will see me soon.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105693555351552
+    m_Localized: And I won't be so easy on you next time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105789357449216
+    m_Localized: See you later, Red <pause:0.5>NOT<pause:0.5> a cook.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107592824283136
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Finally.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107662542004224
+    m_Localized: Whoa,<pause:0.5> break time already.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
