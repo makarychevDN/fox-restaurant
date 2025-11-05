@@ -82,11 +82,11 @@ namespace foxRestaurant
                 cookerSlot.OnItemHovered.AddListener(() => CookPositionController.HoverSlot(cookerSlot));
                 cookerSlot.OnItemUnhovered.AddListener(CookPositionController.Unhover);
 
-                cookerSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(cookerSlot));
-                cookerSlot.OnItemHovered.AddListener(() => RMBItemHintsDisplayer.ShowHint(cookerSlot));
+                //cookerSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(cookerSlot));
+                //cookerSlot.OnItemHovered.AddListener(() => RMBItemHintsDisplayer.ShowHint(cookerSlot));
 
-                cookerSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
-                cookerSlot.OnItemUnhovered.AddListener(RMBItemHintsDisplayer.HideHint);
+                //cookerSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
+                //cookerSlot.OnItemUnhovered.AddListener(RMBItemHintsDisplayer.HideHint);
 
                 cookerSlot.OnItemSliced.AddListener(() => SliceEffectDisplayer.Play(cookerSlot));
                 cookerSlot.OnItemSliced.AddListener(CookPositionController.Slice);
@@ -107,8 +107,8 @@ namespace foxRestaurant
             {
                 var spawnedSlot = slotSpawner.SpawnSlot();
 
-                spawnedSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(spawnedSlot));
-                spawnedSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
+                //spawnedSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(spawnedSlot));
+                //spawnedSlot.OnItemUnhovered.AddListener(LMBItemHintsDisplayer.HideHint);
             }
         }
 
