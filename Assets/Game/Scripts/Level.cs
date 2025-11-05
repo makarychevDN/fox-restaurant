@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace foxRestaurant
@@ -48,6 +49,8 @@ namespace foxRestaurant
                 encounter.gameObject.SetActive(false);
                 currentIndex++;
             }
+
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
