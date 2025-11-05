@@ -107,11 +107,7 @@ namespace foxRestaurant
                 HungerPoints -= food.Satiety;
                 HungerPoints = Math.Clamp(HungerPoints, 0, 100);
                 OnHungerPointsChanged.Invoke(HungerPoints);
-            }
-            else
-            {
-                Patience += food.Satiety;
-                OnPatienceChanged.Invoke(Patience);
+                MakeOrder();
             }
 
             animator.SetTrigger("onEat");
@@ -121,8 +117,6 @@ namespace foxRestaurant
                 Uninit();
                 Invoke(nameof(LeaveSatisfied), 2f);
             }
-            else
-                MakeOrder();
         }
 
         public void MakeOrder()
