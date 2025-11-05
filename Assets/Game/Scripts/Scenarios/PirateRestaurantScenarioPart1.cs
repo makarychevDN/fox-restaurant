@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -52,6 +53,7 @@ namespace foxRestaurant
         [SerializeField] private AudioSource soundOnSlotsToSpawnFoodAppear;
 
         [Header("Dialogue Lines")]
+        [SerializeField] LocalizedString waveIsFailedLine;
         [SerializeField] List<LocalizedString> dialogueLines;
 
         private List<Customer> customersToFeed = new();
@@ -101,7 +103,7 @@ namespace foxRestaurant
                 (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData));
 
             await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData },
-                (doggo, SwitchConeAndPopsicle), (doggo, SwitchConeAndPopsicle));
+                (doggo, () => iceCreamConeData), (doggo, () => popsicleData));
         }
 
         private async Task TeachToFuseIngredients(RestaurantEncounter encounter)
@@ -132,6 +134,7 @@ namespace foxRestaurant
                 await Task.Delay(100);
                 spawnedItems.Add(encounter.ItemsSpawner.SpawnFoodItem(encounter, coalData, itemSlots[i]));
             }
+            int satietySum = spawnedItems.Sum(foodItem => (foodItem as FoodItem).Satiety);
 
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[3].GetLocalizedString());
@@ -140,7 +143,7 @@ namespace foxRestaurant
             garbageCan.gameObject.SetActive(true);
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[6].GetLocalizedString());
-            await WaitForAllItemsToBeDisposed(spawnedItems);
+            await WaitForHungerPointsDisposed(satietySum);
             await redTheCook.Say(dialogueLines[7].GetLocalizedString());
         }
 
@@ -244,6 +247,25 @@ namespace foxRestaurant
             return tcs.Task;
         }
 
+        private Task WaitForHungerPointsDisposed(int targetHungerSum)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+            int currentSum = 0;
+
+            void OnItemDisposed(Item item)
+            {
+                currentSum += (item as FoodItem).Satiety;
+                if (currentSum >= targetHungerSum)
+                {
+                    garbageCan.OnItemHasBeenPlaced.RemoveListener(OnItemDisposed);
+                    tcs.TrySetResult(true);
+                }
+            }
+
+            garbageCan.OnItemHasBeenPlaced.AddListener(OnItemDisposed);
+            return tcs.Task;
+        }
+
         private async Task MiniBossDialogueAfterWave(RestaurantEncounter encounter)
         {
             bossMusic.Stop();
@@ -315,7 +337,7 @@ namespace foxRestaurant
 
                 success = results.All(r => r);
                 if (!success)
-                    await redTheCook.Say("damn...<pause:1> Ok, let's try again");
+                    await redTheCook.Say(waveIsFailedLine);
             }
         }
 

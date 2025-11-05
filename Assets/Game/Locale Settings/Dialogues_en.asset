@@ -157,6 +157,10 @@ MonoBehaviour:
     m_Localized: Whoa,<pause:0.5> break time already.
     m_Metadata:
       m_Items: []
+  - m_Id: 131328193486848
+    m_Localized: Damn...<pause:1> Ok, let's try again.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
