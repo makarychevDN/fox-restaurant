@@ -39,6 +39,7 @@ namespace foxRestaurant
         [field: SerializeField] public ItemHintsDisplayer LMBItemHintsDisplayer { get; private set; }
         [field: SerializeField] public ItemHintsDisplayer RMBItemHintsDisplayer { get; private set; }
         [field: SerializeField] public SliceEffectDisplayer SliceEffectDisplayer { get; private set; }
+        [field: SerializeField] public GameObject InputBlocker { get; private set; }
 
         [field: Header("Parent Objects")]
         [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
@@ -116,6 +117,16 @@ namespace foxRestaurant
         {
             DataBase = new DataBase(csvFile.ToStringsArray(), allPossibleItemData);
             OnDataBaseUpdated.Invoke(DataBase);
+        }
+
+        public void BlockInput()
+        {
+            InputBlocker.SetActive(true);
+        }
+
+        public void UnblockInput()
+        {
+            InputBlocker.SetActive(false);
         }
     }
 }

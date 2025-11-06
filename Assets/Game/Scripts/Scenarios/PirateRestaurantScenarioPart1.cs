@@ -65,8 +65,11 @@ namespace foxRestaurant
         {
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
 
+            encounter.BlockInput();
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[0]);
+            encounter.UnblockInput();
+
             await TeachToFeedCustomers(encounter);
             await Task.Delay(500);
             await TeachToUnderstandHPMechanic(encounter);
@@ -97,7 +100,9 @@ namespace foxRestaurant
                 dialogueLines[1].GetLocalizedString(),
                 (doggo, SwitchConeAndPopsicle));
 
+            encounter.BlockInput();
             await redTheCook.Say(dialogueLines[2].GetLocalizedString());
+            encounter.UnblockInput();
 
             await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData },
                 (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData));
@@ -113,7 +118,10 @@ namespace foxRestaurant
                 dialogueLines[9].GetLocalizedString(),
                 dialogueLines[10].GetLocalizedString() },
                 (duck, () => cherryIceCreamPlateData));
+
+            encounter.BlockInput();
             await redTheCook.Say(dialogueLines[11].GetLocalizedString());
+            encounter.UnblockInput();
 
             await FixWave(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData, chocolateSyrupData, iceCreamPlateData },
                 (doggo, () => cherryIceCreamPlateData), (kitty, () => chocolateIceCreamPlateData));
@@ -124,6 +132,7 @@ namespace foxRestaurant
 
         private async Task GarbageCanTutorial(RestaurantEncounter encounter)
         {
+            encounter.BlockInput();
             brokenSound.Play();
             await parentOfBottomItemSlots.DOShakeScale(0.3f, 0.5f, 10, 0).AsyncWaitForCompletion();
             parentOfBottomItemSlots.transform.localScale = Vector3.one;
@@ -143,8 +152,11 @@ namespace foxRestaurant
             garbageCan.gameObject.SetActive(true);
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[6].GetLocalizedString());
+            encounter.UnblockInput();
             await WaitForHungerPointsDisposed(satietySum);
+            encounter.BlockInput();
             await redTheCook.Say(dialogueLines[7].GetLocalizedString());
+            encounter.UnblockInput();
         }
 
         private async Task TeachToManageSpawnedItems(RestaurantEncounter encounter)
@@ -152,10 +164,12 @@ namespace foxRestaurant
             slotsToSpawnFoodParent.SetActive(true);
             effectOnSlotsToSpawnFoodAppear.SetActive(true);
             soundOnSlotsToSpawnFoodAppear.Play();
+            encounter.BlockInput();
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[12].GetLocalizedString());
             await redTheCook.Say(dialogueLines[13].GetLocalizedString());
             await redTheCook.Say(dialogueLines[14].GetLocalizedString());
+            encounter.UnblockInput();
             itemSpawnTimer.Init(encounter);
 
             await FixWave(encounter, new List<ItemData>(),
@@ -177,6 +191,7 @@ namespace foxRestaurant
 
         private async Task MiniBossDialogue(RestaurantEncounter encounter)
         {
+            encounter.BlockInput();
             regularMusic.Stop();
             encounter.Ticker.Pause();
             await HeavyStep(0.25f, 0.25f);
@@ -212,6 +227,7 @@ namespace foxRestaurant
             bearMiniBoss.gameObject.SetActive(false);
             miniBossSeatPlace.gameObject.SetActive(true);
             encounter.Ticker.SetRegularTickingSpeed();
+            encounter.UnblockInput();
         }
 
         private async Task MiniBossWave(RestaurantEncounter encounter)
@@ -268,6 +284,7 @@ namespace foxRestaurant
 
         private async Task MiniBossDialogueAfterWave(RestaurantEncounter encounter)
         {
+            encounter.BlockInput();
             bossMusic.Stop();
             encounter.Ticker.Pause();
             miniBossSeatPlace.gameObject.SetActive(true);
@@ -327,10 +344,12 @@ namespace foxRestaurant
                     customersToFeed.Add(customer);
                 }
 
+                encounter.BlockInput();
                 foreach (var commentary in commentaries)
                 {
                     await redTheCook.Say(commentary);
                 }
+                encounter.UnblockInput();
 
                 var tasks = customersToFeed.Select(WaitForCustomerToLeave).ToArray();
                 var results = await Task.WhenAll(tasks);
