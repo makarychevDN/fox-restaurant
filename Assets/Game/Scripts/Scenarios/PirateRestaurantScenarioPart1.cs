@@ -58,7 +58,6 @@ namespace foxRestaurant
 
         private List<Customer> customersToFeed = new();
         private List<ItemSlot> itemSlots;
-        private TaskCompletionSource<bool> completionSource = new();
         private int switchConeAndPopsicleCount;
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
@@ -240,29 +239,6 @@ namespace foxRestaurant
                 (duck, encounter.DecksManager.GetRandomDish));
         }
 
-        private Task WaitForAllItemsToBeDisposed(List<Item> itemsToDispose)
-        {
-            var tcs = new TaskCompletionSource<bool>();
-
-            var remaining = new HashSet<Item>(itemsToDispose);
-
-            void OnItemDisposed(Item item)
-            {
-                if (remaining.Contains(item))
-                {
-                    remaining.Remove(item);
-                    if (remaining.Count == 0)
-                    {
-                        garbageCan.OnItemHasBeenPlaced.RemoveListener(OnItemDisposed);
-                        tcs.TrySetResult(true);
-                    }
-                }
-            }
-
-            garbageCan.OnItemHasBeenPlaced.AddListener(OnItemDisposed);
-            return tcs.Task;
-        }
-
         private Task WaitForHungerPointsDisposed(int targetHungerSum)
         {
             var tcs = new TaskCompletionSource<bool>();
@@ -378,28 +354,6 @@ namespace foxRestaurant
 
             customer.OnLeft.AddListener(OnLeftHandler);
             return tcs.Task;
-        }
-
-        public void Complete()
-        {
-            if (completionSource != null && !completionSource.Task.IsCompleted)
-            {
-                completionSource.SetResult(true);
-            }
-        }
-
-        private async void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Complete();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                blinkSound.Play();
-                blinkAnimator.SetTrigger("blink");
-            }
         }
 
         private async Task HeavyStep(float soundVolume, float strenght, int shakingValue = 50)
