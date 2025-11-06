@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: mega danila inc
-  productName: Red the cook
+  productName: Red the Cook
   defaultCursor: {fileID: 2800000, guid: f9491da429212eb4b876b74e6c0d74fc, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
