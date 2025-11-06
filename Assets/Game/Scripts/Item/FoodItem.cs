@@ -58,6 +58,8 @@ namespace foxRestaurant
 
         public void Slice()
         {
+            return; //todo return it when the game needs it
+
             ItemData slicingResult = restaurantEncounter.ItemTransitionsManager.GetSlicingResult(ItemData);
             if (slicingResult != null)
                 SetItemData(slicingResult);
