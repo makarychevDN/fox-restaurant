@@ -300,6 +300,7 @@ namespace foxRestaurant
             bool success = false;
             while (!success)
             {
+                encounter.BlockInput();
                 customersToFeed.Clear();
 
                 for (int i = 0; i < itemsToSpawnData.Count; i++)
@@ -320,7 +321,6 @@ namespace foxRestaurant
                     customersToFeed.Add(customer);
                 }
 
-                encounter.BlockInput();
                 foreach (var commentary in commentaries)
                 {
                     await redTheCook.Say(commentary);
