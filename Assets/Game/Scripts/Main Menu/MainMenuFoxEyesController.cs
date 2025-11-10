@@ -11,7 +11,7 @@ namespace foxRestaurant
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            eyes.ForEach(eye => { eye.SetTarget(null); eye.SetDistances(10, 10, 100, 100); });
+            eyes.ForEach(eye => { eye.SetTarget(null); eye.SetDistances(10, 10, 70, 70); });
         }
 
         public void OnPointerExit(PointerEventData eventData)
