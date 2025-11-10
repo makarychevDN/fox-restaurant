@@ -300,8 +300,15 @@ namespace foxRestaurant
             bool success = false;
             while (!success)
             {
+                Time.timeScale = 1;
                 encounter.BlockInput();
                 customersToFeed.Clear();
+
+                if (itemsToSpawnData.Count > 0)
+                {
+                    itemSlots.ForEach(slot => slot.Clear());
+                    FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
+                }
 
                 for (int i = 0; i < itemsToSpawnData.Count; i++)
                 {
@@ -329,6 +336,7 @@ namespace foxRestaurant
 
                 var tasks = customersToFeed.Select(WaitForCustomerToLeave).ToArray();
                 var results = await Task.WhenAll(tasks);
+                Time.timeScale = 1;
 
                 success = results.All(r => r);
                 if (!success)
