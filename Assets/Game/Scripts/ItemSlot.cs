@@ -96,7 +96,9 @@ namespace foxRestaurant
         {
             var oldItem = item;
             SetItem(null);
-            Destroy(oldItem.gameObject);
+
+            if(oldItem != null)
+                Destroy(oldItem.gameObject);
         }
 
         public void Hover(Item item)
