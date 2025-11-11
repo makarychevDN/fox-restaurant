@@ -24,6 +24,21 @@ namespace foxRestaurant
             await SetupDropdown();
 
             int savedLangIndex = PlayerPrefs.GetInt(PREF_LANGUAGE, 0);
+
+            if (PlayerPrefs.HasKey(PREF_LANGUAGE))
+            {
+                savedLangIndex = PlayerPrefs.GetInt(PREF_LANGUAGE, 0);
+            }
+            else
+            {
+                // Если нет сохранённого — ставим английский
+                savedLangIndex = GetLocaleIndexByCode("en");
+                if (savedLangIndex == -1)
+                    savedLangIndex = 0; // fallback, если английского вдруг нет
+                PlayerPrefs.SetInt(PREF_LANGUAGE, savedLangIndex);
+                PlayerPrefs.Save();
+            }
+
             savedLangIndex = Mathf.Clamp(savedLangIndex, 0, LocalizationSettings.AvailableLocales.Locales.Count - 1);
 
             languageDropdown.value = savedLangIndex;
@@ -100,6 +115,23 @@ namespace foxRestaurant
 
             languageDropdown.interactable = true;
             isChanging = false;
+        }
+
+        private int GetLocaleIndexByCode(string code)
+        {
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+            for (int i = 0; i < locales.Count; i++)
+            {
+                if (locales[i].Identifier.Code.Equals(code, System.StringComparison.OrdinalIgnoreCase))
+                    return i;
+            }
+            return -1;
+        }
+
+        [ContextMenu("DELETE ALL SAVES")]
+        public void ResetSaves()
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 }
