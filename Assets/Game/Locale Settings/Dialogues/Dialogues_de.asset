@@ -1,0 +1,170 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 76c0caf3be1b6134fac28638aa766eea, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 96960955703296
+    m_Localized: '*seufz*<pause:1> Ein neuer Tag, ein neuer Dollar.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102732733243392
+    m_Localized: "Verdammt, dieser Junge scheint z\xE4h zu sein, er braucht mindestens
+      zwei Eiscremes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102851926974464
+    m_Localized: "Gro\xDFer Junge, was?<pause:0.75> Je gr\xF6\xDFer sie sind, desto
+      tiefer fallen sie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102931308371968
+    m_Localized: "Bl\xF6der alter Schrott."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103157167448064
+    m_Localized: "Ich muss den Dreck wegr\xE4umen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103200687546368
+    m_Localized: "Wo ist der M\xFClleimer?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103255913947136
+    m_Localized: Oh, <pause:0.5>, da bist du ja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103266819137536
+    m_Localized: Verpisst euch, ihr kleinen Stinker!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103795813146624
+    m_Localized: "Oh, <pause:0.5> wow.<pause:0.5> Die erste komplexe Bestellung f\xFCr
+      heute."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103882635239424
+    m_Localized: Trotzdem noch zu einfach.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103985789952000
+    m_Localized: "Die Zutaten m\xFCssen vermischt werden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104019986112512
+    m_Localized: '*seufz*<pause:1> Ich frage mich, wie es wohl ist, richtige Gerichte
+      zu kochen?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104142648532992
+    m_Localized: Oh, jetzt beginnt das eigentliche Spiel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104186449649664
+    m_Localized: "Es ist einfach.<pause:0.5> Dieses Ding erzeugt Gegenst\xE4nde,<pause:0.5>
+      ich benutze sie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104222092845056
+    m_Localized: Hauptsache ist, dass es nicht verstopft.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104300811542528
+    m_Localized: '*seufz*<pause:1> Jeden Tag zur gleichen Zeit.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104452712456192
+    m_Localized: Oh, du bist es wieder, Red, Koch.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104546270601216
+    m_Localized: 'Yarrr,<pause: 0.5> willkommen an Bord, junger Seemann.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104596988125184
+    m_Localized: "Ich brauche deine Gr\xFC\xDFe nicht, Red <pause:0.5>NOT<pause:0.5>
+      ein Koch."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104702047051776
+    m_Localized: Ich brauche schnellere, nicht lautere Arbeit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104734192197632
+    m_Localized: "Wussten Sie, dass dies ein Restaurant f\xFCr Kinder ist?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104799568814080
+    m_Localized: Pfft.<pause:0.5> Dieser Ort ist voller Piraten.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851519463424
+    m_Localized: "Piraten sind ihnen zu gruselig, also ist es eindeutig etwas f\xFCr
+      Erwachsene."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104919387496448
+    m_Localized: "Zumindest bist du daf\xFCr noch nicht zu alt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105019983683584
+    m_Localized: "Ich bin im perfekten Alter f\xFCr diesen Ort, also: <pause:0.5>YEAH."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105266793308160
+    m_Localized: Und ich brauche ein paar Kalorien, um in Topform zu sein. Also,
+      beeil dich, Red Cook.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105471504703488
+    m_Localized: "Pfft.<pause: 0.5> Nur weil du es getan hast, hei\xDFt das nicht,
+      dass du es gut gemacht hast,<pause: 0.5> Rot <pause:0.5>NICHT<pause:0.5> ein
+      Koch."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105543625760768
+    m_Localized: 'Yarrr,<pause: 0.5> wir hoffen, dich bald wiederzusehen, junger
+      Seemann.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105608289345536
+    m_Localized: "Oh, ja, z\xF6gern Sie nicht. Sie werden mich bald sehen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105693555351552
+    m_Localized: "Und n\xE4chstes Mal werde ich es dir nicht so leicht machen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105789357449216
+    m_Localized: "Wir sehen uns sp\xE4ter, Red <pause:0.5>NOT<pause:0.5> ein Koch."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107592824283136
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Schlie\xDFlich."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107662542004224
+    m_Localized: Wow, schon wieder Pause!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131328193486848
+    m_Localized: Verdammt...<pause:1> Okay, versuchen wir es noch einmal.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

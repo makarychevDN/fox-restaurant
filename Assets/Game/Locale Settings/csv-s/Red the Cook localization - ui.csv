@@ -1,0 +1,17 @@
+Key,Id,English(en),Russian(ru),Spanish(es),French (France)(fr-FR),German(de),Portuguese (Brazil)(pt-BR),Chinese (Simplified)(zh-CN)
+Language Name,19999311996416,English,Русский,Español (google translate),Français (google translate),Deutsch (google translate),Português (google translate),简体中文 (google translate)
+Play,18424311996416,Play,Играть,Jugar,Jouer,Spielen,Jogar,玩
+Settings,18578976956416,Settings,Настройки,Ajustes,Paramètres,Einstellungen,Configurações,设置
+Profiles,18618327916544,Profiles,Профили,Perfiles,Profils,Profile,Perfis,简介
+Exit,19732322476032,Exit,Выход,Salida,Sortie,Ausfahrt,Saída,出口
+Screen settings,24407826391040,Screen settings,Настройки экрана,Configuración de pantalla,Paramètres d'écran,Bildschirmeinstellungen,Configurações de tela,屏幕设置
+Sound settings,24488826789888,Sound settings,Настройки звука,Ajustes de sonido,Paramètres sonores,Toneinstellungen,Configurações de som,声音设置
+Language,24553209356288,Language,Язык,Idioma,Langue,Sprache,Linguagem,语言
+Resolution,93285348696064,Resolution,Разрешение,Resolución,Résolution,Auflösung,Resolução,解决
+Full screen,93362041544704,Full screen,Полный экран,Pantalla completa,Plein écran,Vollbildmodus,Tela cheia,全屏
+Master volume,93410678693888,Master volume,Общая громкость,Volumen maestro,Volume maître,Gesamtlautstärke,Volume mestre,主音量
+Music volume,93554971140096,Music volume,Громкость музыки,Volumen de la música,Volume musical,Musiklautstärke,Volume da música,音乐音量
+SFX volume,93586432614400,SFX volume,Громкость эффектов,Volumen de efectos de sonido,Volume SFX,SFX-Lautstärke,volume de SFX,音效音量
+UI volume,93705248858112,UI volume,Громкость UI,Volumen de la interfaz de usuario,Volume de l'interface utilisateur,UI-Lautstärke,volume da interface do usuário,用户界面音量
+Voice volume,93999445729280,Voice volume,Громкость голосов,Volumen de voz,Volume de la voix,Lautstärke,Volume da voz,音量
+Back,94068374921216,Back,Назад,Atrás,Dos,Zurück,Voltar,后退

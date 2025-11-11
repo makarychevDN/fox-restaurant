@@ -1,42 +1,77 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Localization.Tables;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace foxRestaurant
 {
     public class LanguageSelector : MonoBehaviour
     {
         [SerializeField] private TMP_Dropdown languageDropdown;
+        private string languageNamesTable = "UI texts"; // имя таблицы
+        private string languageNameKey = "Language Name";     // ключ строки
 
         private const string PREF_LANGUAGE = "Game_Language";
-
         private bool isChanging = false;
 
-        private void Start()
+        private async void Start()
         {
-            // Заполняем дропдаун именами доступных локалей
-            SetupDropdown();
+            await LocalizationSettings.InitializationOperation.Task;
+            await SetupDropdown();
 
-            // Загружаем сохранённый язык
             int savedLangIndex = PlayerPrefs.GetInt(PREF_LANGUAGE, 0);
             savedLangIndex = Mathf.Clamp(savedLangIndex, 0, LocalizationSettings.AvailableLocales.Locales.Count - 1);
 
             languageDropdown.value = savedLangIndex;
             ApplyLanguage(savedLangIndex);
 
-            // Подписываемся на изменение дропдауна
             languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
         }
 
-        private void SetupDropdown()
+        private async Task SetupDropdown()
         {
             languageDropdown.ClearOptions();
 
-            var options = new System.Collections.Generic.List<string>();
-            foreach (var locale in LocalizationSettings.AvailableLocales.Locales)
+            var locales = LocalizationSettings.AvailableLocales.Locales;
+            var options = new List<string>();
+
+            // Загружаем таблицу строк (чтобы убедиться, что она доступна)
+            AsyncOperationHandle<StringTable> handle = LocalizationSettings.StringDatabase.GetTableAsync(languageNamesTable);
+            await handle.Task;
+
+            if (handle.Status != AsyncOperationStatus.Succeeded)
             {
-                // Показываем язык пользователю по названию (например, "English" или "Русский")
-                options.Add(locale.LocaleName);
+                Debug.LogWarning($"Не удалось загрузить таблицу '{languageNamesTable}'");
+                foreach (var locale in locales)
+                    options.Add(locale.LocaleName);
+
+                languageDropdown.AddOptions(options);
+                return;
+            }
+
+            // Для каждой локали достаём значение строки из нужной локали
+            foreach (var locale in locales)
+            {
+                string localizedName;
+
+                try
+                {
+                    localizedName = await LocalizationSettings.StringDatabase.GetLocalizedStringAsync(
+                        languageNamesTable,
+                        languageNameKey,
+                        locale
+                    ).Task;
+                }
+                catch
+                {
+                    localizedName = locale.LocaleName; // fallback
+                }
+
+                options.Add(localizedName);
             }
 
             languageDropdown.AddOptions(options);

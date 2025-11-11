@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI texts_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 8af76d5f14b4c8a489e2abdf329769d6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 18424311996416
+    m_Localized: Spielen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18578976956416
+    m_Localized: Einstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18618327916544
+    m_Localized: Profile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19732322476032
+    m_Localized: Ausfahrt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24407826391040
+    m_Localized: Bildschirmeinstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24488826789888
+    m_Localized: Toneinstellungen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24553209356288
+    m_Localized: Sprache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93285348696064
+    m_Localized: "Aufl\xF6sung"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93362041544704
+    m_Localized: Vollbildmodus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93410678693888
+    m_Localized: "Gesamtlautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93554971140096
+    m_Localized: "Musiklautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93586432614400
+    m_Localized: "SFX-Lautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93705248858112
+    m_Localized: "UI-Lautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 93999445729280
+    m_Localized: "Lautst\xE4rke"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94068374921216
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 19999311996416
+    m_Localized: Deutsch (google translate)
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

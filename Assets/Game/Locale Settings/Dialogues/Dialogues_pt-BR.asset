@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_pt-BR
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt-BR
+  m_SharedData: {fileID: 11400000, guid: 76c0caf3be1b6134fac28638aa766eea, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 96960955703296
+    m_Localized: "*suspiro*<pause:1> Mais um dia, mais um d\xF3lar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102732733243392
+    m_Localized: "Caramba,<pause:0.5> esse garoto parece dur\xE3o,<pause:0.5> ele
+      precisa de pelo menos dois sorvetes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102851926974464
+    m_Localized: "Garot\xE3o, hein?<pause:0.75> Quanto maior a altura, maior a queda."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102931308371968
+    m_Localized: "Lixo velho e est\xFApido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103157167448064
+    m_Localized: "Preciso limpar a bagun\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103200687546368
+    m_Localized: "Onde est\xE1 a lata de lixo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103255913947136
+    m_Localized: "Ah, a\xED est\xE1 voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103266819137536
+    m_Localized: "X\xF4, pequenos fedorentos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103795813146624
+    m_Localized: Oh,<pause:0.5> uau.<pause:0.5> O primeiro pedido complexo de hoje.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103882635239424
+    m_Localized: "Mesmo assim, continua muito f\xE1cil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 103985789952000
+    m_Localized: "\xC9 preciso misturar os ingredientes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104019986112512
+    m_Localized: "*suspiro*<pause:1> Ser\xE1 que \xE9 mesmo cozinhar pratos de verdade?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104142648532992
+    m_Localized: "Ah, <pause:0.5> o jogo de verdade come\xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104186449649664
+    m_Localized: "\xC9 f\xE1cil.<pause:0.5> Esta coisa gera itens,<pause:0.5> Eu
+      os uso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104222092845056
+    m_Localized: "O principal \xE9 evitar que entupa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104300811542528
+    m_Localized: "*suspiro*<pause:1> Todos os dias no mesmo hor\xE1rio."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104452712456192
+    m_Localized: "Ah,<pause: 0.5> \xE9 voc\xEA de novo, Red <pause:0.5>NOT<pause:0.5>
+      um cozinheiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104546270601216
+    m_Localized: 'Yarrr,<pause: 0.5> bem-vindo a bordo, jovem marinheiro.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104596988125184
+    m_Localized: "N\xE3o preciso das suas sauda\xE7\xF5es, Red <pause:0.5>NOT<pause:0.5>
+      um cozinheiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104702047051776
+    m_Localized: "Preciso que voc\xEA trabalhe mais r\xE1pido, n\xE3o mais alto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104734192197632
+    m_Localized: "Voc\xEA sabia que este \xE9 um restaurante para crian\xE7as?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104799568814080
+    m_Localized: "Pfft.<pause:0.5> Este lugar est\xE1 cheio de piratas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104851519463424
+    m_Localized: "Piratas s\xE3o muito assustadores para eles, ent\xE3o, sim, \xE9
+      claramente para adultos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 104919387496448
+    m_Localized: "Pelo menos voc\xEA n\xE3o est\xE1 velho demais para isso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105019983683584
+    m_Localized: "Estou na idade perfeita para este lugar, ent\xE3o, <pause:0.5>SIM."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105266793308160
+    m_Localized: "E eu preciso de algumas calorias para estar em \xF3tima forma.
+      Ent\xE3o, depressa, Cozinheiro Vermelho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105471504703488
+    m_Localized: "Pfft.<pause: 0.5> Se voc\xEA fez isso n\xE3o significa que voc\xEA
+      fez bem,<pause: 0.5> Vermelho <pause:0.5>N\xC3O<pause:0.5> um cozinheiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105543625760768
+    m_Localized: "Yarrr,<pause: 0.5> esperamos v\xEA-lo novamente em breve, jovem
+      marinheiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105608289345536
+    m_Localized: "Oh, <pause:0.5>YEAH, <pause:0.5>do<pause: 0.5> N\xC3O<pause: 0.5>
+      hesite.<pause:1> Voc\xEA me ver\xE1 em breve."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105693555351552
+    m_Localized: "E da pr\xF3xima vez n\xE3o serei t\xE3o condescendente com voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105789357449216
+    m_Localized: "At\xE9 logo, Red <pause:0.5>NOT<pause:0.5> um cozinheiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107592824283136
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Finalmente.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 107662542004224
+    m_Localized: "Uau, j\xE1 \xE9 hora do intervalo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131328193486848
+    m_Localized: Droga...<pause:1> Ok, vamos tentar de novo.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
