@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -8,6 +9,7 @@ namespace foxRestaurant
     {
         [SerializeField] private DialogueManager dialogueManager;
         [SerializeField] private SpriteRenderer spriteRenderer;
+        [SerializeField] private List<LookForCursorController> eyesAndNose;
 
         public void SetSprite(Sprite sprite)
         {
@@ -22,6 +24,11 @@ namespace foxRestaurant
         public async Task Say(LocalizedString text)
         {
             await dialogueManager.DisplayDialogueLine(text.GetLocalizedString());
+        }
+
+        public void LookAt(Transform target)
+        {
+            eyesAndNose.ForEach(item => item.SetTarget(target));
         }
     }
 }
