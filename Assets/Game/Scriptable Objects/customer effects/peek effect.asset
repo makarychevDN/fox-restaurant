@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd79698ce601fd342838feccc97f68ac, type: 3}
   m_Name: peek effect
   m_EditorClassIdentifier: 
+  viewPrefab: {fileID: 7648464826878185303, guid: eef2d12802bd50f49b7b2d30a40ea85a, type: 3}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace foxRestaurant
@@ -5,15 +6,17 @@ namespace foxRestaurant
     [CreateAssetMenu(fileName = "peek effect", menuName = "Scriptable Objects/Customer Effects/peek effect")]
     public class PeekEffect : ScriptableObject, ICustomerEffect, IAbleToReturnViewPrefab
     {
-        public ICustomerEffectInstance CreateInstance() => new PeekEffectInstance();
+        [SerializeField] private GameObject viewPrefab;
 
-        public GameObject GetViewPrefab() => new GameObject();
+        public ICustomerEffectInstance CreateInstance() => new PeekEffectInstance();
+        public GameObject GetViewPrefab() => viewPrefab;
     }
 
     public class PeekEffectInstance : ICustomerEffectInstance
     {
         private Customer owner;
         private RestaurantEncounter encounter;
+        public event Action OnTriggered;
 
         public void Apply(Customer customer, RestaurantEncounter encounter)
         {
@@ -29,6 +32,7 @@ namespace foxRestaurant
                 return;
 
             owner.SetOrderData(itemData);
+            OnTriggered.Invoke();
         }
 
         private void RemoveAllListeners()
