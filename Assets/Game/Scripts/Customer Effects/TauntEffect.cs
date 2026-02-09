@@ -37,7 +37,7 @@ namespace foxRestaurant
         {
             this.encounter = encounter;
             customer.OnAte.AddListener(TurnOffTaunt);
-            encounter.CustomersManager.OnCertainCustomerAdded.AddListener(UpdateStateForCustomer); //todo it breaks everything work when someone appears after taunt customer
+            encounter.CustomersManager.OnCertainCustomerAdded.AddListener(UpdateStateForCustomer);
             UpdateStateForCustomers();
         }
 
