@@ -42,12 +42,12 @@ namespace foxRestaurant
         {
             if(customer == null)
             {
-                this.customer.OnLeft.RemoveListener(CustomerLeftHandler);
+                this.customer.OnLeftSatisfied.RemoveListener(CustomerLeftHandler);
             }
             else
             {
                 particles.Play();
-                customer.OnLeft.AddListener(CustomerLeftHandler);
+                customer.OnLeftSatisfied.AddListener(CustomerLeftHandler);
             }
 
             this.customer = customer;

@@ -41,7 +41,8 @@ namespace foxRestaurant
         /// It is called when the customer leaves.
         /// if satisfied, argument = true, else argument = false.
         /// </summary>
-        public UnityEvent<bool> OnLeft;
+        public UnityEvent<bool> OnLeftSatisfied;
+        public UnityEvent OnLeft;
         public UnityEvent OnAte;
         public UnityEvent<ItemData> OnAteCertainFood;
 
@@ -164,15 +165,17 @@ namespace foxRestaurant
 
         public void LeaveSatisfied()
         {
-            OnLeft.Invoke(true);
+            OnLeft.Invoke();
+            OnLeftSatisfied.Invoke(true);
             if (slotToPlaceFood != null)
                 Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);
         }
 
-        public void LeaveUnsatisfied()
+        public void LeaveUnsatisfied() //todo improve this thing
         {
-            OnLeft.Invoke(false);
+            OnLeft.Invoke();
+            OnLeftSatisfied.Invoke(false);
             if(slotToPlaceFood != null)
                 Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);

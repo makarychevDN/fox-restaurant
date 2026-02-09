@@ -356,11 +356,11 @@ namespace foxRestaurant
 
             void OnLeftHandler(bool wasSatisfied)
             {
-                customer.OnLeft.RemoveListener(OnLeftHandler);
+                customer.OnLeftSatisfied.RemoveListener(OnLeftHandler);
                 tcs.TrySetResult(wasSatisfied);
             }
 
-            customer.OnLeft.AddListener(OnLeftHandler);
+            customer.OnLeftSatisfied.AddListener(OnLeftHandler);
             return tcs.Task;
         }
 
