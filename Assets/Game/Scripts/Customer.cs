@@ -20,6 +20,7 @@ namespace foxRestaurant
         [SerializeField] private Character character;
         [SerializeField] private AudioSource timeIsUpSound;
         [SerializeField] private Animator animator;
+        [SerializeField] private Animator orderBoxAnimator;
         [SerializeField] private Transform slotPositionPoint;
         [SerializeField] private Transform uiStatsRoot;
 
@@ -96,6 +97,7 @@ namespace foxRestaurant
             orderImage.sprite = itemData.Sprite;
             requiredItemData = itemData;
             orderImage.rectTransform.sizeDelta = itemData.Sprite.GetSpriteSizeInPixels() * 0.5f;
+            orderBoxAnimator.SetTrigger("order changed");
         }
 
         public void TryToEat(Item item)
