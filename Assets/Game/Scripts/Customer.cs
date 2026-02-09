@@ -42,6 +42,7 @@ namespace foxRestaurant
         /// </summary>
         public UnityEvent<bool> OnLeft;
         public UnityEvent OnAte;
+        public UnityEvent<ItemData> OnAteCertainFood;
 
         public Character Character => character;
 
@@ -90,7 +91,7 @@ namespace foxRestaurant
             }
         }
 
-        private void SetOrderData(ItemData itemData)
+        public void SetOrderData(ItemData itemData)
         {
             orderImage.sprite = itemData.Sprite;
             requiredItemData = itemData;
@@ -101,6 +102,7 @@ namespace foxRestaurant
         {
             var food = item as FoodItem;
             OnAte.Invoke();
+            OnAteCertainFood.Invoke(item.ItemData);
 
             if (item.ItemData == requiredItemData)
             {
