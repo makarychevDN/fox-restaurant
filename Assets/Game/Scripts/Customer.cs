@@ -41,6 +41,8 @@ namespace foxRestaurant
         /// It is called when the customer leaves.
         /// if satisfied, argument = true, else argument = false.
         /// </summary>
+
+        public UnityEvent OnStartLivingProcess;
         public UnityEvent<bool> OnLeftSatisfied;
         public UnityEvent OnLeft;
         public UnityEvent OnAte;
@@ -120,6 +122,7 @@ namespace foxRestaurant
             if (IsSatisfied)
             {
                 Uninit();
+                OnStartLivingProcess.Invoke();
                 Invoke(nameof(LeaveSatisfied), 2f);
             }
         }
@@ -145,6 +148,7 @@ namespace foxRestaurant
             {
                 timeIsUpSound.Play();
                 animator.SetTrigger("onEat");
+                OnStartLivingProcess.Invoke();
                 Uninit();
                 Invoke(nameof(LeaveUnsatisfied), 2f);
             }
