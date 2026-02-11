@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Audio;
 
 namespace foxRestaurant
 {
