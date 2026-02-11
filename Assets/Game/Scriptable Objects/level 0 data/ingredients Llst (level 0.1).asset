@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6937133098145844286f5b522d5a49e0, type: 3}
-  m_Name: ingredients Llst (level 0)
+  m_Name: ingredients Llst (level 0.1)
   m_EditorClassIdentifier: 
   <DataList>k__BackingField:
-  - {fileID: 11400000, guid: 8273250e1e35cfa44aefb166d5e632f1, type: 2}
-  - {fileID: 11400000, guid: 0ecbdab4c0c8ea64399db0079c6ae0af, type: 2}
   - {fileID: 11400000, guid: e44611883789b8e4f978d5f379f6b150, type: 2}
   - {fileID: 11400000, guid: 95162b9f9696a624cbb71564a55a2539, type: 2}
   - {fileID: 11400000, guid: 222380821bbff1645a695f9b2dc7a830, type: 2}
-  - {fileID: 11400000, guid: 222380821bbff1645a695f9b2dc7a830, type: 2}
+  - {fileID: 11400000, guid: 3a7227d82e4f0d14199389b12a23851b, type: 2}

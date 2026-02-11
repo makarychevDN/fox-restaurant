@@ -45,11 +45,11 @@ namespace foxRestaurant
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
-            /*itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
+            itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             await IntroSpeech();
             await SealTutorail(encounter);
             await Waves(encounter);
-            await SealGirlGoesAway(encounter);*/
+            await SealGirlGoesAway(encounter);
             await LameJoeAppears();
         }
 

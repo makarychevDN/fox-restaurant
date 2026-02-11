@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb0fdd8431f9bfb4aa939566cd9e35ba, type: 3}
-  m_Name: EncountersList lvl 1
+  m_Script: {fileID: 11500000, guid: 2ef442539802fb94380527bd3b844d05, type: 3}
+  m_Name: chocolate milkshake
   m_EditorClassIdentifier: 
-  <Encounters>k__BackingField:
-  - {fileID: 2202273766668462489, guid: 069f041ce638cab43bddf4257c35d98e, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 2df7bd463aee08645a94a6d0c336d0f4, type: 3}
