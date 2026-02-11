@@ -280,6 +280,7 @@ MonoBehaviour:
   maxYCursorDistance: 5
   maxXPositionDistance: 0.15
   maxYPositionDistance: 0.08
+  target: {fileID: 0}
 --- !u!1 &2614448368535770566
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +705,7 @@ MonoBehaviour:
   maxYCursorDistance: 5
   maxXPositionDistance: 0.3
   maxYPositionDistance: 0.125
+  target: {fileID: 0}
 --- !u!1 &6420972435377394817
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +897,7 @@ MonoBehaviour:
   maxYCursorDistance: 5
   maxXPositionDistance: 0.3
   maxYPositionDistance: 0.125
+  target: {fileID: 0}
 --- !u!1 &8136455827087317982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1127,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2886152123885982480, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: eyesAndNose.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2886152123885982480, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: 'eyesAndNose.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4904875083316095817}
+    - target: {fileID: 2886152123885982480, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: 'eyesAndNose.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3691011996039818754}
+    - target: {fileID: 2886152123885982480, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
+      propertyPath: 'eyesAndNose.Array.data[2]'
+      value: 
+      objectReference: {fileID: 672501790068856219}
     - target: {fileID: 2959519563098566168, guid: a09f97b92f0f3b844b7e2904ff05ebd7, type: 3}
       propertyPath: m_Pitch
       value: 2.62
