@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Localization;
 
 namespace foxRestaurant
@@ -30,5 +31,7 @@ namespace foxRestaurant
         {
             eyesAndNose.ForEach(item => item.SetTarget(target));
         }
+
+        public UnityEvent<string> OnEmote => dialogueManager.OnEmote;
     }
 }

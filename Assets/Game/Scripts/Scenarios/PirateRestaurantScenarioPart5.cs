@@ -17,6 +17,9 @@ namespace foxRestaurant
         [SerializeField] private Character lameJoe;
         [SerializeField] private Character capitan;
         [SerializeField] private List<CharacterParticlePair> talkingKidsSetup;
+        [SerializeField] private List<Character> kidsOnTheStreet;
+        [SerializeField] private List<GameObject> crowdPacks;
+        [SerializeField] private List<GameObject> silhouettes;
 
         [Header("customers data")]
         [SerializeField] private CustomerData doggo;
@@ -43,6 +46,7 @@ namespace foxRestaurant
         [SerializeField] private AudioSource microphoneArtifactsSound;
         [SerializeField] private AudioSource curtainsSound;
         [SerializeField] private AudioSource backgroundMusic;
+        [SerializeField] private AudioSource earthQuakeSound;
         [SerializeField] private ParticleSystem lameJoeAppearParticles;
 
         [Header("setup")]
@@ -54,17 +58,18 @@ namespace foxRestaurant
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
-            await CurtainsAppears();
-            lameJoe.gameObject.SetActive(true);
-            //await IntroSpeech();
-            //await Task.Delay(1000);
+            capitan.OnEmote.AddListener(ShakeCameraOnce);
+
+            /*await CurtainsAppears();
+            //lameJoe.gameObject.SetActive(true);
+            await IntroSpeech();
+            await Task.Delay(1000);
             await CartoonScreenAppearsAnimation();
             //await Waves(encounter);
             await DialogueAfterWaves();
             await Task.Delay(2000);
-            await CapitanAppears();
-
-            await Task.Delay(10000);
+            await CapitanAppears();*/
+            await CrowdAppears();
         }
 
         private async Task CurtainsAppears()
@@ -179,6 +184,8 @@ namespace foxRestaurant
                 await Task.Delay(200);
             }
 
+            //return;
+
             await red.Say("Фух,<pause:0.5> юнги,<pause:0.5> кому еще мороженое?");
             await talkingKidsSetup[2].character.Say("<volume:0>...");
             await lameJoe.Say("Кажется,<pause:0.5> ты переработал всю работу.");
@@ -192,8 +199,9 @@ namespace foxRestaurant
             vhsArtifactsSound.Play();
             backgroundMusic.Stop();
             await BlinkGameObjectNTimes(capitanCallsCartoon, 21);
+            await BlinkGameObjectNTimes(capitanCallsCartoon, 1);
             await talkingKidsSetup[2].character.Say("Ну, блииин!");
-            await talkingKidsSetup[3].character.Say("Эй,<pause:0.5> мы же смотрим!");
+            await talkingKidsSetup[1].character.Say("Эй,<pause:0.5> мы же не досмотрели!");
             await capitan.Say("<volume:0.5>Йарр!<pause:0.5> Вы что здесь устроили, салаги?");
             await capitan.Say("Я сказал выпускать Хромого Джо, не для того, чтобы вы здесь прохлаждались!");
             curtainsSound.Play();
@@ -203,29 +211,42 @@ namespace foxRestaurant
             await additionalSpeakers.DOLocalMove(new Vector3(0, 8.5f), 1.75f).AsyncWaitForCompletion();
             microphoneArtifactsSound.Play();
             await Task.Delay(2000);
-            ShakeCamera(0.25f);
-            await capitan.Say("<volume:1>Эй,<pause:0.5> юнги,<pause:0.5> здесь все это время прятался Хромой Джо!<pause:0.5> Быстрее сюда,<pause:0.5> покажите, как вы его любите!");
-            await capitan.Say("<volume:0.5>Вперед, мальчики,<pause:0.75> сделайте мне кассу!<pause:0.75> Ахахахаах!");
+            await capitan.Say("<emote:shake><volume:1>Эй,<pause:0.5><emote:shake> юнги,<pause:0.5><emote:shake> здесь все это время прятался Хромой Джо!<pause:0.5><emote:shake> Быстрее сюда,<pause:0.5><emote:shake> покажите, как вы его любите!");
             additionalSpeakersMovingSound.Play();
-            screen.DOLocalMove(new Vector3(0, 15.2f), 1.75f);
             additionalSpeakers.DOLocalMove(new Vector3(0, 14.2f), 1.75f);
-            //await speaker.Say("Йарр. Вы чего здесь удумали, салаги?");
-            //todo мультики выключаются
+            await capitan.Say("<volume:0.5>Вперед, салаги,<pause:0.75> добудьте мне все сокровища мира!<pause:0.75> Ахахахаах!");
+            screen.DOLocalMove(new Vector3(0, 15.2f), 1.75f).SetEase(Ease.InExpo);
+        }
 
-            /*await kidFromTheCustomers.Say("Эй, мы же смотрим!");
-            await speaker.Say("Я тебя отправил на палубу, чтобы ты привлек мне посетителей, а не заперся от них!");
-            await speaker.Say("Ничего, сейчас мы это исправим. Йарр!");
-            //todo шторы поднимаются
+        private async Task CrowdAppears()
+        {
+            earthQuakeSound.Play();
+            await Task.Delay(1000);
+            Tweener shakingCameraLoop = SetCameraShakingLoopAnimation(0.1f);
+            await kidsOnTheStreet[0].Say("Это Хромой Джо!");
+            UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0.25f);
+            await kidsOnTheStreet[1].Say("Бежим к нему скорее!");
+            UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0.5f);
+            await red.Say("Ой-ей.");
 
-            await kidOnTheStreet1.Say("Смотрите, это же хромой Джо!");
-            await kidOnTheStreet2.Say("Это точно он, скорее к нему!");*/
-            //todo начинается землятрясение
-            //await red.Say("О нет.");
-            //оно усиливается
-            await lameJoe.Say("Беги!");
+            int crowdPacksAmount = 9;
+            int silhouettesCount = 0;
+            for (int i = 0; i < crowdPacksAmount; i++)
+            {
+                UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0.5f + i * 0.1f);
+                crowdPacks[i].SetActive(true);
+                poofSound.Play();
 
-            // землятрясение достигает пика, камера трясется, зал заполняет толпа детей
+                if (i >= crowdPacksAmount - silhouettes.Count)
+                {
+                    silhouettes[silhouettesCount].SetActive(true);
+                    silhouettesCount++;
+                }
 
+                await Task.Delay(500);
+            }
+
+            await red.Say("Помогите.");
         }
 
         private async Task BlinkGameObjectNTimes(GameObject go, int n = 5)
@@ -236,6 +257,15 @@ namespace foxRestaurant
                 await Task.Delay(50);
             }
         }
+
+        private void UpdateCameraShakingLoopAnimation(Tweener shakingCameraLoop, float strength)
+        {
+            shakingCameraLoop.Kill();
+            shakingCameraLoop = SetCameraShakingLoopAnimation(strength);
+        }
+
+        private Tweener SetCameraShakingLoopAnimation(float strength) =>
+            Camera.main.transform.DOShakePosition(0.3f, strength, 50).SetLoops(-1);
 
         private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
@@ -319,9 +349,12 @@ namespace foxRestaurant
             public Transform scriptSeatplace;
         }
 
-        private async Task ShakeCamera(float strenght, int shakingValue = 50)
+        private async void ShakeCameraOnce(string key)
         {
-            await Camera.main.transform.DOShakePosition(0.3f, strenght, shakingValue).AsyncWaitForCompletion();
+            if (key != "shake")
+                return;
+
+            await Camera.main.transform.DOShakePosition(0.3f, 0.25f, 50).AsyncWaitForCompletion();
             Camera.main.transform.position = new Vector3(0, 0, -10);
         }
     }

@@ -18,7 +18,7 @@ namespace foxRestaurant
         private float pauseTime;
         private bool skipRequested;
 
-        public UnityEvent<string> OnChangeEmotion;
+        public UnityEvent<string> OnEmote;
 
         private void Awake()
         {
@@ -30,7 +30,7 @@ namespace foxRestaurant
                 { "pause", Pause },
                 { "delay", SetDelay },
                 { "chunk", SetChunkSize },
-                { "emote", OnChangeEmotion.Invoke },
+                { "emote", OnEmote.Invoke },
                 { "voice", SetVoice },
                 { "volume", SetVolume },
                 { "pitch", SetPitch },
