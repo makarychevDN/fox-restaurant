@@ -17,6 +17,8 @@ namespace foxRestaurant
             customerItem.OnDestroyed.AddListener(CustomerItemPlacedHandler);
         }
 
+        protected override void InitTyped(RestaurantEncounter encounter) { }
+
         protected override async Task StartScenarioTyped(RestaurantEncounter ecnounter)
         {
             restaurantEncounter = ecnounter;

@@ -10,6 +10,8 @@ namespace foxRestaurant
         [SerializeField] private Transform stansEyes;
         [SerializeField] private Transform lameLarrysEyes;
 
+        protected override void InitTyped(ListenDialoguesEncounter encounter) { }
+
         protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await lameLarry.Say("Привет, Рыжий.");

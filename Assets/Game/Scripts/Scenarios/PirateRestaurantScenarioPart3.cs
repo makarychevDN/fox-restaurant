@@ -225,5 +225,7 @@ namespace foxRestaurant
             customer.OnLeftSatisfied.AddListener(OnLeftHandler);
             return tcs.Task;
         }
+
+        protected override void InitTyped(RestaurantEncounter encounter) { }
     }
 }

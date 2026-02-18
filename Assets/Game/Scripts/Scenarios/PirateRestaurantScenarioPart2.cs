@@ -17,6 +17,8 @@ namespace foxRestaurant
         [SerializeField] private AudioSource poofSound;
         [SerializeField] private AudioSource hornSound;
 
+        protected override void InitTyped(ListenDialoguesEncounter encounter) { }
+
         protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             red.LookAt(sandwich);

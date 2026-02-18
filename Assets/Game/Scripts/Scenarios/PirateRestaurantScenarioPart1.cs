@@ -371,5 +371,7 @@ namespace foxRestaurant
             await Camera.main.transform.DOShakePosition(0.3f, strenght, shakingValue).AsyncWaitForCompletion();
             Camera.main.transform.position = new Vector3(0, 0, -10);
         }
+
+        protected override void InitTyped(RestaurantEncounter encounter) { }
     }
 }
