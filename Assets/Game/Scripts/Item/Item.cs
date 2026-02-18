@@ -25,12 +25,13 @@ namespace foxRestaurant
         public ItemType ItemType => itemType;
         public ItemStateController ItemStateController => itemStateController;
 
-        public virtual void Init(RestaurantEncounter restaurantEncounter, ItemData itemData)
+        public virtual void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, float appearSoundVolume = 1)
         {
             this.restaurantEncounter = restaurantEncounter;
             itemStateController.Init(restaurantEncounter, this);
             inputController.Init(itemStateController, this);
             SetItemData(itemData);
+            appearSound.volume = appearSoundVolume;
             appearSound.pitch = Random.Range(0.7f, 1.3f);
         }
 

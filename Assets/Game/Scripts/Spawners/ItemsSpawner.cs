@@ -52,11 +52,11 @@ namespace foxRestaurant
         public Item SpawnFoodItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot) =>
             SpawnItem(foodItemPrefab, restaurantEncounter, itemData, itemSlot);
 
-        public Item SpawnItem(Item prefab, RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot)
+        public Item SpawnItem(Item prefab, RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot, float spawnSoundVolume = 1)
         {
             Item item = Instantiate(prefab);
 
-            item.Init(restaurantEncounter, itemData);
+            item.Init(restaurantEncounter, itemData, spawnSoundVolume);
             itemSlot.SetItem(item);
             item.Slot = itemSlot;
 

@@ -23,9 +23,9 @@ namespace foxRestaurant
 
         public UnityEvent<int> OnSatietyUpdated;
 
-        public override void Init(RestaurantEncounter restaurantEncounter, ItemData itemData)
+        public override void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, float appearSoundVolume = 1)
         {
-            base.Init(restaurantEncounter, itemData);
+            base.Init(restaurantEncounter, itemData, appearSoundVolume);
             itemUI.Init(this);
             fusionDisplayer.Init(restaurantEncounter, this);
         }

@@ -185,6 +185,14 @@ namespace foxRestaurant
             Destroy(gameObject);
         }
 
+        public void CenterOnNewParent(Transform newParent)
+        {
+            transform.parent = newParent;
+            transform.localPosition = Vector3.zero;
+            transform.localScale = Vector3.one;
+            transform.localRotation = Quaternion.identity;
+        }
+
         public void SetBlockedByTauntOnAnotherCustomer(bool value)
         {
             slotToPlaceFood.SetBlockedValue(value);
