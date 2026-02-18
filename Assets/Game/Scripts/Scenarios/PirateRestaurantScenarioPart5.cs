@@ -60,15 +60,14 @@ namespace foxRestaurant
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             capitan.OnEmote.AddListener(ShakeCameraOnce);
 
-            /*await CurtainsAppears();
-            //lameJoe.gameObject.SetActive(true);
+            await CurtainsAppears();
             await IntroSpeech();
             await Task.Delay(1000);
             await CartoonScreenAppearsAnimation();
             //await Waves(encounter);
             await DialogueAfterWaves();
             await Task.Delay(2000);
-            await CapitanAppears();*/
+            await CapitanAppears();
             await CrowdAppears();
         }
 
@@ -184,8 +183,6 @@ namespace foxRestaurant
                 await Task.Delay(200);
             }
 
-            //return;
-
             await red.Say("Фух,<pause:0.5> юнги,<pause:0.5> кому еще мороженое?");
             await talkingKidsSetup[2].character.Say("<volume:0>...");
             await lameJoe.Say("Кажется,<pause:0.5> ты переработал всю работу.");
@@ -199,7 +196,6 @@ namespace foxRestaurant
             vhsArtifactsSound.Play();
             backgroundMusic.Stop();
             await BlinkGameObjectNTimes(capitanCallsCartoon, 21);
-            await BlinkGameObjectNTimes(capitanCallsCartoon, 1);
             await talkingKidsSetup[2].character.Say("Ну, блииин!");
             await talkingKidsSetup[1].character.Say("Эй,<pause:0.5> мы же не досмотрели!");
             await capitan.Say("<volume:0.5>Йарр!<pause:0.5> Вы что здесь устроили, салаги?");
@@ -246,7 +242,7 @@ namespace foxRestaurant
                 await Task.Delay(500);
             }
 
-            await red.Say("Помогите.");
+            UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0);
         }
 
         private async Task BlinkGameObjectNTimes(GameObject go, int n = 5)
