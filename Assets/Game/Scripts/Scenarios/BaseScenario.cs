@@ -7,6 +7,8 @@ namespace foxRestaurant
     public abstract class BaseScenario : MonoBehaviour
     {
         public abstract Task StartScenario(Encounter encounter);
+
+        public abstract void Init(Encounter encounter);
     }
 
     public abstract class BaseScenario<T> : BaseScenario where T : Encounter
@@ -17,5 +19,12 @@ namespace foxRestaurant
         }
 
         protected abstract Task StartScenarioTyped(T encounter);
+
+        public sealed override void Init(Encounter encounter)
+        {
+            InitTyped((T)encounter);
+        }
+
+        protected abstract void InitTyped(T encounter);
     }
 }
