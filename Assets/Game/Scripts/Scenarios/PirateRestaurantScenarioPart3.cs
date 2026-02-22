@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,8 @@ namespace foxRestaurant
         [SerializeField] private GameObject effectOnSlotsToSpawnFoodAppear;
         [SerializeField] private AudioSource boowompSound;
         [SerializeField] private AudioSource poofSound;
+        [SerializeField] private AudioSource backgroundMusic;
+        [SerializeField] private AudioSource successSound;
         [SerializeField] private ParticleSystem lameJoeAppearParticles;
         [SerializeField] private ParticleSystem sealGirlAppearParticles;
 
@@ -125,6 +128,7 @@ namespace foxRestaurant
 
         private async Task SealGirlGoesAway(RestaurantEncounter encounter)
         {
+            backgroundMusic.DOFade(0, 1);
             encounter.Ticker.Pause();
             await red.Say("Так-то.<pause:0.75> Всем по мороженке!<pause:0.75> Даже не вспотел!");
 
@@ -144,6 +148,8 @@ namespace foxRestaurant
             red.LookAt(null);
 
             await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Хм,<pause:0.75> а этот день<pause:0.75> не так уж и плох.");
+            successSound.Play();
+            await Task.Delay(3000);
         }
 
         private async Task LameJoeAppears()

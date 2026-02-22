@@ -17007,6 +17007,8 @@ MonoBehaviour:
   effectOnSlotsToSpawnFoodAppear: {fileID: 3550288775840076837}
   boowompSound: {fileID: 6037133094465708845}
   poofSound: {fileID: 757419570532257240}
+  backgroundMusic: {fileID: 1298384182669971817}
+  successSound: {fileID: 19064541578919386}
   lameJoeAppearParticles: {fileID: 2401914865910573805}
   sealGirlAppearParticles: {fileID: 8442518064292495144}
   references:
