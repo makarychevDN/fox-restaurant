@@ -39,6 +39,13 @@ namespace foxRestaurant
             customer.OnAte.AddListener(TurnOffTaunt);
             encounter.CustomersManager.OnCertainCustomerAdded.AddListener(UpdateStateForCustomer);
             UpdateStateForCustomers();
+            customer.OnLeft.AddListener(() => RemoveListeners(customer, encounter));
+        }
+
+        private void RemoveListeners(Customer customer, RestaurantEncounter encounter)
+        {
+            customer.OnAte.RemoveListener(TurnOffTaunt);
+            encounter.CustomersManager.OnCertainCustomerAdded.RemoveListener(UpdateStateForCustomer);
         }
 
         public void Tick(float deltaTime)
