@@ -11,12 +11,12 @@ namespace foxRestaurant
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            eyes.ForEach(eye => { eye.SetTarget(null); eye.SetDistances(10, 10, 70, 70); });
+            eyes.ForEach(eye => { eye.SetTarget(null); /*eye.SetDistances(10, 10, 70, 70);*/ });
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            eyes.ForEach(eye => { eye.SetTarget(fish); eye.SetDistances(1, 1, 7, 7); });
+            eyes.ForEach(eye => { eye.SetTarget(fish); /*eye.SetDistances(2, 1, 14, 7);*/ });
         }
     }
 }

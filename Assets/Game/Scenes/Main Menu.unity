@@ -7083,9 +7083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81424cadee5ca1146b6d3b4e0c7fd3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxXCursorDistance: 1
-  maxYCursorDistance: 1
-  maxXPositionDistance: 7
+  maxXCursorDistance: 0.1
+  maxYCursorDistance: 0.1
+  maxXPositionDistance: 14
   maxYPositionDistance: 8
   target: {fileID: 1534761778}
 --- !u!1 &884616194
@@ -9336,9 +9336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81424cadee5ca1146b6d3b4e0c7fd3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxXCursorDistance: 1
-  maxYCursorDistance: 1
-  maxXPositionDistance: 7
+  maxXCursorDistance: 0.1
+  maxYCursorDistance: 0.1
+  maxXPositionDistance: 14
   maxYPositionDistance: 7
   target: {fileID: 1534761778}
 --- !u!114 &1177869467
@@ -29851,9 +29851,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81424cadee5ca1146b6d3b4e0c7fd3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxXCursorDistance: 1
-  maxYCursorDistance: 1
-  maxXPositionDistance: 7
+  maxXCursorDistance: 0.1
+  maxYCursorDistance: 0.1
+  maxXPositionDistance: 14
   maxYPositionDistance: 8
   target: {fileID: 1534761778}
 --- !u!114 &2062280230
