@@ -25789,6 +25789,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 835327942896288313, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
   m_PrefabInstance: {fileID: 6616348517698462878}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5796936331303643148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 838556893473508498, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+  m_PrefabInstance: {fileID: 6616348517698462878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5828311783543014057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 807181464718763575, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
@@ -25865,14 +25870,14 @@ MonoBehaviour:
   - {fileID: 6356759485515138098}
   - {fileID: 2274519569040423083}
   - {fileID: 7819236338429886046}
-  doggo: {fileID: 0}
-  kitty: {fileID: 0}
-  duck: {fileID: 0}
-  seal: {fileID: 0}
-  garbageCan: {fileID: 0}
-  itemSpawnTimer: {fileID: 0}
-  slotsToSpawnFoodParent: {fileID: 0}
-  effectOnSlotsToSpawnFoodAppear: {fileID: 0}
+  doggo: {fileID: 11400000, guid: 30f720480acb93c44b15887566919e9a, type: 2}
+  kitty: {fileID: 11400000, guid: b4f2271fcc1c0ae40a02577471f3643c, type: 2}
+  duck: {fileID: 11400000, guid: 86ab3080b8e967d40a848f4133e2b7a3, type: 2}
+  seal: {fileID: 11400000, guid: baa6a42e049cd8e428bd8374d337c28d, type: 2}
+  garbageCan: {fileID: 8508781391109404186}
+  itemSpawnTimer: {fileID: 7220070376905562488}
+  slotsToSpawnFoodParent: {fileID: 5796936331303643148}
+  effectOnSlotsToSpawnFoodAppear: {fileID: 3550288775840076837}
   cartoon: {fileID: 7788957112780202012}
   capitanCallsCartoon: {fileID: 6918914646732482037}
   curtains: {fileID: 1111889332012302703}
@@ -25889,9 +25894,9 @@ MonoBehaviour:
   lameJoeAppearParticles: {fileID: 2401914865910573805}
   waveIsFailedLine:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 131328193486848
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -25899,11 +25904,33 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &7220070376905562488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4603569617256824294, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+  m_PrefabInstance: {fileID: 6616348517698462878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88eebc4831039a146a48617b13537c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8004838301147093046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3803039102237490344, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
   m_PrefabInstance: {fileID: 6616348517698462878}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8508781391109404186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3297970232619881092, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+  m_PrefabInstance: {fileID: 6616348517698462878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f0f4ba79055054482395f2269da548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8611058892264965217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3193436537240248575, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}

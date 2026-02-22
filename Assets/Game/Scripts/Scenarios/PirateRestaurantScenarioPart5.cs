@@ -64,7 +64,7 @@ namespace foxRestaurant
             await IntroSpeech();
             await Task.Delay(1000);
             await CartoonScreenAppearsAnimation();
-            //await Waves(encounter);
+            await Waves(encounter);
             await DialogueAfterWaves();
             await Task.Delay(2000);
             await CapitanAppears();
@@ -167,6 +167,8 @@ namespace foxRestaurant
                 (seal, () => encounter.DecksManager.GetRandomDish()),
                 (doggo, () => encounter.DecksManager.GetRandomDish()),
                 (doggo, () => encounter.DecksManager.GetRandomDish()));
+
+            encounter.Ticker.Pause();
         }
 
         private async Task DialogueAfterWaves()
