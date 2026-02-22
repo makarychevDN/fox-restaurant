@@ -16,14 +16,30 @@ namespace foxRestaurant
             WatchAtPosition(targetPosition);
         }
 
-        private void WatchAtPosition(Vector3 targetPositon)
+        private void WatchAtPosition(Vector3 targetPosition)
         {
-            Vector3 delta = targetPositon - transform.parent.position;
+            Transform parent = transform.parent;
 
-            float xDistance = Mathf.Lerp(0, maxXPositionDistance, delta.magnitude / maxXCursorDistance);
-            float yDistance = Mathf.Lerp(0, maxYPositionDistance, delta.magnitude / maxYCursorDistance);
+            // Переводим мировую позицию цели в локальное пространство родителя
+            Vector3 localTarget = parent.InverseTransformPoint(targetPosition);
 
-            transform.localPosition = Vector3.Lerp(transform.localPosition, new Vector3(delta.normalized.x * xDistance, delta.normalized.y * yDistance), 0.25f);
+            // Теперь работаем полностью в локальных координатах
+            Vector3 delta = localTarget;
+
+            float xDistance = Mathf.Lerp(0, maxXPositionDistance, Mathf.Clamp01(Mathf.Abs(delta.x) / maxXCursorDistance));
+            float yDistance = Mathf.Lerp(0, maxYPositionDistance, Mathf.Clamp01(Mathf.Abs(delta.y) / maxYCursorDistance));
+
+            Vector3 targetLocalPosition = new Vector3(
+                Mathf.Sign(delta.x) * xDistance,
+                Mathf.Sign(delta.y) * yDistance,
+                0f
+            );
+
+            transform.localPosition = Vector3.Lerp(
+                transform.localPosition,
+                targetLocalPosition,
+                0.25f
+            );
         }
 
         public void SetTarget(Transform target)
