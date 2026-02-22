@@ -61,17 +61,31 @@ namespace foxRestaurant
         [SerializeField] private Transform pawsAndJar;
         [SerializeField] private Character redOnShowingJarScene;
 
+        [Header("handshake scene")]
+        [SerializeField] private GameObject handshakeScene;
+        [SerializeField] private Character silverHandshake;
+        [SerializeField] private Character redHandshake;
+        [SerializeField] private Character storyTeller;
+        [SerializeField] private Transform hadshakeParent;
+        [SerializeField] private Transform redsHandshakePaw;
+        [SerializeField] private Transform silversHandshakePaw;
+        [SerializeField] private AudioSource handshakeImpactSound;
+        [SerializeField] private GameObject theGreatestAdventureBeginsLogo;
+
 
         protected override void InitTyped(ListenDialoguesEncounter encounter){}
 
         protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
-            await SceneInShower();
+            /*await SceneInShower();
             await SceneWithMobilePhone();
             await IntroSceneInKitchen();
             await MainSceneInKitchen1();
             await ShowJar();
-            await MainSceneInKitchen2();
+            await MainSceneInKitchen2();*/
+            music.Play();
+            music.volume = 0.25f;
+            await HandshakeScene();
         }
 
         private async Task SceneInShower()
@@ -194,7 +208,7 @@ namespace foxRestaurant
             await redOnShowingJarScene.Say("Видишь?<pause:0.5> Я уже на пол пути к цели!");
             await redOnShowingJarScene.Say("Я каждый день хожу на эту чертову работу не просто так!");
             await redOnShowingJarScene.Say("С каждым месяцем я заполняю баночку все сильнее!");
-            await redOnShowingJarScene.Say("А когда я ее заполню, я открою ресторан с самой вкусными блюдами!");
+            await redOnShowingJarScene.Say("А когда я ее заполню, я открою ресторан с самыми вкусными блюдами!");
             await redOnShowingJarScene.Say("И в нем будут возмутительно долгие перерывы для сотрудников!");
             await redOnShowingJarScene.Say("Но работать в нем будет так классно, что никто не захочет ими пользоваться!");
             await redOnShowingJarScene.Say("И больше никто не скажет, что Рыжий - не повар!");
@@ -268,24 +282,38 @@ namespace foxRestaurant
             await redOnMainKitchen.Say("А ты прав!");
             await redOnMainKitchen.Say("К черту кафе мороженое!<pause:0.75> К черту их всех!");
             await redOnMainKitchen.Say("Если я еще хотя бы раз буду говорить как пират - я свихнусь!");
-            await silverOnMainKitchen.Say("Вот это настрой!.");
-            await redOnMainKitchen.Say("... А тебе оно зачем? Зачем помогать мне?");
-            await silverOnMainKitchen.Say("Ну, во-первых, потому что я переживаю за мего младшего братишку.");
-            await silverOnMainKitchen.Say("Который без меня обязательно наделает глупостей.");
-            await silverOnMainKitchen.Say("А во-вторых я хочу в долю.");
-            await redOnMainKitchen.Say("Я не верю тебе.");
-            await redOnMainKitchen.Say("Ты буквально можешь делать деньги из воздуха.");
-            await redOnMainKitchen.Say("Зачем тебе доля какой-то кафешки?");
-            await silverOnMainKitchen.Say("Ой, ну ты правда думал, что я никогда не повзрослею?");
-            await silverOnMainKitchen.Say("Не захочу остепениться? обзавестись легальным источником дохода?");
-            await silverOnMainKitchen.Say("Ты меня обижаешь.");
-            await redOnMainKitchen.Say("...");
-            await silverOnMainKitchen.Say("Ну что такое? Ты правда думаешь, что я пытаюсь тебя обвести вокруг пальца?");
-            await silverOnMainKitchen.Say("Сколько раз я пытался как-то навредить тебе? Обокрасть? Подставить");
-            await redOnMainKitchen.Say("Ни разу.");
-            await silverOnMainKitchen.Say("Тогда чего же ты ждешь?");
-            await silverOnMainKitchen.Say("Партнеры?");
-            await redOnMainKitchen.Say("Ладно, вытащи меня из этой дыры.");
+            await silverOnMainKitchen.Say("Вот это настрой!");
+            parentMainKitchenScene.SetActive(false);
+        }
+
+        private async Task HandshakeScene()
+        {
+            handshakeScene.SetActive(true);
+            await redHandshake.Say("... А тебе оно зачем? Зачем помогать мне?");
+            await silverHandshake.Say("Ну, во-первых, потому что я переживаю за мего младшего братишку.");
+            await silverHandshake.Say("Который без меня обязательно наделает глупостей.");
+            await silverHandshake.Say("А во-вторых я хочу в долю.");
+            await redHandshake.Say("Я тебе не верю!");
+            await redHandshake.Say("Ты буквально можешь делать деньги из воздуха!");
+            await redHandshake.Say("Зачем тебе доля какой-то кафешки?");
+            await silverHandshake.Say("Ой, ну ты правда думал, что я никогда не повзрослею?");
+            await silverHandshake.Say("Не захочу остепениться? обзавестись легальным источником дохода?");
+            await silverHandshake.Say("Ты меня обижаешь.");
+            await redHandshake.Say("...");
+            await silverHandshake.Say("Ну что такое? Ты правда думаешь, что я пытаюсь тебя обвести вокруг пальца?");
+            await silverHandshake.Say("Сколько раз я пытался как-то навредить тебе? Обокрасть? Подставить");
+            await redHandshake.Say("Ни разу.");
+            await silverHandshake.Say("Тогда чего же ты ждешь?");
+            await silversHandshakePaw.DOMove(new Vector3(-7.27f, 5), 1f).AsyncWaitForCompletion();
+            await silverHandshake.Say("Партнеры?");
+            await redHandshake.Say("Ладно, вытащи меня из этой дыры.");
+            await redsHandshakePaw.DOMove(new Vector3(6.66f, 4.78f, 0), 0.15f).AsyncWaitForCompletion();
+            hadshakeParent.transform.DOShakeScale(0.1f, 0.25f);
+            handshakeImpactSound.Play();
+            music.volume = 1;
+            await Task.Delay(750);
+            theGreatestAdventureBeginsLogo.SetActive(true);
+            await storyTeller.Say("И их невероятное приключение началось!");
         }
 
         private async Task DotweenStep(Transform steppingTransform, Vector3 targetPosition, float time)
