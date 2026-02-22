@@ -75,7 +75,7 @@ namespace foxRestaurant
             red.LookAt(sealGirl.transform);
             await red.Say("Ого,<pause:0.75> снова она.");
             await red.Say("К ней нужен особый подход,<pause:0.75> она меняет свой заказ на то, что едят другие.");
-            await red.Say("Бедняжке свойственно сомневаеться.");
+            await red.Say("Бедняжке свойственно сомневаться.");
             red.LookAt(null);
 
             sealGirl.gameObject.SetActive(false);

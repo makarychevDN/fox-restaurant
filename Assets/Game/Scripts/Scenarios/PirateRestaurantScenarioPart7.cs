@@ -179,7 +179,7 @@ namespace foxRestaurant
             await redOnMainKitchen.Say("“ы пришел говорить обидные вещи или что?");
             await silverOnMainKitchen.Say("я на самом деле пришел тебе с этим помочь.");
             await redOnMainKitchen.Say("¬о-первых мне не нравитс€.<pause:0.75> ј во-вторых ты ничего не понимаешь в готовке.");
-            await silverOnMainKitchen.Say("«ато € понимаю, что ты идешь к своей цели не правильно.");
+            await silverOnMainKitchen.Say("«ато € понимаю, что ты идешь к своей цели неправильно.");
             await silverOnMainKitchen.Say("–ыжий,<pause:0.75> ты не вывозишь.");
             await silverOnMainKitchen.Say("Ѕолее того, то, через что ты проходишь теб€ не приближает к цели.");
             await silverOnMainKitchen.Say("—корее отдал€ет.");
@@ -254,7 +254,7 @@ namespace foxRestaurant
 
             await Task.Delay(2000);
 
-            await silverOnMainKitchen.Say("я уверен, что ты своим упр€моством можешь горы свернуть.");
+            await silverOnMainKitchen.Say("я уверен, что ты своим упр€мством можешь горы свернуть.");
             await silverOnMainKitchen.Say("Ќо, если продолжишь в том же духе, то отдалишьс€ от цели еще сильнее.");
             await silverOnMainKitchen.Say("¬ещи дорожают быстрее, чем ты зарабатываешь.");
             redOnMainKitchen.LookAt(silversEyes);

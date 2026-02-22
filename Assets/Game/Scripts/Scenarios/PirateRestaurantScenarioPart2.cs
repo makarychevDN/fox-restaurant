@@ -34,7 +34,7 @@ namespace foxRestaurant
             await red.Say("Я тут работаю больше года.");
             await boss.Say("Йарр! <pause:0.75> Я ни одного слова не понял!<pause:0.75> Ты говоришь, как сухопутная крыса!");
             await red.Say("Я не хочу говорить так, пока я не за кассой.<pause:0.75> Это<pause:0.5> глупо.");
-            await red.Say("Мы же не пираты в обычный жизни.");
+            await red.Say("Мы же не пираты в обычной жизни.");
             await boss.Say("<volume:0>...");
             await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> *вздох*");
             await red.Say("Йарр!<pause:0.75> Капитан,<pause:0.75> я в этом плаванье уже больше года!");
