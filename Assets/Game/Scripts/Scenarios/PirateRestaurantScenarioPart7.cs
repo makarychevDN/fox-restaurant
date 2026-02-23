@@ -206,7 +206,7 @@ namespace foxRestaurant
             await Task.Delay(1000);
             await redOnShowingJarScene.Say("Видишь?<pause:0.5> Я уже на пол пути к цели!");
             await redOnShowingJarScene.Say("Я день за днем хожу на эту чертову работу не просто так!");
-            await redOnShowingJarScene.Say("С каждым месяцем я заполняю баночку все сильнее!");
+            await redOnShowingJarScene.Say("С каждым месяцем баночка наполняется все сильнее!");
             await redOnShowingJarScene.Say("А когда я ее заполню, я открою ресторан, где буду подавать самые вкусные блюда!");
             await redOnShowingJarScene.Say("И в нем будут возмутительно долгие перерывы для сотрудников!");
             await redOnShowingJarScene.Say("Но работать в нем будет так классно, что никто не захочет ими пользоваться!");
