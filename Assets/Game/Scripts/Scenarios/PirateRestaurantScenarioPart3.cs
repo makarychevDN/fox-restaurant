@@ -55,7 +55,7 @@ namespace foxRestaurant
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             await IntroSpeech();
             await SealTutorail(encounter);
-            //await Waves(encounter);
+            await Waves(encounter);
             await SealGirlGoesAway(encounter);
             await LameJoeAppears();
         }

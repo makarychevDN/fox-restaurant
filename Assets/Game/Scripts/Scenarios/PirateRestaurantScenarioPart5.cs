@@ -64,14 +64,14 @@ namespace foxRestaurant
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             capitan.OnEmote.AddListener(ShakeCameraOnce);
 
-            //await CurtainsAppears();
-            //await IntroSpeech();
-            //await Task.Delay(1000);
-            //await CartoonScreenAppearsAnimation();
-            //await Waves(encounter);
-            //await DialogueAfterWaves();
-            //await Task.Delay(2000);
-            //await CapitanAppears();
+            await CurtainsAppears();
+            await IntroSpeech();
+            await Task.Delay(1000);
+            await CartoonScreenAppearsAnimation();
+            await Waves(encounter);
+            await DialogueAfterWaves();
+            await Task.Delay(2000);
+            await CapitanAppears();
             await CrowdAppears();
         }
 
