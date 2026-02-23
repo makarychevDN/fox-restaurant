@@ -1,8 +1,10 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization;
 
 namespace foxRestaurant
 {
@@ -72,6 +74,11 @@ namespace foxRestaurant
         [SerializeField] private AudioSource handshakeImpactSound;
         [SerializeField] private GameObject theGreatestAdventureBeginsLogo;
 
+        [SerializeField] List<LocalizedString> dialogueLines;
+        private int stringsCounter = 0;
+        private int Next => stringsCounter++;
+        private LocalizedString NextLine => dialogueLines[Next];
+
 
         protected override void InitTyped(ListenDialoguesEncounter encounter){}
 
@@ -116,7 +123,7 @@ namespace foxRestaurant
 
             newMessageSound.Play();
             await Task.Delay(1500);
-            await redInBathroomIntro.Say("А?");
+            await redInBathroomIntro.Say(NextLine);
 
             parentTurnTapeObject.gameObject.SetActive(false);
         }
@@ -130,7 +137,7 @@ namespace foxRestaurant
             unlockPhoneSound.Play();
             await rightPaw.DOLocalMove(new Vector3(11.85f, 0f), 0.5f).AsyncWaitForCompletion();
             await Task.Delay(500);
-            await redInBathroomWithPhone.Say("Какого?..");
+            await redInBathroomWithPhone.Say(NextLine);
             await phoneAndPawsParentInBathroom.DOMove(new Vector3(0, -43f), 0.75f).AsyncWaitForCompletion();
             bathroomPhoneScene.gameObject.SetActive(false);
         }
@@ -147,13 +154,13 @@ namespace foxRestaurant
             lightenKitchenBackground.SetActive(true);
             silverOnIntroKitchen.LookAt(redOnIntroKitchen.transform);
             await Task.Delay(1000);
-            await silverOnIntroKitchen.Say("Приветики!");
-            await redOnIntroKitchen.Say("Ты же понимаешь, что ты не можешь просто так вламываться ко мне домой?");
-            await silverOnIntroKitchen.Say("У тебя было открыто.");
-            await redOnIntroKitchen.Say("И почему ты тут сидишь в темноте?");
-            await silverOnIntroKitchen.Say("У меня игривое настроение.");
-            await redOnIntroKitchen.Say("...");
-            await silverOnIntroKitchen.Say("Ой,<pause:0.5> ну, не веди себя так, будто бы не рад меня видеть.");
+            await silverOnIntroKitchen.Say(NextLine);
+            await redOnIntroKitchen.Say(NextLine);
+            await silverOnIntroKitchen.Say(NextLine);
+            await redOnIntroKitchen.Say(NextLine);
+            await silverOnIntroKitchen.Say(NextLine);
+            await redOnIntroKitchen.Say(NextLine);
+            await silverOnIntroKitchen.Say(NextLine);
             parentIntroKitchenScene.SetActive(false);
         }
 
@@ -161,30 +168,30 @@ namespace foxRestaurant
         {
             parentMainKitchenScene.SetActive(true);
             await DotweenSteps(redOnMainKitchen.transform, new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
-            await redOnMainKitchen.Say("Я рад.");
+            await redOnMainKitchen.Say(NextLine);
             //как-то наколхозить объятия
-            await redOnMainKitchen.Say("И так.<pause:0.75> Зачем ты пришел?");
-            await silverOnMainKitchen.Say("Я что не могу просто прийти проведать своего братишку?");
-            await redOnMainKitchen.Say("Ты можешь,<pause:0.75>  но ты так не делаешь.");
-            await silverOnMainKitchen.Say("Как плохо ты обо мне думаешь.");
-            await silverOnMainKitchen.Say("Ладно,<pause:0.75> ты меня подловил.");
-            await silverOnMainKitchen.Say("Я и вправду пришел не просто так.<pause:0.75> У меня есть для тебя предложение.");
-            await redOnMainKitchen.Say("НЕТ!");
-            await silverOnMainKitchen.Say("Но ты даже не выслушал.");
-            await redOnMainKitchen.Say("НЕТ!<pause:0.75> Я вышел из игры!<pause:0.75> Я теперь обычный повар, забыл?");
-            await silverOnMainKitchen.Say("Ты накладываешь мороженое в детском заведении.<pause:0.75> Ты не повар.");
-            await redOnMainKitchen.Say("Я много практикуюсь дома!");
-            await silverOnMainKitchen.Say("И я знаю, что у тебя хорошо получается.");
-            await silverOnMainKitchen.Say("Но повар - это не хобби,<pause:0.75> повар - это профессия.");
-            await redOnMainKitchen.Say("Ты пришел говорить обидные вещи или что?");
-            await silverOnMainKitchen.Say("Я на самом деле пришел тебе с этим помочь.");
-            await redOnMainKitchen.Say("Во-первых мне не нравится.<pause:0.75> А во-вторых ты ничего не понимаешь в готовке.");
-            await silverOnMainKitchen.Say("Зато я понимаю, что ты идешь к своей цели неправильно.");
-            await silverOnMainKitchen.Say("Рыжий,<pause:0.75> ты не вывозишь.");
-            await silverOnMainKitchen.Say("Более того, то, через что ты проходишь тебя не приближает к цели.");
-            await silverOnMainKitchen.Say("Скорее отдаляет.");
-            await redOnMainKitchen.Say("А вот и нет!");
-            await redOnMainKitchen.Say("Посмотри ка на это!");
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
             redOnMainKitchen.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             await DotweenSteps(redOnMainKitchen.transform, new Vector3(26f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
             redsPawsEmpty.SetActive(false);
@@ -193,7 +200,7 @@ namespace foxRestaurant
             await Task.Delay(2500);
             redOnMainKitchen.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             await DotweenSteps(redOnMainKitchen.transform, new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
-            await redOnMainKitchen.Say("Узри!");
+            await redOnMainKitchen.Say(NextLine);
             parentMainKitchenScene.SetActive(false);
         }
 
@@ -204,14 +211,14 @@ namespace foxRestaurant
             await pawsAndJar.DOMove(new Vector3(0, -2f), 0.75f).AsyncWaitForCompletion();
             await pawsAndJar.DOMove(new Vector3(0, -3.5f), 0.15f).AsyncWaitForCompletion();
             await Task.Delay(1000);
-            await redOnShowingJarScene.Say("Видишь?<pause:0.5> Я уже на пол пути к цели!");
-            await redOnShowingJarScene.Say("Я день за днем хожу на эту чертову работу не просто так!");
-            await redOnShowingJarScene.Say("С каждым месяцем баночка наполняется все сильнее!");
-            await redOnShowingJarScene.Say("А когда я ее заполню, я открою ресторан, где буду подавать самые вкусные блюда!");
-            await redOnShowingJarScene.Say("И в нем будут возмутительно долгие перерывы для сотрудников!");
-            await redOnShowingJarScene.Say("Но работать в нем будет так классно, что никто не захочет ими пользоваться!");
-            await redOnShowingJarScene.Say("И больше никто не скажет, что Рыжий - не повар!");
-            await redOnShowingJarScene.Say("Никто!");
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
+            await redOnShowingJarScene.Say(NextLine);
             await pawsAndJar.DOMove(new Vector3(0, -30f), 0.35f).AsyncWaitForCompletion();
             showJarScene.SetActive(false);
         }
@@ -223,15 +230,15 @@ namespace foxRestaurant
             jarOnTheTable.SetActive(true);
             parentMainKitchenScene.SetActive(true);
             music.DOFade(0.25f, 1.5f);
-            await silverOnMainKitchen.Say("Да ты моя ворчливая булочка.");
-            await silverOnMainKitchen.Say("Я и не спорю, что ты трудишься очень усердно.");
-            await silverOnMainKitchen.Say("Скорее наоборот,<pause:0.5> ты так закопался в готовку, что забыл держать нос по ветру.");
-            await silverOnMainKitchen.Say("Рыжий,<pause:0.5> как давно ты поставил себе эту цель?");
-            await redOnMainKitchen.Say("Полтора года назад.");
-            await silverOnMainKitchen.Say("Ты видел, как цены за это время подскочили?");
-            await redOnMainKitchen.Say("Ну, цены всегда по-немногу растут.");
-            await silverOnMainKitchen.Say("Просто посмотри, сколько стоит то оборудование, которое тебе тогда приглянулось.");
-            await redOnMainKitchen.Say("Ой, ну, не может же быть все настолько плохо.");
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
             await redsPawsEmpty.transform.DOScale(new Vector3(1, 0, 1), 0.5f).AsyncWaitForCompletion();
             redsPawsWithPhone.gameObject.SetActive(true);
             redOnMainKitchen.LookAt(redsPawsWithPhone.transform);
@@ -254,65 +261,65 @@ namespace foxRestaurant
 
             await Task.Delay(2000);
 
-            await silverOnMainKitchen.Say("Я уверен, что ты своим упрямством можешь горы свернуть.");
-            await silverOnMainKitchen.Say("Но, если продолжишь в том же духе, то отдалишься от цели еще сильнее.");
-            await silverOnMainKitchen.Say("Вещи дорожают быстрее, чем ты зарабатываешь.");
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
             redOnMainKitchen.LookAt(silversEyes);
-            await redOnMainKitchen.Say("И что мне тогда делать?");
-            await silverOnMainKitchen.Say("Действовать.");
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
             packOfMoney.SetActive(true);
             redOnMainKitchen.LookAt(packOfMoney.transform);
             await Task.Delay(1500);
-            await silverOnMainKitchen.Say("Здесь все еще не хватит на то, чтобы покрыть всю твою задумку в полной мере.");
-            await silverOnMainKitchen.Say("Но это неплохой стартовый капитал, чтобы начать с чего-то более скромного.");
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
 
             ChangeRedsSprites(calmBody, sadLeftEye, sadRightEye);
             redOnMainKitchen.transform.DOShakeScale(0.1f, -0.1f);
             redOnMainKitchen.transform.DOMove(new Vector3(5.64f, -7.14f), 0.3f);
 
-            await silverOnMainKitchen.Say("Например,<pause:0.75> с ресторанчика в городе поменьше.");
-            await silverOnMainKitchen.Say("Я уже присмотрел одно неплохое местечко.<pause:0.75> Наших денег хватит на первый взнос.");
+            await silverOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
             redOnMainKitchen.LookAt(silversEyes);
-            await redOnMainKitchen.Say("Первый взнос?<pause:0.75> Кредит звучит довольно<pause:0.5> рискованно.");
-            await silverOnMainKitchen.Say("Конечно,<pause:0.75> но ты же сам знаешь, как это работает.<pause:0.75> Кто не рискует, тот не пьет шампанское.");
-            await redOnMainKitchen.Say("А вообще знаешь что?");
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
             ChangeRedsSprites(calmBody, calmLeftEye, calmRightEye);
             redOnMainKitchen.transform.DOShakeScale(0.1f, -0.1f);
-            await redOnMainKitchen.Say("А ты прав!");
-            await redOnMainKitchen.Say("К черту кафе мороженое!<pause:0.75> К черту их всех!");
-            await redOnMainKitchen.Say("Если я еще хотя бы день буду говорить как пират - я свихнусь!");
-            await silverOnMainKitchen.Say("Вот это настрой!");
+            await redOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await redOnMainKitchen.Say(NextLine);
+            await silverOnMainKitchen.Say(NextLine);
             parentMainKitchenScene.SetActive(false);
         }
 
         private async Task HandshakeScene()
         {
             handshakeScene.SetActive(true);
-            await redHandshake.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> А тебе оно зачем?<pause:0.75> Зачем помогать мне?");
-            await silverHandshake.Say("Ну,<pause:0.75> во-первых,<pause:0.75> потому что я переживаю за моего младшего братишку.");
-            await silverHandshake.Say("Который без меня обязательно наделает глупостей.");
-            await silverHandshake.Say("А во-вторых я хочу в долю.");
-            await redHandshake.Say("Я тебе не верю!");
-            await redHandshake.Say("Ты буквально можешь делать деньги из воздуха!");
-            await redHandshake.Say("Зачем тебе доля какой-то кафешки?");
-            await silverHandshake.Say("Ой, ну ты правда думал, что я никогда не повзрослею?");
-            await silverHandshake.Say("Не захочу остепениться?<pause:0.75> Обзавестись легальным источником дохода?");
-            await silverHandshake.Say("Ты меня обижаешь.");
-            await redHandshake.Say("...");
-            await silverHandshake.Say("Ну что такое?<pause:0.75> Ты правда думаешь, что я пытаюсь тебя обвести вокруг пальца?");
-            await silverHandshake.Say("Сколько раз я пытался как-то навредить тебе?<pause:0.75> Обокрасть?<pause:0.75> Подставить?");
-            await redHandshake.Say("Ни разу.");
-            await silverHandshake.Say("Тогда чего же ты ждешь?");
+            await redHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await redHandshake.Say(NextLine);
+            await redHandshake.Say(NextLine);
+            await redHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await redHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
+            await redHandshake.Say(NextLine);
+            await silverHandshake.Say(NextLine);
             await silversHandshakePaw.DOMove(new Vector3(-7.27f, 5), 1f).AsyncWaitForCompletion();
-            await silverHandshake.Say("Партнеры?");
-            await redHandshake.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Ладно,<pause:0.75> партнеры!");
+            await silverHandshake.Say(NextLine);
+            await redHandshake.Say(NextLine);
             await redsHandshakePaw.DOMove(new Vector3(6.66f, 4.78f, 0), 0.15f).AsyncWaitForCompletion();
             hadshakeParent.transform.DOShakeScale(0.1f, 0.25f);
             handshakeImpactSound.Play();
             music.volume = 1;
             await Task.Delay(750);
             theGreatestAdventureBeginsLogo.SetActive(true);
-            await storyTeller.Say("И их невероятное приключение началось!");
+            await storyTeller.Say(NextLine);
         }
 
         private async Task DotweenStep(Transform steppingTransform, Vector3 targetPosition, float time)
@@ -350,14 +357,5 @@ namespace foxRestaurant
             rightEye.sprite = rightEyeSprite;
             rightEyeMask.sprite = rightEyeSprite;
         }
-
-        /*
-         * things todo:
-         * нарисовать сценку, где Рыжий в ванной смотрит в телефончик, там мессенджер, перепска с Серым и в TMP написано (выходи на кухню)  
-         * придумать, как наколхозить объятия
-         * нарисовать расстроенного Рыжего (будет классно, если получится через движение ушей)
-         * нарисовать пачку деняк на столе
-         * нарисовать сценку с рукопожатием
-         */
     }
 }

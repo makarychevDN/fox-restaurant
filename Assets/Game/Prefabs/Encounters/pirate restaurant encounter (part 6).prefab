@@ -19255,6 +19255,18 @@ MonoBehaviour:
   foodPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
   successSound: {fileID: 19064541578919386}
   red: {fileID: 6420699931444699582}
+  line:
+    m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 39858674064318491
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!4 &8004838301147093046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3803039102237490344, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace foxRestaurant
 {
@@ -14,10 +15,12 @@ namespace foxRestaurant
         [SerializeField] private FoodItem foodPrefab;
         [SerializeField] private AudioSource successSound;
         [SerializeField] private Character red;
+        [SerializeField] private LocalizedString line;
         private List<ItemSlot> itemSlots;
 
         protected override void InitTyped(RestaurantEncounter encounter)
         {
+            Camera.main.transform.position = new Vector3(0, 0, -10);
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             encounter.Ticker.Pause();
             seatPlace.Init(encounter);
@@ -33,7 +36,7 @@ namespace foxRestaurant
             await Task.Delay(1000);
             successSound.Play();
             await Task.Delay(3000);
-            await red.Say("*вздох* <pause:1> Домой.");
+            await red.Say(line);
         }
 
         private Task<bool> WaitForCustomerToLeave(Customer customer)

@@ -46,24 +46,28 @@ namespace foxRestaurant
         private List<Customer> customersToFeed = new();
         private List<ItemSlot> itemSlots;
 
+        [SerializeField] List<LocalizedString> dialogueLines;
+        private int stringsCounter = 0;
+        private int Next => stringsCounter++;
+
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             await IntroSpeech();
             await SealTutorail(encounter);
-            await Waves(encounter);
+            //await Waves(encounter);
             await SealGirlGoesAway(encounter);
             await LameJoeAppears();
         }
 
         private async Task IntroSpeech()
         {
-            await red.Say("Я еще ему покажу.<pause:1> Всем им покажу.");
-            await red.Say("Открою ресторан,<pause:0.5> возьму всех на работу,<pause:0.5> а потом сделаю им короткие перерывы.");
-            await red.Say("А себе сделаю возмутительно длинный перерыв!");
-            await red.Say("Но я не захочу им пользоваться, таким классным будет мое заведение!");
-            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Наверное стоит сделать мой ресторан чуть менее классным.");
-            await red.Say("А то они сами не захотят пользоваться перерывами.");
+            await red.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]); 
+            await red.Say(dialogueLines[Next]);
         }
 
         private async Task SealTutorail(RestaurantEncounter encounter)
@@ -73,9 +77,9 @@ namespace foxRestaurant
             poofSound.Play();
 
             red.LookAt(sealGirl.transform);
-            await red.Say("Ого,<pause:0.75> снова она.");
-            await red.Say("К ней нужен особый подход,<pause:0.75> она меняет свой заказ на то, что едят другие.");
-            await red.Say("Бедняжке свойственно сомневаться.");
+            await red.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
             red.LookAt(null);
 
             sealGirl.gameObject.SetActive(false);
@@ -84,8 +88,6 @@ namespace foxRestaurant
             await FixWave(encounter, new List<ItemData>() { popsicleData, popsicleData, cherrySyrupData, iceCreamPlateData },
                 (seal, () => cherryIceCreamPlateData),
                 (kitty, () => popsicleData));
-
-            await red.Say("Так-то!");
         }
 
         private async Task Waves(RestaurantEncounter encounter)
@@ -130,24 +132,24 @@ namespace foxRestaurant
         {
             backgroundMusic.DOFade(0, 1);
             encounter.Ticker.Pause();
-            await red.Say("Так-то.<pause:0.75> Всем по мороженке!<pause:0.75> Даже не вспотел!");
+            await red.Say(dialogueLines[Next]);
 
             sealGirl.gameObject.SetActive(true);
             sealGirlAppearParticles.Play();
             poofSound.Play();
             red.LookAt(sealGirl.transform);
-            await sealGirl.Say("<volume:0>...");
-            await red.Say("Йарр,<pause:0.75> все хорошо, юнга?");
-            await sealGirl.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Я хотела сказать спасибо!<pause:0.5> Вы были очень терпеливы.");
-            await sealGirl.Say("Обычно взрослые ругаются, когда я много сомневаюсь в своем выборе.");
-            await red.Say("Йарр,<pause:0.5> не переживай, юнга,<pause:0.5> и приходи еще!");
-            await sealGirl.Say("Вы крутой!");
+            await sealGirl.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
+            await sealGirl.Say(dialogueLines[Next]);
+            await sealGirl.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
+            await sealGirl.Say(dialogueLines[Next]);
             sealGirl.gameObject.SetActive(false);
             sealGirlAppearParticles.Play();
             poofSound.Play();
             red.LookAt(null);
 
-            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Хм,<pause:0.75> а этот день<pause:0.75> не так уж и плох.");
+            await red.Say(dialogueLines[Next]);
             successSound.Play();
             await Task.Delay(3000);
         }
@@ -156,7 +158,7 @@ namespace foxRestaurant
         {
             lameJoe.gameObject.SetActive(true);
             red.LookAt(lameJoe.transform);
-            await lameJoe.Say("Эй,<pause:0.5> Рыжий,<pause:0.5> пойдем,<pause:0.5> надо обсудить кое-что.");
+            await lameJoe.Say(dialogueLines[Next]);
         }
 
         private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)

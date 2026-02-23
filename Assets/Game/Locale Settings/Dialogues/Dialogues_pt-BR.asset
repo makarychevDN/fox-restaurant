@@ -139,8 +139,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 105608289345536
-    m_Localized: "Oh, <pause:0.5>YEAH, <pause:0.5>do<pause: 0.5> N\xC3O<pause: 0.5>
-      hesite.<pause:1> Voc\xEA me ver\xE1 em breve."
+    m_Localized: "Ah, <pause:0.5> SIM, <pause:0.5> N\xC3O<pause: 0.5> hesite.<pause:1>
+      Voc\xEA me ver\xE1 em breve."
     m_Metadata:
       m_Items: []
   - m_Id: 105693555351552
@@ -279,8 +279,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124185
-    m_Localized: "Ela precisa de uma abordagem especial.,<pause:0.75> ela observa
-      o que os outros est\xE3o comendo e pede a mesma coisa."
+    m_Localized: "Ela precisa de uma abordagem especial. Ela observa o que os outros
+      est\xE3o comendo e pede a mesma coisa."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124186
@@ -544,7 +544,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318486
-    m_Localized: "<emote:shake><volume:1>Ei,<pause:0.5><emote:shake> jovens marinheiros,<pause:0.5><emote:shake>
+    m_Localized: "<emote:shake><volume:1>Ei,<pause:0.5>__jovens marinheiros,<pause:0.5><emote:shake>
       o Joe Perneta esteve escondido aqui o tempo todo!<pause:0.5><emote:shake> Entrem
       aqui,<pause:0.5><emote:shake> mostrem a ele o quanto voc\xEAs o amam!"
     m_Metadata:
@@ -745,211 +745,214 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512780
+    m_Localized: "Todo m\xEAs, tem mais e mais dinheiro no pote!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512781
     m_Localized: "E quando eu encher isso, vou abrir um restaurante onde servirei
       os melhores pratos da regi\xE3o!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512781
+  - m_Id: 39858674068512782
     m_Localized: "E os funcion\xE1rios ter\xE3o intervalos absurdamente longos!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512782
+  - m_Id: 39858674068512783
     m_Localized: "Mas trabalhar l\xE1 ser\xE1 t\xE3o incr\xEDvel que ningu\xE9m vai
       querer contrat\xE1-los!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512783
+  - m_Id: 39858674068512784
     m_Localized: "E ningu\xE9m jamais dir\xE1 que Red n\xE3o \xE9 um cozinheiro de
       verdade!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512784
+  - m_Id: 39858674068512785
     m_Localized: "Ningu\xE9m!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512785
+  - m_Id: 39858674068512786
     m_Localized: Oh, seu bolinho rabugento!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512786
+  - m_Id: 39858674068512787
     m_Localized: "N\xE3o estou dizendo que voc\xEA trabalha duro."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512787
-    m_Localized: "Na verdade, voc\xEA se envolveu tanto na culin\xE1ria que se esqueceu
-      de manter os olhos abertos."
-    m_Metadata:
-      m_Items: []
   - m_Id: 39858674068512788
-    m_Localized: "Vermelho,<pause:0.5> h\xE1 quanto tempo voc\xEA definiu essa meta?"
+    m_Localized: "\xC9 o oposto.<pause:0.5> Voc\xEA se envolveu tanto na culin\xE1ria
+      que se esqueceu de manter os olhos abertos."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512789
-    m_Localized: "H\xE1 um ano e meio."
+    m_Localized: "Vermelho,<pause:0.5> h\xE1 quanto tempo voc\xEA definiu essa meta?"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512790
-    m_Localized: "Voc\xEA viu o quanto os pre\xE7os subiram desde ent\xE3o?"
+    m_Localized: "H\xE1 um ano e meio."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512791
-    m_Localized: "Bem, os pre\xE7os sempre sobem um pouco."
+    m_Localized: "Voc\xEA viu o quanto os pre\xE7os subiram desde ent\xE3o?"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512792
+    m_Localized: "Bem, os pre\xE7os sempre sobem um pouco."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512793
     m_Localized: "Veja s\xF3 quanto custa hoje aquele equipamento que voc\xEA gostava
       naquela \xE9poca."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512793
+  - m_Id: 39858674068512794
     m_Localized: "Ah, qual \xE9, n\xE3o pode ser t\xE3o ruim assim."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512794
+  - m_Id: 39858674068512795
     m_Localized: "Tenho certeza de que voc\xEA seria capaz de mover montanhas com
       essa sua teimosia."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512795
+  - m_Id: 39858674068512796
     m_Localized: "Mas se voc\xEA continuar assim, vai se distanciar ainda mais do
       seu objetivo."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512796
+  - m_Id: 39858674068512797
     m_Localized: "As coisas est\xE3o ficando mais caras mais r\xE1pido do que voc\xEA
       est\xE1 ganhando."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512797
+  - m_Id: 39858674068512798
     m_Localized: "Ent\xE3o, o que eu devo fazer?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512798
+  - m_Id: 39858674068512799
     m_Localized: Tome uma atitude.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512799
+  - m_Id: 39858674068512800
     m_Localized: "Isso ainda n\xE3o \xE9 suficiente para abranger toda a sua vis\xE3o."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512800
+  - m_Id: 39858674068512801
     m_Localized: "Mas \xE9 um capital inicial razo\xE1vel para algo mais modesto."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512801
+  - m_Id: 39858674068512802
     m_Localized: Por exemplo,<pause:0.75> um pequeno restaurante em uma cidade menor.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512802
+  - m_Id: 39858674068512803
     m_Localized: "Eu j\xE1 identifiquei um local promissor.<pause:0.75> Nosso dinheiro
       cobriria o pagamento inicial."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512803
+  - m_Id: 39858674068512804
     m_Localized: "Entrada?<pause:0.75> Um empr\xE9stimo parece bastante<pause:0.5>
       arriscado."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512804
-    m_Localized: "Claro, mas voc\xEA sabe como funciona. Quem n\xE3o arrisca, n\xE3o
-      petisca."
-    m_Metadata:
-      m_Items: []
   - m_Id: 39858674068512805
-    m_Localized: Sabe de uma coisa?
+    m_Localized: "Claro, mas voc\xEA sabe como funciona. Sem risco, sem recompensa."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512806
-    m_Localized: "Voc\xEA tem raz\xE3o!"
+    m_Localized: Sabe de uma coisa?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512807
-    m_Localized: Que se dane a sorveteria!<pause:0.75> Que se danem todas elas!
+    m_Localized: "Voc\xEA tem raz\xE3o!"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512808
-    m_Localized: Se eu tiver que falar como um pirata por mais um dia, vou enlouquecer!
+    m_Localized: Que se dane a sorveteria!<pause:0.75> Que se danem todas elas!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512809
-    m_Localized: "Isso sim \xE9 esp\xEDrito de luta!"
+    m_Localized: Se eu tiver que falar como um pirata por mais um dia, vou enlouquecer!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512810
+    m_Localized: "Isso sim \xE9 esp\xEDrito de luta!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512811
     m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> E o que
       voc\xEA ganha com isso?<pause:0.75> Por que me ajudar?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512811
+  - m_Id: 39858674068512812
     m_Localized: "Bem, primeiro de tudo, porque me preocupo com meu irm\xE3ozinho."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512812
+  - m_Id: 39858674068512813
     m_Localized: Quem com certeza se meteria em encrenca sem mim?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512813
+  - m_Id: 39858674068512814
     m_Localized: E em segundo lugar, quero uma parte.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512814
+  - m_Id: 39858674072707072
     m_Localized: "N\xE3o acredito em voc\xEA!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707072
+  - m_Id: 39858674072707073
     m_Localized: "\xC9 poss\xEDvel praticamente ganhar dinheiro do nada!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707073
+  - m_Id: 39858674072707074
     m_Localized: "Por que algu\xE9m iria querer ter participa\xE7\xE3o em um restaurante
       qualquer?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707074
+  - m_Id: 39858674072707075
     m_Localized: "Ah, voc\xEA realmente achou que eu nunca ia crescer?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707075
+  - m_Id: 39858674072707076
     m_Localized: "Que eu n\xE3o gostaria de me estabelecer?<pause:0.75> Ter uma fonte
       de renda leg\xEDtima?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707076
+  - m_Id: 39858674072707077
     m_Localized: "Voc\xEA est\xE1 magoando meus sentimentos."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707077
+  - m_Id: 39858674072707078
     m_Localized: ...
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707078
+  - m_Id: 39858674072707079
     m_Localized: "O qu\xEA?<pause:0.75> Voc\xEA realmente acha que estou tentando
       te enganar?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707079
+  - m_Id: 39858674072707080
     m_Localized: Quantas vezes tentei te machucar?<pause:0.75> Te roubar?<pause:0.75>
       Te armar uma cilada?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707080
+  - m_Id: 39858674072707081
     m_Localized: Nem uma vez.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707081
+  - m_Id: 39858674072707082
     m_Localized: "Ent\xE3o, o que voc\xEA est\xE1 esperando?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707082
+  - m_Id: 39858674072707083
     m_Localized: Parceiros?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707083
+  - m_Id: 39858674072707084
     m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Muito bem,<pause:0.75>
       parceiros!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707084
+  - m_Id: 39890501168685056
     m_Localized: "E a incr\xEDvel aventura deles come\xE7ou!"
     m_Metadata:
       m_Items: []

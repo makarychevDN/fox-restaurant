@@ -55,19 +55,23 @@ namespace foxRestaurant
         private List<Customer> customersToFeed = new();
         private List<ItemSlot> itemSlots;
 
+        [SerializeField] List<LocalizedString> dialogueLines;
+        private int stringsCounter = 0;
+        private int Next => stringsCounter++;
+
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
             itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             capitan.OnEmote.AddListener(ShakeCameraOnce);
 
-            await CurtainsAppears();
-            await IntroSpeech();
-            await Task.Delay(1000);
-            await CartoonScreenAppearsAnimation();
-            await Waves(encounter);
-            await DialogueAfterWaves();
-            await Task.Delay(2000);
-            await CapitanAppears();
+            //await CurtainsAppears();
+            //await IntroSpeech();
+            //await Task.Delay(1000);
+            //await CartoonScreenAppearsAnimation();
+            //await Waves(encounter);
+            //await DialogueAfterWaves();
+            //await Task.Delay(2000);
+            //await CapitanAppears();
             await CrowdAppears();
         }
 
@@ -79,7 +83,7 @@ namespace foxRestaurant
 
         private async Task IntroSpeech()
         {
-            await red.Say("Хорошо,<pause:0.75> давай попробуем.<pause:1> 3,<pause:1> 2,<pause:1> 1.<pause:1> Поехали!");
+            await red.Say(dialogueLines[Next]);
 
             lameJoe.gameObject.SetActive(true);
             lameJoeAppearParticles.Play();
@@ -95,19 +99,19 @@ namespace foxRestaurant
                 await Task.Delay(200);
             }
 
-            await talkingKidsSetup[2].character.Say("О боже,<pause:0.4> это же Хромой Джо!");
-            await talkingKidsSetup[3].character.Say("Ура,<pause:0.4> Хромой Джо!<pause:0.4> Покатай меня!!!");
-            await talkingKidsSetup[1].character.Say("И меня!!!");
-            await lameJoe.Say("Йарр!<pause:0.75> Сегодня Хромой Джо себя не важно чувствует,<pause:0.4> так что шуметь мы сегодня не будем.");
-            await talkingKidsSetup[3].character.Say("Ну блииин!<pause:0.75> Не честно!");
-            await talkingKidsSetup[1].character.Say("Я думал мы повеселимся.");
-            await lameJoe.Say("Не переживай, юнга,<pause:0.75> нам не обязательно шуметь, чтобы веселиться!");
-            await lameJoe.Say("Например,<pause:0.75> мы можем посмотреть мультик!");
-            await talkingKidsSetup[2].character.Say("Мультик - это хорошо.");
-            await talkingKidsSetup[3].character.Say("Только, если интересный!");
-            await talkingKidsSetup[0].character.Say("Надеюсь,<pause:0.5> в нем будет морская звезда...");
-            await lameJoe.Say("Йарр,<pause:0.75> конечно, интересный!<pause:0.75> Но мы будем его смотреть в тишине.<pause:0.5> Договорились, юнги?");
-            await talkingKidsSetup[3].character.Say("Договорились!");
+            await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[3].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[1].character.Say(dialogueLines[Next]);
+            await lameJoe.Say(dialogueLines[Next]);
+            await talkingKidsSetup[3].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[1].character.Say(dialogueLines[Next]);
+            await lameJoe.Say(dialogueLines[Next]);
+            await lameJoe.Say(dialogueLines[Next]);
+            await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[3].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[0].character.Say(dialogueLines[Next]);
+            await lameJoe.Say(dialogueLines[Next]);
+            await talkingKidsSetup[3].character.Say(dialogueLines[Next]);
 
 
             foreach (var pack in talkingKidsSetup)
@@ -118,10 +122,10 @@ namespace foxRestaurant
                 await Task.Delay(200);
             }
 
-            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Сработало!<pause:0.75> Никакой толпы не набежало!");
-            await lameJoe.Say("Я же говорил!<pause:0.75> План-капкан!");
+            await red.Say(dialogueLines[Next]);
+            await lameJoe.Say(dialogueLines[Next]);
             red.LookAt(null);
-            await red.Say("Дело остается за малым.<pause:0.75> За работу!");
+            await red.Say(dialogueLines[Next]);
         }
 
         private async Task CartoonScreenAppearsAnimation()
@@ -185,12 +189,12 @@ namespace foxRestaurant
                 await Task.Delay(200);
             }
 
-            await red.Say("Фух,<pause:0.5> юнги,<pause:0.5> кому еще мороженое?");
-            await talkingKidsSetup[2].character.Say("<volume:0>...");
-            await lameJoe.Say("Кажется,<pause:0.5> ты переработал всю работу.");
-            await talkingKidsSetup[1].character.Say("Можно, пожалуйста, потише?");
-            await talkingKidsSetup[2].character.Say("<volume:1>Мы тут вообще-то смотрим.");
-            await red.Say("Ой,<pause:0.5> извините.");
+            await red.Say(dialogueLines[Next]);
+            await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
+            await lameJoe.Say(dialogueLines[Next]);
+            await talkingKidsSetup[1].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
+            await red.Say(dialogueLines[Next]);
         }
 
         private async Task CapitanAppears()
@@ -198,10 +202,10 @@ namespace foxRestaurant
             vhsArtifactsSound.Play();
             backgroundMusic.Stop();
             await BlinkGameObjectNTimes(capitanCallsCartoon, 21);
-            await talkingKidsSetup[2].character.Say("Ну, блииин!");
-            await talkingKidsSetup[1].character.Say("Эй,<pause:0.5> мы же не досмотрели!");
-            await capitan.Say("<volume:0.5>Йарр!<pause:0.5> Вы что здесь устроили, салаги?");
-            await capitan.Say("Я сказал выпускать Хромого Джо, не для того, чтобы вы здесь прохлаждались!");
+            await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
+            await talkingKidsSetup[1].character.Say(dialogueLines[Next]);
+            await capitan.Say(dialogueLines[Next]);
+            await capitan.Say(dialogueLines[Next]);
             curtainsSound.Play();
             await curtains.DOLocalMove(new Vector3(0, 22.5f), 1.5f).AsyncWaitForCompletion();
             await Task.Delay(1000);
@@ -209,10 +213,10 @@ namespace foxRestaurant
             await additionalSpeakers.DOLocalMove(new Vector3(0, 8.5f), 1.75f).AsyncWaitForCompletion();
             microphoneArtifactsSound.Play();
             await Task.Delay(2000);
-            await capitan.Say("<emote:shake><volume:1>Эй,<pause:0.5><emote:shake> юнги,<pause:0.5><emote:shake> здесь все это время прятался Хромой Джо!<pause:0.5><emote:shake> Быстрее сюда,<pause:0.5><emote:shake> покажите, как вы его любите!");
+            await capitan.Say(dialogueLines[Next]);
             additionalSpeakersMovingSound.Play();
             additionalSpeakers.DOLocalMove(new Vector3(0, 14.2f), 1.75f);
-            await capitan.Say("<volume:0.5>Вперед, салаги,<pause:0.75> добудьте мне все сокровища мира!<pause:0.75> Ахахахаах!");
+            await capitan.Say(dialogueLines[Next]);
             screen.DOLocalMove(new Vector3(0, 15.2f), 1.75f).SetEase(Ease.InExpo);
         }
 
@@ -221,17 +225,17 @@ namespace foxRestaurant
             earthQuakeSound.Play();
             await Task.Delay(1000);
             Tweener shakingCameraLoop = SetCameraShakingLoopAnimation(0.1f);
-            await kidsOnTheStreet[0].Say("Это Хромой Джо!");
-            UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0.25f);
-            await kidsOnTheStreet[1].Say("Бежим к нему скорее!");
-            UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0.5f);
-            await red.Say("Ой-ей.");
+            await kidsOnTheStreet[0].Say(dialogueLines[Next]);
+            UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.25f);
+            await kidsOnTheStreet[1].Say(dialogueLines[Next]);
+            UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.5f);
+            await red.Say(dialogueLines[Next]);
 
             int crowdPacksAmount = 9;
             int silhouettesCount = 0;
             for (int i = 0; i < crowdPacksAmount; i++)
             {
-                UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0.5f + i * 0.1f);
+                UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.5f + i * 0.1f);
                 crowdPacks[i].SetActive(true);
                 poofSound.Play();
 
@@ -244,7 +248,11 @@ namespace foxRestaurant
                 await Task.Delay(500);
             }
 
-            UpdateCameraShakingLoopAnimation(shakingCameraLoop, 0);
+            if (shakingCameraLoop != null)
+            {
+                shakingCameraLoop.Kill();
+                shakingCameraLoop = null;
+            }
         }
 
         private async Task BlinkGameObjectNTimes(GameObject go, int n = 5)
@@ -256,7 +264,7 @@ namespace foxRestaurant
             }
         }
 
-        private void UpdateCameraShakingLoopAnimation(Tweener shakingCameraLoop, float strength)
+        private void UpdateCameraShakingLoopAnimation(ref Tweener shakingCameraLoop, float strength)
         {
             shakingCameraLoop.Kill();
             shakingCameraLoop = SetCameraShakingLoopAnimation(strength);

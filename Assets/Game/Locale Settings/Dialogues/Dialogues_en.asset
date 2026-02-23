@@ -276,7 +276,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124185
-    m_Localized: She needs a special approach.,<pause:0.75> she looks at what others
+    m_Localized: She needs a special approach.<pause:0.75> She looks at what others
       are eating and orders the same thing.
     m_Metadata:
       m_Items: []
@@ -740,208 +740,212 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512780
+    m_Localized: "Every month, there\u2019s more and more money in the jar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512781
     m_Localized: "And when I fill this up, I\u2019ll open a restaurant where I serve
       the best dishes around!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512781
+  - m_Id: 39858674068512782
     m_Localized: And the staff will get outrageously long breaks!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512782
+  - m_Id: 39858674068512783
     m_Localized: But working there will be so amazing no one will even want to take
       them!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512783
+  - m_Id: 39858674068512784
     m_Localized: "And no one will ever say Red isn\u2019t a real cook!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512784
+  - m_Id: 39858674068512785
     m_Localized: No one!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512785
+  - m_Id: 39858674068512786
     m_Localized: Oh, you grumpy little cupcake
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512786
+  - m_Id: 39858674068512787
     m_Localized: "I\u2019m not arguing that you work hard."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512787
-    m_Localized: "If anything,<pause:0.5> you\u2019ve buried yourself in cooking
+  - m_Id: 39858674068512788
+    m_Localized: "It's opposite.<pause:0.5> You\u2019ve buried yourself in cooking
       so deep you forgot to keep your eyes open."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512788
+  - m_Id: 39858674068512789
     m_Localized: Red,<pause:0.5> how long ago did you set this goal?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512789
+  - m_Id: 39858674068512790
     m_Localized: A year and a half ago.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512790
+  - m_Id: 39858674068512791
     m_Localized: Have you seen how much prices have gone up since then?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512791
+  - m_Id: 39858674068512792
     m_Localized: Well, prices always go up a little.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512792
+  - m_Id: 39858674068512793
     m_Localized: Just look at how much that equipment you liked back then costs now.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512793
+  - m_Id: 39858674068512794
     m_Localized: "Oh come on,<pause:0.5> it can\u2019t be that bad."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512794
+  - m_Id: 39858674068512795
     m_Localized: "I\u2019m sure you could move mountains with that stubbornness of
       yours."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512795
+  - m_Id: 39858674068512796
     m_Localized: "But if you keep going like this, you\u2019ll drift even further
       from your goal."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512796
+  - m_Id: 39858674068512797
     m_Localized: "Things are getting more expensive faster than you\u2019re earning."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512797
+  - m_Id: 39858674068512798
     m_Localized: So what am I supposed to do?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512798
+  - m_Id: 39858674068512799
     m_Localized: Take action.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512799
+  - m_Id: 39858674068512800
     m_Localized: "This still isn\u2019t enough to cover your whole vision."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512800
+  - m_Id: 39858674068512801
     m_Localized: "But it\u2019s decent starting capital for something more modest."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512801
+  - m_Id: 39858674068512802
     m_Localized: For example,<pause:0.75> a small restaurant in a smaller town.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512802
+  - m_Id: 39858674068512803
     m_Localized: "I\u2019ve already scoped out a promising spot.<pause:0.75> Our
       money would cover the down payment."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512803
+  - m_Id: 39858674068512804
     m_Localized: Down payment?<pause:0.75> A loan sounds pretty<pause:0.5> risky.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512804
-    m_Localized: Of course,<pause:0.75> but you know how it works.<pause:0.75> Nothing
-      ventured, nothing gained.
-    m_Metadata:
-      m_Items: []
   - m_Id: 39858674068512805
-    m_Localized: Actually, you know what?
+    m_Localized: Of course,<pause:0.75> but you know how it works.<pause:0.75> No
+      risk, no reward.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512806
-    m_Localized: "You\u2019re right!"
+    m_Localized: Actually, you know what?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512807
-    m_Localized: Heck the ice cream restaurant!<pause:0.75> Heck all of them!
+    m_Localized: "You\u2019re right!"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512808
+    m_Localized: Heck the ice cream restaurant!<pause:0.75> Heck all of them!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512809
     m_Localized: "If I have to talk like a pirate for one more day, I\u2019ll lose
       my mind!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512809
+  - m_Id: 39858674068512810
     m_Localized: "Now that\u2019s the spirit!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512810
+  - m_Id: 39858674068512811
     m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> And what\u2019s
       in it for you?<pause:0.75> Why help me?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512811
+  - m_Id: 39858674068512812
     m_Localized: Well,<pause:0.75> first of all,<pause:0.75> because I worry about
       my little brother.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512812
+  - m_Id: 39858674068512813
     m_Localized: Who would absolutely get himself into trouble without me.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512813
+  - m_Id: 39858674068512814
     m_Localized: And second, I want a share.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512814
+  - m_Id: 39858674072707072
     m_Localized: "I don\u2019t believe you!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707072
+  - m_Id: 39858674072707073
     m_Localized: You can practically make money out of thin air!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707073
+  - m_Id: 39858674072707074
     m_Localized: Why would you want a stake in some random restaurant?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707074
+  - m_Id: 39858674072707075
     m_Localized: "Oh, did you really think I\u2019d never grow up?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707075
+  - m_Id: 39858674072707076
     m_Localized: "That I wouldn\u2019t want to settle down?<pause:0.75> Have a legitimate
       source of income?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707076
+  - m_Id: 39858674072707077
     m_Localized: "You\u2019re hurting my feelings."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707077
+  - m_Id: 39858674072707078
     m_Localized: ...
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707078
+  - m_Id: 39858674072707079
     m_Localized: "What?<pause:0.75> Do you really think I\u2019m trying to trick
       you?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707079
+  - m_Id: 39858674072707080
     m_Localized: How many times have I ever tried to hurt you?<pause:0.75> Rob you?<pause:0.75>
       Set you up?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707080
+  - m_Id: 39858674072707081
     m_Localized: Not once.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707081
+  - m_Id: 39858674072707082
     m_Localized: Then what are you waiting for?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707082
+  - m_Id: 39858674072707083
     m_Localized: Partners?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707083
+  - m_Id: 39858674072707084
     m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Alright,<pause:0.75>
       partners!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707084
+  - m_Id: 39890501168685056
     m_Localized: And their incredible adventure has begun!
     m_Metadata:
       m_Items: []

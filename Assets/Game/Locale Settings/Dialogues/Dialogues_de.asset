@@ -28,8 +28,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 102851926974464
-    m_Localized: "Gro\xDFer Junge, was?<pause:0.75> Je gr\xF6\xDFer sie sind, desto
-      tiefer fallen sie."
+    m_Localized: "Ein gro\xDFer Junge, was?<pause:0.75> Je gr\xF6\xDFer sie sind,
+      desto tiefer fallen sie."
     m_Metadata:
       m_Items: []
   - m_Id: 102931308371968
@@ -53,8 +53,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 103795813146624
-    m_Localized: "Oh, <pause:0.5> wow.<pause:0.5> Die erste komplexe Bestellung f\xFCr
-      heute."
+    m_Localized: "Oh, wow. Die erste komplexe Bestellung f\xFCr heute."
     m_Metadata:
       m_Items: []
   - m_Id: 103882635239424
@@ -88,7 +87,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 104452712456192
-    m_Localized: Oh, du bist es wieder, Red, Koch.
+    m_Localized: Oh, du bist es wieder, Roter Koch.
     m_Metadata:
       m_Items: []
   - m_Id: 104546270601216
@@ -289,8 +288,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124187
-    m_Localized: "So, da haben wir's.<pause:0.75> Eis f\xFCr alle!<pause:0.75> Und
-      ich bin nicht mal ins Schwitzen gekommen!"
+    m_Localized: "So, jetzt geht's los.<pause:0.75> Eis f\xFCr alle!<pause:0.75>
+      Und ich bin nicht mal ins Schwitzen gekommen!"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124188
@@ -744,212 +743,216 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512780
+    m_Localized: Jeden Monat landet mehr und mehr Geld im Glas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512781
     m_Localized: "Und wenn ich das voll habe, er\xF6ffne ich ein Restaurant, in dem
       ich die besten Gerichte der Gegend serviere!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512781
+  - m_Id: 39858674068512782
     m_Localized: Und die Angestellten bekommen unglaublich lange Pausen!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512782
+  - m_Id: 39858674068512783
     m_Localized: "Aber die Arbeit dort wird so fantastisch sein, dass niemand sie
       \xFCberhaupt einstellen will!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512783
+  - m_Id: 39858674068512784
     m_Localized: Und niemand wird jemals behaupten, Red sei kein richtiger Koch!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512784
+  - m_Id: 39858674068512785
     m_Localized: Niemand!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512785
+  - m_Id: 39858674068512786
     m_Localized: "Oh, du m\xFCrrischer kleiner Cupcake"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512786
+  - m_Id: 39858674068512787
     m_Localized: Ich bestreite nicht, dass du hart arbeitest.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512787
-    m_Localized: "Wenn \xFCberhaupt, dann hast du dich so tief ins Kochen vertieft,
-      dass du vergessen hast, die Augen offen zu halten."
+  - m_Id: 39858674068512788
+    m_Localized: Es ist genau umgekehrt. Du hast dich so tief ins Kochen vertieft,
+      dass du vergessen hast, die Augen offen zu halten.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512788
+  - m_Id: 39858674068512789
     m_Localized: Red,<pause:0.5> Wie lange ist es her, dass du dir dieses Ziel gesetzt
       hast?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512789
+  - m_Id: 39858674068512790
     m_Localized: Vor anderthalb Jahren.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512790
+  - m_Id: 39858674068512791
     m_Localized: Haben Sie gesehen, wie stark die Preise seitdem gestiegen sind?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512791
+  - m_Id: 39858674068512792
     m_Localized: Nun ja, die Preise steigen immer ein bisschen.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512792
+  - m_Id: 39858674068512793
     m_Localized: "Schau dir nur an, wie viel die Ger\xE4te, die du damals mochtest,
       heute kosten."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512793
+  - m_Id: 39858674068512794
     m_Localized: Ach komm schon, so schlimm kann es doch nicht sein.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512794
+  - m_Id: 39858674068512795
     m_Localized: "Mit deiner Sturheit k\xF6nntest du bestimmt Berge versetzen."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512795
+  - m_Id: 39858674068512796
     m_Localized: Wenn du aber so weitermachst, entfernst du dich immer weiter von
       deinem Ziel.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512796
+  - m_Id: 39858674068512797
     m_Localized: Die Kosten steigen schneller, als du verdienst.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512797
+  - m_Id: 39858674068512798
     m_Localized: Was soll ich denn nun tun?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512798
+  - m_Id: 39858674068512799
     m_Localized: Handeln Sie.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512799
+  - m_Id: 39858674068512800
     m_Localized: Das reicht noch nicht aus, um Ihre gesamte Vision abzudecken.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512800
+  - m_Id: 39858674068512801
     m_Localized: "Aber es ist ein ordentliches Startkapital f\xFCr etwas Bescheideneres."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512801
+  - m_Id: 39858674068512802
     m_Localized: 'Zum Beispiel: <pause:0.75> ein kleines Restaurant in einer kleineren
       Stadt.'
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512802
+  - m_Id: 39858674068512803
     m_Localized: "Ich habe bereits einen vielversprechenden Platz ausfindig gemacht.
       Unser Geld w\xFCrde die Anzahlung decken."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512803
+  - m_Id: 39858674068512804
     m_Localized: Anzahlung?<pause:0.75> Ein Kredit klingt ziemlich<pause:0.5> riskant.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512804
-    m_Localized: "Nat\xFCrlich, aber du wei\xDFt ja, wie das l\xE4uft. Wer nicht
-      wagt, der nicht gewinnt."
-    m_Metadata:
-      m_Items: []
   - m_Id: 39858674068512805
-    m_Localized: "Wei\xDFt du was?"
+    m_Localized: "Nat\xFCrlich, aber du wei\xDFt ja, wie das l\xE4uft. Ohne Risiko
+      kein Gewinn."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512806
-    m_Localized: Sie haben Recht!
+    m_Localized: "Wei\xDFt du was?"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512807
+    m_Localized: Sie haben Recht!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512808
     m_Localized: "Verdammt nochmal, das Eiscaf\xE9!<pause:0.75> Verdammt nochmal,
       alle!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512808
+  - m_Id: 39858674068512809
     m_Localized: Wenn ich noch einen Tag lang wie ein Pirat reden muss, drehe ich
       durch!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512809
+  - m_Id: 39858674068512810
     m_Localized: Das ist die richtige Einstellung!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512810
+  - m_Id: 39858674068512811
     m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Und was
       springt f\xFCr dich dabei raus?<pause:0.75> Warum solltest du mir helfen?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512811
+  - m_Id: 39858674068512812
     m_Localized: Nun ja, zuallererst, weil ich mir Sorgen um meinen kleinen Bruder
       mache.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512812
+  - m_Id: 39858674068512813
     m_Localized: "Der w\xFCrde sich ohne mich ganz sicher in Schwierigkeiten bringen."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512813
+  - m_Id: 39858674068512814
     m_Localized: "Und zweitens m\xF6chte ich einen Anteil."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512814
+  - m_Id: 39858674072707072
     m_Localized: Ich glaube dir nicht!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707072
+  - m_Id: 39858674072707073
     m_Localized: "Man kann praktisch aus dem Nichts Geld sch\xF6pfen!"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707073
+  - m_Id: 39858674072707074
     m_Localized: Warum sollte man Anteile an irgendeinem beliebigen Restaurant erwerben
       wollen?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707074
+  - m_Id: 39858674072707075
     m_Localized: "Oh, hast du etwa wirklich geglaubt, ich w\xFCrde nie erwachsen
       werden?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707075
+  - m_Id: 39858674072707076
     m_Localized: "Dass ich mich nicht niederlassen m\xF6chte?<pause:0.75> Habe ich
       eine legitime Einkommensquelle?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707076
+  - m_Id: 39858674072707077
     m_Localized: "Du verletzst meine Gef\xFChle."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707077
+  - m_Id: 39858674072707078
     m_Localized: ...
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707078
+  - m_Id: 39858674072707079
     m_Localized: Was?<pause:0.75> Glaubst du wirklich, ich versuche, dich hereinzulegen?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707079
+  - m_Id: 39858674072707080
     m_Localized: Wie oft habe ich jemals versucht, dich zu verletzen?<pause:0.75>
       Dich auszurauben?<pause:0.75> Dich in eine Falle zu locken?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707080
+  - m_Id: 39858674072707081
     m_Localized: Nicht ein einziges Mal.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707081
+  - m_Id: 39858674072707082
     m_Localized: Worauf wartest du dann noch?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707082
+  - m_Id: 39858674072707083
     m_Localized: Partner?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707083
+  - m_Id: 39858674072707084
     m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Okay,<pause:0.75>
       Partner!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707084
+  - m_Id: 39890501168685056
     m_Localized: Und ihr unglaubliches Abenteuer hat begonnen!
     m_Metadata:
       m_Items: []

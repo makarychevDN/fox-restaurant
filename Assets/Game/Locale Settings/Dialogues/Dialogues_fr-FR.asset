@@ -373,7 +373,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39858674060124205
     m_Localized: "Je ne suis pas tout \xE0 fait s\xFBr de ce que cela signifie en
-      clair, mais je suis certain que ce n'est rien de bon."
+      termes simples, mais je suis certain que ce n'est rien de bon."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124206
@@ -747,8 +747,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512778
-    m_Localized: "Vous voyez ?<pause:0.5> J'en suis d\xE9j\xE0 \xE0 la moiti\xE9
-      !"
+    m_Localized: "Tu vois ?<pause:0.5> J'y suis d\xE9j\xE0 \xE0 mi-chemin !"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512779
@@ -757,215 +756,219 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512780
+    m_Localized: Chaque mois, le pot se remplit de plus en plus !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512781
     m_Localized: "Et quand j'aurai rempli cette caisse, j'ouvrirai un restaurant
       o\xF9 je servirai les meilleurs plats du coin !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512781
+  - m_Id: 39858674068512782
     m_Localized: "Et le personnel b\xE9n\xE9ficiera de pauses excessivement longues
       !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512782
+  - m_Id: 39858674068512783
     m_Localized: "Mais travailler l\xE0-bas sera tellement g\xE9nial que personne
       ne voudra m\xEAme les prendre !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512783
+  - m_Id: 39858674068512784
     m_Localized: "Et personne ne dira jamais que Red n'est pas une vraie cuisini\xE8re
       !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512784
+  - m_Id: 39858674068512785
     m_Localized: Personne!
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512785
+  - m_Id: 39858674068512786
     m_Localized: "Oh, petit g\xE2teau grognon"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512786
+  - m_Id: 39858674068512787
     m_Localized: Je ne conteste pas que vous travailliez dur.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512787
-    m_Localized: "Au contraire, vous vous \xEAtes tellement plong\xE9 dans la cuisine
-      que vous en avez oubli\xE9 de garder les yeux ouverts."
+  - m_Id: 39858674068512788
+    m_Localized: "C'est tout le contraire.<pause:0.5> Vous vous \xEAtes tellement
+      plong\xE9 dans la cuisine que vous avez oubli\xE9 de garder les yeux ouverts."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512788
+  - m_Id: 39858674068512789
     m_Localized: "Rouge,<pause:0.5>, il y a combien de temps avez-vous fix\xE9 cet
       objectif\_?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512789
+  - m_Id: 39858674068512790
     m_Localized: Il y a un an et demi.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512790
+  - m_Id: 39858674068512791
     m_Localized: "Avez-vous constat\xE9 \xE0 quel point les prix ont augment\xE9
       depuis ?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512791
+  - m_Id: 39858674068512792
     m_Localized: Eh bien, les prix augmentent toujours un peu.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512792
+  - m_Id: 39858674068512793
     m_Localized: "Regarde combien co\xFBte maintenant le mat\xE9riel que tu aimais
       bien \xE0 l'\xE9poque."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512793
+  - m_Id: 39858674068512794
     m_Localized: "Allez, <pause:0.5>, \xE7a ne peut pas \xEAtre si terrible."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512794
+  - m_Id: 39858674068512795
     m_Localized: "Je suis s\xFBre qu'avec votre ent\xEAtement, vous pourriez d\xE9placer
       des montagnes."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512795
+  - m_Id: 39858674068512796
     m_Localized: "Mais si vous continuez comme \xE7a, vous vous \xE9loignerez encore
       plus de votre objectif."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512796
+  - m_Id: 39858674068512797
     m_Localized: "Les choses co\xFBtent plus cher que vous ne gagnez."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512797
+  - m_Id: 39858674068512798
     m_Localized: "Alors, que suis-je cens\xE9 faire ?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512798
+  - m_Id: 39858674068512799
     m_Localized: Agissez.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512799
+  - m_Id: 39858674068512800
     m_Localized: "Cela ne suffit toujours pas \xE0 couvrir l'ensemble de votre vision."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512800
+  - m_Id: 39858674068512801
     m_Localized: "Mais c'est un capital de d\xE9part correct pour quelque chose de
       plus modeste."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512801
+  - m_Id: 39858674068512802
     m_Localized: Par exemple,<pause:0.75> un petit restaurant dans une petite ville.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512802
+  - m_Id: 39858674068512803
     m_Localized: "J\u2019ai d\xE9j\xE0 rep\xE9r\xE9 un endroit prometteur.<pause:0.75>
       Notre argent couvrirait l\u2019acompte."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512803
+  - m_Id: 39858674068512804
     m_Localized: "Acompte\_?<pause:0.75> Un pr\xEAt semble assez<pause:0.5> risqu\xE9."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512804
-    m_Localized: "Bien s\xFBr,<pause:0.75> mais vous savez comment \xE7a marche.<pause:0.75>
-      Qui ne risque rien n'a rien."
-    m_Metadata:
-      m_Items: []
   - m_Id: 39858674068512805
-    m_Localized: En fait, vous savez quoi ?
+    m_Localized: "Bien s\xFBr,<pause:0.75> mais vous savez comment \xE7a marche.<pause:0.75>
+      Pas de risque, pas de r\xE9compense."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512806
-    m_Localized: Tu as raison!
+    m_Localized: En fait, vous savez quoi ?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512807
-    m_Localized: Au diable le restaurant de glaces !<pause:0.75> Au diable tous !
+    m_Localized: Tu as raison!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512808
+    m_Localized: Au diable le restaurant de glaces !<pause:0.75> Au diable tous !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39858674068512809
     m_Localized: Si je dois parler comme un pirate un seul jour de plus, je vais
       devenir fou !
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512809
+  - m_Id: 39858674068512810
     m_Localized: "Voil\xE0 l'esprit !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512810
+  - m_Id: 39858674068512811
     m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Et qu'est-ce
       que vous y gagnez\_?<pause:0.75> Pourquoi m'aider\_?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512811
+  - m_Id: 39858674068512812
     m_Localized: "Eh bien, tout d'abord, parce que je m'inqui\xE8te pour mon petit
       fr\xE8re."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512812
+  - m_Id: 39858674068512813
     m_Localized: "Qui se mettrait forc\xE9ment dans le p\xE9trin sans moi."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512813
+  - m_Id: 39858674068512814
     m_Localized: "Et deuxi\xE8mement, je veux une part."
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674068512814
+  - m_Id: 39858674072707072
     m_Localized: Je ne te crois pas !
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707072
+  - m_Id: 39858674072707073
     m_Localized: "On peut pratiquement gagner de l'argent \xE0 partir de rien !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707073
+  - m_Id: 39858674072707074
     m_Localized: Pourquoi voudriez-vous avoir des parts dans un restaurant quelconque
       ?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707074
+  - m_Id: 39858674072707075
     m_Localized: Ah bon, tu croyais vraiment que je ne grandirais jamais ?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707075
+  - m_Id: 39858674072707076
     m_Localized: "Que je ne voudrais pas me poser ?<pause:0.75> Avoir une source
       de revenus l\xE9gitime ?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707076
+  - m_Id: 39858674072707077
     m_Localized: Tu me blesses.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707077
+  - m_Id: 39858674072707078
     m_Localized: ...
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707078
+  - m_Id: 39858674072707079
     m_Localized: "Quoi\_?<pause:0.75> Vous pensez vraiment que j\u2019essaie de vous
       pi\xE9ger\_?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707079
+  - m_Id: 39858674072707080
     m_Localized: "Combien de fois ai-je essay\xE9 de te faire du mal ?<pause:0.75>
       T'ai vol\xE9 ?<pause:0.75> T'ai pi\xE9g\xE9 ?"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707080
+  - m_Id: 39858674072707081
     m_Localized: Pas une seule fois.
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707081
+  - m_Id: 39858674072707082
     m_Localized: Alors qu'attendez-vous ?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707082
+  - m_Id: 39858674072707083
     m_Localized: Partenaires?
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707083
+  - m_Id: 39858674072707084
     m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Tr\xE8s
       bien,<pause:0.75> partenaires !"
     m_Metadata:
       m_Items: []
-  - m_Id: 39858674072707084
+  - m_Id: 39890501168685056
     m_Localized: "Et leur incroyable aventure a commenc\xE9 !"
     m_Metadata:
       m_Items: []
