@@ -256,9 +256,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124179
-    m_Localized: "J\u2019ouvrirai mon propre restaurant,<pause:0.5> j\u2019embaucherai
-      jusqu\u2019au dernier d\u2019entre eux,<pause:0.5> et je leur donnerai ensuite
-      les pauses les plus courtes imaginables."
+    m_Localized: J'ouvrirai mon propre restaurant,<pause:0.5> j'embaucherai jusqu'au
+      dernier d'entre eux,<pause:0.5> et je leur donnerai ensuite les pauses les
+      plus courtes imaginables.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124180
@@ -325,7 +325,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 39858674060124194
     m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Hm,<pause:0.75>
-      peut-\xEAtre que cette journ\xE9e<pause:0.75> n\u2019est pas si mauvaise apr\xE8s
+      peut-\xEAtre que cette journ\xE9e<pause:0.75> n'est pas si mauvaise apr\xE8s
       tout."
     m_Metadata:
       m_Items: []
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124211
-    m_Localized: "Je sais.<pause:0.75> C\u2019est pourquoi je suis venu en discuter."
+    m_Localized: Je sais.<pause:0.75> C'est pourquoi je suis venu en discuter.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124212
@@ -417,8 +417,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124215
-    m_Localized: "Cela signifie que je vais devoir m\u2019occuper du menu du soir
-      avec les cocktails.<pause:0.75> Ce ne sera pas facile."
+    m_Localized: Cela signifie que je vais devoir m'occuper du menu du soir avec
+      les cocktails.<pause:0.75> Ce ne sera pas facile.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124216
@@ -695,8 +695,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318519
-    m_Localized: "Mais \xEAtre cuisinier n\u2019est pas un passe-temps, c\u2019est
-      une profession."
+    m_Localized: "Mais \xEAtre cuisinier n'est pas un passe-temps, c'est une profession."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318520
@@ -859,8 +858,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512803
-    m_Localized: "J\u2019ai d\xE9j\xE0 rep\xE9r\xE9 un endroit prometteur.<pause:0.75>
-      Notre argent couvrirait l\u2019acompte."
+    m_Localized: "J'ai d\xE9j\xE0 rep\xE9r\xE9 un endroit prometteur.<pause:0.75>
+      Notre argent couvrirait l'acompte."
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512804
@@ -942,8 +941,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707079
-    m_Localized: "Quoi\_?<pause:0.75> Vous pensez vraiment que j\u2019essaie de vous
-      pi\xE9ger\_?"
+    m_Localized: "Quoi\_?<pause:0.75> Vous pensez vraiment que j'essaie de vous pi\xE9ger\_?"
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707080

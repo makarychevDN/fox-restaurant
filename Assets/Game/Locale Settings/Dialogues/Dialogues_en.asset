@@ -171,21 +171,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124161
-    m_Localized: "I\u2019ve been working here for over a year."
+    m_Localized: I've been working here for over a year.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124162
-    m_Localized: "Yarr! <pause:0.75> I couldn\u2019t make head nor tail of that!<pause:0.75>
-      You sound like a landlubber!"
+    m_Localized: Yarr! <pause:0.75> I couldn't make head nor tail of that!<pause:0.75>
+      You sound like a landlubber!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124163
-    m_Localized: "I don't want to talk like that when I'm not at the register.<pause:0.75>
-      It\u2019s<pause:0.5> ridiculous."
+    m_Localized: I don't want to talk like that when I'm not at the register.<pause:0.75>
+      It's<pause:0.5> ridiculous.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124164
-    m_Localized: "We\u2019re not pirates in real life."
+    m_Localized: We're not pirates in real life.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124165
@@ -197,13 +197,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124167
-    m_Localized: "Yarr!<pause:0.75> Captain,<pause:0.75> I\u2019ve been on this voyage
-      for over a year!"
+    m_Localized: Yarr!<pause:0.75> Captain,<pause:0.75> I've been on this voyage
+      for over a year!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124168
-    m_Localized: "<volume:1>Yarr!<pause:0.75> That\u2019s more like it!<pause:0.75>
-      Keep that up and the treasure won\u2019t be long in coming!"
+    m_Localized: <volume:1>Yarr!<pause:0.75> That's more like it!<pause:0.75> Keep
+      that up and the treasure won't be long in coming!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124169
@@ -216,16 +216,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124171
-    m_Localized: "I don\u2019t know what happened to you on shore."
+    m_Localized: I don't know what happened to you on shore.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124172
-    m_Localized: "But if you keep walking around looking that grumpy, you\u2019ll
-      scare off all my customers!<pause:0.75> Yarr!"
+    m_Localized: But if you keep walking around looking that grumpy, you'll scare
+      off all my customers!<pause:0.75> Yarr!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124173
-    m_Localized: "It\u2019s just..."
+    m_Localized: It's just...
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124174
@@ -245,21 +245,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124178
-    m_Localized: "I\u2019ll show him.<pause:1> I\u2019ll show all of them."
+    m_Localized: I'll show him.<pause:1> I'll show all of them.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124179
-    m_Localized: "I\u2019ll open my own restaurant,<pause:0.5> hire every last one
-      of them,<pause:0.5> and then give them the shortest breaks imaginable."
+    m_Localized: I'll open my own restaurant,<pause:0.5> hire every last one of them,<pause:0.5>
+      and then give them the shortest breaks imaginable.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124180
-    m_Localized: "And I\u2019ll give myself an outrageously long break!"
+    m_Localized: And I'll give myself an outrageously long break!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124181
-    m_Localized: "But I won\u2019t even want to use it, that\u2019s how amazing my
-      place will be!"
+    m_Localized: But I won't even want to use it, that's how amazing my place will
+      be!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124182
@@ -268,11 +268,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124183
-    m_Localized: "Otherwise they won\u2019t want to take their breaks at all."
+    m_Localized: Otherwise they won't want to take their breaks at all.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124184
-    m_Localized: "Oh,<pause:0.75> it\u2019s her again."
+    m_Localized: Oh,<pause:0.75> it's her again.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124185
@@ -285,8 +285,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124187
-    m_Localized: "There we go.<pause:0.75> Ice cream for everyone!<pause:0.75> And
-      I didn\u2019t even break a sweat!"
+    m_Localized: There we go.<pause:0.75> Ice cream for everyone!<pause:0.75> And
+      I didn't even break a sweat!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124188
@@ -307,17 +307,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124192
-    m_Localized: "Yarr,<pause:0.5> don\u2019t you worry, young sailor,<pause:0.5>
-      and come back anytime!"
+    m_Localized: Yarr,<pause:0.5> don't you worry, young sailor,<pause:0.5> and come
+      back anytime!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124193
-    m_Localized: "You\u2019re awesome!"
+    m_Localized: You're awesome!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124194
-    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Hm,<pause:0.75>
-      maybe this day<pause:0.75> isn\u2019t so bad after all."
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Hm,<pause:0.75>
+      maybe this day<pause:0.75> isn't so bad after all.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124195
@@ -341,7 +341,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124200
-    m_Localized: "Yeah,<pause:0.75> that\u2019s better."
+    m_Localized: Yeah,<pause:0.75> that's better.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124201
@@ -358,13 +358,13 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124204
-    m_Localized: "The Captain said he\u2019d have me fed to the fish<pause:0.5> if
-      I don\u2019t do it."
+    m_Localized: The Captain said he'd have me fed to the fish<pause:0.5> if I don't
+      do it.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124205
-    m_Localized: "I\u2019m not entirely sure what that means in plain English,<pause:0.5>
-      but I\u2019m certain it\u2019s nothing good."
+    m_Localized: I'm not entirely sure what that means in plain English,<pause:0.5>
+      but I'm certain it's nothing good.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124206
@@ -372,11 +372,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124207
-    m_Localized: "They\u2019ll tear this place apart if they see you in the costume!"
+    m_Localized: They'll tear this place apart if they see you in the costume!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124208
-    m_Localized: "I won\u2019t be able to handle that many customers!"
+    m_Localized: I won't be able to handle that many customers!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124209
@@ -384,12 +384,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124210
-    m_Localized: "And I\u2019m on my own today!<pause:0.75> Remember what happened
-      last time!"
+    m_Localized: And I'm on my own today!<pause:0.75> Remember what happened last
+      time!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124211
-    m_Localized: "I know.<pause:0.75> That\u2019s why I came to talk it through."
+    m_Localized: I know.<pause:0.75> That's why I came to talk it through.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124212
@@ -397,9 +397,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124213
-    m_Localized: "Yes,<pause:0.5> movie night.<pause:0.5> You draw the curtains,<pause:0.5>
-      turn on the projector,<pause:0.5> and I\u2019ll make sure everyone keeps it
-      down."
+    m_Localized: Yes,<pause:0.5> movie night.<pause:0.5> You draw the curtains,<pause:0.5>
+      turn on the projector,<pause:0.5> and I'll make sure everyone keeps it down.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124214
@@ -407,8 +406,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124215
-    m_Localized: "That means I\u2019ll have to take on the evening menu with the
-      cocktails.<pause:0.75> That won\u2019t be easy."
+    m_Localized: That means I'll have to take on the evening menu with the cocktails.<pause:0.75>
+      That won't be easy.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124216
@@ -417,9 +416,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124217
-    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Yeah,<pause:0.5>
-      you\u2019re right.<pause:0.75> You\u2019re a genius, Stan.<pause:0.75> Let\u2019s
-      do it."
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Yeah,<pause:0.5>
+      you're right.<pause:0.75> You're a genius, Stan.<pause:0.75> Let's do it.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124218
@@ -427,12 +425,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124219
-    m_Localized: "Alright,<pause:0.75> let\u2019s try this.<pause:1> 3,<pause:1>
-      2<pause:1> 1.<pause:1> Go!"
+    m_Localized: Alright,<pause:0.75> let's try this.<pause:1> 3,<pause:1> 2<pause:1>
+      1.<pause:1> Go!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124220
-    m_Localized: "Oh my gosh,<pause:0.4> it\u2019s Peg-Leg Joe!"
+    m_Localized: Oh my gosh,<pause:0.4> it's Peg-Leg Joe!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124221
@@ -444,12 +442,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674060124223
-    m_Localized: "Yarr!<pause:0.75> Peg-Leg Joe isn\u2019t feeling his best today,<pause:0.4>
-      so we\u2019re going to keep it quiet."
+    m_Localized: Yarr!<pause:0.75> Peg-Leg Joe isn't feeling his best today,<pause:0.4>
+      so we're going to keep it quiet.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318464
-    m_Localized: "Aww,<pause:0.75> that\u2019s not fair!"
+    m_Localized: Aww,<pause:0.75> that's not fair!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318465
@@ -457,8 +455,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318466
-    m_Localized: "Don\u2019t worry, young sailor,<pause:0.75> we don\u2019t have
-      to be loud to have fun!"
+    m_Localized: Don't worry, young sailor,<pause:0.75> we don't have to be loud
+      to have fun!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318467
@@ -470,16 +468,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318469
-    m_Localized: "Only if it\u2019s interesting!"
+    m_Localized: Only if it's interesting!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318470
-    m_Localized: "I hope<pause:0.5> there\u2019s a starfish in it..."
+    m_Localized: I hope<pause:0.5> there's a starfish in it...
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318471
-    m_Localized: "Yarr,<pause:0.75> of course it\u2019s interesting!<pause:0.75>
-      But we\u2019ll be watching it quietly.<pause:0.5> Deal, young sailors?"
+    m_Localized: Yarr,<pause:0.75> of course it's interesting!<pause:0.75> But we'll
+      be watching it quietly.<pause:0.5> Deal, young sailors?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318472
@@ -496,7 +494,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318475
-    m_Localized: "Now there\u2019s only one thing left.<pause:0.75> Back to work!"
+    m_Localized: Now there's only one thing left.<pause:0.75> Back to work!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318476
@@ -517,7 +515,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318480
-    m_Localized: "<volume:1>We\u2019re trying to watch."
+    m_Localized: <volume:1>We're trying to watch.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318481
@@ -529,12 +527,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318483
-    m_Localized: "Hey,<pause:0.5> we weren\u2019t done watching!"
+    m_Localized: Hey,<pause:0.5> we weren't done watching!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318484
-    m_Localized: "<volume:0.5>Yarr!<pause:0.5> What do you think you\u2019re doing
-      here, swabbies?"
+    m_Localized: <volume:0.5>Yarr!<pause:0.5> What do you think you're doing here,
+      swabbies?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318485
@@ -553,7 +551,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318488
-    m_Localized: "It\u2019s Peg-Leg Joe!"
+    m_Localized: It's Peg-Leg Joe!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318489
@@ -581,11 +579,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318495
-    m_Localized: "If you go out without a hat, I\u2019m telling Mom"
+    m_Localized: If you go out without a hat, I'm telling Mom
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318496
-    m_Localized: "DON\u2019T"
+    m_Localized: DON'T
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318497
@@ -601,7 +599,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318500
-    m_Localized: "You do realize you can\u2019t just break into my place like that?"
+    m_Localized: You do realize you can't just break into my place like that?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318501
@@ -613,7 +611,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318503
-    m_Localized: "I\u2019m feeling playful."
+    m_Localized: I'm feeling playful.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318504
@@ -621,8 +619,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318505
-    m_Localized: "Oh,<pause:0.5> don\u2019t act like you\u2019re not happy to see
-      me."
+    m_Localized: Oh,<pause:0.5> don't act like you're not happy to see me.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318506
@@ -634,11 +631,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318508
-    m_Localized: "Can\u2019t I just drop by to check on my little brother?"
+    m_Localized: Can't I just drop by to check on my little brother?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318509
-    m_Localized: "You can,<pause:0.75> but you don\u2019t."
+    m_Localized: You can,<pause:0.75> but you don't.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318510
@@ -650,8 +647,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318512
-    m_Localized: "I\u2019m not here for no reason.<pause:0.75> I have a proposition
-      for you."
+    m_Localized: I'm not here for no reason.<pause:0.75> I have a proposition for
+      you.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318513
@@ -659,17 +656,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318514
-    m_Localized: "You didn\u2019t even hear me out."
+    m_Localized: You didn't even hear me out.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318515
-    m_Localized: "NO!<pause:0.75> I\u2019m out of the game!<pause:0.75> I\u2019m
-      just a regular cook now, remember?"
+    m_Localized: NO!<pause:0.75> I'm out of the game!<pause:0.75> I'm just a regular
+      cook now, remember?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318516
-    m_Localized: "You're serving ice cream at a children's restaurant.<pause:0.75>
-      You\u2019re not a cook."
+    m_Localized: You're serving ice cream at a children's restaurant.<pause:0.75>
+      You're not a cook.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318517
@@ -677,11 +674,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318518
-    m_Localized: "And I know you\u2019re good."
+    m_Localized: And I know you're good.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318519
-    m_Localized: "But being a cook isn\u2019t a hobby,<pause:0.75> it\u2019s a profession."
+    m_Localized: But being a cook isn't a hobby,<pause:0.75> it's a profession.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674064318520
@@ -693,30 +690,30 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512769
-    m_Localized: "First of all, I don\u2019t like the sound of that.<pause:0.75>
-      And second, you don\u2019t understand anything about cooking."
+    m_Localized: First of all, I don't like the sound of that.<pause:0.75> And second,
+      you don't understand anything about cooking.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512770
-    m_Localized: "Maybe not.<pause:0.75> But I do understand that you\u2019re going
-      about your goal the wrong way."
+    m_Localized: Maybe not.<pause:0.75> But I do understand that you're going about
+      your goal the wrong way.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512771
-    m_Localized: "Red,<pause:0.75> you\u2019re not keeping up."
+    m_Localized: Red,<pause:0.75> you're not keeping up.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512772
-    m_Localized: "Worse,<pause:0.75> what you\u2019re going through isn\u2019t bringing
-      you closer to your goal."
+    m_Localized: Worse,<pause:0.75> what you're going through isn't bringing you
+      closer to your goal.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512773
-    m_Localized: "It\u2019s pushing you further away."
+    m_Localized: It's pushing you further away.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512774
-    m_Localized: "No, it\u2019s not!"
+    m_Localized: No, it's not!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512775
@@ -732,20 +729,20 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512778
-    m_Localized: "See?<pause:0.5> I\u2019m already halfway there!"
+    m_Localized: See?<pause:0.5> I'm already halfway there!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512779
-    m_Localized: "I don\u2019t drag myself to that damn job day after day for nothing!"
+    m_Localized: I don't drag myself to that damn job day after day for nothing!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512780
-    m_Localized: "Every month, there\u2019s more and more money in the jar!"
+    m_Localized: Every month, there's more and more money in the jar!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512781
-    m_Localized: "And when I fill this up, I\u2019ll open a restaurant where I serve
-      the best dishes around!"
+    m_Localized: And when I fill this up, I'll open a restaurant where I serve the
+      best dishes around!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512782
@@ -758,7 +755,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512784
-    m_Localized: "And no one will ever say Red isn\u2019t a real cook!"
+    m_Localized: And no one will ever say Red isn't a real cook!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512785
@@ -770,12 +767,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512787
-    m_Localized: "I\u2019m not arguing that you work hard."
+    m_Localized: I'm not arguing that you work hard.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512788
-    m_Localized: "It's opposite.<pause:0.5> You\u2019ve buried yourself in cooking
-      so deep you forgot to keep your eyes open."
+    m_Localized: It's opposite.<pause:0.5> You've buried yourself in cooking so deep
+      you forgot to keep your eyes open.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512789
@@ -799,21 +796,20 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512794
-    m_Localized: "Oh come on,<pause:0.5> it can\u2019t be that bad."
+    m_Localized: Oh come on,<pause:0.5> it can't be that bad.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512795
-    m_Localized: "I\u2019m sure you could move mountains with that stubbornness of
-      yours."
+    m_Localized: I'm sure you could move mountains with that stubbornness of yours.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512796
-    m_Localized: "But if you keep going like this, you\u2019ll drift even further
-      from your goal."
+    m_Localized: But if you keep going like this, you'll drift even further from
+      your goal.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512797
-    m_Localized: "Things are getting more expensive faster than you\u2019re earning."
+    m_Localized: Things are getting more expensive faster than you're earning.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512798
@@ -825,11 +821,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512800
-    m_Localized: "This still isn\u2019t enough to cover your whole vision."
+    m_Localized: This still isn't enough to cover your whole vision.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512801
-    m_Localized: "But it\u2019s decent starting capital for something more modest."
+    m_Localized: But it's decent starting capital for something more modest.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512802
@@ -837,8 +833,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512803
-    m_Localized: "I\u2019ve already scoped out a promising spot.<pause:0.75> Our
-      money would cover the down payment."
+    m_Localized: I've already scoped out a promising spot.<pause:0.75> Our money
+      would cover the down payment.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512804
@@ -855,7 +851,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512807
-    m_Localized: "You\u2019re right!"
+    m_Localized: You're right!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512808
@@ -863,17 +859,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512809
-    m_Localized: "If I have to talk like a pirate for one more day, I\u2019ll lose
-      my mind!"
+    m_Localized: If I have to talk like a pirate for one more day, I'll lose my mind!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512810
-    m_Localized: "Now that\u2019s the spirit!"
+    m_Localized: Now that's the spirit!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512811
-    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> And what\u2019s
-      in it for you?<pause:0.75> Why help me?"
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> And what's
+      in it for you?<pause:0.75> Why help me?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674068512812
@@ -890,7 +885,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707072
-    m_Localized: "I don\u2019t believe you!"
+    m_Localized: I don't believe you!
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707073
@@ -902,16 +897,16 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707075
-    m_Localized: "Oh, did you really think I\u2019d never grow up?"
+    m_Localized: Oh, did you really think I'd never grow up?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707076
-    m_Localized: "That I wouldn\u2019t want to settle down?<pause:0.75> Have a legitimate
-      source of income?"
+    m_Localized: That I wouldn't want to settle down?<pause:0.75> Have a legitThat
+      I wouldn't mate source of income?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707077
-    m_Localized: "You\u2019re hurting my feelings."
+    m_Localized: You're hurting my feelings.
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707078
@@ -919,8 +914,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707079
-    m_Localized: "What?<pause:0.75> Do you really think I\u2019m trying to trick
-      you?"
+    m_Localized: What?<pause:0.75> Do you really think I'm trying to trick you?
     m_Metadata:
       m_Items: []
   - m_Id: 39858674072707080
