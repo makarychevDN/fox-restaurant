@@ -157,5 +157,32 @@ namespace foxRestaurant
         Application.Quit ();
 #endif
         }
+
+        public async static Task DotweenStep(this Transform steppingTransform, Vector3 targetPosition, float time)
+            => await DotweenStep(steppingTransform, targetPosition, new Vector3(1.1f, 0.75f), time);
+
+        public async static Task DotweenStep(this Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time)
+        {
+            steppingTransform.DOMove(targetPosition, time);
+            await steppingTransform.DOScale(squeezeValue, time * 0.5f).AsyncWaitForCompletion();
+            await steppingTransform.DOScale(Vector3.one, time * 0.5f).AsyncWaitForCompletion();
+        }
+
+        public async static Task DotweenSteps(this Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time, int stepsAmount)
+        {
+            var startPosition = steppingTransform.position;
+
+            for (int i = 1; i <= stepsAmount; i++)
+            {
+                var intermediateTargetPosition =
+                    Vector3.Lerp(startPosition, targetPosition, (float)i / stepsAmount);
+
+                await DotweenStep(
+                    steppingTransform,
+                    intermediateTargetPosition,
+                    squeezeValue,
+                    time / stepsAmount);
+            }
+        }
     }
 }

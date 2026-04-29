@@ -147,7 +147,7 @@ namespace foxRestaurant
             parentIntroKitchenScene.SetActive(true);
             darkKitchenBackground.SetActive(true);
             lightenKitchenBackground.SetActive(false);
-            await DotweenSteps(redOnIntroKitchen.transform, new Vector3(-8, -8), new Vector3(1.1f, 0.75f), 0.8f, 3);
+            await redOnIntroKitchen.transform.DotweenSteps(new Vector3(-8, -8), new Vector3(1.1f, 0.75f), 0.8f, 3);
             await Task.Delay(1000);
             switchSound.Play();
             darkKitchenBackground.SetActive(false);
@@ -167,9 +167,8 @@ namespace foxRestaurant
         private async Task MainSceneInKitchen1()
         {
             parentMainKitchenScene.SetActive(true);
-            await DotweenSteps(redOnMainKitchen.transform, new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
+            await redOnMainKitchen.transform.DotweenSteps(new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
             await redOnMainKitchen.Say(NextLine);
-            //как-то наколхозить объ€ти€
             await redOnMainKitchen.Say(NextLine);
             await silverOnMainKitchen.Say(NextLine);
             await redOnMainKitchen.Say(NextLine);
@@ -193,13 +192,13 @@ namespace foxRestaurant
             await redOnMainKitchen.Say(NextLine);
             await redOnMainKitchen.Say(NextLine);
             redOnMainKitchen.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
-            await DotweenSteps(redOnMainKitchen.transform, new Vector3(26f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
+            await redOnMainKitchen.transform.DotweenSteps(new Vector3(26f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
             redsPawsEmpty.SetActive(false);
             redsPawsWithJar.SetActive(true);
             lookingForJarSounds.Play();
             await Task.Delay(2500);
             redOnMainKitchen.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
-            await DotweenSteps(redOnMainKitchen.transform, new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
+            await redOnMainKitchen.transform.DotweenSteps(new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
             await redOnMainKitchen.Say(NextLine);
             parentMainKitchenScene.SetActive(false);
         }
@@ -320,33 +319,6 @@ namespace foxRestaurant
             await Task.Delay(750);
             theGreatestAdventureBeginsLogo.SetActive(true);
             await storyTeller.Say(NextLine);
-        }
-
-        private async Task DotweenStep(Transform steppingTransform, Vector3 targetPosition, float time)
-            => await DotweenStep(steppingTransform, targetPosition, new Vector3(1.1f, 0.75f), time);
-
-        private async Task DotweenStep(Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time)
-        {
-            steppingTransform.DOMove(targetPosition, time);
-            await steppingTransform.DOScale(squeezeValue, time * 0.5f).AsyncWaitForCompletion();
-            await steppingTransform.DOScale(Vector3.one, time * 0.5f).AsyncWaitForCompletion();
-        }
-
-        private async Task DotweenSteps(Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time, int stepsAmount)
-        {
-            var startPosition = steppingTransform.position;
-
-            for (int i = 1; i <= stepsAmount; i++)
-            {
-                var intermediateTargetPosition =
-                    Vector3.Lerp(startPosition, targetPosition, (float)i / stepsAmount);
-
-                await DotweenStep(
-                    steppingTransform,
-                    intermediateTargetPosition,
-                    squeezeValue,
-                    time / stepsAmount);
-            }
         }
 
         private void ChangeRedsSprites(Sprite bodySprite, Sprite leftEyeSprite, Sprite rightEyeSprite)
