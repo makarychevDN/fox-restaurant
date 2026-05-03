@@ -16,8 +16,6 @@ namespace foxRestaurant
         [SerializeField] private float pitchDelta = 0;
         [SerializeField] private float pitch = 1;
 
-        private Vector3 hashedLocalPosition;
-        private TextAnchor hashedRootChildAlignment;
         private Centering hashedCentering;
 
         public void SetSound(AudioClip sound) => audioSource.clip = sound;
@@ -28,8 +26,6 @@ namespace foxRestaurant
         private void Awake()
         {
             hashedCentering = Centering.Left;
-            hashedLocalPosition = transform.localPosition;
-            hashedRootChildAlignment = rootVerticalLayoutGroup.childAlignment;
         }
 
         public void Print(int substringLength, bool playSound = true)
@@ -75,12 +71,6 @@ namespace foxRestaurant
             return processed;
         }
 
-        public void SetCentering(TextAnchor childAlignment)
-        {
-            rootVerticalLayoutGroup.childAlignment = childAlignment;
-            hashedRootChildAlignment = childAlignment;
-        }
-
         public void SetCentering(Centering centering)
         {
             switch (centering)
@@ -96,6 +86,11 @@ namespace foxRestaurant
             sbyte delta = hashedCentering - centering;
             transform.localPosition += new Vector3((transform as RectTransform).sizeDelta.x * delta * 0.5f, 0);
             hashedCentering = centering;
+        }
+
+        public void SetLocalPosition(Vector3 newLocalPosition)
+        {
+            transform.localPosition = newLocalPosition;
         }
 
         public enum Centering : sbyte

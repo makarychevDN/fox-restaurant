@@ -127,9 +127,14 @@ namespace foxRestaurant
             }
         }
 
-        public void SetCentering(Centering centering)
+        public void SetDialoguePopUpCentering(Centering centering)
         {
             dialogueDisplayer.SetCentering(centering);
+        }
+
+        public void SetDialoguePopUpLocalPosition(Vector3 newLocalPosition)
+        {
+            dialogueDisplayer.SetLocalPosition(newLocalPosition);
         }
 
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();

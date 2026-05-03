@@ -35,7 +35,12 @@ namespace foxRestaurant
 
         public void SetDialoguePopUpCentering(Centering centering)
         {
-            dialogueManager.SetCentering(centering);
+            dialogueManager.SetDialoguePopUpCentering(centering);
+        }
+
+        public void SetDialoguePopUpLocalPosition(Vector3 newLocalPosition)
+        {
+            dialogueManager.SetDialoguePopUpLocalPosition(newLocalPosition);
         }
 
         public UnityEvent<string> OnEmote => dialogueManager.OnEmote;
