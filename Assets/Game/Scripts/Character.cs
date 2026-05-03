@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Localization;
+using static foxRestaurant.DialogueDisplayer;
 
 namespace foxRestaurant
 {
@@ -30,6 +31,11 @@ namespace foxRestaurant
         public void LookAt(Transform target)
         {
             eyesAndNose.ForEach(item => item.SetTarget(target));
+        }
+
+        public void SetDialoguePopUpCentering(Centering centering)
+        {
+            dialogueManager.SetCentering(centering);
         }
 
         public UnityEvent<string> OnEmote => dialogueManager.OnEmote;

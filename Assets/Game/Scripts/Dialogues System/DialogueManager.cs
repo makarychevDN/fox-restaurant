@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using static foxRestaurant.DialogueDisplayer;
 
 namespace foxRestaurant
 {
@@ -124,6 +125,11 @@ namespace foxRestaurant
             {
                 skipRequested = true;
             }
+        }
+
+        public void SetCentering(Centering centering)
+        {
+            dialogueDisplayer.SetCentering(centering);
         }
 
         private void Pause(string pauseTime) => this.pauseTime = pauseTime.ParseFloatSafe();
