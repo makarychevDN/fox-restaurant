@@ -731,37 +731,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &922400335482739693
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4989096669979517091}
-  m_Layer: 0
-  m_Name: horn position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4989096669979517091
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922400335482739693}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 14.09, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7268288527316385159}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1021023077213127907
 GameObject:
   m_ObjectHideFlags: 0
@@ -6542,9 +6511,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8519548132415822162, guid: 4ebdd116a7af6934e82d546acd0ca157, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4538915126847374913}
-    - targetCorrespondingSourceObject: {fileID: 8519548132415822162, guid: 4ebdd116a7af6934e82d546acd0ca157, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4989096669979517091}
     - targetCorrespondingSourceObject: {fileID: 6131414044023196249, guid: 4ebdd116a7af6934e82d546acd0ca157, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5527113115979337357}
