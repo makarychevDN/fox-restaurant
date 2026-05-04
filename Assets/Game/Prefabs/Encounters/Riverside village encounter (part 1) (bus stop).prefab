@@ -5664,7 +5664,7 @@ GameObject:
   - component: {fileID: 4232794828872731000}
   - component: {fileID: 8081545587792629234}
   m_Layer: 0
-  m_Name: street background
+  m_Name: background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
