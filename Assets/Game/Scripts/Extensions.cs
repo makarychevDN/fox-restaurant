@@ -184,5 +184,14 @@ namespace foxRestaurant
                     time / stepsAmount);
             }
         }
+
+        public static Tweener SetCameraShakingLoopAnimation(this Camera camera, float strength) =>
+            camera.transform.DOShakePosition(0.3f, strength, 50).SetLoops(-1);
+
+        public static void UpdateCameraShakingLoopAnimation(this Camera camera, ref Tweener shakingCameraLoop, float strength)
+        {
+            shakingCameraLoop.Kill();
+            shakingCameraLoop = SetCameraShakingLoopAnimation(camera, strength);
+        }
     }
 }

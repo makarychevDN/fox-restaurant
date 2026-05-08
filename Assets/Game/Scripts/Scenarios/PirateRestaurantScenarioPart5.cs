@@ -224,18 +224,18 @@ namespace foxRestaurant
         {
             earthQuakeSound.Play();
             await Task.Delay(1000);
-            Tweener shakingCameraLoop = SetCameraShakingLoopAnimation(0.1f);
+            Tweener shakingCameraLoop = Camera.main.SetCameraShakingLoopAnimation(0.1f);
             await kidsOnTheStreet[0].Say(dialogueLines[Next]);
-            UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.25f);
+            Camera.main.UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.25f);
             await kidsOnTheStreet[1].Say(dialogueLines[Next]);
-            UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.5f);
+            Camera.main.UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.5f);
             await red.Say(dialogueLines[Next]);
 
             int crowdPacksAmount = 9;
             int silhouettesCount = 0;
             for (int i = 0; i < crowdPacksAmount; i++)
             {
-                UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.5f + i * 0.1f);
+                Camera.main.UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.5f + i * 0.1f);
                 crowdPacks[i].SetActive(true);
                 poofSound.Play();
 
@@ -263,15 +263,6 @@ namespace foxRestaurant
                 await Task.Delay(50);
             }
         }
-
-        private void UpdateCameraShakingLoopAnimation(ref Tweener shakingCameraLoop, float strength)
-        {
-            shakingCameraLoop.Kill();
-            shakingCameraLoop = SetCameraShakingLoopAnimation(strength);
-        }
-
-        private Tweener SetCameraShakingLoopAnimation(float strength) =>
-            Camera.main.transform.DOShakePosition(0.3f, strength, 50).SetLoops(-1);
 
         private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
