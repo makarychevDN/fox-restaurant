@@ -114,7 +114,7 @@ namespace foxRestaurant
             hogInTheCrowd.gameObject.SetActive(false);
             poofSound.Play();
             hogDisappearParticles.Play();
-            await redInTheCrowd.Say("...");
+            await Task.Delay(1000);
             await redInTheCrowd.Say("Это я то леший?");
             earthQuakeSounds.Play();
             var tweener = Camera.main.SetCameraShakingLoopAnimation(0.3f);
@@ -133,7 +133,7 @@ namespace foxRestaurant
             await silverInTheCrowd.Say("Да,<pause:0.5> определенно ты.");
             await someoneInTheCrowd.Say("Молчать, гнусный Клиффордец!");
             await someoneInTheCrowd.Say("Сначала вы навлекли на нас болезни!");
-            await someoneInTheCrowd.Say("А теперь решили добить нас лесным чудищем!");
+            await someoneInTheCrowd.Say("А теперь решили натравить на нас лешего!");
             await someoneInTheCrowd.Say("Не бывать этому!");
             await silverInTheCrowd.Say("Мне кажется, здесь произошло большое недопонимание.");
             await silverInTheCrowd.Say("Мы не из Клиффорда.<pause:0.5> И мы как раз собирались уходить.");
