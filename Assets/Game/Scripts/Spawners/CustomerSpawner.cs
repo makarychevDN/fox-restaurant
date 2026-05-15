@@ -49,5 +49,7 @@ namespace foxRestaurant
 
             return customer;
         }
+
+        public bool IsPossibleToSpawnCustomer => seatPlaces.Any(seatPlace => !seatPlace.IsTaken);
     }
 }

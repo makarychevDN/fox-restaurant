@@ -45,6 +45,7 @@ namespace foxRestaurant
         public UnityEvent OnStartLivingProcess;
         public UnityEvent<bool> OnLeftSatisfied;
         public UnityEvent OnLeft;
+        public UnityEvent<Customer> OnCustomerLeft;
         public UnityEvent OnAte;
         public UnityEvent<ItemData> OnAteCertainFood;
 
@@ -170,6 +171,7 @@ namespace foxRestaurant
         public void LeaveSatisfied()
         {
             OnLeft.Invoke();
+            OnCustomerLeft.Invoke(this);
             OnLeftSatisfied.Invoke(true);
             if (slotToPlaceFood != null)
                 Destroy(slotToPlaceFood.gameObject);
@@ -179,6 +181,7 @@ namespace foxRestaurant
         public void LeaveUnsatisfied() //todo improve this thing
         {
             OnLeft.Invoke();
+            OnCustomerLeft.Invoke(this);
             OnLeftSatisfied.Invoke(false);
             if(slotToPlaceFood != null)
                 Destroy(slotToPlaceFood.gameObject);

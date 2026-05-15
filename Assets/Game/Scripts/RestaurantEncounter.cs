@@ -20,6 +20,7 @@ namespace foxRestaurant
         [field: SerializeField] public DecksManager DecksManager { get; private set; }
         [field: SerializeField] public Ticker Ticker { get; private set; }
         [field: SerializeField] public DynamicTextManager DynamicTextManager { get; private set; }
+        [field: SerializeField] public CurrentWaveManager CurrentWaveManager { get; private set; }
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
@@ -75,6 +76,7 @@ namespace foxRestaurant
 
             RecipesManager.Init(this);
             ItemTransitionsManager.Init(this);
+            CurrentWaveManager.Init(this);
 
             for (int i = 0; i < cookerSlotsCount; i++)
             {
