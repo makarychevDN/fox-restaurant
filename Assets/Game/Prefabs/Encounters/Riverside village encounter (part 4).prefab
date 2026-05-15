@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2451840243241707108
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2202273766668462489, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: scenario
+      value: 
+      objectReference: {fileID: 3043625839201711020}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6452981293043718418, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_Name
+      value: Riverside village encounter (part 4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 7798234314369262677, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7189087790374842713, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3043625839201711020}
+  m_SourcePrefab: {fileID: 100100000, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+--- !u!1 &4738467356233045821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7189087790374842713, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+  m_PrefabInstance: {fileID: 2451840243241707108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3043625839201711020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4738467356233045821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab359537080c24a47bb8d85eccb8a5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red: {fileID: 8871043587153790938}
+  seal: {fileID: 11400000, guid: baa6a42e049cd8e428bd8374d337c28d, type: 2}
+  iceCream: {fileID: 11400000, guid: be38da74d1fff764db420eb6138c7e8c, type: 2}
+--- !u!114 &8871043587153790938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6420699931444699582, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+  m_PrefabInstance: {fileID: 2451840243241707108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a853fb76a2f234fa682286aad6e9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
