@@ -20,9 +20,12 @@ namespace foxRestaurant
             encounter.Ticker.AddTickable(this);
         }
 
-        public async Task<bool> ExecuteWave(params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+        public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
+            encounter.BlockInput();
             queue = customersAndTheirOrders.ToList();
+
+            await ExecuteTasksList(tasksBeforeWaveExecution);
 
             int initSpawnCount = 4;
             for(int i = 0; i < initSpawnCount; i++)
@@ -31,11 +34,24 @@ namespace foxRestaurant
                 SpawnCustomer();
             }
 
+            await ExecuteTasksList(tasksAfterWaveInitSpawn);
+
+            encounter.UnblockInput();
             waveIsExecuting = true;
             waveTcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
             bool result = await waveTcs.Task;
             return result;
         }
+
+        public async Task<bool> ExecuteWave(params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+            => await ExecuteWave(new List<Func<Task>>(), new List<Func<Task>>(), customersAndTheirOrders);
+
+        public async Task<bool> ExecuteWave(Task taskBeforeWaveExecution, Task taskAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+            => await ExecuteWave(
+                new List<Func<Task>>() { () => taskBeforeWaveExecution }, 
+                new List<Func<Task>>() { () => taskAfterWaveInitSpawn }, 
+                customersAndTheirOrders
+            );
 
         public void Tick(float deltaTime)
         {
@@ -45,6 +61,14 @@ namespace foxRestaurant
             if (encounter.CustomerSpawner.IsPossibleToSpawnCustomer)
             {
                 SpawnCustomer();
+            }
+        }
+
+        private async Task ExecuteTasksList(List<Func<Task>> tasksBeforeWaveExecution)
+        {
+            for (int i = 0; i < tasksBeforeWaveExecution.Count; i++)
+            {
+                await tasksBeforeWaveExecution[i]();
             }
         }
 
@@ -78,11 +102,9 @@ namespace foxRestaurant
 
         private void AbortWave()
         {
-            if (!waveIsExecuting)
-                return;
-
             waveIsExecuting = false;
             waveTcs?.TrySetResult(false);
+            Debug.LogError("wave is aborted!!!");
         }
 
         private void TryCompleteSuccess()
