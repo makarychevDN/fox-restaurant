@@ -27,10 +27,10 @@ namespace foxRestaurant
         {
             foreach (var encounterPrefab in prefabsList.Encounters)
             {
-                var spawnedEncaunter = Instantiate(encounterPrefab);
-                encounters.Add(spawnedEncaunter);
-                spawnedEncaunter.gameObject.SetActive(false);
-                spawnedEncaunter.transform.parent = transform;
+                var spawnedEncounter = Instantiate(encounterPrefab);
+                encounters.Add(spawnedEncounter);
+                spawnedEncounter.gameObject.SetActive(false);
+                spawnedEncounter.transform.parent = transform;
             }
 
             fading.GetComponentInParent<Canvas>().sortingOrder = 9999;
