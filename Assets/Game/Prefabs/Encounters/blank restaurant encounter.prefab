@@ -282,6 +282,7 @@ MonoBehaviour:
   <DecksManager>k__BackingField: {fileID: 3084318393536024252}
   <Ticker>k__BackingField: {fileID: 1693044783131133519}
   <DynamicTextManager>k__BackingField: {fileID: 1124546090868896487}
+  <CurrentWaveManager>k__BackingField: {fileID: 3597991145471085263}
   <ItemsSpawner>k__BackingField: {fileID: 7088981166269214873}
   <ItemSpawnTimer>k__BackingField: {fileID: 4603569617256824294}
   <CustomerSpawner>k__BackingField: {fileID: 7153153446249404665}
@@ -2067,6 +2068,7 @@ Transform:
   - {fileID: 7160878249536057581}
   - {fileID: 7906277916180056792}
   - {fileID: 6380211928023542172}
+  - {fileID: 1763308051177868427}
   m_Father: {fileID: 223915408322841054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2866508691051540058
@@ -3591,6 +3593,50 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6340018817109892734
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1763308051177868427}
+  - component: {fileID: 3597991145471085263}
+  m_Layer: 0
+  m_Name: current wave manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1763308051177868427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6340018817109892734}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2879740804358350818}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3597991145471085263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6340018817109892734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0da6288076b0e748a084a4d7cccb91a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6405190260463571590
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,6 +4504,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnCertainCustomerAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCustomerWasFed:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7549327235117975624
