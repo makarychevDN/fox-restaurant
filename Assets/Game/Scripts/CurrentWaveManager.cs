@@ -46,12 +46,26 @@ namespace foxRestaurant
         public async Task<bool> ExecuteWave(params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
             => await ExecuteWave(new List<Func<Task>>(), new List<Func<Task>>(), customersAndTheirOrders);
 
-        public async Task<bool> ExecuteWave(Task taskBeforeWaveExecution, Task taskAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+        public async Task<bool> ExecuteWave(Func<Task> taskBeforeWaveExecution, Func<Task> taskAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
             => await ExecuteWave(
-                new List<Func<Task>>() { () => taskBeforeWaveExecution }, 
-                new List<Func<Task>>() { () => taskAfterWaveInitSpawn }, 
+                new List<Func<Task>>() { taskBeforeWaveExecution }, 
+                new List<Func<Task>>() { taskAfterWaveInitSpawn }, 
                 customersAndTheirOrders
             );
+
+        public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, Func<Task> taskAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+            => await ExecuteWave(
+                tasksBeforeWaveExecution,
+                new List<Func<Task>>() { taskAfterWaveInitSpawn },
+                customersAndTheirOrders
+        );
+
+        public async Task<bool> ExecuteWave(Func<Task> taskBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+            => await ExecuteWave(
+                new List<Func<Task>>() { taskBeforeWaveExecution },
+                tasksAfterWaveInitSpawn,
+                customersAndTheirOrders
+);
 
         public void Tick(float deltaTime)
         {
