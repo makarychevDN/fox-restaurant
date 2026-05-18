@@ -27,7 +27,7 @@ namespace foxRestaurant
 
             await ExecuteTasksList(tasksBeforeWaveExecution);
 
-            int initSpawnCount = 4;
+            int initSpawnCount = 2;
             for(int i = 0; i < initSpawnCount; i++)
             {
                 await Task.Delay(500);
@@ -90,9 +90,15 @@ namespace foxRestaurant
         {
             var customer = encounter.CustomerSpawner.TryToSpawnCustomer(queue[0].Item1, queue[0].Item2);
             spawnedCustomers.Add(customer);
-            customer.OnCustomerLeft.AddListener(CustomerLeftHandler);
-            customer.OnLeftSatisfied.AddListener(TryToFinishWave);
+            customer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisgiedHandler);
             queue.RemoveAt(0);
+        }
+
+        private void CustomerLeftSatisgiedHandler(Customer customer, bool isSatisfied)
+        {
+            spawnedCustomers.Remove(customer);
+            customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisgiedHandler);
+            TryToFinishWave(isSatisfied);
         }
 
         private void TryToFinishWave(bool customerSatisfaction)
@@ -107,18 +113,10 @@ namespace foxRestaurant
             }
         }
 
-        private void CustomerLeftHandler(Customer customer)
-        {
-            spawnedCustomers.Remove(customer);
-            customer.OnLeftSatisfied.RemoveListener(TryToFinishWave);
-            customer.OnCustomerLeft.RemoveListener(CustomerLeftHandler);
-        }
-
         private void AbortWave()
         {
             waveIsExecuting = false;
             waveTcs?.TrySetResult(false);
-            Debug.LogError("wave is aborted!!!");
         }
 
         private void TryCompleteSuccess()
