@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hero's journey_0: -3070803873667549621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
