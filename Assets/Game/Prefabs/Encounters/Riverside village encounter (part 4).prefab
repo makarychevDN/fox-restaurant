@@ -83,6 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   red: {fileID: 8871043587153790938}
+  kitty: {fileID: 11400000, guid: b4f2271fcc1c0ae40a02577471f3643c, type: 2}
+  doggo: {fileID: 11400000, guid: 30f720480acb93c44b15887566919e9a, type: 2}
   seal: {fileID: 11400000, guid: baa6a42e049cd8e428bd8374d337c28d, type: 2}
   iceCream: {fileID: 11400000, guid: be38da74d1fff764db420eb6138c7e8c, type: 2}
 --- !u!114 &8871043587153790938 stripped
