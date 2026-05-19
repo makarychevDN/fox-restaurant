@@ -42,7 +42,7 @@ namespace foxRestaurant
 
             await ExecuteTasksList(tasksBeforeWaveExecution);
 
-            int initSpawnCount = 2;
+            int initSpawnCount = Math.Min(customersAndTheirOrders.Length, encounter.SeatPlacesManager.FreeSeatPlaces.Count);
             for(int i = 0; i < initSpawnCount; i++)
             {
                 await Task.Delay(500);
