@@ -34,8 +34,6 @@ namespace foxRestaurant
 
         public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
-            bool success = false;
-
             encounter.Ticker.Pause();
             encounter.BlockInput();
             queue = customersAndTheirOrders.ToList();
@@ -54,10 +52,10 @@ namespace foxRestaurant
             encounter.Ticker.SetRegularTickingSpeed();
             encounter.UnblockInput();
             waveIsExecuting = true;
-
             waveTcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
-            bool result = await waveTcs.Task;
-            return result;
+            bool success = await waveTcs.Task;
+            await SpeedupTheRestOfWave();
+            return success;
         }
 
         public async Task<bool> ExecuteWave(params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
@@ -130,10 +128,18 @@ namespace foxRestaurant
             }
         }
 
-        private void AbortWave()
+        private async Task SpeedupTheRestOfWave()
         {
-            waveIsExecuting = false;
-            waveTcs?.TrySetResult(false);
+            encounter.BlockInput();
+            encounter.Ticker.SetX40TickingSpeed();
+
+            while (encounter.SeatPlacesManager.FreeSeatPlaces.Count !=
+                encounter.SeatPlacesManager.SeatPlaces.Count)
+            {
+                await Task.Delay(50);
+            }
+
+            encounter.UnblockInput();
         }
 
         private void TryCompleteSuccess()
@@ -143,6 +149,12 @@ namespace foxRestaurant
 
             waveIsExecuting = false;
             waveTcs?.TrySetResult(true);
+        }
+
+        private void AbortWave()
+        {
+            waveIsExecuting = false;
+            waveTcs?.TrySetResult(false);
         }
     }
 }

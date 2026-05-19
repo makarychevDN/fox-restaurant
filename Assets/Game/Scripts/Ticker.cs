@@ -43,12 +43,14 @@ namespace foxRestaurant
             pause = 0,
             regular = 1,
             speedX2 = 2,
-            speedX4 = 4
+            speedX4 = 4,
+            speedX40 = 40,
         }
 
         public void Pause() => tickingMode = TickingMode.pause;
         public void SetRegularTickingSpeed() => tickingMode = TickingMode.regular;
         public void SetX2TickingSpeed() => tickingMode = TickingMode.speedX2;
         public void SetX4TickingSpeed() => tickingMode = TickingMode.speedX4;
+        public void SetX40TickingSpeed() => tickingMode = TickingMode.speedX40;
     }
 }
