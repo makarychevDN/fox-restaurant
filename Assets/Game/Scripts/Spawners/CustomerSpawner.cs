@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,15 +10,12 @@ namespace foxRestaurant
         [SerializeField] private Customer customerPrefab;
         [SerializeField] private AudioSource customerCameSound;
         private RestaurantEncounter restaurantEncounter;
-        private List<SeatPlace> seatPlaces;
 
         public UnityEvent OnCustomerSpawningRejected;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
-            seatPlaces = FindObjectsByType<SeatPlace>(FindObjectsSortMode.None).ToList();
-            seatPlaces.ForEach(seatPlace => seatPlace.Init(restaurantEncounter));
         }
 
         public Customer SpawnCustomer(SeatPlace seatPlace, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
@@ -36,7 +32,8 @@ namespace foxRestaurant
         public Customer TryToSpawnCustomer(CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             var seatPlaceToSpawn = 
-                seatPlaces.Where(seatPlace => !seatPlace.IsTaken && seatPlace.gameObject.activeSelf).ToList().GetRandomElement();
+                restaurantEncounter.SeatPlacesManager.SeatPlaces.Where(
+                    seatPlace => !seatPlace.IsTaken && seatPlace.gameObject.activeSelf).ToList().GetRandomElement();
 
             if (seatPlaceToSpawn == null)
                 return null;
@@ -50,6 +47,6 @@ namespace foxRestaurant
             return customer;
         }
 
-        public bool IsPossibleToSpawnCustomer => seatPlaces.Any(seatPlace => !seatPlace.IsTaken);
+        public bool IsPossibleToSpawnCustomer => restaurantEncounter.SeatPlacesManager.SeatPlaces.Any(seatPlace => !seatPlace.IsTaken);
     }
 }

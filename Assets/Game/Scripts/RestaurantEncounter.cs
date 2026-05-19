@@ -21,6 +21,7 @@ namespace foxRestaurant
         [field: SerializeField] public Ticker Ticker { get; private set; }
         [field: SerializeField] public DynamicTextManager DynamicTextManager { get; private set; }
         [field: SerializeField] public CurrentWaveManager CurrentWaveManager { get; private set; }
+        [field: SerializeField] public SeatPlacesManager SeatPlacesManager { get; private set; }
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
@@ -63,6 +64,7 @@ namespace foxRestaurant
             UpdateDataBase(restaurantEncounterData.CsvFile);
 
             PlayerInputController.Init(this);
+            SeatPlacesManager.Init(this);
             CookerSlotSpawner.Init(this);
             SlotsToSpawnFoodSpawner.Init(this);
             AdditionalFoodSlotSpawner.Init(this);
