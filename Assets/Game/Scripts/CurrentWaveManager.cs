@@ -139,6 +139,7 @@ namespace foxRestaurant
                 await Task.Delay(50);
             }
 
+            encounter.Ticker.Pause();
             encounter.UnblockInput();
         }
 
