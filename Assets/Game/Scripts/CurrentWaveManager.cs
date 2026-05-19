@@ -20,8 +20,23 @@ namespace foxRestaurant
             encounter.Ticker.AddTickable(this);
         }
 
+        public async Task DoGenericWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, List<Func<Task>> tasksOnWaveFailed, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+        {
+            bool success = false;
+            while (!success)
+            {
+                success = await ExecuteWave(tasksBeforeWaveExecution, tasksAfterWaveInitSpawn, customersAndTheirOrders);
+
+                if (!success)
+                    await ExecuteTasksList(tasksOnWaveFailed);
+            }
+        }
+
         public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
+            bool success = false;
+
+            encounter.Ticker.Pause();
             encounter.BlockInput();
             queue = customersAndTheirOrders.ToList();
 
@@ -36,8 +51,10 @@ namespace foxRestaurant
 
             await ExecuteTasksList(tasksAfterWaveInitSpawn);
 
+            encounter.Ticker.SetRegularTickingSpeed();
             encounter.UnblockInput();
             waveIsExecuting = true;
+
             waveTcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
             bool result = await waveTcs.Task;
             return result;
@@ -90,14 +107,14 @@ namespace foxRestaurant
         {
             var customer = encounter.CustomerSpawner.TryToSpawnCustomer(queue[0].Item1, queue[0].Item2);
             spawnedCustomers.Add(customer);
-            customer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisgiedHandler);
+            customer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
             queue.RemoveAt(0);
         }
 
-        private void CustomerLeftSatisgiedHandler(Customer customer, bool isSatisfied)
+        private void CustomerLeftSatisfiedHandler(Customer customer, bool isSatisfied)
         {
             spawnedCustomers.Remove(customer);
-            customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisgiedHandler);
+            customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisfiedHandler);
             TryToFinishWave(isSatisfied);
         }
 
