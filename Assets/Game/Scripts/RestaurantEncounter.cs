@@ -42,6 +42,7 @@ namespace foxRestaurant
         [field: SerializeField] public ItemHintsDisplayer RMBItemHintsDisplayer { get; private set; }
         [field: SerializeField] public SliceEffectDisplayer SliceEffectDisplayer { get; private set; }
         [field: SerializeField] public GameObject InputBlocker { get; private set; }
+        [field: SerializeField] public WavesInfoPanel WavesInfoPanel { get; private set; }
 
         [field: Header("Parent Objects")]
         [field: SerializeField] public Transform ParentForItemsMovement { get; private set; }
@@ -79,7 +80,9 @@ namespace foxRestaurant
 
             RecipesManager.Init(this);
             ItemTransitionsManager.Init(this);
+
             CurrentWaveManager.Init(this);
+            WavesInfoPanel.Init(this);
 
             for (int i = 0; i < cookerSlotsCount; i++)
             {

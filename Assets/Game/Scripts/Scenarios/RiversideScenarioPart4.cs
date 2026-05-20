@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace foxRestaurant
 {
@@ -13,6 +12,7 @@ namespace foxRestaurant
         [SerializeField] private CustomerData kitty;
         [SerializeField] private CustomerData doggo;
         [SerializeField] private CustomerData seal;
+        [SerializeField] private CustomerData wolf;
         [SerializeField] private ItemData iceCream;
         [SerializeField] private List<ItemSlot> slots;
         private RestaurantEncounter encounter;
@@ -24,17 +24,22 @@ namespace foxRestaurant
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
-            await encounter.CurrentWaveManager.ExecuteWave(
-
-                new List<Func<Task>>() { 
-                    () => red.Say("до"), 
+            await encounter.CurrentWaveManager.DoGenericWave(
+                new List<Func<Task>>() {
+                    () => red.Say("до"),
                     () => SpawnIceCream(new List<ItemData>() { iceCream, iceCream, iceCream, iceCream} )
                 },
+                new List<Func<Task>>() { () => red.Say("после") },
+                new List<Func<Task>>() { () => red.Say("не получилось, надо попробовать еще раз.") },
+                (kitty, encounter.DecksManager.GetRandomDish),
+                (kitty, encounter.DecksManager.GetRandomDish),
+                (kitty, encounter.DecksManager.GetRandomDish),
+                (kitty, encounter.DecksManager.GetRandomDish),
+                (wolf, encounter.DecksManager.GetRandomDish),
+                (doggo, encounter.DecksManager.GetRandomDish),
+                (kitty, encounter.DecksManager.GetRandomDish)
+            );
 
-                () => red.Say("после"),
-
-                (kitty, () => iceCream),
-                (kitty, () => iceCream));
         }
 
         private async Task SpawnIceCream(List<ItemData> itemsToSpawnData)

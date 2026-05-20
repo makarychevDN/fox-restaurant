@@ -16,6 +16,30 @@ PrefabInstance:
       propertyPath: <ItemSpawnTimer>k__BackingField
       value: 
       objectReference: {fileID: 5058800725026094876}
+    - target: {fileID: 5492815183260724424, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492815183260724424, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492815183260724424, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775689020970569071, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775689020970569071, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5775689020970569071, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6398062614421220672, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -90,6 +114,7 @@ MonoBehaviour:
   kitty: {fileID: 11400000, guid: b4f2271fcc1c0ae40a02577471f3643c, type: 2}
   doggo: {fileID: 11400000, guid: 30f720480acb93c44b15887566919e9a, type: 2}
   seal: {fileID: 11400000, guid: baa6a42e049cd8e428bd8374d337c28d, type: 2}
+  wolf: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
   iceCream: {fileID: 11400000, guid: be38da74d1fff764db420eb6138c7e8c, type: 2}
   slots: []
 --- !u!114 &5058800725026094876 stripped

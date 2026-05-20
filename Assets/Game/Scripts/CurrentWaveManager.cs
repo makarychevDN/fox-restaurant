@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace foxRestaurant
 {
     public class CurrentWaveManager : MonoBehaviour, ITickable
     {
+        [SerializeField] private float patienceOfCustomerBeforeSpawn = 40;
         private RestaurantEncounter encounter;
         private List<(CustomerData, Func<ItemData>)> queue;
         private List<Customer> spawnedCustomers = new();
         private TaskCompletionSource<bool> waveTcs;
         bool waveIsExecuting;
+        private float nextCustomersPatienceTimer;
+
+        public UnityEvent<CustomerData> OnNextCustomerUpdated;
+        public UnityEvent<float> OnNextCustomersPatienceUpdated;
 
         public void Init(RestaurantEncounter encounter)
         {
@@ -45,6 +51,7 @@ namespace foxRestaurant
             {
                 await Task.Delay(500);
                 SpawnCustomer();
+                RefreshDataAfterCustomerSpawned();
             }
 
             await ExecuteTasksList(tasksAfterWaveInitSpawn);
@@ -87,9 +94,13 @@ namespace foxRestaurant
             if (!waveIsExecuting || queue.Count == 0)
                 return;
 
+            nextCustomersPatienceTimer -= deltaTime;
+            OnNextCustomersPatienceUpdated.Invoke(nextCustomersPatienceTimer);
+
             if (encounter.CustomerSpawner.IsPossibleToSpawnCustomer)
             {
                 SpawnCustomer();
+                RefreshDataAfterCustomerSpawned();
             }
         }
 
@@ -107,6 +118,13 @@ namespace foxRestaurant
             spawnedCustomers.Add(customer);
             customer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
             queue.RemoveAt(0);
+        }
+
+        private void RefreshDataAfterCustomerSpawned()
+        {
+            OnNextCustomerUpdated.Invoke(queue.Count == 0 ? null : queue[0].Item1);
+            nextCustomersPatienceTimer = patienceOfCustomerBeforeSpawn;
+            OnNextCustomersPatienceUpdated.Invoke(nextCustomersPatienceTimer);
         }
 
         private void CustomerLeftSatisfiedHandler(Customer customer, bool isSatisfied)
