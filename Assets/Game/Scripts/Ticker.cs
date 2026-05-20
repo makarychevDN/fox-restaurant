@@ -8,9 +8,10 @@ namespace foxRestaurant
         [SerializeField] private int sliceTimeCost;
         private List<ITickable> tickables = new List<ITickable>();
         private List<ITickable> toRemove = new List<ITickable>();
+        private List<ITickable> toAdd = new List<ITickable>();
         private TickingMode tickingMode = TickingMode.regular;
 
-        public void AddTickable(ITickable tickable) => tickables.Add(tickable);
+        public void AddTickable(ITickable tickable) => toAdd.Add(tickable);
         public void RemoveTickable(ITickable tickable) => toRemove.Add(tickable);
 
         public void TickAllTickables(float tick)
@@ -25,6 +26,13 @@ namespace foxRestaurant
                 foreach (var r in toRemove)
                     tickables.Remove(r);
                 toRemove.Clear();
+            }
+
+            if (toAdd.Count > 0)
+            {
+                foreach (var a in toAdd)
+                    tickables.Add(a);
+                toAdd.Clear();
             }
         }
 
