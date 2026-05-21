@@ -97,6 +97,9 @@ namespace foxRestaurant
             nextCustomersPatienceTimer -= deltaTime;
             OnNextCustomersPatienceUpdated.Invoke(nextCustomersPatienceTimer);
 
+            if(nextCustomersPatienceTimer <= 0)
+                AbortWave();
+
             if (encounter.CustomerSpawner.IsPossibleToSpawnCustomer)
             {
                 SpawnCustomer();
