@@ -68,7 +68,8 @@ namespace foxRestaurant
             item.transform.localPosition = Vector3.zero;
             OnHasBeenOccupied.Invoke();
             OnItemHasBeenPlaced.Invoke(item);
-            onItemPlacedSound.Play();
+            if(onItemPlacedSound != null)
+                onItemPlacedSound.Play();
         }
 
         public void SetSelectedForItemMovement(bool value) => selectedForItemMovement = value;

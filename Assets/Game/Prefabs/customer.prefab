@@ -55,6 +55,7 @@ MonoBehaviour:
   itemSlotPrefab: {fileID: 5498270339331870369, guid: 93a5253740c3e134baa4e80ac40b82c1, type: 3}
   character: {fileID: 7041731887450620140}
   timeIsUpSound: {fileID: 1880447083934669911}
+  eatSound: {fileID: 3197204169755092243}
   animator: {fileID: 8153659440555309590}
   orderBoxAnimator: {fileID: 8291043487909569777}
   slotPositionPoint: {fileID: 6952867010230834956}
@@ -68,7 +69,19 @@ MonoBehaviour:
   OnHungerPointsChanged:
     m_PersistentCalls:
       m_Calls: []
+  OnStartLeavingProcess:
+    m_PersistentCalls:
+      m_Calls: []
   OnLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLeftSatisfied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCustomerLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCustomerLeftSatisfied:
     m_PersistentCalls:
       m_Calls: []
   OnAte:
@@ -277,6 +290,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -451,7 +465,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2939266076966348809, guid: 0c8b34b11143813499f535f39a56c45f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c03cf3526ca59a347a000da5d8b9ddad, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: c03cf3526ca59a347a000da5d8b9ddad, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -843,6 +857,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -949,7 +964,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -2939266076966348809, guid: 0c8b34b11143813499f535f39a56c45f, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 258f1ffe7990d1647beb22560fc204fb, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 258f1ffe7990d1647beb22560fc204fb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1094,6 +1109,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

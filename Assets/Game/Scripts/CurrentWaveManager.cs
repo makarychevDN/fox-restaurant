@@ -159,16 +159,23 @@ namespace foxRestaurant
         private async Task FinishTheRestOfWave(bool success)
         {
             encounter.BlockInput();
-            encounter.Ticker.SetX40TickingSpeed();
-
 
             if (success)
             {
-                //todo autofeed other customers
+                var customers = new List<Customer>(encounter.CustomersManager.Customers.Where(customer => !customer.IsLeaving)); 
+                foreach (var customer in customers)
+                {
+                    await Task.Delay(250);
+                    customer.AutoSatisfy();
+                }
+
+                await Task.Delay(3000);
             }
 
             else
             {
+                encounter.Ticker.SetX40TickingSpeed();
+
                 while (encounter.SeatPlacesManager.FreeSeatPlaces.Count !=
                 encounter.SeatPlacesManager.SeatPlaces.Count)
                 {

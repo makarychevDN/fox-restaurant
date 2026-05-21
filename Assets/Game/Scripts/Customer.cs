@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 namespace foxRestaurant
 {
@@ -19,6 +20,7 @@ namespace foxRestaurant
         [Header("links")]
         [SerializeField] private Character character;
         [SerializeField] private AudioSource timeIsUpSound;
+        [SerializeField] private AudioSource eatSound;
         [SerializeField] private Animator animator;
         [SerializeField] private Animator orderBoxAnimator;
         [SerializeField] private Transform slotPositionPoint;
@@ -48,7 +50,8 @@ namespace foxRestaurant
         public UnityEvent<ItemData> OnAteCertainFood;
 
         public Character Character => character;
-        private bool IsSatisfied => HungerPoints <= 0;
+        public bool IsLeaving => isLeaving;
+        public bool IsSatisfied => HungerPoints <= 0;
 
         public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
@@ -109,15 +112,30 @@ namespace foxRestaurant
             OnAte.Invoke();
             OnAteCertainFood.Invoke(item.ItemData);
 
+            animator.SetTrigger("onEat");
+            eatSound.Play();
+
+
             if (item.ItemData == requiredItemData)
             {
-                HungerPoints -= food.Satiety;
-                HungerPoints = Math.Clamp(HungerPoints, 0, 100);
-                OnHungerPointsChanged.Invoke(HungerPoints);
-                MakeOrder();
+                GetSatiety(food.Satiety);
             }
+        }
+
+        public void AutoSatisfy()
+        {
+            GetSatiety(HungerPoints);
 
             animator.SetTrigger("onEat");
+            eatSound.Play();
+        }
+
+        public void GetSatiety(int satiety)
+        {
+            HungerPoints -= satiety;
+            HungerPoints = Math.Clamp(HungerPoints, 0, 100);
+            OnHungerPointsChanged.Invoke(HungerPoints);
+            MakeOrder();
 
             if (IsSatisfied)
             {
