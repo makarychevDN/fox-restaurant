@@ -70,7 +70,7 @@ namespace foxRestaurant
             waveIsExecuting = true;
             waveTcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
             bool success = await waveTcs.Task;
-            await SpeedupTheRestOfWave();
+            await FinishTheRestOfWave(success);
             return success;
         }
 
@@ -143,12 +143,8 @@ namespace foxRestaurant
         {
             spawnedCustomers.Remove(customer);
             customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisfiedHandler);
-            TryToFinishWave(isSatisfied);
-        }
 
-        private void TryToFinishWave(bool customerSatisfaction)
-        {
-            if (customerSatisfaction)
+            if (isSatisfied)
             {
                 fedCustomersCount++;
                 OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
@@ -160,15 +156,24 @@ namespace foxRestaurant
             }
         }
 
-        private async Task SpeedupTheRestOfWave()
+        private async Task FinishTheRestOfWave(bool success)
         {
             encounter.BlockInput();
             encounter.Ticker.SetX40TickingSpeed();
 
-            while (encounter.SeatPlacesManager.FreeSeatPlaces.Count !=
-                encounter.SeatPlacesManager.SeatPlaces.Count)
+
+            if (success)
             {
-                await Task.Delay(50);
+                //todo autofeed other customers
+            }
+
+            else
+            {
+                while (encounter.SeatPlacesManager.FreeSeatPlaces.Count !=
+                encounter.SeatPlacesManager.SeatPlaces.Count)
+                {
+                    await Task.Delay(50);
+                }
             }
 
             encounter.Ticker.Pause();
