@@ -15,6 +15,7 @@ namespace foxRestaurant
         private TMP_Text timerDisplayer;
         private RestaurantEncounter restaurantEncounter;
         private bool errorDisplayedAlready;
+        private bool paused;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
@@ -25,6 +26,9 @@ namespace foxRestaurant
 
         public void Tick(float deltaTime)
         {
+            if (paused)
+                return;
+
             timer += deltaTime;
             if (timer >= spawnInterval)
             {
@@ -49,5 +53,8 @@ namespace foxRestaurant
             timerDisplayer.text = (spawnInterval - timer).ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
             timerDisplayer.color = Extensions.HexToColor("#848f2e");
         }
+
+        public void Pause() => paused = true;
+        public void Unpause() => paused = false;
     }
 }

@@ -40,6 +40,7 @@ namespace foxRestaurant
 
         public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
         {
+            encounter.ItemSpawnTimer.Pause();
             encounter.Ticker.Pause();
             encounter.BlockInput();
             queue = customersAndTheirOrders.ToList();
@@ -56,6 +57,7 @@ namespace foxRestaurant
 
             await ExecuteTasksList(tasksAfterWaveInitSpawn);
 
+            encounter.ItemSpawnTimer.Unpause();
             encounter.Ticker.SetRegularTickingSpeed();
             encounter.UnblockInput();
             waveIsExecuting = true;
@@ -171,12 +173,14 @@ namespace foxRestaurant
 
             waveIsExecuting = false;
             waveTcs?.TrySetResult(true);
+            encounter.ItemSpawnTimer.Pause();
         }
 
         private void AbortWave()
         {
             waveIsExecuting = false;
             waveTcs?.TrySetResult(false);
+            encounter.ItemSpawnTimer.Pause();
         }
     }
 }
