@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace foxRestaurant
     {
         [SerializeField] private Image nextCustomerImage;
         [SerializeField] private TMP_Text nextCustomersPatience;
+        [SerializeField] private TMP_Text customersCount;
         [SerializeField] private GameObject patienceInfoParent;
         [SerializeField] private GameObject noMoreCustomersInWave;
         [SerializeField] private ParticleSystem poofParticles;
@@ -18,6 +20,7 @@ namespace foxRestaurant
             this.restaurantEncounter = restaurantEncounter;
             restaurantEncounter.CurrentWaveManager.OnNextCustomerUpdated.AddListener(UpdateNextCustomerImage);
             restaurantEncounter.CurrentWaveManager.OnNextCustomersPatienceUpdated.AddListener(UpdatePatience);
+            restaurantEncounter.CurrentWaveManager.OnFedCustomersCountUpdated.AddListener(UpdateFedCustomersCount);
         }
 
         private void UpdateNextCustomerImage(CustomerData nextCustomerData)
@@ -39,6 +42,14 @@ namespace foxRestaurant
         private void UpdatePatience(float time)
         {
             nextCustomersPatience.text = time.ToString("0");
+        }
+
+        private async void UpdateFedCustomersCount(int count, int toFeed)
+        {
+            customersCount.text = $"{count} / {toFeed}";
+            customersCount.transform.localScale = Vector3.one;
+            await customersCount.transform.DOScale(2, 0.1f).AsyncWaitForCompletion();
+            customersCount.transform.DOScale(1, 0.1f);
         }
     }
 }

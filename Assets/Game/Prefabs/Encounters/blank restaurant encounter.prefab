@@ -3664,6 +3664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.WavesInfoPanel
   nextCustomerImage: {fileID: 2701740990138243253}
   nextCustomersPatience: {fileID: 2550651078600183627}
+  customersCount: {fileID: 4210538391293245751}
   patienceInfoParent: {fileID: 1553744629940812221}
   noMoreCustomersInWave: {fileID: 2336137174660200519}
   poofParticles: {fileID: 1523805549388978276}
@@ -4231,6 +4232,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnNextCustomersPatienceUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFedCustomersCountUpdated:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6405190260463571590

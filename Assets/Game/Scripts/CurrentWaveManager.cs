@@ -16,9 +16,12 @@ namespace foxRestaurant
         private TaskCompletionSource<bool> waveTcs;
         bool waveIsExecuting;
         private float nextCustomersPatienceTimer;
+        private int fedCustomersCount;
+        private int customersToFeedCount;
 
         public UnityEvent<CustomerData> OnNextCustomerUpdated;
         public UnityEvent<float> OnNextCustomersPatienceUpdated;
+        public UnityEvent<int, int> OnFedCustomersCountUpdated;
 
         public void Init(RestaurantEncounter encounter)
         {
@@ -44,6 +47,10 @@ namespace foxRestaurant
             encounter.Ticker.Pause();
             encounter.BlockInput();
             queue = customersAndTheirOrders.ToList();
+
+            customersToFeedCount = queue.Count - (encounter.SeatPlacesManager.SeatPlaces.Count - 1);
+            fedCustomersCount = 0;
+            OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
 
             await ExecuteTasksList(tasksBeforeWaveExecution);
 
@@ -143,6 +150,8 @@ namespace foxRestaurant
         {
             if (customerSatisfaction)
             {
+                fedCustomersCount++;
+                OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
                 TryCompleteSuccess();
             }
             else
@@ -168,7 +177,7 @@ namespace foxRestaurant
 
         private void TryCompleteSuccess()
         {
-            if (queue.Count != 0 || spawnedCustomers.Count != 0)
+            if (fedCustomersCount < customersToFeedCount)
                 return;
 
             waveIsExecuting = false;
