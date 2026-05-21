@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace foxRestaurant
 {
@@ -111,10 +111,7 @@ namespace foxRestaurant
             var food = item as FoodItem;
             OnAte.Invoke();
             OnAteCertainFood.Invoke(item.ItemData);
-
-            animator.SetTrigger("onEat");
-            eatSound.Play();
-
+            EatVisualEffect();
 
             if (item.ItemData == requiredItemData)
             {
@@ -125,9 +122,7 @@ namespace foxRestaurant
         public void AutoSatisfy()
         {
             GetSatiety(HungerPoints);
-
-            animator.SetTrigger("onEat");
-            eatSound.Play();
+            EatVisualEffect();
         }
 
         public void GetSatiety(int satiety)
@@ -231,5 +226,12 @@ namespace foxRestaurant
         }
 
         public bool HasTauntEffect => activeEffects.Any(effect => effect is TauntEffectInstance);
+
+        private void EatVisualEffect()
+        {
+            animator.SetTrigger("onEat");
+            eatSound.pitch = 1 + UnityEngine.Random.Range(-0.25f, 0.25f);
+            eatSound.Play();
+        }
     }
 }
