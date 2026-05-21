@@ -17,27 +17,13 @@ namespace foxRestaurant
         public void AddSlot(ItemSlot slot)
         {
             slots.Add(slot);
-
-            if(slot.SlotType == SlotType.Spawner)
-            {
-                if(slot.RequiredItemsType == ItemType.Food)
-                    foodSpawnerSlots.Add(slot);
-                else
-                    customerSpawnerSlots.Add(slot);
-            }
+            //todo dictionary 
         }
 
         public void RemoveSlot(ItemSlot slot)
         {
             slots.Remove(slot);
-
-            if (slot.SlotType == SlotType.Spawner)
-            {
-                if (slot.RequiredItemsType == ItemType.Food)
-                    foodSpawnerSlots.Remove(slot);
-                else
-                    customerSpawnerSlots.Remove(slot);
-            }
+            //todo dictionary 
         }
 
         public ItemSlot GetSlotToPlaceItem(Item item)

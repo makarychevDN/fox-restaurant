@@ -11,7 +11,6 @@ namespace foxRestaurant
         [SerializeField] private GameObject redCross;
         [SerializeField] private Transform centerForItem;
         [SerializeField] private SlotType slotType;
-        [SerializeField] private ItemType requiredItemsType;
         [SerializeField] private Cooker cooker;
         [SerializeField] private AudioSource onItemPlacedSound;
         private Item item;
@@ -29,7 +28,6 @@ namespace foxRestaurant
         public UnityEvent OnItemSliced;
 
         public SlotType SlotType => slotType;
-        public ItemType RequiredItemsType => requiredItemsType;
         public Transform CenterForItem => centerForItem;
         public Item Item => item;
         public bool Empty => item == null;
@@ -116,7 +114,7 @@ namespace foxRestaurant
             if (blocked || selectedForItemMovement || preDestroyed)
                 return false;
 
-            return placingItem.ItemType == requiredItemsType && gameObject.activeInHierarchy;
+            return gameObject.activeInHierarchy;
         }
 
         public void Unhover()

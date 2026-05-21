@@ -16,13 +16,9 @@ namespace foxRestaurant
         [SerializeField] private ItemMouseInputController inputController;
         [SerializeField] private ParticleSystem poofParticles;
         [SerializeField] private AudioSource appearSound;
-        [SerializeField] private ItemType itemType;
-
         protected RestaurantEncounter restaurantEncounter;
 
         public UnityEvent OnDestroyed;
-
-        public ItemType ItemType => itemType;
         public ItemStateController ItemStateController => itemStateController;
 
         public virtual void Init(RestaurantEncounter restaurantEncounter, ItemData itemData, float appearSoundVolume = 1)
@@ -52,11 +48,5 @@ namespace foxRestaurant
             OnDestroyed.Invoke();
             OnDestroyed.RemoveAllListeners();
         }
-    }
-
-    public enum ItemType
-    {
-        Food = 5,
-        Customer = 9
     }
 }

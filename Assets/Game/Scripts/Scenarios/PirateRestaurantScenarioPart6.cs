@@ -21,7 +21,7 @@ namespace foxRestaurant
         protected override void InitTyped(RestaurantEncounter encounter)
         {
             Camera.main.transform.position = new Vector3(0, 0, -10);
-            itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
+            //itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             encounter.Ticker.Pause();
             seatPlace.Init(encounter);
             customer.Init(encounter, ducky, () => popcicle);
