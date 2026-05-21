@@ -23,7 +23,7 @@ namespace foxRestaurant
             owner = customer;
             this.encounter = encounter;
             encounter.CustomersManager.OnCustomerWasFed.AddListener(AnyCustomerWasFedHandler);
-            customer.OnStartLivingProcess.AddListener(RemoveAllListeners);
+            customer.OnStartLeavingProcess.AddListener(RemoveAllListeners);
         }
 
         private void AnyCustomerWasFedHandler(Customer customer, ItemData itemData)
@@ -37,7 +37,7 @@ namespace foxRestaurant
 
         private void RemoveAllListeners()
         {
-            owner.OnStartLivingProcess.RemoveListener(RemoveAllListeners);
+            owner.OnStartLeavingProcess.RemoveListener(RemoveAllListeners);
             encounter.CustomersManager.OnCustomerWasFed.RemoveListener(AnyCustomerWasFedHandler);
         }
     }

@@ -34,15 +34,12 @@ namespace foxRestaurant
         private Func<ItemData> getItemDataToOrderFunc;
         private RestaurantEncounter restaurantEncounter;
         private List<ITickable> activeEffects = new();
+        private float leavingTimer = 2;
+        private bool isLeaving = false;
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
-        /// <summary>
-        /// It is called when the customer leaves.
-        /// if satisfied, argument = true, else argument = false.
-        /// </summary>
-
-        public UnityEvent OnStartLivingProcess;
+        public UnityEvent OnStartLeavingProcess;
         public UnityEvent OnLeft;
         public UnityEvent<bool> OnLeftSatisfied;
         public UnityEvent<Customer> OnCustomerLeft;
@@ -51,6 +48,7 @@ namespace foxRestaurant
         public UnityEvent<ItemData> OnAteCertainFood;
 
         public Character Character => character;
+        private bool IsSatisfied => HungerPoints <= 0;
 
         public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
@@ -124,8 +122,8 @@ namespace foxRestaurant
             if (IsSatisfied)
             {
                 Uninit();
-                OnStartLivingProcess.Invoke();
-                Invoke(nameof(LeaveSatisfied), 2f);
+                OnStartLeavingProcess.Invoke();
+                isLeaving = true;
             }
         }
 
@@ -137,30 +135,50 @@ namespace foxRestaurant
 
         public void Tick(float deltaTime)
         {
+            if (isLeaving)
+            {
+                TickLeavingTimer(deltaTime);
+            }
+            else
+            {
+                TickPatience(deltaTime);
+            }
+        }
+
+        private void TickPatience(float deltaTime)
+        {
             Patience -= deltaTime;
             Patience = Math.Clamp(Patience, 0, 1000);
             OnPatienceChanged.Invoke(Patience);
 
-            for(int i = 0; i < activeEffects.Count; i++)
+            for (int i = 0; i < activeEffects.Count; i++)
             {
                 activeEffects[i].Tick(deltaTime);
             }
 
-            if(Patience <= 0)
+            if (Patience <= 0)
             {
-                timeIsUpSound.Play();
-                animator.SetTrigger("onEat");
-                OnStartLivingProcess.Invoke();
                 Uninit();
-                Invoke(nameof(LeaveUnsatisfied), 2f);
+                timeIsUpSound.Play();
+                OnStartLeavingProcess.Invoke();
+                isLeaving = true;
             }
         }
 
-        private bool IsSatisfied => HungerPoints <= 0;
+        private void TickLeavingTimer(float deltaTime)
+        {
+            leavingTimer -= deltaTime;
+
+
+            if (leavingTimer <= 0)
+            {
+                LeaveSatisfied(IsSatisfied);
+                restaurantEncounter.Ticker.RemoveTickable(this);
+            }
+        }
 
         public void Uninit()
         {
-            restaurantEncounter.Ticker.RemoveTickable(this);
             restaurantEncounter.CustomersManager.RemoveCustomer(this);
             slotToPlaceFood.OnItemHasBeenPlaced.RemoveListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.RemoveListener(slotToPlaceFood.Clear);
@@ -169,23 +187,13 @@ namespace foxRestaurant
             orderBox.SetActive(false);
         }
 
-        public void LeaveSatisfied()
-        {
-            OnLeft.Invoke();
-            OnCustomerLeft.Invoke(this);
-            OnLeftSatisfied.Invoke(true);
-            OnCustomerLeftSatisfied.Invoke(this, true);
-            if (slotToPlaceFood != null)
-                Destroy(slotToPlaceFood.gameObject);
-            Destroy(gameObject);
-        }
 
-        public void LeaveUnsatisfied() //todo improve this thing
+        public void LeaveSatisfied(bool isSatisfied)
         {
             OnLeft.Invoke();
             OnCustomerLeft.Invoke(this);
-            OnLeftSatisfied.Invoke(false);
-            OnCustomerLeftSatisfied.Invoke(this, false);
+            OnLeftSatisfied.Invoke(isSatisfied);
+            OnCustomerLeftSatisfied.Invoke(this, isSatisfied);
             if (slotToPlaceFood != null)
                 Destroy(slotToPlaceFood.gameObject);
             Destroy(gameObject);

@@ -275,7 +275,7 @@ namespace foxRestaurant
             await Task.Delay(1000);
             await bearMiniBoss.Character.Say(dialogueLines[29].GetLocalizedString());
             await bearMiniBoss.Character.Say(dialogueLines[30].GetLocalizedString());
-            bearMiniBoss.LeaveSatisfied();
+            bearMiniBoss.LeaveSatisfied(true);
             await Task.Delay(1000);
             await redTheCook.Say(dialogueLines[31].GetLocalizedString());
             successSound.Play();
