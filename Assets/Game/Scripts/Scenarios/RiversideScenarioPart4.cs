@@ -31,11 +31,9 @@ namespace foxRestaurant
                 },
                 new List<Func<Task>>() { () => red.Say("после") },
                 new List<Func<Task>>() { () => red.Say("не получилось, надо попробовать еще раз.") },
+                (doggo, encounter.DecksManager.GetRandomDish),
                 (kitty, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish),
-                (wolf, encounter.DecksManager.GetRandomDish),
+                (doggo, encounter.DecksManager.GetRandomDish),
                 (doggo, encounter.DecksManager.GetRandomDish),
                 (kitty, encounter.DecksManager.GetRandomDish)
             );
