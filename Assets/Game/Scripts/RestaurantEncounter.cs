@@ -10,7 +10,6 @@ namespace foxRestaurant
         [SerializeField] private int cookerSlotsCount;
         [SerializeField] private int additionalSlotsCount;
         [SerializeField] private int spawnItemSlotsCount;
-        [SerializeField] private int spawnCustomerSlotsCount;
 
         [field: Header("Controllers And Managers")]
         [field: SerializeField] public PlayerInputController PlayerInputController { get; private set; }
@@ -31,8 +30,6 @@ namespace foxRestaurant
         [field: SerializeField] public SlotSpawner SlotsToSpawnFoodSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CustomerSlotsToPlaceFoodSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner AdditionalFoodSlotSpawner { get; private set; }
-        [field: SerializeField] public SlotSpawner SlotsToSpawnCustomerItemsSpawner { get; private set; }
-        [field: SerializeField] public SlotSpawner SlotsToPlaceCustomerItemsSpawner { get; private set; }
         [field: SerializeField] public ItemSlot GarbageCanSlot { get; private set; }
 
         [field: Header("UI")]
@@ -70,8 +67,6 @@ namespace foxRestaurant
             SlotsToSpawnFoodSpawner.Init(this);
             AdditionalFoodSlotSpawner.Init(this);
             CustomerSlotsToPlaceFoodSpawner.Init(this);
-            SlotsToSpawnCustomerItemsSpawner.Init(this);
-            SlotsToPlaceCustomerItemsSpawner.Init(this);
             CustomerSpawner.Init(this);
             ItemsSpawner.Init(this);
             GarbageCanSlot.Init(this);
@@ -104,7 +99,6 @@ namespace foxRestaurant
 
             SpawnSlots(AdditionalFoodSlotSpawner, additionalSlotsCount);
             SpawnSlots(SlotsToSpawnFoodSpawner, spawnItemSlotsCount);
-            SpawnSlots(SlotsToSpawnCustomerItemsSpawner, spawnCustomerSlotsCount);
 
             if(ItemSpawnTimer != null) 
                 ItemSpawnTimer.Init(this);

@@ -274,7 +274,6 @@ MonoBehaviour:
   cookerSlotsCount: 0
   additionalSlotsCount: 0
   spawnItemSlotsCount: 1
-  spawnCustomerSlotsCount: 0
   <PlayerInputController>k__BackingField: {fileID: 2242288789340019621}
   <SlotsManager>k__BackingField: {fileID: 8668560589748269554}
   <CustomersManager>k__BackingField: {fileID: 2184359704294211641}
@@ -291,8 +290,6 @@ MonoBehaviour:
   <SlotsToSpawnFoodSpawner>k__BackingField: {fileID: 5295689450324062385}
   <CustomerSlotsToPlaceFoodSpawner>k__BackingField: {fileID: 3193035049333253123}
   <AdditionalFoodSlotSpawner>k__BackingField: {fileID: 2297787356013107275}
-  <SlotsToSpawnCustomerItemsSpawner>k__BackingField: {fileID: 9092998177571689674}
-  <SlotsToPlaceCustomerItemsSpawner>k__BackingField: {fileID: 6096514790514222849}
   <GarbageCanSlot>k__BackingField: {fileID: 3297970232619881092}
   <RecipeBlackBoard>k__BackingField: {fileID: 8620325272800186986}
   <TransitionsBlackBoard>k__BackingField: {fileID: 6686876591745980028}
@@ -2183,52 +2180,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 160
---- !u!1 &2559093528034268912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5244598054570240018}
-  - component: {fileID: 9092998177571689674}
-  m_Layer: 0
-  m_Name: slots to spawn customer items spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5244598054570240018
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2559093528034268912}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2879740804358350818}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9092998177571689674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2559093528034268912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc00edc25491504896fe475069388c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 5498270339331870369, guid: 48bab9f94f6706e46bfaaee6ab15dae3, type: 3}
-  slotsParent: {fileID: 7952208328555144063}
 --- !u!1 &2634294717113391797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,8 +2216,6 @@ Transform:
   - {fileID: 2416654871146082799}
   - {fileID: 7695803640733253364}
   - {fileID: 522097447749502384}
-  - {fileID: 5244598054570240018}
-  - {fileID: 5053691116894362897}
   - {fileID: 3859241868356626908}
   - {fileID: 2986118290524629650}
   - {fileID: 7448450813208767063}
@@ -2821,52 +2770,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &3575516600492757718
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5053691116894362897}
-  - component: {fileID: 6096514790514222849}
-  m_Layer: 0
-  m_Name: slots to place customer items spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5053691116894362897
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3575516600492757718}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2879740804358350818}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6096514790514222849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3575516600492757718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc00edc25491504896fe475069388c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotPrefab: {fileID: 5498270339331870369, guid: 6897b59c52d2af34bb835bba728553a6, type: 3}
-  slotsParent: {fileID: 4182965875236709090}
 --- !u!1 &3627495636953968221
 GameObject:
   m_ObjectHideFlags: 0
