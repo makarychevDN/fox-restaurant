@@ -24,20 +24,25 @@ namespace foxRestaurant
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
-            await encounter.CurrentWaveManager.DoGenericWave(
-                new List<Func<Task>>() {
-                    () => red.Say("до"),
-                    () => SpawnIceCream(new List<ItemData>() { iceCream, iceCream, iceCream, iceCream} )
-                },
-                new List<Func<Task>>() { () => red.Say("после") },
-                new List<Func<Task>>() { () => red.Say("не получилось, надо попробовать еще раз.") },
-                (doggo, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish),
-                (doggo, encounter.DecksManager.GetRandomDish),
-                (doggo, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish)
-            );
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] { () => red.Say("До"), () => SpawnIceCream(new List<ItemData>() { iceCream, iceCream, iceCream, iceCream }) },
+                AfterInitSpawn = new Func<Task>[] { () => red.Say("После") },
+                OnFail = new Func<Task>[] { () => red.Say("Попробуем снова") },
 
+                Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish)
+                }
+            });
         }
 
         private async Task SpawnIceCream(List<ItemData> itemsToSpawnData)

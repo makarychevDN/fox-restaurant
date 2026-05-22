@@ -29,32 +29,35 @@ namespace foxRestaurant
             encounter.Ticker.AddTickable(this);
         }
 
-        public async Task DoGenericWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, List<Func<Task>> tasksOnWaveFailed, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+        public async Task DoWaveTillComplete(WaveConfig waveConfig)
         {
             bool success = false;
             while (!success)
             {
-                success = await ExecuteWave(tasksBeforeWaveExecution, tasksAfterWaveInitSpawn, customersAndTheirOrders);
+                success = await ExecuteWave(waveConfig);
 
                 if (!success)
-                    await ExecuteTasksList(tasksOnWaveFailed);
+                    await ExecuteTasksList(waveConfig.OnFail);
             }
         }
 
-        public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
+        public async Task<bool> ExecuteWave(WaveConfig waveConfig)
         {
             encounter.ItemSpawnTimer.Pause();
             encounter.Ticker.Pause();
             encounter.BlockInput();
-            queue = customersAndTheirOrders.ToList();
+            queue = new List<(CustomerData, Func<ItemData>)>(waveConfig.Customers.ToList());
 
-            customersToFeedCount = queue.Count - (encounter.SeatPlacesManager.SeatPlaces.Count - 1);
             fedCustomersCount = 0;
+            customersToFeedCount = waveConfig.CustomersToFeed <= -1 ?
+                customersToFeedCount = queue.Count - (encounter.SeatPlacesManager.SeatPlaces.Count - 1)
+                : waveConfig.CustomersToFeed;
+            customersToFeedCount = Math.Clamp(customersToFeedCount, 0, queue.Count);
             OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
 
-            await ExecuteTasksList(tasksBeforeWaveExecution);
+            await ExecuteTasksList(waveConfig.BeforeWave);
 
-            int initSpawnCount = Math.Min(customersAndTheirOrders.Length, encounter.SeatPlacesManager.FreeSeatPlaces.Count);
+            int initSpawnCount = Math.Min(queue.Count, encounter.SeatPlacesManager.FreeSeatPlaces.Count);
             for(int i = 0; i < initSpawnCount; i++)
             {
                 await Task.Delay(500);
@@ -62,7 +65,7 @@ namespace foxRestaurant
                 RefreshDataAfterCustomerSpawned();
             }
 
-            await ExecuteTasksList(tasksAfterWaveInitSpawn);
+            await ExecuteTasksList(waveConfig.AfterInitSpawn);
 
             encounter.ItemSpawnTimer.Unpause();
             encounter.Ticker.SetRegularTickingSpeed();
@@ -73,30 +76,6 @@ namespace foxRestaurant
             await FinishTheRestOfWave(success);
             return success;
         }
-
-        public async Task<bool> ExecuteWave(params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-            => await ExecuteWave(new List<Func<Task>>(), new List<Func<Task>>(), customersAndTheirOrders);
-
-        public async Task<bool> ExecuteWave(Func<Task> taskBeforeWaveExecution, Func<Task> taskAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-            => await ExecuteWave(
-                new List<Func<Task>>() { taskBeforeWaveExecution }, 
-                new List<Func<Task>>() { taskAfterWaveInitSpawn }, 
-                customersAndTheirOrders
-            );
-
-        public async Task<bool> ExecuteWave(List<Func<Task>> tasksBeforeWaveExecution, Func<Task> taskAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-            => await ExecuteWave(
-                tasksBeforeWaveExecution,
-                new List<Func<Task>>() { taskAfterWaveInitSpawn },
-                customersAndTheirOrders
-        );
-
-        public async Task<bool> ExecuteWave(Func<Task> taskBeforeWaveExecution, List<Func<Task>> tasksAfterWaveInitSpawn, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-            => await ExecuteWave(
-                new List<Func<Task>>() { taskBeforeWaveExecution },
-                tasksAfterWaveInitSpawn,
-                customersAndTheirOrders
-);
 
         public void Tick(float deltaTime)
         {
@@ -116,9 +95,9 @@ namespace foxRestaurant
             }
         }
 
-        private async Task ExecuteTasksList(List<Func<Task>> tasksBeforeWaveExecution)
+        private async Task ExecuteTasksList(Func<Task>[] tasksBeforeWaveExecution)
         {
-            for (int i = 0; i < tasksBeforeWaveExecution.Count; i++)
+            for (int i = 0; i < tasksBeforeWaveExecution.Length; i++)
             {
                 await tasksBeforeWaveExecution[i]();
             }
@@ -203,5 +182,19 @@ namespace foxRestaurant
             waveTcs?.TrySetResult(false);
             encounter.ItemSpawnTimer.Pause();
         }
+    }
+
+    public class WaveConfig
+    {
+        public Func<Task>[] BeforeWave { get; set; } = Array.Empty<Func<Task>>();
+
+        public Func<Task>[] AfterInitSpawn { get; set; } = Array.Empty<Func<Task>>();
+
+        public Func<Task>[] OnFail { get; set; } = Array.Empty<Func<Task>>();
+
+        public List<(CustomerData, Func<ItemData>)> Customers { get; set; }
+            = new List<(CustomerData, Func<ItemData>)>();
+
+        public int CustomersToFeed = -1;
     }
 }
