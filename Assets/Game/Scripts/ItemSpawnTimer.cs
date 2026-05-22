@@ -21,7 +21,7 @@ namespace foxRestaurant
         {
             this.restaurantEncounter = restaurantEncounter;
             restaurantEncounter.Ticker.AddTickable(this);
-            timerDisplayer = restaurantEncounter.SlotsManager.FoodSpawningSlots.Last().GetComponentInChildren<TMP_Text>();
+            timerDisplayer = restaurantEncounter.SlotsManager.SpawnerSlots.Last().GetComponentInChildren<TMP_Text>();
         }
 
         public void Tick(float deltaTime)
@@ -32,7 +32,7 @@ namespace foxRestaurant
             timer += deltaTime;
             if (timer >= spawnInterval)
             {
-                if (restaurantEncounter.SlotsManager.FoodSpawningSlots.Where(slot => slot.Empty).Count() == 0)
+                if (restaurantEncounter.SlotsManager.SpawnerSlots.Where(slot => slot.Empty).Count() == 0)
                 {
                     if(errorDisplayedAlready)
                         return;

@@ -15,8 +15,8 @@ namespace foxRestaurant
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
-            foodItemSpawnSlots = restaurantEncounter.SlotsManager.FoodSpawningSlots;
-            customerItemSpawnSlots = restaurantEncounter.SlotsManager.CustomerSpawnerSlots;
+            foodItemSpawnSlots = restaurantEncounter.SlotsManager.SpawnerSlots;
+            //customerItemSpawnSlots = restaurantEncounter.SlotsManager.CustomerSpawnerSlots;
         }
 
         public void SetFoodItemSpawnSlots(List<ItemSlot> itemSlots)

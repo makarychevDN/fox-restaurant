@@ -136,13 +136,17 @@ namespace foxRestaurant
 
         private void OnDestroy()
         {
-            restaurantEncounter.SlotsManager.RemoveSlot(this);
+            if(restaurantEncounter != null)
+                restaurantEncounter.SlotsManager.RemoveSlot(this);
         }
     }
 
     public enum SlotType
     {
-        Generic = 10,
-        Spawner = 20
+        BottomRow = 10,
+        Holder = 20,
+        Spawner = 30,
+        CustomerSlot = 40,
+        GarbageCan = 50
     }
 }

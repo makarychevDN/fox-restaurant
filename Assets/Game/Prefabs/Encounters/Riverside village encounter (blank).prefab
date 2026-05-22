@@ -1038,10 +1038,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
-      propertyPath: <ItemSpawnTimer>k__BackingField
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990535663065894151, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: <restaurantEncounterData>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: eb52b21fc7da183449e17d4c59b36ebc, type: 2}

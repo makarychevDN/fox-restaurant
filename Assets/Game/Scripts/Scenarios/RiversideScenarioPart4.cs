@@ -42,11 +42,10 @@ namespace foxRestaurant
 
         private async Task SpawnIceCream(List<ItemData> itemsToSpawnData)
         {
-            var itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.gameObject.activeSelf).ToList();
-            for (int i = 1; i < itemsToSpawnData.Count; i++)
+            for (int i = 0; i < encounter.SlotsManager.BottomRowSlots.Count; i++)
             {
                 await Task.Delay(500);
-                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], itemSlots[i]);
+                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
             }
         }
     }

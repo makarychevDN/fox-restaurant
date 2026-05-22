@@ -62,6 +62,7 @@ namespace foxRestaurant
             UpdateDataBase(restaurantEncounterData.CsvFile);
 
             PlayerInputController.Init(this);
+            SlotsManager.Init();
 
             CookerSlotSpawner.Init(this);
             SlotsToSpawnFoodSpawner.Init(this);
