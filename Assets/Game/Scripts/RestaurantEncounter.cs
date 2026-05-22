@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization;
 
 namespace foxRestaurant
 {
@@ -10,6 +11,10 @@ namespace foxRestaurant
         [SerializeField] private int cookerSlotsCount;
         [SerializeField] private int additionalSlotsCount;
         [SerializeField] private int spawnItemSlotsCount;
+
+        [field: Header("Characters Setup")]
+        [field: SerializeField] public Character TheMainCharacter { get; private set; }
+        [field: SerializeField] public LocalizedString DefaultFailurePhrase { get; private set; }
 
         [field: Header("Controllers And Managers")]
         [field: SerializeField] public PlayerInputController PlayerInputController { get; private set; }
