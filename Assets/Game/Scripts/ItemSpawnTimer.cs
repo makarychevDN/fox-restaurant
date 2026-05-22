@@ -16,6 +16,7 @@ namespace foxRestaurant
         private RestaurantEncounter restaurantEncounter;
         private bool errorDisplayedAlready;
         private bool paused;
+        private bool blocked;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
@@ -27,6 +28,9 @@ namespace foxRestaurant
 
         public void Tick(float deltaTime)
         {
+            if (blocked)
+                return;
+
             if (paused)
                 return;
 
@@ -57,5 +61,6 @@ namespace foxRestaurant
 
         public void Pause() => paused = true;
         public void Unpause() => paused = false;
+        public void SetBlocked(bool blocked) => this.blocked = blocked;
     }
 }
