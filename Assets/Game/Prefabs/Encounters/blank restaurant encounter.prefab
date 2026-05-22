@@ -274,6 +274,16 @@ MonoBehaviour:
   cookerSlotsCount: 0
   additionalSlotsCount: 0
   spawnItemSlotsCount: 1
+  <TheMainCharacter>k__BackingField: {fileID: 201278238129620256}
+  <DefaultFailurePhrase>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 131328193486848
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <PlayerInputController>k__BackingField: {fileID: 2242288789340019621}
   <SlotsManager>k__BackingField: {fileID: 8668560589748269554}
   <CustomersManager>k__BackingField: {fileID: 2184359704294211641}
@@ -305,6 +315,9 @@ MonoBehaviour:
   OnDataBaseUpdated:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!82 &4953268104366404968
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4420,7 +4433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f808ff157c74542849c7d0936214b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerItemPrefab: {fileID: 9215618473170150502, guid: 0675301922acd5343a3b1dd1b686dbf2, type: 3}
   foodItemPrefab: {fileID: 9215618473170150502, guid: eabf2272df7f2b845a60d4c97e696ae0, type: 3}
 --- !u!114 &4603569617256824294
 MonoBehaviour:
@@ -6289,6 +6301,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cc3d1f1ca922e94ba61699973055573, type: 3}
+--- !u!114 &201278238129620256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6454055159585788069, guid: 3cc3d1f1ca922e94ba61699973055573, type: 3}
+  m_PrefabInstance: {fileID: 6582711816736527749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a853fb76a2f234fa682286aad6e9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2019005021990881474 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5142705997548608839, guid: 3cc3d1f1ca922e94ba61699973055573, type: 3}
