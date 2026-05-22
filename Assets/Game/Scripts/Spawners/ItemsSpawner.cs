@@ -6,27 +6,19 @@ namespace foxRestaurant
 {
     public class ItemsSpawner : MonoBehaviour
     {
-        [SerializeField] private Item customerItemPrefab;
         [SerializeField] private Item foodItemPrefab;
         private RestaurantEncounter restaurantEncounter;
-        private List<ItemSlot> customerItemSpawnSlots;
         private List<ItemSlot> foodItemSpawnSlots;
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
             foodItemSpawnSlots = restaurantEncounter.SlotsManager.SpawnerSlots;
-            //customerItemSpawnSlots = restaurantEncounter.SlotsManager.CustomerSpawnerSlots;
         }
 
         public void SetFoodItemSpawnSlots(List<ItemSlot> itemSlots)
         {
             foodItemSpawnSlots = itemSlots;
-        }
-
-        public void SetCustomerItemSpawnSlots(List<ItemSlot> itemSlots)
-        {
-            customerItemSpawnSlots = itemSlots;
         }
 
         public void SpawnIngredient()
@@ -37,16 +29,6 @@ namespace foxRestaurant
 
             var itemData = restaurantEncounter.DecksManager.GetRandomIngredient();
             SpawnFoodItem(restaurantEncounter, itemData, cookerSlot);
-        }
-
-        public Item SpawnCustomerItem()
-        {
-            var customerSpawnSlot = customerItemSpawnSlots.FirstOrDefault(slot => slot.Empty);
-            if (customerSpawnSlot == null)
-                return null;
-
-            var itemData = restaurantEncounter.DecksManager.GetRandomCustomer();
-            return SpawnItem(customerItemPrefab, restaurantEncounter, itemData, customerSpawnSlot);
         }
 
         public Item SpawnFoodItem(RestaurantEncounter restaurantEncounter, ItemData itemData, ItemSlot itemSlot) =>
