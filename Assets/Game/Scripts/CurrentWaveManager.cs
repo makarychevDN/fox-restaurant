@@ -37,7 +37,7 @@ namespace foxRestaurant
                 success = await ExecuteWave(waveConfig);
 
                 if (!success)
-                    await ExecuteTasksList(waveConfig.OnFail);
+                    await ExecuteTasksList(BuildOnFailTasks(waveConfig));
             }
         }
 
@@ -58,11 +58,11 @@ namespace foxRestaurant
             await ExecuteTasksList(waveConfig.BeforeWave);
 
             int initSpawnCount = Math.Min(queue.Count, encounter.SeatPlacesManager.FreeSeatPlaces.Count);
-            for(int i = 0; i < initSpawnCount; i++)
+            for (int i = 0; i < initSpawnCount; i++)
             {
-                await Task.Delay(500);
                 SpawnCustomer();
                 RefreshDataAfterCustomerSpawned();
+                await Task.Delay(500);
             }
 
             await ExecuteTasksList(waveConfig.AfterInitSpawn);
@@ -103,6 +103,17 @@ namespace foxRestaurant
             }
         }
 
+        private Func<Task>[] BuildOnFailTasks(WaveConfig config)
+        {
+            if (config.OnFail.Length > 0)
+                return config.OnFail;
+
+            return new Func<Task>[]
+            {
+                () => encounter.TheMainCharacter.Say(encounter.DefaultFailurePhrase)
+            };
+        }
+
         private void SpawnCustomer()
         {
             var customer = encounter.CustomerSpawner.TryToSpawnCustomer(queue[0].Item1, queue[0].Item2);
@@ -141,14 +152,16 @@ namespace foxRestaurant
 
             if (success)
             {
-                var customers = new List<Customer>(encounter.CustomersManager.Customers.Where(customer => !customer.IsLeaving)); 
+                int customersCount = encounter.CustomersManager.Customers.Count;
+                var customers = new List<Customer>(encounter.CustomersManager.Customers.Where(customer => !customer.IsLeaving));
                 foreach (var customer in customers)
                 {
                     await Task.Delay(250);
                     customer.AutoSatisfy();
                 }
 
-                await Task.Delay(3000);
+                if(customersCount > 0)
+                    await Task.Delay(3000);
             }
 
             else
