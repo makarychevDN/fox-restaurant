@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace foxRestaurant
 {
@@ -57,14 +58,12 @@ namespace foxRestaurant
         [SerializeField] List<LocalizedString> dialogueLines;
 
         private List<Customer> customersToFeed = new();
-        private List<ItemSlot> itemSlots;
         private int switchConeAndPopsicleCount;
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
-            //itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
-
             encounter.BlockInput();
+            encounter.ItemSpawnTimer.SetBlocked(true);
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[0]);
             encounter.UnblockInput();
@@ -86,11 +85,31 @@ namespace foxRestaurant
 
         private async Task TeachToFeedCustomers(RestaurantEncounter encounter)
         {
-            await FixWave(encounter, new List<ItemData> { iceCreamConeData, iceCreamConeData },
-                (duck, () => iceCreamConeData), (kitty, () => iceCreamConeData));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { iceCreamConeData, iceCreamConeData }) },
+                Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => iceCreamConeData), (kitty, () => iceCreamConeData) },
+                CustomersToFeed = 2
+            });
 
-            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData },
-                (duck, () => iceCreamConeData), (kitty, () => popsicleData));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData }) },
+                Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => iceCreamConeData), (kitty, () => popsicleData) },
+                CustomersToFeed = 2
+            });
+        }
+
+        private async Task SpawnStartItems(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData)
+        {
+            encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
+            FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
+
+            for (int i = 0; i < itemsToSpawnData.Count; i++)
+            {
+                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
+                await Task.Delay(500);
+            }
         }
 
         private async Task TeachToUnderstandHPMechanic(RestaurantEncounter encounter)
@@ -140,7 +159,7 @@ namespace foxRestaurant
             for (int i = 0; i < 4; i++)
             {
                 await Task.Delay(100);
-                spawnedItems.Add(encounter.ItemsSpawner.SpawnFoodItem(encounter, coalData, itemSlots[i]));
+                spawnedItems.Add(encounter.ItemsSpawner.SpawnFoodItem(encounter, coalData, encounter.SlotsManager.BottomRowSlots[i]));
             }
             int satietySum = spawnedItems.Sum(foodItem => (foodItem as FoodItem).Satiety);
 
@@ -306,14 +325,14 @@ namespace foxRestaurant
 
                 if (itemsToSpawnData.Count > 0)
                 {
-                    itemSlots.ForEach(slot => slot.Clear());
+                    encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
                     FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
                 }
 
                 for (int i = 0; i < itemsToSpawnData.Count; i++)
                 {
                     await Task.Delay(500);
-                    encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], itemSlots[i]);
+                    encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
                 }
 
                 foreach(var customerAndOrder in customersAndTheirOrders)
