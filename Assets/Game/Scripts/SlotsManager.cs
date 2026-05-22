@@ -23,7 +23,7 @@ namespace foxRestaurant
         {
             slotLists = new Dictionary<SlotType, List<ItemSlot>>()
             {
-                { SlotType.BottomRow, spawnerSlots },
+                { SlotType.BottomRow, bottomRowSlots },
                 { SlotType.Holder, holderSlots },
                 { SlotType.Spawner, spawnerSlots },
                 { SlotType.CustomerSlot, customerSlots },
