@@ -22,6 +22,7 @@ namespace foxRestaurant
             this.restaurantEncounter = restaurantEncounter;
             restaurantEncounter.Ticker.AddTickable(this);
             timerDisplayer = restaurantEncounter.SlotsManager.SpawnerSlots.Last().GetComponentInChildren<TMP_Text>();
+            Pause();
         }
 
         public void Tick(float deltaTime)
