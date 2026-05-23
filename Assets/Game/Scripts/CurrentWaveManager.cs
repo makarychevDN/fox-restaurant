@@ -138,7 +138,7 @@ namespace foxRestaurant
             {
                 fedCustomersCount++;
                 OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
-                TryCompleteSuccess();
+                TryCompleteSuccessfully();
             }
             else
             {
@@ -160,8 +160,8 @@ namespace foxRestaurant
                     customer.AutoSatisfy();
                 }
 
-                if(customersCount > 0)
-                    await Task.Delay(3000);
+                //if there are still customers on the map wait till the go away after autosatisfying
+                await Task.Delay(customersCount > 0 ? 3000 : 500);
             }
 
             else
@@ -179,7 +179,7 @@ namespace foxRestaurant
             encounter.UnblockInput();
         }
 
-        private void TryCompleteSuccess()
+        private void TryCompleteSuccessfully()
         {
             if (fedCustomersCount < customersToFeedCount)
                 return;
