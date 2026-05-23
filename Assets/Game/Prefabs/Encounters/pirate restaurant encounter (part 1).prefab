@@ -9757,7 +9757,6 @@ GameObject:
   - component: {fileID: 3576214431501762585}
   - component: {fileID: 3878485003343734816}
   - component: {fileID: 90602713630946185}
-  - component: {fileID: 3378904495461358187}
   m_Layer: 5
   m_Name: Restart button
   m_TagString: Untagged
@@ -9867,10 +9866,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3378904495461358187}
-        m_TargetAssemblyTypeName: foxRestaurant.TimeScaleSetter, Assembly-CSharp
-        m_MethodName: SetTimeScale
-        m_Mode: 4
+      - m_Target: {fileID: 5525664604929483473}
+        m_TargetAssemblyTypeName: foxRestaurant.Ticker, Assembly-CSharp
+        m_MethodName: SetX40TickingSpeed
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9879,18 +9878,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &3378904495461358187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3577829678810656139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f116a116978f27499c5ee4dafac2ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3632603002757939225
 GameObject:
   m_ObjectHideFlags: 0
@@ -16990,6 +16977,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7448450813208767063, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
   m_PrefabInstance: {fileID: 6616348517698462878}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5525664604929483473 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1693044783131133519, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+  m_PrefabInstance: {fileID: 6616348517698462878}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fd0473f0990cd428fda6940bbb74d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5784402832297027239 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 835327942896288313, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
