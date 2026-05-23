@@ -193,5 +193,14 @@ namespace foxRestaurant
             shakingCameraLoop.Kill();
             shakingCameraLoop = SetCameraShakingLoopAnimation(camera, strength);
         }
+
+        public static Func<Task> WrapToTask(this Action action)
+        {
+            return () =>
+            {
+                action();
+                return Task.CompletedTask;
+            };
+        }
     }
 }

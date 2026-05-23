@@ -68,16 +68,11 @@ namespace foxRestaurant
             await redTheCook.Say(dialogueLines[0]);
             encounter.UnblockInput();
 
-            await TeachToFeedCustomers(encounter);
-            await Task.Delay(500);
-            await TeachToUnderstandHPMechanic(encounter);
-            await Task.Delay(500);
+            //await TeachToFeedCustomers(encounter);
+            //await TeachToUnderstandHPMechanic(encounter);
             await GarbageCanTutorial(encounter);
-            await Task.Delay(500);
             await TeachToFuseIngredients(encounter);
-            await Task.Delay(500);
             await TeachToManageSpawnedItems(encounter);
-            await Task.Delay(500);
             await MiniBossDialogue(encounter);
             await MiniBossWave(encounter);
             await MiniBossDialogueAfterWave(encounter);
@@ -100,58 +95,37 @@ namespace foxRestaurant
             });
         }
 
-        private async Task SpawnStartItems(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData)
-        {
-            encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
-            FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
-
-            for (int i = 0; i < itemsToSpawnData.Count; i++)
-            {
-                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
-                await Task.Delay(500);
-            }
-        }
-
         private async Task TeachToUnderstandHPMechanic(RestaurantEncounter encounter)
         {
-            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData },
-                dialogueLines[1].GetLocalizedString(),
-                (doggo, SwitchConeAndPopsicle));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData }) },
+                Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, SwitchConeAndPopsicle) },
+                AfterInitSpawn = new Func<Task>[] { () => redTheCook.Say(dialogueLines[1]) },
+                CustomersToFeed = 1
+            });
 
-            encounter.BlockInput();
             await redTheCook.Say(dialogueLines[2].GetLocalizedString());
-            encounter.UnblockInput();
 
-            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData },
-                (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
+                Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData) },
+                CustomersToFeed = 3
+            });
 
-            await FixWave(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData },
-                (doggo, () => iceCreamConeData), (doggo, () => popsicleData));
-        }
-
-        private async Task TeachToFuseIngredients(RestaurantEncounter encounter)
-        {
-            await FixWave(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData },
-                new List<string> { dialogueLines[8].GetLocalizedString(),
-                dialogueLines[9].GetLocalizedString(),
-                dialogueLines[10].GetLocalizedString() },
-                (duck, () => cherryIceCreamPlateData));
-
-            encounter.BlockInput();
-            await redTheCook.Say(dialogueLines[11].GetLocalizedString());
-            encounter.UnblockInput();
-
-            await FixWave(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData, chocolateSyrupData, iceCreamPlateData },
-                (doggo, () => cherryIceCreamPlateData), (kitty, () => chocolateIceCreamPlateData));
-
-            await FixWave(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData, iceCreamConeData, popsicleData },
-                (doggo, () => cherryIceCreamPlateData), (kitty, () => iceCreamConeData), (duck, () => popsicleData));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
+                Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, () => iceCreamConeData), (doggo, () => popsicleData) },
+                CustomersToFeed = 3
+            });
         }
 
         private async Task GarbageCanTutorial(RestaurantEncounter encounter)
         {
-            encounter.BlockInput();
             brokenSound.Play();
+            redTheCook.LookAt(parentOfBottomItemSlots);
             await parentOfBottomItemSlots.DOShakeScale(0.3f, 0.5f, 10, 0).AsyncWaitForCompletion();
             parentOfBottomItemSlots.transform.localScale = Vector3.one;
 
@@ -167,14 +141,78 @@ namespace foxRestaurant
             await redTheCook.Say(dialogueLines[3].GetLocalizedString());
             await redTheCook.Say(dialogueLines[4].GetLocalizedString());
             await redTheCook.Say(dialogueLines[5].GetLocalizedString());
+
             garbageCan.gameObject.SetActive(true);
+            redTheCook.LookAt(garbageCan.transform);
+
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[6].GetLocalizedString());
-            encounter.UnblockInput();
+            redTheCook.LookAt(null);
+
             await WaitForHungerPointsDisposed(satietySum);
-            encounter.BlockInput();
+
+            redTheCook.LookAt(garbageCan.transform);
             await redTheCook.Say(dialogueLines[7].GetLocalizedString());
-            encounter.UnblockInput();
+            redTheCook.LookAt(null);
+        }
+
+        private async Task TeachToFuseIngredients(RestaurantEncounter encounter)
+        {
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig
+            {
+                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData }) },
+                Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => cherryIceCreamPlateData) },
+                AfterInitSpawn = new Func<Task>[] {
+                    new Action(() => redTheCook.LookAt(encounter.CustomersManager.Customers[0].transform)).WrapToTask(),
+                    () => redTheCook.Say(dialogueLines[8]),
+                    () => redTheCook.Say(dialogueLines[9]),
+                    () => redTheCook.Say(dialogueLines[10]),
+                    new Action(() => redTheCook.LookAt(null)).WrapToTask()
+                },
+                CustomersToFeed = 1
+            });
+
+            await redTheCook.Say(dialogueLines[11].GetLocalizedString());
+
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] 
+                {
+                    () => SpawnStartItems(encounter, new List<ItemData>
+                    {
+                        cherrySyrupData,
+                        iceCreamPlateData,
+                        chocolateSyrupData,
+                        iceCreamPlateData
+                    })
+                },
+                Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (doggo, () => cherryIceCreamPlateData),
+                    (kitty, () => chocolateIceCreamPlateData)
+                },
+                CustomersToFeed = 2
+            });
+
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[] {
+                () => SpawnStartItems(encounter, new List<ItemData>
+                    {
+                        cherrySyrupData,
+                        iceCreamPlateData,
+                        iceCreamConeData,
+                        popsicleData
+                    })
+                },
+                Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (doggo, () => cherryIceCreamPlateData),
+                    (kitty, () => iceCreamConeData),
+                    (duck, () => popsicleData)
+                },
+                CustomersToFeed = 3
+            });
         }
 
         private async Task TeachToManageSpawnedItems(RestaurantEncounter encounter)
@@ -188,22 +226,43 @@ namespace foxRestaurant
             await redTheCook.Say(dialogueLines[13].GetLocalizedString());
             await redTheCook.Say(dialogueLines[14].GetLocalizedString());
             encounter.UnblockInput();
-            itemSpawnTimer.Init(encounter);
+            itemSpawnTimer.SetBlocked(false);
 
-            await FixWave(encounter, new List<ItemData>(),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = Array.Empty<Func<Task>>(),
+                Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish)
+                },
+                CustomersToFeed = 2
+            });
 
-            await FixWave(encounter, new List<ItemData>(),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = Array.Empty<Func<Task>>(),
+                Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish)
+                },
+                CustomersToFeed = 3
+            });
 
-            await FixWave(encounter, new List<ItemData>(),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
-                (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = Array.Empty<Func<Task>>(),
+                Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
+                    (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish)
+                },
+                CustomersToFeed = 4
+            });
         }
 
 
@@ -392,5 +451,17 @@ namespace foxRestaurant
         }
 
         protected override void InitTyped(RestaurantEncounter encounter) { }
+
+        private async Task SpawnStartItems(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData)
+        {
+            encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
+            FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
+
+            for (int i = 0; i < itemsToSpawnData.Count; i++)
+            {
+                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
+                await Task.Delay(500);
+            }
+        }
     }
 }
