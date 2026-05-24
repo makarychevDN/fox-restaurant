@@ -78,7 +78,7 @@ namespace foxRestaurant
             customersToFeedPanel.DOScale(1, 0.05f);
         }
 
-        private void RebuildContentSizeFitters()
+        public void RebuildContentSizeFitters()
         {
             foreach (var fitter in contentSizeFitters)
             {
