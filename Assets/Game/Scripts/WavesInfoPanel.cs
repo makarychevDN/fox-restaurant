@@ -1,4 +1,7 @@
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,20 +10,26 @@ namespace foxRestaurant
 {
     public class WavesInfoPanel : MonoBehaviour
     {
+        [SerializeField] private GameObject segmentPrefab;
+        [SerializeField] private Transform parentForSegments;
+        [SerializeField] private Transform customersToFeedPanel;
         [SerializeField] private Image nextCustomerImage;
         [SerializeField] private TMP_Text nextCustomersPatience;
         [SerializeField] private TMP_Text customersCount;
         [SerializeField] private GameObject patienceInfoParent;
         [SerializeField] private GameObject noMoreCustomersInWave;
         [SerializeField] private ParticleSystem poofParticles;
+        [SerializeField] private List<RectTransform> contentSizeFitters;
         private RestaurantEncounter restaurantEncounter;
+        private List<GameObject> segments = new();
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
             this.restaurantEncounter = restaurantEncounter;
             restaurantEncounter.CurrentWaveManager.OnNextCustomerUpdated.AddListener(UpdateNextCustomerImage);
             restaurantEncounter.CurrentWaveManager.OnNextCustomersPatienceUpdated.AddListener(UpdatePatience);
-            restaurantEncounter.CurrentWaveManager.OnFedCustomersCountUpdated.AddListener(UpdateFedCustomersCount);
+            restaurantEncounter.CurrentWaveManager.OnCustomersToFeedCountUpdated.AddListener(UpdateSegments);
+            restaurantEncounter.CurrentWaveManager.OnFedCustomersCountUpdated.AddListener(UpdateCheckmarks);
         }
 
         private void UpdateNextCustomerImage(CustomerData nextCustomerData)
@@ -44,12 +53,57 @@ namespace foxRestaurant
             nextCustomersPatience.text = time.ToString("0");
         }
 
-        private async void UpdateFedCustomersCount(int count, int toFeed)
+
+        private void UpdateSegments(int newSegmentsCount)
         {
-            customersCount.text = $"{count} / {toFeed}";
-            customersCount.transform.localScale = Vector3.one;
-            await customersCount.transform.DOScale(2, 0.1f).AsyncWaitForCompletion();
-            customersCount.transform.DOScale(1, 0.1f);
+            int segmentsToSpawnCount = newSegmentsCount - segments.Count;
+            while (segmentsToSpawnCount > 0)
+            {
+                segments.Add(Instantiate(segmentPrefab, parentForSegments));
+                segmentsToSpawnCount--;
+            }
+
+            for (int i = 0; i < segments.Count; i++)
+            {
+                segments[i].SetActive(i < newSegmentsCount);
+            }
+
+            RebuildContentSizeFitters();
+            ShakeSegmentsParent();
+        }
+
+        private async Task ShakeSegmentsParent()
+        {
+            await customersToFeedPanel.DOScale(2, 0.05f).AsyncWaitForCompletion();
+            customersToFeedPanel.DOScale(1, 0.05f);
+        }
+
+        private void RebuildContentSizeFitters()
+        {
+            foreach (var fitter in contentSizeFitters)
+            {
+                LayoutRebuilder.ForceRebuildLayoutImmediate(fitter);
+            }
+        }
+
+        private void UpdateCheckmarks(int checkMarksCount)
+        {
+            if (checkMarksCount > segments.Count(s => s.activeSelf))
+                return;
+
+            for (int i = 0; i < segments.Count; i++)
+            {
+                segments[i].transform.GetChild(0).gameObject.SetActive(i < checkMarksCount);
+            }
+
+            if(checkMarksCount > 0)
+                ShakeCheckmark(segments[checkMarksCount - 1].transform.GetChild(0).transform);
+        }
+
+        private async Task ShakeCheckmark(Transform checkmark)
+        {
+            await checkmark.DOScale(2, 0.1f).AsyncWaitForCompletion();
+            checkmark.DOScale(1, 0.1f);
         }
     }
 }

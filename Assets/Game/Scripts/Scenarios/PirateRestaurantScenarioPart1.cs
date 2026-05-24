@@ -62,20 +62,29 @@ namespace foxRestaurant
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
-            encounter.BlockInput();
-            encounter.ItemSpawnTimer.SetBlocked(true);
             await Task.Delay(500);
-            await redTheCook.Say(dialogueLines[0]);
-            encounter.UnblockInput();
+            encounter.ItemSpawnTimer.SetBlocked(true);
 
+            //await Intro(encounter);
             //await TeachToFeedCustomers(encounter);
             //await TeachToUnderstandHPMechanic(encounter);
-            await GarbageCanTutorial(encounter);
-            await TeachToFuseIngredients(encounter);
+            //await GarbageCanTutorial(encounter);
+
+            garbageCan.gameObject.SetActive(true);
+
+            //await TeachToFuseIngredients(encounter);
+
+            itemSpawnTimer.SetBlocked(false);
+
             await TeachToManageSpawnedItems(encounter);
             await MiniBossDialogue(encounter);
             await MiniBossWave(encounter);
             await MiniBossDialogueAfterWave(encounter);
+        }
+
+        private async Task Intro(RestaurantEncounter encounter)
+        {
+            await redTheCook.Say(dialogueLines[0]);
         }
 
         private async Task TeachToFeedCustomers(RestaurantEncounter encounter)
@@ -220,13 +229,10 @@ namespace foxRestaurant
             slotsToSpawnFoodParent.SetActive(true);
             effectOnSlotsToSpawnFoodAppear.SetActive(true);
             soundOnSlotsToSpawnFoodAppear.Play();
-            encounter.BlockInput();
             await Task.Delay(500);
             await redTheCook.Say(dialogueLines[12].GetLocalizedString());
             await redTheCook.Say(dialogueLines[13].GetLocalizedString());
             await redTheCook.Say(dialogueLines[14].GetLocalizedString());
-            encounter.UnblockInput();
-            itemSpawnTimer.SetBlocked(false);
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
@@ -248,7 +254,7 @@ namespace foxRestaurant
                     (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish),
                     (encounter.DecksManager.GetRandomCustomer(), encounter.DecksManager.GetRandomDish)
                 },
-                CustomersToFeed = 3
+                CustomersToFeed = 2
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()

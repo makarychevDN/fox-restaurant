@@ -21,7 +21,8 @@ namespace foxRestaurant
 
         public UnityEvent<CustomerData> OnNextCustomerUpdated;
         public UnityEvent<float> OnNextCustomersPatienceUpdated;
-        public UnityEvent<int, int> OnFedCustomersCountUpdated;
+        public UnityEvent<int> OnFedCustomersCountUpdated;
+        public UnityEvent<int> OnCustomersToFeedCountUpdated;
 
         public void Init(RestaurantEncounter encounter)
         {
@@ -53,7 +54,8 @@ namespace foxRestaurant
                 customersToFeedCount = queue.Count - (encounter.SeatPlacesManager.SeatPlaces.Count - 1)
                 : waveConfig.CustomersToFeed;
             customersToFeedCount = Math.Clamp(customersToFeedCount, 0, queue.Count);
-            OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
+            OnCustomersToFeedCountUpdated.Invoke(customersToFeedCount);
+            OnFedCustomersCountUpdated.Invoke(fedCustomersCount);
 
             await ExecuteTasksList(waveConfig.BeforeWave);
 
@@ -137,7 +139,7 @@ namespace foxRestaurant
             if (isSatisfied)
             {
                 fedCustomersCount++;
-                OnFedCustomersCountUpdated.Invoke(fedCustomersCount, customersToFeedCount);
+                OnFedCustomersCountUpdated.Invoke(fedCustomersCount);
                 TryCompleteSuccessfully();
             }
             else
