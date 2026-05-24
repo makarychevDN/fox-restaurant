@@ -51,7 +51,7 @@ namespace foxRestaurant
 
             fedCustomersCount = 0;
             customersToFeedCount = waveConfig.CustomersToFeed <= -1 ?
-                customersToFeedCount = queue.Count - (encounter.SeatPlacesManager.SeatPlaces.Count - 1)
+                customersToFeedCount = queue.Count - encounter.SeatPlacesManager.SeatPlaces.Count
                 : waveConfig.CustomersToFeed;
             customersToFeedCount = Math.Clamp(customersToFeedCount, 0, queue.Count);
             OnCustomersToFeedCountUpdated.Invoke(customersToFeedCount);
