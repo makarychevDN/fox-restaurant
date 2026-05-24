@@ -154,6 +154,7 @@ namespace foxRestaurant
 
             if (success)
             {
+                OnNextCustomerUpdated.Invoke(null);
                 int customersCount = encounter.CustomersManager.Customers.Count;
                 var customers = new List<Customer>(encounter.CustomersManager.Customers.Where(customer => !customer.IsLeaving));
                 foreach (var customer in customers)
