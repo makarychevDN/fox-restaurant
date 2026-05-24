@@ -26240,6 +26240,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 7434010322547932776, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cf1e90e4e6d531844b6bc22e9538654a, type: 3}
     - target: {fileID: 7550263388262971341, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: segmentPrefab
       value: 
