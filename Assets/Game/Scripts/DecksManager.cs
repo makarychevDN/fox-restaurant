@@ -14,7 +14,7 @@ namespace foxRestaurant
 
         public void Init()
         {
-            ingredientsDeck = new Deck<ItemData>(ingredientsToSpawnAsset.DataList, 1);
+            ingredientsDeck = new Deck<ItemData>(ingredientsToSpawnAsset.DataList, 2);
             dishesDeck = new Deck<ItemData>(dishesToOrderAsset.DataList, 2);
             customersDeck = new Deck<CustomerData> (customersToSpawnAsset.DataList, 2);
         }
