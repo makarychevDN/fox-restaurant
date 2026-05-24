@@ -3,10 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Localization;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 namespace foxRestaurant
 {
@@ -61,7 +59,6 @@ namespace foxRestaurant
         [SerializeField] LocalizedString waveIsFailedLine;
         [SerializeField] List<LocalizedString> dialogueLines;
 
-        private List<Customer> customersToFeed = new();
         private int switchConeAndPopsicleCount;
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
@@ -397,11 +394,34 @@ namespace foxRestaurant
         private async Task MiniBossWave(RestaurantEncounter encounter)
         {
             bossMusic.Play();
-            await FixWave(encounter, new List<ItemData>(),
-                (bearMiniBossData, encounter.DecksManager.GetRandomDish),
-                (doggo, encounter.DecksManager.GetRandomDish),
-                (kitty, encounter.DecksManager.GetRandomDish),                
-                (duck, encounter.DecksManager.GetRandomDish));
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<Task>[]
+                {
+                    () => SpawnStartItems(encounter, new List<ItemData>
+                    {
+                        encounter.DecksManager.GetRandomIngredient(),
+                        encounter.DecksManager.GetRandomIngredient(),
+                        encounter.DecksManager.GetRandomIngredient(),
+                        encounter.DecksManager.GetRandomIngredient()
+                    })
+                },
+                Customers = new List<(CustomerData, Func<ItemData>)>()
+                {
+                    (bearMiniBossData, encounter.DecksManager.GetRandomDish),
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (duck, encounter.DecksManager.GetRandomDish),
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (duck, encounter.DecksManager.GetRandomDish),
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                    (duck, encounter.DecksManager.GetRandomDish),
+                    (doggo, encounter.DecksManager.GetRandomDish),
+                    (kitty, encounter.DecksManager.GetRandomDish),
+                }
+            });
         }
 
         private Task WaitForHungerPointsDisposed(int targetHungerSum)
@@ -450,83 +470,10 @@ namespace foxRestaurant
             await redTheCook.Say(dialogueLines[32].GetLocalizedString());
         }
 
-        private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-        {
-            await FixWave(encounter, itemsToSpawnData, new List<string>(), customersAndTheirOrders);
-        }
-
-        private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, string commentary, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-        {
-            await FixWave(encounter, itemsToSpawnData, new List<string> { commentary }, customersAndTheirOrders);
-        }
-
-        private async Task FixWave(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData, List<string> commentaries, params (CustomerData, Func<ItemData>)[] customersAndTheirOrders)
-        {
-            bool success = false;
-            while (!success)
-            {
-                Time.timeScale = 1;
-                encounter.BlockInput();
-                customersToFeed.Clear();
-
-                if (itemsToSpawnData.Count > 0)
-                {
-                    encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
-                    FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
-                }
-
-                for (int i = 0; i < itemsToSpawnData.Count; i++)
-                {
-                    await Task.Delay(500);
-                    encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
-                }
-
-                foreach(var customerAndOrder in customersAndTheirOrders)
-                {
-                    await Task.Delay(500);
-
-                    var customer = encounter.CustomerSpawner.TryToSpawnCustomer(
-                        customerAndOrder.Item1,
-                        customerAndOrder.Item2
-                    );
-
-                    customersToFeed.Add(customer);
-                }
-
-                foreach (var commentary in commentaries)
-                {
-                    await redTheCook.Say(commentary);
-                }
-                encounter.UnblockInput();
-
-                var tasks = customersToFeed.Select(WaitForCustomerToLeave).ToArray();
-                var results = await Task.WhenAll(tasks);
-                Time.timeScale = 1;
-
-                success = results.All(r => r);
-                if (!success)
-                    await redTheCook.Say(waveIsFailedLine);
-            }
-        }
-
         private ItemData SwitchConeAndPopsicle()
         {
             switchConeAndPopsicleCount++;
             return switchConeAndPopsicleCount % 2 == 0 ? popsicleData : iceCreamConeData;
-        }
-
-        private Task<bool> WaitForCustomerToLeave(Customer customer)
-        {
-            var tcs = new TaskCompletionSource<bool>();
-
-            void OnLeftHandler(bool wasSatisfied)
-            {
-                customer.OnLeftSatisfied.RemoveListener(OnLeftHandler);
-                tcs.TrySetResult(wasSatisfied);
-            }
-
-            customer.OnLeftSatisfied.AddListener(OnLeftHandler);
-            return tcs.Task;
         }
 
         private async Task HeavyStep(float soundVolume, float strenght, int shakingValue = 50)
