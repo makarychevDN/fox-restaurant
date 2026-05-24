@@ -65,18 +65,17 @@ namespace foxRestaurant
         private int switchConeAndPopsicleCount;
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
-        {
-            await Task.Delay(500);
-            encounter.ItemSpawnTimer.SetBlocked(true);
+        {            
+            await Task.Delay(500);            
 
-            //await Intro(encounter);
-            //await TeachToFeedCustomers(encounter);
-            //await TeachToUnderstandHPMechanic(encounter);
-            //await GarbageCanTutorial(encounter);
+            await Intro(encounter);
+            await TeachToFeedCustomers(encounter);
+            await TeachToUnderstandHPMechanic(encounter);
+            await GarbageCanTutorial(encounter);
 
             garbageCan.gameObject.SetActive(true);
 
-            //await TeachToFuseIngredients(encounter);
+            await TeachToFuseIngredients(encounter);
 
             await TeachToWorkWithProgressBar(encounter);
             await TeachToWorkWithTheLineOfCustomers(encounter);
@@ -326,7 +325,13 @@ namespace foxRestaurant
             {
                 BeforeWave = new Func<Task>[] 
                 { 
-                    () => SpawnStartItems(encounter, new List<ItemData> { encounter.DecksManager.GetRandomIngredient(), encounter.DecksManager.GetRandomIngredient(), encounter.DecksManager.GetRandomIngredient(), encounter.DecksManager.GetRandomIngredient() }) 
+                    () => SpawnStartItems(encounter, new List<ItemData> 
+                    { 
+                        encounter.DecksManager.GetRandomIngredient(), 
+                        encounter.DecksManager.GetRandomIngredient(), 
+                        encounter.DecksManager.GetRandomIngredient(),
+                        encounter.DecksManager.GetRandomIngredient()
+                    }) 
                 },
                 Customers = new List<(CustomerData, Func<ItemData>)>
                 {
@@ -532,7 +537,10 @@ namespace foxRestaurant
             Camera.main.transform.position = new Vector3(0, 0, -10);
         }
 
-        protected override void InitTyped(RestaurantEncounter encounter) { }
+        protected override void InitTyped(RestaurantEncounter encounter) 
+        {
+            encounter.ItemSpawnTimer.SetBlocked(true);
+        }
 
         private async Task SpawnStartItems(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData)
         {
