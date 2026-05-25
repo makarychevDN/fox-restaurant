@@ -26,6 +26,7 @@ namespace foxRestaurant
         [field: SerializeField] public DynamicTextManager DynamicTextManager { get; private set; }
         [field: SerializeField] public CurrentWaveManager CurrentWaveManager { get; private set; }
         [field: SerializeField] public SeatPlacesManager SeatPlacesManager { get; private set; }
+        [field: SerializeField] public ItemsOperations ItemsOperations { get; private set; }
 
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
@@ -78,6 +79,7 @@ namespace foxRestaurant
             GarbageCanSlot.Init(this);
             DecksManager.Init();
             SeatPlacesManager.Init(this);
+            ItemsOperations.Init(this);
 
             RecipesManager.Init(this);
             ItemTransitionsManager.Init(this);

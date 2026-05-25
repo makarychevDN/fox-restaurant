@@ -94,14 +94,14 @@ namespace foxRestaurant
         {
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { iceCreamConeData, iceCreamConeData }) },
+                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { iceCreamConeData, iceCreamConeData }) },
                 Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => iceCreamConeData), (kitty, () => iceCreamConeData) },
                 CustomersToFeed = 2
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData }) },
+                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData, popsicleData }) },
                 Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => iceCreamConeData), (kitty, () => popsicleData), (duck, () => popsicleData) },
                 CustomersToFeed = 3
             });
@@ -111,7 +111,7 @@ namespace foxRestaurant
         {
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData }) },
+                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData }) },
                 Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, SwitchConeAndPopsicle) },
                 AfterInitSpawn = new Func<Task>[] 
                 {
@@ -126,14 +126,14 @@ namespace foxRestaurant
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
+                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
                 Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData) },
                 CustomersToFeed = 3
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
+                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
                 Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, () => iceCreamConeData), (doggo, () => popsicleData) },
                 CustomersToFeed = 2
             });
@@ -177,7 +177,7 @@ namespace foxRestaurant
         {
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig
             {
-                BeforeWave = new Func<Task>[] { () => SpawnStartItems(encounter, new List<ItemData> { cherrySyrupData, iceCreamPlateData }) },
+                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { cherrySyrupData, iceCreamPlateData }) },
                 Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => cherryIceCreamPlateData) },
                 AfterInitSpawn = new Func<Task>[] {
                     LookAtTheFirstSpawnedCustomer(encounter),
@@ -195,7 +195,7 @@ namespace foxRestaurant
             {
                 BeforeWave = new Func<Task>[] 
                 {
-                    () => SpawnStartItems(encounter, new List<ItemData>
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>
                     {
                         cherrySyrupData,
                         iceCreamPlateData,
@@ -214,7 +214,7 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<Task>[] {
-                () => SpawnStartItems(encounter, new List<ItemData>
+                () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>
                     {
                         cherrySyrupData,
                         iceCreamPlateData,
@@ -237,7 +237,7 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<Task>[]    {
-                    () => SpawnStartItems(encounter, new List<ItemData> { iceCreamConeData, iceCreamConeData, iceCreamConeData })
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { iceCreamConeData, iceCreamConeData, iceCreamConeData })
                 },
                 Customers = new List<(CustomerData, Func<ItemData>)>
                 {
@@ -272,7 +272,7 @@ namespace foxRestaurant
             {
                 BeforeWave = new Func<Task>[]
                 {
-                    () => SpawnStartItems(encounter, new List<ItemData> { iceCreamConeData, popsicleData, iceCreamConeData, popsicleData })
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { iceCreamConeData, popsicleData, iceCreamConeData, popsicleData })
                 },
                 Customers = new List<(CustomerData, Func<ItemData>)>
                 {
@@ -321,8 +321,8 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<Task>[] 
-                { 
-                    () => SpawnStartItems(encounter, new List<ItemData> 
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>
                     { 
                         encounter.DecksManager.GetRandomIngredient(), 
                         encounter.DecksManager.GetRandomIngredient(), 
@@ -355,6 +355,7 @@ namespace foxRestaurant
             encounter.BlockInput();
             regularMusic.Stop();
             encounter.Ticker.Pause();
+            redTheCook.LookAt(bearMiniBoss.transform);
             await HeavyStep(0.25f, 0.25f);
             await Task.Delay(750);
             await redTheCook.Say(dialogueLines[15].GetLocalizedString());
@@ -389,6 +390,7 @@ namespace foxRestaurant
             miniBossSeatPlace.gameObject.SetActive(true);
             encounter.Ticker.SetRegularTickingSpeed();
             encounter.UnblockInput();
+            redTheCook.LookAt(null);
         }
 
         private async Task MiniBossWave(RestaurantEncounter encounter)
@@ -398,7 +400,7 @@ namespace foxRestaurant
             {
                 BeforeWave = new Func<Task>[]
                 {
-                    () => SpawnStartItems(encounter, new List<ItemData>
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>
                     {
                         encounter.DecksManager.GetRandomIngredient(),
                         encounter.DecksManager.GetRandomIngredient(),
@@ -445,6 +447,7 @@ namespace foxRestaurant
 
         private async Task MiniBossDialogueAfterWave(RestaurantEncounter encounter)
         {
+            redTheCook.LookAt(bearMiniBoss.transform);
             encounter.BlockInput();
             bossMusic.Stop();
             encounter.Ticker.Pause();
@@ -463,6 +466,7 @@ namespace foxRestaurant
             bearMiniBoss.LeaveSatisfied(true);
             await Task.Delay(1000);
             await redTheCook.Say(dialogueLines[31].GetLocalizedString());
+            redTheCook.LookAt(null);
             successSound.Play();
             await Task.Delay(3000);
             hornSound.Play();
@@ -487,18 +491,6 @@ namespace foxRestaurant
         protected override void InitTyped(RestaurantEncounter encounter) 
         {
             encounter.ItemSpawnTimer.SetBlocked(true);
-        }
-
-        private async Task SpawnStartItems(RestaurantEncounter encounter, List<ItemData> itemsToSpawnData)
-        {
-            encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
-            FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
-
-            for (int i = 0; i < itemsToSpawnData.Count; i++)
-            {
-                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
-                await Task.Delay(500);
-            }
         }
 
         private Func<Task> LookAtTheFirstSpawnedCustomer(RestaurantEncounter encounter)
