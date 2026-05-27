@@ -25996,6 +25996,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: pirate restaurant encounter (part 1)
       objectReference: {fileID: 0}
+    - target: {fileID: 197662772238302229, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_Color.b
+      value: 0.68235296
+      objectReference: {fileID: 0}
+    - target: {fileID: 197662772238302229, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 197662772238302229, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_Color.r
+      value: 0.7647059
+      objectReference: {fileID: 0}
     - target: {fileID: 223915408322841054, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
