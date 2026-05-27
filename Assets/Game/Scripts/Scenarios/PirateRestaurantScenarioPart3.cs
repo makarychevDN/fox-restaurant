@@ -158,6 +158,7 @@ namespace foxRestaurant
         private async Task SealGirlGoesAway(RestaurantEncounter encounter)
         {
             backgroundMusic.DOFade(0, 1);
+            encounter.BlockInput();
             encounter.Ticker.Pause();
             await red.Say(dialogueLines[Next]);
 
