@@ -20,12 +20,10 @@ namespace foxRestaurant
         [SerializeField] private GameObject noMoreCustomersInWave;
         [SerializeField] private ParticleSystem poofParticles;
         [SerializeField] private List<RectTransform> contentSizeFitters;
-        private RestaurantEncounter restaurantEncounter;
         private List<GameObject> segments = new();
 
         public void Init(RestaurantEncounter restaurantEncounter)
         {
-            this.restaurantEncounter = restaurantEncounter;
             restaurantEncounter.CurrentWaveManager.OnNextCustomerUpdated.AddListener(UpdateNextCustomerImage);
             restaurantEncounter.CurrentWaveManager.OnNextCustomersPatienceUpdated.AddListener(UpdatePatience);
             restaurantEncounter.CurrentWaveManager.OnCustomersToFeedCountUpdated.AddListener(UpdateSegments);
@@ -74,8 +72,8 @@ namespace foxRestaurant
 
         private async Task ShakeSegmentsParent()
         {
-            await customersToFeedPanel.DOScale(2, 0.05f).AsyncWaitForCompletion();
-            customersToFeedPanel.DOScale(1, 0.05f);
+            await customersToFeedPanel.DOScale(1.5f, 0.1f).AsyncWaitForCompletion();
+            customersToFeedPanel.DOScale(1, 0.1f);
         }
 
         public void RebuildContentSizeFitters()
