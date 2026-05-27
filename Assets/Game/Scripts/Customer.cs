@@ -172,6 +172,7 @@ namespace foxRestaurant
             if (Patience <= 0)
             {
                 Uninit();
+                animator.SetTrigger("onEat");
                 timeIsUpSound.Play();
                 OnStartLeavingProcess.Invoke();
                 isLeaving = true;
