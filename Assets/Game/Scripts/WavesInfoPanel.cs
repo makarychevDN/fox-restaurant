@@ -20,6 +20,7 @@ namespace foxRestaurant
         [SerializeField] private GameObject noMoreCustomersInWave;
         [SerializeField] private ParticleSystem poofParticles;
         [SerializeField] private List<RectTransform> contentSizeFitters;
+        [SerializeField] private AudioSource nextCustomersTimeIsUpSound;
         private List<GameObject> segments = new();
 
         public void Init(RestaurantEncounter restaurantEncounter)
@@ -28,6 +29,7 @@ namespace foxRestaurant
             restaurantEncounter.CurrentWaveManager.OnNextCustomersPatienceUpdated.AddListener(UpdatePatience);
             restaurantEncounter.CurrentWaveManager.OnCustomersToFeedCountUpdated.AddListener(UpdateSegments);
             restaurantEncounter.CurrentWaveManager.OnFedCustomersCountUpdated.AddListener(UpdateCheckmarks);
+            restaurantEncounter.CurrentWaveManager.OnNextCustomersTimeIsUp.AddListener(OnNextCustomersTimeIsUpHandler);
         }
 
         private void UpdateNextCustomerImage(CustomerData nextCustomerData)
@@ -102,6 +104,15 @@ namespace foxRestaurant
         {
             await checkmark.DOScale(2, 0.1f).AsyncWaitForCompletion();
             checkmark.DOScale(1, 0.1f);
+        }
+
+        private void OnNextCustomersTimeIsUpHandler() => PlayNextCustomersAnimation();
+
+        private async Task PlayNextCustomersAnimation()
+        {
+            nextCustomersTimeIsUpSound.Play();
+            await nextCustomerImage.transform.DOScale(2f, 0.1f).AsyncWaitForCompletion();
+            nextCustomerImage.transform.DOScale(1f, 0.1f);
         }
     }
 }

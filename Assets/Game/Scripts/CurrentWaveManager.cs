@@ -23,6 +23,7 @@ namespace foxRestaurant
         public UnityEvent<float> OnNextCustomersPatienceUpdated;
         public UnityEvent<int> OnFedCustomersCountUpdated;
         public UnityEvent<int> OnCustomersToFeedCountUpdated;
+        public UnityEvent OnNextCustomersTimeIsUp;
 
         public void Init(RestaurantEncounter encounter)
         {
@@ -88,7 +89,10 @@ namespace foxRestaurant
             OnNextCustomersPatienceUpdated.Invoke(nextCustomersPatienceTimer);
 
             if(nextCustomersPatienceTimer <= 0)
+            {
+                OnNextCustomersTimeIsUp.Invoke();
                 AbortWave();
+            }
 
             if (encounter.CustomerSpawner.IsPossibleToSpawnCustomer)
             {
