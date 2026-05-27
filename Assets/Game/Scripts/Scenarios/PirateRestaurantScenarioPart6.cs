@@ -16,27 +16,41 @@ namespace foxRestaurant
         [SerializeField] private AudioSource successSound;
         [SerializeField] private Character red;
         [SerializeField] private LocalizedString line;
-        private List<ItemSlot> itemSlots;
 
         protected override void InitTyped(RestaurantEncounter encounter)
         {
             Camera.main.transform.position = new Vector3(0, 0, -10);
-            //itemSlots = encounter.SlotsManager.Slots.Where(slot => slot.RequiredItemsType == ItemType.Food && slot.gameObject.activeSelf).ToList();
             encounter.Ticker.Pause();
             seatPlace.Init(encounter);
             customer.Init(encounter, ducky, () => popcicle);
             customer.CenterOnNewParent(seatPlace.transform);
             seatPlace.SetCustomer(customer);
-            encounter.ItemsSpawner.SpawnItem(foodPrefab, encounter, popcicle, itemSlots[1], 0);
+            encounter.ItemsSpawner.SpawnItem(foodPrefab, encounter, popcicle, encounter.SlotsManager.BottomRowSlots[1], 0);
         }
 
         protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
         {
+            await WaitForCustomerIsFed(customer, encounter);
             await WaitForCustomerToLeave(customer);
             await Task.Delay(1000);
             successSound.Play();
             await Task.Delay(3000);
             await red.Say(line);
+        }
+
+        private Task<bool> WaitForCustomerIsFed(Customer customer, RestaurantEncounter encounter)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+
+            void AteHandler()
+            {
+                customer.OnAte.RemoveListener(AteHandler);
+                tcs.TrySetResult(true);
+                encounter.Ticker.SetRegularTickingSpeed();
+            }
+
+            customer.OnAte.AddListener(AteHandler);
+            return tcs.Task;
         }
 
         private Task<bool> WaitForCustomerToLeave(Customer customer)
