@@ -10,6 +10,7 @@ namespace foxRestaurant
 
         protected override void InitTyped(ListenDialoguesEncounter encounter)
         {
+            Cursor.visible = false;
         }
 
         protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
