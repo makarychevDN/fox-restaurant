@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.UIElements.Experimental;
 
@@ -201,6 +202,13 @@ namespace foxRestaurant
                 action();
                 return Task.CompletedTask;
             };
+        }
+
+        public static void ApplyVolume(this AudioMixer audioMixer, string parameterName, float value)
+        {
+            // перевод 0Ц1 в дЅ по формуле log10(x) * 20, с защитой от 0
+            float dB = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f;
+            audioMixer.SetFloat(parameterName, dB);
         }
     }
 }
