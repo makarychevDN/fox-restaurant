@@ -1736,7 +1736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 219216096}
-  - component: {fileID: 219216095}
+  - component: {fileID: 219216097}
   m_Layer: 0
   m_Name: language selector
   m_TagString: Untagged
@@ -1744,19 +1744,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &219216095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219216094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3024727cda935a34dbdb1c92e5b60406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  languageDropdown: {fileID: 1901148935}
 --- !u!4 &219216096
 Transform:
   m_ObjectHideFlags: 0
@@ -1772,6 +1759,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &219216097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219216094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93cc927e49eaf1438a3db291769d408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.LanguageSettingsLoader
 --- !u!1 &267419540
 GameObject:
   m_ObjectHideFlags: 0
@@ -23236,6 +23235,7 @@ GameObject:
   - component: {fileID: 1791989845}
   - component: {fileID: 1791989847}
   - component: {fileID: 1791989846}
+  - component: {fileID: 1791989848}
   m_Layer: 0
   m_Name: 'language settings '
   m_TagString: Untagged
@@ -23304,6 +23304,19 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1791989848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791989844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd37561501f5ef4a814116989a69eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.LanguageSettingsPanel
+  languageDropdown: {fileID: 1901148935}
 --- !u!1 &1795388168
 GameObject:
   m_ObjectHideFlags: 0
