@@ -9,6 +9,8 @@ namespace foxRestaurant
         [SerializeField] private TMP_Dropdown resolutionsDropdown;
         [SerializeField] private Toggle fullscreenToggle;
 
+        private int currentResolutionIndex;
+        private bool currentFullscreen;
         private const string PREF_RES_INDEX = "Screen_ResIndex";
         private const string PREF_FULLSCREEN = "Screen_Fullscreen";
         private Vector2Int[] allowedResolutions =
@@ -20,6 +22,8 @@ namespace foxRestaurant
 
         private void Start()
         {
+            currentResolutionIndex = PlayerPrefs.GetInt(PREF_RES_INDEX, 1);
+            currentFullscreen = PlayerPrefs.GetInt(PREF_FULLSCREEN, 1) == 1;
             int savedIndex = PlayerPrefs.GetInt(PREF_RES_INDEX, 1);
             bool savedFullscreen =
                 PlayerPrefs.GetInt(PREF_FULLSCREEN, 1) == 1;
@@ -36,24 +40,23 @@ namespace foxRestaurant
 
         private void SetResolution(int index)
         {
-            if (index < 0 || index >= allowedResolutions.Length)
-                return;
+            currentResolutionIndex = index;
 
             var res = allowedResolutions[index];
 
             Screen.SetResolution(
                 res.x,
                 res.y,
-                Screen.fullScreen);
+                currentFullscreen);
 
-            Save(index, Screen.fullScreen);
+            Save(currentResolutionIndex, currentFullscreen);
         }
 
         private void SetFullscreen(bool fullscreen)
         {
+            currentFullscreen = fullscreen;
             Screen.fullScreen = fullscreen;
-
-            Save(GetCurrentResolutionIndex(), fullscreen);
+            Save(currentResolutionIndex, currentFullscreen);
         }
 
         private void Save(int resolutionIndex, bool fullscreen)
@@ -65,20 +68,6 @@ namespace foxRestaurant
                 fullscreen ? 1 : 0);
 
             PlayerPrefs.Save();
-        }
-
-        private int GetCurrentResolutionIndex()
-        {
-            for (int i = 0; i < allowedResolutions.Length; i++)
-            {
-                if (allowedResolutions[i].x == Screen.width &&
-                    allowedResolutions[i].y == Screen.height)
-                {
-                    return i;
-                }
-            }
-
-            return 1;
         }
     }
 }
