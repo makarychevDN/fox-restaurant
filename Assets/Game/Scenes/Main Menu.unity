@@ -1738,7 +1738,7 @@ GameObject:
   - component: {fileID: 219216096}
   - component: {fileID: 219216097}
   m_Layer: 0
-  m_Name: language selector
+  m_Name: language settings loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1752,12 +1752,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219216094}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 549434460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &219216097
 MonoBehaviour:
@@ -3934,6 +3934,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546627339}
   m_CullTransparentMesh: 1
+--- !u!1 &549434459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 549434460}
+  m_Layer: 0
+  m_Name: loaders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &549434460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549434459}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1227533728}
+  - {fileID: 1922861050}
+  - {fileID: 219216096}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &550837768
 GameObject:
   m_ObjectHideFlags: 0
@@ -14519,7 +14553,7 @@ GameObject:
   - component: {fileID: 1227533728}
   - component: {fileID: 1227533729}
   m_Layer: 0
-  m_Name: audio settings manager
+  m_Name: audio settings loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14533,12 +14567,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227533726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 549434460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1227533729
 MonoBehaviour:
@@ -15044,6 +15078,7 @@ GameObject:
   - component: {fileID: 1364624810}
   - component: {fileID: 1364624812}
   - component: {fileID: 1364624811}
+  - component: {fileID: 1364624813}
   m_Layer: 0
   m_Name: screen settings
   m_TagString: Untagged
@@ -15113,6 +15148,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1364624813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364624809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc1ca855f3cf2146b005de47aaea8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenSettingsPanel
+  resolutionsDropdown: {fileID: 1641374813}
+  fullscreenToggle: {fileID: 1418472433}
 --- !u!1 &1366177854
 GameObject:
   m_ObjectHideFlags: 0
@@ -20577,7 +20626,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922861049}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: foxRestaurant.ScreenManager, Assembly-CSharp
         m_MethodName: SetFullScreen
         m_Mode: 0
@@ -22773,7 +22822,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1922861049}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: foxRestaurant.ScreenManager, Assembly-CSharp
         m_MethodName: SetResolution
         m_Mode: 0
@@ -28731,33 +28780,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922861050}
-  - component: {fileID: 1922861049}
+  - component: {fileID: 1922861051}
   m_Layer: 0
-  m_Name: Screen Manager
+  m_Name: screen settings loader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1922861049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922861048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 977e0732a965d984389d0e0763650982, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetAspect: {x: 16, y: 9}
-  allowedResolutions:
-  - {x: 1280, y: 720}
-  - {x: 1920, y: 1080}
-  - {x: 2560, y: 1440}
-  resolutonsSelector: {fileID: 1641374813}
-  fullScreenSelector: {fileID: 1418472433}
 --- !u!4 &1922861050
 Transform:
   m_ObjectHideFlags: 0
@@ -28766,13 +28796,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1922861048}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 549434460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922861051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922861048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd4a766683a8f1643a4e94dded1a7356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.ScreenSettingsLoader
 --- !u!1 &1938804044
 GameObject:
   m_ObjectHideFlags: 0
@@ -30524,7 +30566,5 @@ SceneRoots:
   - {fileID: 530393103}
   - {fileID: 704425334}
   - {fileID: 1123792273}
-  - {fileID: 1227533728}
-  - {fileID: 1922861050}
-  - {fileID: 219216096}
+  - {fileID: 549434460}
   - {fileID: 212367547}
