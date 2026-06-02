@@ -1,32 +1,31 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace foxRestaurant
 {
-    public class MainMenu : MonoBehaviour
+    public class MainMenu : Menu
     {
-        [field: SerializeField] public StartMenuPanel StartMenuPanel { get; private set; }
-        [field: SerializeField] public CalendarMenuPanel CalendarMenuPanel { get; private set; }
-        [field: SerializeField] public SettingsMenuPanel SettingsMenuPanel { get; private set; }
-        [field: SerializeField] public Image Fading { get; private set; }
+        [SerializeField] private EncountersListAsset firstLevelEncountersListAsset;
+        [SerializeField] private LevelLoader levelLoader;
 
-
-        private void Awake()
+        protected override void Init()
         {
-            Fading.material = new Material(Fading.material);
-            Fading.FadeOut();
-
-            CalendarMenuPanel.Init(this);
-            SettingsMenuPanel.Init(this);
-            StartMenuPanel.Init(this);
+            fading.material = new Material(fading.material);
+            fading.FadeOut();
+            base.Init();
         }
 
-        public async void EnablePanel(MonoBehaviour currentPanel, MonoBehaviour nextPanel)
+        protected override void InitTitleMenuPanel()
         {
-            await Fading.FadeIn();
-            currentPanel.gameObject.SetActive(false);
-            nextPanel.gameObject.SetActive(true);
-            await Fading.FadeOut();
+            base.InitTitleMenuPanel();
+            TitleMenuPanel.PlayButton.onClick.AddListener(LaunchTheFirstLevel);
+        }
+
+        private async void LaunchTheFirstLevel()
+        {
+            levelLoader.SetEncaunters(firstLevelEncountersListAsset);
+            await fading.FadeIn();
+            levelLoader.LoadLevel();
         }
     }
 }

@@ -11,32 +11,5 @@ namespace foxRestaurant
         [SerializeField] private Button launchLevelButton;
         [SerializeField] private Button backButton;
         [SerializeField] private EncountersListAsset firstLevelEncountersListAsset;
-        private MainMenu mainMenu;
-
-        public void Init(MainMenu mainMenu)
-        {
-            this.mainMenu = mainMenu;
-
-            foreach (var cell in calendarCells)
-            {
-                cell.Button.onClick.AddListener(() => levelLoader.SetEncaunters(cell.EncountersList));
-            }
-
-            launchLevelButton.onClick.AddListener(LaunchButtonClickedHandler);
-            backButton.onClick.AddListener(() => mainMenu.EnablePanel(this, mainMenu.StartMenuPanel));
-        }
-
-        private async void LaunchButtonClickedHandler()
-        {
-            await mainMenu.Fading.FadeIn();
-            levelLoader.LoadLevel();
-        }
-
-        public async void LaunchTheFirstLevel()
-        {
-            levelLoader.SetEncaunters(firstLevelEncountersListAsset);
-            await mainMenu.Fading.FadeIn();
-            levelLoader.LoadLevel();
-        }
     }
 }
