@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -82,7 +83,7 @@ namespace foxRestaurant
 
         protected override void InitTyped(ListenDialoguesEncounter encounter){}
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await SceneInShower();
             await SceneWithMobilePhone();
@@ -93,67 +94,67 @@ namespace foxRestaurant
             await HandshakeScene();
         }
 
-        private async Task SceneInShower()
+        private async UniTask SceneInShower()
         {
             parentTurnTapeObject.gameObject.SetActive(true);
             var waterMain = water.main;
             var steamMain = steam.main;
 
-            await paw.DOMove(new Vector3(0, -8), 0.5f).AsyncWaitForCompletion();
+            await paw.DOMove(new Vector3(0, -8), 0.5f).ToUniTask();
             squekSounds.Play();
             tape.DORotate(new Vector3(0, 0, 75), 0.5f);
-            await paw.DOMove(new Vector3(0, -12.5f), 0.5f).AsyncWaitForCompletion();
+            await paw.DOMove(new Vector3(0, -12.5f), 0.5f).ToUniTask();
             waterMain.maxParticles = 200;
             steamMain.maxParticles = 35;
 
-            await paw.DOMove(new Vector3(0, -8), 0.5f).AsyncWaitForCompletion();
+            await paw.DOMove(new Vector3(0, -8), 0.5f).ToUniTask();
             tape.DORotate(new Vector3(0, 0, 75 * 2), 0.5f);
-            await paw.DOMove(new Vector3(0, -12.5f), 0.5f).AsyncWaitForCompletion();
+            await paw.DOMove(new Vector3(0, -12.5f), 0.5f).ToUniTask();
             waterMain.maxParticles = 100;
             steamMain.maxParticles = 20;
 
-            await paw.DOMove(new Vector3(0, -8), 0.5f).AsyncWaitForCompletion();
+            await paw.DOMove(new Vector3(0, -8), 0.5f).ToUniTask();
             tape.DORotate(new Vector3(0, 0, 75 * 3), 0.5f);
-            await paw.DOMove(new Vector3(0, -12.5f), 0.5f).AsyncWaitForCompletion();
+            await paw.DOMove(new Vector3(0, -12.5f), 0.5f).ToUniTask();
             waterMain.maxParticles = 0;
             steamMain.maxParticles = 0;
 
-            await Task.Delay(1500);
-            await paw.DOMove(new Vector3(0, -30), 1f).AsyncWaitForCompletion();
+            await UniTask.Delay(1500);
+            await paw.DOMove(new Vector3(0, -30), 1f).ToUniTask();
 
             newMessageSound.Play();
-            await Task.Delay(1500);
+            await UniTask.Delay(1500);
             await redInBathroomIntro.Say(NextLine);
 
             parentTurnTapeObject.gameObject.SetActive(false);
         }
 
-        private async Task SceneWithMobilePhone()
+        private async UniTask SceneWithMobilePhone()
         {
             bathroomPhoneScene.gameObject.SetActive(true);
-            await phoneAndPawsParentInBathroom.DOMove(new Vector3(0, -18.8f), 0.75f).AsyncWaitForCompletion();
-            await rightPaw.DOLocalMove(new Vector3(9f, 7f, 0), 0.5f).AsyncWaitForCompletion();
+            await phoneAndPawsParentInBathroom.DOMove(new Vector3(0, -18.8f), 0.75f).ToUniTask();
+            await rightPaw.DOLocalMove(new Vector3(9f, 7f, 0), 0.5f).ToUniTask();
             blockedScreen.SetActive(false);
             unlockPhoneSound.Play();
-            await rightPaw.DOLocalMove(new Vector3(11.85f, 0f), 0.5f).AsyncWaitForCompletion();
-            await Task.Delay(500);
+            await rightPaw.DOLocalMove(new Vector3(11.85f, 0f), 0.5f).ToUniTask();
+            await UniTask.Delay(500);
             await redInBathroomWithPhone.Say(NextLine);
-            await phoneAndPawsParentInBathroom.DOMove(new Vector3(0, -43f), 0.75f).AsyncWaitForCompletion();
+            await phoneAndPawsParentInBathroom.DOMove(new Vector3(0, -43f), 0.75f).ToUniTask();
             bathroomPhoneScene.gameObject.SetActive(false);
         }
 
-        private async Task IntroSceneInKitchen()
+        private async UniTask IntroSceneInKitchen()
         {
             parentIntroKitchenScene.SetActive(true);
             darkKitchenBackground.SetActive(true);
             lightenKitchenBackground.SetActive(false);
             await redOnIntroKitchen.transform.DotweenSteps(new Vector3(-8, -8), new Vector3(1.1f, 0.75f), 0.8f, 3);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             switchSound.Play();
             darkKitchenBackground.SetActive(false);
             lightenKitchenBackground.SetActive(true);
             silverOnIntroKitchen.LookAt(redOnIntroKitchen.transform);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await silverOnIntroKitchen.Say(NextLine);
             await redOnIntroKitchen.Say(NextLine);
             await silverOnIntroKitchen.Say(NextLine);
@@ -164,7 +165,7 @@ namespace foxRestaurant
             parentIntroKitchenScene.SetActive(false);
         }
 
-        private async Task MainSceneInKitchen1()
+        private async UniTask MainSceneInKitchen1()
         {
             parentMainKitchenScene.SetActive(true);
             await redOnMainKitchen.transform.DotweenSteps(new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
@@ -196,20 +197,20 @@ namespace foxRestaurant
             redsPawsEmpty.SetActive(false);
             redsPawsWithJar.SetActive(true);
             lookingForJarSounds.Play();
-            await Task.Delay(2500);
+            await UniTask.Delay(2500);
             redOnMainKitchen.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             await redOnMainKitchen.transform.DotweenSteps(new Vector3(5.64f, -7.14f), new Vector3(1.25f, 0.75f), 1f, 3);
             await redOnMainKitchen.Say(NextLine);
             parentMainKitchenScene.SetActive(false);
         }
 
-        private async Task ShowJar()
+        private async UniTask ShowJar()
         {
             showJarScene.SetActive(true);
             music.Play();
-            await pawsAndJar.DOMove(new Vector3(0, -2f), 0.75f).AsyncWaitForCompletion();
-            await pawsAndJar.DOMove(new Vector3(0, -3.5f), 0.15f).AsyncWaitForCompletion();
-            await Task.Delay(1000);
+            await pawsAndJar.DOMove(new Vector3(0, -2f), 0.75f).ToUniTask();
+            await pawsAndJar.DOMove(new Vector3(0, -3.5f), 0.15f).ToUniTask();
+            await UniTask.Delay(1000);
             await redOnShowingJarScene.Say(NextLine);
             await redOnShowingJarScene.Say(NextLine);
             await redOnShowingJarScene.Say(NextLine);
@@ -218,11 +219,11 @@ namespace foxRestaurant
             await redOnShowingJarScene.Say(NextLine);
             await redOnShowingJarScene.Say(NextLine);
             await redOnShowingJarScene.Say(NextLine);
-            await pawsAndJar.DOMove(new Vector3(0, -30f), 0.35f).AsyncWaitForCompletion();
+            await pawsAndJar.DOMove(new Vector3(0, -30f), 0.35f).ToUniTask();
             showJarScene.SetActive(false);
         }
 
-        private async Task MainSceneInKitchen2()
+        private async UniTask MainSceneInKitchen2()
         {
             redsPawsEmpty.SetActive(true);
             redsPawsWithJar.SetActive(false);
@@ -238,27 +239,27 @@ namespace foxRestaurant
             await redOnMainKitchen.Say(NextLine);
             await silverOnMainKitchen.Say(NextLine);
             await redOnMainKitchen.Say(NextLine);
-            await redsPawsEmpty.transform.DOScale(new Vector3(1, 0, 1), 0.5f).AsyncWaitForCompletion();
+            await redsPawsEmpty.transform.DOScale(new Vector3(1, 0, 1), 0.5f).ToUniTask();
             redsPawsWithPhone.gameObject.SetActive(true);
             redOnMainKitchen.LookAt(redsPawsWithPhone.transform);
-            await redsPawsWithPhone.transform.DOLocalMove(new Vector3(0, -1.35f, 0), 0.5f).AsyncWaitForCompletion();
+            await redsPawsWithPhone.transform.DOLocalMove(new Vector3(0, -1.35f, 0), 0.5f).ToUniTask();
 
             for(int i = 0; i < 2; i++)
             {
                 typingSounds.Play();
                 for (int j = 0; j < 20; j++)
                 {
-                    await redsPawsWithPhone.transform.DOShakeRotation(0.1f, 10).AsyncWaitForCompletion();
+                    await redsPawsWithPhone.transform.DOShakeRotation(0.1f, 10).ToUniTask();
                 }
                 typingSounds.Pause();
-                await Task.Delay(1000);
+                await UniTask.Delay(1000);
             }
             sadFoxSound.Play();
             ChangeRedsSprites(sadBody, sadLeftEye, sadRightEye);
             redOnMainKitchen.transform.DOShakeScale(0.1f, -0.1f);
             redOnMainKitchen.transform.DOMove(new Vector3(5.64f, -7.64f), 0.3f);
 
-            await Task.Delay(2000);
+            await UniTask.Delay(2000);
 
             await silverOnMainKitchen.Say(NextLine);
             await silverOnMainKitchen.Say(NextLine);
@@ -268,7 +269,7 @@ namespace foxRestaurant
             await silverOnMainKitchen.Say(NextLine);
             packOfMoney.SetActive(true);
             redOnMainKitchen.LookAt(packOfMoney.transform);
-            await Task.Delay(1500);
+            await UniTask.Delay(1500);
             await silverOnMainKitchen.Say(NextLine);
             await silverOnMainKitchen.Say(NextLine);
 
@@ -291,7 +292,7 @@ namespace foxRestaurant
             parentMainKitchenScene.SetActive(false);
         }
 
-        private async Task HandshakeScene()
+        private async UniTask HandshakeScene()
         {
             handshakeScene.SetActive(true);
             await redHandshake.Say(NextLine);
@@ -309,14 +310,14 @@ namespace foxRestaurant
             await silverHandshake.Say(NextLine);
             await redHandshake.Say(NextLine);
             await silverHandshake.Say(NextLine);
-            await silversHandshakePaw.DOMove(new Vector3(-7.27f, 5), 1f).AsyncWaitForCompletion();
+            await silversHandshakePaw.DOMove(new Vector3(-7.27f, 5), 1f).ToUniTask();
             await silverHandshake.Say(NextLine);
             await redHandshake.Say(NextLine);
-            await redsHandshakePaw.DOMove(new Vector3(6.66f, 4.78f, 0), 0.15f).AsyncWaitForCompletion();
+            await redsHandshakePaw.DOMove(new Vector3(6.66f, 4.78f, 0), 0.15f).ToUniTask();
             hadshakeParent.transform.DOShakeScale(0.1f, 0.25f);
             handshakeImpactSound.Play();
             music.volume = 1;
-            await Task.Delay(750);
+            await UniTask.Delay(750);
             theGreatestAdventureBeginsLogo.SetActive(true);
             await storyTeller.Say(NextLine);
         }

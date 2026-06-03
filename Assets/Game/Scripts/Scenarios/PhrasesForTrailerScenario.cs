@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -13,40 +14,40 @@ namespace foxRestaurant
             Cursor.visible = false;
         }
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await Speak(blackPopUpWhiteText);
             await Speak(whitePopUpBlackText);
         }
 
-        private async Task Speak(Character character)
+        private async UniTask Speak(Character character)
         {
             await SpeakRussian(character);
             await SpeakEnglish(character);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
         }
 
-        private async Task SpeakRussian(Character character)
+        private async UniTask SpeakRussian(Character character)
         {
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("Я справлюсь.");
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("Нужно всего лишь дождаться нужных ингредиентов.");
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("Нарезать.");
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("И смешать.");
         }
 
-        private async Task SpeakEnglish(Character character)
+        private async UniTask SpeakEnglish(Character character)
         {
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("I've got this.");
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("Just need to wait for the right ingredients.");
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("Chop.");
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await character.Say("And mix.");
         }
     }

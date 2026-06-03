@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,10 +20,10 @@ namespace foxRestaurant
             sliceEffect.transform.localScale = new Vector3(Random.Range(0.8f, 1.2f), Random.Range(0.8f, 1.2f), 1f);
 
             sliceEffect.fillClockwise = true;
-            await sliceEffect.DOFillAmount(1, 0.125f).AsyncWaitForCompletion();
+            await sliceEffect.DOFillAmount(1, 0.125f).ToUniTask();
 
             sliceEffect.fillClockwise = false;
-            await sliceEffect.DOFillAmount(0, 0.125f).AsyncWaitForCompletion();
+            await sliceEffect.DOFillAmount(0, 0.125f).ToUniTask();
         }
     }
 }

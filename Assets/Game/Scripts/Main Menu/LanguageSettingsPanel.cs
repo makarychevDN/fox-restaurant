@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace foxRestaurant
 
         private async void Start()
         {
-            await LocalizationSettings.InitializationOperation.Task;
+            await LocalizationSettings.InitializationOperation.ToUniTask();
 
             await SetupDropdown();
 
@@ -28,7 +29,7 @@ namespace foxRestaurant
             languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
         }
 
-        private async System.Threading.Tasks.Task SetupDropdown()
+        private async UniTask SetupDropdown()
         {
             languageDropdown.ClearOptions();
 
@@ -46,7 +47,7 @@ namespace foxRestaurant
                             .GetLocalizedStringAsync(
                                 languageNamesTable,
                                 languageNameKey,
-                                locale).Task;
+                                locale).ToUniTask();
                 }
                 catch
                 {
@@ -75,7 +76,7 @@ namespace foxRestaurant
 
             languageDropdown.interactable = false;
 
-            await LocalizationSettings.InitializationOperation.Task;
+            await LocalizationSettings.InitializationOperation.ToUniTask();
 
             LocalizationSettings.SelectedLocale =
                 LocalizationSettings.AvailableLocales.Locales[index];

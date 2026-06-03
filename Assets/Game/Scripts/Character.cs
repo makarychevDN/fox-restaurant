@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -18,14 +19,16 @@ namespace foxRestaurant
             spriteRenderer.sprite = sprite;
         }
 
-        public async Task Say(string text)
+        public async UniTask Say(string text)
         {
             await dialogueManager.DisplayDialogueLine(text);
+            await UniTask.Yield();
         }
 
-        public async Task Say(LocalizedString text)
+        public async UniTask Say(LocalizedString text)
         {
             await dialogueManager.DisplayDialogueLine(text.GetLocalizedString());
+            await UniTask.Yield();
         }
 
         public void LookAt(Transform target)

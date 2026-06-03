@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace foxRestaurant
             }
         }
 
-        public async Task DisplayDialogueLine(string text)
+        public async UniTask DisplayDialogueLine(string text)
         {
             dialogueDisplayer.Show(text);
             skipRequested = false;
@@ -59,7 +60,7 @@ namespace foxRestaurant
 
                     if (pauseTime > 0 && !skipRequested)
                     {
-                        await Task.Delay(TimeSpan.FromSeconds(pauseTime));
+                        await UniTask.Delay(TimeSpan.FromSeconds(pauseTime));
                         pauseTime = 0;
                     }
                 }
@@ -74,7 +75,7 @@ namespace foxRestaurant
                     i += chunkLength;
 
                     if (!skipRequested)
-                        await Task.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
+                        await UniTask.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
                 }
             }
 
@@ -111,11 +112,11 @@ namespace foxRestaurant
             return endIndex - startIndex + 1;
         }
 
-        private async Task WaitForMouseClick()
+        private async UniTask WaitForMouseClick()
         {
             while (!Input.GetMouseButtonDown(0))
             {
-                await Task.Yield();
+                await UniTask.Yield();
             }
         }
 

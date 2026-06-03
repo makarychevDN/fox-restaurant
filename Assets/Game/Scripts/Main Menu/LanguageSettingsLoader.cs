@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
@@ -9,7 +10,7 @@ namespace foxRestaurant
 
         private async void Start()
         {
-            await LocalizationSettings.InitializationOperation.Task;
+            await LocalizationSettings.InitializationOperation.ToUniTask();
 
             int savedLangIndex;
 

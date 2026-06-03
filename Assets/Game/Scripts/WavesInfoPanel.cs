@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,9 +73,9 @@ namespace foxRestaurant
             ShakeSegmentsParent();
         }
 
-        private async Task ShakeSegmentsParent()
+        private async UniTask ShakeSegmentsParent()
         {
-            await customersToFeedPanel.DOScale(1.5f, 0.1f).AsyncWaitForCompletion();
+            await customersToFeedPanel.DOScale(1.5f, 0.1f).ToUniTask();
             customersToFeedPanel.DOScale(1, 0.1f);
         }
 
@@ -100,18 +101,18 @@ namespace foxRestaurant
                 ShakeCheckmark(segments[checkMarksCount - 1].transform.GetChild(0).transform);
         }
 
-        private async Task ShakeCheckmark(Transform checkmark)
+        private async UniTask ShakeCheckmark(Transform checkmark)
         {
-            await checkmark.DOScale(2, 0.1f).AsyncWaitForCompletion();
+            await checkmark.DOScale(2, 0.1f).ToUniTask();
             checkmark.DOScale(1, 0.1f);
         }
 
         private void OnNextCustomersTimeIsUpHandler() => PlayNextCustomersAnimation();
 
-        private async Task PlayNextCustomersAnimation()
+        private async UniTask PlayNextCustomersAnimation()
         {
             nextCustomersTimeIsUpSound.Play();
-            await nextCustomerImage.transform.DOScale(2f, 0.1f).AsyncWaitForCompletion();
+            await nextCustomerImage.transform.DOScale(2f, 0.1f).ToUniTask();
             nextCustomerImage.transform.DOScale(1f, 0.1f);
         }
     }

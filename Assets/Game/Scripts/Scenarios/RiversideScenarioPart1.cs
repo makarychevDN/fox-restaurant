@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace foxRestaurant
 
         protected override void InitTyped(ListenDialoguesEncounter encounter) { }
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await BusStopCutScene();
             await BusStopPanoramaCutScene();
@@ -42,10 +43,10 @@ namespace foxRestaurant
             await BusStopPanoramaCutScene2();
         }
 
-        private async Task BusStopCutScene()
+        private async UniTask BusStopCutScene()
         {
             redOnBusStop.LookAt(bus);
-            await bus.DOMove(new Vector3(50, 0, 0), 2f).SetEase(Ease.InQuad).AsyncWaitForCompletion();
+            await bus.DOMove(new Vector3(50, 0, 0), 2f).SetEase(Ease.InQuad).ToUniTask();
             await silverOnBusStop.Say("Ну и поездочка.");
             redOnBusStop.LookAt(silversEyes);
             await redOnBusStop.Say("И где мы теперь?");
@@ -58,7 +59,7 @@ namespace foxRestaurant
             busStopScene.gameObject.SetActive(false);
         }
 
-        private async Task BusStopPanoramaCutScene()
+        private async UniTask BusStopPanoramaCutScene()
         {
             busStopPanoramaScene.gameObject.SetActive(true);
             redOnPanoramaBusStop.LookAt(silversEyesPanorama);
@@ -72,7 +73,7 @@ namespace foxRestaurant
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 180, 0);
             redOnPanoramaBusStop.LookAt(rightBeyondTheScreenPosition);
             redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(13.5f, -7.75f), new Vector3(1, 0.75f, 2f), 2f, 7);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await silverOnPanoramaBusStop.Say("Эй, ты куда собрался?");
             redOnPanoramaBusStop.LookAt(silversEyesPanorama);
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -85,12 +86,12 @@ namespace foxRestaurant
             redOnPanoramaBusStop.LookAt(rightBeyondTheScreenPosition);
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 180, 0);
 
-            List<Task> tasks = new List<Task>()
+            List<UniTask> tasks = new List<UniTask>()
             {
                 redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(21f, -7.75f), new Vector3(1, 0.75f, 2f), 1.5f, 5),
                 silverOnPanoramaBusStop.Say("Я имею в виду, куда ты идешь? <pause:0.75> Ты прошел мимо какого-то указателя.")
             };
-            await Task.WhenAll(tasks);
+            await UniTask.WhenAll(tasks);
 
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 0, 0);
             redOnPanoramaBusStop.LookAt(signPosition);
@@ -98,14 +99,14 @@ namespace foxRestaurant
             redOnPanoramaBusStop.SetDialoguePopUpLocalPosition(new Vector3(-880, 114));
             await redOnPanoramaBusStop.Say("Ой.");
             await redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(13.5f, -7.75f), new Vector3(1, 0.75f, 2f), 1.5f, 5);
-            await Task.Delay(500);
+            await UniTask.Delay(500);
             busStopPanoramaScene.gameObject.SetActive(false);
         }
 
-        private async Task PathCutScene()
+        private async UniTask PathCutScene()
         {
             pathScene.gameObject.SetActive(true);
-            await Task.Delay(500);
+            await UniTask.Delay(500);
             redOnPath.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             silverOnPath.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             await redOnPath.Say("Тут говорится, что Клиффорд прямо по тропинке.");
@@ -115,11 +116,11 @@ namespace foxRestaurant
             pathScene.gameObject.SetActive(false);
         }
 
-        private async Task BusStopPanoramaCutScene2()
+        private async UniTask BusStopPanoramaCutScene2()
         {
             busStopPanoramaScene.SetActive(true);
             silverOnPanoramaBusStop.transform.DotweenSteps(new Vector3(13.5f, -7.75f), new Vector3(1, 0.75f, 2f), 2f, 7);
-            await Camera.main.transform.DOMove(new Vector3(Camera.main.transform.position.x, 16.5f, Camera.main.transform.position.z), 5).AsyncWaitForCompletion();
+            await Camera.main.transform.DOMove(new Vector3(Camera.main.transform.position.x, 16.5f, Camera.main.transform.position.z), 5).ToUniTask();
             redAboveTheForest.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             silverAboveTheForest.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             await silverAboveTheForest.Say("А сам великий и ужасный Рыжий не боится такого дремучего леса?");

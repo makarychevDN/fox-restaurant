@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace foxRestaurant
             this.encounter = encounter;
         }
 
-        public async Task SpawnStartItems(List<ItemData> itemsToSpawnData)
+        public async UniTask SpawnStartItems(List<ItemData> itemsToSpawnData)
         {
             encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
             encounter.SlotsManager.SpawnerSlots.ForEach(slot => slot.Clear());
@@ -23,11 +24,11 @@ namespace foxRestaurant
             for (int i = 0; i < itemsToSpawnData.Count; i++)
             {
                 encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
-                await Task.Delay(500);
+                await UniTask.Delay(500);
             }
         }
 
-        public async Task SpawnStartItems()
+        public async UniTask SpawnStartItems()
         {
             List<ItemData> itemsToSpawn = new List<ItemData>();
             int counter = 0;

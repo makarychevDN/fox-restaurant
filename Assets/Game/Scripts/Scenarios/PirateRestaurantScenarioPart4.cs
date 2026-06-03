@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace foxRestaurant
 
         protected override void InitTyped(ListenDialoguesEncounter encounter) { }
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await lameLarry.Say(dialogueLines[Next]);
             await red.Say(dialogueLines[Next]);

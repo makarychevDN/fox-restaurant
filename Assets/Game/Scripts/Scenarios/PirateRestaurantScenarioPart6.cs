@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,19 +29,19 @@ namespace foxRestaurant
             encounter.ItemsSpawner.SpawnItem(foodPrefab, encounter, popcicle, encounter.SlotsManager.BottomRowSlots[1], 0);
         }
 
-        protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
+        protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
             await WaitForCustomerIsFed(customer, encounter);
             await WaitForCustomerToLeave(customer);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             successSound.Play();
-            await Task.Delay(3000);
+            await UniTask.Delay(3000);
             await red.Say(line);
         }
 
-        private Task<bool> WaitForCustomerIsFed(Customer customer, RestaurantEncounter encounter)
+        private UniTask<bool> WaitForCustomerIsFed(Customer customer, RestaurantEncounter encounter)
         {
-            var tcs = new TaskCompletionSource<bool>();
+            var tcs = new UniTaskCompletionSource<bool>();
 
             void AteHandler()
             {
@@ -53,9 +54,9 @@ namespace foxRestaurant
             return tcs.Task;
         }
 
-        private Task<bool> WaitForCustomerToLeave(Customer customer)
+        private UniTask<bool> WaitForCustomerToLeave(Customer customer)
         {
-            var tcs = new TaskCompletionSource<bool>();
+            var tcs = new UniTaskCompletionSource<bool>();
 
             void OnLeftHandler(bool wasSatisfied)
             {

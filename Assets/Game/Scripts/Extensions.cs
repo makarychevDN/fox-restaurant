@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using NUnit.Framework.Internal;
 using System;
@@ -121,7 +122,7 @@ namespace foxRestaurant
             return fallback;
         }
 
-        public static async Task AnimateThreshold(this Image image, string propertyName, float from, float to, float duration)
+        public static async UniTask AnimateThreshold(this Image image, string propertyName, float from, float to, float duration)
         {
             // Сначала устанавливаем стартовое значение
             image.raycastTarget = true;
@@ -139,16 +140,16 @@ namespace foxRestaurant
                 tween.SetUpdate(true);
 
             // Ждём завершения
-            await tween.AsyncWaitForCompletion();
+            await tween.ToUniTask();
             image.raycastTarget = false;
         }
 
-        public static async Task FadeIn(this Image image)
+        public static async UniTask FadeIn(this Image image)
         {
             await image.AnimateThreshold("_Fading", 0, 1, 1f);
         }
 
-        public static async Task FadeOut(this Image image)
+        public static async UniTask FadeOut(this Image image)
         {
             await image.AnimateThreshold("_Fading", 1, 0, 1f);
         }
@@ -162,17 +163,17 @@ namespace foxRestaurant
 #endif
         }
 
-        public async static Task DotweenStep(this Transform steppingTransform, Vector3 targetPosition, float time)
+        public async static UniTask DotweenStep(this Transform steppingTransform, Vector3 targetPosition, float time)
             => await DotweenStep(steppingTransform, targetPosition, new Vector3(1.1f, 0.75f), time);
 
-        public async static Task DotweenStep(this Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time)
+        public async static UniTask DotweenStep(this Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time)
         {
             steppingTransform.DOMove(targetPosition, time);
-            await steppingTransform.DOScale(squeezeValue, time * 0.5f).AsyncWaitForCompletion();
-            await steppingTransform.DOScale(Vector3.one, time * 0.5f).AsyncWaitForCompletion();
+            await steppingTransform.DOScale(squeezeValue, time * 0.5f).ToUniTask();
+            await steppingTransform.DOScale(Vector3.one, time * 0.5f).ToUniTask();
         }
 
-        public async static Task DotweenSteps(this Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time, int stepsAmount)
+        public async static UniTask DotweenSteps(this Transform steppingTransform, Vector3 targetPosition, Vector3 squeezeValue, float time, int stepsAmount)
         {
             var startPosition = steppingTransform.position;
 
@@ -198,12 +199,12 @@ namespace foxRestaurant
             shakingCameraLoop = SetCameraShakingLoopAnimation(camera, strength);
         }
 
-        public static Func<Task> WrapToTask(this Action action)
+        public static Func<UniTask> WrapToTask(this Action action)
         {
             return () =>
             {
                 action();
-                return Task.CompletedTask;
+                return UniTask.CompletedTask;
             };
         }
 

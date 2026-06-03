@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,10 +26,10 @@ namespace foxRestaurant
 
         protected override void InitTyped(ListenDialoguesEncounter encounter) { }
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             red.LookAt(sandwich);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await red.Say(dialogueLines[Next]);
             red.LookAt(bossesEyes);
             redsParent.transform.DOMove(new Vector3(-7.19f, -7.94f), 0.2f);
@@ -57,7 +58,7 @@ namespace foxRestaurant
             await red.Say(dialogueLines[Next]);
             red.LookAt(hornPosition);
             hornSound.Play();
-            await Task.Delay(2000);
+            await UniTask.Delay(2000);
             await red.Say(dialogueLines[Next]);
             await red.Say(dialogueLines[Next]);
         }

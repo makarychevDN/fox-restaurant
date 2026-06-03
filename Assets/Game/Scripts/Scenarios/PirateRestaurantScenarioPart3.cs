@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace foxRestaurant
         private int stringsCounter = 0;
         private int Next => stringsCounter++;
 
-        protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
+        protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
             await IntroSpeech();
             await SealTutorail(encounter);
@@ -44,7 +45,7 @@ namespace foxRestaurant
             await LameJoeAppears();
         }
 
-        private async Task IntroSpeech()
+        private async UniTask IntroSpeech()
         {
             await red.Say(dialogueLines[Next]);
             await red.Say(dialogueLines[Next]);
@@ -54,7 +55,7 @@ namespace foxRestaurant
             await red.Say(dialogueLines[Next]);
         }
 
-        private async Task SealTutorail(RestaurantEncounter encounter)
+        private async UniTask SealTutorail(RestaurantEncounter encounter)
         {
             sealGirl.gameObject.SetActive(true);
             sealGirlAppearParticles.Play();
@@ -71,7 +72,7 @@ namespace foxRestaurant
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] 
+                BeforeWave = new Func<UniTask>[] 
                 { 
                     () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>() 
                     {
@@ -90,13 +91,13 @@ namespace foxRestaurant
             });
         }
 
-        private async Task Waves(RestaurantEncounter encounter)
+        private async UniTask Waves(RestaurantEncounter encounter)
         {
             encounter.ItemSpawnTimer.SetBlocked(false);
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems() },
+                BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
                 Customers = new List<(CustomerData, Func<ItemData>)>()
                 {
                     (seal, () => encounter.DecksManager.GetRandomDish()),
@@ -116,7 +117,7 @@ namespace foxRestaurant
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems() },
+                BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
                 Customers = new List<(CustomerData, Func<ItemData>)>()
                 {
                     (seal, () => encounter.DecksManager.GetRandomDish()),
@@ -136,7 +137,7 @@ namespace foxRestaurant
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems() },
+                BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
                 Customers = new List<(CustomerData, Func<ItemData>)>()
                 {
                     (seal, () => encounter.DecksManager.GetRandomDish()),
@@ -155,7 +156,7 @@ namespace foxRestaurant
             });
         }
 
-        private async Task SealGirlGoesAway(RestaurantEncounter encounter)
+        private async UniTask SealGirlGoesAway(RestaurantEncounter encounter)
         {
             backgroundMusic.DOFade(0, 1);
             encounter.BlockInput();
@@ -179,10 +180,10 @@ namespace foxRestaurant
 
             await red.Say(dialogueLines[Next]);
             successSound.Play();
-            await Task.Delay(3000);
+            await UniTask.Delay(3000);
         }
 
-        private async Task LameJoeAppears()
+        private async UniTask LameJoeAppears()
         {
             lameJoe.gameObject.SetActive(true);
             red.LookAt(lameJoe.transform);

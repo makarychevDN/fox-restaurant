@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace foxRestaurant
             float animationTime = 0.3f;
             effectTriggeredSound.Play();
             icon.transform.DORotate(new Vector3(0, 0, -30), animationTime * 0.5f);
-            await icon.DOScale(3f, animationTime * 0.5f).AsyncWaitForCompletion();
+            await icon.DOScale(3f, animationTime * 0.5f).ToUniTask();
             icon.DORotate(new Vector3(0, 0, 0), animationTime * 0.5f);
             icon.DOScale(1f, animationTime * 0.5f);
         }

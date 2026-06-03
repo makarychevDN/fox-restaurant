@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,13 +23,13 @@ namespace foxRestaurant
             this.encounter = encounter;
         }
 
-        protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
+        protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => red.Say("До"), () => SpawnIceCream(new List<ItemData>() { iceCream, iceCream, iceCream, iceCream }) },
-                AfterInitSpawn = new Func<Task>[] { () => red.Say("После") },
-                OnFail = new Func<Task>[] { () => red.Say("Попробуем снова") },
+                BeforeWave = new Func<UniTask>[] { () => red.Say("До"), () => SpawnIceCream(new List<ItemData>() { iceCream, iceCream, iceCream, iceCream }) },
+                AfterInitSpawn = new Func<UniTask>[] { () => red.Say("После") },
+                OnFail = new Func<UniTask>[] { () => red.Say("Попробуем снова") },
 
                 Customers = new List<(CustomerData, Func<ItemData>)>
                 {
@@ -45,11 +46,11 @@ namespace foxRestaurant
             });
         }
 
-        private async Task SpawnIceCream(List<ItemData> itemsToSpawnData)
+        private async UniTask SpawnIceCream(List<ItemData> itemsToSpawnData)
         {
             for (int i = 0; i < encounter.SlotsManager.BottomRowSlots.Count; i++)
             {
-                await Task.Delay(500);
+                await UniTask.Delay(500);
                 encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
             }
         }

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -20,11 +21,11 @@ namespace foxRestaurant
 
             transform.localScale = Vector3.zero;
             transform.DOMove(endPosition, 0.15f);
-            await transform.DOScale(Vector3.one, 0.15f).AsyncWaitForCompletion();
+            await transform.DOScale(Vector3.one, 0.15f).ToUniTask();
 
             var endColor = new Color(startColor.r, startColor.g, startColor.b, 0);
             label.DOColor(endColor, 3);
-            await transform.DOMove(transform.position + Vector3.up * 50, 3).AsyncWaitForCompletion();
+            await transform.DOMove(transform.position + Vector3.up * 50, 3).ToUniTask();
 
             gameObject.SetActive(false);
         }

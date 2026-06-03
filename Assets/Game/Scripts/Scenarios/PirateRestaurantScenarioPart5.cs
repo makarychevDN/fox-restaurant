@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using foxRestaurant;
 using NUnit.Framework;
@@ -49,29 +50,29 @@ namespace foxRestaurant
         private int stringsCounter = 0;
         private int Next => stringsCounter++;
 
-        protected override async Task StartScenarioTyped(RestaurantEncounter encounter)
+        protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
             capitan.OnEmote.AddListener(ShakeCameraOnce);
 
             await CurtainsAppears();
             await IntroSpeech();
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await CartoonScreenAppearsAnimation();
             await Waves(encounter);
             encounter.BlockInput();
             await DialogueAfterWaves();
-            await Task.Delay(2000);
+            await UniTask.Delay(2000);
             await CapitanAppears();
             await CrowdAppears();
         }
 
-        private async Task CurtainsAppears()
+        private async UniTask CurtainsAppears()
         {
             curtainsSound.Play();
-            await curtains.DOLocalMove(new Vector3(0, 15), 1.5f).SetEase(Ease.InExpo).AsyncWaitForCompletion();
+            await curtains.DOLocalMove(new Vector3(0, 15), 1.5f).SetEase(Ease.InExpo).ToUniTask();
         }
 
-        private async Task IntroSpeech()
+        private async UniTask IntroSpeech()
         {
             await red.Say(dialogueLines[Next]);
 
@@ -79,14 +80,14 @@ namespace foxRestaurant
             lameJoeAppearParticles.Play();
             poofSound.Play();
             red.LookAt(lameJoe.transform);
-            await Task.Delay(1500);
+            await UniTask.Delay(1500);
 
             foreach (var pack in talkingKidsSetup)
             {
                 pack.character.gameObject.SetActive(true);
                 pack.particle.Play();
                 pack.poofSound.Play();
-                await Task.Delay(200);
+                await UniTask.Delay(200);
             }
 
             await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
@@ -109,7 +110,7 @@ namespace foxRestaurant
                 pack.character.gameObject.SetActive(false);
                 pack.particle.Play();
                 pack.poofSound.Play();
-                await Task.Delay(200);
+                await UniTask.Delay(200);
             }
 
             await red.Say(dialogueLines[Next]);
@@ -118,20 +119,20 @@ namespace foxRestaurant
             await red.Say(dialogueLines[Next]);
         }
 
-        private async Task CartoonScreenAppearsAnimation()
+        private async UniTask CartoonScreenAppearsAnimation()
         {
             vhsStartsSound.Play();
-            await screen.DOLocalMove(new Vector3(0, 7.3f), 0.6f).AsyncWaitForCompletion();
+            await screen.DOLocalMove(new Vector3(0, 7.3f), 0.6f).ToUniTask();
             await BlinkGameObjectNTimes(cartoon);
         }
 
-        private async Task Waves(RestaurantEncounter encounter)
+        private async UniTask Waves(RestaurantEncounter encounter)
         {
             encounter.ItemSpawnTimer.SetBlocked(false);
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems() },
+                BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
                 Customers = new List<(CustomerData, Func<ItemData>)>()
                 {
                     (seal, () => encounter.DecksManager.GetRandomDish()),
@@ -151,7 +152,7 @@ namespace foxRestaurant
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems() },
+                BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
                 Customers = new List<(CustomerData, Func<ItemData>)>()
                 {
                     (seal, () => encounter.DecksManager.GetRandomDish()),
@@ -171,7 +172,7 @@ namespace foxRestaurant
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<Task>[] { () => encounter.ItemsOperations.SpawnStartItems() },
+                BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
                 Customers = new List<(CustomerData, Func<ItemData>)>()
                 {
                     (seal, () => encounter.DecksManager.GetRandomDish()),
@@ -190,7 +191,7 @@ namespace foxRestaurant
             });
         }
 
-        private async Task DialogueAfterWaves()
+        private async UniTask DialogueAfterWaves()
         {
             foreach(var kidSetup in talkingKidsSetup)
             {
@@ -201,7 +202,7 @@ namespace foxRestaurant
                 kidSetup.particle.transform.position = kidSetup.character.transform.position;
                 kidSetup.particle.Play();
                 kidSetup.poofSound.Play();
-                await Task.Delay(200);
+                await UniTask.Delay(200);
             }
 
             await red.Say(dialogueLines[Next]);
@@ -212,7 +213,7 @@ namespace foxRestaurant
             await red.Say(dialogueLines[Next]);
         }
 
-        private async Task CapitanAppears()
+        private async UniTask CapitanAppears()
         {
             vhsArtifactsSound.Play();
             backgroundMusic.Stop();
@@ -222,12 +223,12 @@ namespace foxRestaurant
             await capitan.Say(dialogueLines[Next]);
             await capitan.Say(dialogueLines[Next]);
             curtainsSound.Play();
-            await curtains.DOLocalMove(new Vector3(0, 22.5f), 1.5f).AsyncWaitForCompletion();
-            await Task.Delay(1000);
+            await curtains.DOLocalMove(new Vector3(0, 22.5f), 1.5f).ToUniTask();
+            await UniTask.Delay(1000);
             additionalSpeakersMovingSound.Play();
-            await additionalSpeakers.DOLocalMove(new Vector3(0, 8.5f), 1.75f).AsyncWaitForCompletion();
+            await additionalSpeakers.DOLocalMove(new Vector3(0, 8.5f), 1.75f).ToUniTask();
             microphoneArtifactsSound.Play();
-            await Task.Delay(2000);
+            await UniTask.Delay(2000);
             await capitan.Say(dialogueLines[Next]);
             additionalSpeakersMovingSound.Play();
             additionalSpeakers.DOLocalMove(new Vector3(0, 14.2f), 1.75f);
@@ -235,10 +236,10 @@ namespace foxRestaurant
             screen.DOLocalMove(new Vector3(0, 15.2f), 1.75f).SetEase(Ease.InExpo);
         }
 
-        private async Task CrowdAppears()
+        private async UniTask CrowdAppears()
         {
             earthQuakeSound.Play();
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             Tweener shakingCameraLoop = Camera.main.SetCameraShakingLoopAnimation(0.1f);
             await kidsOnTheStreet[0].Say(dialogueLines[Next]);
             Camera.main.UpdateCameraShakingLoopAnimation(ref shakingCameraLoop, 0.25f);
@@ -260,7 +261,7 @@ namespace foxRestaurant
                     silhouettesCount++;
                 }
 
-                await Task.Delay(500);
+                await UniTask.Delay(500);
             }
 
             if (shakingCameraLoop != null)
@@ -270,12 +271,12 @@ namespace foxRestaurant
             }
         }
 
-        private async Task BlinkGameObjectNTimes(GameObject go, int n = 5)
+        private async UniTask BlinkGameObjectNTimes(GameObject go, int n = 5)
         {
             for (int i = 0; i < n; i++)
             {
                 go.SetActive(!go.activeSelf);
-                await Task.Delay(50);
+                await UniTask.Delay(50);
             }
         }
 
@@ -293,7 +294,7 @@ namespace foxRestaurant
             if (key != "shake")
                 return;
 
-            await Camera.main.transform.DOShakePosition(0.3f, 0.25f, 50).AsyncWaitForCompletion();
+            await Camera.main.transform.DOShakePosition(0.3f, 0.25f, 50).ToUniTask();
             Camera.main.transform.position = new Vector3(0, 0, -10);
         }
 

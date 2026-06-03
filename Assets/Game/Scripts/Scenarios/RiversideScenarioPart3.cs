@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,10 @@ namespace foxRestaurant
             silver.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
         }
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
 
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await silver.Say("Как у вас уютно!");
             await red.Say("А что это у вас на полочках?");
             await adele.Say("Не трогать антиквариат.");
@@ -44,14 +45,14 @@ namespace foxRestaurant
             await adele.Say("В худшем случае покричали бы обидных вещей вслед.");
 
             await red.Say("...");
-            List<Task> tasks = new List<Task>
+            List<UniTask> tasks = new List<UniTask>
             {
                 red.Say("Вообще,<pause:0.5> нам это подходит,<pause:0.5> мы все равно шли мимо и..."),
-                silversPaw.DOLocalMove(new Vector3(-3.75f, 4), 2).AsyncWaitForCompletion()
+                silversPaw.DOLocalMove(new Vector3(-3.75f, 4), 2).ToUniTask()
             };
-            await Task.WhenAll(tasks);
+            await UniTask.WhenAll(tasks);
             popSounds.Play();
-            await silversPaw.DOLocalMove(new Vector3(-5.3f, 4.5f), 0.2f).AsyncWaitForCompletion();
+            await silversPaw.DOLocalMove(new Vector3(-5.3f, 4.5f), 0.2f).ToUniTask();
             red.LookAt(pointToLookOnSilversPaw);
             await silver.Say("Какая жалость.");
             await silver.Say("Нам бы не хотелось покидать это славное место в такой спешке,<pause:0.5> еще и обидев местных жителей.");
@@ -69,7 +70,7 @@ namespace foxRestaurant
             await silver.Say("Прекрасно!<pause:0.75> Тогда мы посидим здесь тихонько и не будем никому мешать.");
             await adele.Say("Умная лисичка.");
 
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await red.Say("...");
             await red.Say("Им везут лекарства из города.<pause:0.5> Они что болеют?");
             await adele.Say("Дап.<pause:0.75> Эти растяпы умудрились подхватить какую-то болячку и теперь половина деревни простудилась.");

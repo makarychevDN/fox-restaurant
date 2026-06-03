@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +14,7 @@ namespace foxRestaurant
         private RestaurantEncounter encounter;
         private List<(CustomerData, Func<ItemData>)> queue;
         private List<Customer> spawnedCustomers = new();
-        private TaskCompletionSource<bool> waveTcs;
+        private UniTaskCompletionSource<bool> waveTcs;
         bool waveIsExecuting;
         private float nextCustomersPatienceTimer;
         private int fedCustomersCount;
@@ -31,7 +32,7 @@ namespace foxRestaurant
             encounter.Ticker.AddTickable(this);
         }
 
-        public async Task DoWaveTillComplete(WaveConfig waveConfig)
+        public async UniTask DoWaveTillComplete(WaveConfig waveConfig)
         {
             bool success = false;
             while (!success)
@@ -43,7 +44,7 @@ namespace foxRestaurant
             }
         }
 
-        public async Task<bool> ExecuteWave(WaveConfig waveConfig)
+        public async UniTask<bool> ExecuteWave(WaveConfig waveConfig)
         {
             encounter.ItemSpawnTimer.Pause();
             encounter.Ticker.Pause();
@@ -65,7 +66,7 @@ namespace foxRestaurant
             {
                 SpawnCustomer();
                 RefreshDataAfterCustomerSpawned();
-                await Task.Delay(500);
+                await UniTask.Delay(500);
             }
 
             await ExecuteTasksList(waveConfig.AfterInitSpawn);
@@ -74,7 +75,7 @@ namespace foxRestaurant
             encounter.Ticker.SetRegularTickingSpeed();
             encounter.UnblockInput();
             waveIsExecuting = true;
-            waveTcs = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            waveTcs = new UniTaskCompletionSource<bool>();
             bool success = await waveTcs.Task;
             await FinishTheRestOfWave(success);
             return success;
@@ -101,7 +102,7 @@ namespace foxRestaurant
             }
         }
 
-        private async Task ExecuteTasksList(Func<Task>[] tasksBeforeWaveExecution)
+        private async UniTask ExecuteTasksList(Func<UniTask>[] tasksBeforeWaveExecution)
         {
             for (int i = 0; i < tasksBeforeWaveExecution.Length; i++)
             {
@@ -109,12 +110,12 @@ namespace foxRestaurant
             }
         }
 
-        private Func<Task>[] BuildOnFailTasks(WaveConfig config)
+        private Func<UniTask>[] BuildOnFailTasks(WaveConfig config)
         {
             if (config.OnFail.Length > 0)
                 return config.OnFail;
 
-            return new Func<Task>[]
+            return new Func<UniTask>[]
             {
                 () => encounter.TheMainCharacter.Say(encounter.DefaultFailurePhrase)
             };
@@ -152,7 +153,7 @@ namespace foxRestaurant
             }
         }
 
-        private async Task FinishTheRestOfWave(bool success)
+        private async UniTask FinishTheRestOfWave(bool success)
         {
             encounter.BlockInput();
 
@@ -163,12 +164,12 @@ namespace foxRestaurant
                 var customers = new List<Customer>(encounter.CustomersManager.Customers.Where(customer => !customer.IsLeaving));
                 foreach (var customer in customers)
                 {
-                    await Task.Delay(250);
+                    await UniTask.Delay(250);
                     customer.AutoSatisfy();
                 }
 
                 //if there are still customers on the map wait till the go away after autosatisfying
-                await Task.Delay(customersCount > 0 ? 3000 : 500);
+                await UniTask.Delay(customersCount > 0 ? 3000 : 500);
             }
 
             else
@@ -178,7 +179,7 @@ namespace foxRestaurant
                 while (encounter.SeatPlacesManager.FreeSeatPlaces.Count !=
                 encounter.SeatPlacesManager.SeatPlaces.Count)
                 {
-                    await Task.Delay(50);
+                    await UniTask.Delay(50);
                 }
             }
 
@@ -206,11 +207,11 @@ namespace foxRestaurant
 
     public class WaveConfig
     {
-        public Func<Task>[] BeforeWave { get; set; } = Array.Empty<Func<Task>>();
+        public Func<UniTask>[] BeforeWave { get; set; } = Array.Empty<Func<UniTask>>();
 
-        public Func<Task>[] AfterInitSpawn { get; set; } = Array.Empty<Func<Task>>();
+        public Func<UniTask>[] AfterInitSpawn { get; set; } = Array.Empty<Func<UniTask>>();
 
-        public Func<Task>[] OnFail { get; set; } = Array.Empty<Func<Task>>();
+        public Func<UniTask>[] OnFail { get; set; } = Array.Empty<Func<UniTask>>();
 
         public List<(CustomerData, Func<ItemData>)> Customers { get; set; }
             = new List<(CustomerData, Func<ItemData>)>();

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -47,23 +48,23 @@ namespace foxRestaurant
             Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z);
         }
 
-        protected override async Task StartScenarioTyped(ListenDialoguesEncounter encounter)
+        protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await SceneInTheForest();
             await SceneOnTheEntrance();
             await SceneInTheCrowd();
         }
 
-        private async Task SceneInTheForest()
+        private async UniTask SceneInTheForest()
         {
             await redInTheForest.transform.DotweenSteps(new Vector3(7.25f, redInTheForest.transform.position.y), new Vector3(1.2f, 0.8f), 2, 5);
             redInTheForest.LookAt(silversEyesInTheForest);
-            await bushesSound.DOFade(0, 0.25f).AsyncWaitForCompletion();
+            await bushesSound.DOFade(0, 0.25f).ToUniTask();
             bushesSound.volume = 0.5f;
             bushesSound.Play();
             await silverInTheForest.transform.DotweenSteps(new Vector3(-7.25f, redInTheForest.transform.position.y), new Vector3(1.15f, 0.85f), 2, 5);
             silverInTheForest.LookAt(redsEyesInTheForest);
-            await bushesSound.DOFade(0, 0.25f).AsyncWaitForCompletion();
+            await bushesSound.DOFade(0, 0.25f).ToUniTask();
             await redInTheForest.Say("Когда ты успел сменить шапку?");
             await silverInTheForest.Say("Когда наше дорожное путешествие оказалось походом, дурик.");
             redInTheForest.LookAt(PointToLookAtItInTheForest);
@@ -73,21 +74,21 @@ namespace foxRestaurant
             theForestScene.SetActive(false);
         }
 
-        private async Task SceneOnTheEntrance()
+        private async UniTask SceneOnTheEntrance()
         {
             theEntranceScene.SetActive(true);
             theEntranceScene.transform.position = new Vector3(theEntranceScene.transform.position.x, -17, theEntranceScene.transform.position.z);
             theEntranceScene.transform.localScale = Vector3.one * 1.5f;
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await silverOnTheEntrance.Say("Нет,<pause:0.5> это не Клиффорд,<pause:0.5> это Риверсайд.<pause:0.5> Видишь?");
             await redOnTheEntrance.Say("Блин.");
             await silverOnTheEntrance.Say("Не переживай,<pause:0.75> зато мы теперь точно не потерялись!");
             await silverOnTheEntrance.Say("И нам есть у кого спросить дорогу!");
             await silverOnTheEntrance.Say("И посмотри-ка на это!");
             theEntranceScene.transform.DOScale(Vector3.one, 1);
-            await theEntranceScene.transform.DOMove(Vector3.zero, 1).AsyncWaitForCompletion();
+            await theEntranceScene.transform.DOMove(Vector3.zero, 1).ToUniTask();
             await hogOnTheEntrance.DotweenSteps(new Vector3(5, hogOnTheEntrance.position.y), new Vector3(1.15f, 0.85f), 0.75f, 2);
-            await hogOnTheEntrance.DOLocalRotate(new Vector3(0, 0, -5), 0.15f).AsyncWaitForCompletion();
+            await hogOnTheEntrance.DOLocalRotate(new Vector3(0, 0, -5), 0.15f).ToUniTask();
             await silverOnTheEntrance.Say("Местный житель!");
             theEntranceScene.SetActive(false);
         }
@@ -97,13 +98,13 @@ namespace foxRestaurant
             DOTween.To(() => cam.orthographicSize, x => cam.orthographicSize = x, targetSize, duration);
         }
 
-        private async Task SceneInTheCrowd()
+        private async UniTask SceneInTheCrowd()
         {
             theCrowdScene.gameObject.SetActive(true);
             silverInTheCrowd.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
             redInTheCrowd.LookAt(hogInTheCrowd.transform);
             silverInTheCrowd.LookAt(hogInTheCrowd.transform);
-            await Task.Delay(2000);
+            await UniTask.Delay(2000);
             await redInTheCrowd.Say("Здрасти.");
             hogInTheCrowd.transform.DotweenStep(hogInTheCrowd.transform.position + Vector3.right, new Vector3(1.2f, 0.8f), 0.15f);
             await hogInTheCrowd.Say("ААА!");
@@ -114,11 +115,11 @@ namespace foxRestaurant
             hogInTheCrowd.gameObject.SetActive(false);
             poofSound.Play();
             hogDisappearParticles.Play();
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await redInTheCrowd.Say("Это я то леший?");
             earthQuakeSounds.Play();
             var tweener = Camera.main.SetCameraShakingLoopAnimation(0.3f);
-            await Task.Delay(3000);
+            await UniTask.Delay(3000);
             tweener.Kill();
             earthQuakeSounds.DOFade(0, 0.5f);
             percussion.DOFade(0.5f, 0.5f);
@@ -128,7 +129,7 @@ namespace foxRestaurant
             poofSound.Play();
             crowdAppearParticles.ForEach(particles => particles.Play());
             someoneInTheCrowd.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
-            await Task.Delay(1000);
+            await UniTask.Delay(1000);
             await someoneInTheCrowd.Say("Стоять на месте, лесное чудище!");
             await silverInTheCrowd.Say("Да,<pause:0.5> определенно ты.");
             await someoneInTheCrowd.Say("Молчать, гнусный Клиффордец!");
@@ -143,7 +144,7 @@ namespace foxRestaurant
             await crowd.transform.DotweenSteps(new Vector3(-1.5f, 1.5f), new Vector3(1.05f, 0.95f), 2, 2);
             adeleInTheCrowd.gameObject.SetActive(true);
             poofSound.Play();
-            await crowd.transform.DOMove(new Vector3(0, 0), 0.5f).AsyncWaitForCompletion();
+            await crowd.transform.DOMove(new Vector3(0, 0), 0.5f).ToUniTask();
             percussion.DOFade(0, 0.25f);
             await adeleInTheCrowd.Say("Так,<pause:0.5> расходимся,<pause:0.5> не на что тут смотреть.");
             await adeleInTheCrowd.Say("А эти двое идут со мной.");
@@ -158,7 +159,7 @@ namespace foxRestaurant
             crowd.gameObject.SetActive(false);
             crowdAppearParticles.ForEach(particles => particles.Play());
             poofSound.Play();
-            await Task.Delay(500);
+            await UniTask.Delay(500);
             await adeleInTheCrowd.Say("<volume:0>...");
             await adeleInTheCrowd.Say("<volume:1>*вздох*<pause:0.75> За мной,<pause:0.5> пока они не передумали.");
         }

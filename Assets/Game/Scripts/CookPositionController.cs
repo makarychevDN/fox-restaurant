@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -22,14 +23,14 @@ namespace foxRestaurant
         public async void Slice()
         {
             animator.SetTrigger("slice");
-            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).AsyncWaitForCompletion();
-            await transform.DOScale(1f, 0.1f).AsyncWaitForCompletion();
+            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).ToUniTask();
+            await transform.DOScale(1f, 0.1f).ToUniTask();
         }
 
         private async void Squeeze()
         {
-            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).AsyncWaitForCompletion();
-            await transform.DOScale(1f, 0.1f).AsyncWaitForCompletion();
+            await transform.DOScale(new Vector3(1.2f, 0.8f), 0.1f).ToUniTask();
+            await transform.DOScale(1f, 0.1f).ToUniTask();
         }
     }
 }

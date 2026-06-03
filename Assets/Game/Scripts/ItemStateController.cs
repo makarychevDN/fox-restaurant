@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -74,13 +75,13 @@ namespace foxRestaurant
             transform.DOScale(Vector3.one, 0.05f);
         }
 
-        private async Task GoToSlot(ItemSlot slot)
+        private async UniTask GoToSlot(ItemSlot slot)
         {
             movementState = MovementState.goingBackToLastSlot;
             slot.SetSelectedForItemMovement(true);
 
             transform.DOScale(slot.transform.localScale, 0.1f);
-            await transform.DOMove(slot.CenterForItem.position, 0.1f).AsyncWaitForCompletion();
+            await transform.DOMove(slot.CenterForItem.position, 0.1f).ToUniTask();
 
             slot.SetSelectedForItemMovement(false);
             item.Slot = slot;

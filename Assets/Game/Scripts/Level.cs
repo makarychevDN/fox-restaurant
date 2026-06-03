@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -40,7 +41,7 @@ namespace foxRestaurant
             fading.GetComponentInParent<Canvas>().sortingOrder = 9999;
         }
 
-        private async Task RunLevel()
+        private async UniTask RunLevel()
         {
             while (currentIndex < encounters.Count)
             {
