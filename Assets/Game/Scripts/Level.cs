@@ -59,14 +59,13 @@ namespace foxRestaurant
             SceneManager.LoadScene("Main Menu");
         }
 
-        private void OpenPauseMenu()
+        public void OpenPauseMenu()
         {
-            print("sex");
             Time.timeScale = 0;
             pauseMenu.gameObject.SetActive(true);
         }
 
-        private void ClosePauseMenu()
+        public void ClosePauseMenu()
         {
             Time.timeScale = 1;
             pauseMenu.gameObject.SetActive(false);

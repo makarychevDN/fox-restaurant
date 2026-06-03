@@ -18,7 +18,7 @@ namespace foxRestaurant
         protected override void InitTitleMenuPanel()
         {
             base.InitTitleMenuPanel();
-            TitleMenuPanel.PlayButton.onClick.AddListener(LaunchTheFirstLevel);
+            titleMenuPanel.PlayButton.onClick.AddListener(LaunchTheFirstLevel);
         }
 
         private async void LaunchTheFirstLevel()

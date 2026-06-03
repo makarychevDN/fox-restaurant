@@ -6,8 +6,8 @@ namespace foxRestaurant
     public abstract class Menu : MonoBehaviour
     {
         [SerializeField] protected Image fading;
-        [SerializeField] protected TitleMenuPanel TitleMenuPanel;
-        [SerializeField] protected SettingsMenuPanel SettingsMenuPanel;
+        [SerializeField] protected TitleMenuPanel titleMenuPanel;
+        [SerializeField] protected SettingsMenuPanel settingsMenuPanel;
 
         protected void Awake()
         {
@@ -30,13 +30,13 @@ namespace foxRestaurant
 
         protected void InitSettingsMenuPanel()
         {
-            SettingsMenuPanel.BackButton.onClick.AddListener(() => SwitchPanels(SettingsMenuPanel, TitleMenuPanel));
+            settingsMenuPanel.BackButton.onClick.AddListener(() => SwitchPanels(settingsMenuPanel, titleMenuPanel));
         }
 
         protected virtual void InitTitleMenuPanel()
         {
-            TitleMenuPanel.SettingsButton.onClick.AddListener(() => SwitchPanels(TitleMenuPanel, SettingsMenuPanel));
-            TitleMenuPanel.ExitButton.onClick.AddListener(Extensions.Quit);
+            titleMenuPanel.SettingsButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, settingsMenuPanel));
+            titleMenuPanel.ExitButton.onClick.AddListener(Extensions.Quit);
         }
     }
 }
