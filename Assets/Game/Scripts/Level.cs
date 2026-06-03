@@ -10,6 +10,8 @@ namespace foxRestaurant
     {
         [SerializeField] private DataBetweenScenesContainer dataBetweenScenesContainer;
         [SerializeField] private Image fading;
+        [SerializeField] private Button pauseButton;
+        [SerializeField] private GameplayPauseMenu pauseMenu;
 
         private List<Encounter> encounters = new();
         private int currentIndex = 0;
@@ -17,6 +19,8 @@ namespace foxRestaurant
         private async void Start()
         {
             fading.material = new Material(fading.material);
+
+            pauseButton.onClick.AddListener(OpenPauseMenu);
 
             Init(dataBetweenScenesContainer.EncountersList);
             print(dataBetweenScenesContainer.EncountersList.name + " is loaded");
@@ -52,6 +56,19 @@ namespace foxRestaurant
             }
 
             SceneManager.LoadScene("Main Menu");
+        }
+
+        private void OpenPauseMenu()
+        {
+            print("sex");
+            Time.timeScale = 0;
+            pauseMenu.gameObject.SetActive(true);
+        }
+
+        private void ClosePauseMenu()
+        {
+            Time.timeScale = 1;
+            pauseMenu.gameObject.SetActive(false);
         }
     }
 }

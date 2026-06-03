@@ -135,6 +135,9 @@ namespace foxRestaurant
                 duration
             );
 
+            if (Time.timeScale == 0)
+                tween.SetUpdate(true);
+
             // ∆дЄм завершени€
             await tween.AsyncWaitForCompletion();
             image.raycastTarget = false;
