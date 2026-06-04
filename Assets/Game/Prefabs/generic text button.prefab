@@ -213,6 +213,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 6520219785972703920}
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Rebuild
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: foxRestaurant.ContentSizeFittersRebilder, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891113375782608102, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6090688703505540495, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
       propertyPath: m_Name
       value: generic text button
@@ -313,9 +341,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6090688703505540495, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6520219785972703920}
-    - targetCorrespondingSourceObject: {fileID: 6090688703505540495, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8117134773001737147}
   m_SourcePrefab: {fileID: 100100000, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
 --- !u!1 &6267641986334090764 stripped
 GameObject:
@@ -377,35 +402,6 @@ MonoBehaviour:
   contentSizeFitters:
   - {fileID: 5620888796346070266}
   - {fileID: 6781015906735066557}
---- !u!114 &8117134773001737147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6267641986334090764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 6520219785972703920}
-          m_TargetAssemblyTypeName: foxRestaurant.ContentSizeFittersRebilder, Assembly-CSharp
-          m_MethodName: Rebuild
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
 --- !u!224 &6781015906735066557 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6658106117293166142, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
