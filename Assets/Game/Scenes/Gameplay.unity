@@ -756,8 +756,9 @@ GameObject:
   - component: {fileID: 1833791367}
   - component: {fileID: 1833791366}
   - component: {fileID: 1833791365}
+  - component: {fileID: 1833791369}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas (pause)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,6 +850,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1833791369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833791364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8694d6898273094f80e53fc457c452c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.BlocksDialogueSkip
 --- !u!1 &1890125039
 GameObject:
   m_ObjectHideFlags: 0

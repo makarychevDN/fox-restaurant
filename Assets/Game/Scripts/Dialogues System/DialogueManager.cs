@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using static foxRestaurant.DialogueDisplayer;
 
 namespace foxRestaurant
@@ -114,18 +115,47 @@ namespace foxRestaurant
 
         private async UniTask WaitForMouseClick()
         {
-            while (!Input.GetMouseButtonDown(0))
+            while (true)
             {
+                if (ClickedToSkipDialogue())
+                    break;
+
                 await UniTask.Yield();
             }
         }
 
+        private bool IsClickBlockedByUI()
+        {
+            PointerEventData eventData = new PointerEventData(EventSystem.current)
+            {
+                position = Input.mousePosition
+            };
+
+            List<RaycastResult> results = new();
+            EventSystem.current.RaycastAll(eventData, results);
+
+            foreach (var result in results)
+            {
+                if (result.gameObject.GetComponentInParent<BlocksDialogueSkip>() != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (ClickedToSkipDialogue())
             {
                 skipRequested = true;
             }
+        }
+
+        private bool ClickedToSkipDialogue()
+        {
+            return Input.GetMouseButtonDown(0) && !IsClickBlockedByUI();
         }
 
         public void SetDialoguePopUpCentering(Centering centering)
