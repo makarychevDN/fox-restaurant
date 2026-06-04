@@ -7,9 +7,12 @@ namespace foxRestaurant
     public class CookPositionController : MonoBehaviour
     {
         [SerializeField] private Animator animator;
+        [SerializeField] private AudioSource changePositionSound;
 
         public void HoverSlot(ItemSlot itemSlot)
         {
+            changePositionSound.pitch = Random.Range(0.25f, 1.75f);
+            changePositionSound.Play();
             animator.SetBool("readyToSlice", true);
             transform.DOMove(itemSlot.transform.position + Vector3.forward * 10, 0.1f);
             Squeeze();
