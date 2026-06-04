@@ -13,7 +13,7 @@ namespace foxRestaurant
             base.InitTitleMenuPanel();
             titleMenuPanel.ResumeButton.onClick.AddListener(level.ClosePauseMenu);
             titleMenuPanel.RestartWaveButton.onClick.AddListener(RestartButtonClickHandler);
-            titleMenuPanel.MainMenuButton.onClick.AddListener(MainMenuButtonClickHandler); //todo fade and quit to main menu
+            titleMenuPanel.MainMenuButton.onClick.AddListener(MainMenuButtonClickHandler);
         }
 
         private void RestartButtonClickHandler()
