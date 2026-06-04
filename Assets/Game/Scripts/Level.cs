@@ -16,6 +16,9 @@ namespace foxRestaurant
 
         private List<Encounter> encounters = new();
         private int currentIndex = 0;
+        private Encounter currentEncounter;
+
+        public Encounter CurrentEncounter => currentEncounter;
 
         private async void Start()
         {
@@ -45,14 +48,14 @@ namespace foxRestaurant
         {
             while (currentIndex < encounters.Count)
             {
-                Encounter encounter = encounters[currentIndex];
-                encounter.gameObject.SetActive(true);
-                encounter.Init();
-                encounter.scenario.Init(encounter);
+                currentEncounter = encounters[currentIndex];
+                currentEncounter.gameObject.SetActive(true);
+                currentEncounter.Init();
+                currentEncounter.scenario.Init(currentEncounter);
                 await fading.FadeOut();
-                await encounter.scenario.StartScenario(encounter);
+                await currentEncounter.scenario.StartScenario(currentEncounter);
                 await fading.FadeIn();
-                encounter.gameObject.SetActive(false);
+                currentEncounter.gameObject.SetActive(false);
                 currentIndex++;
             }
 
