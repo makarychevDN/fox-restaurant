@@ -27,8 +27,8 @@ namespace foxRestaurant
 
         private async void MainMenuButtonClickHandler()
         {
-            level.ClosePauseMenu();
             await fading.FadeIn();
+            Time.timeScale = 1;
             SceneManager.LoadScene("Main Menu");
         }
     }
