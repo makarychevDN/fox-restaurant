@@ -61,7 +61,7 @@ namespace foxRestaurant
 
                     if (pauseTime > 0 && !skipRequested)
                     {
-                        await UniTask.Delay(TimeSpan.FromSeconds(pauseTime));
+                        await UniTask.Delay(TimeSpan.FromSeconds(pauseTime), cancellationToken: destroyCancellationToken);
                         pauseTime = 0;
                     }
                 }
@@ -76,7 +76,7 @@ namespace foxRestaurant
                     i += chunkLength;
 
                     if (!skipRequested)
-                        await UniTask.Delay(TimeSpan.FromSeconds(delayBetweenChunks));
+                        await UniTask.Delay(TimeSpan.FromSeconds(delayBetweenChunks), cancellationToken: destroyCancellationToken);
                 }
             }
 
@@ -120,7 +120,7 @@ namespace foxRestaurant
                 if (ClickedToSkipDialogue())
                     break;
 
-                await UniTask.Yield();
+                await UniTask.Yield(destroyCancellationToken);
             }
         }
 

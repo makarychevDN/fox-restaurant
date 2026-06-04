@@ -66,7 +66,7 @@ namespace foxRestaurant
             {
                 SpawnCustomer();
                 RefreshDataAfterCustomerSpawned();
-                await UniTask.Delay(500);
+                await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
             }
 
             await ExecuteTasksList(waveConfig.AfterInitSpawn);
@@ -102,11 +102,18 @@ namespace foxRestaurant
             }
         }
 
-        private async UniTask ExecuteTasksList(Func<UniTask>[] tasksBeforeWaveExecution)
+        private async UniTask ExecuteTasksList(Func<UniTask>[] tasks)
         {
-            for (int i = 0; i < tasksBeforeWaveExecution.Length; i++)
+            try
             {
-                await tasksBeforeWaveExecution[i]();
+                for (int i = 0; i < tasks.Length; i++)
+                {
+                    await tasks[i]();
+                }
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
             }
         }
 
@@ -164,12 +171,12 @@ namespace foxRestaurant
                 var customers = new List<Customer>(encounter.CustomersManager.Customers.Where(customer => !customer.IsLeaving));
                 foreach (var customer in customers)
                 {
-                    await UniTask.Delay(250);
+                    await UniTask.Delay(250, cancellationToken: destroyCancellationToken);
                     customer.AutoSatisfy();
                 }
 
                 //if there are still customers on the map wait till the go away after autosatisfying
-                await UniTask.Delay(customersCount > 0 ? 3000 : 500);
+                await UniTask.Delay(customersCount > 0 ? 3000 : 500, cancellationToken: destroyCancellationToken);
             }
 
             else
@@ -179,7 +186,7 @@ namespace foxRestaurant
                 while (encounter.SeatPlacesManager.FreeSeatPlaces.Count !=
                 encounter.SeatPlacesManager.SeatPlaces.Count)
                 {
-                    await UniTask.Delay(50);
+                    await UniTask.Delay(50, cancellationToken: destroyCancellationToken);
                 }
             }
 

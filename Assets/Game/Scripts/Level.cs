@@ -28,7 +28,7 @@ namespace foxRestaurant
 
             Init(dataBetweenScenesContainer.EncountersList);
             print(dataBetweenScenesContainer.EncountersList.name + " is loaded");
-            await RunLevel();
+            await RunLevel().SuppressCancellationThrow();
         }
 
         public void Init(EncountersListAsset prefabsList)

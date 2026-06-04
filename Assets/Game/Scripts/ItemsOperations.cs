@@ -24,7 +24,7 @@ namespace foxRestaurant
             for (int i = 0; i < itemsToSpawnData.Count; i++)
             {
                 encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
-                await UniTask.Delay(500);
+                await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
             }
         }
 
