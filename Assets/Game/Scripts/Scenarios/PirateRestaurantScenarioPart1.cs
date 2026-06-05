@@ -59,6 +59,8 @@ namespace foxRestaurant
         [Header("Dialogue Lines")]
         [SerializeField] LocalizedString waveIsFailedLine;
         [SerializeField] List<LocalizedString> dialogueLines;
+        [SerializeField] List<LocalizedString> progressBarTutorialLines;
+        [SerializeField] List<LocalizedString> customersLineTutorialLines;
 
         private int switchConeAndPopsicleCount;
 
@@ -249,8 +251,8 @@ namespace foxRestaurant
                 },
                 AfterInitSpawn = new Func<UniTask>[]
                 {
-                    () => redTheCook.Say("Обычно мне не нужно обслуживать всех на свете."),
-                    () => redTheCook.Say("Достаточно разобраться с основной массой."),
+                    () => redTheCook.Say(progressBarTutorialLines[0]),
+                    () => redTheCook.Say(progressBarTutorialLines[1]),
                     () =>
                     {
                         redTheCook.LookAt(customersToFeedPanel.transform);
@@ -260,7 +262,7 @@ namespace foxRestaurant
                         particlesOnCustomersToFeedPanelAppear.Play();
                         return UniTask.Delay(500);
                     },
-                    () => redTheCook.Say("Эта железяка показывает сколько посетителей осталось удовлетворить."),
+                    () => redTheCook.Say(progressBarTutorialLines[2]),
                     LookAtTheCursor()
                 },
                 CustomersToFeed = 3
@@ -288,8 +290,8 @@ namespace foxRestaurant
                 },
                 AfterInitSpawn = new Func<UniTask>[]
                 {
-                    () => redTheCook.Say("Ой-ей.<pause:0.5> Мелюзги набежало так много, что все не влезли."),
-                    () => redTheCook.Say("Часть ждет, когда освободится место, чтобы сделать заказ."),
+                    () => redTheCook.Say(customersLineTutorialLines[0]),
+                    () => redTheCook.Say(customersLineTutorialLines[1]),
                     () =>
                     {
                         redTheCook.LookAt(nextInLineCustomerPanel.transform);
@@ -297,9 +299,9 @@ namespace foxRestaurant
                         soundOnSlotsToSpawnFoodAppear.Play();
                         return UniTask.Delay(500);
                     },
-                    () => redTheCook.Say("Эта штука показывает, кто в очереди следующий."),
-                    () => redTheCook.Say("Бывает полезно потянуть время,<pause:0.5> но лучше не заигрываться с этим."),
-                    () => redTheCook.Say("У клиентов в очереди тоже есть терпение."),
+                    () => redTheCook.Say(customersLineTutorialLines[2]),
+                    () => redTheCook.Say(customersLineTutorialLines[3]),
+                    () => redTheCook.Say(customersLineTutorialLines[4]),
                     LookAtTheCursor()
                 },
                 CustomersToFeed = 4

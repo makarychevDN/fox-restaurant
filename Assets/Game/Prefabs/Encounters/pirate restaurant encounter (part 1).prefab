@@ -26573,6 +26573,72 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  progressBarTutorialLines:
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76866541631725568
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377408
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377409
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  customersLineTutorialLines:
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377410
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377411
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377412
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377413
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:76c0caf3be1b6134fac28638aa766eea
+    m_TableEntryReference:
+      m_KeyId: 76863787903377414
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []
