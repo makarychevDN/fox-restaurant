@@ -962,10 +962,6 @@ MonoBehaviour:
     m_Localized: "\xA1Y su incre\xEDble aventura ha comenzado!"
     m_Metadata:
       m_Items: []
-  - m_Id: 76863787878211584
-    m_Localized: Normalmente, no tengo que atender a todos y cada uno de los clientes.
-    m_Metadata:
-      m_Items: []
   - m_Id: 76863787903377408
     m_Localized: "Es suficiente para atender a la mayor\xEDa de ellos."
     m_Metadata:
@@ -995,6 +991,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 76863787903377414
     m_Localized: "Los clientes que hacen cola tambi\xE9n tienen paciencia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76866541631725568
+    m_Localized: Normalmente, no tengo que atender a todos y cada uno de los clientes.
     m_Metadata:
       m_Items: []
   references:

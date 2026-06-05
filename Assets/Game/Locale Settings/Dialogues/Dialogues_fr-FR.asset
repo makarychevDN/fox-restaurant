@@ -970,10 +970,6 @@ MonoBehaviour:
     m_Localized: "Et leur incroyable aventure a commenc\xE9 !"
     m_Metadata:
       m_Items: []
-  - m_Id: 76863787878211584
-    m_Localized: "Normalement, je n'ai pas \xE0 servir chaque client."
-    m_Metadata:
-      m_Items: []
   - m_Id: 76863787903377408
     m_Localized: Cela suffit pour s'occuper de la plupart d'entre eux.
     m_Metadata:
@@ -1003,6 +999,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 76863787903377414
     m_Localized: Les clients qui font la queue font aussi preuve de patience.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76866541631725568
+    m_Localized: "En g\xE9n\xE9ral, je n'ai pas \xE0 servir chaque client."
     m_Metadata:
       m_Items: []
   references:
