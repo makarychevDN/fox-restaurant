@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228f3a0605ae74a429228a7acfbf3331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.UISoundPlayer
-  uiHoverSound: {fileID: 8300000, guid: e5630b6d2d21f694e84255fd060c0b91, type: 3}
+  uiHoverSound: {fileID: 8300000, guid: 21d0607d22b47424eafdc178d8ff03bd, type: 3}
   uiClickSound: {fileID: 8300000, guid: 7467c4c85f5360e41b002a58ce0507b2, type: 3}
   audioSource: {fileID: 278112992}
 --- !u!4 &278112994
