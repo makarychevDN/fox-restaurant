@@ -956,6 +956,40 @@ MonoBehaviour:
     m_Localized: "E a incr\xEDvel aventura deles come\xE7ou!"
     m_Metadata:
       m_Items: []
+  - m_Id: 76863787878211584
+    m_Localized: "Normalmente, n\xE3o preciso atender a todos os clientes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377408
+    m_Localized: "\xC9 suficiente para cuidar da maioria deles."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377409
+    m_Localized: Este dispositivo mostra quantos clientes mais preciso satisfazer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377410
+    m_Localized: "Nossa!<pause:0.5> Apareceram tantas crian\xE7as que n\xE3o couberam
+      todas l\xE1 dentro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377411
+    m_Localized: "Alguns deles est\xE3o esperando que uma vaga se abra antes de poderem
+      fazer um pedido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377412
+    m_Localized: "Isso mostra quem \xE9 o pr\xF3ximo da fila."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377413
+    m_Localized: "\xC0s vezes, ganhar tempo ajuda, mas n\xE3o force demais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377414
+    m_Localized: "Os clientes na fila tamb\xE9m t\xEAm paci\xEAncia."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

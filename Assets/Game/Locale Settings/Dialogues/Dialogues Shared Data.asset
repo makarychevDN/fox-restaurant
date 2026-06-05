@@ -883,6 +883,40 @@ MonoBehaviour:
     m_Key: l1e7 90
     m_Metadata:
       m_Items: []
+  - m_Id: 76863787878211584
+    m_Key: Normally, I don't have to serve every single customer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377408
+    m_Key: It's enough to take care of most of them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377409
+    m_Key: This gizmo shows how many more customers I need to satisfy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377410
+    m_Key: Oh boy.<pause:0.5> So many kids showed up that they couldn't all fit inside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377411
+    m_Key: Some of them are waiting for a spot to open up before they can place an
+      order.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377412
+    m_Key: This thing shows who's next in line.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377413
+    m_Key: Sometimes it helps to stall for time,<pause:0.5> but don't push it too
+      far.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377414
+    m_Key: The customers in line have patience too.
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

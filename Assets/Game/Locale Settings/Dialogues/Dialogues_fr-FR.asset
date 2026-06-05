@@ -970,6 +970,41 @@ MonoBehaviour:
     m_Localized: "Et leur incroyable aventure a commenc\xE9 !"
     m_Metadata:
       m_Items: []
+  - m_Id: 76863787878211584
+    m_Localized: "Normalement, je n'ai pas \xE0 servir chaque client."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377408
+    m_Localized: Cela suffit pour s'occuper de la plupart d'entre eux.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377409
+    m_Localized: "Ce gadget me montre combien de clients il me reste \xE0 satisfaire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377410
+    m_Localized: "Oh l\xE0 l\xE0 ! Il y avait tellement d'enfants qu'ils ne pouvaient
+      pas tous entrer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377411
+    m_Localized: "Certains attendent qu'une place se lib\xE8re avant de pouvoir passer
+      commande."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377412
+    m_Localized: Cet appareil indique qui est le prochain sur la liste.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377413
+    m_Localized: Parfois, gagner du temps est utile,<pause:0.5> mais n'allez pas
+      trop loin.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377414
+    m_Localized: Les clients qui font la queue font aussi preuve de patience.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

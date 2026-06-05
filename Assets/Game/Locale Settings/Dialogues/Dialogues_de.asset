@@ -956,6 +956,41 @@ MonoBehaviour:
     m_Localized: Und ihr unglaubliches Abenteuer hat begonnen!
     m_Metadata:
       m_Items: []
+  - m_Id: 76863787878211584
+    m_Localized: Normalerweise muss ich nicht jeden einzelnen Kunden bedienen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377408
+    m_Localized: "Das reicht aus, um sich um die meisten von ihnen zu k\xFCmmern."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377409
+    m_Localized: "Dieses Ger\xE4t zeigt mir, wie viele Kunden ich noch zufriedenstellen
+      muss."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377410
+    m_Localized: Oh je.<pause:0.5> Es kamen so viele Kinder, dass sie nicht alle
+      hineinpassten.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377411
+    m_Localized: "Einige von ihnen warten darauf, dass ein Platz frei wird, bevor
+      sie eine Bestellung aufgeben k\xF6nnen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377412
+    m_Localized: "Dieses Ding zeigt an, wer als N\xE4chster an der Reihe ist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377413
+    m_Localized: "Manchmal hilft es, Zeit zu gewinnen, aber \xFCbertreibe es nicht."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377414
+    m_Localized: Die Kunden in der Schlange haben auch Geduld.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

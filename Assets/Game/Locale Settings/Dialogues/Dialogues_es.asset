@@ -962,6 +962,41 @@ MonoBehaviour:
     m_Localized: "\xA1Y su incre\xEDble aventura ha comenzado!"
     m_Metadata:
       m_Items: []
+  - m_Id: 76863787878211584
+    m_Localized: Normalmente, no tengo que atender a todos y cada uno de los clientes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377408
+    m_Localized: "Es suficiente para atender a la mayor\xEDa de ellos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377409
+    m_Localized: "Este dispositivo me muestra cu\xE1ntos clientes m\xE1s necesito
+      satisfacer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377410
+    m_Localized: "Oh, vaya.<pause:0.5> Vinieron tantos ni\xF1os que no cab\xEDan
+      todos dentro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377411
+    m_Localized: "Algunos est\xE1n esperando a que haya un hueco libre antes de poder
+      hacer el pedido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377412
+    m_Localized: "Esto muestra qui\xE9n es el siguiente en la fila."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377413
+    m_Localized: A veces ayuda ganar tiempo,<pause:0.5> pero no lo fuerces demasiado.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76863787903377414
+    m_Localized: "Los clientes que hacen cola tambi\xE9n tienen paciencia."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
