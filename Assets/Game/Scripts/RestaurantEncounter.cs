@@ -91,7 +91,7 @@ namespace foxRestaurant
             {
                 var cookerSlot = CookerSlotSpawner.SpawnSlot();
 
-                cookerSlot.OnItemHovered.AddListener(() => CookPositionController.HoverSlot(cookerSlot));
+                cookerSlot.OnItemHovered.AddListener(CookerSlotHoveredHandler);
                 cookerSlot.OnItemUnhovered.AddListener(CookPositionController.Unhover);
 
                 //cookerSlot.OnItemHovered.AddListener(() => LMBItemHintsDisplayer.ShowHint(cookerSlot));
@@ -110,6 +110,14 @@ namespace foxRestaurant
 
             if(ItemSpawnTimer != null) 
                 ItemSpawnTimer.Init(this);
+        }
+
+        private void CookerSlotHoveredHandler(Item item)
+        {
+            if (item.ItemStateController.MovementState != MovementState.placedInSlot)
+                return;
+
+            CookPositionController.HoverSlot(item.Slot);
         }
 
         private void SpawnSlots(SlotSpawner slotSpawner, int slotsAmount)

@@ -14,6 +14,7 @@ namespace foxRestaurant
         private Item item;
 
         public UnityEvent<ItemSlot> OnItemWasHoveredByThisItem;
+        public MovementState MovementState => movementState;
 
         public void Init(RestaurantEncounter restaurantEncounter, Item item)
         {
@@ -65,7 +66,7 @@ namespace foxRestaurant
 
         public void OnHover()
         {
-            item.Slot.OnItemHovered.Invoke();
+            item.Slot.OnItemHovered.Invoke(item);
             transform.DOScale(new Vector3(1.15f, 1.15f, 1), 0.05f);
         }
 
@@ -114,14 +115,14 @@ namespace foxRestaurant
                     slotToPlaceItem.Hover(item);
             }
         }
+    }
 
-        private enum MovementState
-        {
-            placedInSlot,
-            dragged,
-            preparedForGrabbing,
-            grabbed,
-            goingBackToLastSlot
-        }
+    public enum MovementState
+    {
+        placedInSlot,
+        dragged,
+        preparedForGrabbing,
+        grabbed,
+        goingBackToLastSlot
     }
 }

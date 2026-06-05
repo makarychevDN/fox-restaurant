@@ -23,7 +23,7 @@ namespace foxRestaurant
         public UnityEvent OnHasBeenOccupied;
         public UnityEvent<Item> OnItemHasBeenPlaced;
         public UnityEvent<Item> OnItemHasBeenRemoved;
-        public UnityEvent OnItemHovered;
+        public UnityEvent<Item> OnItemHovered;
         public UnityEvent OnItemUnhovered;
         public UnityEvent OnItemSliced;
 
