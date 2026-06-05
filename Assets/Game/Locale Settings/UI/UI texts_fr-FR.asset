@@ -82,6 +82,18 @@ MonoBehaviour:
     m_Localized: "Fran\xE7ais (google translate)"
     m_Metadata:
       m_Items: []
+  - m_Id: 76852223058010112
+    m_Localized: Menu principal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76852223095758848
+    m_Localized: CV
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76852223095758849
+    m_Localized: "Vague de red\xE9marrage"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

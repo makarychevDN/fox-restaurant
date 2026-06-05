@@ -82,6 +82,18 @@ MonoBehaviour:
     m_Localized: Deutsch (google translate)
     m_Metadata:
       m_Items: []
+  - m_Id: 76852223058010112
+    m_Localized: "Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76852223095758848
+    m_Localized: Wieder aufnehmen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 76852223095758849
+    m_Localized: Neustartwelle
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
