@@ -683,11 +683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6658106117293166142, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 75
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 6658106117293166142, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 75
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 6658106117293166142, guid: 5fe13f2bebd8c3e4494e5c25b88150f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -817,7 +817,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306042559
 MonoBehaviour:
