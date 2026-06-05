@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.biswajit.localization.googlesheets": "https://github.com/IamBiswajitSahoo/UnityLocalizationGoogleSheetsSA.git",
     "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.unity.collab-proxy": "2.12.4",

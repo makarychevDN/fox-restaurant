@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.biswajit.localization.googlesheets": {
+      "version": "https://github.com/IamBiswajitSahoo/UnityLocalizationGoogleSheetsSA.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.localization": "1.5.8"
+      },
+      "hash": "863a201685868b055399eaa80a244e1294a972dd"
+    },
     "com.coffee.ui-particle": {
       "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
       "depth": 0,
