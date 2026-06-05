@@ -97,3 +97,5 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/Game/Locale Settings/rtc-localization-3c68e509e565.json
+Assets/Game/Locale Settings/rtc-localization-3c68e509e565.json.meta
