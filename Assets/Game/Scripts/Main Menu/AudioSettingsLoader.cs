@@ -18,10 +18,20 @@ namespace foxRestaurant
             foreach (var parameterName in parameterNames)
             {
                 string key = $"Audio_{parameterName}";
-                float defaultValue = parameterName == MasterVolumeParam ? DefaultMasterVolume : DefaultChildVolume;
-                float savedValue = PlayerPrefs.GetFloat(key, defaultValue);
-                audioMixer.ApplyVolume(parameterName, savedValue);
+                float defaultValue = parameterName == MasterVolumeParam
+                    ? DefaultMasterVolume
+                    : DefaultChildVolume;
+
+                if (!PlayerPrefs.HasKey(key))
+                {
+                    PlayerPrefs.SetFloat(key, defaultValue);
+                }
+
+                float value = PlayerPrefs.GetFloat(key);
+                audioMixer.ApplyVolume(parameterName, value);
             }
+
+            PlayerPrefs.Save();
         }
     }
 }
