@@ -16,20 +16,10 @@ namespace foxRestaurant
         private void Awake()
         {
             int savedIndex = PlayerPrefs.GetInt(PREF_RES_INDEX, 1);
-            bool savedFullscreen =
-                PlayerPrefs.GetInt(PREF_FULLSCREEN, 1) == 1;
-
-            savedIndex = Mathf.Clamp(
-                savedIndex,
-                0,
-                allowedResolutions.Length - 1);
-
+            bool savedFullscreen = PlayerPrefs.GetInt(PREF_FULLSCREEN, 1) == 1;
+            savedIndex = Mathf.Clamp(savedIndex, 0, allowedResolutions.Length - 1);
             var res = allowedResolutions[savedIndex];
-
-            Screen.SetResolution(
-                res.x,
-                res.y,
-                savedFullscreen);
+            Screen.SetResolution(res.x, res.y, savedFullscreen);
         }
     }
 }
