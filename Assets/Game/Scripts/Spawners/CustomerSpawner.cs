@@ -24,7 +24,7 @@ namespace foxRestaurant
 
             var customer = Instantiate(customerPrefab);
             customer.CenterOnNewParent(seatPlace.transform);
-            customer.Init(restaurantEncounter, customerData, getItemDataToOrderFunc);
+            customer.Init(restaurantEncounter, seatPlace, customerData, getItemDataToOrderFunc);
             seatPlace.SetCustomer(customer);
             return customer;
         }

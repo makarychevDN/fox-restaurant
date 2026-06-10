@@ -33,6 +33,7 @@ namespace foxRestaurant
 
         private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
+        private SeatPlace seatPlace;
         private Func<ItemData> getItemDataToOrderFunc;
         private RestaurantEncounter restaurantEncounter;
         private List<ITickable> activeEffects = new();
@@ -52,14 +53,16 @@ namespace foxRestaurant
         public Character Character => character;
         public bool IsLeaving => isLeaving;
         public bool IsSatisfied => HungerPoints <= 0;
+        public SeatPlace SeatPlace => seatPlace;
 
-        public void Init(RestaurantEncounter restaurantEncounter, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
+        public void Init(RestaurantEncounter restaurantEncounter, SeatPlace seatPlace, CustomerData customerData, Func<ItemData> getItemDataToOrderFunc)
         {
             slotToPlaceFood = restaurantEncounter.CustomerSlotsToPlaceFoodSpawner.SpawnSlot();
             slotToPlaceFood.transform.position = slotPositionPoint.position;
             slotToPlaceFood.OnItemHasBeenPlaced.AddListener(TryToEat);
             slotToPlaceFood.OnHasBeenOccupied.AddListener(slotToPlaceFood.Clear);
 
+            this.seatPlace = seatPlace;
             this.getItemDataToOrderFunc = getItemDataToOrderFunc;
             restaurantEncounter.Ticker.AddTickable(this);
             restaurantEncounter.CustomersManager.AddCustomer(this);

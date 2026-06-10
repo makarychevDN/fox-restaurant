@@ -23,7 +23,7 @@ namespace foxRestaurant
             Camera.main.transform.position = new Vector3(0, 0, -10);
             encounter.Ticker.Pause();
             seatPlace.Init(encounter);
-            customer.Init(encounter, ducky, () => popcicle);
+            customer.Init(encounter, seatPlace, ducky, () => popcicle);
             customer.CenterOnNewParent(seatPlace.transform);
             seatPlace.SetCustomer(customer);
             encounter.ItemsSpawner.SpawnItem(foodPrefab, encounter, popcicle, encounter.SlotsManager.BottomRowSlots[1], 0);
