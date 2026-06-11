@@ -10,15 +10,19 @@ namespace foxRestaurant
         [SerializeField] private AudioSource bonkSound;
         private Customer customer;
         private RestaurantEncounter restaurantEncounter;
+        private Table table;
 
         public UnityEvent OnCustomerTookSeat;
         public UnityEvent OnCustomerLeave;
 
         public bool IsTaken => customer != null;
+        public Customer Customer => customer;
+        public Table Table => table;
 
         public void Init(RestaurantEncounter restaurantEncounter, Table table)
         {
             this.restaurantEncounter = restaurantEncounter;
+            this.table = table;
         }
 
         public void SetCustomer(Customer customer)
