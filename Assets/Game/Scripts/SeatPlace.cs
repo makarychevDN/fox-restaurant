@@ -16,7 +16,7 @@ namespace foxRestaurant
 
         public bool IsTaken => customer != null;
 
-        public void Init(RestaurantEncounter restaurantEncounter)
+        public void Init(RestaurantEncounter restaurantEncounter, Table table)
         {
             this.restaurantEncounter = restaurantEncounter;
         }

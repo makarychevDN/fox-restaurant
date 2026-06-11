@@ -22,7 +22,6 @@ namespace foxRestaurant
         {
             Camera.main.transform.position = new Vector3(0, 0, -10);
             encounter.Ticker.Pause();
-            seatPlace.Init(encounter);
             customer.Init(encounter, seatPlace, ducky, () => popcicle);
             customer.CenterOnNewParent(seatPlace.transform);
             seatPlace.SetCustomer(customer);
