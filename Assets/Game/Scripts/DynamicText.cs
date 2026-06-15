@@ -25,7 +25,7 @@ namespace foxRestaurant
 
             var endColor = new Color(startColor.r, startColor.g, startColor.b, 0);
             label.DOColor(endColor, 3);
-            await transform.DOMove(transform.position + Vector3.up * 50, 3).ToUniTask();
+            await transform.DOMove(transform.position + Vector3.up * 3, 3).ToUniTask();
 
             gameObject.SetActive(false);
         }

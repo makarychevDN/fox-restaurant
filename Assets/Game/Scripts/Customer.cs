@@ -30,6 +30,7 @@ namespace foxRestaurant
         [SerializeField] private GameObject orderBox;
         [SerializeField] private Image orderImage;
         [SerializeField] private CustomersUI customersUI;
+        [SerializeField] private CustomersBuffsDisplayer customersBuffsDisplayer;
 
         private ItemData requiredItemData;
         private ItemSlot slotToPlaceFood;
@@ -42,6 +43,7 @@ namespace foxRestaurant
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int> OnHungerPointsChanged;
+        public UnityEvent OnHungerPointsIncreased;
         public UnityEvent OnStartLeavingProcess;
         public UnityEvent OnLeft;
         public UnityEvent<bool> OnLeftSatisfied;
@@ -68,15 +70,16 @@ namespace foxRestaurant
             restaurantEncounter.CustomersManager.AddCustomer(this);
             this.restaurantEncounter = restaurantEncounter;
 
-            SetCustomerData(customerData);
+            SetCustomerData(customerData, restaurantEncounter);
             MakeOrder();
             customersUI.Init(this);
+            customersBuffsDisplayer.Init(this);
 
             orderImage.transform.rotation = Quaternion.identity;
             uiStatsRoot.rotation = Quaternion.identity;
         }
 
-        public void SetCustomerData(CustomerData customerData)
+        public void SetCustomerData(CustomerData customerData, RestaurantEncounter restaurantEncounter)
         {
             HungerPoints = customerData.HungerPoints;
             Patience = customerData.Patience;
@@ -93,7 +96,7 @@ namespace foxRestaurant
 
                     if (viewGO.TryGetComponent<ICustomerEffectView>(out var view))
                     {
-                        view.InitBase(instance);
+                        view.InitBase(instance, restaurantEncounter);
                     }
                 }
 
@@ -132,6 +135,7 @@ namespace foxRestaurant
         public void AddHunger(int hunger)
         {
             GetSatiety(-hunger);
+            OnHungerPointsIncreased.Invoke();
         }
 
         public void GetSatiety(int satiety)

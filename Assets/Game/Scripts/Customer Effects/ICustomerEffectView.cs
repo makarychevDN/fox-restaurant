@@ -2,6 +2,6 @@ namespace foxRestaurant
 {
     public interface ICustomerEffectView
     {
-        void InitBase(ICustomerEffectInstance instance);
+        void InitBase(ICustomerEffectInstance instance, RestaurantEncounter restaurantEncounter);
     }
 }

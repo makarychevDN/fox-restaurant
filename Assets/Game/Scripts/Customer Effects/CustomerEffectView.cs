@@ -6,17 +6,17 @@ namespace foxRestaurant
     {
         protected TInstance Instance { get; private set; }
 
-        public virtual void Init(TInstance instance)
+        public virtual void Init(TInstance instance, RestaurantEncounter restaurantEncounter)
         {
             Instance = instance;
-            OnInit();
+            OnInit(restaurantEncounter);
         }
 
-        public void InitBase(ICustomerEffectInstance instance)
+        public void InitBase(ICustomerEffectInstance instance, RestaurantEncounter restaurantEncounter)
         {
-            Init((TInstance)instance);
+            Init((TInstance)instance, restaurantEncounter);
         }
 
-        protected abstract void OnInit();
+        protected abstract void OnInit(RestaurantEncounter restaurantEncounter);
     }
 }

@@ -9,7 +9,7 @@ namespace foxRestaurant
         [SerializeField] private Transform icon;
         [SerializeField] private AudioSource effectTriggeredSound;
 
-        protected override void OnInit()
+        protected override void OnInit(RestaurantEncounter restaurantEncounter)
         {
             Instance.OnTriggered += PlayAnimation;
         }

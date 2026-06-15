@@ -13,7 +13,7 @@ namespace foxRestaurant
         [SerializeField] private AudioSource tauntActivateSound;
         [SerializeField] private AudioSource tauntDeactivateSound;
 
-        protected override void OnInit()
+        protected override void OnInit(RestaurantEncounter restaurantEncounter)
         {
             Instance.OnStateChanged += StateChangedHandler;
             Instance.OnTick += TickHandler;

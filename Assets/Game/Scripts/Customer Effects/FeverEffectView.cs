@@ -8,16 +8,18 @@ namespace foxRestaurant
     {
         [SerializeField] private Transform icon;
         [SerializeField] private AudioSource effectSound;
+        private RestaurantEncounter restaurantEncounter;
 
-        protected override void OnInit()
+        protected override void OnInit(RestaurantEncounter restaurantEncounter)
         {
             Instance.OnTriggeredOnCertainCustomer += OnTriggeredOnCertainCustomerHandler;
+            this.restaurantEncounter = restaurantEncounter;
         }
 
         private void OnTriggeredOnCertainCustomerHandler(Customer customer)
         {
             PlayAnimation(icon);
-            effectSound.Play();
+            //effectSound.Play();
         }
 
         private async void PlayAnimation(Transform icon, float animationTime = 0.3f)

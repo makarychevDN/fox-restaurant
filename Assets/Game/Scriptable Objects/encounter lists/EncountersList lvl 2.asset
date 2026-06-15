@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EncountersList lvl 2
   m_EditorClassIdentifier: 
   <Encounters>k__BackingField:
+  - {fileID: 4365857102925828093, guid: 5c5505a829193bc4ba17419602c459bf, type: 3}
   - {fileID: 727196860444949854, guid: 0073f0fce3ba78c4483b2f0929c78037, type: 3}
   - {fileID: 727196860444949854, guid: 9a98060e91b1079458e302385dcb59ee, type: 3}
   - {fileID: 727196860444949854, guid: e85537cc56c7b8544988c3211c1bcd4c, type: 3}
-  - {fileID: 4365857102925828093, guid: 5c5505a829193bc4ba17419602c459bf, type: 3}
