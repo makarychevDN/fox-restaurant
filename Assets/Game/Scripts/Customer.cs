@@ -122,6 +122,7 @@ namespace foxRestaurant
 
             if (item.ItemData == requiredItemData)
             {
+                MakeOrder();
                 GetSatiety(food.Satiety);
             }
         }
@@ -143,7 +144,6 @@ namespace foxRestaurant
             HungerPoints -= satiety;
             HungerPoints = Math.Clamp(HungerPoints, 0, 100);
             OnHungerPointsChanged.Invoke(HungerPoints);
-            MakeOrder();
 
             if (IsSatisfied)
             {
