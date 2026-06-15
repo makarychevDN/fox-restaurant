@@ -14,6 +14,7 @@ namespace foxRestaurant
 
         public UnityEvent OnCustomerTookSeat;
         public UnityEvent OnCustomerLeave;
+        public UnityEvent<Customer> OnCustomerSatDown;
 
         public bool IsTaken => customer != null;
         public Customer Customer => customer;
@@ -35,6 +36,7 @@ namespace foxRestaurant
             {
                 particles.Play();
                 customer.OnLeftSatisfied.AddListener(CustomerLeftHandler);
+                OnCustomerSatDown.Invoke(customer);
             }
 
             this.customer = customer;

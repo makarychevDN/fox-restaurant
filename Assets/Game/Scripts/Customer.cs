@@ -85,8 +85,6 @@ namespace foxRestaurant
             foreach (ICustomerEffect effect in customerData.Effects)
             {
                 var instance = effect.CreateInstance();
-                if(instance is ITickable) activeEffects.Add(instance as ITickable);
-                instance.Apply(this, restaurantEncounter);
 
                 if (effect is IAbleToReturnViewPrefab ableToReturnViewPrefab)
                 {
@@ -98,6 +96,9 @@ namespace foxRestaurant
                         view.InitBase(instance);
                     }
                 }
+
+                if (instance is ITickable) activeEffects.Add(instance as ITickable);
+                instance.Apply(this, restaurantEncounter);
             }
         }
 
@@ -126,6 +127,11 @@ namespace foxRestaurant
         {
             GetSatiety(HungerPoints);
             EatVisualEffect();
+        }
+
+        public void AddHunger(int hunger)
+        {
+            GetSatiety(-hunger);
         }
 
         public void GetSatiety(int satiety)

@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +8,7 @@ namespace foxRestaurant
     public class CustomersUI : MonoBehaviour
     {
         [SerializeField] private TMP_Text hungerPointsIndicator;
+        [SerializeField] private Transform hungerPointsIcon;
         [SerializeField] private TMP_Text patienceIndicator;
 
         public void Init(Customer customer)
@@ -19,11 +22,20 @@ namespace foxRestaurant
         private void UpdateDisplayingHungerValue(int value)
         {
             hungerPointsIndicator.text = value.ToString();
+            PlayAnimation(hungerPointsIcon);
         }
 
         private void UpdateDisplayingPatienceValue(float value)
         {
             patienceIndicator.text = value.ToString("0");
+        }
+
+        private async void PlayAnimation(Transform icon, float animationTime = 0.3f)
+        {
+            icon.transform.DORotate(new Vector3(0, 0, -30), animationTime * 0.5f);
+            await icon.DOScale(3f, animationTime * 0.5f).ToUniTask();
+            icon.DORotate(new Vector3(0, 0, 0), animationTime * 0.5f);
+            icon.DOScale(1f, animationTime * 0.5f);
         }
     }
 }

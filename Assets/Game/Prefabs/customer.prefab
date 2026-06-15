@@ -645,6 +645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hungerPointsIndicator: {fileID: 6546711275937942005}
+  hungerPointsIcon: {fileID: 332044470623841872}
   patienceIndicator: {fileID: 1348266471802969385}
 --- !u!1 &4268609319612869000
 GameObject:

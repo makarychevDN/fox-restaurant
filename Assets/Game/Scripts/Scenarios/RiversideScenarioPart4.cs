@@ -10,10 +10,11 @@ namespace foxRestaurant
     public class RiversideScenarioPart4 : BaseScenario<RestaurantEncounter>
     {
         [SerializeField] private Character red;
-        [SerializeField] private CustomerData kitty;
-        [SerializeField] private CustomerData doggo;
-        [SerializeField] private CustomerData seal;
         [SerializeField] private CustomerData wolf;
+        [SerializeField] private CustomerData hog;
+        [SerializeField] private CustomerData cow;
+        [SerializeField] private CustomerData bull;
+        [SerializeField] private CustomerData toad;
         [SerializeField] private ItemData iceCream;
         [SerializeField] private List<ItemSlot> slots;
         private RestaurantEncounter encounter;
@@ -33,15 +34,16 @@ namespace foxRestaurant
 
                 Customers = new List<(CustomerData, Func<ItemData>)>
                 {
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish)
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (toad, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (wolf, encounter.DecksManager.GetRandomDish),
+                    (toad, encounter.DecksManager.GetRandomDish),
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                    (bull, encounter.DecksManager.GetRandomDish),
+                    (wolf, encounter.DecksManager.GetRandomDish)
                 }
             });
         }
