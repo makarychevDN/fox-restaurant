@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 990482854557846835, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990482854557846835, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990482854557846835, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990482854557846835, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2202273766668462489, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
       propertyPath: scenario
       value: 
@@ -16,6 +32,30 @@ PrefabInstance:
       propertyPath: <ItemSpawnTimer>k__BackingField
       value: 
       objectReference: {fileID: 5058800725026094876}
+    - target: {fileID: 4030589989129070088, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030589989129070088, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030589989129070088, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030589989129070088, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407107544598406669, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4407107544598406669, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5492815183260724424, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
       propertyPath: m_LocalScale.x
       value: 0
@@ -84,6 +124,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Riverside village encounter (part 4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6774392373968952582, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774392373968952582, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774392373968952582, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6774392373968952582, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7798234314369262677, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
@@ -111,10 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   red: {fileID: 8871043587153790938}
-  kitty: {fileID: 11400000, guid: b4f2271fcc1c0ae40a02577471f3643c, type: 2}
-  doggo: {fileID: 11400000, guid: 30f720480acb93c44b15887566919e9a, type: 2}
-  seal: {fileID: 11400000, guid: baa6a42e049cd8e428bd8374d337c28d, type: 2}
   wolf: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
+  hog: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
+  cow: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
+  bull: {fileID: 11400000, guid: 6c934b18b1e5f9b42aecdaa162bde680, type: 2}
+  toad: {fileID: 11400000, guid: dbe87f8bfa53e514f88a8a823e893fa9, type: 2}
   iceCream: {fileID: 11400000, guid: be38da74d1fff764db420eb6138c7e8c, type: 2}
   slots: []
 --- !u!114 &5058800725026094876 stripped
