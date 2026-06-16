@@ -12,6 +12,7 @@ namespace foxRestaurant
     {
         [Header("stats")]
         [field: SerializeField] public int HungerPoints { get; private set; }
+        [field: SerializeField] public int MaxHungerPoints { get; private set; }
         [field: SerializeField] public float Patience { get; private set; }
 
         [Header("assets links")]
@@ -42,7 +43,7 @@ namespace foxRestaurant
         private bool isLeaving = false;
 
         public UnityEvent<float> OnPatienceChanged;
-        public UnityEvent<int> OnHungerPointsChanged;
+        public UnityEvent<int, int> OnHungerPointsChanged;
         public UnityEvent OnHungerPointsIncreased;
         public UnityEvent OnStartLeavingProcess;
         public UnityEvent OnLeft;
@@ -81,6 +82,7 @@ namespace foxRestaurant
 
         public void SetCustomerData(CustomerData customerData, RestaurantEncounter restaurantEncounter)
         {
+            MaxHungerPoints = customerData.HungerPoints;
             HungerPoints = customerData.HungerPoints;
             Patience = customerData.Patience;
             character.SetSprite(customerData.Sprite);
@@ -143,7 +145,7 @@ namespace foxRestaurant
         {
             HungerPoints -= satiety;
             HungerPoints = Math.Clamp(HungerPoints, 0, 100);
-            OnHungerPointsChanged.Invoke(HungerPoints);
+            OnHungerPointsChanged.Invoke(HungerPoints, MaxHungerPoints);
 
             if (IsSatisfied)
             {

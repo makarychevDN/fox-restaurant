@@ -2,27 +2,38 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace foxRestaurant
 {
     public class CustomersUI : MonoBehaviour
     {
-        [SerializeField] private TMP_Text hungerPointsIndicator;
+        [Header("hunger points")]
+        [SerializeField] private Transform hungerPointsParent;
         [SerializeField] private Transform hungerPointsIcon;
+        [SerializeField] private Image hungerPointsFillArea;
+        [SerializeField] private Image extraHungerPointsIcon;
+        [SerializeField] private TMP_Text hungerPointsIndicator;
+
+        [Header("patience")]
         [SerializeField] private TMP_Text patienceIndicator;
 
         public void Init(Customer customer)
         {
             customer.OnHungerPointsChanged.AddListener(UpdateDisplayingHungerValue);
             customer.OnPatienceChanged.AddListener(UpdateDisplayingPatienceValue);
-            UpdateDisplayingHungerValue(customer.HungerPoints);
+            UpdateDisplayingHungerValue(customer.HungerPoints, customer.MaxHungerPoints);
             UpdateDisplayingPatienceValue(customer.Patience);
         }
 
-        private void UpdateDisplayingHungerValue(int value)
+        private void UpdateDisplayingHungerValue(int value, int maxValue)
         {
+            bool extraHungerPoints = value > maxValue;
+            extraHungerPointsIcon.gameObject.SetActive(extraHungerPoints);
+            hungerPointsIcon.gameObject.SetActive(!extraHungerPoints);
+            hungerPointsFillArea.fillAmount = (float)value / maxValue;
             hungerPointsIndicator.text = value.ToString();
-            PlayAnimation(hungerPointsIcon);
+            PlayAnimation(hungerPointsParent);
         }
 
         private void UpdateDisplayingPatienceValue(float value)
