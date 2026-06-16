@@ -26,6 +26,7 @@ namespace foxRestaurant
         [SerializeField] private Animator orderBoxAnimator;
         [SerializeField] private Transform slotPositionPoint;
         [SerializeField] private Transform uiStatsRoot;
+        [SerializeField] private Transform uiEffectsRoot;
 
         [Header("ui links")]
         [SerializeField] private GameObject orderBox;
@@ -94,7 +95,7 @@ namespace foxRestaurant
                 if (effect is IAbleToReturnViewPrefab ableToReturnViewPrefab)
                 {
                     var prefab = ableToReturnViewPrefab.GetViewPrefab();
-                    var viewGO = Instantiate(prefab, uiStatsRoot);
+                    var viewGO = Instantiate(prefab, uiEffectsRoot);
 
                     if (viewGO.TryGetComponent<ICustomerEffectView>(out var view))
                     {
