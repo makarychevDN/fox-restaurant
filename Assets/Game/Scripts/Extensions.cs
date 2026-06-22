@@ -214,5 +214,9 @@ namespace foxRestaurant
             float dB = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f;
             audioMixer.SetFloat(parameterName, dB);
         }
+
+        public static int ToInt(this bool value) => value ? 1 : 0;
+
+        public static int NegateIfFalse(bool value) => value ? 1 : -1;
     }
 }
