@@ -82,10 +82,10 @@ namespace foxRestaurant
                         popsicleData
                     }) 
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>()
+                Customers = new List<QueuedCustomer>()
                 {
-                    (seal, () => cherryIceCreamPlateData),
-                    (kitty, () => popsicleData)
+                    new(seal) { OrderFactory = () => cherryIceCreamPlateData },
+                    new(kitty) { OrderFactory = () => popsicleData }
                 },
                 CustomersToFeed = 2
             });
@@ -98,60 +98,60 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
-                Customers = new List<(CustomerData, Func<ItemData>)>()
+                Customers = new List<QueuedCustomer>()
                 {
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
+                    new(seal),
+                    new(kitty),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(seal),
+                    new(kitty),
+                    new(duck),
+                    new(seal),
+                    new(kitty),
+                    new(kitty),
+                    new(duck),
                 }
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
-                Customers = new List<(CustomerData, Func<ItemData>)>()
+                Customers = new List<QueuedCustomer>()
                 {
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
+                    new(seal),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(seal),
+                    new(doggo),
+                    new(doggo),
+                    new(seal),
+                    new(kitty),
+                    new(kitty),
+                    new(duck),
                 }
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems() },
-                Customers = new List<(CustomerData, Func<ItemData>)>()
+                Customers = new List<QueuedCustomer>()
                 {
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (doggo, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (seal, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (kitty, () => encounter.DecksManager.GetRandomDish()),
-                    (duck, () => encounter.DecksManager.GetRandomDish()),
+                    new(seal),
+                    new(seal),
+                    new(doggo),
+                    new(duck),
+                    new(doggo),
+                    new(doggo),
+                    new(seal),
+                    new(kitty),
+                    new(seal),
+                    new(kitty),
+                    new(kitty),
+                    new(duck),
                 }
             });
         }

@@ -10,51 +10,271 @@ namespace foxRestaurant
     public class RiversideScenarioPart4 : BaseScenario<RestaurantEncounter>
     {
         [SerializeField] private Character red;
-        [SerializeField] private CustomerData wolf;
+        [SerializeField] private AudioSource poofSound;
+
+        [Header("Adele's intro speech setup")]
+        [SerializeField] private Character adele;
+        [SerializeField] private Transform adeleSprite;
+        [SerializeField] private Transform adelesEyes;
+        [SerializeField] private ParticleSystem adelesPoofEffect;
+
+        [Header("Ill goat setup")]
+        [SerializeField] private GameObject illGoat;
+        [SerializeField] private ParticleSystem illGoatsPoofEffect;
+
+        [Header("Customers")]
         [SerializeField] private CustomerData hog;
         [SerializeField] private CustomerData cow;
-        [SerializeField] private CustomerData bull;
-        [SerializeField] private CustomerData toad;
-        [SerializeField] private ItemData iceCream;
-        [SerializeField] private List<ItemSlot> slots;
+        [SerializeField] private CustomerData goat;
+
+        [Header("Dishes Data")]
+        [SerializeField] private ItemData mushroomSoup;
+        [SerializeField] private ItemData chickenSoup;
+        [SerializeField] private ItemData mushroomPotRoast;
+        [SerializeField] private ItemData chickenPotRoast;
+
+        [Header("Ingredients Data")]
+        [SerializeField] private ItemData mushroom;
+        [SerializeField] private ItemData chicken;
+        [SerializeField] private ItemData potRoast;
+        [SerializeField] private ItemData soup;
+
+        [Header("SeatPlaces")]
+        [SerializeField] private Table table;
+
         private RestaurantEncounter encounter;
 
-        protected override void InitTyped(RestaurantEncounter encounter) 
+        protected override void InitTyped(RestaurantEncounter encounter)
         {
             this.encounter = encounter;
+            red.LookAt(adelesEyes);
         }
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
-            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            /*await UniTask.Delay(1000);
+            await IntroDialogue();
+            await UniTask.Delay(500);
+            encounter.ItemSpawnTimer.SetBlocked(true);
+            await TutorialWaves();*/
+            //await AfterTutorialWavesDialogue();
+            await IllGoatTutorial();
+            await AfterIllGoatTutoiralDialogue();
+
+            encounter.ItemSpawnTimer.SetBlocked(false);
+            await TheFirstPackOfWaves();
+
+            /*await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
-                BeforeWave = new Func<UniTask>[] { () => red.Say("��"), () => SpawnIceCream(new List<ItemData>() { iceCream, iceCream, iceCream, iceCream }) },
-                AfterInitSpawn = new Func<UniTask>[] { () => red.Say("�����") },
-                OnFail = new Func<UniTask>[] { () => red.Say("��������� �����") },
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems()
+                },
 
                 Customers = new List<(CustomerData, Func<ItemData>)>
                 {
                     (hog, encounter.DecksManager.GetRandomDish),
-                    (toad, encounter.DecksManager.GetRandomDish),
                     (cow, encounter.DecksManager.GetRandomDish),
-                    (hog, encounter.DecksManager.GetRandomDish),
-                    (wolf, encounter.DecksManager.GetRandomDish),
-                    (toad, encounter.DecksManager.GetRandomDish),
+                    (goat, encounter.DecksManager.GetRandomDish),
+                    (bull, encounter.DecksManager.GetRandomDish),
                     (hog, encounter.DecksManager.GetRandomDish),
                     (cow, encounter.DecksManager.GetRandomDish),
                     (bull, encounter.DecksManager.GetRandomDish),
-                    (wolf, encounter.DecksManager.GetRandomDish)
+                }
+            });*/
+        }
+
+        private async UniTask IntroDialogue()
+        {
+            await adele.Say("И так,<pause:0.5> все наши продукты и травы в твоем распоряжении.");
+            await adele.Say("Не заставляй меня пожалеть об этом, оранжевенький.");
+
+            await red.Say("Я справлюсь.");
+            await red.Say("Вряд-ли делать лекарственные супчики труднее, чем готовить обычную еду.");
+
+            await adele.Say("Зови, если что-то пойдет не по плану.");
+
+            adele.gameObject.SetActive(false);
+            adelesPoofEffect.Play();
+            poofSound.Play();
+
+            red.LookAt(null);
+
+            await UniTask.Delay(1000);
+            await red.Say("Щас как дам больно бациллам этим,<pause:0.5> усиков не соберут.");
+        }
+
+        private async UniTask TutorialWaves()
+        {
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems( new List<ItemData>
+                    {
+                        mushroom, chicken, soup, soup
+                    })
+                },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(cow) { OrderFactory = () => mushroomSoup },
+                    new(cow) { OrderFactory = () => chickenSoup },
+                },
+                CustomersToFeed = 2
+            });
+
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems( new List<ItemData>
+                    {
+                        mushroom, chicken, potRoast, potRoast
+                    })
+                },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(hog) { OrderFactory = () => mushroomPotRoast },
+                    new(hog) { OrderFactory = () => chickenPotRoast },
+                },
+                CustomersToFeed = 2
+            });
+        }
+
+        private async UniTask AfterTutorialWavesDialogue()
+        {
+            await red.Say("А это не так уж и сложно");
+
+            UpdateAdelesPosition();
+            adele.gameObject.SetActive(true);
+            adelesPoofEffect.Play();
+            poofSound.Play();
+            red.LookAt(adelesEyes);
+
+            await UniTask.Delay(1000);
+
+            await adele.Say("Рано радуешься, оранжевенький.");
+            await adele.Say("Все те, кто к тебе только успел прийти не болеют в полной мере.");
+            await adele.Say("В худшем случае чувствуют легкое недомогание.");
+            await adele.Say("Я тебе привела первого настоящего пациента.");
+            await red.Say("Подавайте его сюда.");
+
+            red.LookAt(illGoat.transform);
+            illGoat.SetActive(true);
+            illGoatsPoofEffect.Play();
+            poofSound.Play();
+
+            await UniTask.Delay(1500);
+            red.LookAt(adelesEyes);
+            await adele.Say("Он последний день страдает от жара.");
+            await adele.Say("И своей болезнью портит жизнь всем окружающим.");
+            await adele.Say("Всех, кто сидит рядом с ним будет труднее вылечить.");
+            await adele.Say("Покажи, что можешь, оранжевенький.");
+
+            adele.gameObject.SetActive(false);
+            adelesPoofEffect.Play();
+            poofSound.Play();
+            red.LookAt(null);
+
+            await UniTask.Delay(500);
+
+            illGoat.SetActive(false);
+            illGoatsPoofEffect.Play();
+            poofSound.Play();
+        }
+
+        private async UniTask IllGoatTutorial()
+        {
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>{ mushroom, mushroom, potRoast, potRoast })
+                },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(cow) { SeatPlace = table.SeatPlaces[0], OrderFactory = () => chickenSoup },
+                    new(cow) { SeatPlace = table.SeatPlaces[2], OrderFactory = () => mushroomPotRoast },
+                    new(goat) { SeatPlace = table.SeatPlaces[1], OrderFactory = () => chickenSoup},
+                },
+                AfterInitSpawn = new Func<UniTask>[]
+                {
+                    () => red.Say("Ого!"),
+                    () => red.Say("Что этот козел себе позволяет?")
+                },
+                CustomersToFeed = 1
+            });
+        }
+
+        private async UniTask AfterIllGoatTutoiralDialogue()
+        {
+            await red.Say("Блин,<pause:0.5> а это было жестко");
+
+            UpdateAdelesPosition();
+            adele.gameObject.SetActive(true);
+            adelesPoofEffect.Play();
+            poofSound.Play();
+            red.LookAt(adelesEyes);
+
+            await UniTask.Delay(1000);
+
+            await adele.Say("А я говорила.");
+            await adele.Say("Но жар легко поддается лечению.");
+            await adele.Say("В грибной смеси есть ягоды рябины, ему должно полегчать от них.");
+            await adele.Say("Попробуй.");
+        }
+
+        private async UniTask TheFirstPackOfWaves()
+        {
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems()
+                },
+
+                /*Customers = new List<(CustomerData, Func<ItemData>)>
+                {
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                    (hog, encounter.DecksManager.GetRandomDish),
+                    (cow, encounter.DecksManager.GetRandomDish),
+                }*/
+
+                Customers = new List<QueuedCustomer>
+                {
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow)
                 }
             });
         }
 
-        private async UniTask SpawnIceCream(List<ItemData> itemsToSpawnData)
+        private void UpdateAdelesPosition()
         {
-            for (int i = 0; i < encounter.SlotsManager.BottomRowSlots.Count; i++)
-            {
-                await UniTask.Delay(500);
-                encounter.ItemsSpawner.SpawnFoodItem(encounter, itemsToSpawnData[i], encounter.SlotsManager.BottomRowSlots[i]);
-            }
+            bool isRedOnTheRight = red.transform.position.x > 0;
+            float adelesXPosition = isRedOnTheRight ? -6 : 6;
+
+            adele.transform.position = new Vector3(adelesXPosition, adele.transform.position.y, adele.transform.position.z);
+            adelesPoofEffect.transform.position = new Vector3(adelesXPosition, adelesPoofEffect.transform.position.y, adelesPoofEffect.transform.position.z);
+
+            adeleSprite.transform.localRotation = Quaternion.Euler(new Vector3
+            (
+                adele.transform.localRotation.x,
+                180 * (!isRedOnTheRight).ToInt(),
+                adele.transform.localRotation.z
+            ));
         }
     }
 }

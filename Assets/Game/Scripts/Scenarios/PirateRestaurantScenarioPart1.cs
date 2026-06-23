@@ -98,14 +98,23 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { iceCreamConeData, iceCreamConeData }) },
-                Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => iceCreamConeData), (kitty, () => iceCreamConeData) },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(duck) { OrderFactory = () => iceCreamConeData },
+                    new(kitty) { OrderFactory = () => iceCreamConeData },
+                },
                 CustomersToFeed = 2
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData, popsicleData }) },
-                Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => iceCreamConeData), (kitty, () => popsicleData), (duck, () => popsicleData) },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(duck) { OrderFactory = () => iceCreamConeData },
+                    new(kitty) { OrderFactory = () => popsicleData },
+                    new(duck) { OrderFactory = () => popsicleData },
+                },
                 CustomersToFeed = 3
             });
         }
@@ -115,7 +124,7 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData }) },
-                Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, SwitchConeAndPopsicle) },
+                Customers = new List<QueuedCustomer> { new(doggo) { OrderFactory = SwitchConeAndPopsicle } },
                 AfterInitSpawn = new Func<UniTask>[] 
                 {
                     LookAtTheFirstSpawnedCustomer(encounter),
@@ -130,14 +139,23 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
-                Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, SwitchConeAndPopsicle), (kitty, () => popsicleData), (duck, () => iceCreamConeData) },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(doggo) { OrderFactory = SwitchConeAndPopsicle },
+                    new(kitty) { OrderFactory = () => popsicleData },
+                    new(duck) { OrderFactory = () => iceCreamConeData }
+                },
                 CustomersToFeed = 3
             });
 
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { popsicleData, iceCreamConeData, popsicleData, iceCreamConeData }) },
-                Customers = new List<(CustomerData, Func<ItemData>)> { (doggo, () => iceCreamConeData), (doggo, () => popsicleData) },
+                Customers = new List<QueuedCustomer>
+                {
+                    new(doggo) { OrderFactory = () => iceCreamConeData },
+                    new(doggo) { OrderFactory = () => popsicleData }
+                },
                 CustomersToFeed = 2
             });
         }
@@ -181,7 +199,7 @@ namespace foxRestaurant
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig
             {
                 BeforeWave = new Func<UniTask>[] { () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { cherrySyrupData, iceCreamPlateData }) },
-                Customers = new List<(CustomerData, Func<ItemData>)> { (duck, () => cherryIceCreamPlateData) },
+                Customers = new List<QueuedCustomer> { new(duck) { OrderFactory = () => cherryIceCreamPlateData } },
                 AfterInitSpawn = new Func<UniTask>[] {
                     LookAtTheFirstSpawnedCustomer(encounter),
                     () => redTheCook.Say(dialogueLines[8]),
@@ -206,10 +224,10 @@ namespace foxRestaurant
                         iceCreamPlateData
                     })
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>
+                Customers = new List<QueuedCustomer>
                 {
-                    (doggo, () => cherryIceCreamPlateData),
-                    (kitty, () => chocolateIceCreamPlateData)
+                    new(doggo) { OrderFactory = () => cherryIceCreamPlateData },
+                    new(kitty) { OrderFactory = () => chocolateIceCreamPlateData }
                 },
                 CustomersToFeed = 2
             });
@@ -225,11 +243,11 @@ namespace foxRestaurant
                         popsicleData
                     })
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>
+                Customers = new List<QueuedCustomer>
                 {
-                    (doggo, () => cherryIceCreamPlateData),
-                    (kitty, () => iceCreamConeData),
-                    (duck, () => popsicleData)
+                    new(doggo) { OrderFactory = () => cherryIceCreamPlateData },
+                    new(kitty) { OrderFactory = () => iceCreamConeData },
+                    new(duck) { OrderFactory = () => popsicleData }
                 },
                 CustomersToFeed = 3
             });
@@ -242,12 +260,12 @@ namespace foxRestaurant
                 BeforeWave = new Func<UniTask>[]    {
                     () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { iceCreamConeData, iceCreamConeData, iceCreamConeData })
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>
+                Customers = new List<QueuedCustomer>
                 {
-                    (kitty, () => iceCreamConeData),
-                    (duck, () => iceCreamConeData),
-                    (kitty, () => iceCreamConeData),
-                    (duck, () => iceCreamConeData)
+                    new(kitty) { OrderFactory = () => iceCreamConeData },
+                    new(duck) { OrderFactory = () => iceCreamConeData },
+                    new(kitty) { OrderFactory = () => iceCreamConeData },
+                    new(duck) { OrderFactory = () => iceCreamConeData }
                 },
                 AfterInitSpawn = new Func<UniTask>[]
                 {
@@ -277,16 +295,16 @@ namespace foxRestaurant
                 {
                     () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData> { iceCreamConeData, popsicleData, iceCreamConeData, popsicleData })
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>
+                Customers = new List<QueuedCustomer>
                 {
-                    (doggo, () => cherryIceCreamPlateData),
-                    (doggo, () => cherryIceCreamPlateData),
-                    (kitty, () => popsicleData),
-                    (kitty, () => iceCreamConeData),
-                    (duck, () => popsicleData),
-                    (duck, () => iceCreamConeData),
-                    (doggo, () => cherryIceCreamPlateData),
-                    (doggo, () => cherryIceCreamPlateData),
+                    new(doggo) { OrderFactory = () => cherryIceCreamPlateData },
+                    new(doggo) { OrderFactory = () => cherryIceCreamPlateData },
+                    new(kitty) { OrderFactory = () => popsicleData },
+                    new(kitty) { OrderFactory = () => iceCreamConeData },
+                    new(duck) { OrderFactory = () => popsicleData },
+                    new(duck) { OrderFactory = () => iceCreamConeData },
+                    new(doggo) { OrderFactory = () => cherryIceCreamPlateData },
+                    new(doggo) { OrderFactory = () => cherryIceCreamPlateData },
                 },
                 AfterInitSpawn = new Func<UniTask>[]
                 {
@@ -333,21 +351,21 @@ namespace foxRestaurant
                         encounter.DecksManager.GetRandomIngredient()
                     }) 
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>
+                Customers = new List<QueuedCustomer>
                 {
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(duck),
                 }
             });
         }
@@ -411,20 +429,20 @@ namespace foxRestaurant
                         encounter.DecksManager.GetRandomIngredient()
                     })
                 },
-                Customers = new List<(CustomerData, Func<ItemData>)>()
+                Customers = new List<QueuedCustomer>()
                 {
-                    (bearMiniBossData, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
-                    (duck, encounter.DecksManager.GetRandomDish),
-                    (doggo, encounter.DecksManager.GetRandomDish),
-                    (kitty, encounter.DecksManager.GetRandomDish),
+                    new(bearMiniBossData),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(kitty),
+                    new(duck),
+                    new(doggo),
+                    new(kitty),
                 }
             });
         }

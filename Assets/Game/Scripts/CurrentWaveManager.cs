@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -12,7 +11,7 @@ namespace foxRestaurant
     {
         [SerializeField] private float patienceOfCustomerBeforeSpawn = 40;
         private RestaurantEncounter encounter;
-        private List<(CustomerData, Func<ItemData>)> queue;
+        private List<QueuedCustomer> queue;
         private List<Customer> spawnedCustomers = new();
         private UniTaskCompletionSource<bool> waveTcs;
         bool waveIsExecuting;
@@ -49,7 +48,7 @@ namespace foxRestaurant
             encounter.ItemSpawnTimer.Pause();
             encounter.Ticker.Pause();
             encounter.BlockInput();
-            queue = new List<(CustomerData, Func<ItemData>)>(waveConfig.Customers.ToList());
+            queue = waveConfig.Customers.OrderBy(x => x.SeatPlace == null).ToList();
 
             fedCustomersCount = 0;
             customersToFeedCount = waveConfig.CustomersToFeed <= -1 ?
@@ -130,15 +129,22 @@ namespace foxRestaurant
 
         private void SpawnCustomer()
         {
-            var customer = encounter.CustomerSpawner.TryToSpawnCustomer(queue[0].Item1, queue[0].Item2);
-            spawnedCustomers.Add(customer);
-            customer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
+            var queuedCustomer = queue[0];
+            Func<ItemData> actualFactory = queuedCustomer.OrderFactory;
+            if (actualFactory == null)
+                actualFactory = encounter.DecksManager.GetRandomDish;
+
+            var spawnedCustomer = queuedCustomer.SeatPlace == null ?
+                encounter.CustomerSpawner.TryToSpawnCustomer(queuedCustomer.CustomerData, actualFactory) :
+                encounter.CustomerSpawner.SpawnCustomer(queuedCustomer.SeatPlace, queuedCustomer.CustomerData, actualFactory);
+            spawnedCustomers.Add(spawnedCustomer);
+            spawnedCustomer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
             queue.RemoveAt(0);
         }
 
         private void RefreshDataAfterCustomerSpawned()
         {
-            OnNextCustomerUpdated.Invoke(queue.Count == 0 ? null : queue[0].Item1);
+            OnNextCustomerUpdated.Invoke(queue.Count == 0 ? null : queue[0].CustomerData);
             nextCustomersPatienceTimer = patienceOfCustomerBeforeSpawn;
             OnNextCustomersPatienceUpdated.Invoke(nextCustomersPatienceTimer);
         }
@@ -220,9 +226,22 @@ namespace foxRestaurant
 
         public Func<UniTask>[] OnFail { get; set; } = Array.Empty<Func<UniTask>>();
 
-        public List<(CustomerData, Func<ItemData>)> Customers { get; set; }
-            = new List<(CustomerData, Func<ItemData>)>();
+        public List<QueuedCustomer> Customers { get; set; } = new List<QueuedCustomer>();
 
         public int CustomersToFeed = -1;
+    }
+
+    public class QueuedCustomer
+    {
+        public CustomerData CustomerData { get; set; }
+        public Func<ItemData> OrderFactory { get; set; }
+        public SeatPlace SeatPlace { get; set; }
+
+        public QueuedCustomer(CustomerData customerData)
+        {
+            CustomerData = customerData;
+        }
+
+        public QueuedCustomer() { }
     }
 }
