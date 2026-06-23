@@ -9,8 +9,9 @@ namespace foxRestaurant
     {
         [SerializeField] private GameObject viewPrefab;
         [SerializeField] private int additionalHungerPounts = 10;
+        [SerializeField] private List<ItemData> itemsToCureFever;
 
-        public ICustomerEffectInstance CreateInstance() => new FeverEffectInstance(additionalHungerPounts);
+        public ICustomerEffectInstance CreateInstance() => new FeverEffectInstance(additionalHungerPounts, itemsToCureFever);
         public GameObject GetViewPrefab() => viewPrefab;
     }
 
@@ -19,14 +20,18 @@ namespace foxRestaurant
         private Customer owner;
         private RestaurantEncounter encounter;
         private int additionalHunger;
+        private List<ItemData> itemsToCureFever;
         private List<SeatPlace> affectedNeighborSeatPlaces = new();
+        private bool effectIsRemoved;
 
         public event Action OnTriggered;
+        public event Action OnEffectIsCured;
         public event Action<Customer> OnTriggeredOnCertainCustomer;
 
-        public FeverEffectInstance(int additionalHunger)
+        public FeverEffectInstance(int additionalHunger, List<ItemData> itemsToCureFever)
         {
             this.additionalHunger = additionalHunger;
+            this.itemsToCureFever = itemsToCureFever;
         }
 
         public void Apply(Customer customer, RestaurantEncounter encounter)
@@ -35,8 +40,9 @@ namespace foxRestaurant
             this.encounter = encounter;
 
             GetNeighborSeatPlaces();
-            AddListenersToNeighborSeatPlaces();
-            owner.OnStartLeavingProcess.AddListener(RemoveListenres);
+            ApplyEffectToNeighborSeatPlaces();
+            owner.OnAteCertainFood.AddListener(AteFoodHandler);
+            owner.OnStartLeavingProcess.AddListener(RemoveEffect);
         }
 
         private void GetNeighborSeatPlaces()
@@ -50,7 +56,7 @@ namespace foxRestaurant
                 affectedNeighborSeatPlaces.Add(rightNeighbor);
         }
 
-        private void AddListenersToNeighborSeatPlaces()
+        private void ApplyEffectToNeighborSeatPlaces()
         {
             foreach (SeatPlace seatPlace in affectedNeighborSeatPlaces)
             {
@@ -64,10 +70,6 @@ namespace foxRestaurant
         private void ApplyHunger(Customer neighbor)
         {
             neighbor.AddHunger(additionalHunger);
-
-            Debug.Log(OnTriggeredOnCertainCustomer);
-            Debug.Log(neighbor);
-
             OnTriggeredOnCertainCustomer.Invoke(neighbor);
         }
 
@@ -79,11 +81,28 @@ namespace foxRestaurant
             return owner.SeatPlace.Table.SeatPlaces[index];
         }
 
-        private void RemoveListenres()
+        private void AteFoodHandler(ItemData itemData)
         {
+            if (!itemsToCureFever.Contains(itemData))
+                return;
+
+            RemoveEffect();
+        }
+
+        private void RemoveEffect()
+        {
+            if (effectIsRemoved)
+                return;
+
+            effectIsRemoved = true;
+            OnEffectIsCured.Invoke();
+
             foreach (SeatPlace seatPlace in affectedNeighborSeatPlaces)
             {
                 seatPlace.OnCustomerSatDown.RemoveListener(ApplyHunger);
+
+                if (seatPlace.Customer != null)
+                    seatPlace.Customer.GetSatiety(1);
             }
         }
     }

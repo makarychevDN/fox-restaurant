@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.FeverEffect
   viewPrefab: {fileID: 7648464826878185303, guid: f93c30bfe968c9346996bc1e2c6c49e1, type: 3}
   additionalHungerPounts: 1
+  itemsToCureFever:
+  - {fileID: 11400000, guid: 103ac5c3158d73f489cd14d3ea4e339b, type: 2}
+  - {fileID: 11400000, guid: 23f444888a73fb941b12fa66a4e457d2, type: 2}
