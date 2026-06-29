@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ill goat
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: d7f36ae4e029f20499c50feae11e1c14, type: 3}
-  <HungerPoints>k__BackingField: 6
+  <HungerPoints>k__BackingField: 3
   <Patience>k__BackingField: 120
   effects:
   - {fileID: 11400000, guid: 6e48d6bf24b48fb4aaa14f6379f0ef37, type: 2}
