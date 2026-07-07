@@ -36,7 +36,7 @@ namespace foxRestaurant
         [SerializeField] private AudioSource heavyStepSound;
 
         [Header("music")]
-        [SerializeField] private AudioSource regularMusic;
+        [SerializeField] private List<AudioSource> regularMusic;
         [SerializeField] private AudioSource bossMusic;
 
         [Header("other links")]
@@ -162,6 +162,7 @@ namespace foxRestaurant
 
         private async UniTask GarbageCanTutorial(RestaurantEncounter encounter)
         {
+            encounter.BlockInput();
             brokenSound.Play();
             redTheCook.LookAt(parentOfBottomItemSlots);
             await parentOfBottomItemSlots.DOShakeScale(0.3f, 0.5f, 10, 0).ToUniTask();
@@ -186,6 +187,7 @@ namespace foxRestaurant
             await UniTask.Delay(500);
             await redTheCook.Say(dialogueLines[6].GetLocalizedString());
             redTheCook.LookAt(null);
+            encounter.UnblockInput();
 
             await WaitForHungerPointsDisposed(satietySum);
 
@@ -374,7 +376,7 @@ namespace foxRestaurant
         private async UniTask MiniBossDialogue(RestaurantEncounter encounter)
         {
             encounter.BlockInput();
-            regularMusic.Stop();
+            regularMusic.ForEach(music => music.Stop());
             encounter.Ticker.Pause();
             redTheCook.LookAt(bearMiniBoss.transform);
             await HeavyStep(0.25f, 0.25f);
