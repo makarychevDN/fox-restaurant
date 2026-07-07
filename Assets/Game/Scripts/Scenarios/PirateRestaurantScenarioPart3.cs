@@ -27,7 +27,7 @@ namespace foxRestaurant
 
         [Header("other links")]
         [SerializeField] private AudioSource poofSound;
-        [SerializeField] private AudioSource backgroundMusic;
+        [SerializeField] private List<AudioSource> backgroundMusic;
         [SerializeField] private AudioSource successSound;
         [SerializeField] private ParticleSystem lameJoeAppearParticles;
         [SerializeField] private ParticleSystem sealGirlAppearParticles;
@@ -158,7 +158,7 @@ namespace foxRestaurant
 
         private async UniTask SealGirlGoesAway(RestaurantEncounter encounter)
         {
-            backgroundMusic.DOFade(0, 1);
+            backgroundMusic.ForEach(m => m.DOFade(0, 1));
             encounter.BlockInput();
             encounter.Ticker.Pause();
             await red.Say(dialogueLines[Next]);

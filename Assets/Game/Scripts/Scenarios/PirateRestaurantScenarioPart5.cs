@@ -40,7 +40,7 @@ namespace foxRestaurant
         [SerializeField] private AudioSource vhsArtifactsSound;
         [SerializeField] private AudioSource microphoneArtifactsSound;
         [SerializeField] private AudioSource curtainsSound;
-        [SerializeField] private AudioSource backgroundMusic;
+        [SerializeField] private List<AudioSource> backgroundMusic;
         [SerializeField] private AudioSource earthQuakeSound;
         [SerializeField] private ParticleSystem lameJoeAppearParticles;
 
@@ -216,7 +216,7 @@ namespace foxRestaurant
         private async UniTask CapitanAppears()
         {
             vhsArtifactsSound.Play();
-            backgroundMusic.Stop();
+            backgroundMusic.ForEach(m => m.Stop());
             await BlinkGameObjectNTimes(capitanCallsCartoon, 21);
             await talkingKidsSetup[2].character.Say(dialogueLines[Next]);
             await talkingKidsSetup[1].character.Say(dialogueLines[Next]);
