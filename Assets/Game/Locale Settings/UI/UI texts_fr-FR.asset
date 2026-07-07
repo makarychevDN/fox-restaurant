@@ -94,6 +94,10 @@ MonoBehaviour:
     m_Localized: "Vague de red\xE9marrage"
     m_Metadata:
       m_Items: []
+  - m_Id: 88486973308821504
+    m_Localized: Soutenez l'auteur
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

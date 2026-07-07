@@ -94,6 +94,10 @@ MonoBehaviour:
     m_Localized: Restart wave
     m_Metadata:
       m_Items: []
+  - m_Id: 88486973308821504
+    m_Localized: Support the author
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

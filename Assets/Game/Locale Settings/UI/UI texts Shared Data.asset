@@ -91,6 +91,10 @@ MonoBehaviour:
     m_Key: Restart wave
     m_Metadata:
       m_Items: []
+  - m_Id: 88486973308821504
+    m_Key: Support the author
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
