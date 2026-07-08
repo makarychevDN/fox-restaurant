@@ -7,6 +7,7 @@ namespace foxRestaurant
     {
         [SerializeField] private EncountersListAsset firstLevelEncountersListAsset;
         [SerializeField] private LevelLoader levelLoader;
+        [SerializeField] protected SupportAuthorMenuPanel supportAuthorMenuPanel;
 
         protected override void Init()
         {
@@ -19,6 +20,8 @@ namespace foxRestaurant
         {
             base.InitTitleMenuPanel();
             titleMenuPanel.PlayButton.onClick.AddListener(LaunchTheFirstLevel);
+            titleMenuPanel.SupportAuthorButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, supportAuthorMenuPanel));
+            supportAuthorMenuPanel.BackButton.onClick.AddListener(() => SwitchPanels(supportAuthorMenuPanel, titleMenuPanel));
         }
 
         private async void LaunchTheFirstLevel()

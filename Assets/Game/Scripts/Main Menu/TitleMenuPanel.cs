@@ -11,6 +11,7 @@ namespace foxRestaurant
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button mainMenuButton;
         [SerializeField] private Button exitButton;
+        [SerializeField] private Button supportAuthorButton;
 
         public Button PlayButton => playButton;
         public Button ResumeButton => resumeButton;
@@ -18,5 +19,6 @@ namespace foxRestaurant
         public Button SettingsButton => settingsButton;
         public Button MainMenuButton => mainMenuButton;
         public Button ExitButton => exitButton;
+        public Button SupportAuthorButton => supportAuthorButton;
     }
 }
