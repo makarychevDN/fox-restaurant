@@ -98,6 +98,57 @@ MonoBehaviour:
     m_Localized: Support the author
     m_Metadata:
       m_Items: []
+  - m_Id: 88938520870281216
+    m_Localized: Donations
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835649
+    m_Localized: 'USDC/Solana
+
+      (click to copy)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835650
+    m_Localized: Localization
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835651
+    m_Localized: You can help by creating a fan translation for a language that isn't
+      supported yet! (Or by improving one of the machine-translated ones)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835652
+    m_Localized: Spread the word!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835654
+    m_Localized: Contact me
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835655
+    m_Localized: If you have something special in mind, let me know!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835656
+    m_Localized: 'gamesbytraust@gmail.com
+
+      (click to copy)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88939791366905856
+    m_Localized: 'If you''d like to support the game beyond buying it on Steam:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88940333384228864
+    m_Localized: copied
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88943378960637952
+    m_Localized: Tell your friends about Red the Cook, and don't forget to add it
+      to your wishlist. It helps the game reach more people... and, selfishly, it'd
+      make me happy too.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

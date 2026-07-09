@@ -98,6 +98,58 @@ MonoBehaviour:
     m_Localized: Apoie o autor
     m_Metadata:
       m_Items: []
+  - m_Id: 88938520870281216
+    m_Localized: "Doa\xE7\xF5es"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835649
+    m_Localized: 'USDC/Solana
+
+      (clique para copiar)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835650
+    m_Localized: "Localiza\xE7\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835651
+    m_Localized: "Voc\xEA pode ajudar criando uma tradu\xE7\xE3o feita por f\xE3s
+      para um idioma que ainda n\xE3o \xE9 suportado! (Ou aprimorando uma das tradu\xE7\xF5es
+      autom\xE1ticas)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835652
+    m_Localized: Divulgue!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835654
+    m_Localized: Entre em contato comigo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835655
+    m_Localized: "Se voc\xEA tiver algo especial em mente, me avise!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835656
+    m_Localized: 'gamesbytraust@gmail.com
+
+      (clique para copiar)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88939791366905856
+    m_Localized: "Se voc\xEA quiser apoiar o jogo al\xE9m de compr\xE1-lo no Steam:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88940333384228864
+    m_Localized: copiado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88943378960637952
+    m_Localized: "Conte aos seus amigos sobre Red the Cook e n\xE3o se esque\xE7a
+      de adicion\xE1-lo \xE0 sua lista de desejos. Isso ajuda o jogo a alcan\xE7ar
+      mais pessoas... e, egoisticamente, me deixaria feliz tamb\xE9m."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

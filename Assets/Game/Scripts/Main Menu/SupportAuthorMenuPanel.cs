@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 namespace foxRestaurant
@@ -10,6 +11,7 @@ namespace foxRestaurant
         [SerializeField] private Button backButton;
         [SerializeField] private Button emailButton;
         [SerializeField] private DynamicTextManager DynamicTextManager;
+        [SerializeField] private LocalizedString copiedText;
         public Button BackButton => backButton;
 
         private void Start()
@@ -27,13 +29,13 @@ namespace foxRestaurant
         private void CopySolanaAdress()
         {
             GUIUtility.systemCopyBuffer = "8gDxUbYjtn225eJaNGJh47xHBuJScEDu8xeL4tBxgJRN";
-            DynamicTextManager.SpawnDynamicText(usdcSolanaButton.transform.position, "copied", Color.white, usdcSolanaButton.transform.position + Vector3.up * 1);
+            DynamicTextManager.SpawnDynamicText(usdcSolanaButton.transform.position, copiedText.GetLocalizedString(), Color.white, usdcSolanaButton.transform.position + Vector3.up * 1);
         }
 
         private void CopyEmail()
         {
             GUIUtility.systemCopyBuffer = "gamesbytraust@gmail.com";
-            DynamicTextManager.SpawnDynamicText(emailButton.transform.position, "copied", Color.white, emailButton.transform.position + Vector3.up * 1);
+            DynamicTextManager.SpawnDynamicText(emailButton.transform.position, copiedText.GetLocalizedString(), Color.white, emailButton.transform.position + Vector3.up * 1);
         }
     }
 }

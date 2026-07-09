@@ -98,6 +98,59 @@ MonoBehaviour:
     m_Localized: "Unterst\xFCtzen Sie den Autor"
     m_Metadata:
       m_Items: []
+  - m_Id: 88938520870281216
+    m_Localized: Spenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835649
+    m_Localized: 'USDC/Solana
+
+      (Zum Kopieren klicken)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835650
+    m_Localized: Lokalisierung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835651
+    m_Localized: "Du kannst helfen, indem du eine Fan\xFCbersetzung f\xFCr eine noch
+      nicht unterst\xFCtzte Sprache erstellst! (Oder indem du eine der maschinell
+      erstellten \xDCbersetzungen verbesserst.)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835652
+    m_Localized: Verbreitet die Nachricht!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835654
+    m_Localized: Kontaktieren Sie mich
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835655
+    m_Localized: Falls Sie etwas Besonderes im Sinn haben, lassen Sie es mich wissen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835656
+    m_Localized: 'gamesbytraust@gmail.com
+
+      (Zum Kopieren klicken)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88939791366905856
+    m_Localized: "Falls Sie das Spiel \xFCber den Kauf auf Steam hinaus unterst\xFCtzen
+      m\xF6chten:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88940333384228864
+    m_Localized: kopiert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88943378960637952
+    m_Localized: "Erz\xE4hl deinen Freunden von Red the Cook und vergiss nicht, es
+      auf deine Wunschliste zu setzen. So erreicht das Spiel mehr Spieler \u2026
+      und ganz egoistisch w\xFCrde es mich auch freuen."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

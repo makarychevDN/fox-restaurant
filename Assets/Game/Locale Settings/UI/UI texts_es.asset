@@ -98,6 +98,58 @@ MonoBehaviour:
     m_Localized: Apoya al autor
     m_Metadata:
       m_Items: []
+  - m_Id: 88938520870281216
+    m_Localized: Donaciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835649
+    m_Localized: 'USDC/Solana
+
+      (haga clic para copiar)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835650
+    m_Localized: "Localizaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835651
+    m_Localized: "\xA1Puedes ayudar creando una traducci\xF3n hecha por fans para
+      un idioma que a\xFAn no est\xE1 disponible! (O mejorando una de las traducciones
+      autom\xE1ticas)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835652
+    m_Localized: "\xA1Corre la voz!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835654
+    m_Localized: "Cont\xE1ctame"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835655
+    m_Localized: "Si tienes algo especial en mente, \xA1h\xE1zmelo saber!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88938520903835656
+    m_Localized: 'gamesbytraust@gmail.com
+
+      (haga clic para copiar)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88939791366905856
+    m_Localized: "Si deseas apoyar el juego m\xE1s all\xE1 de comprarlo en Steam:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88940333384228864
+    m_Localized: copiado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88943378960637952
+    m_Localized: "Cu\xE9ntales a tus amigos sobre Red the Cook y no olvides agregarlo
+      a tu lista de deseos. As\xED el juego llegar\xE1 a m\xE1s gente... y, ego\xEDstamente,
+      a m\xED tambi\xE9n me har\xEDa feliz."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
