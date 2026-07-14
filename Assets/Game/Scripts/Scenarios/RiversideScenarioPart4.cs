@@ -38,6 +38,8 @@ namespace foxRestaurant
         [SerializeField] private ItemData chicken;
         [SerializeField] private ItemData potRoast;
         [SerializeField] private ItemData soup;
+        [SerializeField] private ItemData tea;
+        [SerializeField] private ItemData compote;
 
         [Header("SeatPlaces")]
         [SerializeField] private Table table;
@@ -53,10 +55,10 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
-            //await UniTask.Delay(1000);
-            //await IntroDialogue();
-            //await UniTask.Delay(500);            
-            //await TutorialWaves();
+            await UniTask.Delay(1000);
+            await IntroDialogue();
+            await UniTask.Delay(500);            
+            await TutorialWaves();
             encounter.ItemSpawnTimer.SetBlocked(false);
             await TheFirstWave();
             encounter.ItemSpawnTimer.SetBlocked(true);
@@ -65,6 +67,10 @@ namespace foxRestaurant
             await AfterIllGoatTutoiralDialogue();
             await CureIllGoatTutorial();
             await AfterCureIllGoatDialogue();
+            await TheSecondWave();
+            await TheThirdWave();
+            await TheFourthWave();
+            await AllTheGoats();
         }
 
         private async UniTask IntroDialogue()
@@ -308,6 +314,115 @@ namespace foxRestaurant
                 adele.transform.localRotation.z
             ));
         }
+
+        private async UniTask TheSecondWave()
+        {
+            encounter.ItemSpawnTimer.SetBlocked(false);
+            adele.gameObject.SetActive(false);
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems()
+                },
+
+                Customers = new List<QueuedCustomer>
+                {
+                    new(goat),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(goat),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                }
+            });
+        }
+
+        private async UniTask TheThirdWave()
+        {
+            encounter.ItemSpawnTimer.SetBlocked(false);
+            adele.gameObject.SetActive(false);
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems()
+                },
+
+                Customers = new List<QueuedCustomer>
+                {
+                    new(goat),
+                    new(cow),
+                    new(goat),
+                    new(cow),
+                    new(hog),
+                    new(goat),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                }
+            });
+        }
+
+        private async UniTask TheFourthWave()
+        {
+            encounter.ItemSpawnTimer.SetBlocked(false);
+            adele.gameObject.SetActive(false);
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems()
+                },
+
+                Customers = new List<QueuedCustomer>
+                {
+                    new(goat),
+                    new(cow),
+                    new(goat),
+                    new(cow),
+                    new(hog),
+                    new(goat),
+                    new(goat),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                }
+            });
+        }
+
+        private async UniTask AllTheGoats()
+        {
+            encounter.ItemSpawnTimer.SetBlocked(true);
+            encounter.Ticker.Pause();
+            encounter.ItemsOperations.ClearAllTheItems();
+            red.LookAt(illGoat.transform);
+
+            await UniTask.Delay(250);
+            encounter.CustomerSpawner.TryToSpawnCustomer(goat, () => chickenPotRoast);
+            await UniTask.Delay(250);
+            encounter.CustomerSpawner.TryToSpawnCustomer(goat, () => chickenSoup);
+            await UniTask.Delay(250);
+            encounter.CustomerSpawner.TryToSpawnCustomer(goat, () => tea);
+            await UniTask.Delay(250);
+            encounter.CustomerSpawner.TryToSpawnCustomer(goat, () => compote);
+            await UniTask.Delay(1000);
+            
+            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Нет, ну это просто какое-то издевательство!");
+            await red.Say("Я не могу работать в таких условиях.");
+        }
+
 
         private Func<UniTask> LookAtCertainCustomer(RestaurantEncounter encounter, int customersIndex)
         {
