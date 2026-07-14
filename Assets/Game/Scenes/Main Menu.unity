@@ -2638,7 +2638,7 @@ MonoBehaviour:
   fading: {fileID: 758562985}
   titleMenuPanel: {fileID: 1143903571}
   settingsMenuPanel: {fileID: 44497146}
-  firstLevelEncountersListAsset: {fileID: 11400000, guid: 25cbd9a35a1b69b47bea5ea5c2e63278, type: 2}
+  firstLevelEncountersListAsset: {fileID: 11400000, guid: 5d4a5501ad34ba746bb22446e91225e4, type: 2}
   levelLoader: {fileID: 530393102}
   supportAuthorMenuPanel: {fileID: 1985359233}
 --- !u!1 &1114954551
