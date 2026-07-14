@@ -17,9 +17,7 @@ namespace foxRestaurant
 
         public async UniTask SpawnStartItems(List<ItemData> itemsToSpawnData)
         {
-            encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
-            encounter.SlotsManager.SpawnerSlots.ForEach(slot => slot.Clear());
-            FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
+            ClearAllTheItems();
 
             for (int i = 0; i < itemsToSpawnData.Count; i++)
             {
@@ -39,6 +37,13 @@ namespace foxRestaurant
             }
 
             await SpawnStartItems(itemsToSpawn);
+        }
+
+        public void ClearAllTheItems()
+        {
+            encounter.SlotsManager.BottomRowSlots.ForEach(slot => slot.Clear());
+            encounter.SlotsManager.SpawnerSlots.ForEach(slot => slot.Clear());
+            FindObjectsOfType<Item>().ToList().ForEach(item => Destroy(item.gameObject));
         }
     }
 }
