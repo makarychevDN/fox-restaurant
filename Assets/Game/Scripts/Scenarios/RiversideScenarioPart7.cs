@@ -42,6 +42,7 @@ namespace foxRestaurant
             red.LookAt(herbs);
             silver.LookAt(herbs);
             await silversPaw.DOLocalMove(new Vector3(2.25f, -1.33f), 0.5f).AsyncWaitForCompletion().AsUniTask();
+            herbs.parent = herbs.parent.parent;
             splashSound.Play();
             await herbs.DOMove(new Vector3(-4, -15), 0.5f).SetEase(Ease.InQuad).AsyncWaitForCompletion().AsUniTask();
             await silversPaw.DOLocalMove(new Vector3(-0.06f, -3.01f), 0.5f).AsyncWaitForCompletion().AsUniTask();
