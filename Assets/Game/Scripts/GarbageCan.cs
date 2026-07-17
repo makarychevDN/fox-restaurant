@@ -1,21 +1,93 @@
+using DG.Tweening;
+using System.Linq;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.Collections.AllocatorManager;
 
 namespace foxRestaurant
 {
-    public class GarbageCan : MonoBehaviour
+    public class GarbageCan : MonoBehaviour, ITickable
     {
+        [Header("garbage can functionality")]
         [SerializeField] private ItemSlot slot;
         [SerializeField] private ParticleSystem itemDisappearParticles;
 
-        private void Awake()
+        [Header("oven functionality")]
+        [SerializeField] private GameObject ovenPartsParent;
+        [SerializeField] private bool ovenModeOn;
+        [SerializeField] private float timeToSpawnPretzel;
+        [SerializeField] private ItemData pretzelData;
+        [SerializeField] private FoodItem foodPrefab;
+        [SerializeField] private ItemData coaldata;
+        [SerializeField] private AudioSource errorSound;
+        [SerializeField] private Transform tranformToShake;
+        [SerializeField] private TMP_Text timerDisplayer;
+
+        private float pretzelSpawnTimer;
+        private bool paused;
+        private bool blocked;
+        private bool errorDisplayedAlready;
+        private RestaurantEncounter restaurantEncounter;
+
+        public void Init(RestaurantEncounter restaurantEncounter)
         {
-            slot.OnHasBeenOccupied.AddListener(ItemThrownHandler);
+            this.restaurantEncounter = restaurantEncounter;
+            restaurantEncounter.Ticker.AddTickable(this);
+            slot.OnItemHasBeenPlaced.AddListener(ItemPlacedInGarbageCanHandler);
+            Pause();
+            ovenPartsParent.SetActive(ovenModeOn);
+            blocked = !ovenModeOn;
         }
 
-        private void ItemThrownHandler()
+        private void ItemPlacedInGarbageCanHandler(Item item)
         {
+            if (ovenModeOn)
+            {
+                int multiplier = item.ItemData == coaldata ? 2 : 1;
+                print("oven mode on");
+            }
+
             itemDisappearParticles.Play();
             slot.Clear();
         }
+
+        public void Tick(float deltaTime)
+        {
+            if (blocked)
+                return;
+
+            if (paused)
+                return;
+
+            pretzelSpawnTimer += deltaTime;
+            if (pretzelSpawnTimer >= timeToSpawnPretzel)
+            {
+                if (restaurantEncounter.SlotsManager.SpawnerSlots.Count(slot => slot.Empty) == 0)
+                {
+                    if (errorDisplayedAlready)
+                        return;
+
+                    timerDisplayer.text = "<mspace=1em>ERROR</mspace>";
+                    timerDisplayer.color = Extensions.HexToColor("#9c2d2d");
+                    errorSound.Play();
+                    errorDisplayedAlready = true;
+                    tranformToShake.DOShakeScale(0.1f, 0.25f, 10, 0);
+                    return;
+                }
+
+                pretzelSpawnTimer = 0f;
+                //spawner.SpawnIngredient(); todo swawn pretzel
+                print("idk");
+                errorDisplayedAlready = false;
+            }
+
+            timerDisplayer.text = (timeToSpawnPretzel - pretzelSpawnTimer).ToString("<mspace=1em>0.0s</mspace>").Replace(',', ':');
+            timerDisplayer.color = Extensions.HexToColor("#848f2e");
+        }
+
+        public void Pause() => paused = true;
+        public void Unpause() => paused = false;
+        public void SetBlocked(bool blocked) => this.blocked = blocked;
     }
 }

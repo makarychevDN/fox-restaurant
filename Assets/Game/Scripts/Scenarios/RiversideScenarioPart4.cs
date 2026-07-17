@@ -51,6 +51,7 @@ namespace foxRestaurant
             this.encounter = encounter;
             red.LookAt(adelesEyes);
             encounter.ItemSpawnTimer.SetBlocked(true);
+            encounter.GarbageCan.SetBlocked(true);
         }
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
@@ -60,8 +61,11 @@ namespace foxRestaurant
             await UniTask.Delay(500);            
             await TutorialWaves();
             encounter.ItemSpawnTimer.SetBlocked(false);
+            encounter.GarbageCan.SetBlocked(false);
+
             await TheFirstWave();
             encounter.ItemSpawnTimer.SetBlocked(true);
+            encounter.GarbageCan.SetBlocked(true);
             await AfterTutorialWavesDialogue();
             await IllGoatTutorial();
             await AfterIllGoatTutoiralDialogue();

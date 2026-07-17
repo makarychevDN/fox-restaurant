@@ -46,6 +46,7 @@ namespace foxRestaurant
         public async UniTask<bool> ExecuteWave(WaveConfig waveConfig)
         {
             encounter.ItemSpawnTimer.Pause();
+            encounter.GarbageCan.Pause();
             encounter.Ticker.Pause();
             encounter.BlockInput();
             queue = waveConfig.Customers.OrderBy(x => x.SeatPlace == null).ToList();
@@ -71,6 +72,7 @@ namespace foxRestaurant
             await ExecuteTasksList(waveConfig.AfterInitSpawn);
 
             encounter.ItemSpawnTimer.Unpause();
+            encounter.GarbageCan.Unpause();
             encounter.Ticker.SetRegularTickingSpeed();
             encounter.UnblockInput();
             waveIsExecuting = true;
@@ -208,6 +210,7 @@ namespace foxRestaurant
             waveIsExecuting = false;
             waveTcs?.TrySetResult(true);
             encounter.ItemSpawnTimer.Pause();
+            encounter.GarbageCan.Pause();
         }
 
         private void AbortWave()
@@ -215,6 +218,7 @@ namespace foxRestaurant
             waveIsExecuting = false;
             waveTcs?.TrySetResult(false);
             encounter.ItemSpawnTimer.Pause();
+            encounter.GarbageCan.Pause();
         }
     }
 

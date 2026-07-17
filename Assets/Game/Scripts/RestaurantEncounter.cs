@@ -31,6 +31,7 @@ namespace foxRestaurant
         [field: Header("Spawners")]
         [field: SerializeField] public ItemsSpawner ItemsSpawner { get; private set; }
         [field: SerializeField] public ItemSpawnTimer ItemSpawnTimer { get; private set; }
+        [field: SerializeField] public GarbageCan GarbageCan { get; private set; }
         [field: SerializeField] public CustomerSpawner CustomerSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner CookerSlotSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner SlotsToSpawnFoodSpawner { get; private set; }
@@ -108,7 +109,10 @@ namespace foxRestaurant
             SpawnSlots(AdditionalFoodSlotSpawner, additionalSlotsCount);
             SpawnSlots(SlotsToSpawnFoodSpawner, spawnItemSlotsCount);
 
-            if(ItemSpawnTimer != null) 
+            if(GarbageCan != null)
+                GarbageCan.Init(this);
+
+            if (ItemSpawnTimer != null) 
                 ItemSpawnTimer.Init(this);
         }
 
