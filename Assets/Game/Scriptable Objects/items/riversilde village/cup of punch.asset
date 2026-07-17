@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: cup of punch
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 0bd7af45325a6334ba17dd1156166194, type: 3}
+  <Satiety>k__BackingField: 1

@@ -28,6 +28,8 @@ namespace foxRestaurant
             base.Init(restaurantEncounter, itemData, appearSoundVolume);
             itemUI.Init(this);
             fusionDisplayer.Init(restaurantEncounter, this);
+            Satiety = itemData.Satiety;
+            OnSatietyUpdated.Invoke(Satiety);
         }
 
         public void SetSatiety(int satiety)

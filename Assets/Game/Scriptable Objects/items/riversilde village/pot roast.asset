@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: pot roast
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 6f78b7ed1632fd7429ffcd3c50ab8ca2, type: 3}
+  <Satiety>k__BackingField: 1

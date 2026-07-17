@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: milkshake
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 60850cd75a4e4824b93eb8c0377324af, type: 3}
+  <Satiety>k__BackingField: 1
