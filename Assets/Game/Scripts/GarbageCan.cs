@@ -44,8 +44,10 @@ namespace foxRestaurant
         {
             if (ovenModeOn)
             {
-                int multiplier = item.ItemData == coaldata ? 2 : 1;
-                print("oven mode on");
+                int multiplier = item.ItemData == coaldata ? 4 : 1;
+                float tickValue = multiplier * (item as FoodItem).Satiety;
+                Tick(tickValue);
+                restaurantEncounter.DynamicTextManager.SpawnDynamicText(transform.position + Vector3.right * 3, $"-{tickValue} sec", ReservedColors.YellowUI, transform.position + Vector3.one * 3);
             }
 
             itemDisappearParticles.Play();
