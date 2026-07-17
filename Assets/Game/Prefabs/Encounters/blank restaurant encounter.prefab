@@ -5156,7 +5156,7 @@ MonoBehaviour:
   ovenPartsParent: {fileID: 2767518508249267087}
   ovenModeOn: 0
   timeToSpawnPretzel: 30
-  pretzelData: {fileID: 11400000, guid: d9e2a447bbf960144951ecb5b56cb596, type: 2}
+  pretzelData: {fileID: 11400000, guid: 38420490846352d4eb081a1f3fa3f080, type: 2}
   coaldata: {fileID: 11400000, guid: d9e2a447bbf960144951ecb5b56cb596, type: 2}
   errorSound: {fileID: 8937719728586807479}
   tranformToShake: {fileID: 835327942896288313}
