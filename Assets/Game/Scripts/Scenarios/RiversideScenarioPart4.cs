@@ -56,10 +56,10 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
-            await UniTask.Delay(1000);
+            /*await UniTask.Delay(1000);
             await IntroDialogue();
             await UniTask.Delay(500);            
-            await TutorialWaves();
+            await TutorialWaves();*/
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
 

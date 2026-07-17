@@ -38,6 +38,7 @@ namespace foxRestaurant
         [field: SerializeField] public SlotSpawner CustomerSlotsToPlaceFoodSpawner { get; private set; }
         [field: SerializeField] public SlotSpawner AdditionalFoodSlotSpawner { get; private set; }
         [field: SerializeField] public ItemSlot GarbageCanSlot { get; private set; }
+        [field: SerializeField] public ItemSlot PretzelSpawnerSlot { get; private set; }
 
         [field: Header("UI")]
         [field: SerializeField] public RecipeBlackBoard RecipeBlackBoard { get; private set; }
@@ -78,6 +79,7 @@ namespace foxRestaurant
             CustomerSpawner.Init(this);
             ItemsSpawner.Init(this);
             GarbageCanSlot.Init(this);
+            PretzelSpawnerSlot?.Init(this);
             DecksManager.Init();
             SeatPlacesManager.Init(this);
             ItemsOperations.Init(this);

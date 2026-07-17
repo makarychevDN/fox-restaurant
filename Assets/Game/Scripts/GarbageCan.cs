@@ -18,11 +18,11 @@ namespace foxRestaurant
         [SerializeField] private bool ovenModeOn;
         [SerializeField] private float timeToSpawnPretzel;
         [SerializeField] private ItemData pretzelData;
-        [SerializeField] private FoodItem foodPrefab;
         [SerializeField] private ItemData coaldata;
         [SerializeField] private AudioSource errorSound;
         [SerializeField] private Transform tranformToShake;
         [SerializeField] private TMP_Text timerDisplayer;
+        [SerializeField] private ItemSlot slotToSpawnPretzel;
 
         private float pretzelSpawnTimer;
         private bool paused;
@@ -63,7 +63,7 @@ namespace foxRestaurant
             pretzelSpawnTimer += deltaTime;
             if (pretzelSpawnTimer >= timeToSpawnPretzel)
             {
-                if (restaurantEncounter.SlotsManager.SpawnerSlots.Count(slot => slot.Empty) == 0)
+                if (restaurantEncounter.SlotsManager.PretzelSlots.Count(slot => slot.Empty) == 0)
                 {
                     if (errorDisplayedAlready)
                         return;
@@ -77,8 +77,7 @@ namespace foxRestaurant
                 }
 
                 pretzelSpawnTimer = 0f;
-                //spawner.SpawnIngredient(); todo swawn pretzel
-                print("idk");
+                restaurantEncounter.ItemsSpawner.SpawnFoodItem(restaurantEncounter, pretzelData, slotToSpawnPretzel);
                 errorDisplayedAlready = false;
             }
 

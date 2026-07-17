@@ -12,11 +12,13 @@ namespace foxRestaurant
         private List<ItemSlot> spawnerSlots = new();
         private List<ItemSlot> customerSlots = new();
         private List<ItemSlot> garbageCanSlots = new();
+        private List<ItemSlot> pretzelSlots = new();
         private Dictionary<SlotType, List<ItemSlot>> slotLists;
 
         public List<ItemSlot> BottomRowSlots => bottomRowSlots;
         public List<ItemSlot> HolderSlots => holderSlots;
         public List<ItemSlot> SpawnerSlots => spawnerSlots;
+        public List<ItemSlot> PretzelSlots => pretzelSlots;
         public Dictionary<SlotType, List<ItemSlot>> SlotLists => slotLists;
 
         public void Init()
@@ -27,7 +29,8 @@ namespace foxRestaurant
                 { SlotType.Holder, holderSlots },
                 { SlotType.Spawner, spawnerSlots },
                 { SlotType.CustomerSlot, customerSlots },
-                { SlotType.GarbageCan, garbageCanSlots }
+                { SlotType.GarbageCan, garbageCanSlots },
+                { SlotType.PretzelSpawner, pretzelSlots }
             };
         }
 

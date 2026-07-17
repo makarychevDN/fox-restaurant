@@ -114,6 +114,9 @@ namespace foxRestaurant
             if (blocked || selectedForItemMovement || preDestroyed)
                 return false;
 
+            if (slotType == SlotType.PretzelSpawner)
+                return false;
+
             return gameObject.activeInHierarchy;
         }
 
@@ -147,6 +150,7 @@ namespace foxRestaurant
         Holder = 20,
         Spawner = 30,
         CustomerSlot = 40,
-        GarbageCan = 50
+        GarbageCan = 50,
+        PretzelSpawner = 60
     }
 }
