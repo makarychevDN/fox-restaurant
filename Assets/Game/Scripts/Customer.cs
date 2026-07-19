@@ -27,6 +27,7 @@ namespace foxRestaurant
         [SerializeField] private Transform slotPositionPoint;
         [SerializeField] private Transform uiStatsRoot;
         [SerializeField] private Transform uiEffectsRoot;
+        [SerializeField] private ItemData pretzel;
 
         [Header("ui links")]
         [SerializeField] private GameObject orderBox;
@@ -119,15 +120,18 @@ namespace foxRestaurant
         public void TryToEat(Item item)
         {
             var food = item as FoodItem;
-            OnAte.Invoke();
-            OnAteCertainFood.Invoke(item.ItemData);
             EatVisualEffect();
 
             if (item.ItemData == requiredItemData)
             {
+                OnAte.Invoke();
+                OnAteCertainFood.Invoke(item.ItemData);
                 MakeOrder();
                 GetSatiety(food.Satiety);
             }
+
+            if(item.ItemData == pretzel)
+                RerollOrder();
         }
 
         public void AutoSatisfy()
@@ -160,6 +164,13 @@ namespace foxRestaurant
         {
             SetOrderData(getItemDataToOrderFunc());
             slotToPlaceFood.SetRequiredItemData(requiredItemData);
+        }
+
+        public void RerollOrder()
+        {
+            var data = restaurantEncounter.DecksManager.RollRandomDishExcept(requiredItemData);
+            SetOrderData(data);
+            slotToPlaceFood.SetRequiredItemData(data);
         }
 
         public void Tick(float deltaTime)

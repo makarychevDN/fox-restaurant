@@ -63,6 +63,7 @@ MonoBehaviour:
   slotPositionPoint: {fileID: 6952867010230834956}
   uiStatsRoot: {fileID: 94233778491039677}
   uiEffectsRoot: {fileID: 2026530155010802154}
+  pretzel: {fileID: 11400000, guid: 38420490846352d4eb081a1f3fa3f080, type: 2}
   orderBox: {fileID: 2983156621401428726}
   orderImage: {fileID: 545002675538599931}
   customersUI: {fileID: 6404370924393288913}
