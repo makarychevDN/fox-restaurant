@@ -125,7 +125,9 @@ namespace foxRestaurant
 
             return new Func<UniTask>[]
             {
-                () => encounter.TheMainCharacter.Say(encounter.DefaultFailurePhrase)
+                new Action(() => encounter.BlockInput()).WrapToTask(),
+                () => encounter.TheMainCharacter.Say(encounter.DefaultFailurePhrase),
+                new Action(() => encounter.UnblockInput()).WrapToTask(),
             };
         }
 
