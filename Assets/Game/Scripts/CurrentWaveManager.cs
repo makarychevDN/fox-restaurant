@@ -138,9 +138,14 @@ namespace foxRestaurant
             if (actualFactory == null)
                 actualFactory = encounter.DecksManager.GetRandomDish;
 
+            var pretzelHandler = queuedCustomer.PretzelOrderHandler
+                ?? encounter.DecksManager.RollRandomDishExcept;
+
             var spawnedCustomer = queuedCustomer.SeatPlace == null ?
                 encounter.CustomerSpawner.TryToSpawnCustomer(queuedCustomer.CustomerData, actualFactory) :
                 encounter.CustomerSpawner.SpawnCustomer(queuedCustomer.SeatPlace, queuedCustomer.CustomerData, actualFactory);
+            spawnedCustomer.SetPretzelOrderHandler(pretzelHandler);
+
             spawnedCustomers.Add(spawnedCustomer);
             spawnedCustomer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
             queue.RemoveAt(0);
@@ -241,6 +246,7 @@ namespace foxRestaurant
     {
         public CustomerData CustomerData { get; set; }
         public Func<ItemData> OrderFactory { get; set; }
+        public Func<ItemData, ItemData> PretzelOrderHandler { get; set; }
         public SeatPlace SeatPlace { get; set; }
 
         public QueuedCustomer(CustomerData customerData)

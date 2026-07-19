@@ -39,6 +39,7 @@ namespace foxRestaurant
         private ItemSlot slotToPlaceFood;
         private SeatPlace seatPlace;
         private Func<ItemData> getItemDataToOrderFunc;
+        private Func<ItemData, ItemData> pretzelOrderHandler;
         private RestaurantEncounter restaurantEncounter;
         private List<ITickable> activeEffects = new();
         private float leavingTimer = 2;
@@ -117,6 +118,11 @@ namespace foxRestaurant
             orderBoxAnimator.SetTrigger("order changed");
         }
 
+        public void SetPretzelOrderHandler(Func<ItemData, ItemData> handler)
+        {
+            pretzelOrderHandler = handler;
+        }
+
         public void TryToEat(Item item)
         {
             var food = item as FoodItem;
@@ -131,7 +137,7 @@ namespace foxRestaurant
             }
 
             if(item.ItemData == pretzel)
-                RerollOrder();
+                PretzelEatenHandler();
         }
 
         public void AutoSatisfy()
@@ -166,9 +172,11 @@ namespace foxRestaurant
             slotToPlaceFood.SetRequiredItemData(requiredItemData);
         }
 
-        public void RerollOrder()
+        public void PretzelEatenHandler()
         {
-            var data = restaurantEncounter.DecksManager.RollRandomDishExcept(requiredItemData);
+            print(pretzelOrderHandler);
+            print(requiredItemData);
+            var data = pretzelOrderHandler(requiredItemData);
             SetOrderData(data);
             slotToPlaceFood.SetRequiredItemData(data);
         }
