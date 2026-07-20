@@ -154,6 +154,9 @@ namespace foxRestaurant
 
         public void GetSatiety(int satiety)
         {
+            if (isLeaving)
+                return;
+
             HungerPoints -= satiety;
             HungerPoints = Math.Clamp(HungerPoints, 0, 100);
             OnHungerPointsChanged.Invoke(HungerPoints, MaxHungerPoints);
