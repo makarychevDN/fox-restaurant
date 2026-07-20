@@ -46,7 +46,9 @@ namespace foxRestaurant
         public async UniTask<bool> ExecuteWave(WaveConfig waveConfig)
         {
             encounter.ItemSpawnTimer.Pause();
+            encounter.ItemSpawnTimer.ResetTimer();
             encounter.GarbageCan.Pause();
+            encounter.GarbageCan.ResetTimer();
             encounter.Ticker.Pause();
             encounter.BlockInput();
             queue = waveConfig.Customers.OrderBy(x => x.SeatPlace == null).ToList();

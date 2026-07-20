@@ -62,5 +62,6 @@ namespace foxRestaurant
         public void Pause() => paused = true;
         public void Unpause() => paused = false;
         public void SetBlocked(bool blocked) => this.blocked = blocked;
+        public void ResetTimer() => timer = 0f;
     }
 }

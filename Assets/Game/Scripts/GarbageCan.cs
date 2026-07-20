@@ -79,7 +79,7 @@ namespace foxRestaurant
                 }
 
                 pretzelSpawnTimer = 0f;
-                restaurantEncounter.ItemsSpawner.SpawnFoodItem(restaurantEncounter, pretzelData, slotToSpawnPretzel);
+                SpawnPretzel();
                 errorDisplayedAlready = false;
             }
 
@@ -87,8 +87,14 @@ namespace foxRestaurant
             timerDisplayer.color = Extensions.HexToColor("#848f2e");
         }
 
+        public void SpawnPretzel()
+        {
+            restaurantEncounter.ItemsSpawner.SpawnFoodItem(restaurantEncounter, pretzelData, slotToSpawnPretzel);
+        }
+
         public void Pause() => paused = true;
         public void Unpause() => paused = false;
         public void SetBlocked(bool blocked) => this.blocked = blocked;
+        public void ResetTimer() => pretzelSpawnTimer = 0f;
     }
 }
