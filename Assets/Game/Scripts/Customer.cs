@@ -81,6 +81,7 @@ namespace foxRestaurant
 
             orderImage.transform.rotation = Quaternion.identity;
             uiStatsRoot.rotation = Quaternion.identity;
+            uiEffectsRoot.rotation = Quaternion.identity;
         }
 
         public void SetCustomerData(CustomerData customerData, RestaurantEncounter restaurantEncounter)
