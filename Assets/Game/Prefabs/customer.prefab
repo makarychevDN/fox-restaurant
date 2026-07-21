@@ -1024,7 +1024,6 @@ GameObject:
   - component: {fileID: 2026530155010802154}
   - component: {fileID: 3993811729174162759}
   - component: {fileID: 7510805984618984643}
-  - component: {fileID: 1431636830305692149}
   m_Layer: 0
   m_Name: customer effects
   m_TagString: Untagged
@@ -1091,24 +1090,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
---- !u!114 &1431636830305692149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3926058956550296032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 941e700378c7ef140b175fb81e4a42ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hungerPointsParent: {fileID: 0}
-  hungerPointsIcon: {fileID: 0}
-  hungerPointsFillArea: {fileID: 0}
-  extraHungerPointsIcon: {fileID: 0}
-  hungerPointsIndicator: {fileID: 0}
-  patienceIndicator: {fileID: 0}
 --- !u!1 &4268609319612869000
 GameObject:
   m_ObjectHideFlags: 0
