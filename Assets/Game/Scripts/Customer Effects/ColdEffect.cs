@@ -43,9 +43,16 @@ namespace foxRestaurant
         {
             this.encounter = encounter;
             owner = customer;
-            customer.OnAte.AddListener(CureCold);
-            customer.OnStartLeavingProcess.RemoveListener(CureCold);
+            owner.OnAte.AddListener(CureCold);
+            owner.OnStartLeavingProcess.AddListener(RemoveListeners);
             encounter.CurrentWaveManager.OnWaveIsAborted.AddListener(SwitchWaveIsAbortedFlag);
+        }
+
+        private void RemoveListeners()
+        {
+            owner.OnAte.RemoveListener(CureCold);
+            owner.OnStartLeavingProcess.RemoveListener(RemoveListeners);
+            encounter.CurrentWaveManager.OnWaveIsAborted.RemoveListener(SwitchWaveIsAbortedFlag);
         }
 
         public void Tick(float deltaTime)
