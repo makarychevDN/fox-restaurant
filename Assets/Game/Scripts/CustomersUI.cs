@@ -19,7 +19,7 @@ namespace foxRestaurant
 
         public void Init(Customer customer)
         {
-            customer.OnHungerPointsChanged.AddListener(UpdateDisplayingHungerValue);
+            customer.OnHungerPointsChanged.AddListener(UpdateDisplayingHungerValueWithAnimation);
             customer.OnPatienceChanged.AddListener(UpdateDisplayingPatienceValue);
             UpdateDisplayingHungerValue(customer.HungerPoints, customer.MaxHungerPoints);
             UpdateDisplayingPatienceValue(customer.Patience);
@@ -32,6 +32,11 @@ namespace foxRestaurant
             hungerPointsIcon.gameObject.SetActive(!extraHungerPoints);
             hungerPointsFillArea.fillAmount = (float)value / maxValue;
             hungerPointsIndicator.text = value.ToString();
+        }
+
+        private void UpdateDisplayingHungerValueWithAnimation(int value, int maxValue)
+        {
+            UpdateDisplayingHungerValue(value, maxValue);
             hungerPointsAnimator.SetTrigger("triggered");
         }
 
