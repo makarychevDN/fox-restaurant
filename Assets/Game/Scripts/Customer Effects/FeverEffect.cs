@@ -8,10 +8,10 @@ namespace foxRestaurant
     public class FeverEffect : ScriptableObject, ICustomerEffect, IAbleToReturnViewPrefab
     {
         [SerializeField] private GameObject viewPrefab;
-        [SerializeField] private int additionalHungerPounts = 10;
+        [SerializeField] private int additionalHungerPoints = 1;
         [SerializeField] private List<ItemData> itemsToCureFever;
 
-        public ICustomerEffectInstance CreateInstance() => new FeverEffectInstance(additionalHungerPounts, itemsToCureFever);
+        public ICustomerEffectInstance CreateInstance() => new FeverEffectInstance(additionalHungerPoints, itemsToCureFever);
         public GameObject GetViewPrefab() => viewPrefab;
     }
 
@@ -23,6 +23,7 @@ namespace foxRestaurant
         private List<ItemData> itemsToCureFever;
         private List<SeatPlace> affectedNeighborSeatPlaces = new();
         private bool effectIsRemoved;
+        private bool feverIsCured;
 
         public event Action OnTriggered;
         public event Action OnEffectIsCured;
@@ -41,8 +42,11 @@ namespace foxRestaurant
 
             GetNeighborSeatPlaces();
             ApplyEffectToNeighborSeatPlaces();
+
             owner.OnAteCertainFood.AddListener(AteFoodHandler);
-            owner.OnStartLeavingProcess.AddListener(RemoveEffect);
+            owner.OnStartLeavingProcessSatisfied.AddListener(OnStartLeavingSatisfiedProcessHandler);
+            owner.OnLeft.AddListener(RemoveEffect);
+            owner.OnLeft.AddListener(RemoveListeners);
         }
 
         private void GetNeighborSeatPlaces()
@@ -62,7 +66,7 @@ namespace foxRestaurant
             {
                 seatPlace.OnCustomerSatDown.AddListener(ApplyHunger);
 
-                if(seatPlace.Customer != null)
+                if (seatPlace.Customer != null)
                     ApplyHunger(seatPlace.Customer);
             }
         }
@@ -86,6 +90,22 @@ namespace foxRestaurant
             if (!itemsToCureFever.Contains(itemData))
                 return;
 
+            CureFever();
+        }
+
+        private void OnStartLeavingSatisfiedProcessHandler(bool isSatisfied)
+        {
+            if (isSatisfied)
+                CureFever();
+        }
+
+        private void CureFever()
+        {
+            if (feverIsCured)
+                return;
+
+            feverIsCured = true;
+            OnEffectIsCured.Invoke();
             RemoveEffect();
         }
 
@@ -94,16 +114,23 @@ namespace foxRestaurant
             if (effectIsRemoved)
                 return;
 
-            effectIsRemoved = true;
-            OnEffectIsCured.Invoke();
-
             foreach (SeatPlace seatPlace in affectedNeighborSeatPlaces)
             {
                 seatPlace.OnCustomerSatDown.RemoveListener(ApplyHunger);
 
                 if (seatPlace.Customer != null)
-                    seatPlace.Customer.GetSatiety(1);
+                    seatPlace.Customer.RemoveHunger(additionalHunger);
             }
+
+            effectIsRemoved = true;
+        }
+
+        private void RemoveListeners()
+        {
+            owner.OnAteCertainFood.RemoveListener(AteFoodHandler);
+            owner.OnStartLeavingProcessSatisfied.RemoveListener(OnStartLeavingSatisfiedProcessHandler);
+            owner.OnLeft.RemoveListener(RemoveEffect);
+            owner.OnLeft.RemoveListener(RemoveListeners);
         }
     }
 }
