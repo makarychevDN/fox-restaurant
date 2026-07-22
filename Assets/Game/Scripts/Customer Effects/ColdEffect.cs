@@ -27,6 +27,7 @@ namespace foxRestaurant
         private float cooldown;
         private RestaurantEncounter encounter;
         private Customer owner;
+        private bool waveIsAbortedFlag;
 
         public event Action<float, float> OnTick;
         public event Action OnSneeze;
@@ -44,11 +45,12 @@ namespace foxRestaurant
             owner = customer;
             customer.OnAte.AddListener(CureCold);
             customer.OnStartLeavingProcess.RemoveListener(CureCold);
+            encounter.CurrentWaveManager.OnWaveIsAborted.AddListener(SwitchWaveIsAbortedFlag);
         }
 
         public void Tick(float deltaTime)
         {
-            if (owner.IsLeaving)
+            if (NeedToIgnoreTimer())
                 return;
 
             timer += deltaTime;
@@ -70,6 +72,10 @@ namespace foxRestaurant
             ResetTimer();
             OnSneeze.Invoke();
         }
+
+        private bool NeedToIgnoreTimer() => owner.IsLeaving || waveIsAbortedFlag;
+
+        private void SwitchWaveIsAbortedFlag() => waveIsAbortedFlag = true;
 
         private void CureCold()
         {

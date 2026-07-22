@@ -24,6 +24,7 @@ namespace foxRestaurant
         public UnityEvent<int> OnFedCustomersCountUpdated;
         public UnityEvent<int> OnCustomersToFeedCountUpdated;
         public UnityEvent OnNextCustomersTimeIsUp;
+        public UnityEvent OnWaveIsAborted;
 
         public void Init(RestaurantEncounter encounter)
         {
@@ -228,6 +229,7 @@ namespace foxRestaurant
             waveTcs?.TrySetResult(false);
             encounter.ItemSpawnTimer.Pause();
             encounter.GarbageCan.Pause();
+            OnWaveIsAborted.Invoke();
         }
     }
 
