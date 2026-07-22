@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: ill bull
   m_EditorClassIdentifier: 
   <Sprite>k__BackingField: {fileID: 21300000, guid: 0fa31af3783852c4b8ba0e0169e37edc, type: 3}
+  <Satiety>k__BackingField: 0
   <HungerPoints>k__BackingField: 6
-  <Patience>k__BackingField: 120
+  <Patience>k__BackingField: 180
   effects:
-  - {fileID: 11400000, guid: 6e48d6bf24b48fb4aaa14f6379f0ef37, type: 2}
+  - {fileID: 11400000, guid: d02f2de38043dd7439a53ce4926e32b0, type: 2}
