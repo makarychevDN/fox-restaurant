@@ -31,7 +31,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5599512025626201577}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -29.617779}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 6837366542066259544}
   - component: {fileID: 2216177277955656292}
   - component: {fileID: 2100849165071153099}
+  - component: {fileID: 3407842419165223069}
   m_Layer: 0
   m_Name: peek view
   m_TagString: Untagged
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 6779451255989807955}
   effectTriggeredSound: {fileID: 2100849165071153099}
+  animator: {fileID: 3407842419165223069}
 --- !u!82 &2100849165071153099
 AudioSource:
   m_ObjectHideFlags: 0
@@ -146,7 +148,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e9bbf702a0a6d374e99d5df5c5948dd7, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e9bbf702a0a6d374e99d5df5c5948dd7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -233,3 +235,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &3407842419165223069
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648464826878185303}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 611b0f85ed73eaa439fa7e6a4bb81590, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
