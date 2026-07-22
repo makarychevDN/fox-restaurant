@@ -49,6 +49,7 @@ namespace foxRestaurant
         public UnityEvent<int, int> OnHungerPointsChanged;
         public UnityEvent OnHungerPointsIncreased;
         public UnityEvent OnStartLeavingProcess;
+        public UnityEvent<bool> OnStartLeavingProcessSatisfied;
         public UnityEvent OnLeft;
         public UnityEvent<bool> OnLeftSatisfied;
         public UnityEvent<Customer> OnCustomerLeft;
@@ -134,7 +135,7 @@ namespace foxRestaurant
                 OnAte.Invoke();
                 OnAteCertainFood.Invoke(item.ItemData);
                 MakeOrder();
-                GetSatiety(food.Satiety);
+                RemoveHunger(food.Satiety);
             }
 
             if(item.ItemData == pretzel)
@@ -143,17 +144,17 @@ namespace foxRestaurant
 
         public void AutoSatisfy()
         {
-            GetSatiety(HungerPoints);
+            RemoveHunger(HungerPoints);
             EatVisualEffect();
         }
 
         public void AddHunger(int hunger)
         {
-            GetSatiety(-hunger);
+            RemoveHunger(-hunger);
             OnHungerPointsIncreased.Invoke();
         }
 
-        public void GetSatiety(int satiety)
+        public void RemoveHunger(int satiety)
         {
             if (isLeaving)
                 return;
@@ -166,6 +167,7 @@ namespace foxRestaurant
             {
                 Uninit();
                 OnStartLeavingProcess.Invoke();
+                OnStartLeavingProcessSatisfied.Invoke(IsSatisfied);
                 isLeaving = true;
             }
         }
