@@ -58,10 +58,7 @@ namespace foxRestaurant
 
         public void Tick(float deltaTime)
         {
-            if (blocked)
-                return;
-
-            if (paused)
+            if (!ovenModeOn || blocked || paused)
                 return;
 
             pretzelSpawnTimer += deltaTime;
