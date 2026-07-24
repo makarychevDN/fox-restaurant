@@ -59,21 +59,21 @@ namespace foxRestaurant
             await UniTask.Delay(1000);
             await IntroDialogue();
             await UniTask.Delay(500);            
-            //await TutorialWaves();
+            await TutorialWaves();
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
 
-            //await TheFirstWave();
+            await TheFirstWave();
             encounter.ItemSpawnTimer.SetBlocked(true);
             encounter.GarbageCan.SetBlocked(true);
             await AfterTutorialWavesDialogue();
-            //await IllGoatTutorial();
+            await IllGoatTutorial();
             await AfterIllGoatTutoiralDialogue();
-            //await CureIllGoatTutorial();
+            await CureIllGoatTutorial();
             await AfterCureIllGoatDialogue();
-            //await TheSecondWave();
-            //await TheThirdWave();
-            //await TheFourthWave();
+            await TheSecondWave();
+            await TheThirdWave();
+            await TheFourthWave();
             await AllTheGoats();
         }
 
