@@ -20,6 +20,7 @@ namespace foxRestaurant
         [SerializeField] private ItemData pretzelData;
         [SerializeField] private ItemData coaldata;
         [SerializeField] private AudioSource errorSound;
+        [SerializeField] private AudioSource flameSound;
         [SerializeField] private Transform tranformToShake;
         [SerializeField] private TMP_Text timerDisplayer;
         [SerializeField] private ItemSlot slotToSpawnPretzel;
@@ -48,6 +49,7 @@ namespace foxRestaurant
                 float tickValue = multiplier * (item as FoodItem).Satiety;
                 Tick(tickValue);
                 restaurantEncounter.DynamicTextManager.SpawnDynamicText(transform.position + Vector3.right * 3, $"-{tickValue} sec", ReservedColors.YellowUI, transform.position + Vector3.one * 3);
+                flameSound.Play();
             }
 
             itemDisappearParticles.Play();
