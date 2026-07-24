@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace foxRestaurant
+    namespace foxRestaurant
 {
     public class RiversideScenarioPart6 : BaseScenario<RestaurantEncounter>
     {
@@ -60,14 +60,14 @@ namespace foxRestaurant
             await red.Say("Оно и вправду работает!");
             encounter.GarbageCan.SetBlocked(false);
             await TaechToHeatOven();
-            await red.Say("Да с такими кренделеками мне сам черт не враг!");
+            await red.Say("Да с этой печкой мне сам черт не враг!");
             encounter.ItemSpawnTimer.SetBlocked(false);
-            await TheFirstWave();
-            await TheSecondWave();
-            await TheThirdWave();
+            //await TheFirstWave();
+            //await TheSecondWave();
+            //await TheThirdWave();
             music.DOFade(0, 2);
             await UniTask.Delay(1000);
-            await red.Say("Как же я могуч.");
+            await red.Say("Я неостановим!");
             successSound.Play();
             await UniTask.Delay(3000);
             impactSound.Play();

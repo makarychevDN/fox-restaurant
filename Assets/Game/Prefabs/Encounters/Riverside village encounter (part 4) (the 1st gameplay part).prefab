@@ -441,10 +441,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8924846038606374781, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}
-      propertyPath: ovenModeOn
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7798234314369262677, guid: 7efe75f2091ca6c4a83ae1dde93baa59, type: 3}

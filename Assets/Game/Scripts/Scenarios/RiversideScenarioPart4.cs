@@ -56,24 +56,24 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
-            /*await UniTask.Delay(1000);
+            await UniTask.Delay(1000);
             await IntroDialogue();
             await UniTask.Delay(500);            
-            await TutorialWaves();*/
+            //await TutorialWaves();
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
 
-            await TheFirstWave();
+            //await TheFirstWave();
             encounter.ItemSpawnTimer.SetBlocked(true);
             encounter.GarbageCan.SetBlocked(true);
             await AfterTutorialWavesDialogue();
-            await IllGoatTutorial();
+            //await IllGoatTutorial();
             await AfterIllGoatTutoiralDialogue();
-            await CureIllGoatTutorial();
+            //await CureIllGoatTutorial();
             await AfterCureIllGoatDialogue();
-            await TheSecondWave();
-            await TheThirdWave();
-            await TheFourthWave();
+            //await TheSecondWave();
+            //await TheThirdWave();
+            //await TheFourthWave();
             await AllTheGoats();
         }
 
@@ -177,7 +177,7 @@ namespace foxRestaurant
 
             await adele.Say("Рано радуешься, оранжевенький.");
             await adele.Say("Все те, кто к тебе только успел прийти не болеют в полной мере.");
-            await adele.Say("В худшем случае чувствуют легкое недомогание.");
+            await adele.Say("Скорее чувствуют легкое недомогание.");
             await adele.Say("Я тебе привела первого настоящего пациента.");
             await red.Say("Подавайте его сюда.");
 
@@ -187,8 +187,9 @@ namespace foxRestaurant
             poofSound.Play();
 
             await UniTask.Delay(1500);
-            await illGoat.Say("Я<pause:0.75> не буду есть отраву лешего!");
-            await illGoat.Say("И даже не проси!");
+            await illGoat.Say("Я<pause:0.75> не буду есть отраву Лешего!");
+            await red.Say("Я не Леший.");
+            await illGoat.Say("И слушать его я тоже не буду!");
             await adele.Say("*вздох*<pause:0.75> Будешь, если хочешь выздороветь.");
             await illGoat.Say("Тогда я выбираю болеть!");
             await adele.Say("Нет,<pause:0.5> ты выбираешь выздоравливать, ты<pause:0.5> - неблагодарное недоразумение.");

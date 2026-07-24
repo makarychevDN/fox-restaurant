@@ -14,6 +14,7 @@ namespace foxRestaurant
         [SerializeField] private Character silver;
         [SerializeField] private Character hog;
         [SerializeField] private Character goat;
+        [SerializeField] private List<Character> peopleBeyondScreen;
         [SerializeField] private Transform redsEyes;
         [SerializeField] private Transform herbs;
         [SerializeField] private Transform silversPaw;
@@ -23,6 +24,8 @@ namespace foxRestaurant
         [SerializeField] private Animator redsHandsAnimator;
         [SerializeField] private AudioSource poofSound;
         [SerializeField] private AudioSource splashSound;
+        [SerializeField] private AudioSource farImpactSound;
+        [SerializeField] private AudioSource sneezeSound;
         [SerializeField] private ParticleSystem goatsPoofEffect;
         [SerializeField] private ParticleSystem hogsPoofEffect;
 
@@ -77,28 +80,30 @@ namespace foxRestaurant
             goat.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
             await goat.Say("Ты слышал?");
             await goat.Say("Никакое это не снадобье от болезней,<pause:0.5> а обычный суп!");
+            await hog.Say("Ну, не знаю, Вась.<pause:0.5> Мне от его варева стало лучше.");
+            await hog.Say("А еще это самый вкусный супчик, который я когда-либо пробовал!");
             silver.LookAt(citizens);
             red.LookAt(citizens);
+            await goat.Say("Радуйся, пока можешь.");
+            await goat.Say("И так понятно, что он нас откармливает, чтобы мы сами стали вкуснее.");
             redsHandsAnimator.SetBool("isMixing", false);
             await hog.Say("Ты что совсем с дубу рухнул?");
             await hog.Say("Ты еще что-то Лешему предъявлять будешь?");
-            await goat.Say("Да никакой он не Леший!<pause:0.5> Выглядит, как обычный лис,<pause:0.5> только замызганный.");
+            await goat.Say("Да мы бы прогнали этого Лешего взашей, если бы не чертова ведьма!");
 
+            await red.Say("Я не Ле...");
             await silver.Say("Мне кажется, или я сейчас услышал неуважение к великому Лешему?");
 
             await hog.Say("Это не я!<pause:0.5> Это все он!");
-            await goat.Say("А я что?!<pause:0.5> А я ничего!");
-
             hog.gameObject.SetActive(false);
             hogsPoofEffect.Play();
             poofSound.Play();
-
             await UniTask.Delay(350);
 
+            await goat.Say("А я что?!<pause:0.5> А я ничего!");
             goat.gameObject.SetActive(false);
             goatsPoofEffect.Play();
             poofSound.Play();
-
             await UniTask.Delay(350);
 
             await silver.Say("Хе-хе.");
@@ -109,6 +114,34 @@ namespace foxRestaurant
             redsHandsAnimator.SetBool("isMixing", true);
             await UniTask.Delay(1500);
 
+            farImpactSound.volume = 0.33f;
+            farImpactSound.Play();
+            await Camera.main.ShakeCamera(1);
+
+            red.LookAt(peopleBeyondScreen[0].transform);
+            silver.LookAt(peopleBeyondScreen[0].transform);
+            await peopleBeyondScreen[0].Say("Он вырвался на свободу!");
+
+            farImpactSound.volume = 0.67f;
+            sneezeSound.volume = 0.25f;
+            farImpactSound.Play();
+            sneezeSound.Play();
+            await Camera.main.ShakeCamera(1);
+            await UniTask.Delay(1000);
+
+            peopleBeyondScreen[1].SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
+            red.LookAt(peopleBeyondScreen[1].transform);
+            silver.LookAt(peopleBeyondScreen[1].transform);
+            await peopleBeyondScreen[1].Say("Спасайтесь, кто может!");
+
+            red.LookAt(silversEyes);
+            silver.LookAt(redsEyes);
+            farImpactSound.volume = 1f;
+            sneezeSound.volume = 0.5f;
+            farImpactSound.Play();
+            sneezeSound.Play();
+            Camera.main.ShakeCamera(1, duration: 2);
+            await UniTask.Delay(1000);
         }
     }
 }

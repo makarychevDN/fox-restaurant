@@ -79,8 +79,8 @@ namespace foxRestaurant
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 0, 0);
             redOnPanoramaBusStop.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             await redOnPanoramaBusStop.Say("Искать этот несчастный городишко.");
-            await redOnPanoramaBusStop.Say("И, когда я туда дойду, я наварю там котел спагетти с фрикадельками!");
-            await redOnPanoramaBusStop.Say("А местным жителям придется его есть!");
+            await redOnPanoramaBusStop.Say("И, когда я туда дойду, я наварю там возмутительное количество спагетти!");
+            await redOnPanoramaBusStop.Say("А местным жителям придется все это съесть!");
             await redOnPanoramaBusStop.Say("И они будут в восторге!");
             await redOnPanoramaBusStop.Say("!!!");
             redOnPanoramaBusStop.LookAt(rightBeyondTheScreenPosition);
@@ -89,7 +89,7 @@ namespace foxRestaurant
             List<UniTask> tasks = new List<UniTask>()
             {
                 redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(21f, -7.75f), new Vector3(1, 0.75f, 2f), 1.5f, 5),
-                silverOnPanoramaBusStop.Say("Я имею в виду, куда ты идешь? <pause:0.75> Ты прошел мимо какого-то указателя.")
+                silverOnPanoramaBusStop.Say("Я имею в виду, куда ты идешь?<pause:0.75> Ты прошел мимо какого-то указателя.")
             };
             await UniTask.WhenAll(tasks);
 
@@ -127,10 +127,10 @@ namespace foxRestaurant
             await redAboveTheForest.Say("Чуть-чуть.");
             await redAboveTheForest.Say("Но это не так страшно, как отступать!");
             await silverAboveTheForest.Say("Уверен,<pause:0.75> оно не так плохо, как выглядит.");
-            await silverAboveTheForest.Say("Вот увидишь,<pause:0.75> последнее усилие и мы будем отдыхать после дороги в Клиффорде.");
-            await redAboveTheForest.Say("И будем распивать те модные коктейли с маленькими зонтиками?");
-            await silverAboveTheForest.Say("И будем распивать те модные коктейли с маленькими зонтиками.");
-            await redAboveTheForest.Say("Круто.");
+            await silverAboveTheForest.Say("Последний рывок и мы будем отдыхать после дороги в Клиффорде.");
+            await redAboveTheForest.Say("И будем распивать коктейли с маленькими зонтиками?");
+            await silverAboveTheForest.Say("И будем распивать коктейли с маленькими зонтиками.");
+            await redAboveTheForest.Say("Шик.");
             explorationAmbient.DOFade(0, 1.5f);
         }
     }

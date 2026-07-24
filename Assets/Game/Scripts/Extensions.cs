@@ -219,9 +219,9 @@ namespace foxRestaurant
 
         public static int NegateIfFalse(bool value) => value ? 1 : -1;
 
-        public static async UniTask ShakeCamera(this Camera camera, float strenght, int shakingValue = 50)
+        public static async UniTask ShakeCamera(this Camera camera, float strenght, int shakingValue = 50, float duration = 0.3f)
         {
-            await camera.DOShakePosition(0.3f, strenght, shakingValue).ToUniTask();
+            await camera.DOShakePosition(duration, strenght, shakingValue).ToUniTask();
             camera.transform.position = new Vector3(0, 0, -10);
         }
     }

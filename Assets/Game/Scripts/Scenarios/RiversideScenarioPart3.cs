@@ -18,6 +18,7 @@ namespace foxRestaurant
         [SerializeField] private Transform silversPaw;
         [SerializeField] private Transform pointToLookOnSilversPaw;
         [SerializeField] private AudioSource popSounds;
+        [SerializeField] private AudioSource impactSound;
 
         protected override void InitTyped(ListenDialoguesEncounter encounter) 
         {
@@ -45,9 +46,10 @@ namespace foxRestaurant
             await adele.Say("В худшем случае покричали бы обидных вещей вслед.");
 
             await red.Say("...");
+            await red.Say("Вообще, нам это подходит.");
             List<UniTask> tasks = new List<UniTask>
             {
-                red.Say("Вообще,<pause:0.5> нам это подходит,<pause:0.5> мы все равно шли мимо и..."),
+                red.Say("Мы все равно шли мимо и даже не думали задерживаться в этой богом забытой..."),
                 silversPaw.DOLocalMove(new Vector3(-3.75f, 4), 2).ToUniTask()
             };
             await UniTask.WhenAll(tasks);
@@ -55,7 +57,8 @@ namespace foxRestaurant
             await silversPaw.DOLocalMove(new Vector3(-5.3f, 4.5f), 0.2f).ToUniTask();
             red.LookAt(pointToLookOnSilversPaw);
             await silver.Say("Какая жалость.");
-            await silver.Say("Нам бы не хотелось покидать это славное место в такой спешке,<pause:0.5> еще и обидев местных жителей.");
+            await silver.Say("Нам бы так не хотелось покидать это славное место в спешке.");
+            await silver.Say("Еще и ненароком расстроив местных жителей.");
             await adele.Say("Лучше слушай старших, оранжевенький.<pause:0.75> Это тут в почете.");
             await adele.Say("А еще вам лучше не спешить, потому что путь дальше будет еще труднее, чем сюда.");
             silversPaw.DOLocalMove(new Vector3(1.2f, -0.5f), 2);
@@ -79,29 +82,39 @@ namespace foxRestaurant
             await adele.Say("Или все вместе.");
 
             await red.Say("Вообще, <pause:0.5> мы можем помочь.");
-            await adele.Say("...");
-            await adele.Say("Продолжай.");
             silver.LookAt(redsEyes);
+            await silver.Say("Рыжий,<pause:0.5> у тебя, конечно, много талантов,<pause:0.5> но ты не доктор.");
             red.LookAt(silversEyes);
-            await silver.Say("Рыжий,<pause:0.5> у тебя, конечно, много талантов,<pause:0.5> но в их список не входит медицина.");
-            await red.Say("У меня есть кое-что получше диплома врача!");
-            await red.Say("У меня есть идея!");
-            await adele.Say("Что ты конкретно предлагаешь, оранжевенький?");
+            await silver.Say("А еще нам здесь не очень рады.");
             red.LookAt(adelesEyes);
+            await adele.Say("Нет-нет, серенький,<pause:0.5> пусть продолжает.");
+            await adele.Say("Что ты конкретно предлагаешь, оранжевенький?");
             await red.Say("У вас есть всякие травки-муравки,<pause:0.5> а у меня есть с собой куча кухонной утвари!");
             await red.Say("А еще я знаю рецепт здоровья!");
             await red.Say("Мы можем наварить самого вкусного и самого лекарственного куриного супчика на всю деревню!");
             silver.LookAt(adelesEyes);
             await adele.Say("Это...<pause:1> довольно хорошая идея.");
-            await adele.Say("Вряд-ли они все тут же выздоровеют, но им должно стать полегче.");
+            await adele.Say("Им и вправду должно стать полегче от хорошего супа.");
             await adele.Say("Я попробую убедить местных потерпеть вас чуть больше.");
-            await silver.Say("Я могу помочь с травами.");
+            await silver.Say("Ну,<pause:0.5> раз мы уже ввязались, я могу помочь с травами.");
             await adele.Say("А ты умеешь?");
             await silver.Say("Наша мама увлекается флористикой и кое чему меня научила.");
-            await silver.Say("Вряд-ли я смогу сам что-то намешать, но я могу собирать.");
+            await silver.Say("Я не знаю их лечебных свойств, но я умею собирать.");
             await silver.Say("А еще я могу делать то, что вы скажете и не мешаться под рукой.");
             await adele.Say("Годится.");
-            await adele.Say("Пойдемте,<pause:0.5> у нас много дел.");
+            await adele.Say("И раз мы теперь сотрудничаем и я не смогу вас игнорировать, давайте знакомиться.");
+            await adele.Say("Адель.");
+            await silver.Say("Серый.");
+            await red.Say("Рыжий.");
+            await UniTask.Delay(1000);
+            await adele.Say("Как оригинально.");
+            await silver.Say("Ох,<pause:0.5> поверьте,<pause:0.5> могло быть гораздо хуже.");
+            impactSound.Play();
+            await Camera.main.ShakeCamera(1);
+            await UniTask.Delay(500);
+            await red.Say("Что это было?");
+            await adele.Say("Не обращайте внимания.");
+            await adele.Say("Пойдемте, Рыжий и Серый,<pause:0.5> у нас еще много работы.");
         }
     }
 }

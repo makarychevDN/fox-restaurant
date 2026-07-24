@@ -83,7 +83,6 @@ namespace foxRestaurant
             await silverOnTheEntrance.Say("Нет,<pause:0.5> это не Клиффорд,<pause:0.5> это Риверсайд.<pause:0.5> Видишь?");
             await redOnTheEntrance.Say("Блин.");
             await silverOnTheEntrance.Say("Не переживай,<pause:0.75> зато мы теперь точно не потерялись!");
-            await silverOnTheEntrance.Say("И нам есть у кого спросить дорогу!");
             await silverOnTheEntrance.Say("И посмотри-ка на это!");
             theEntranceScene.transform.DOScale(Vector3.one, 1);
             await theEntranceScene.transform.DOMove(Vector3.zero, 1).ToUniTask();
@@ -146,6 +145,8 @@ namespace foxRestaurant
             poofSound.Play();
             await crowd.transform.DOMove(new Vector3(0, 0), 0.5f).ToUniTask();
             percussion.DOFade(0, 0.25f);
+            redInTheCrowd.LookAt(adeleInTheCrowd.transform);
+            silverInTheCrowd.LookAt(adeleInTheCrowd.transform);
             await adeleInTheCrowd.Say("Так,<pause:0.5> расходимся,<pause:0.5> не на что тут смотреть.");
             await adeleInTheCrowd.Say("А эти двое идут со мной.");
             await someoneInTheCrowd.Say("Но они из Клиффорда!");
