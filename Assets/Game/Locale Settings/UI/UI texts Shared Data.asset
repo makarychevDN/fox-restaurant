@@ -146,6 +146,14 @@ MonoBehaviour:
     m_Key: copied
     m_Metadata:
       m_Items: []
+  - m_Id: 94749629078462464
+    m_Key: level 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94749686821445632
+    m_Key: level 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

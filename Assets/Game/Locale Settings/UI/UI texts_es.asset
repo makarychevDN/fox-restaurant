@@ -150,6 +150,14 @@ MonoBehaviour:
       a m\xED tambi\xE9n me har\xEDa feliz."
     m_Metadata:
       m_Items: []
+  - m_Id: 94749629078462464
+    m_Localized: nivel 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94749686821445632
+    m_Localized: nivel 2
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

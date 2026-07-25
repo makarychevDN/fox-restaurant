@@ -149,6 +149,14 @@ MonoBehaviour:
       make me happy too.
     m_Metadata:
       m_Items: []
+  - m_Id: 94749629078462464
+    m_Localized: level 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94749686821445632
+    m_Localized: level 2
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
