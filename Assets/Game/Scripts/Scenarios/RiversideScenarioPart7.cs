@@ -40,7 +40,7 @@ namespace foxRestaurant
         protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
             await UniTask.Delay(1000);
-            await red.Say($"<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Сейчас.");
+            await red.Say("t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Now.".Locailze());
             redsHandsAnimator.SetBool("isMixing", false);
             red.LookAt(herbs);
             silver.LookAt(herbs);
@@ -52,62 +52,62 @@ namespace foxRestaurant
             redsHandsAnimator.SetBool("isMixing", true);
             await UniTask.Delay(2000);
             silver.LookAt(redsEyes);
-            await silver.Say("Как думаешь,<pause:0.5> это считается за снадобье?");
+            await silver.Say("Do you think this counts as a remedy?".Locailze());
             red.LookAt(silversEyes);
-            await red.Say("Вряд-ли,<pause:0.5> Это просто супчик с травками.");
-            await silver.Say("Да,<pause:0.5> но что тогда вообще считать снадобьем, если не супчик с травами?");
+            await red.Say("Probably not.<pause:0.5> It's just soup with herbs.".Locailze());
+            await silver.Say("Yeah,<pause:0.5> but then what even counts as a remedy if not soup with herbs?".Locailze());
             redsHandsAnimator.SetBool("isMixing", false);
-            await red.Say("Хм,<pause:0.5> а это<pause:0.75> - очень интересное наблюдение.");
-            await silver.Say("Зельевар-подмастерье превзошел своего учителя!");
+            await red.Say("Hmm,<pause:0.5> that's<pause:0.75> a very interesting observation.".Locailze());
+            await silver.Say("The apprentice potion maker has surpassed his master!".Locailze());
             redsHandsAnimator.SetBool("isMixing", true);
-            await red.Say("Сосредоточься!");
+            await red.Say("Focus!");
             red.LookAt(theCenterOfBoiler);
-            await silver.Say("Ой, да ладно тебе,<pause:0.5> было же забавно!");
+            await silver.Say("Oh, come on,<pause:0.5> it was funny!".Locailze());
             red.LookAt(silversEyes);
-            await red.Say("Кухня - это не место для веселья!");
-            await red.Say("Это наша мастерская и мы творим здесь великие дела!");
+            await red.Say("The kitchen is no place for fooling around!".Locailze());
+            await red.Say("This is our workshop, and we're creating great things here!".Locailze());
             red.LookAt(theCenterOfBoiler);
-            await silver.Say($"<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> И все-таки это было забавно.");
+            await silver.Say("t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> It was still funny though.".Locailze());
             redsHandsAnimator.SetBool("isMixing", false);
             red.LookAt(silversEyes);
-            await red.Say("Ладно,<pause:0.5> это было слегка забавно.");
-            await silver.Say($"Маленькая победа!");
+            await red.Say("Fine,<pause:0.5> it was a little funny.".Locailze());
+            await silver.Say("A small victory!".Locailze());
             redsHandsAnimator.SetBool("isMixing", true);
             red.LookAt(theCenterOfBoiler);
-            await red.Say("Ты - шалопай!");
+            await red.Say("You're a scallywag!".Locailze());
 
             await citizens.DOMove(new Vector3(0, 3.65f), 2).AsyncWaitForCompletion().AsUniTask();
             goat.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
-            await goat.Say("Ты слышал?");
-            await goat.Say("Никакое это не снадобье от болезней,<pause:0.5> а обычный суп!");
-            await hog.Say("Ну, не знаю, Вась.<pause:0.5> Мне от его варева стало лучше.");
-            await hog.Say("А еще это самый вкусный супчик, который я когда-либо пробовал!");
+            await goat.Say("Did you hear that?".Locailze());
+            await goat.Say("This isn't some kind of medicine for illnesses,<pause:0.5> it's just ordinary soup!".Locailze());
+            await hog.Say("Well, I don't know, Vasya.<pause:0.5> I actually feel better after eating his brew.".Locailze());
+            await hog.Say("And it's the tastiest soup I've ever had!".Locailze());
             silver.LookAt(citizens);
             red.LookAt(citizens);
-            await goat.Say("Радуйся, пока можешь.");
-            await goat.Say("И так понятно, что он нас откармливает, чтобы мы сами стали вкуснее.");
+            await goat.Say("Enjoy it while you can.".Locailze());
+            await goat.Say("It's obvious he's fattening us up so we'll taste better ourselves.".Locailze());
             redsHandsAnimator.SetBool("isMixing", false);
-            await hog.Say("Ты что совсем с дубу рухнул?");
-            await hog.Say("Ты еще что-то Лешему предъявлять будешь?");
-            await goat.Say("Да мы бы прогнали этого Лешего взашей, если бы не чертова ведьма!");
+            await hog.Say("Have you completely lost your mind?".Locailze());
+            await hog.Say("You're seriously going to accuse Leshy of something now?".Locailze());
+            await goat.Say("We would've kicked that Leshy out ourselves if it weren't for that damn witch!".Locailze());
 
-            await red.Say("Я не Ле...");
-            await silver.Say("Мне кажется, или я сейчас услышал неуважение к великому Лешему?");
+            await red.Say("I'm not Le...".Locailze());
+            await silver.Say("Wait, did I just hear someone disrespect the great Leshy?".Locailze());
 
-            await hog.Say("Это не я!<pause:0.5> Это все он!");
+            await hog.Say("It wasn't me!<pause:0.5> It was all him!".Locailze());
             hog.gameObject.SetActive(false);
             hogsPoofEffect.Play();
             poofSound.Play();
             await UniTask.Delay(350);
 
-            await goat.Say("А я что?!<pause:0.5> А я ничего!");
+            await goat.Say("Me?!<pause:0.5> I didn't do anything!".Locailze());
             goat.gameObject.SetActive(false);
             goatsPoofEffect.Play();
             poofSound.Play();
             await UniTask.Delay(350);
 
-            await silver.Say("Хе-хе.");
-            await red.Say("*вздох*");
+            await silver.Say("Heheh".Locailze());
+            await red.Say("*sigh*t".Locailze());
 
             red.LookAt(theCenterOfBoiler);
             silver.LookAt(theCenterOfBoiler);
@@ -120,7 +120,7 @@ namespace foxRestaurant
 
             red.LookAt(peopleBeyondScreen[0].transform);
             silver.LookAt(peopleBeyondScreen[0].transform);
-            await peopleBeyondScreen[0].Say("Он вырвался на свободу!");
+            await peopleBeyondScreen[0].Say("He broke free!".Locailze());
 
             farImpactSound.volume = 0.67f;
             sneezeSound.volume = 0.25f;
@@ -132,7 +132,7 @@ namespace foxRestaurant
             peopleBeyondScreen[1].SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
             red.LookAt(peopleBeyondScreen[1].transform);
             silver.LookAt(peopleBeyondScreen[1].transform);
-            await peopleBeyondScreen[1].Say("Спасайтесь, кто может!");
+            await peopleBeyondScreen[1].Say("Everyone save yourselves!".Locailze());
 
             red.LookAt(silversEyes);
             silver.LookAt(redsEyes);

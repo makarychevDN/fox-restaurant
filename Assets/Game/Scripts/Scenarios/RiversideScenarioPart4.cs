@@ -63,7 +63,7 @@ namespace foxRestaurant
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
 
-            await TheFirstWave();
+            await TheZerothWave();
             encounter.ItemSpawnTimer.SetBlocked(true);
             encounter.GarbageCan.SetBlocked(true);
             await AfterTutorialWavesDialogue();
@@ -71,21 +71,21 @@ namespace foxRestaurant
             await AfterIllGoatTutoiralDialogue();
             await CureIllGoatTutorial();
             await AfterCureIllGoatDialogue();
+            await TheFirstWave();
             await TheSecondWave();
             await TheThirdWave();
-            await TheFourthWave();
             await AllTheGoats();
         }
 
         private async UniTask IntroDialogue()
         {
-            await adele.Say("И так,<pause:0.5> все наши продукты и травы в твоем распоряжении.");
-            await adele.Say("Не заставляй меня пожалеть об этом, оранжевенький.");
+            await adele.Say("Alright,<pause:0.5> all our ingredients and herbs are at your disposal.".Locailze());
+            await adele.Say("Don't make me regret this, orange one.".Locailze());
 
-            await red.Say("Я справлюсь.");
-            await red.Say("Вряд-ли делать лекарственные супчики труднее, чем готовить обычную еду.");
+            await red.Say("I've got this.".Locailze());
+            await red.Say("Making medicinal soup can't be that much harder than cooking regular food.".Locailze());
 
-            await adele.Say("Надеюсь, что это и вправду так.");
+            await adele.Say("I certainly hope you're right.".Locailze());
 
             adele.gameObject.SetActive(false);
             adelesPoofEffect.Play();
@@ -94,7 +94,7 @@ namespace foxRestaurant
             red.LookAt(null);
 
             await UniTask.Delay(1000);
-            await red.Say("Щас как дам больно бациллам этим,<pause:0.5> усиков не соберут.");
+            await red.Say("I'm about to give those germs such a beating,<pause:0.5> they won't know what hit 'em.".Locailze());
         }
 
         private async UniTask TutorialWaves()
@@ -134,7 +134,7 @@ namespace foxRestaurant
             });
         }
 
-        private async UniTask TheFirstWave()
+        private async UniTask TheZerothWave()
         {
             encounter.ItemSpawnTimer.SetBlocked(false);
             adele.gameObject.SetActive(false);
@@ -165,7 +165,7 @@ namespace foxRestaurant
 
         private async UniTask AfterTutorialWavesDialogue()
         {
-            await red.Say("А это не так уж и сложно");
+            await red.Say("Hey, this isn't so hard.".Locailze());
 
             UpdateAdelesPosition();
             adele.gameObject.SetActive(true);
@@ -175,11 +175,11 @@ namespace foxRestaurant
 
             await UniTask.Delay(1000);
 
-            await adele.Say("Рано радуешься, оранжевенький.");
-            await adele.Say("Все те, кто к тебе только успел прийти не болеют в полной мере.");
-            await adele.Say("Скорее чувствуют легкое недомогание.");
-            await adele.Say("Я тебе привела первого настоящего пациента.");
-            await red.Say("Подавайте его сюда.");
+            await adele.Say("Don't celebrate too soon, orange one.".Locailze());
+            await adele.Say("Everyone who's come to you so far isn't really sick yet.".Locailze());
+            await adele.Say("They're just feeling a little under the weather.".Locailze());
+            await adele.Say("I've brought you your first real patient.".Locailze());
+            await red.Say("Send them in.".Locailze());
 
             red.LookAt(illGoat.transform);
             illGoat.gameObject.SetActive(true);
@@ -187,23 +187,23 @@ namespace foxRestaurant
             poofSound.Play();
 
             await UniTask.Delay(1500);
-            await illGoat.Say("Я<pause:0.75> не буду есть отраву Лешего!");
-            await red.Say("Я не Леший.");
-            await illGoat.Say("И слушать его я тоже не буду!");
-            await adele.Say("*вздох*<pause:0.75> Будешь, если хочешь выздороветь.");
-            await illGoat.Say("Тогда я выбираю болеть!");
-            await adele.Say("Нет,<pause:0.5> ты выбираешь выздоравливать, ты<pause:0.5> - неблагодарное недоразумение.");
-            await adele.Say("И это не просьба.");
-            await illGoat.Say("...");
-            await adele.Say("Вот и помалкивай.");
+            await illGoat.Say("I'm<pause:0.75> not eating Leshy's poison!".Locailze());
+            await red.Say("I'm not Leshy.".Locailze());
+            await illGoat.Say("And I'm not listening to him either!".Locailze());
+            await adele.Say("*sigh*<pause:0.75> You will if you want to get better.".Locailze());
+            await illGoat.Say("Then I choose to stay sick!".Locailze());
+            await adele.Say("No,<pause:0.5> you choose to get better, you<pause:0.5> ungrateful jackass.".Locailze());
+            await adele.Say("And that's not a request.".Locailze());
+            await illGoat.Say("...".Locailze());
+            await adele.Say("Good. Then keep your mouth shut.".Locailze());
 
             await UniTask.Delay(1000);
             red.LookAt(adelesEyes);
-            await adele.Say("Не обращай внимания, на то, что говорит этот болван.");
-            await adele.Say("Он последний день страдает от жара.");
-            await adele.Say("И своей болезнью портит жизнь всем окружающим.");
-            await adele.Say("Всех, кто сидит рядом с ним будет труднее вылечить.");
-            await adele.Say("Покажи, что можешь, оранжевенький.");
+            await adele.Say("Don't pay any attention to the nonsense this idiot says.".Locailze());
+            await adele.Say("He's been burning up with a fever since yesterday.".Locailze());
+            await adele.Say("And with his illness, he spoils the lives of everyone around him.".Locailze());
+            await adele.Say("Anyone sitting next to him will be harder to cure.".Locailze());
+            await adele.Say("Show me what you've got, orange one.".Locailze());
 
             adele.gameObject.SetActive(false);
             adelesPoofEffect.Play();
@@ -236,8 +236,8 @@ namespace foxRestaurant
                 AfterInitSpawn = new Func<UniTask>[]
                 {
                     LookAtCertainCustomer(encounter, 2),
-                    () => red.Say("Ой-ей!"),
-                    () => red.Say("Больные клиенты и вправду могут доставить хлопот."),
+                    () => red.Say("Whoa!".Locailze()),
+                    () => red.Say("Sick customers really are a pain to deal with.".Locailze()),
                     LookAtTheCursor()
                 },
                 CustomersToFeed = 1
@@ -246,7 +246,7 @@ namespace foxRestaurant
 
         private async UniTask AfterIllGoatTutoiralDialogue()
         {
-            await red.Say("Блин,<pause:0.5> а это было не просто.");
+            await red.Say("Damn,<pause:0.5> that wasn't easy.".Locailze());
 
             UpdateAdelesPosition();
             adele.gameObject.SetActive(true);
@@ -256,10 +256,10 @@ namespace foxRestaurant
 
             await UniTask.Delay(1000);
 
-            await adele.Say("А я говорила.");
-            await adele.Say("Но жар легко поддается лечению.");
-            await adele.Say("В грибной смеси есть ягоды рябины, ему должно полегчать от них.");
-            await adele.Say("Попробуй.");
+            await adele.Say("Told you so.".Locailze());
+            await adele.Say("But fever's one of the easier illnesses to treat.".Locailze());
+            await adele.Say("The mushroom mix contains rowan berries. They should help him feel better.".Locailze());
+            await adele.Say("Give it a try.".Locailze());
 
             adele.gameObject.SetActive(false);
             adelesPoofEffect.Play();
@@ -287,7 +287,7 @@ namespace foxRestaurant
 
         private async UniTask AfterCureIllGoatDialogue()
         {
-            await red.Say("Так,<pause:0.5> кажется,<pause:0.5> я начинаю понимать.");
+            await red.Say("Alright,<pause:0.5> I think<pause:0.5> I'm starting to get it.".Locailze());
 
             UpdateAdelesPosition();
             adele.gameObject.SetActive(true);
@@ -295,8 +295,8 @@ namespace foxRestaurant
             poofSound.Play();
             red.LookAt(adelesEyes);
 
-            await adele.Say("Это хорошо,<pause:0.5> потому что я не планирую с тобой няньчиться весь день.");
-            await adele.Say("Зови, если что-то пойдет не по плану.");
+            await adele.Say("Good,<pause:0.5> because I don't intend to babysit you all day.".Locailze());
+            await adele.Say("Call me if something goes wrong.".Locailze());
 
             adele.gameObject.SetActive(false);
             adelesPoofEffect.Play();
@@ -320,10 +320,8 @@ namespace foxRestaurant
             ));
         }
 
-        private async UniTask TheSecondWave()
+        private async UniTask TheFirstWave()
         {
-            encounter.ItemSpawnTimer.SetBlocked(false);
-            adele.gameObject.SetActive(false);
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[]
@@ -333,9 +331,36 @@ namespace foxRestaurant
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
+                    new(cow),
                     new(goat),
                     new(cow),
                     new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
+                }
+            });
+        }
+
+        private async UniTask TheSecondWave()
+        {
+            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
+            {
+                BeforeWave = new Func<UniTask>[]
+                {
+                    () => encounter.ItemsOperations.SpawnStartItems()
+                },
+
+                Customers = new List<QueuedCustomer>
+                {
+                    new(hog),
+                    new(cow),
+                    new(goat),
                     new(cow),
                     new(hog),
                     new(goat),
@@ -351,8 +376,6 @@ namespace foxRestaurant
 
         private async UniTask TheThirdWave()
         {
-            encounter.ItemSpawnTimer.SetBlocked(false);
-            adele.gameObject.SetActive(false);
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
             {
                 BeforeWave = new Func<UniTask>[]
@@ -362,42 +385,13 @@ namespace foxRestaurant
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
                     new(goat),
-                    new(cow),
                     new(goat),
                     new(cow),
                     new(hog),
                     new(goat),
                     new(hog),
-                    new(cow),
-                    new(hog),
-                    new(cow),
-                    new(hog),
-                    new(cow),
-                }
-            });
-        }
-
-        private async UniTask TheFourthWave()
-        {
-            encounter.ItemSpawnTimer.SetBlocked(false);
-            adele.gameObject.SetActive(false);
-            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
-            {
-                BeforeWave = new Func<UniTask>[]
-                {
-                    () => encounter.ItemsOperations.SpawnStartItems()
-                },
-
-                Customers = new List<QueuedCustomer>
-                {
-                    new(goat),
-                    new(cow),
-                    new(goat),
-                    new(cow),
-                    new(hog),
-                    new(goat),
-                    new(goat),
                     new(cow),
                     new(hog),
                     new(cow),
@@ -424,8 +418,8 @@ namespace foxRestaurant
             encounter.CustomerSpawner.TryToSpawnCustomer(goat, () => compote);
             await UniTask.Delay(1000);
             
-            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Нет, ну это просто какое-то издевательство!");
-            await red.Say("Я не могу работать в таких условиях.");
+            await red.Say("t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> No, this is just ridiculous!".Locailze());
+            await red.Say("I can't work under these conditions.".Locailze());
         }
 
 

@@ -54,28 +54,28 @@ using UnityEngine;
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {            
             await UniTask.Delay(1000);
-            await red.Say("Надеюсь, это не какая-то злая шутка.");
+            await red.Say("Hopefully this isn't some kind of cruel joke.".Locailze());
             await TeachToUsePretzel();
-            await red.Say("Вот это да.");
-            await red.Say("Оно и вправду работает!");
+            await red.Say("Well, I'll be damned.".Locailze());
+            await red.Say("It actually works!".Locailze());
             encounter.GarbageCan.SetBlocked(false);
             await TaechToHeatOven();
-            await red.Say("Да с этой печкой мне сам черт не враг!");
+            await red.Say("With this oven, I'm not afraid of anyone!".Locailze());
             encounter.ItemSpawnTimer.SetBlocked(false);
             await TheFirstWave();
             await TheSecondWave();
             await TheThirdWave();
             music.DOFade(0, 2);
             await UniTask.Delay(1000);
-            await red.Say("Я неостановим!");
+            await red.Say("I'm unstoppable!".Locailze());
             successSound.Play();
             await UniTask.Delay(3000);
             impactSound.Play();
             await Camera.main.ShakeCamera(0.5f);
             await UniTask.Delay(500);
-            await red.Say("Да чтож такое?");
-            await red.Say("Впрочем,<pause:0.5> чем бы они там ни шумели - это не моя проблема.");
-            await red.Say("Особенно, когда у меня перерыв.");
+            await red.Say("What the heck is that?".Locailze());
+            await red.Say("Well,<pause:0.5> whatever all that noise is about, it's not my problem.".Locailze());
+            await red.Say("Especially when I'm on a break.".Locailze());
         }
 
         private async UniTask TeachToUsePretzel()
@@ -110,14 +110,14 @@ using UnityEngine;
         private async UniTask TeachToUsePretzelMonologue()
         {
             red.LookAt(encounter.CustomersManager.Customers[2].transform);
-            await red.Say("Опять он за свое.");
+            await red.Say("He's doing it again.".Locailze());
             encounter.GarbageCan.SpawnPretzel();
             red.LookAt(encounter.GarbageCan.transform);
             await UniTask.Delay(500);
-            await red.Say("Хорошо,<pause:0.5> а сейчас я дам ему кренделек.");
-            await red.Say("И он как по волшебству поменяет свое мнение.");
+            await red.Say("Alright,<pause:0.5> this time I'll give him a pretzel.".Locailze());
+            await red.Say("And he'll magically change his mind.".Locailze());
             red.LookAt(null);
-            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Как же глупенько это прозвучало.");
+            await red.Say("t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> That sounded so silly.".Locailze());
         }
 
         private async UniTask TaechToHeatOven()
@@ -147,13 +147,13 @@ using UnityEngine;
         private async UniTask TaechToHeatOvenMonologue()
         {
             red.LookAt(encounter.CustomersManager.Customers[0].transform);
-            await red.Say("Ой-ей.<pause:0.5> Этот хряк какой-то нетерпеливый");
-            await red.Say("Чтобы успеть его обслужить мне придется растопить печь,<pause:0.5> да погорячее.");
+            await red.Say("Whoa.<pause:0.5> This piggy is really impatient.".Locailze());
+            await red.Say("To serve him in time, I'll have to fire up the oven.".Locailze());
             var spawnedCoal = encounter.ItemsSpawner.SpawnFoodItem(encounter, coal, encounter.SlotsManager.BottomRowSlots[3]);
             (spawnedCoal as FoodItem).SetSatiety(6);
             red.LookAt(spawnedCoal.transform);
             await UniTask.Delay(1000);
-            await red.Say("Да,<pause:0.5> это подойдет.");
+            await red.Say("Yeah,<pause:0.5> this should work.".Locailze());
             red.LookAt(null);
         }
 
@@ -168,12 +168,12 @@ using UnityEngine;
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
+                    new(cow),
                     new(goat),
                     new(cow),
                     new(hog),
                     new(cow),
-                    new(hog),
-                    new(goat),
                     new(hog),
                     new(cow),
                     new(hog),
@@ -195,7 +195,7 @@ using UnityEngine;
 
                 Customers = new List<QueuedCustomer>
                 {
-                    new(goat),
+                    new(hog),
                     new(cow),
                     new(goat),
                     new(cow),
@@ -222,13 +222,13 @@ using UnityEngine;
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
                     new(goat),
-                    new(cow),
                     new(goat),
                     new(cow),
                     new(hog),
                     new(goat),
-                    new(goat),
+                    new(hog),
                     new(cow),
                     new(hog),
                     new(cow),

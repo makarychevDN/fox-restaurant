@@ -60,9 +60,6 @@ namespace foxRestaurant
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
             await Cutscene();
-            encounter.ItemSpawnTimer.SetBlocked(true);
-            encounter.GarbageCan.SetBlocked(true);
-            await TutorialWave();
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
             await TheFirstWave();
@@ -77,7 +74,7 @@ namespace foxRestaurant
             await BorisSneeze();
 
             red.LookAt(runningPeople[0].transform);
-            await runningPeople[0].Say("Спасайся кто может!");
+            await runningPeople[0].Say("Run for your lives!".Locailze());
 
             for (int i = 0; i < runningPeople.Count; i++)
             {
@@ -93,8 +90,8 @@ namespace foxRestaurant
             await BorisSneeze();
             await UniTask.Delay(1000);
 
-            await boris.Say("Охх,<pause:0.5> как здорово,<pause:0.5> у нас гости и вы устроили такой милый пикник!");
-            await boris.Say("А меня не позвали, проказники.");
+            await boris.Say("Oooh,<pause:0.5> how wonderful!<pause:0.5> We have guests, and you've all put together such a lovely little picnic!".Locailze());
+            await boris.Say("And nobody invited me, you rascals.".Locailze());
             await BorisSneeze();
 
             adele.gameObject.SetActive(true);
@@ -102,31 +99,31 @@ namespace foxRestaurant
             poofSound.Play();
             await UniTask.Delay(1000);
 
-            await adele.Say("Боря, иди обратно в дом сейчас же!");
-            await adele.Say("Мы тебе принесем еды туда.");
+            await adele.Say("Boris, go back home now!".Locailze());
+            await adele.Say("We'll bring your food to you.".Locailze());
 
-            await boris.Say("Обратно в дом?<pause:0.5> Ну уж нетушки!");
-            await boris.Say("Я не хочу пропустить все веселье с нашими новыми пушистыми друзьями!");
-
-            await BorisSneeze();
-            await UniTask.Delay(1000);
-
-            await adele.Say("Боря,<pause:0.5> умоляю тебя,<pause:0.5> ты сейчас здесь все разнесешь.");
-            await boris.Say("Не драматизируй, Адель,<pause:0.5>  не так уж сильно я и чихаю.");
+            await boris.Say("Go back inside?<pause:0.5> Oh, no way!".Locailze());
+            await boris.Say("I'm not missing all the fun with our new fluffy friends!".Locailze());
 
             await BorisSneeze();
             await UniTask.Delay(1000);
 
-            await boris.Say("Я просто посижу с вами здесь, ребята.<pause:0.5> Я никого не побеспокою!");
-            await boris.Say("К нам так редко заходят гости!<pause:0.5> Я ни за что не упущу такую возможность!");
+            await adele.Say("Boris,<pause:0.5> I'm begging you,<pause:0.5> you'll tear this whole place apart.".Locailze());
+            await boris.Say("Don't be so dramatic, Adele.<pause:0.5> I don't sneeze that hard.".Locailze());
+
+            await BorisSneeze();
+            await UniTask.Delay(1000);
+
+            await boris.Say("I'll just sit here with you guys.<pause:0.5> I won't bother anyone!".Locailze());
+            await boris.Say("We get visitors so rarely!<pause:0.5> There's no way I'm missing this!".Locailze());
 
             await UniTask.Delay(1000);
             red.LookAt(adelesEye);
-            await adele.Say("Слушай сюда, Рыжий.");
-            await adele.Say("Делай все что угодно,<pause:0.5> но не давай ему чихнуть.");
-            await adele.Say("Если он разойдется, мы это место будем собирать по щепкам!");
-            await red.Say("Я не подведу.");
-            await red.Say("Клятва гиппопотама.");
+            await adele.Say("Listen carefully, Red.".Locailze());
+            await adele.Say("Do whatever it takes,<pause:0.5> but don't let him sneeze.".Locailze());
+            await adele.Say("If he does too hard, we have to rebuild this place from the ruins!".Locailze());
+            await red.Say("I won't let you down.");
+            await red.Say("The Hippopotamus Oath.".Locailze());
 
             adele.gameObject.SetActive(false);
             adelePoofEffect.Play();
@@ -151,22 +148,6 @@ namespace foxRestaurant
             await UniTask.Delay(800);
         }
 
-        private async UniTask TutorialWave()
-        {
-            await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
-            {
-                BeforeWave = new Func<UniTask>[] 
-                {
-                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>() { tea, tea, tea ,tea })
-                },
-
-                Customers = new List<QueuedCustomer>
-                {
-                    new(bull) { OrderFactory = () => tea }
-                }
-            });
-        }
-
         private async UniTask TheFirstWave()
         {
             await encounter.CurrentWaveManager.DoWaveTillComplete(new WaveConfig()
@@ -178,18 +159,18 @@ namespace foxRestaurant
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
+                    new(cow),
                     new(bull),
-                    new(goat),
                     new(cow),
-                    new(hog),
-                    new(cow),
-                    new(hog),
-                    new(goat),
                     new(hog),
                     new(cow),
                     new(hog),
                     new(cow),
                     new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
                 }
             });
         }
@@ -205,10 +186,9 @@ namespace foxRestaurant
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
+                    new(cow),
                     new(bull),
-                    new(goat),
-                    new(cow),
-                    new(goat),
                     new(cow),
                     new(hog),
                     new(goat),
@@ -217,6 +197,7 @@ namespace foxRestaurant
                     new(hog),
                     new(cow),
                     new(hog),
+                    new(cow),
                 }
             });
         }
@@ -232,20 +213,20 @@ namespace foxRestaurant
 
                 Customers = new List<QueuedCustomer>
                 {
+                    new(hog),
                     new(bull),
                     new(goat),
                     new(cow),
-                    new(goat),
-                    new(cow),
                     new(hog),
                     new(goat),
-                    new(goat),
-                    new(cow),
                     new(hog),
                     new(cow),
                     new(hog),
+                    new(cow),
+                    new(hog),
+                    new(cow),
                 }
             });
-        }
+        }        
     }
 }

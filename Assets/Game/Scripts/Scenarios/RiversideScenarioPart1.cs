@@ -47,15 +47,15 @@ namespace foxRestaurant
         {
             redOnBusStop.LookAt(bus);
             await bus.DOMove(new Vector3(50, 0, 0), 2f).SetEase(Ease.InQuad).ToUniTask();
-            await silverOnBusStop.Say("Ну и поездочка.");
+            await silverOnBusStop.Say("Wow, what a trip.".Locailze());
             redOnBusStop.LookAt(silversEyes);
-            await redOnBusStop.Say("И где мы теперь?");
-            await silverOnBusStop.Say("Где-то недалеко от Клиффорда.");
+            await redOnBusStop.Say("So, where are we now?".Locailze());
+            await silverOnBusStop.Say("Somewhere not too far from Clifford.".Locailze());
             explorationAmbient.Play();
-            await silverOnBusStop.Say("Тут очень плохо ловит связь.");
-            await silverOnBusStop.Say("Так что дальше нам придется импровизировать.");
-            await silverOnBusStop.Say("Найти другой автобус<pause:0.5> или поспрашивать у местных.");
-            await silverOnBusStop.Say("<volume:0>...");
+            await silverOnBusStop.Say("The signal's really bad out here.".Locailze());
+            await silverOnBusStop.Say("So we'll have to improvise from here.".Locailze());
+            await silverOnBusStop.Say("Catch another bus<pause:0.5> or ask the locals for directions.".Locailze());
+            await silverOnBusStop.Say("t<volume:0>...".Locailze());
             busStopScene.gameObject.SetActive(false);
         }
 
@@ -63,33 +63,33 @@ namespace foxRestaurant
         {
             busStopPanoramaScene.gameObject.SetActive(true);
             redOnPanoramaBusStop.LookAt(silversEyesPanorama);
-            await silverOnPanoramaBusStop.Say("<volume:0>...");
-            await silverOnPanoramaBusStop.Say("<volume:1>Хотя<pause:1> с этим могут возникнуть проблемы.");
-            await redOnPanoramaBusStop.Say("Мы потерялись?");
-            await silverOnPanoramaBusStop.Say("Ой, не сгущай краски.");
-            await silverOnPanoramaBusStop.Say("В худшем случае посидим здесь до следующего автобуса и поедем обратно.");
-            await redOnPanoramaBusStop.Say("Ну уж нет!");
-            await redOnPanoramaBusStop.Say("Мы приехали к черту на кулички не для того, чтобы все так бросить!");
+            await silverOnPanoramaBusStop.Say("t<volume:0>...".Locailze());
+            await silverOnPanoramaBusStop.Say("t<volume:1>Though<pause:1> that might be a bit of a problem.".Locailze());
+            await redOnPanoramaBusStop.Say("Are we lost?".Locailze());
+            await silverOnPanoramaBusStop.Say("Oh, don't be so dramatic.".Locailze());
+            await silverOnPanoramaBusStop.Say("Worst case, we wait here for the next bus and head back.".Locailze());
+            await redOnPanoramaBusStop.Say("No way!".Locailze());
+            await redOnPanoramaBusStop.Say("We didn't come all the way out here just to give up now!".Locailze());
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 180, 0);
             redOnPanoramaBusStop.LookAt(rightBeyondTheScreenPosition);
             redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(13.5f, -7.75f), new Vector3(1, 0.75f, 2f), 2f, 7);
             await UniTask.Delay(1000);
-            await silverOnPanoramaBusStop.Say("Эй, ты куда собрался?");
+            await silverOnPanoramaBusStop.Say("Hey, where are you going?".Locailze());
             redOnPanoramaBusStop.LookAt(silversEyesPanorama);
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 0, 0);
             redOnPanoramaBusStop.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
-            await redOnPanoramaBusStop.Say("Искать этот несчастный городишко.");
-            await redOnPanoramaBusStop.Say("И, когда я туда дойду, я наварю там возмутительное количество спагетти!");
-            await redOnPanoramaBusStop.Say("А местным жителям придется все это съесть!");
-            await redOnPanoramaBusStop.Say("И они будут в восторге!");
-            await redOnPanoramaBusStop.Say("!!!");
+            await redOnPanoramaBusStop.Say("To find that stupid little town.".Locailze());
+            await redOnPanoramaBusStop.Say("And when I get there, I'm gonna cook an outrageous amount of spaghetti!".Locailze());
+            await redOnPanoramaBusStop.Say("And the locals are gonna have to eat every last bit of it!".Locailze());
+            await redOnPanoramaBusStop.Say("And they will love it!".Locailze());
+            await redOnPanoramaBusStop.Say("!!!".Locailze());
             redOnPanoramaBusStop.LookAt(rightBeyondTheScreenPosition);
             redOnPanoramaBusStop.transform.rotation = Quaternion.Euler(0, 180, 0);
 
             List<UniTask> tasks = new List<UniTask>()
             {
                 redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(21f, -7.75f), new Vector3(1, 0.75f, 2f), 1.5f, 5),
-                silverOnPanoramaBusStop.Say("Я имею в виду, куда ты идешь?<pause:0.75> Ты прошел мимо какого-то указателя.")
+                silverOnPanoramaBusStop.Say("I mean, where are you going?<pause:0.75> You just walked right past a sign.".Locailze())
             };
             await UniTask.WhenAll(tasks);
 
@@ -97,7 +97,7 @@ namespace foxRestaurant
             redOnPanoramaBusStop.LookAt(signPosition);
             redOnPanoramaBusStop.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Right);
             redOnPanoramaBusStop.SetDialoguePopUpLocalPosition(new Vector3(-880, 114));
-            await redOnPanoramaBusStop.Say("Ой.");
+            await redOnPanoramaBusStop.Say("Oh.".Locailze());
             await redOnPanoramaBusStop.transform.DotweenSteps(new Vector3(13.5f, -7.75f), new Vector3(1, 0.75f, 2f), 1.5f, 5);
             await UniTask.Delay(500);
             busStopPanoramaScene.gameObject.SetActive(false);
@@ -109,10 +109,10 @@ namespace foxRestaurant
             await UniTask.Delay(500);
             redOnPath.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             silverOnPath.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
-            await redOnPath.Say("Тут говорится, что Клиффорд прямо по тропинке.");
-            await silverOnPath.Say("Так чего же мы ждем?");
-            await redOnPath.Say("Трепещите, жители Клиффорда!");
-            await redOnPath.Say("Рыжий идет!");
+            await redOnPath.Say("It says Clifford's just down this trail.".Locailze());
+            await silverOnPath.Say("So what are we waiting for?".Locailze());
+            await redOnPath.Say("Tremble, people of Clifford!".Locailze());
+            await redOnPath.Say("Red is coming!".Locailze());
             pathScene.gameObject.SetActive(false);
         }
 
@@ -123,14 +123,14 @@ namespace foxRestaurant
             await Camera.main.transform.DOMove(new Vector3(Camera.main.transform.position.x, 16.5f, Camera.main.transform.position.z), 5).ToUniTask();
             redAboveTheForest.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
             silverAboveTheForest.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center);
-            await silverAboveTheForest.Say("А сам великий и ужасный Рыжий не боится такого дремучего леса?");
-            await redAboveTheForest.Say("Чуть-чуть.");
-            await redAboveTheForest.Say("Но это не так страшно, как отступать!");
-            await silverAboveTheForest.Say("Уверен,<pause:0.75> оно не так плохо, как выглядит.");
-            await silverAboveTheForest.Say("Последний рывок и мы будем отдыхать после дороги в Клиффорде.");
-            await redAboveTheForest.Say("И будем распивать коктейли с маленькими зонтиками?");
-            await silverAboveTheForest.Say("И будем распивать коктейли с маленькими зонтиками.");
-            await redAboveTheForest.Say("Шик.");
+            await silverAboveTheForest.Say("And the great and terrible Red isn't scared of a creepy forest like this?".Locailze());
+            await redAboveTheForest.Say("A little.".Locailze());
+            await redAboveTheForest.Say("But it's not as scary as turning back!".Locailze());
+            await silverAboveTheForest.Say("I'm sure<pause:0.75> it's not as bad as it looks.".Locailze());
+            await silverAboveTheForest.Say("One last push, and we'll be relaxing in Clifford after the trip.".Locailze());
+            await redAboveTheForest.Say("And sipping cocktails with little umbrellas? (question)".Locailze());
+            await silverAboveTheForest.Say("And sipping cocktails with little umbrellas.".Locailze());
+            await redAboveTheForest.Say("Sweet.".Locailze());
             explorationAmbient.DOFade(0, 1.5f);
         }
     }

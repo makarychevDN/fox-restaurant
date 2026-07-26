@@ -957,7 +957,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377408
-    m_Localized: "\xC9 suficiente para cuidar da maioria deles."
+    m_Localized: '#ERROR!'
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377409
@@ -983,11 +983,1062 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377414
-    m_Localized: "Os clientes na fila tamb\xE9m t\xEAm paci\xEAncia."
+    m_Localized: '#ERROR!'
     m_Metadata:
       m_Items: []
   - m_Id: 76866541631725568
     m_Localized: "Normalmente, n\xE3o preciso atender a todos os clientes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020216782848
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948672
+    m_Localized: "Ent\xE3o, onde estamos agora?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948673
+    m_Localized: "Em algum lugar n\xE3o muito longe de Clifford."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948674
+    m_Localized: "O sinal est\xE1 muito ruim por aqui."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948675
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948676
+    m_Localized: "Pegue outro \xF4nibus<pause:0.5> ou pe\xE7a informa\xE7\xF5es aos
+      moradores locais."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948677
+    m_Localized: <volume:0>...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948678
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948679
+    m_Localized: Estamos perdidos?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948680
+    m_Localized: "Ah, n\xE3o seja t\xE3o dram\xE1tico(a)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948681
+    m_Localized: "Na pior das hip\xF3teses, esperamos aqui o pr\xF3ximo \xF4nibus
+      e voltamos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948682
+    m_Localized: Sem chance!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948685
+    m_Localized: Para encontrar aquela cidadezinha idiota.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948686
+    m_Localized: "E quando eu chegar l\xE1, vou cozinhar uma quantidade absurda de
+      espaguete!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948687
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948688
+    m_Localized: "E eles v\xE3o adorar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948689
+    m_Localized: '!!!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948691
+    m_Localized: Oh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948692
+    m_Localized: "Diz que Clifford est\xE1 logo ali no final desta trilha."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948693
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948694
+    m_Localized: Tremam, habitantes de Clifford!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948695
+    m_Localized: "O vermelho est\xE1 chegando!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948696
+    m_Localized: "E o grande e terr\xEDvel Vermelho n\xE3o tem medo de uma floresta
+      assustadora como esta?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948697
+    m_Localized: Um pouco.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948698
+    m_Localized: "Mas n\xE3o \xE9 t\xE3o assustador quanto voltar atr\xE1s!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948699
+    m_Localized: "Tenho certeza<pause:0.75> que n\xE3o \xE9 t\xE3o ruim quanto parece."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948700
+    m_Localized: "Mais um esfor\xE7o e estaremos relaxando em Clifford depois da
+      viagem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948701
+    m_Localized: E tomar drinques com guarda-chuvinhas?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948702
+    m_Localized: E tomando drinques com guarda-chuvinhas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948703
+    m_Localized: Doce.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948704
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948705
+    m_Localized: Quando nossa viagem de carro se transformou em uma caminhada, seu
+      bobo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948706
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948707
+    m_Localized: Acho que conseguimos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948709
+    m_Localized: Droga.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948710
+    m_Localized: "Ei, veja pelo lado bom. Pelo menos n\xE3o estamos mais perdidos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948711
+    m_Localized: "E vejam s\xF3!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948712
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948713
+    m_Localized: "Ol\xE1."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948714
+    m_Localized: AAAH!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948716
+    m_Localized: Estamos condenados!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948718
+    m_Localized: "N\xE3o se mexa, monstro da floresta!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948719
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948720
+    m_Localized: "Sil\xEAncio, seu Clifforder imundo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948721
+    m_Localized: "Primeiro voc\xEAs trouxeram a doen\xE7a sobre n\xF3s!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948723
+    m_Localized: "N\xE3o vamos deixar isso acontecer!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948724
+    m_Localized: Acho que houve um grande mal-entendido.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948725
+    m_Localized: "N\xE3o somos de Clifford.<pause:0.5> Na verdade, est\xE1vamos prestes
+      a sair."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948726
+    m_Localized: "Voc\xEA n\xE3o vai se safar t\xE3o f\xE1cil depois de tudo o que
+      fez!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142976
+    m_Localized: Ih, rapaz.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142977
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142978
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142979
+    m_Localized: "Mas eles s\xE3o de Clifford!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142980
+    m_Localized: "De onde eles v\xEAm n\xE3o \xE9 da sua conta.<pause:0.75> Voc\xEA
+      ainda tem muito trabalho a fazer hoje!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142981
+    m_Localized: "Todos voc\xEAs!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142982
+    m_Localized: Mas!..
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142983
+    m_Localized: "Sem \"mas\"!<pause:0.75> Ningu\xE9m te amaldi\xE7oou faz tempo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142984
+    m_Localized: "Tch!<pause:0.5> Bruxa!<pause:0.5> Vamos l\xE1,<pause:0.5> a bruxa
+      encontrou um novo par de brinquedos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142985
+    m_Localized: "Quem voc\xEA est\xE1 chamando de bruxa, sua praga?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142986
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142987
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142988
+    m_Localized: "Seu lugar \xE9 t\xE3o aconchegante!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142989
+    m_Localized: "O que s\xE3o todas essas coisas nas prateleiras?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142990
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142991
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142992
+    m_Localized: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142993
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142994
+    m_Localized: "\xC9, se n\xE3o fosse por voc\xEA, eles teriam nos devorado vivos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142995
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142996
+    m_Localized: "Eles est\xE3o simplesmente \xE0 beira de um ataque de nervos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142997
+    m_Localized: Muito provavelmente, eles simplesmente teriam te expulsado de Riverside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142998
+    m_Localized: "Na pior das hip\xF3teses, eles teriam gritado algumas coisas desagrad\xE1veis
+      \u200B\u200Bpara voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142999
+    m_Localized: "Na verdade, isso nos conv\xE9m."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143000
+    m_Localized: "Est\xE1vamos apenas de passagem. N\xE3o t\xEDnhamos planos de ficar
+      neste lugar esquecido por Deus..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143001
+    m_Localized: Que pena.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143002
+    m_Localized: "Seria uma pena termos que deixar um lugar t\xE3o lindo com tanta
+      pressa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143004
+    m_Localized: "\xC9 melhor voc\xEA ouvir os mais velhos, laranja.<pause:0.75>
+      As pessoas valorizam isso por aqui."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143005
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143006
+    m_Localized: "Estou correto em supor que voc\xEA est\xE1 indo para Clifford?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143007
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143008
+    m_Localized: "Escolha estranha, mas isso \xE9 problema seu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143009
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143010
+    m_Localized: "A pr\xF3xima viagem \xE0 cidade ser\xE1 amanh\xE3 de manh\xE3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143011
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143013
+    m_Localized: "Perfeito!<pause:0.75> Ent\xE3o ficaremos aqui quietinhos e sem
+      atrapalhar ningu\xE9m."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143014
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143015
+    m_Localized: "Eles est\xE3o esperando por medicamentos da cidade.<pause:0.5>
+      Eles est\xE3o doentes?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143016
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143017
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143018
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143019
+    m_Localized: Ou ambos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143020
+    m_Localized: "Na verdade, poder\xEDamos ajudar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143021
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143022
+    m_Localized: "Al\xE9m disso, n\xE3o somos exatamente bem-vindos aqui."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143023
+    m_Localized: "N\xE3o, n\xE3o, cinza.<pause:0.5> Deixe-o terminar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143024
+    m_Localized: "Ent\xE3o, o que exatamente voc\xEA est\xE1 propondo, laranja?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143025
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143026
+    m_Localized: "E eu conhe\xE7o a receita para uma boa sa\xFAde!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143027
+    m_Localized: "Podemos fazer a sopa de galinha mais saborosa e nutritiva que esta
+      aldeia j\xE1 provou!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143028
+    m_Localized: "Isso \xE9...<pause:1> na verdade uma ideia muito boa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143029
+    m_Localized: "Uma boa tigela de sopa certamente os ajudar\xE1 a se sentirem melhor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143030
+    m_Localized: Vou ver se consigo convencer os moradores locais a te aturarem por
+      mais um tempo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143031
+    m_Localized: "Bem, j\xE1 que estamos envolvidos, posso ajudar com as ervas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143032
+    m_Localized: "Voc\xEA sabe alguma coisa sobre ervas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143033
+    m_Localized: "Nossa m\xE3e adora arranjos florais, ent\xE3o ela me ensinou algumas
+      coisas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143034
+    m_Localized: "N\xE3o sei para que servem medicinalmente, mas sei como colet\xE1-las."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143035
+    m_Localized: "E consigo seguir instru\xE7\xF5es sem atrapalhar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143036
+    m_Localized: Isso serve.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143037
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143038
+    m_Localized: Adele.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143039
+    m_Localized: Prata.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143040
+    m_Localized: Vermelho.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143041
+    m_Localized: Que original.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143042
+    m_Localized: Ah, acredite em mim, poderia ter sido muito pior.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143043
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143044
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143045
+    m_Localized: "Vamos l\xE1, Vermelho e Prata, ainda temos muito trabalho a fazer."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143046
+    m_Localized: "Muito bem, todos os nossos ingredientes e ervas est\xE3o \xE0 sua
+      disposi\xE7\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143047
+    m_Localized: "N\xE3o me fa\xE7a me arrepender disso, laranja."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143048
+    m_Localized: Eu consigo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143049
+    m_Localized: "Preparar uma sopa medicinal n\xE3o deve ser muito mais dif\xEDcil
+      do que cozinhar comida normal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143050
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143051
+    m_Localized: "Vou dar uma surra t\xE3o grande nesses germes que eles nem v\xE3o
+      saber o que os atingiu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143052
+    m_Localized: "Ei, isso n\xE3o \xE9 t\xE3o dif\xEDcil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143053
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143054
+    m_Localized: "Ningu\xE9m que veio at\xE9 voc\xEA at\xE9 agora est\xE1 realmente
+      doente ainda."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143055
+    m_Localized: "Eles s\xF3 est\xE3o se sentindo um pouco indispostos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143056
+    m_Localized: Trouxe-lhe o seu primeiro paciente de verdade.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143057
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143058
+    m_Localized: "Eu n\xE3o vou comer o veneno do Leshy!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143059
+    m_Localized: "Eu n\xE3o sou Leshy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143060
+    m_Localized: "E eu tamb\xE9m n\xE3o estou dando ouvidos a ele!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143061
+    m_Localized: "*suspiro*<pause:0.75> Voc\xEA vai conseguir se quiser melhorar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143062
+    m_Localized: "Ent\xE3o eu escolho continuar doente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143063
+    m_Localized: "N\xE3o, voc\xEA escolhe melhorar, seu idiota ingrato."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143064
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143065
+    m_Localized: "\xD3timo. Ent\xE3o fique de boca fechada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143066
+    m_Localized: "N\xE3o d\xEA aten\xE7\xE3o \xE0s bobagens que esse idiota diz."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143067
+    m_Localized: "Ele est\xE1 com febre alta desde ontem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143068
+    m_Localized: "E com sua doen\xE7a, ele arru\xEDna a vida de todos ao seu redor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143069
+    m_Localized: "Qualquer pessoa sentada ao lado dele ter\xE1 mais dificuldade em
+      ser curada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143070
+    m_Localized: "Mostre-me o que voc\xEA tem, laranja."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143071
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143072
+    m_Localized: "Lidar com clientes doentes \xE9 realmente um transtorno."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143073
+    m_Localized: "Caramba,<pause:0.5> isso n\xE3o foi f\xE1cil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143074
+    m_Localized: Eu te avisei.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143075
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143076
+    m_Localized: "A mistura de cogumelos cont\xE9m bagas de sorveira. Elas devem
+      ajud\xE1-lo a se sentir melhor."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143077
+    m_Localized: Experimente.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143078
+    m_Localized: "Certo, acho que estou come\xE7ando a entender."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143079
+    m_Localized: "\xD3timo, porque n\xE3o pretendo ficar cuidando de voc\xEA o dia
+      todo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143080
+    m_Localized: Ligue-me se algo der errado.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143081
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> N\xE3o,
+      isso \xE9 simplesmente rid\xEDculo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143082
+    m_Localized: "N\xE3o consigo trabalhar nessas condi\xE7\xF5es."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143083
+    m_Localized: "Esse seu paciente \xE9 a mula mais teimosa do mundo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143084
+    m_Localized: "\xC9 simplesmente imposs\xEDvel!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143085
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143086
+    m_Localized: "Adele,<pause:0.5> Preciso que voc\xEA grite com ele."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143087
+    m_Localized: "Essa \xE9 uma ideia brilhante.<pause:0.5> Algo mais?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143088
+    m_Localized: "Quero que voc\xEA bata nele."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143089
+    m_Localized: Escuta aqui, laranja.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143090
+    m_Localized: "Vasya \xE9 um osso duro de roer, ele n\xE3o \xE9 f\xE1cil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143091
+    m_Localized: "Mas seu irm\xE3o e eu j\xE1 estamos muito ocupados."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143092
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143093
+    m_Localized: "Eu tenho meu pr\xF3prio trabalho,<pause:0.5> e voc\xEA tem o seu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143094
+    m_Localized: "Ent\xE3o v\xE1 e resolva isso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143095
+    m_Localized: "Ei, <pause:0.5>, eu sou quem est\xE1 salvando sua vila de uma epidemia!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143096
+    m_Localized: "Eu poderia ter feito exatamente o que voc\xEA me disse!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143097
+    m_Localized: "Fique sentado quietinho num canto, enquanto os moradores locais
+      esperam por rem\xE9dios da cidade e continuam a ficar cada vez mais doentes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143098
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Tudo bem,
+      tudo bem,<pause:0.5> voc\xEA tem raz\xE3o,<pause:0.5> Me desculpe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143099
+    m_Localized: "Mas eu realmente n\xE3o posso abandonar meu trabalho e ficar indo
+      e vindo sem parar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143100
+    m_Localized: "Ent\xE3o me diga de que outra forma eu deveria conseguir falar
+      com ele."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337280
+    m_Localized: "Que carro\xE7a velha \xE9 essa?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337281
+    m_Localized: "Este \xE9 um forno.<pause:0.5> Voc\xEA sabe como usar um desses,
+      certo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337282
+    m_Localized: Sim, eu sei, mas como isso vai ajudar?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337283
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337284
+    m_Localized: "Se algu\xE9m provar os seus produtos de confeitaria, mudar\xE1
+      imediatamente de opini\xE3o, independentemente do motivo da discuss\xE3o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337285
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337286
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337287
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337288
+    m_Localized: "Espero que isso n\xE3o seja algum tipo de piada cruel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337289
+    m_Localized: "Ele est\xE1 fazendo isso de novo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337290
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337291
+    m_Localized: "E ele, magicamente, mudar\xE1 de ideia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337292
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Isso soou
+      t\xE3o bobo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337293
+    m_Localized: Ora, que surpresa!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337294
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337295
+    m_Localized: "Uau.<pause:0.5> Este porquinho \xE9 realmente impaciente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337296
+    m_Localized: Para servi-lo a tempo, terei que acender o forno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337297
+    m_Localized: Sim,<pause:0.5> isso deve funcionar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337298
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337299
+    m_Localized: "Sou impar\xE1vel!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337300
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337301
+    m_Localized: "Bem, seja l\xE1 o que for toda essa confus\xE3o, n\xE3o \xE9 problema
+      meu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337302
+    m_Localized: Principalmente quando estou de folga.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337303
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337304
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337305
+    m_Localized: "Provavelmente n\xE3o.<pause:0.5> \xC9 apenas uma sopa com ervas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337306
+    m_Localized: "Sim, mas ent\xE3o o que conta como rem\xE9dio sen\xE3o sopa com
+      ervas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337307
+    m_Localized: "Hum,<pause:0.5> essa \xE9<pause:0.75> uma observa\xE7\xE3o muito
+      interessante."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337308
+    m_Localized: O aprendiz de alquimista superou seu mestre!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337309
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337310
+    m_Localized: "Ah, qual \xE9,<pause:0.5> foi engra\xE7ado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337311
+    m_Localized: "A cozinha n\xE3o \xE9 lugar para brincadeiras!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337312
+    m_Localized: "Esta \xE9 a nossa oficina, e aqui estamos criando coisas incr\xEDveis!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337313
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Mesmo
+      assim, foi engra\xE7ado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337314
+    m_Localized: "Tudo bem, foi um pouco engra\xE7ado."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337315
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337316
+    m_Localized: "Voc\xEA \xE9 um verdadeiro patife!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337317
+    m_Localized: "Voc\xEA ouviu isso?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337318
+    m_Localized: "Isso n\xE3o \xE9 nenhum tipo de rem\xE9dio para doen\xE7as, \xE9
+      apenas uma sopa comum!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337319
+    m_Localized: "Bem, n\xE3o sei, Vasya.<pause:0.5> Na verdade, me sinto melhor
+      depois de tomar a bebida dele."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337320
+    m_Localized: "E \xE9 a sopa mais saborosa que j\xE1 comi!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337321
+    m_Localized: Aproveite enquanto pode.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337322
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337323
+    m_Localized: "Voc\xEA perdeu completamente a cabe\xE7a?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337324
+    m_Localized: "Voc\xEA vai mesmo acusar Leshy de alguma coisa agora?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337325
+    m_Localized: "Ter\xEDamos expulsado aquele Leshy n\xF3s mesmos se n\xE3o fosse
+      por aquela bruxa maldita!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337326
+    m_Localized: "Eu n\xE3o sou Le..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337327
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337328
+    m_Localized: "N\xE3o fui eu!<pause:0.5> Foi tudo culpa dele!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337329
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337330
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337331
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337332
+    m_Localized: Ele se libertou!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337333
+    m_Localized: Salvem-se todos!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337334
+    m_Localized: Corram para salvar suas vidas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337335
+    m_Localized: "Oh, que maravilha! Temos convidados e voc\xEAs prepararam um piquenique
+      t\xE3o ador\xE1vel!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337336
+    m_Localized: "E ningu\xE9m me convidou. Seus patifes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337337
+    m_Localized: Boris, volte para casa agora!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337338
+    m_Localized: "Levaremos a sua comida at\xE9 voc\xEA."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337339
+    m_Localized: Voltar para dentro?<pause:0.5> Ah, de jeito nenhum!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337340
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337341
+    m_Localized: "Boris, eu imploro a voc\xEA, voc\xEA vai destruir este lugar inteiro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337342
+    m_Localized: "N\xE3o seja t\xE3o dram\xE1tica, Adele.<pause:0.5> Eu n\xE3o espirro
+      t\xE3o forte assim."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337343
+    m_Localized: "Vou ficar aqui sentada com voc\xEAs. N\xE3o vou incomodar ningu\xE9m!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337344
+    m_Localized: "Recebemos visitas t\xE3o raramente!<pause:0.5> De jeito nenhum
+      vou perder isso!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337345
+    m_Localized: "Escute com aten\xE7\xE3o, Vermelho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337346
+    m_Localized: "Fa\xE7a o que for preciso, mas n\xE3o o deixe espirrar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337347
+    m_Localized: "Se ele fizer muito estrago, teremos que reconstruir este lugar
+      a partir das ru\xEDnas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337348
+    m_Localized: "N\xE3o vou te decepcionar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337349
+    m_Localized: "O Juramento do Hipop\xF3tamo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95027885946068992
+    m_Localized: "Ei, para onde voc\xEA vai?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95028971859763200
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95032048352387072
+    m_Localized: "N\xE3o viemos at\xE9 aqui para desistir agora!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151254540288
+    m_Localized: "N\xE3o, este n\xE3o \xE9 Clifford. Este \xE9 Riverside. Viu?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151283900416
+    m_Localized: '#ERROR!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151283900417
+    m_Localized: Eu? Leshy?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151283900418
+    m_Localized: "E agora voc\xEA resolveu mandar o Leshy atr\xE1s de n\xF3s!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95336547382091776
+    m_Localized: Principalmente depois de ter irritado acidentalmente os moradores
+      locais.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95336547411451904
+    m_Localized: "Exatamente.<pause:0.5> A menos que o malvado Leshy e o imundo Clifforder
+      queiram testar ainda mais a paci\xEAncia dos moradores locais."
     m_Metadata:
       m_Items: []
   references:

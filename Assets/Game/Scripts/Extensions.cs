@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using UnityEngine.UIElements.Experimental;
 
@@ -223,6 +224,13 @@ namespace foxRestaurant
         {
             await camera.DOShakePosition(duration, strenght, shakingValue).ToUniTask();
             camera.transform.position = new Vector3(0, 0, -10);
+        }
+
+        private const string DialoguesTable = "Dialogues";
+
+        public static string Locailze(this string key)
+        {
+            return LocalizationSettings.StringDatabase.GetLocalizedString(DialoguesTable, key);
         }
     }
 }

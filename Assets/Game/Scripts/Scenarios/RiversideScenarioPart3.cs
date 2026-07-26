@@ -30,91 +30,90 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
-
             await UniTask.Delay(1000);
-            await silver.Say("Как у вас уютно!");
-            await red.Say("А что это у вас на полочках?");
-            await adele.Say("Не трогать антиквариат.");
-            await red.Say("Не очень то и хотелось.");
-            await red.Say("...");
+            await silver.Say("Your place is so cozy!".Locailze());
+            await red.Say("What's all this stuff on the shelves?".Locailze());
+            await adele.Say("Don't touch the antiques.".Locailze());
+            await red.Say("Wasn't planning to.".Locailze());
+            await red.Say("...".Locailze());
 
-            await silver.Say("Спасибо, что заступились за нас.");
-            await red.Say("Да,<pause:0.5> если бы не вы, они бы нас уже съели.");
-            await adele.Say("*вздох*<pause:0.5> Они бы никого не съели,<pause:0.5> они не изверги.");
-            await adele.Say("Они просто очень встревожены и напуганы.");
-            await adele.Say("Скорее всего они бы вас просто прогнали за черту Риверcайда.");
-            await adele.Say("В худшем случае покричали бы обидных вещей вслед.");
+            await silver.Say("Thank you for standing up for us.".Locailze());
+            await red.Say("Yeah,<pause:0.5> if it weren't for you, they would've eaten us alive.".Locailze());
+            await adele.Say("*sigh*<pause:0.5> They wouldn't have eaten anyone,<pause:0.5> they're not monsters.".Locailze());
+            await adele.Say("They're just on edge.".Locailze());
+            await adele.Say("Most likely, they would've just chased you out of Riverside.".Locailze());
+            await adele.Say("Worst case, they would've shouted a few nasty things after you.".Locailze());
 
-            await red.Say("...");
-            await red.Say("Вообще, нам это подходит.");
+            await red.Say("...".Locailze());
+            await red.Say("Actually, it suits us.".Locailze());
             List<UniTask> tasks = new List<UniTask>
             {
-                red.Say("Мы все равно шли мимо и даже не думали задерживаться в этой богом забытой..."),
+                red.Say("We were just passing through anyway. We weren't planning to stick around this godforsaken...".Locailze()),
                 silversPaw.DOLocalMove(new Vector3(-3.75f, 4), 2).ToUniTask()
             };
             await UniTask.WhenAll(tasks);
             popSounds.Play();
             await silversPaw.DOLocalMove(new Vector3(-5.3f, 4.5f), 0.2f).ToUniTask();
             red.LookAt(pointToLookOnSilversPaw);
-            await silver.Say("Какая жалость.");
-            await silver.Say("Нам бы так не хотелось покидать это славное место в спешке.");
-            await silver.Say("Еще и ненароком расстроив местных жителей.");
-            await adele.Say("Лучше слушай старших, оранжевенький.<pause:0.75> Это тут в почете.");
-            await adele.Say("А еще вам лучше не спешить, потому что путь дальше будет еще труднее, чем сюда.");
+            await silver.Say("What a shame.".Locailze());
+            await silver.Say("We'd hate to leave such a lovely place in such a hurry.".Locailze());
+            await silver.Say("Especially after accidentally upsetting the locals.".Locailze());
+            await adele.Say("You'd better listen to your elders, orange one.<pause:0.75> People value that around here.".Locailze());
+            await adele.Say("And you shouldn't be in such a rush anyway.<pause:0.5> The road ahead is even tougher than the one that brought you here.".Locailze());
             silversPaw.DOLocalMove(new Vector3(1.2f, -0.5f), 2);
-            await adele.Say("Я же правильно понимаю, что вы направлятесь в Клиффорд?");
+            await adele.Say("Am I right in assuming you're headed for Clifford?".Locailze());
             red.LookAt(adelesEyes);
-            await silver.Say("Так точно, мэм!");
-            await adele.Say("Странный выбор, но это ваше дело.");
-            await adele.Say("Наша ездовая лошадка уже отправилась туда за лекарствами и приедет только поздно вечером.");
-            await adele.Say("Следующая отправка в город завтра утром.");
-            await silver.Say("Получается, нам до тех пор лучше сидеть и не отсвечивать?");
-            await adele.Say("Именно,<pause:0.5> только, если злобный леший и гнусный клиффордец не захотят испытывать терпение местных дальше.");
-            await silver.Say("Прекрасно!<pause:0.75> Тогда мы посидим здесь тихонько и не будем никому мешать.");
-            await adele.Say("Умная лисичка.");
+            await silver.Say("Yes, ma'am!".Locailze());
+            await adele.Say("Strange choice, but that's your business.".Locailze());
+            await adele.Say("Our cart horse already left for Clifford to pick up medicine. He won't be back until late tonight.".Locailze());
+            await adele.Say("The next trip to town is tomorrow morning.".Locailze());
+            await silver.Say("So until then, we'd better stay put and keep a low profile?".Locailze());
+            await adele.Say("Exactly.<pause:0.5> Unless the evil Leshy and the filthy Clifforder want to push the locals' patience even further.".Locailze());
+            await silver.Say("Perfect!<pause:0.75> Then we'll sit here quietly and stay out of everyone's way.".Locailze());
+            await adele.Say("Smart little fox.".Locailze());
 
             await UniTask.Delay(1000);
-            await red.Say("...");
-            await red.Say("Им везут лекарства из города.<pause:0.5> Они что болеют?");
-            await adele.Say("Дап.<pause:0.75> Эти растяпы умудрились подхватить какую-то болячку и теперь половина деревни простудилась.");
-            await adele.Say("От того они и боятся.");
-            await adele.Say("Думают, что это какая-то нечистая сила или происки клиффордцев.");
-            await adele.Say("Или все вместе.");
+            await red.Say("...".Locailze());
+            await red.Say("They are waiting for medicines from the city.<pause:0.5> Are they sick?".Locailze());
+            await adele.Say("Yep.<pause:0.75> Those scatterbrains managed to catch some kind of illness, and now half the village's come down with it.".Locailze());
+            await adele.Say("That's why they're so afraid.".Locailze());
+            await adele.Say("They think it's some evil spirit, or the people of Clifford are behind it.".Locailze());
+            await adele.Say("Or both.".Locailze());
 
-            await red.Say("Вообще, <pause:0.5> мы можем помочь.");
+            await red.Say("Actually,<pause:0.5> we could help.".Locailze());
             silver.LookAt(redsEyes);
-            await silver.Say("Рыжий,<pause:0.5> у тебя, конечно, много талантов,<pause:0.5> но ты не доктор.");
+            await silver.Say("Red,<pause:0.5> you've got a lot of talents,<pause:0.5> but you're not a doctor.".Locailze());
             red.LookAt(silversEyes);
-            await silver.Say("А еще нам здесь не очень рады.");
+            await silver.Say("And besides, we're not exactly welcome here.".Locailze());
             red.LookAt(adelesEyes);
-            await adele.Say("Нет-нет, серенький,<pause:0.5> пусть продолжает.");
-            await adele.Say("Что ты конкретно предлагаешь, оранжевенький?");
-            await red.Say("У вас есть всякие травки-муравки,<pause:0.5> а у меня есть с собой куча кухонной утвари!");
-            await red.Say("А еще я знаю рецепт здоровья!");
-            await red.Say("Мы можем наварить самого вкусного и самого лекарственного куриного супчика на всю деревню!");
+            await adele.Say("No, no, gray one.<pause:0.5> Let him finish.".Locailze());
+            await adele.Say("So, what exactly are you proposing, orange one?".Locailze());
+            await red.Say("You've got all sorts of herbs here,<pause:0.5> and I've got a whole bunch of cooking gear with me!".Locailze());
+            await red.Say("And I know the recipe for good health!".Locailze());
+            await red.Say("We can make the tastiest, most healing chicken soup this village's ever had!".Locailze());
             silver.LookAt(adelesEyes);
-            await adele.Say("Это...<pause:1> довольно хорошая идея.");
-            await adele.Say("Им и вправду должно стать полегче от хорошего супа.");
-            await adele.Say("Я попробую убедить местных потерпеть вас чуть больше.");
-            await silver.Say("Ну,<pause:0.5> раз мы уже ввязались, я могу помочь с травами.");
-            await adele.Say("А ты умеешь?");
-            await silver.Say("Наша мама увлекается флористикой и кое чему меня научила.");
-            await silver.Say("Я не знаю их лечебных свойств, но я умею собирать.");
-            await silver.Say("А еще я могу делать то, что вы скажете и не мешаться под рукой.");
-            await adele.Say("Годится.");
-            await adele.Say("И раз мы теперь сотрудничаем и я не смогу вас игнорировать, давайте знакомиться.");
-            await adele.Say("Адель.");
-            await silver.Say("Серый.");
-            await red.Say("Рыжий.");
+            await adele.Say("That's...<pause:1> actually a pretty good idea.".Locailze());
+            await adele.Say("A good bowl of soup really should help them feel better.".Locailze());
+            await adele.Say("I'll see if I can convince the locals to put up with you a little longer.".Locailze());
+            await silver.Say("Well,<pause:0.5> since we're already involved, I can help with the herbs.".Locailze());
+            await adele.Say("Do you know anything about herbs?".Locailze());
+            await silver.Say("Our mom's really into floristry, so she taught me a thing or two.".Locailze());
+            await silver.Say("I don't know what they're used for medicinally, but I do know how to gather them.".Locailze());
+            await silver.Say("And I can follow instructions without getting in the way.".Locailze());
+            await adele.Say("That'll do.".Locailze());
+            await adele.Say("And since we're working together now, and I won't be able to ignore you anymore, we should introduce ourselves.".Locailze());
+            await adele.Say("Adele.".Locailze());
+            await silver.Say("Silver.".Locailze());
+            await red.Say("Red.".Locailze());
             await UniTask.Delay(1000);
-            await adele.Say("Как оригинально.");
-            await silver.Say("Ох,<pause:0.5> поверьте,<pause:0.5> могло быть гораздо хуже.");
+            await adele.Say("How original.".Locailze());
+            await silver.Say("Oh,<pause:0.5> trust me,<pause:0.5> it could've been much worse.".Locailze());
             impactSound.Play();
             await Camera.main.ShakeCamera(1);
             await UniTask.Delay(500);
-            await red.Say("Что это было?");
-            await adele.Say("Не обращайте внимания.");
-            await adele.Say("Пойдемте, Рыжий и Серый,<pause:0.5> у нас еще много работы.");
+            await red.Say("What was that?".Locailze());
+            await adele.Say("Don't worry about it.".Locailze());
+            await adele.Say("Come on, Red and Silver,<pause:0.5> we've still got plenty of work to do.".Locailze());
         }
     }
 }

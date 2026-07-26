@@ -917,6 +917,1045 @@ MonoBehaviour:
     m_Key: The customers in line have patience too.
     m_Metadata:
       m_Items: []
+  - m_Id: 95020020216782848
+    m_Key: Wow, what a trip.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948672
+    m_Key: So, where are we now?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948673
+    m_Key: Somewhere not too far from Clifford.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948674
+    m_Key: The signal's really bad out here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948675
+    m_Key: So we'll have to improvise from here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948676
+    m_Key: Catch another bus<pause:0.5> or ask the locals for directions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948677
+    m_Key: t<volume:0>...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948678
+    m_Key: t<volume:1>Though<pause:1> that might be a bit of a problem.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948679
+    m_Key: Are we lost?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948680
+    m_Key: Oh, don't be so dramatic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948681
+    m_Key: Worst case, we wait here for the next bus and head back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948682
+    m_Key: No way!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95032048352387072
+    m_Key: We didn't come all the way out here just to give up now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95027885946068992
+    m_Key: Hey, where are you going?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948685
+    m_Key: To find that stupid little town.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948686
+    m_Key: And when I get there, I'm gonna cook an outrageous amount of spaghetti!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948687
+    m_Key: And the locals are gonna have to eat every last bit of it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948688
+    m_Key: And they will love it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948689
+    m_Key: '!!!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95028971859763200
+    m_Key: I mean, where are you going?<pause:0.75> You just walked right past a
+      sign.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948691
+    m_Key: Oh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948692
+    m_Key: It says Clifford's just down this trail.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948693
+    m_Key: So what are we waiting for?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948694
+    m_Key: Tremble, people of Clifford!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948695
+    m_Key: Red is coming!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948696
+    m_Key: And the great and terrible Red isn't scared of a creepy forest like this?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948697
+    m_Key: A little.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948698
+    m_Key: But it's not as scary as turning back!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948699
+    m_Key: I'm sure<pause:0.75> it's not as bad as it looks.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948700
+    m_Key: One last push, and we'll be relaxing in Clifford after the trip.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948701
+    m_Key: And sipping cocktails with little umbrellas? (question)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948702
+    m_Key: And sipping cocktails with little umbrellas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948703
+    m_Key: Sweet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948704
+    m_Key: When did you change your hat?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948705
+    m_Key: When our road trip turned into a hike, dummy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948706
+    m_Key: Look.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948707
+    m_Key: I think we made it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151254540288
+    m_Key: No<pause:0.5>, this isn't Clifford.<pause:0.5> This is Riverside.<pause:0.5>
+      See?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948709
+    m_Key: Damn.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948710
+    m_Key: Hey,<pause:0.75> look on the bright side. At least we're not lost anymore!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948711
+    m_Key: And would you look at that!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948712
+    m_Key: A local!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948713
+    m_Key: Hi there.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948714
+    m_Key: AAAH!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151283900416
+    m_Key: That damn Clifforder brought Leshy into our village!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948716
+    m_Key: We're doomed!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151283900417
+    m_Key: Me? Leshy?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948718
+    m_Key: Don't move, forest monster!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948719
+    m_Key: Yeah,<pause:0.5> definitely you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948720
+    m_Key: Silence, you filthy Clifforder!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948721
+    m_Key: First you brought disease upon us!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95060151283900418
+    m_Key: And now you've decided to sic Leshy on us!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948723
+    m_Key: We won't let that happen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948724
+    m_Key: I think there's been a huge misunderstanding.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948725
+    m_Key: We're not from Clifford.<pause:0.5> We were actually just about to leave.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020241948726
+    m_Key: You're not getting away that easily after everything you've done!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142976
+    m_Key: Uh-oh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142977
+    m_Key: Alright,<pause:0.5> break it up.<pause:0.5> Nothing to see here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142978
+    m_Key: These two are coming with me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142979
+    m_Key: But they're from Clifford!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142980
+    m_Key: Where they're from is none of your concern.<pause:0.75> You've still got
+      plenty of work to do today!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142981
+    m_Key: All of you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142982
+    m_Key: But!..
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142983
+    m_Key: No buts!<pause:0.75> Hasn't anyone put a curse on you in a while?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142984
+    m_Key: Tch!<pause:0.5> Witch!<pause:0.5> Come on,<pause:0.5> the hag's found
+      herself a new pair of toys.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142985
+    m_Key: WHO ARE YOU CALLING A HAG, YOU PEST?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142986
+    m_Key: Yikes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142987
+    m_Key: t<volume:1>*sigh*<pause:0.75> Follow me,<pause:0.5> before they change
+      their minds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142988
+    m_Key: Your place is so cozy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142989
+    m_Key: What's all this stuff on the shelves?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142990
+    m_Key: Don't touch the antiques.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142991
+    m_Key: Wasn't planning to.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142992
+    m_Key: ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142993
+    m_Key: Thank you for standing up for us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142994
+    m_Key: Yeah,<pause:0.5> if it weren't for you, they would've eaten us alive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142995
+    m_Key: '*sigh*<pause:0.5> They wouldn''t have eaten anyone,<pause:0.5> they''re
+      not monsters.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142996
+    m_Key: They're just on edge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142997
+    m_Key: Most likely, they would've just chased you out of Riverside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142998
+    m_Key: Worst case, they would've shouted a few nasty things after you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246142999
+    m_Key: Actually, it suits us.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143000
+    m_Key: We were just passing through anyway. We weren't planning to stick around
+      this godforsaken...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143001
+    m_Key: What a shame.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143002
+    m_Key: We'd hate to leave such a lovely place in such a hurry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95336547382091776
+    m_Key: Especially after accidentally upsetting the locals.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143004
+    m_Key: You'd better listen to your elders, orange one.<pause:0.75> People value
+      that around here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143005
+    m_Key: And you shouldn't be in such a rush anyway.<pause:0.5> The road ahead
+      is even tougher than the one that brought you here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143006
+    m_Key: Am I right in assuming you're headed for Clifford?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143007
+    m_Key: Yes, ma'am!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143008
+    m_Key: Strange choice, but that's your business.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143009
+    m_Key: Our cart horse already left for Clifford to pick up medicine. He won't
+      be back until late tonight.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143010
+    m_Key: The next trip to town is tomorrow morning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143011
+    m_Key: So until then, we'd better stay put and keep a low profile?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95336547411451904
+    m_Key: Exactly.<pause:0.5> Unless the evil Leshy and the filthy Clifforder want
+      to push the locals' patience even further.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143013
+    m_Key: Perfect!<pause:0.75> Then we'll sit here quietly and stay out of everyone's
+      way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143014
+    m_Key: Smart little fox.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143015
+    m_Key: They are waiting for medicines from the city.<pause:0.5> Are they sick?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143016
+    m_Key: Yep.<pause:0.75> Those scatterbrains managed to catch some kind of illness,
+      and now half the village's come down with it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143017
+    m_Key: That's why they're so afraid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143018
+    m_Key: They think it's some evil spirit, or the people of Clifford are behind
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143019
+    m_Key: Or both.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143020
+    m_Key: Actually,<pause:0.5> we could help.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143021
+    m_Key: Red,<pause:0.5> you've got a lot of talents,<pause:0.5> but you're not
+      a doctor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143022
+    m_Key: And besides, we're not exactly welcome here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143023
+    m_Key: No, no, gray one.<pause:0.5> Let him finish.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143024
+    m_Key: So, what exactly are you proposing, orange one?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143025
+    m_Key: You've got all sorts of herbs here,<pause:0.5> and I've got a whole bunch
+      of cooking gear with me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143026
+    m_Key: And I know the recipe for good health!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143027
+    m_Key: We can make the tastiest, most healing chicken soup this village's ever
+      had!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143028
+    m_Key: That's...<pause:1> actually a pretty good idea.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143029
+    m_Key: A good bowl of soup really should help them feel better.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143030
+    m_Key: I'll see if I can convince the locals to put up with you a little longer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143031
+    m_Key: Well,<pause:0.5> since we're already involved, I can help with the herbs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143032
+    m_Key: Do you know anything about herbs?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143033
+    m_Key: Our mom's really into floristry, so she taught me a thing or two.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143034
+    m_Key: I don't know what they're used for medicinally, but I do know how to gather
+      them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143035
+    m_Key: And I can follow instructions without getting in the way.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143036
+    m_Key: That'll do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143037
+    m_Key: And since we're working together now, and I won't be able to ignore you
+      anymore, we should introduce ourselves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143038
+    m_Key: Adele.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143039
+    m_Key: Silver.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143040
+    m_Key: Red.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143041
+    m_Key: How original.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143042
+    m_Key: Oh,<pause:0.5> trust me,<pause:0.5> it could've been much worse.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143043
+    m_Key: What was that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143044
+    m_Key: Don't worry about it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143045
+    m_Key: Come on, Red and Silver,<pause:0.5> we've still got plenty of work to
+      do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143046
+    m_Key: Alright,<pause:0.5> all our ingredients and herbs are at your disposal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143047
+    m_Key: Don't make me regret this, orange one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143048
+    m_Key: I've got this.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143049
+    m_Key: Making medicinal soup can't be that much harder than cooking regular food.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143050
+    m_Key: I certainly hope you're right.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143051
+    m_Key: I'm about to give those germs such a beating,<pause:0.5> they won't know
+      what hit 'em.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143052
+    m_Key: Hey, this isn't so hard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143053
+    m_Key: Don't celebrate too soon, orange one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143054
+    m_Key: Everyone who's come to you so far isn't really sick yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143055
+    m_Key: They're just feeling a little under the weather.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143056
+    m_Key: I've brought you your first real patient.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143057
+    m_Key: Send them in.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143058
+    m_Key: I'm<pause:0.75> not eating Leshy's poison!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143059
+    m_Key: I'm not Leshy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143060
+    m_Key: And I'm not listening to him either!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143061
+    m_Key: '*sigh*<pause:0.75> You will if you want to get better.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143062
+    m_Key: Then I choose to stay sick!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143063
+    m_Key: No,<pause:0.5> you choose to get better, you<pause:0.5> ungrateful jackass.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143064
+    m_Key: And that's not a request.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143065
+    m_Key: Good. Then keep your mouth shut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143066
+    m_Key: Don't pay any attention to the nonsense this idiot says.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143067
+    m_Key: He's been burning up with a fever since yesterday.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143068
+    m_Key: And with his illness, he spoils the lives of everyone around him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143069
+    m_Key: Anyone sitting next to him will be harder to cure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143070
+    m_Key: Show me what you've got, orange one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143071
+    m_Key: Whoa!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143072
+    m_Key: Sick customers really are a pain to deal with.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143073
+    m_Key: Damn,<pause:0.5> that wasn't easy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143074
+    m_Key: Told you so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143075
+    m_Key: But fever's one of the easier illnesses to treat.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143076
+    m_Key: The mushroom mix contains rowan berries. They should help him feel better.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143077
+    m_Key: Give it a try.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143078
+    m_Key: Alright,<pause:0.5> I think<pause:0.5> I'm starting to get it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143079
+    m_Key: Good,<pause:0.5> because I don't intend to babysit you all day.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143080
+    m_Key: Call me if something goes wrong.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143081
+    m_Key: t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> No, this is
+      just ridiculous!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143082
+    m_Key: I can't work under these conditions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143084
+    m_Key: It's just impossible!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143083
+    m_Key: This patient of yours is the most stubborn mule in the world!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143085
+    m_Key: Sometimes I think he asks for anything except what he actually needs just
+      to be difficult.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143086
+    m_Key: Adele,<pause:0.5> I need you to yell at him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143087
+    m_Key: Now that's a brilliant idea.<pause:0.5> Anything else?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143088
+    m_Key: I want you to hit him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143089
+    m_Key: Listen here, orange one.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143090
+    m_Key: Vasya is a tough nut to crack,<pause:0.5> he's not easy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143091
+    m_Key: But your brother and I already have our hands full.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143092
+    m_Key: We won't get very far if I have to help you with every difficult patient.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143093
+    m_Key: I have my own work,<pause:0.5> and you have yours.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143094
+    m_Key: So go and handle it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143095
+    m_Key: Hey,<pause:0.5> I'm the one saving your village from an epidemic here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143096
+    m_Key: I could've done exactly what you told me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143097
+    m_Key: Sit quietly in a corner,<pause:0.5> while the locals wait for medicine
+      from the city and keep getting sicker!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143098
+    m_Key: t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Alright, alright,<pause:0.5>
+      you're right,<pause:0.5> I'm sorry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143099
+    m_Key: But I really can't drop my work and keep running back and forth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020246143100
+    m_Key: Then tell me how else I'm supposed to get through to him.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337280
+    m_Key: What is this old wreck?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337281
+    m_Key: This is an oven.<pause:0.5> You know how to use one of these, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337282
+    m_Key: Yeah, I do,<pause:0.5> but how is this supposed to help?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337283
+    m_Key: It has the gift of persuasion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337284
+    m_Key: If someone tastes its baked goods, they'll immediately change their mind,
+      no matter what the argument was about.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337285
+    m_Key: What?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337286
+    m_Key: If you just wanted to get rid of me, you could've said so.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337287
+    m_Key: I promise it'll work.<pause:0.5> Now go,<pause:0.5> your patients are
+      waiting.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337288
+    m_Key: Hopefully this isn't some kind of cruel joke.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337289
+    m_Key: He's doing it again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337290
+    m_Key: Alright,<pause:0.5> this time I'll give him a pretzel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337291
+    m_Key: And he'll magically change his mind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337292
+    m_Key: t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> That sounded
+      so silly.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337293
+    m_Key: Well, I'll be damned.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337294
+    m_Key: It actually works!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337295
+    m_Key: Whoa.<pause:0.5> This piggy is really impatient.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337296
+    m_Key: To serve him in time, I'll have to fire up the oven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337297
+    m_Key: Yeah,<pause:0.5> this should work.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337298
+    m_Key: With this oven, I'm not afraid of anyone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337299
+    m_Key: I'm unstoppable!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337300
+    m_Key: What the heck is that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337301
+    m_Key: Well,<pause:0.5> whatever all that noise is about, it's not my problem.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337302
+    m_Key: Especially when I'm on a break.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337303
+    m_Key: t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337304
+    m_Key: Do you think this counts as a remedy?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337305
+    m_Key: Probably not.<pause:0.5> It's just soup with herbs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337306
+    m_Key: Yeah,<pause:0.5> but then what even counts as a remedy if not soup with
+      herbs?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337307
+    m_Key: Hmm,<pause:0.5> that's<pause:0.75> a very interesting observation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337308
+    m_Key: The apprentice potion maker has surpassed his master!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337309
+    m_Key: Focus!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337310
+    m_Key: Oh, come on,<pause:0.5> it was funny!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337311
+    m_Key: The kitchen is no place for fooling around!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337312
+    m_Key: This is our workshop, and we're creating great things here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337313
+    m_Key: t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> It was still
+      funny though.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337314
+    m_Key: Fine,<pause:0.5> it was a little funny.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337315
+    m_Key: A small victory!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337316
+    m_Key: You're a scallywag!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337317
+    m_Key: Did you hear that?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337318
+    m_Key: This isn't some kind of medicine for illnesses,<pause:0.5> it's just ordinary
+      soup!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337319
+    m_Key: Well, I don't know, Vasya.<pause:0.5> I actually feel better after eating
+      his brew.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337320
+    m_Key: And it's the tastiest soup I've ever had!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337321
+    m_Key: Enjoy it while you can.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337322
+    m_Key: It's obvious he's fattening us up so we'll taste better ourselves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337323
+    m_Key: Have you completely lost your mind?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337324
+    m_Key: You're seriously going to accuse Leshy of something now?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337325
+    m_Key: We would've kicked that Leshy out ourselves if it weren't for that damn
+      witch!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337326
+    m_Key: I'm not Le...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337327
+    m_Key: Wait, did I just hear someone disrespect the great Leshy?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337328
+    m_Key: It wasn't me!<pause:0.5> It was all him!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337329
+    m_Key: Me?!<pause:0.5> I didn't do anything!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337330
+    m_Key: Heheh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337331
+    m_Key: '*sigh*t'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337332
+    m_Key: He broke free!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337333
+    m_Key: Everyone save yourselves!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337334
+    m_Key: Run for your lives!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337335
+    m_Key: Oooh,<pause:0.5> how wonderful!<pause:0.5> We have guests, and you've
+      all put together such a lovely little picnic!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337336
+    m_Key: And nobody invited me, you rascals.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337337
+    m_Key: Boris, go back home now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337338
+    m_Key: We'll bring your food to you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337339
+    m_Key: Go back inside?<pause:0.5> Oh, no way!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337340
+    m_Key: I'm not missing all the fun with our new fluffy friends!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337341
+    m_Key: Boris,<pause:0.5> I'm begging you,<pause:0.5> you'll tear this whole place
+      apart.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337342
+    m_Key: Don't be so dramatic, Adele.<pause:0.5> I don't sneeze that hard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337343
+    m_Key: I'll just sit here with you guys.<pause:0.5> I won't bother anyone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337344
+    m_Key: We get visitors so rarely!<pause:0.5> There's no way I'm missing this!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337345
+    m_Key: Listen carefully, Red.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337346
+    m_Key: Do whatever it takes,<pause:0.5> but don't let him sneeze.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337347
+    m_Key: If he does too hard, we have to rebuild this place from the ruins!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337348
+    m_Key: I won't let you down.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95020020250337349
+    m_Key: The Hippopotamus Oath.
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
