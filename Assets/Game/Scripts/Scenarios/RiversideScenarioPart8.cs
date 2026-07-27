@@ -68,13 +68,13 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
-            /*await Cutscene();
+            await Cutscene();
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
             await TheFirstWave();
             await TheSecondWave();
             await TheThirdWave();
-            await UniTask.Delay(1000);*/
+            await UniTask.Delay(1000);
             await CutsceneAfterWaves();
         }
 
