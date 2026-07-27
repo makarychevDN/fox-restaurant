@@ -963,7 +963,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377408
-    m_Localized: '#ERROR!'
+    m_Localized: "Es suficiente para atender a la mayor\xEDa de ellos."
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377409
@@ -986,7 +986,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377413
-    m_Localized: '#ERROR!'
+    m_Localized: A veces ayuda ganar tiempo,<pause:0.5> pero no lo fuerces demasiado.
     m_Metadata:
       m_Items: []
   - m_Id: 76863787903377414
@@ -1044,7 +1044,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948682
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1De ninguna manera!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948685
@@ -1070,7 +1070,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948691
-    m_Localized: '#ERROR!'
+    m_Localized: Oh.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948692
@@ -1078,11 +1078,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948693
-    m_Localized: '#ERROR!'
+    m_Localized: "\xBFA qu\xE9 estamos esperando?"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948694
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1Tiemblen, habitantes de Clifford!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948695
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948697
-    m_Localized: '#ERROR!'
+    m_Localized: Un poco.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948698
@@ -1116,7 +1116,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948702
-    m_Localized: '#ERROR!'
+    m_Localized: "Y saboreando c\xF3cteles con sombrillitas."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948703
@@ -1137,7 +1137,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948707
-    m_Localized: '#ERROR!'
+    m_Localized: Creo que lo logramos.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948709
@@ -1158,19 +1158,19 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948713
-    m_Localized: '#ERROR!'
+    m_Localized: Hola.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948714
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1AAAH!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948716
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1Estamos perdidos!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948718
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1No te muevas, monstruo del bosque!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020241948719
@@ -1204,7 +1204,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142976
-    m_Localized: '#ERROR!'
+    m_Localized: Oh, oh.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142977
@@ -1221,7 +1221,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142980
-    m_Localized: '#ERROR!'
+    m_Localized: "De d\xF3nde vengan no es asunto tuyo.<pause:0.75> \xA1Todav\xEDa
+      tienes mucho trabajo que hacer hoy!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142981
@@ -1247,7 +1248,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142986
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1Ay!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142987
@@ -1272,7 +1273,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142992
-    m_Localized: '#ERROR!'
+    m_Localized: ...
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142993
@@ -1297,7 +1298,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142998
-    m_Localized: '#ERROR!'
+    m_Localized: "En el peor de los casos, te habr\xEDan gritado algunas cosas desagradables."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246142999
@@ -1361,11 +1362,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143014
-    m_Localized: '#ERROR!'
+    m_Localized: Zorrito inteligente.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143015
-    m_Localized: '#ERROR!'
+    m_Localized: "Est\xE1n esperando medicinas de la ciudad.<pause:0.5> \xBFEst\xE1n
+      enfermos?"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143016
@@ -1374,11 +1376,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143017
-    m_Localized: '#ERROR!'
+    m_Localized: Por eso tienen tanto miedo.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143018
-    m_Localized: '#ERROR!'
+    m_Localized: "Creen que se trata de alg\xFAn esp\xEDritu maligno, o que la gente
+      de Clifford est\xE1 detr\xE1s de todo esto."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143019
@@ -1412,7 +1415,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143026
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1Y conozco la receta para gozar de buena salud!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143027
@@ -1429,7 +1432,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143030
-    m_Localized: '#ERROR!'
+    m_Localized: "Ver\xE9 si puedo convencer a los lugare\xF1os de que te aguanten
+      un poco m\xE1s."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143031
@@ -1452,7 +1456,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143035
-    m_Localized: '#ERROR!'
+    m_Localized: Y puedo seguir instrucciones sin estorbar.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143036
@@ -1486,7 +1490,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143043
-    m_Localized: '#ERROR!'
+    m_Localized: "\xBFQu\xE9 fue eso?"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143044
@@ -1534,11 +1538,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143054
-    m_Localized: '#ERROR!'
+    m_Localized: "Todas las personas que han venido a verte hasta ahora no est\xE1n
+      realmente enfermas todav\xEDa."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143055
-    m_Localized: '#ERROR!'
+    m_Localized: Simplemente no se sienten muy bien.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143056
@@ -1562,11 +1567,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143061
-    m_Localized: '#ERROR!'
+    m_Localized: "*suspiro*<pause:0.75> Lo har\xE1s si quieres mejorar."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143062
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1Entonces elijo seguir enferma!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143063
@@ -1616,11 +1621,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143074
-    m_Localized: '#ERROR!'
+    m_Localized: Te lo dije.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143075
-    m_Localized: '#ERROR!'
+    m_Localized: "Pero la fiebre es una de las enfermedades m\xE1s f\xE1ciles de
+      tratar."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143076
@@ -1637,7 +1643,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143079
-    m_Localized: '#ERROR!'
+    m_Localized: "Bien,<pause:0.5> porque no tengo intenci\xF3n de cuidarte todo
+      el d\xEDa."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143080
@@ -1667,7 +1674,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143086
-    m_Localized: '#ERROR!'
+    m_Localized: Adele,<pause:0.5> Necesito que le grites.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143087
@@ -1675,15 +1682,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143088
-    m_Localized: '#ERROR!'
+    m_Localized: Quiero que le pegues.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143089
-    m_Localized: '#ERROR!'
+    m_Localized: Escucha, naranja.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143090
-    m_Localized: '#ERROR!'
+    m_Localized: "Vasya es un hueso duro de roer,<pause:0.5> no es f\xE1cil."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143091
@@ -1696,7 +1703,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143093
-    m_Localized: '#ERROR!'
+    m_Localized: "Yo tengo mi propio trabajo,<pause:0.5> y t\xFA tienes el tuyo."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143094
@@ -1724,7 +1731,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143099
-    m_Localized: '#ERROR!'
+    m_Localized: Pero realmente no puedo dejar mi trabajo y estar yendo y viniendo
+      constantemente.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020246143100
@@ -1750,7 +1758,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337284
-    m_Localized: '#ERROR!'
+    m_Localized: "Si alguien prueba sus productos horneados, cambiar\xE1 de opini\xF3n
+      inmediatamente, sin importar cu\xE1l fuera el motivo de la discusi\xF3n."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337285
@@ -1800,7 +1809,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337296
-    m_Localized: '#ERROR!'
+    m_Localized: "Para servirle a tiempo, tendr\xE9 que encender el horno."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337297
@@ -1861,7 +1870,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337311
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1La cocina no es lugar para bromas!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337312
@@ -1886,7 +1895,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337317
-    m_Localized: '#ERROR!'
+    m_Localized: "\xBFEscuchaste eso?"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337318
@@ -1917,7 +1926,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337324
-    m_Localized: '#ERROR!'
+    m_Localized: "\xBFEn serio vas a acusar a Leshy de algo ahora?"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337325
@@ -1959,7 +1968,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337334
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1Corran por sus vidas!"
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337335
@@ -2008,11 +2017,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337345
-    m_Localized: '#ERROR!'
+    m_Localized: "Escucha con atenci\xF3n, Rojo."
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337346
-    m_Localized: '#ERROR!'
+    m_Localized: Haz lo que sea necesario, pero no dejes que estornude.
     m_Metadata:
       m_Items: []
   - m_Id: 95020020250337347
@@ -2033,11 +2042,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95028971859763200
-    m_Localized: '#ERROR!'
+    m_Localized: "Quiero decir, \xBFa d\xF3nde vas?<pause:0.75> Acabas de pasar justo
+      al lado de un letrero."
     m_Metadata:
       m_Items: []
   - m_Id: 95032048352387072
-    m_Localized: '#ERROR!'
+    m_Localized: "\xA1No hemos venido hasta aqu\xED para rendirnos ahora!"
     m_Metadata:
       m_Items: []
   - m_Id: 95060151254540288
@@ -2063,7 +2073,145 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 95336547411451904
-    m_Localized: '#ERROR!'
+    m_Localized: "Exactamente.<pause:0.5> A menos que el malvado Leshy y el inmundo
+      Clifforder quieran poner a prueba a\xFAn m\xE1s la paciencia de los lugare\xF1os."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245004103680
+    m_Localized: Ohhh,<pause:0.5> gracias a todos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463808
+    m_Localized: "\xA1No me lo hab\xEDa pasado tan bien en mucho tiempo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463809
+    m_Localized: "En los \xFAltimos d\xEDas, todo el mundo ha estado tan ocupado
+      y preocupado que casi olvid\xE9 lo que se sent\xEDa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463810
+    m_Localized: "\xA1Y ahora estamos todos sentados en la misma mesa otra vez!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463811
+    m_Localized: "\xA1Compartiendo comida deliciosa e historias!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463812
+    m_Localized: "\xA1Y m\xEDrame!<pause:0.5> \xA1Ya puedo sentir que estoy mucho
+      mejor!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463813
+    m_Localized: "\xA1Todos nosotros!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463814
+    m_Localized: "\xA1Todo es gracias a ustedes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463816
+    m_Localized: "\xA1Bravo por Leshy, el doctor!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463817
+    m_Localized: "Vamos, Vasya,<pause:0.5> \xA1sabes lo que tienes que decir!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463819
+    m_Localized: "\xA1Y ahora vengan aqu\xED, les dar\xE9 un abrazo a todos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463820
+    m_Localized: "Boris, \xBFqu\xE9 est\xE1s haciendo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463821
+    m_Localized: "Por muy amable que haya sido Leshy hoy, \xA1sigue siendo un monstruo
+      del bosque!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463822
+    m_Localized: "\xA1Te comer\xE1!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463824
+    m_Localized: "\xC9l ayud\xF3 a mis amigos, \xA1y lo voy a abrazar pase lo que
+      pase!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463825
+    m_Localized: "Boris,<pause:0.5> s\xE9 razonable,<pause:0.5> no lo hagas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463826
+    m_Localized: Sentirse mejor no significa que uno se haya recuperado por completo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463827
+    m_Localized: "\xA1Oh, deja de hacer el rid\xEDculo, cobarde!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463828
+    m_Localized: "\xA1Ya voy!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463829
+    m_Localized: "\xA1Espera un segundo!<pause:0.5> \xA1Entonces no es Leshy en absoluto!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463830
+    m_Localized: "\xA1Es solo un zorrito gru\xF1\xF3n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463831
+    m_Localized: "\xA1Dios m\xEDo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463832
+    m_Localized: "\xBFPor qu\xE9 no me dijiste que no eras Leshy?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463834
+    m_Localized: "Espero que est\xE9s orgulloso de ti mismo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463835
+    m_Localized: Por supuesto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463836
+    m_Localized: Basta de peleas, zorritos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463837
+    m_Localized: "Venga, hablemos de lo que vamos a hacer contigo a continuaci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463838
+    m_Localized: Oh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95707377475674112
+    m_Localized: <volume:1>Hurra.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95708385291427840
+    m_Localized: "\xA1Hurra por la t\xEDa Adele, el Clifforder y el Leshy!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95711446944604160
+    m_Localized: "\xA1Me da igual, aunque fuera el mism\xEDsimo diablo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95711446944604161
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Voy a
+      estallar de indignaci\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95712882495479808
+    m_Localized: Clifford
     m_Metadata:
       m_Items: []
   references:

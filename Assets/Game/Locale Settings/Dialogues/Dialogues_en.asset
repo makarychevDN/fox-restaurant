@@ -2029,6 +2029,141 @@ MonoBehaviour:
       want to push the locals' patience even further.
     m_Metadata:
       m_Items: []
+  - m_Id: 95703245004103680
+    m_Localized: Ohhh,<pause:0.5> thank you, everyone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463808
+    m_Localized: I haven't had such a good time in a long time!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463809
+    m_Localized: These past few days, everyone has been so busy and worried that
+      I almost forgot what it felt like.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463810
+    m_Localized: And now we're all sitting at the same table again!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463811
+    m_Localized: Sharing delicious food and stories!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463812
+    m_Localized: And look at me!<pause:0.5> I can already feel that I'm doing so
+      much better!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463813
+    m_Localized: All of us!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463814
+    m_Localized: It's all thanks to you guys!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463816
+    m_Localized: Hooray for Leshy the doctor!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463817
+    m_Localized: Come on, Vasya,<pause:0.5> you know what you're supposed to say!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463819
+    m_Localized: And now come here, I'll give you all a hug!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463820
+    m_Localized: Boris, what are you doing?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463821
+    m_Localized: No matter how kind Leshy has been today, he's still a forest monster!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463822
+    m_Localized: He'll eat you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463824
+    m_Localized: He helped my friends, and I'm going to hug him no matter what!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463825
+    m_Localized: Boris,<pause:0.5> be reasonable,<pause:0.5> don't.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463826
+    m_Localized: Feeling better doesn't mean you've fully recovered yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463827
+    m_Localized: Oh, stop putting on a show, you scaredy-cat!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463828
+    m_Localized: I'm coming!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463829
+    m_Localized: Wait a second!<pause:0.5> So he's not Leshy at all!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463830
+    m_Localized: He's just a grumpy little fox!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463831
+    m_Localized: Oh my gosh!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463832
+    m_Localized: Why didn't you tell me you weren't Leshy?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463834
+    m_Localized: I hope you're proud of yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463835
+    m_Localized: Of course.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463836
+    m_Localized: Enough bickering, little foxes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463837
+    m_Localized: Come on, let's discuss what we're going to do with you next.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95703245033463838
+    m_Localized: Oh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95707377475674112
+    m_Localized: <volume:1>Hooray.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95708385291427840
+    m_Localized: Hooray for Aunty Adele,<pause:0.5> the Clifforder, and Leshy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95711446944604160
+    m_Localized: I don't care, even if he were the devil himself!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95711446944604161
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> I'm going
+      to burst with indignation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 95712882495479808
+    m_Localized: Clifford
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

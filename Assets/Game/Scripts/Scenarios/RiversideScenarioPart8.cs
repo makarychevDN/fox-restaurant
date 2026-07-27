@@ -68,13 +68,13 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
         {
-            await Cutscene();
+            /*await Cutscene();
             encounter.ItemSpawnTimer.SetBlocked(false);
             encounter.GarbageCan.SetBlocked(false);
             await TheFirstWave();
             await TheSecondWave();
             await TheThirdWave();
-            await UniTask.Delay(1000);
+            await UniTask.Delay(1000);*/
             await CutsceneAfterWaves();
         }
 
@@ -241,6 +241,7 @@ namespace foxRestaurant
         
         private async UniTask CutsceneAfterWaves()
         {
+            encounter.ItemsOperations.ClearAllTheItems();
             encounter.BlockInput();
             cookPositionController.ChangePosition(new Vector3(0, -9.7f));
             await UniTask.Delay(200);
@@ -276,40 +277,40 @@ namespace foxRestaurant
 
             await UniTask.Delay(1000);
             RedAndSilverLookAt(boris.transform);
-            await boris.Say("Охх,<pause:0.5> спасибо ребята.");
-            await boris.Say("Я давно уже так славно не проводил время!");
-            await boris.Say("Последние дни все так суетились и переживали, что я уже почти забыл, каково это.");
-            await boris.Say("И вот мы снова за одним столом!");
-            await boris.Say("Делимся вкусностями и историями!");
-            await boris.Say("И посмотрите на меня!<pause:0.5> Я уже чувствую, что мне стало гораздо лучше!");
-            await boris.Say("Всем нам!");
-            await boris.Say("Это все благодаря вам, ребята!");
+            await boris.Say("Ohhh,<pause:0.5> thank you, everyone.".Locailze());
+            await boris.Say("I haven't had such a good time in a long time!".Locailze());
+            await boris.Say("These past few days, everyone has been so busy and worried that I almost forgot what it felt like.".Locailze());
+            await boris.Say("And now we're all sitting at the same table again!".Locailze());
+            await boris.Say("Sharing delicious food and stories!".Locailze());
+            await boris.Say("And look at me!<pause:0.5> I can already feel that I'm doing so much better!".Locailze());
+            await boris.Say("All of us!".Locailze());
+            await boris.Say("It's all thanks to you guys!".Locailze());
             RedAndSilverLookAt(runningPeople[0].transform);
-            await runningPeople[0].Say("Ура тетушке Адель,<pause:0.5> клиффордцу и лешему!");
+            await runningPeople[0].Say("Hooray for Aunty Adele,<pause:0.5> the Clifforder, and Leshy!".Locailze());
             RedAndSilverLookAt(runningPeople[1].transform);
-            await runningPeople[1].Say("Ура лешему-доктору!");
+            await runningPeople[1].Say("Hooray for Leshy the doctor!".Locailze());
             RedAndSilverLookAt(runningPeople[2].transform);
-            await runningPeople[2].Say("<volume:0>...");
+            await runningPeople[2].Say("t<volume:0>...".Locailze());
             RedAndSilverLookAt(boris.transform);
-            await boris.Say("Ну же, Вася,<pause:0.5> ты знаешь, что нужно сказать!");
+            await boris.Say("Come on, Vasya,<pause:0.5> you know what you're supposed to say!".Locailze());
             RedAndSilverLookAt(runningPeople[2].transform);
-            await runningPeople[2].Say("...");
-            await runningPeople[2].Say("<volume:1>Ура.");
+            await runningPeople[2].Say("...".Locailze());
+            await runningPeople[2].Say("t<volume:1>Hooray.".Locailze());
             RedAndSilverLookAt(boris.transform);
-            await boris.Say("А теперь идите сюда, я вас всех обниму!");
+            await boris.Say("And now come here, I'll give you all a hug!".Locailze());
             RedAndSilverLookAt(runningPeople[0].transform);
-            await runningPeople[0].Say("Боря, ты чего?!");
-            await runningPeople[0].Say("Каким бы радушным леший сегодня не был, он все еще лесное чудище!");
-            await runningPeople[0].Say("Он же тебя сожрет!");
+            await runningPeople[0].Say("Boris, what are you doing?!".Locailze());
+            await runningPeople[0].Say("No matter how kind Leshy has been today, he's still a forest monster!".Locailze());
+            await runningPeople[0].Say("He'll eat you!".Locailze());
             RedAndSilverLookAt(boris.transform);
-            await boris.Say("Да будь он хоть сам дьявол!");
-            await boris.Say("Он помог моим друзьям и я его обниму чего бы это ни стоило!");
+            await boris.Say("I don't care, even if he were the devil himself!".Locailze());
+            await boris.Say("He helped my friends, and I'm going to hug him no matter what!".Locailze());
             RedAndSilverLookAt(adelesEye);
-            await adele.Say("Боря,<pause:0.5> будь благоразумен,<pause:0.5> не надо.");
-            await adele.Say("То, что тебе стало лучше, еще не значит, что ты выздоровел полностью.");
+            await adele.Say("Boris,<pause:0.5> be reasonable,<pause:0.5> don't.".Locailze());
+            await adele.Say("Feeling better doesn't mean you've fully recovered yet.".Locailze());
             RedAndSilverLookAt(boris.transform);
-            await boris.Say("Ох, хватит ломать комедию, недотрога!");
-            await boris.Say("Я иду!");
+            await boris.Say("Oh, stop putting on a show, you scaredy-cat!".Locailze());
+            await boris.Say("I'm coming!".Locailze());
             await UniTask.Delay(1000);
             redsPoofEffect.Play();
             redsLeaves.transform.position += Vector3.up * 3;
@@ -338,22 +339,22 @@ namespace foxRestaurant
 
             await UniTask.Delay(3500);
 
-            await red.Say("Во дела.");
+            await red.Say("Oh...".Locailze());
 
             RedAndSilverLookAt(runningPeoplePoofEffects[0].transform);
-            await runningPeople[0].Say("Погодите-ка!<pause:0.5> Так это никакой и не леший!");
+            await runningPeople[0].Say("Wait a second!<pause:0.5> So he's not Leshy at all!".Locailze());
             RedAndSilverLookAt(runningPeoplePoofEffects[1].transform);
-            await runningPeople[1].Say("Это просто ворчливый лисенок!");
+            await runningPeople[1].Say("He's just a grumpy little fox!".Locailze());
             silver.LookAt(redsEyes);
             red.LookAt(silversEyes);
-            await silver.Say("Боже мой!");
-            await silver.Say("Почему ты мне сразу не сказал, что ты не леший?!");
-            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Я сейчас лопну от возмущения.");
-            await red.Say("Я надеюсь, ты гордишься собой.");
-            await silver.Say("Разумеется.");
+            await silver.Say("Oh my gosh!");
+            await silver.Say("Why didn't you tell me you weren't Leshy?".Locailze());
+            await red.Say("t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> I'm going to burst with indignation.".Locailze());
+            await red.Say("I hope you're proud of yourself.".Locailze());
+            await silver.Say("Of course.".Locailze());
             RedAndSilverLookAt(adelesEye);
-            await adele.Say("Хватит препираться, лисятки.");
-            await adele.Say("Пойдемте, обсудим, что делать с вами дальше.");
+            await adele.Say("Enough bickering, little foxes.".Locailze());
+            await adele.Say("Come on, let's discuss what we're going to do with you next.".Locailze());
         }
 
         private void RedAndSilverLookAt(Transform target)
