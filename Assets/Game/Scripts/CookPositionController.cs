@@ -11,10 +11,15 @@ namespace foxRestaurant
 
         public void HoverSlot(ItemSlot itemSlot)
         {
+            ChangePosition(itemSlot.transform.position + Vector3.forward * 10);
+        }
+
+        public void ChangePosition(Vector3 position)
+        {
             changePositionSound.pitch = Random.Range(0.25f, 1.75f);
             changePositionSound.Play();
             animator.SetBool("readyToSlice", true);
-            transform.DOMove(itemSlot.transform.position + Vector3.forward * 10, 0.1f);
+            transform.DOMove(position, 0.1f);
             Squeeze();
         }
 

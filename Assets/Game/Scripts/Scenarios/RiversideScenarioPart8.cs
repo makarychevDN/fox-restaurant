@@ -10,11 +10,19 @@ namespace foxRestaurant
     public class RiversideScenarioPart8 : BaseScenario<RestaurantEncounter>
     {
         [SerializeField] private Character red;
+        [SerializeField] private CookPositionController cookPositionController;
         [SerializeField] private Character adele;
+        [SerializeField] private Character silver;
         [SerializeField] private Character boris;
         [SerializeField] private Transform adelesEye;
+        [SerializeField] private Transform silversEyes;
+        [SerializeField] private Transform redsEyes;
+        [SerializeField] private Transform redsLeaves;
+        [SerializeField] private List<Transform> fallingLeaves;
+        [SerializeField] private ParticleSystem redsPoofEffect;
         [SerializeField] private ParticleSystem borisPoofEffect;
         [SerializeField] private ParticleSystem adelePoofEffect;
+        [SerializeField] private ParticleSystem silversPoofEffect;
         [SerializeField] private List<Character> runningPeople;
         [SerializeField] private List<ParticleSystem> runningPeoplePoofEffects;
         [SerializeField] private AudioSource successSound;
@@ -55,6 +63,7 @@ namespace foxRestaurant
         protected override void InitTyped(RestaurantEncounter encounter)
         {
             this.encounter = encounter;
+            runningPeople.ForEach(p => p.SetDialoguePopUpCentering(DialogueDisplayer.Centering.Center));
         }
 
         protected override async UniTask StartScenarioTyped(RestaurantEncounter encounter)
@@ -65,11 +74,12 @@ namespace foxRestaurant
             await TheFirstWave();
             await TheSecondWave();
             await TheThirdWave();
+            await UniTask.Delay(1000);
+            await CutsceneAfterWaves();
         }
 
         private async UniTask Cutscene()
         {
-            red.LookAt(boris.transform);
             await UniTask.Delay(1000);
             await BorisSneeze();
 
@@ -122,7 +132,7 @@ namespace foxRestaurant
             await adele.Say("Listen carefully, Red.".Locailze());
             await adele.Say("Do whatever it takes,<pause:0.5> but don't let him sneeze.".Locailze());
             await adele.Say("If he does too hard, we have to rebuild this place from the ruins!".Locailze());
-            await red.Say("I won't let you down.");
+            await red.Say("I won't let you down.".Locailze());
             await red.Say("The Hippopotamus Oath.".Locailze());
 
             adele.gameObject.SetActive(false);
@@ -227,6 +237,129 @@ namespace foxRestaurant
                     new(cow),
                 }
             });
-        }        
+        }
+        
+        private async UniTask CutsceneAfterWaves()
+        {
+            encounter.BlockInput();
+            cookPositionController.ChangePosition(new Vector3(0, -9.7f));
+            await UniTask.Delay(200);
+            silver.LookAt(redsEyes);
+            red.LookAt(adelesEye.transform);
+            adele.gameObject.SetActive(true);
+            adelePoofEffect.Play();
+            poofSound.Play();
+            await UniTask.Delay(1000);
+
+            red.LookAt(silversEyes.transform);
+            silver.gameObject.SetActive(true);
+            silversPoofEffect.Play();
+            poofSound.Play();
+            await UniTask.Delay(1000);
+
+            RedAndSilverLookAt(boris.transform);
+            boris.transform.position = new Vector3(5, -1);
+            borisPoofEffect.transform.position = new Vector3(5, 1.5f);
+            boris.gameObject.SetActive(true);
+            borisPoofEffect.Play();
+            poofSound.Play();
+            await UniTask.Delay(250);
+
+            for (int i = 0; i < runningPeople.Count; i++)
+            {
+                RedAndSilverLookAt(runningPeople[i].transform);
+                runningPeople[i].gameObject.SetActive(true);
+                runningPeoplePoofEffects[i].Play();
+                poofSound.Play();
+                await UniTask.Delay(250);
+            }
+
+            await UniTask.Delay(1000);
+            RedAndSilverLookAt(boris.transform);
+            await boris.Say("Охх,<pause:0.5> спасибо ребята.");
+            await boris.Say("Я давно уже так славно не проводил время!");
+            await boris.Say("Последние дни все так суетились и переживали, что я уже почти забыл, каково это.");
+            await boris.Say("И вот мы снова за одним столом!");
+            await boris.Say("Делимся вкусностями и историями!");
+            await boris.Say("И посмотрите на меня!<pause:0.5> Я уже чувствую, что мне стало гораздо лучше!");
+            await boris.Say("Всем нам!");
+            await boris.Say("Это все благодаря вам, ребята!");
+            RedAndSilverLookAt(runningPeople[0].transform);
+            await runningPeople[0].Say("Ура тетушке Адель,<pause:0.5> клиффордцу и лешему!");
+            RedAndSilverLookAt(runningPeople[1].transform);
+            await runningPeople[1].Say("Ура лешему-доктору!");
+            RedAndSilverLookAt(runningPeople[2].transform);
+            await runningPeople[2].Say("<volume:0>...");
+            RedAndSilverLookAt(boris.transform);
+            await boris.Say("Ну же, Вася,<pause:0.5> ты знаешь, что нужно сказать!");
+            RedAndSilverLookAt(runningPeople[2].transform);
+            await runningPeople[2].Say("...");
+            await runningPeople[2].Say("<volume:1>Ура.");
+            RedAndSilverLookAt(boris.transform);
+            await boris.Say("А теперь идите сюда, я вас всех обниму!");
+            RedAndSilverLookAt(runningPeople[0].transform);
+            await runningPeople[0].Say("Боря, ты чего?!");
+            await runningPeople[0].Say("Каким бы радушным леший сегодня не был, он все еще лесное чудище!");
+            await runningPeople[0].Say("Он же тебя сожрет!");
+            RedAndSilverLookAt(boris.transform);
+            await boris.Say("Да будь он хоть сам дьявол!");
+            await boris.Say("Он помог моим друзьям и я его обниму чего бы это ни стоило!");
+            RedAndSilverLookAt(adelesEye);
+            await adele.Say("Боря,<pause:0.5> будь благоразумен,<pause:0.5> не надо.");
+            await adele.Say("То, что тебе стало лучше, еще не значит, что ты выздоровел полностью.");
+            RedAndSilverLookAt(boris.transform);
+            await boris.Say("Ох, хватит ломать комедию, недотрога!");
+            await boris.Say("Я иду!");
+            await UniTask.Delay(1000);
+            redsPoofEffect.Play();
+            redsLeaves.transform.position += Vector3.up * 3;
+            redsLeaves.gameObject.SetActive(false);
+            poofSound.Play();
+            foreach (var leaf in fallingLeaves)
+            {
+                leaf.gameObject.SetActive(true);
+                leaf.DOMove(leaf.transform.position += Vector3.up * 1.5f, 0.2f);
+            }
+            BorisSneeze();
+
+            await UniTask.Delay(200);
+
+            foreach (var leaf in fallingLeaves)
+            {
+                leaf.DOMoveY(leaf.transform.position.y - 10f, 5f)
+                    .SetEase(Ease.Linear);
+
+                leaf.DOMoveX(leaf.transform.position.x + 3f, 0.5f)
+                    .SetLoops(-1, LoopType.Yoyo)
+                    .SetEase(Ease.InOutSine);
+            }
+
+            RedAndSilverLookAt(fallingLeaves[0].transform);
+
+            await UniTask.Delay(3500);
+
+            await red.Say("Во дела.");
+
+            RedAndSilverLookAt(runningPeoplePoofEffects[0].transform);
+            await runningPeople[0].Say("Погодите-ка!<pause:0.5> Так это никакой и не леший!");
+            RedAndSilverLookAt(runningPeoplePoofEffects[1].transform);
+            await runningPeople[1].Say("Это просто ворчливый лисенок!");
+            silver.LookAt(redsEyes);
+            red.LookAt(silversEyes);
+            await silver.Say("Боже мой!");
+            await silver.Say("Почему ты мне сразу не сказал, что ты не леший?!");
+            await red.Say("<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Я сейчас лопну от возмущения.");
+            await red.Say("Я надеюсь, ты гордишься собой.");
+            await silver.Say("Разумеется.");
+            RedAndSilverLookAt(adelesEye);
+            await adele.Say("Хватит препираться, лисятки.");
+            await adele.Say("Пойдемте, обсудим, что делать с вами дальше.");
+        }
+
+        private void RedAndSilverLookAt(Transform target)
+        {
+            red.LookAt(target);
+            silver.LookAt(target);
+        }
     }
 }
