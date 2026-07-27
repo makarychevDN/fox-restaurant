@@ -172,7 +172,9 @@ namespace foxRestaurant
             for (int i = 0; i < 4; i++)
             {
                 await UniTask.Delay(100);
-                spawnedItems.Add(encounter.ItemsSpawner.SpawnFoodItem(encounter, coalData, encounter.SlotsManager.BottomRowSlots[i]));
+                var spawnedItem = encounter.ItemsSpawner.SpawnFoodItem(encounter, coalData, encounter.SlotsManager.BottomRowSlots[i]);
+                (spawnedItem as FoodItem).SetSatiety(1);
+                spawnedItems.Add(spawnedItem);
             }
             int satietySum = spawnedItems.Sum(foodItem => (foodItem as FoodItem).Satiety);
 
