@@ -2214,10 +2214,6 @@ MonoBehaviour:
     m_Localized: Clifford
     m_Metadata:
       m_Items: []
-  - m_Id: 96172733994524672
-    m_Localized: Oh...
-    m_Metadata:
-      m_Items: []
   - m_Id: 96172734023884800
     m_Localized: "Holaaa, peque\xF1o zorro."
     m_Metadata:
@@ -2493,6 +2489,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 96172734095188019
     m_Localized: "\xA1Exactamente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96177215478325248
+    m_Localized: Oh...
     m_Metadata:
       m_Items: []
   references:

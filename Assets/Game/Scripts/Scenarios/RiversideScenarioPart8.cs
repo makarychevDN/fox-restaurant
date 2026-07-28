@@ -339,7 +339,7 @@ namespace foxRestaurant
 
             await UniTask.Delay(3500);
 
-            await red.Say("Oh...".Locailze());
+            await red.Say("Oh... (Во дела.)".Locailze());
 
             RedAndSilverLookAt(runningPeoplePoofEffects[0].transform);
             await runningPeople[0].Say("Wait a second!<pause:0.5> So he's not Leshy at all!".Locailze());
@@ -347,7 +347,7 @@ namespace foxRestaurant
             await runningPeople[1].Say("He's just a grumpy little fox!".Locailze());
             silver.LookAt(redsEyes);
             red.LookAt(silversEyes);
-            await silver.Say("Oh my gosh!");
+            await silver.Say("Oh my gosh!".Locailze());
             await silver.Say("Why didn't you tell me you weren't Leshy?".Locailze());
             await red.Say("t<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> I'm going to burst with indignation.".Locailze());
             await red.Say("I hope you're proud of yourself.".Locailze());
