@@ -2227,6 +2227,291 @@ MonoBehaviour:
     m_Localized: Clifford
     m_Metadata:
       m_Items: []
+  - m_Id: 96172733994524672
+    m_Localized: Oh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884800
+    m_Localized: Salut petit renard.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884801
+    m_Localized: Salut, petit cheval.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884802
+    m_Localized: "Tu pars \xE0 la conqu\xEAte de la grande ville, hein ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884803
+    m_Localized: Pas vraiment,<pause:0.5> bien au contraire.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079104
+    m_Localized: "Nous en avions tellement marre de viser le succ\xE8s en ville que
+      nous avons d\xE9cid\xE9 de commencer quelque part de plus petit."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079105
+    m_Localized: "Clifford\_?<pause:0.5> Petit\_?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079106
+    m_Localized: "Oui,<pause:0.5> l'a toujours \xE9t\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079107
+    m_Localized: "J'ai toujours pens\xE9 que c'\xE9tait immense."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273408
+    m_Localized: "Silver a d\xE9clar\xE9 que Clifford a \xE0 peu pr\xE8s la taille
+      d'un seul district de Metropolis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273409
+    m_Localized: Ouah.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273410
+    m_Localized: J'ai toujours voulu y aller,<pause:0.5> pour voir une grande ville.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273411
+    m_Localized: "Je savais que ce n'\xE9tait pas le plus grand."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187968
+    m_Localized: "Mais j'\xE9tais s\xFBr qu'il devait figurer au moins dans le top
+      dix."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187969
+    m_Localized: "Et maintenant vous me dites \xE7a."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187970
+    m_Localized: "C'est plut\xF4t d\xE9cevant."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187971
+    m_Localized: Alors pourquoi n'y vas-tu pas ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187972
+    m_Localized: Je ne peux pas,<pause:0.5> Je suis encore trop petit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187973
+    m_Localized: Regarde-toi ! Tu es grand et fort !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187974
+    m_Localized: "Tu me tires, moi, mon fr\xE8re, et toute cette charrette, tout
+      seul !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187975
+    m_Localized: Non, <pause:0.5> Je veux dire, je ne suis pas encore assez vieux.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187976
+    m_Localized: "Avez-vous d\xE9j\xE0 essay\xE9 de demander \xE0 une personne plus
+      \xE2g\xE9e de vous emmener en ville ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187977
+    m_Localized: Je ne peux pas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187978
+    m_Localized: "Mon p\xE8re emm\xE8ne des gens \xE0 Clifford et les ram\xE8ne tous
+      les jours."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187979
+    m_Localized: Certains d'entre nous vivent ici mais travaillent en ville, comme
+      tante Adele.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187980
+    m_Localized: "Et je suis cens\xE9 rester au village au cas o\xF9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187981
+    m_Localized: "Pendant l'absence de papa, je suis la seule \xE0 savoir comment
+      man\u0153uvrer le chariot."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187982
+    m_Localized: "Il me dit toujours d'oublier mes responsabilit\xE9s pendant une
+      journ\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187983
+    m_Localized: Pour entrer en ville avec lui.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187984
+    m_Localized: Mais je n'y arrive tout simplement pas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187985
+    m_Localized: Et si quelque chose arrive pendant que je m'amuse ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187986
+    m_Localized: "Comme aujourd'hui, par exemple.<pause:0.5> Vous \xEAtes apparus
+      de nulle part."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187987
+    m_Localized: "Qui t'aurait emmen\xE9 en ville si je n'avais pas \xE9t\xE9 l\xE0
+      ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187988
+    m_Localized: "Je suppose qu'il aurait fallu attendre le matin et y aller avec
+      ton p\xE8re."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187989
+    m_Localized: Et attendre, c'est quelque chose que nous ne pouvons vraiment pas
+      nous permettre en ce moment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187990
+    m_Localized: "Nous avons un pr\xEAt qui nous p\xE8se sur la t\xEAte, et nous
+      devons commencer \xE0 le rembourser d\xE8s que possible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187991
+    m_Localized: "Vous nous avez vraiment bien aid\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187992
+    m_Localized: Petit renard,<pause:0.5>, quel est ton nom ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187993
+    m_Localized: "Rouge.<pause:0.5> Et le v\xF4tre ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187994
+    m_Localized: Je suis Daisy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187995
+    m_Localized: "Enchant\xE9e de faire votre connaissance, Daisy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187996
+    m_Localized: "Rouge,<pause:0.5>, \xE7a fait quoi de vivre dans une ville encore
+      plus grande que Clifford ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187997
+    m_Localized: "Ce n'est... pas l'endroit le plus s\xFBr."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187998
+    m_Localized: "Daisy,<pause: 0.5> pourquoi les habitants de Riverside d\xE9testent-ils
+      autant Clifford, <pause:0.5> mais essaient-ils quand m\xEAme d'y arriver ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187999
+    m_Localized: "Je ne sais pas.<pause:0.5> \xC7a a toujours \xE9t\xE9 une relation
+      compliqu\xE9e."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188000
+    m_Localized: Et puis il y a eu toute cette histoire de nouvelle route.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188001
+    m_Localized: "Ce qui s'est pass\xE9?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188002
+    m_Localized: "Nous avons appris il y a peu qu'ils construisent une route reliant
+      Clifford \xE0 l'autoroute principale."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188003
+    m_Localized: "Nous \xE9tions tous enthousiastes, pensant que le train traverserait
+      notre village et nous offrirait enfin un acc\xE8s facile \xE0 la ville."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188004
+    m_Localized: "Mais il s'av\xE8re qu'ils la construisent \xE0 travers le d\xE9sert
+      plut\xF4t que dans notre for\xEAt pour \xE9conomiser un peu d'argent."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188005
+    m_Localized: "Je ne laisse personne le voir,<pause:0.5> mais<pause:0.5> entre
+      toi et moi,<pause:0.5> \xE7a m'a vraiment fait mal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188006
+    m_Localized: "Si le village avait une route et m\xEAme une seule voiture, je
+      m'inqui\xE9terais beaucoup moins."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188007
+    m_Localized: Je savais que les villageois ne seraient pas en danger sans moi.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188008
+    m_Localized: "Je suis d\xE9sol\xE9."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188009
+    m_Localized: Si jamais vous passez par la ville,<pause:0.5> venez nous rendre
+      visite.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188010
+    m_Localized: Nous ouvrons un restaurant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188011
+    m_Localized: "Nous n'avons pas encore trouv\xE9 de nom, mais vous le reconna\xEEtrez
+      quand vous le verrez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188012
+    m_Localized: Ce sera l'endroit le plus cool du monde ! Vous ne pourrez pas le
+      rater.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188013
+    m_Localized: "Waouh,<pause:0.5> \xE7a a l'air g\xE9nial !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188014
+    m_Localized: J'adorerais !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188015
+    m_Localized: "Et votre soupe \xE9tait vraiment d\xE9licieuse !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188016
+    m_Localized: Je passerai certainement si j'en ai l'occasion !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188017
+    m_Localized: "C'est un march\xE9 conclu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188018
+    m_Localized: "Oh,<pause:0.5>, c'est l'autoroute avec l'arr\xEAt de bus ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188019
+    m_Localized: Exactement !
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

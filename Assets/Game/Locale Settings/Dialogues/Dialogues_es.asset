@@ -2214,6 +2214,287 @@ MonoBehaviour:
     m_Localized: Clifford
     m_Metadata:
       m_Items: []
+  - m_Id: 96172733994524672
+    m_Localized: Oh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884800
+    m_Localized: "Holaaa, peque\xF1o zorro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884801
+    m_Localized: Hola, caballito.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884802
+    m_Localized: "\xBFTe vas a la gran ciudad a triunfar, eh?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884803
+    m_Localized: En realidad no,<pause:0.5> todo lo contrario.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079104
+    m_Localized: "Nos cansamos tanto de intentar triunfar a lo grande en la ciudad
+      que decidimos empezar en un lugar m\xE1s peque\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079105
+    m_Localized: "Clifford?<pause:0.5> \xA1\xBFPeque\xF1o?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079106
+    m_Localized: "S\xED,<pause:0.5> siempre lo ha sido."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079107
+    m_Localized: "Siempre pens\xE9 que era enorme."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273408
+    m_Localized: "Silver dijo que Clifford tiene aproximadamente el tama\xF1o de
+      un solo distrito en Metr\xF3polis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273409
+    m_Localized: Guau.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273410
+    m_Localized: "Siempre he querido llegar all\xED,<pause:0.5> para ver una gran
+      ciudad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273411
+    m_Localized: "Sab\xEDa que no era el m\xE1s grande que exist\xEDa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187968
+    m_Localized: "Pero estaba seguro de que ten\xEDa que estar al menos entre los
+      diez primeros."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187969
+    m_Localized: Y ahora me dices esto.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187970
+    m_Localized: Eso es bastante decepcionante.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187971
+    m_Localized: "\xBFPor qu\xE9 no vas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187972
+    m_Localized: "No puedo,<pause:0.5> Todav\xEDa soy demasiado peque\xF1o."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187973
+    m_Localized: "\xA1M\xEDrate a ti mismo!<pause:0.5> \xA1Eres grande y fuerte!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187974
+    m_Localized: "\xA1Me est\xE1s arrastrando a m\xED, a mi hermano y a todo este
+      carro t\xFA solo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187975
+    m_Localized: "Nooo,<pause:0.5> quiero decir que a\xFAn no tengo la edad suficiente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187976
+    m_Localized: "\xBFAlguna vez has intentado pedirle a alguien mayor que te lleve
+      al centro de la ciudad?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187977
+    m_Localized: No puedo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187978
+    m_Localized: "Mi padre lleva gente a Clifford y la trae de vuelta todos los d\xEDas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187979
+    m_Localized: "Algunos de nosotros vivimos aqu\xED pero trabajamos en la ciudad,<pause:0.5>
+      como la t\xEDa Adele."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187980
+    m_Localized: Y se supone que debo quedarme en el pueblo por si acaso.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187981
+    m_Localized: "Mientras pap\xE1 no est\xE1, soy la \xFAnica que sabe manejar el
+      carrito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187982
+    m_Localized: "Siempre me dice que me olvide de mis responsabilidades por un d\xEDa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187983
+    m_Localized: "Para venir con \xE9l a la ciudad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187984
+    m_Localized: Pero simplemente no puedo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187985
+    m_Localized: "\xBFY si ocurre algo mientras estoy divirti\xE9ndome?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187986
+    m_Localized: Como hoy, por ejemplo.<pause:0.5> Ustedes dos aparecieron de la
+      nada.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187987
+    m_Localized: "\xBFQui\xE9n te habr\xEDa llevado a la ciudad si yo no hubiera
+      estado aqu\xED?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187988
+    m_Localized: "Supongo que habr\xEDamos tenido que esperar hasta la ma\xF1ana
+      e ir con tu padre."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187989
+    m_Localized: Y esperar es algo que realmente no nos podemos permitir ahora mismo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187990
+    m_Localized: "Tenemos un pr\xE9stamo pendiente y necesitamos empezar a pagarlo
+      lo antes posible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187991
+    m_Localized: Nos has ayudado mucho.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187992
+    m_Localized: "Zorrito,<pause:0.5> \xBFc\xF3mo te llamas?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187993
+    m_Localized: "Rojo.<pause:0.5> \xBFY el tuyo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187994
+    m_Localized: Soy Daisy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187995
+    m_Localized: Encantado de conocerte, Daisy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187996
+    m_Localized: "Rojo,<pause:0.5> \xBFC\xF3mo es vivir en una ciudad a\xFAn m\xE1s
+      grande que Clifford?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187997
+    m_Localized: "No es... el lugar m\xE1s seguro."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187998
+    m_Localized: "Daisy,<pause: 0.5> \xBFPor qu\xE9 la gente de Riverside detesta
+      tanto a Clifford, <pause:0.5> pero a\xFAn as\xED intenta llegar all\xED?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187999
+    m_Localized: "No lo s\xE9.<pause:0.5> Siempre ha sido una relaci\xF3n complicada."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188000
+    m_Localized: Y luego estaba todo ese asunto de la carretera nueva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188001
+    m_Localized: "\xBFQu\xE9 pas\xF3?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188002
+    m_Localized: "No hace mucho, nos enteramos de que est\xE1n construyendo una carretera
+      desde Clifford hasta la autopista principal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188003
+    m_Localized: "Est\xE1bamos todos emocionados, pensando que pasar\xEDa por nuestro
+      pueblo y que por fin nos facilitar\xEDa el acceso a la ciudad."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188004
+    m_Localized: "Pero resulta que lo est\xE1n construyendo a trav\xE9s del desierto
+      en lugar de a trav\xE9s de nuestro bosque para ahorrar un poco de dinero."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188005
+    m_Localized: "No dejo que nadie lo vea,<pause:0.5> pero<pause:0.5> entre t\xFA
+      y yo,<pause:0.5> realmente doli\xF3."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188006
+    m_Localized: "Si el pueblo tuviera una carretera y aunque solo fuera un coche,
+      me preocupar\xEDa mucho menos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188007
+    m_Localized: "Yo sab\xEDa que los aldeanos no correr\xEDan peligro sin mi presencia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188008
+    m_Localized: Lo lamento.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188009
+    m_Localized: Si alguna vez vienes a la ciudad,<pause:0.5> ven a visitarnos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188010
+    m_Localized: Vamos a abrir un restaurante.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188011
+    m_Localized: "Todav\xEDa no le hemos puesto nombre, pero lo reconocer\xE1s cuando
+      lo veas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188012
+    m_Localized: "\xA1Va a ser el lugar m\xE1s genial del mundo!<pause:0.5> No podr\xE1s
+      perd\xE9rtelo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188013
+    m_Localized: "\xA1Wooow,<pause:0.5> eso suena incre\xEDble!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188014
+    m_Localized: "\xA1Me encantar\xEDa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188015
+    m_Localized: "\xA1Y tu sopa estaba realmente deliciosa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188016
+    m_Localized: "\xA1Sin duda me pasar\xE9 por all\xED si tengo la oportunidad!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188017
+    m_Localized: Es un trato.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188018
+    m_Localized: "Oh,<pause:0.5> \xBFesa es la autopista con la parada de autob\xFAs?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188019
+    m_Localized: "\xA1Exactamente!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -2198,6 +2198,289 @@ MonoBehaviour:
     m_Localized: Clifford
     m_Metadata:
       m_Items: []
+  - m_Id: 96172733994524672
+    m_Localized: Oh...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884800
+    m_Localized: Hallo, du kleiner Fuchs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884801
+    m_Localized: Hallo, Pferdchen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884802
+    m_Localized: "Auf nach Gro\xDFstadt, um dort gro\xDF rauszukommen, was?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734023884803
+    m_Localized: Nicht wirklich, ganz im Gegenteil.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079104
+    m_Localized: "Wir hatten es so satt, in der Gro\xDFstadt gro\xDF rauszukommen,
+      dass wir beschlossen, woanders kleiner anzufangen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079105
+    m_Localized: Clifford?<pause:0.5> Klein?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079106
+    m_Localized: Ja, <pause:0.5> war es schon immer.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734028079107
+    m_Localized: Ich dachte immer, es sei riesig.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273408
+    m_Localized: "Silver sagte, Clifford sei etwa so gro\xDF wie ein einzelner Bezirk
+      in Metropolis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273409
+    m_Localized: Wow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273410
+    m_Localized: "Ich wollte schon immer mal dorthin, um eine Gro\xDFstadt zu sehen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734032273411
+    m_Localized: "Ich wusste, dass es nicht das gr\xF6\xDFte Exemplar war."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187968
+    m_Localized: Aber ich war mir sicher, dass es zumindest unter den ersten zehn
+      sein musste.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187969
+    m_Localized: "Und jetzt erz\xE4hlst du mir das."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187970
+    m_Localized: "Das ist eigentlich ziemlich entt\xE4uschend."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187971
+    m_Localized: Warum gehst du nicht?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187972
+    m_Localized: Ich kann nicht, ich bin noch zu klein.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187973
+    m_Localized: "Sieh dich doch mal an! Du bist gro\xDF und stark!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187974
+    m_Localized: Du ziehst mich, meinen Bruder und diesen ganzen Wagen ganz allein!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187975
+    m_Localized: Nein, ich meine, ich bin noch nicht alt genug.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187976
+    m_Localized: "Haben Sie schon einmal versucht, jemanden \xC4lteren zu bitten,
+      Sie in die Stadt mitzunehmen?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187977
+    m_Localized: Ich kann nicht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187978
+    m_Localized: "Mein Vater f\xE4hrt jeden Tag Leute nach Clifford und zur\xFCck."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187979
+    m_Localized: Manche von uns wohnen hier, arbeiten aber in der Stadt, wie zum
+      Beispiel Tante Adele.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187980
+    m_Localized: Und ich soll vorsichtshalber im Dorf bleiben.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187981
+    m_Localized: "Wenn Papa nicht da ist, bin ich die Einzige, die wei\xDF, wie man
+      den Einkaufswagen bedient."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187982
+    m_Localized: "Er sagt mir immer wieder, ich solle meine Pflichten f\xFCr einen
+      Tag vergessen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187983
+    m_Localized: Um mit ihm in die Stadt zu kommen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187984
+    m_Localized: Aber ich kann es einfach nicht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187985
+    m_Localized: "Was, wenn etwas passiert, w\xE4hrend ich mich vergn\xFCge?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187986
+    m_Localized: Wie zum Beispiel heute.<pause:0.5> Ihr zwei seid wie aus dem Nichts
+      aufgetaucht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187987
+    m_Localized: "Wer h\xE4tte dich in die Stadt gebracht, wenn ich nicht da gewesen
+      w\xE4re?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187988
+    m_Localized: "Ich sch\xE4tze, wir h\xE4tten bis zum Morgen warten und mit deinem
+      Vater gehen m\xFCssen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187989
+    m_Localized: "Und Warten k\xF6nnen wir uns im Moment wirklich nicht leisten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187990
+    m_Localized: "Wir haben einen Kredit, der uns wie ein Damoklesschwert \xFCber
+      dem Kopf schwebt, und wir m\xFCssen so schnell wie m\xF6glich damit beginnen,
+      ihn abzuzahlen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187991
+    m_Localized: Ihr habt uns wirklich sehr geholfen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187992
+    m_Localized: "Kleiner Fuchs, wie hei\xDFt du?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187993
+    m_Localized: Red.<pause:0.5> Und deins?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187994
+    m_Localized: Ich bin Daisy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187995
+    m_Localized: "Sch\xF6n, dich kennenzulernen, Daisy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187996
+    m_Localized: "Red,<pause:0.5> Wie ist es, in einer Stadt zu leben, die noch gr\xF6\xDFer
+      ist als Clifford?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187997
+    m_Localized: Es ist... nicht der sicherste Ort.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187998
+    m_Localized: "Daisy, warum m\xF6gen die Leute von Riverside Clifford so wenig,
+      aber versuchen trotzdem, ihn zu erreichen?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095187999
+    m_Localized: "Ich wei\xDF es nicht. Es war schon immer eine komplizierte Beziehung."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188000
+    m_Localized: "Und dann war da noch die Sache mit der neuen Stra\xDFe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188001
+    m_Localized: Was ist passiert?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188002
+    m_Localized: "Vor nicht allzu langer Zeit erfuhren wir, dass sie eine Stra\xDFe
+      von Clifford zur Hauptstra\xDFe bauen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188003
+    m_Localized: "Wir waren alle aufgeregt, weil wir dachten, die Bahn w\xFCrde durch
+      unser Dorf f\xFChren und uns endlich einen einfachen Weg in die Stadt erm\xF6glichen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188004
+    m_Localized: "Es stellte sich jedoch heraus, dass sie die Pipeline durch die
+      W\xFCste statt durch unseren Wald bauen, um ein wenig Geld zu sparen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188005
+    m_Localized: Ich lasse es niemanden sehen, aber unter uns gesagt, es hat wirklich
+      wehgetan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188006
+    m_Localized: "Wenn das Dorf eine Stra\xDFe und auch nur ein Auto h\xE4tte, w\xFCrde
+      ich mir viel weniger Sorgen machen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188007
+    m_Localized: "Ich w\xFCsste, dass die Dorfbewohner auch ohne mich nicht in Gefahr
+      w\xE4ren."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188008
+    m_Localized: Es tut mir Leid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188009
+    m_Localized: Falls Sie es jemals in die Stadt schaffen, besuchen Sie uns doch.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188010
+    m_Localized: "Wir er\xF6ffnen ein Restaurant."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188011
+    m_Localized: Wir haben uns noch keinen Namen ausgedacht, aber ihr werdet es erkennen,
+      wenn ihr es seht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188012
+    m_Localized: "Das wird der coolste Ort der Welt!<pause:0.5> Den k\xF6nnt ihr
+      nicht verfehlen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188013
+    m_Localized: Wow, das klingt fantastisch!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188014
+    m_Localized: "Ich w\xFCrde gerne!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188015
+    m_Localized: "Und deine Suppe war wirklich k\xF6stlich!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188016
+    m_Localized: Ich schaue auf jeden Fall vorbei, wenn ich die Gelegenheit dazu
+      habe!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188017
+    m_Localized: Abgemacht.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188018
+    m_Localized: Oh, ist das die Autobahn mit der Bushaltestelle?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96172734095188019
+    m_Localized: Genau!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
