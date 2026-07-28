@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace foxRestaurant
 {
-    public class RiversideScenarioPart9 : BaseScenario<ListenDialoguesEncounter>
+    public class RiversideScenarioPart10 : BaseScenario<ListenDialoguesEncounter>
     {
         [SerializeField] private Character red;
         [SerializeField] private Character horse;
