@@ -2605,6 +2605,14 @@ MonoBehaviour:
       in zehn Minuten."
     m_Metadata:
       m_Items: []
+  - m_Id: 96395963300732928
+    m_Localized: Wir waren sowieso nur auf der Durchreise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96395963321704448
+    m_Localized: Wir hatten nicht vor, in diesem gottverlassenen Ort zu bleiben...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

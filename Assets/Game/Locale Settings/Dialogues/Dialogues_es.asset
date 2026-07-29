@@ -2615,6 +2615,14 @@ MonoBehaviour:
       sale en diez minutos."
     m_Metadata:
       m_Items: []
+  - m_Id: 96395963300732928
+    m_Localized: "De todas formas, solo est\xE1bamos de paso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96395963321704448
+    m_Localized: "No ten\xEDamos pensado quedarnos en este lugar perdido de Dios..."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

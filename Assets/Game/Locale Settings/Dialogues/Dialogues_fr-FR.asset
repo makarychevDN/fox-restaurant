@@ -2635,6 +2635,14 @@ MonoBehaviour:
       dix minutes."
     m_Metadata:
       m_Items: []
+  - m_Id: 96395963300732928
+    m_Localized: "De toute fa\xE7on, nous n'\xE9tions que de passage."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96395963321704448
+    m_Localized: Nous n'avions pas l'intention de rester dans ce trou perdu...
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

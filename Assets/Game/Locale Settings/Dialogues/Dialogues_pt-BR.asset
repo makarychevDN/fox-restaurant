@@ -2598,6 +2598,14 @@ MonoBehaviour:
       em dez minutos."
     m_Metadata:
       m_Items: []
+  - m_Id: 96395963300732928
+    m_Localized: "De qualquer forma, est\xE1vamos apenas de passagem."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96395963321704448
+    m_Localized: "N\xE3o t\xEDnhamos planos de ficar por aqui neste lugar maldito..."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

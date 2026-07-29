@@ -2476,6 +2476,14 @@ MonoBehaviour:
     m_Key: Pack your things,<pause:0.5> the next ride to Clifford leaves in ten minutes.
     m_Metadata:
       m_Items: []
+  - m_Id: 96395963300732928
+    m_Key: We were just passing through anyway.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96395963321704448
+    m_Key: We weren't planning to stick around this godforsaken...
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

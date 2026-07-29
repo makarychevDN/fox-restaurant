@@ -46,9 +46,11 @@ namespace foxRestaurant
 
             await red.Say("...".Locailze());
             await red.Say("Actually, it suits us.".Locailze());
+            await red.Say("We were just passing through anyway.".Locailze());
+
             List<UniTask> tasks = new List<UniTask>
             {
-                red.Say("We were just passing through anyway. We weren't planning to stick around this godforsaken...".Locailze()),
+                red.Say("We weren't planning to stick around this godforsaken...".Locailze()),
                 silversPaw.DOLocalMove(new Vector3(-3.75f, 4), 2).ToUniTask()
             };
             await UniTask.WhenAll(tasks);
