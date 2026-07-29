@@ -17,7 +17,7 @@ namespace foxRestaurant
 
         protected override async UniTask StartScenarioTyped(ListenDialoguesEncounter encounter)
         {
-            /*await UniTask.Delay(1500);
+            await UniTask.Delay(1500);
             await horse.Say("Hiii there, little foxy.".Locailze());
             red.LookAt(horsesEyes);
             await red.Say("Hi there, horsie.".Locailze());
@@ -36,11 +36,6 @@ namespace foxRestaurant
             await horse.Say("And now you're telling me this.".Locailze());
             await horse.Say("That's actually kind of disappointing.".Locailze());
             await red.Say("So why don't you go?".Locailze());
-            await horse.Say("I can't,<pause:0.5> I'm still too little.".Locailze());
-            await red.Say("Just look at yourself!<pause:0.5> You're big and strong!".Locailze());
-            await red.Say("You're pulling me, my brother, and this whole cart all by yourself!".Locailze());
-            await horse.Say("Nooo,<pause:0.5> I mean I'm not old enough yet.".Locailze());
-            await red.Say("Have you ever tried asking someone older to take you into town?".Locailze());
             await horse.Say("I can't.".Locailze());
             await horse.Say("My dad takes people to Clifford and back every day.".Locailze());
             await horse.Say("Some of us live here but work in the city,<pause:0.5> like Auntie Adele.".Locailze());
@@ -62,7 +57,7 @@ namespace foxRestaurant
             await horse.Say("I'm Daisy.".Locailze());
             await red.Say("Nice to meet you, Daisy.".Locailze());
             await horse.Say("Red,<pause:0.5> what's it like living in a city that's even bigger than Clifford?".Locailze());
-            await red.Say("It's... not the safest place.".Locailze());*/
+            await red.Say("It's... not the safest place.".Locailze());
             await horse.Say("Oh...".Locailze());
             await red.Say("...".Locailze());
             await red.Say("Daisy,<pause: 0.5> why do the people of Riverside dislike Clifford so much, <pause:0.5> but still trying to reach there?".Locailze());
