@@ -2481,6 +2481,130 @@ MonoBehaviour:
     m_Localized: Oh...
     m_Metadata:
       m_Items: []
+  - m_Id: 96391525269921792
+    m_Localized: "Ich muss zugeben, ihr zwei habt das hervorragend gemacht, ihr kleinen
+      F\xFCchse."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087616
+    m_Localized: Den Einwohnern von Riverside geht es jetzt viel besser.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087617
+    m_Localized: Und vielleicht findet diese Hexenjagd nun endlich ein Ende.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087618
+    m_Localized: Du bist also doch eine Hexe!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087619
+    m_Localized: "Ich bin ungef\xE4hr so \u200B\u200Bsehr eine Hexe, wie du eine
+      Leshy bist."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087620
+    m_Localized: Ich bin Wahrsagerin, und zwar eine furchtbare. Aber das trifft wohl
+      auf alle Wahrsager zu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087621
+    m_Localized: "F\xFCr die Einheimischen ist aber alles dasselbe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087622
+    m_Localized: "Sie werden selbst die unglaublichste Erkl\xE4rung bereitwillig
+      glauben."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087623
+    m_Localized: Du hast mich abgelenkt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087624
+    m_Localized: Ihr habt beide hart gearbeitet und euch eine Belohnung verdient.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087625
+    m_Localized: Ich habe sowohl hier als auch in Clifford einen gewissen Einfluss.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087626
+    m_Localized: "Und ich besitze zuf\xE4llig auch einige interessante Kleinigkeiten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087627
+    m_Localized: Jeder von euch hat einen Wunsch frei.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087628
+    m_Localized: "W\xE4hle weise, aber werde nicht gierig."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087629
+    m_Localized: "Ich m\xF6chte diesen Ofen behalten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087630
+    m_Localized: Man bittet nicht um kleine Gefallen, oder, Red?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087631
+    m_Localized: Aber das ist ein angemessener Preis, wenn man bedenkt, was Sie geleistet
+      haben.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087632
+    m_Localized: "Au\xDFerdem hat es hier sowieso nur Staub angesetzt."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087633
+    m_Localized: Ich hasse Kochen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087634
+    m_Localized: "Es geh\xF6rt dir."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087635
+    m_Localized: Und was ist mit dir, Silver?<pause:0.5> Was willst du?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087636
+    m_Localized: "Ich m\xF6chte, dass Sie uns so schnell wie m\xF6glich nach Clifford
+      bringen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087637
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Gut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087638
+    m_Localized: Wir haben einen Notfallplan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087639
+    m_Localized: Ich nehme an, dass <pause:0.5> heute qualifiziert ist.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087640
+    m_Localized: "Aber wenn sie zur\xFCckkommt und sich beschwert, dass ihr ihr das
+      Leben schwer gemacht habt..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087641
+    m_Localized: Wir werden uns wie perfekte Gentlemen benehmen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087642
+    m_Localized: Das ist die richtige Antwort.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087643
+    m_Localized: "Packen Sie Ihre Sachen, der n\xE4chste Bus nach Clifford f\xE4hrt
+      in zehn Minuten."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

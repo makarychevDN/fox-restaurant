@@ -2512,6 +2512,129 @@ MonoBehaviour:
     m_Localized: Oh...
     m_Metadata:
       m_Items: []
+  - m_Id: 96391525269921792
+    m_Localized: Je dois l'avouer, vous avez fait un excellent travail, petits renards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087616
+    m_Localized: Les habitants de Riverside se sentent beaucoup mieux maintenant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087617
+    m_Localized: "Et peut-\xEAtre que cette chasse aux sorci\xE8res va enfin prendre
+      fin."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087618
+    m_Localized: "Alors tu es vraiment une sorci\xE8re apr\xE8s tout !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087619
+    m_Localized: "Je suis \xE0 peu pr\xE8s autant une sorci\xE8re que tu es un Leshy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087620
+    m_Localized: "Je suis voyante,<pause:0.5> et une tr\xE8s mauvaise voyante en
+      plus.<pause:0.5> Mais bon, tous les voyants le sont."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087621
+    m_Localized: "Mais pour les habitants, c'est la m\xEAme chose."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087622
+    m_Localized: "Ils croiront volontiers \xE0 l'explication la plus invraisemblable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087623
+    m_Localized: Tu m'as distrait.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087624
+    m_Localized: "Vous avez tous les deux travaill\xE9 dur et vous avez bien m\xE9rit\xE9
+      une r\xE9compense."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087625
+    m_Localized: "J'ai une certaine influence ici et \xE0 Clifford."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087626
+    m_Localized: "Et il se trouve que je poss\xE8de aussi pas mal de petites choses
+      int\xE9ressantes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087627
+    m_Localized: "Chacun de vous a droit \xE0 un v\u0153u."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087628
+    m_Localized: Choisissez judicieusement,<pause:0.5> mais ne soyez pas gourmand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087629
+    m_Localized: Je veux garder ce four.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087630
+    m_Localized: Tu ne demandes pas de petites faveurs, n'est-ce pas, Red ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087631
+    m_Localized: Mais c'est un prix juste, compte tenu de ce que vous avez fait.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087632
+    m_Localized: "De toute fa\xE7on, il prenait la poussi\xE8re ici."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087633
+    m_Localized: "Je d\xE9teste cuisiner."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087634
+    m_Localized: "Il est \xE0 vous."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087635
+    m_Localized: Et toi, Silver ?<pause:0.5> Que veux-tu ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087636
+    m_Localized: "Je veux que vous nous emmeniez \xE0 Clifford le plus rapidement
+      possible."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087637
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Bien.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087638
+    m_Localized: Nous avons un plan de secours pour les urgences.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087639
+    m_Localized: Je suppose que <pause:0.5> aujourd'hui est admissible.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087640
+    m_Localized: "Mais si elle revient se plaindre que vous lui avez men\xE9 la vie
+      dure..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087641
+    m_Localized: Nous serons de parfaits gentlemen !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087642
+    m_Localized: "C'est la bonne r\xE9ponse."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087643
+    m_Localized: "Pr\xE9parez vos affaires, le prochain bus pour Clifford part dans
+      dix minutes."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

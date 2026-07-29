@@ -2495,6 +2495,126 @@ MonoBehaviour:
     m_Localized: Oh...
     m_Metadata:
       m_Items: []
+  - m_Id: 96391525269921792
+    m_Localized: Tengo que admitir que ustedes dos hicieron un excelente trabajo,
+      zorritos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087616
+    m_Localized: Los habitantes de Riverside se sienten mucho mejor ahora.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087617
+    m_Localized: Y tal vez ahora esta caza de brujas finalmente llegue a su fin.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087618
+    m_Localized: "\xA1As\xED que al final s\xED que eres una bruja!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087619
+    m_Localized: "Soy tan bruja como t\xFA eres Leshy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087620
+    m_Localized: "Soy adivina,<pause:0.5> y una p\xE9sima, por cierto.<pause:0.5>
+      Pero bueno, todos los adivinos lo son."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087621
+    m_Localized: "Pero para los lugare\xF1os, es todo lo mismo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087622
+    m_Localized: "Creer\xE1n con gusto la explicaci\xF3n m\xE1s inveros\xEDmil."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087623
+    m_Localized: Me distrajiste.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087624
+    m_Localized: "Ambos hab\xE9is trabajado duro y os hab\xE9is ganado una recompensa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087625
+    m_Localized: "Tengo cierta influencia tanto aqu\xED como en Clifford."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087626
+    m_Localized: "Y resulta que tambi\xE9n tengo bastantes cositas interesantes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087627
+    m_Localized: Cada uno de ustedes tiene derecho a un deseo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087628
+    m_Localized: Elige sabiamente,<pause:0.5> pero no seas codicioso.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087629
+    m_Localized: Quiero quedarme con ese horno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087630
+    m_Localized: "No pides favores peque\xF1os, \xBFverdad, Red?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087631
+    m_Localized: Pero es un precio justo, teniendo en cuenta lo que has hecho.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087632
+    m_Localized: "Adem\xE1s, de todas formas, lleva aqu\xED acumulando polvo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087633
+    m_Localized: Odio cocinar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087634
+    m_Localized: Es tuyo.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087635
+    m_Localized: "\xBFY t\xFA, Silver?<pause:0.5> \xBFQu\xE9 quieres?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087636
+    m_Localized: Quiero que nos lleves a Clifford lo antes posible.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087637
+    m_Localized: <volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> Bien.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087638
+    m_Localized: Tenemos un plan de respaldo para emergencias.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087639
+    m_Localized: Supongo que hoy cumple con los requisitos.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087640
+    m_Localized: "Pero si regresa quej\xE1ndose de que ustedes dos le hicieron pasar
+      un mal rato..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087641
+    m_Localized: "\xA1Seremos unos caballeros perfectos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087642
+    m_Localized: Esa es la respuesta correcta.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087643
+    m_Localized: "Empaca tus cosas,<pause:0.5> el pr\xF3ximo transporte a Clifford
+      sale en diez minutos."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

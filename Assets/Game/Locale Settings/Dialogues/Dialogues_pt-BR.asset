@@ -2478,6 +2478,126 @@ MonoBehaviour:
     m_Localized: Oh...
     m_Metadata:
       m_Items: []
+  - m_Id: 96391525269921792
+    m_Localized: "Tenho que admitir, voc\xEAs dois fizeram um trabalho excelente,
+      raposinhas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087616
+    m_Localized: "Os moradores de Riverside est\xE3o se sentindo muito melhor agora."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087617
+    m_Localized: "E talvez agora essa ca\xE7a \xE0s bruxas finalmente chegue ao fim."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087618
+    m_Localized: "Ent\xE3o voc\xEA \xE9 mesmo uma bruxa, afinal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087619
+    m_Localized: "Eu sou t\xE3o bruxa quanto voc\xEA \xE9 Leshy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087620
+    m_Localized: "Sou vidente, e uma p\xE9ssima, diga-se de passagem. Mas, pensando
+      bem, todas as videntes s\xE3o assim."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087621
+    m_Localized: Mas para os habitantes locais, tanto faz.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087622
+    m_Localized: "Eles acreditar\xE3o de bom grado at\xE9 na explica\xE7\xE3o mais
+      inacredit\xE1vel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087623
+    m_Localized: "Voc\xEA me distraiu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087624
+    m_Localized: "Voc\xEAs dois trabalharam muito e mereceram uma recompensa."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087625
+    m_Localized: "Tenho alguma influ\xEAncia tanto aqui como em Clifford."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087626
+    m_Localized: "E por acaso tamb\xE9m possuo algumas coisinhas interessantes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087627
+    m_Localized: "Cada um de voc\xEAs tem direito a um desejo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087628
+    m_Localized: "Escolha com sabedoria, mas n\xE3o seja ganancioso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087629
+    m_Localized: Quero ficar com esse forno.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087630
+    m_Localized: "Voc\xEA n\xE3o pede favores pequenos, pede, Vermelho?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087631
+    m_Localized: "Mas \xE9 um pre\xE7o justo, considerando o que voc\xEA fez."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087632
+    m_Localized: "Al\xE9m disso, j\xE1 est\xE1 acumulando poeira aqui mesmo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087633
+    m_Localized: Eu odeio cozinhar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087634
+    m_Localized: "\xC9 seu."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087635
+    m_Localized: "E voc\xEA, Silver?<pause:0.5> O que voc\xEA quer?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087636
+    m_Localized: "Quero que voc\xEA nos leve at\xE9 Clifford o mais r\xE1pido poss\xEDvel."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087637
+    m_Localized: "<volume:0>.<pause:0.5>.<pause:0.5>.<pause:0.5><volume:1> \xD3timo."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087638
+    m_Localized: "Temos um plano B para emerg\xEAncias."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087639
+    m_Localized: Suponho que <pause:0.5> hoje se qualifica.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087640
+    m_Localized: "Mas se ela voltar reclamando que voc\xEAs dois a trataram mal..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087641
+    m_Localized: Seremos cavalheiros perfeitos!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087642
+    m_Localized: "Essa \xE9 a resposta correta."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96391525295087643
+    m_Localized: "Arrumem suas coisas, o pr\xF3ximo transporte para Clifford sai
+      em dez minutos."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
