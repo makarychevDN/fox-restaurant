@@ -10,11 +10,16 @@ namespace foxRestaurant
         [SerializeField] private LevelLoader levelLoader;
         [SerializeField] protected SupportAuthorMenuPanel supportAuthorMenuPanel;
         [SerializeField] protected SelectLevelPanel selectLevelPanel;
+        private static bool appIsStartedAlready = false;
 
         protected override void Init()
         {
             fading.material = new Material(fading.material);
             fading.FadeOut();
+
+            selectLevelPanel.gameObject.SetActive(appIsStartedAlready);
+            appIsStartedAlready = true;
+
             base.Init();
         }
 
