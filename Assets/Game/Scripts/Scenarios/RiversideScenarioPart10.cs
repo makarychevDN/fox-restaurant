@@ -31,8 +31,6 @@ namespace foxRestaurant
             await red.Say("Silver said Clifford's about the size of a single district in Metropolis.".Locailze());
             await horse.Say("Wow.".Locailze());
             await horse.Say("I've always wanted to get there,<pause:0.5> to see a big city.".Locailze());
-            await horse.Say("I knew it wasn't the biggest one out there.".Locailze());
-            await horse.Say("But I was sure it had to be at least in the top ten.".Locailze());
             await horse.Say("And now you're telling me this.".Locailze());
             await horse.Say("That's actually kind of disappointing.".Locailze());
             await red.Say("So why don't you go?".Locailze());
