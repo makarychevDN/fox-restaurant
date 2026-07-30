@@ -158,6 +158,10 @@ MonoBehaviour:
     m_Localized: "n\xEDvel 2"
     m_Metadata:
       m_Items: []
+  - m_Id: 96787514308845568
+    m_Localized: "Novos n\xEDveis em breve!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

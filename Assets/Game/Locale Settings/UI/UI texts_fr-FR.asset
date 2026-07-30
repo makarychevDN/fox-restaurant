@@ -160,6 +160,10 @@ MonoBehaviour:
     m_Localized: niveau 2
     m_Metadata:
       m_Items: []
+  - m_Id: 96787514308845568
+    m_Localized: "De nouveaux niveaux arrivent bient\xF4t !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

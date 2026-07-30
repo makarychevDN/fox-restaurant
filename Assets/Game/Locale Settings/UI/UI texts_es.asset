@@ -158,6 +158,10 @@ MonoBehaviour:
     m_Localized: nivel 2
     m_Metadata:
       m_Items: []
+  - m_Id: 96787514308845568
+    m_Localized: "\xA1Pr\xF3ximamente habr\xE1 nuevos niveles!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

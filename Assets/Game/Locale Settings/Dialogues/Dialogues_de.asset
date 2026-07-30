@@ -2613,6 +2613,10 @@ MonoBehaviour:
     m_Localized: Wir hatten nicht vor, in diesem gottverlassenen Ort zu bleiben...
     m_Metadata:
       m_Items: []
+  - m_Id: 96784338562211840
+    m_Localized: Flussufer
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -2606,6 +2606,10 @@ MonoBehaviour:
     m_Localized: "N\xE3o t\xEDnhamos planos de ficar por aqui neste lugar maldito..."
     m_Metadata:
       m_Items: []
+  - m_Id: 96784338562211840
+    m_Localized: Beira-rio
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
