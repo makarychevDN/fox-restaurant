@@ -2610,6 +2610,128 @@ MonoBehaviour:
     m_Localized: Beira-rio
     m_Metadata:
       m_Items: []
+  - m_Id: 96989101652336640
+    m_Localized: Acordem, raposinhas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696768
+    m_Localized: "Estamos quase l\xE1!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696769
+    m_Localized: "Hein?<pause:0.5> O qu\xEA?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696770
+    m_Localized: Abra os olhos, Vermelho!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696771
+    m_Localized: Chegamos!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696772
+    m_Localized: Uau!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696773
+    m_Localized: Visto daqui de cima, parece realmente enorme!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696774
+    m_Localized: Viu? Eu te disse!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696775
+    m_Localized: "Um dia eu virei aqui por conta pr\xF3pria!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696776
+    m_Localized: E eu explorarei cada canto de Clifford!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696777
+    m_Localized: Mas agora preciso ir para casa.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696778
+    m_Localized: "Vai escurecer em breve, e meu pai come\xE7ar\xE1 a se preocupar."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696779
+    m_Localized: "Sinto muito, n\xE3o posso te levar mais longe."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696780
+    m_Localized: "Tudo bem, querida.<pause:0.5> Voc\xEA j\xE1 nos ajudou mais do
+      que o suficiente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696781
+    m_Localized: Podemos encontrar o caminho para nossa nova casa a partir daqui.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696782
+    m_Localized: Nosso novo lar?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696783
+    m_Localized: "Voc\xEAs j\xE1 compraram um pr\xE9dio para n\xF3s?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696784
+    m_Localized: "Oh, n\xE3o.<pause:0.5> Comprar um im\xF3vel online seria muito
+      imprudente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696785
+    m_Localized: Mas encontrei um lugar muito promissor!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696786
+    m_Localized: E tenho um pressentimento muito bom sobre isso!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696787
+    m_Localized: "Ent\xE3o podemos ir para l\xE1 agora mesmo!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696788
+    m_Localized: "Ent\xE3o, o que estamos esperando?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696789
+    m_Localized: Lidere o caminho!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696790
+    m_Localized: Tchau, raposinhas!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696791
+    m_Localized: Tchau, Daisy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696792
+    m_Localized: Boa viagem, Daisy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696793
+    m_Localized: "Vamos l\xE1, Vermelho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696794
+    m_Localized: "Aquele lugar n\xE3o vai se regularizar sozinho."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696795
+    m_Localized: "\xC9 melhor voc\xEA come\xE7ar a tremer, casinha!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696796
+    m_Localized: "Voc\xEA n\xE3o faz ideia de como vou te inspecionar minuciosamente!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

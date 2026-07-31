@@ -2567,6 +2567,127 @@ MonoBehaviour:
     m_Localized: Riveside
     m_Metadata:
       m_Items: []
+  - m_Id: 96989101652336640
+    m_Localized: Wake up, little foxes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696768
+    m_Localized: We're almost there!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696769
+    m_Localized: Huh?<pause:0.5> What?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696770
+    m_Localized: Open your eyes, Red!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696771
+    m_Localized: We're here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696772
+    m_Localized: Whoa!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696773
+    m_Localized: It really does look huge from up here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696774
+    m_Localized: See? I told you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696775
+    m_Localized: Someday I'll come here on my own!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696776
+    m_Localized: And I'll explore every corner of Clifford!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696777
+    m_Localized: But I have to head home now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696778
+    m_Localized: It'll be getting dark soon, and my dad will start worrying.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696779
+    m_Localized: Sorry I can't take you any farther.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696780
+    m_Localized: That's alright, sweetheart.<pause:0.5> You've already helped us
+      more than enough.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696781
+    m_Localized: We can find our way to our new place from here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696782
+    m_Localized: Our new place?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696783
+    m_Localized: Did you already buy us a building?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696784
+    m_Localized: Oh, no.<pause:0.5> Buying property online would be way too reckless.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696785
+    m_Localized: But I did find a very promising place!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696786
+    m_Localized: And I've got a really good feeling about it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696787
+    m_Localized: So we can head over there right now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696788
+    m_Localized: Then what are we waiting for?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696789
+    m_Localized: Lead the way!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696790
+    m_Localized: Byyye, little foxes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696791
+    m_Localized: Bye, Daisy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696792
+    m_Localized: Safe travels, Daisy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696793
+    m_Localized: Come on, Red.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696794
+    m_Localized: That place isn't going to check itself out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696795
+    m_Localized: You'd better start trembling, little house!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696796
+    m_Localized: You have no idea how hard I'm gonna inspect you!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

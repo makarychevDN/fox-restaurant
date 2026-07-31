@@ -2488,6 +2488,127 @@ MonoBehaviour:
     m_Key: Riveside
     m_Metadata:
       m_Items: []
+  - m_Id: 96989101652336640
+    m_Key: Wake up, little foxes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696768
+    m_Key: We're almost there!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696769
+    m_Key: Huh?<pause:0.5> What?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696770
+    m_Key: Open your eyes, Red!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696771
+    m_Key: We're here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696772
+    m_Key: "Whoa! (\u043E\u0433\u043E)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696773
+    m_Key: It really does look huge from up here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696774
+    m_Key: See? I told you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696775
+    m_Key: Someday I'll come here on my own!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696776
+    m_Key: And I'll explore every corner of Clifford!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696777
+    m_Key: But I have to head home now.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696778
+    m_Key: It'll be getting dark soon, and my dad will start worrying.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696779
+    m_Key: Sorry I can't take you any farther.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696780
+    m_Key: That's alright, sweetheart.<pause:0.5> You've already helped us more than
+      enough.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696781
+    m_Key: We can find our way to our new place from here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696782
+    m_Key: Our new place?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696783
+    m_Key: Did you already buy us a building?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696784
+    m_Key: Oh, no.<pause:0.5> Buying property online would be way too reckless.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696785
+    m_Key: But I did find a very promising place!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696786
+    m_Key: And I've got a really good feeling about it!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696787
+    m_Key: So we can head over there right now!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696788
+    m_Key: Then what are we waiting for?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696789
+    m_Key: Lead the way!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696790
+    m_Key: Byyye, little foxes!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696791
+    m_Key: Bye, Daisy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696792
+    m_Key: Safe travels, Daisy!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696793
+    m_Key: Come on, Red.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696794
+    m_Key: That place isn't going to check itself out.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696795
+    m_Key: You'd better start trembling, little house!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696796
+    m_Key: You have no idea how hard I'm gonna inspect you!
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

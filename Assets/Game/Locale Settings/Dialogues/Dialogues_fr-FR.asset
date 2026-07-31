@@ -2647,6 +2647,129 @@ MonoBehaviour:
     m_Localized: Riverside
     m_Metadata:
       m_Items: []
+  - m_Id: 96989101652336640
+    m_Localized: "R\xE9veillez-vous, petits renards !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696768
+    m_Localized: Nous y sommes presque !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696769
+    m_Localized: Hein ?<pause:0.5> Quoi ?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696770
+    m_Localized: Ouvre les yeux, Rouge !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696771
+    m_Localized: "Nous sommes l\xE0 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696772
+    m_Localized: Waouh !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696773
+    m_Localized: "Vu d'ici, \xE7a a l'air vraiment immense !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696774
+    m_Localized: Tu vois ? Je te l'avais dit !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696775
+    m_Localized: Un jour, je viendrai ici toute seule !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696776
+    m_Localized: Et j'explorerai chaque recoin de Clifford !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696777
+    m_Localized: Mais je dois rentrer chez moi maintenant.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696778
+    m_Localized: "La nuit va bient\xF4t tomber et mon p\xE8re va commencer \xE0 s'inqui\xE9ter."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696779
+    m_Localized: "D\xE9sol\xE9, je ne peux pas vous emmener plus loin."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696780
+    m_Localized: "C'est parfait, ma ch\xE9rie.<pause:0.5> Tu nous as d\xE9j\xE0 bien
+      assez aid\xE9s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696781
+    m_Localized: "D'ici, nous pouvons trouver notre chemin jusqu'\xE0 notre nouvelle
+      maison."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696782
+    m_Localized: Notre nouvel appartement ?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696783
+    m_Localized: "Vous nous avez d\xE9j\xE0 achet\xE9 un b\xE2timent ?!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696784
+    m_Localized: Oh non.<pause:0.5> Acheter un bien immobilier en ligne serait beaucoup
+      trop imprudent.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696785
+    m_Localized: "Mais j'ai trouv\xE9 un endroit tr\xE8s prometteur !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696786
+    m_Localized: "Et j'ai un tr\xE8s bon pressentiment \xE0 ce sujet !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696787
+    m_Localized: Nous pouvons donc y aller tout de suite !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696788
+    m_Localized: Alors qu'attendons-nous ?!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696789
+    m_Localized: Montrez le chemin !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696790
+    m_Localized: Au revoir, petits renards !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696791
+    m_Localized: Au revoir, Daisy !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696792
+    m_Localized: Bon voyage, Daisy !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696793
+    m_Localized: Allez, Red.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696794
+    m_Localized: "Cet endroit ne va pas se v\xE9rifier tout seul."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696795
+    m_Localized: "Tu ferais mieux de commencer \xE0 trembler, petite maison !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 96989101681696796
+    m_Localized: "Tu n'imagines m\xEAme pas \xE0 quel point je vais t'inspecter !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
