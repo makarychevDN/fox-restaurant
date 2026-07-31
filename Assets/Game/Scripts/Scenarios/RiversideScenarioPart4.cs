@@ -71,6 +71,8 @@ namespace foxRestaurant
             await AfterIllGoatTutoiralDialogue();
             await CureIllGoatTutorial();
             await AfterCureIllGoatDialogue();
+            encounter.ItemSpawnTimer.SetBlocked(false);
+            encounter.GarbageCan.SetBlocked(false);
             await TheFirstWave();
             await TheSecondWave();
             await TheThirdWave();
