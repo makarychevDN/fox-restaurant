@@ -60,7 +60,7 @@ namespace foxRestaurant
             await red.Say("Hmm,<pause:0.5> that's<pause:0.75> a very interesting observation.".Locailze());
             await silver.Say("The apprentice potion maker has surpassed his master!".Locailze());
             redsHandsAnimator.SetBool("isMixing", true);
-            await red.Say("Focus!");
+            await red.Say("Focus!".Locailze());
             red.LookAt(theCenterOfBoiler);
             await silver.Say("Oh, come on,<pause:0.5> it was funny!".Locailze());
             red.LookAt(silversEyes);
@@ -106,7 +106,7 @@ namespace foxRestaurant
             poofSound.Play();
             await UniTask.Delay(350);
 
-            await silver.Say("Heheh".Locailze());
+            await silver.Say("Heheh.".Locailze());
             await red.Say("*sigh*t".Locailze());
 
             red.LookAt(theCenterOfBoiler);
