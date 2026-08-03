@@ -31,12 +31,15 @@ namespace foxRestaurant
 
             titleMenuPanel.ResumeButton.gameObject.SetActive(thereIsSavedGame);
             titleMenuPanel.SelectLevelButton.gameObject.SetActive(thereIsSavedGame);
+            selectLevelPanel.ContinueButton.gameObject.SetActive(thereIsSavedGame);
             titleMenuPanel.PlayButton.gameObject.SetActive(!thereIsSavedGame);
 
             titleMenuPanel.PlayButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, selectLevelPanel));
             titleMenuPanel.SelectLevelButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, selectLevelPanel));
-            titleMenuPanel.ResumeButton.onClick.AddListener(() => LaunchSavedLevel());
+            titleMenuPanel.ResumeButton.onClick.AddListener(LaunchSavedLevel);
+
             selectLevelPanel.BackButton.onClick.AddListener(() => SwitchPanels(selectLevelPanel, titleMenuPanel));
+            selectLevelPanel.ContinueButton.onClick.AddListener(LaunchSavedLevel);
 
             titleMenuPanel.SupportAuthorButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, supportAuthorMenuPanel));
             supportAuthorMenuPanel.BackButton.onClick.AddListener(() => SwitchPanels(supportAuthorMenuPanel, titleMenuPanel));
