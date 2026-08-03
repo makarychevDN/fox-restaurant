@@ -27,7 +27,7 @@ namespace foxRestaurant
 
             Init(dataBetweenScenesContainer.EncountersList);
             print(dataBetweenScenesContainer.EncountersList.name + " is loaded");
-            await RunLevel().SuppressCancellationThrow();
+            await RunLevel(dataBetweenScenesContainer.StartEncounterIndex).SuppressCancellationThrow();
         }
 
         public void Init(EncountersListAsset prefabsList)
@@ -43,16 +43,12 @@ namespace foxRestaurant
             fading.GetComponentInParent<Canvas>().sortingOrder = 9999;
         }
 
-        private async UniTask RunLevel()
-        {
-            await RunLevel(0);
-        }
-
         private async UniTask RunLevel(int encounterIndex)
         {
             int currentIndex = encounterIndex;
             while (currentIndex < encounters.Count)
             {
+                PlayerPrefs.SetInt("CurrentEncounterIndex", currentIndex);
                 currentEncounter = encounters[currentIndex];
                 currentEncounter.gameObject.SetActive(true);
                 currentEncounter.Init();
@@ -64,6 +60,8 @@ namespace foxRestaurant
                 currentIndex++;
             }
 
+            PlayerPrefs.DeleteKey("SavedLevelIndex");
+            PlayerPrefs.DeleteKey("CurrentEncounterIndex");
             SceneManager.LoadScene("Main Menu");
         }
 

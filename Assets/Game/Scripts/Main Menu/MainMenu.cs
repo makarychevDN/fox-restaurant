@@ -1,12 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace foxRestaurant
 {
     public class MainMenu : Menu
     {
-        [SerializeField] private EncountersListAsset firstLevelEncountersListAsset;
-        [SerializeField] private EncountersListAsset secondLevelEncountersListAsset;
+        [SerializeField] private List<EncountersListAsset> encounterListAssets;
         [SerializeField] private LevelLoader levelLoader;
         [SerializeField] protected SupportAuthorMenuPanel supportAuthorMenuPanel;
         [SerializeField] protected SelectLevelPanel selectLevelPanel;
@@ -27,7 +27,7 @@ namespace foxRestaurant
         {
             base.InitTitleMenuPanel();
 
-            var thereIsSavedGame = false;
+            var thereIsSavedGame = PlayerPrefs.HasKey("CurrentEncounterIndex");
 
             titleMenuPanel.ResumeButton.gameObject.SetActive(thereIsSavedGame);
             titleMenuPanel.SelectLevelButton.gameObject.SetActive(thereIsSavedGame);
@@ -35,18 +35,29 @@ namespace foxRestaurant
 
             titleMenuPanel.PlayButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, selectLevelPanel));
             titleMenuPanel.SelectLevelButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, selectLevelPanel));
-
+            titleMenuPanel.ResumeButton.onClick.AddListener(() => LaunchSavedLevel());
             selectLevelPanel.BackButton.onClick.AddListener(() => SwitchPanels(selectLevelPanel, titleMenuPanel));
-            selectLevelPanel.Level1Button.onClick.AddListener(() => LaunchLevel(firstLevelEncountersListAsset, 0));
-            selectLevelPanel.Level2Button.onClick.AddListener(() => LaunchLevel(secondLevelEncountersListAsset, 0));
 
             titleMenuPanel.SupportAuthorButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, supportAuthorMenuPanel));
-
             supportAuthorMenuPanel.BackButton.onClick.AddListener(() => SwitchPanels(supportAuthorMenuPanel, titleMenuPanel));
+
+            for (int i = 0; i < selectLevelPanel.LevelButtons.Count; i++)
+            {
+                int index = i;
+                selectLevelPanel.LevelButtons[i].onClick.AddListener(() => LaunchLevel(encounterListAssets[index], index, 0));
+            }
         }
 
-        private async void LaunchLevel(EncountersListAsset encountersListAsset, int startEncounterIndex)
+        private void LaunchSavedLevel()
         {
+            int startEncounterIndex = PlayerPrefs.GetInt("CurrentEncounterIndex");
+            int savedLevelIndex = PlayerPrefs.GetInt("SavedLevelIndex");
+            LaunchLevel(encounterListAssets[savedLevelIndex], savedLevelIndex, startEncounterIndex);
+        }
+
+        private async void LaunchLevel(EncountersListAsset encountersListAsset, int levelIndex, int startEncounterIndex)
+        {
+            PlayerPrefs.SetInt("SavedLevelIndex", levelIndex);
             levelLoader.SetupLevel(encountersListAsset, startEncounterIndex);
             await fading.FadeIn();
             levelLoader.LoadLevel();
