@@ -15,7 +15,6 @@ namespace foxRestaurant
         [SerializeField] private GameplayPauseMenu pauseMenu;
 
         private List<Encounter> encounters = new();
-        private int currentIndex = 0;
         private Encounter currentEncounter;
 
         public Encounter CurrentEncounter => currentEncounter;
@@ -46,6 +45,12 @@ namespace foxRestaurant
 
         private async UniTask RunLevel()
         {
+            await RunLevel(0);
+        }
+
+        private async UniTask RunLevel(int encounterIndex)
+        {
+            int currentIndex = encounterIndex;
             while (currentIndex < encounters.Count)
             {
                 currentEncounter = encounters[currentIndex];

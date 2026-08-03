@@ -6,5 +6,6 @@ namespace foxRestaurant
     public class DataBetweenScenesContainer : ScriptableObject
     {
         [field : SerializeField] public EncountersListAsset EncountersList { get; set; }
+        [field : SerializeField] public int StartEncounterIndex { get; set; }
     }
 }

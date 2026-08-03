@@ -9,12 +9,19 @@ namespace foxRestaurant
         [SerializeField] private DataBetweenScenesContainer dataBetweenScenesContainer;
 
         private EncountersListAsset encountersList;
-        public void SetEncaunters(EncountersListAsset encountersList) => this.encountersList = encountersList;
+        private int startEncounterIndex;
+
+        public void SetupLevel(EncountersListAsset encountersList, int startEncounterIndex)
+        {
+            this.encountersList = encountersList;
+            this.startEncounterIndex = startEncounterIndex;
+        }
 
         public void LoadLevel()
         {
             print("load " + encountersList.name);
             dataBetweenScenesContainer.EncountersList = encountersList;
+            dataBetweenScenesContainer.StartEncounterIndex = startEncounterIndex;
             SceneManager.LoadScene(gameplaySceneName);
         }
     }

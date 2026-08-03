@@ -6,6 +6,7 @@ namespace foxRestaurant
     public class TitleMenuPanel : MonoBehaviour
     {
         [SerializeField] private Button playButton;
+        [SerializeField] private Button selectLevelButton;
         [SerializeField] private Button resumeButton;
         [SerializeField] private Button restartWaveButton;
         [SerializeField] private Button settingsButton;
@@ -14,6 +15,7 @@ namespace foxRestaurant
         [SerializeField] private Button supportAuthorButton;
 
         public Button PlayButton => playButton;
+        public Button SelectLevelButton => selectLevelButton;
         public Button ResumeButton => resumeButton;
         public Button RestartWaveButton => restartWaveButton;
         public Button SettingsButton => settingsButton;
