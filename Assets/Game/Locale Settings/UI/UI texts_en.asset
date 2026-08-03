@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 76852223095758848
-    m_Localized: Resume
+    m_Localized: Continue
     m_Metadata:
       m_Items: []
   - m_Id: 76852223095758849
@@ -159,6 +159,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 96787514308845568
     m_Localized: New levels are coming soon!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 98348423389011968
+    m_Localized: Select level
     m_Metadata:
       m_Items: []
   references:
