@@ -48,14 +48,17 @@ namespace foxRestaurant
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int, int> OnHungerPointsChanged;
         public UnityEvent OnHungerPointsIncreased;
+
+        public UnityEvent OnAte;
+        public UnityEvent<ItemData> OnAteCertainFood;
+
         public UnityEvent OnStartLeavingProcess;
         public UnityEvent<bool> OnStartLeavingProcessSatisfied;
+
         public UnityEvent OnLeft;
         public UnityEvent<bool> OnLeftSatisfied;
         public UnityEvent<Customer> OnCustomerLeft;
         public UnityEvent<Customer, bool> OnCustomerLeftSatisfied;
-        public UnityEvent OnAte;
-        public UnityEvent<ItemData> OnAteCertainFood;
 
         public Character Character => character;
         public bool IsLeaving => isLeaving;
@@ -165,11 +168,17 @@ namespace foxRestaurant
 
             if (IsSatisfied)
             {
-                Uninit();
-                OnStartLeavingProcess.Invoke();
-                OnStartLeavingProcessSatisfied.Invoke(IsSatisfied);
-                isLeaving = true;
+                StartLeavingProcess();
             }
+        }
+
+        public void StartLeavingProcess()
+        {
+            Uninit();
+
+            isLeaving = true;
+            OnStartLeavingProcess.Invoke();
+            OnStartLeavingProcessSatisfied.Invoke(IsSatisfied);
         }
 
         public void MakeOrder()
@@ -215,15 +224,13 @@ namespace foxRestaurant
                 Uninit();
                 animator.SetTrigger("onEat");
                 timeIsUpSound.Play();
-                OnStartLeavingProcess.Invoke();
-                isLeaving = true;
+                StartLeavingProcess();
             }
         }
 
         private void TickLeavingTimer(float deltaTime)
         {
             leavingTimer -= deltaTime;
-
 
             if (leavingTimer <= 0)
             {
