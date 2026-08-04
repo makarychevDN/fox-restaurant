@@ -152,7 +152,6 @@ namespace foxRestaurant
             spawnedCustomers.Add(spawnedCustomer);
             spawnedCustomer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
             spawnedCustomer.OnStartLeavingProcessSatisfied.AddListener(OnStartLeavingProcessSatisHandler);
-            spawnedCustomer.OnCustomerLeft.AddListener(UnsubscribeCustomer);
             queue.RemoveAt(0);
         }
 
@@ -175,6 +174,8 @@ namespace foxRestaurant
             {
                 AbortWave();
             }
+
+            UnsubscribeCustomer(customer);
         }
 
         private void OnStartLeavingProcessSatisHandler(bool isSatisfied)
@@ -256,7 +257,6 @@ namespace foxRestaurant
         {
             customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisfiedHandler);
             customer.OnStartLeavingProcessSatisfied.RemoveListener(OnStartLeavingProcessSatisHandler);
-            customer.OnCustomerLeft.RemoveListener(UnsubscribeCustomer);
         }
     }
 
