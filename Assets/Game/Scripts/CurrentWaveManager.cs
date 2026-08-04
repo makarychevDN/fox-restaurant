@@ -152,6 +152,7 @@ namespace foxRestaurant
             spawnedCustomers.Add(spawnedCustomer);
             spawnedCustomer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
             spawnedCustomer.OnStartLeavingProcessSatisfied.AddListener(OnStartLeavingProcessSatisHandler);
+            spawnedCustomer.OnCustomerLeft.AddListener(UnsubscribeCustomer);
             queue.RemoveAt(0);
         }
 
@@ -165,7 +166,6 @@ namespace foxRestaurant
         private void CustomerLeftSatisfiedHandler(Customer customer, bool isSatisfied)
         {
             spawnedCustomers.Remove(customer);
-            customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisfiedHandler);
 
             if (isSatisfied)
             {
@@ -250,6 +250,13 @@ namespace foxRestaurant
             waveIsExecuting = false;
             waveTcs?.TrySetResult(false);
             OnWaveIsAborted.Invoke();
+        }
+
+        private void UnsubscribeCustomer(Customer customer)
+        {
+            customer.OnCustomerLeftSatisfied.RemoveListener(CustomerLeftSatisfiedHandler);
+            customer.OnStartLeavingProcessSatisfied.RemoveListener(OnStartLeavingProcessSatisHandler);
+            customer.OnCustomerLeft.RemoveListener(UnsubscribeCustomer);
         }
     }
 
