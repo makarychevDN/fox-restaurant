@@ -44,6 +44,7 @@ namespace foxRestaurant
         private List<ITickable> activeEffects = new();
         private float leavingTimer = 2;
         private bool isLeaving = false;
+        private bool patienceIgnoringTimer = false;
 
         public UnityEvent<float> OnPatienceChanged;
         public UnityEvent<int, int> OnHungerPointsChanged;
@@ -54,6 +55,7 @@ namespace foxRestaurant
 
         public UnityEvent OnStartLeavingProcess;
         public UnityEvent<bool> OnStartLeavingProcessSatisfied;
+        public UnityEvent<Customer, bool> OnCustomerStartLeavingProcessSatisfied;
 
         public UnityEvent OnLeft;
         public UnityEvent<bool> OnLeftSatisfied;
@@ -179,6 +181,7 @@ namespace foxRestaurant
             isLeaving = true;
             OnStartLeavingProcess.Invoke();
             OnStartLeavingProcessSatisfied.Invoke(IsSatisfied);
+            OnCustomerStartLeavingProcessSatisfied.Invoke(this, IsSatisfied);
         }
 
         public void MakeOrder()
@@ -210,6 +213,9 @@ namespace foxRestaurant
 
         private void TickPatience(float deltaTime)
         {
+            if (patienceIgnoringTimer)
+                return;
+
             Patience -= deltaTime;
             Patience = Math.Clamp(Patience, 0, 1000);
             OnPatienceChanged.Invoke(Patience);
@@ -281,6 +287,11 @@ namespace foxRestaurant
             animator.SetTrigger("onEat");
             eatSound.pitch = 1 + UnityEngine.Random.Range(-0.25f, 0.25f);
             eatSound.Play();
+        }
+
+        public void MakePatienceIgnoreTimer()
+        {
+            patienceIgnoringTimer = true;
         }
     }
 }

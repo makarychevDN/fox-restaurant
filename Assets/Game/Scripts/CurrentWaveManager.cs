@@ -151,6 +151,7 @@ namespace foxRestaurant
 
             spawnedCustomers.Add(spawnedCustomer);
             spawnedCustomer.OnCustomerLeftSatisfied.AddListener(CustomerLeftSatisfiedHandler);
+            spawnedCustomer.OnStartLeavingProcessSatisfied.AddListener(OnStartLeavingProcessSatisHandler);
             queue.RemoveAt(0);
         }
 
@@ -168,8 +169,6 @@ namespace foxRestaurant
 
             if (isSatisfied)
             {
-                fedCustomersCount++;
-                OnFedCustomersCountUpdated.Invoke(fedCustomersCount);
                 TryCompleteSuccessfully();
             }
             else
@@ -178,10 +177,35 @@ namespace foxRestaurant
             }
         }
 
+        private void OnStartLeavingProcessSatisHandler(bool isSatisfied)
+        {
+            if (isSatisfied)
+            {
+                fedCustomersCount++;
+                OnFedCustomersCountUpdated.Invoke(fedCustomersCount);
+
+                if(fedCustomersCount >= customersToFeedCount)
+                {
+                    spawnedCustomers.ForEach(customer => customer.MakePatienceIgnoreTimer());
+                    waveIsExecuting = false;
+                    Freeze();
+                }
+            }
+            else
+            {
+                Freeze();
+            }
+        }
+
+        private void Freeze()
+        {
+            encounter.BlockInput();            
+            encounter.GarbageCan.Pause();
+            encounter.ItemSpawnTimer.Pause();
+        }
+
         private async UniTask FinishTheRestOfWave(bool success)
         {
-            encounter.BlockInput();
-
             if (success)
             {
                 OnNextCustomerUpdated.Invoke(null);
@@ -219,16 +243,12 @@ namespace foxRestaurant
 
             waveIsExecuting = false;
             waveTcs?.TrySetResult(true);
-            encounter.ItemSpawnTimer.Pause();
-            encounter.GarbageCan.Pause();
         }
 
         private void AbortWave()
         {
             waveIsExecuting = false;
             waveTcs?.TrySetResult(false);
-            encounter.ItemSpawnTimer.Pause();
-            encounter.GarbageCan.Pause();
             OnWaveIsAborted.Invoke();
         }
     }
