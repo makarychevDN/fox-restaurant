@@ -242,6 +242,9 @@ namespace foxRestaurant
             if (fedCustomersCount < customersToFeedCount)
                 return;
 
+            if (spawnedCustomers.Any(customer => customer.IsLeaving))
+                return;
+
             waveIsExecuting = false;
             waveTcs?.TrySetResult(true);
         }
