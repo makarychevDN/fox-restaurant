@@ -48,7 +48,7 @@ namespace foxRestaurant
                 int multiplier = item.ItemData == coaldata ? 4 : 1;
                 float tickValue = multiplier * (item as FoodItem).Satiety;
                 Tick(tickValue);
-                restaurantEncounter.DynamicTextManager.SpawnDynamicText(transform.position + Vector3.right * 3, $"-{tickValue} sec", ReservedColors.YellowUI, transform.position + Vector3.one * 3);
+                restaurantEncounter.DynamicTextManager.SpawnDynamicText(transform.position + Vector3.right * 3, $"{tickValue}s\ncharge", ReservedColors.YellowUI, transform.position + Vector3.one * 3);
                 flameSound.Play();
             }
 
