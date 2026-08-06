@@ -10,11 +10,15 @@ namespace foxRestaurant
     public class CurrentWaveManager : MonoBehaviour, ITickable
     {
         [SerializeField] private float patienceOfCustomerBeforeSpawn = 40;
+
         private RestaurantEncounter encounter;
         private List<QueuedCustomer> queue;
         private List<Customer> spawnedCustomers = new();
         private UniTaskCompletionSource<bool> waveTcs;
+
         bool waveIsExecuting;
+        bool waveIsAborted;
+
         private float nextCustomersPatienceTimer;
         private int fedCustomersCount;
         private int customersToFeedCount;
@@ -46,24 +50,53 @@ namespace foxRestaurant
 
         public async UniTask<bool> ExecuteWave(WaveConfig waveConfig)
         {
-            encounter.ItemSpawnTimer.Pause();
-            encounter.ItemSpawnTimer.ResetTimer();
-            encounter.GarbageCan.Pause();
-            encounter.GarbageCan.ResetTimer();
+            ResetTimers();
+            Freeze();
             encounter.Ticker.Pause();
-            encounter.BlockInput();
+
+            CustomersQueueSetup(waveConfig);
+
+            await ExecuteTasksList(waveConfig.BeforeWave);
+            await SpawnFirstCustomers();
+            await ExecuteTasksList(waveConfig.AfterInitSpawn);
+
+            Unfreeze();
+            encounter.Ticker.SetRegularTickingSpeed();
+
+            waveIsExecuting = true;
+            waveIsAborted = false;
+
+            waveTcs = new UniTaskCompletionSource<bool>();
+            bool success = await waveTcs.Task;
+
+            await FinishTheRestOfWave(success);
+            return success;
+        }
+
+        private void ResetTimers()
+        {
+            encounter.ItemSpawnTimer.ResetTimer();
+            encounter.GarbageCan.ResetTimer();
+        }
+
+        private void CustomersQueueSetup(WaveConfig waveConfig)
+        {
             queue = waveConfig.Customers.OrderBy(x => x.SeatPlace == null).ToList();
 
             fedCustomersCount = 0;
+
             customersToFeedCount = waveConfig.CustomersToFeed <= -1 ?
                 customersToFeedCount = queue.Count - encounter.SeatPlacesManager.SeatPlaces.Count
                 : waveConfig.CustomersToFeed;
+
             customersToFeedCount = Math.Clamp(customersToFeedCount, 0, queue.Count);
+
             OnCustomersToFeedCountUpdated.Invoke(customersToFeedCount);
             OnFedCustomersCountUpdated.Invoke(fedCustomersCount);
+        }
 
-            await ExecuteTasksList(waveConfig.BeforeWave);
-
+        private async UniTask SpawnFirstCustomers()
+        {
             int initSpawnCount = Math.Min(queue.Count, encounter.SeatPlacesManager.FreeSeatPlaces.Count);
             for (int i = 0; i < initSpawnCount; i++)
             {
@@ -71,18 +104,6 @@ namespace foxRestaurant
                 RefreshDataAfterCustomerSpawned();
                 await UniTask.Delay(500, cancellationToken: destroyCancellationToken);
             }
-
-            await ExecuteTasksList(waveConfig.AfterInitSpawn);
-
-            encounter.ItemSpawnTimer.Unpause();
-            encounter.GarbageCan.Unpause();
-            encounter.Ticker.SetRegularTickingSpeed();
-            encounter.UnblockInput();
-            waveIsExecuting = true;
-            waveTcs = new UniTaskCompletionSource<bool>();
-            bool success = await waveTcs.Task;
-            await FinishTheRestOfWave(success);
-            return success;
         }
 
         public void Tick(float deltaTime)
@@ -180,6 +201,9 @@ namespace foxRestaurant
 
         private void OnStartLeavingProcessSatisHandler(bool isSatisfied)
         {
+            if(waveIsAborted) 
+                return;
+
             if (isSatisfied)
             {
                 fedCustomersCount++;
@@ -195,6 +219,7 @@ namespace foxRestaurant
             else
             {
                 Freeze();
+                waveIsAborted = true;
             }
         }
 
@@ -203,6 +228,13 @@ namespace foxRestaurant
             encounter.BlockInput();            
             encounter.GarbageCan.Pause();
             encounter.ItemSpawnTimer.Pause();
+        }
+
+        private void Unfreeze()
+        {
+            encounter.UnblockInput();
+            encounter.GarbageCan.Unpause();
+            encounter.ItemSpawnTimer.Unpause();
         }
 
         private async UniTask FinishTheRestOfWave(bool success)
@@ -252,8 +284,10 @@ namespace foxRestaurant
         private void AbortWave()
         {
             waveIsExecuting = false;
+            waveIsAborted = true;
             waveTcs?.TrySetResult(false);
             OnWaveIsAborted.Invoke();
+            Freeze();
         }
 
         private void UnsubscribeCustomer(Customer customer)
