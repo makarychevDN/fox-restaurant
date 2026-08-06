@@ -26091,6 +26091,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2866393530732244991, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a67427deb9515849a78205066dddc81, type: 3}
     - target: {fileID: 2901736192653804212, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -26099,6 +26103,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: cf1e90e4e6d531844b6bc22e9538654a, type: 3}
+    - target: {fileID: 3129137412715725822, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 15c4a2b78efcdfc468eae2985838b431, type: 3}
+    - target: {fileID: 3129137412715725822, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1049d1245dbcc7b49af0ae111ab0156d, type: 3}
     - target: {fileID: 3914248060966615546, guid: f7dc27ea353e64e43bf4eb8c79cba9ca, type: 3}
       propertyPath: m_SizeDelta.x
       value: 24
