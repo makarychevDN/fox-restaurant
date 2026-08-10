@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,7 +19,10 @@ namespace foxRestaurant
         {
             RestaurantEncounter restaurantEncounter = level.CurrentEncounter as RestaurantEncounter;
             if (restaurantEncounter != null)
+            {
                 restaurantEncounter.Ticker.SetX40TickingSpeed();
+                restaurantEncounter.BlockInput();
+            }
 
             level.ClosePauseMenu();
         }
