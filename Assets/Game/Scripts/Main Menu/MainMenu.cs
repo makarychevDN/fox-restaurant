@@ -34,15 +34,15 @@ namespace foxRestaurant
             selectLevelPanel.ContinueButton.gameObject.SetActive(thereIsSavedGame);
             titleMenuPanel.PlayButton.gameObject.SetActive(!thereIsSavedGame);
 
-            titleMenuPanel.PlayButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, selectLevelPanel));
-            titleMenuPanel.SelectLevelButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, selectLevelPanel));
+            titleMenuPanel.PlayButton.onClick.AddListener(() => SwitchPanelsWithAnimation(titleMenuPanel, selectLevelPanel));
+            titleMenuPanel.SelectLevelButton.onClick.AddListener(() => SwitchPanelsWithAnimation(titleMenuPanel, selectLevelPanel));
             titleMenuPanel.ResumeButton.onClick.AddListener(LaunchSavedLevel);
 
-            selectLevelPanel.BackButton.onClick.AddListener(() => SwitchPanels(selectLevelPanel, titleMenuPanel));
+            selectLevelPanel.BackButton.onClick.AddListener(() => SwitchPanelsWithAnimation(selectLevelPanel, titleMenuPanel));
             selectLevelPanel.ContinueButton.onClick.AddListener(LaunchSavedLevel);
 
-            titleMenuPanel.SupportAuthorButton.onClick.AddListener(() => SwitchPanels(titleMenuPanel, supportAuthorMenuPanel));
-            supportAuthorMenuPanel.BackButton.onClick.AddListener(() => SwitchPanels(supportAuthorMenuPanel, titleMenuPanel));
+            titleMenuPanel.SupportAuthorButton.onClick.AddListener(() => SwitchPanelsWithAnimation(titleMenuPanel, supportAuthorMenuPanel));
+            supportAuthorMenuPanel.BackButton.onClick.AddListener(() => SwitchPanelsWithAnimation(supportAuthorMenuPanel, titleMenuPanel));
 
             for (int i = 0; i < selectLevelPanel.LevelButtons.Count; i++)
             {
