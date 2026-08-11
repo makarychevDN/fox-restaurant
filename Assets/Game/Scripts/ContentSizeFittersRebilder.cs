@@ -7,6 +7,7 @@ namespace foxRestaurant
     public class ContentSizeFittersRebilder : MonoBehaviour
     {
         [SerializeField] private List<RectTransform> contentSizeFitters;
+        [SerializeField] private bool executeOnEnable;
 
         public void Rebuild()
         {
@@ -14,6 +15,12 @@ namespace foxRestaurant
             {
                 LayoutRebuilder.ForceRebuildLayoutImmediate(fitter);
             });
+        }
+
+        private void OnEnable()
+        {
+            if (executeOnEnable)
+                Rebuild();
         }
     }
 }

@@ -631,6 +631,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.DifficultySetupPanel
   contentSizeFittersRebilder: {fileID: 761647275278721800}
+  difficultyToggles: []
+  storyModeToggle: {fileID: 970804437071801577}
+  easyToggle: {fileID: 7714116187935045896}
+  normalToggle: {fileID: 2881609063833261788}
+  hardToggle: {fileID: 7737422234396016590}
 --- !u!114 &761647275278721800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +652,7 @@ MonoBehaviour:
   - {fileID: 6768726411815058805}
   - {fileID: 2173006782076381059}
   - {fileID: 3375399212723336781}
+  executeOnEnable: 0
 --- !u!1 &4005127505568900090
 GameObject:
   m_ObjectHideFlags: 0
