@@ -548,6 +548,8 @@ GameObject:
   - component: {fileID: 3375399212723336781}
   - component: {fileID: 4983682124289563645}
   - component: {fileID: 7143461342596186400}
+  - component: {fileID: 8313326334511816238}
+  - component: {fileID: 761647275278721800}
   m_Layer: 0
   m_Name: difficulty setup panel
   m_TagString: Untagged
@@ -616,6 +618,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &8313326334511816238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739467928723542829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c10e70e74b4daf4bacf77acf2dc8805, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.DifficultySetupPanel
+  contentSizeFittersRebilder: {fileID: 761647275278721800}
+--- !u!114 &761647275278721800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2739467928723542829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d9a5ccb71fb24ead9637a2bc469b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.ContentSizeFittersRebilder
+  contentSizeFitters:
+  - {fileID: 6768726411815058805}
+  - {fileID: 2173006782076381059}
+  - {fileID: 3375399212723336781}
 --- !u!1 &4005127505568900090
 GameObject:
   m_ObjectHideFlags: 0
