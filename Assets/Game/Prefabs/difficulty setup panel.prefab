@@ -630,12 +630,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c10e70e74b4daf4bacf77acf2dc8805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.DifficultySetupPanel
-  contentSizeFittersRebilder: {fileID: 761647275278721800}
   difficultyToggles: []
   storyModeToggle: {fileID: 970804437071801577}
   easyToggle: {fileID: 7714116187935045896}
   normalToggle: {fileID: 2881609063833261788}
   hardToggle: {fileID: 7737422234396016590}
+  storyModeDifficultyDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
+    m_TableEntryReference:
+      m_KeyId: 101476330168803328
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  easyDifficultyDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
+    m_TableEntryReference:
+      m_KeyId: 101476330198163456
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  normalDifficultyDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
+    m_TableEntryReference:
+      m_KeyId: 101476330198163457
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  hardDifficultyDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
+    m_TableEntryReference:
+      m_KeyId: 101476330198163458
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  difficultyDescriptionEvent: {fileID: 6220733230381443836}
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &761647275278721800
 MonoBehaviour:
   m_ObjectHideFlags: 0

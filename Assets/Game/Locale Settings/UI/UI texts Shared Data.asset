@@ -162,6 +162,22 @@ MonoBehaviour:
     m_Key: Select level
     m_Metadata:
       m_Items: []
+  - m_Id: 101476330168803328
+    m_Key: Story mode difficulty description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101476330198163456
+    m_Key: Easy difficulty description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101476330198163457
+    m_Key: Normal difficulty description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101476330198163458
+    m_Key: Hard difficulty description
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
