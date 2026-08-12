@@ -17,7 +17,7 @@ namespace foxRestaurant
         bool waveIsExecuting;
         bool waveIsAborted;
 
-        private float patienceOfCustomerBeforeSpawn = 45;
+        private float defaultNextCustomersPatience = 45;
         private float nextCustomersPatienceTimer;
         private int fedCustomersCount;
         private int customersToFeedCount;
@@ -178,7 +178,7 @@ namespace foxRestaurant
         private void RefreshDataAfterCustomerSpawned()
         {
             OnNextCustomerUpdated.Invoke(queue.Count == 0 ? null : queue[0].CustomerData);
-            nextCustomersPatienceTimer = patienceOfCustomerBeforeSpawn;
+            nextCustomersPatienceTimer = defaultNextCustomersPatience + GameSettings.GetAdditionalPatienceForDifficulty();
             OnNextCustomersPatienceUpdated.Invoke(nextCustomersPatienceTimer);
         }
 
