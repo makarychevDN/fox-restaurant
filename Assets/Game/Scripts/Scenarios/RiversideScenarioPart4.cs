@@ -227,12 +227,12 @@ namespace foxRestaurant
             {
                 BeforeWave = new Func<UniTask>[]
                 {
-                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>{ mushroom, mushroom, potRoast, potRoast })
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>{ compote, compote, compote, compote })
                 },
                 Customers = new List<QueuedCustomer>
                 {
-                    new(cow) { SeatPlace = table.SeatPlaces[0], OrderFactory = () => chickenSoup },
-                    new(cow) { SeatPlace = table.SeatPlaces[2], OrderFactory = () => mushroomPotRoast },
+                    new(hog) { SeatPlace = table.SeatPlaces[0], OrderFactory = () => compote },
+                    new(hog) { SeatPlace = table.SeatPlaces[2], OrderFactory = () => compote },
                     new(goat) { SeatPlace = table.SeatPlaces[1], OrderFactory = () => chickenSoup},
                 },
                 AfterInitSpawn = new Func<UniTask>[]
@@ -242,7 +242,7 @@ namespace foxRestaurant
                     () => red.Say("Sick customers really are a pain to deal with.".Locailze()),
                     LookAtTheCursor()
                 },
-                CustomersToFeed = 1
+                CustomersToFeed = 2
             });
         }
 
@@ -276,14 +276,15 @@ namespace foxRestaurant
             {
                 BeforeWave = new Func<UniTask>[]
                 {
-                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>{ chicken, mushroom, potRoast, soup })
+                    () => encounter.ItemsOperations.SpawnStartItems(new List<ItemData>{ compote, mushroom, potRoast, compote })
                 },
                 Customers = new List<QueuedCustomer>
                 {
-                    new(goat) { SeatPlace = table.SeatPlaces[0], OrderFactory = () => mushroomPotRoast },
-                    new(cow) { SeatPlace = table.SeatPlaces[1], OrderFactory = () => chickenSoup},
+                    new(hog) { SeatPlace = table.SeatPlaces[0], OrderFactory = () => compote },
+                    new(hog) { SeatPlace = table.SeatPlaces[2], OrderFactory = () => compote },
+                    new(goat) { SeatPlace = table.SeatPlaces[1], OrderFactory = () => mushroomPotRoast},
                 },
-                CustomersToFeed = 1
+                CustomersToFeed = 2
             });
         }
 
