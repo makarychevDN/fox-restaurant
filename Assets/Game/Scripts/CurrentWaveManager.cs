@@ -9,8 +9,6 @@ namespace foxRestaurant
 {
     public class CurrentWaveManager : MonoBehaviour, ITickable
     {
-        [SerializeField] private float patienceOfCustomerBeforeSpawn = 40;
-
         private RestaurantEncounter encounter;
         private List<QueuedCustomer> queue;
         private List<Customer> spawnedCustomers = new();
@@ -19,6 +17,7 @@ namespace foxRestaurant
         bool waveIsExecuting;
         bool waveIsAborted;
 
+        private float patienceOfCustomerBeforeSpawn = 45;
         private float nextCustomersPatienceTimer;
         private int fedCustomersCount;
         private int customersToFeedCount;
