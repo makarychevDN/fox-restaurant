@@ -2563,10 +2563,6 @@ MonoBehaviour:
     m_Localized: We weren't planning to stick around this godforsaken...
     m_Metadata:
       m_Items: []
-  - m_Id: 96784338562211840
-    m_Localized: Riveside
-    m_Metadata:
-      m_Items: []
   - m_Id: 96989101652336640
     m_Localized: Wake up, little foxes!
     m_Metadata:
@@ -2686,6 +2682,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 96989101681696796
     m_Localized: You have no idea how hard I'm gonna inspect you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101511935816785920
+    m_Localized: Riverside
     m_Metadata:
       m_Items: []
   references:

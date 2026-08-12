@@ -2623,10 +2623,6 @@ MonoBehaviour:
     m_Localized: "No ten\xEDamos pensado quedarnos en este lugar perdido de Dios..."
     m_Metadata:
       m_Items: []
-  - m_Id: 96784338562211840
-    m_Localized: "Ribera del r\xEDo"
-    m_Metadata:
-      m_Items: []
   - m_Id: 96989101652336640
     m_Localized: "\xA1Despierten, zorritos!"
     m_Metadata:
@@ -2747,6 +2743,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 96989101681696796
     m_Localized: "\xA1No tienes ni idea de lo minuciosamente que te voy a inspeccionar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101511935816785920
+    m_Localized: Orilla
     m_Metadata:
       m_Items: []
   references:

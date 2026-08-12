@@ -2606,10 +2606,6 @@ MonoBehaviour:
     m_Localized: "N\xE3o t\xEDnhamos planos de ficar por aqui neste lugar maldito..."
     m_Metadata:
       m_Items: []
-  - m_Id: 96784338562211840
-    m_Localized: Beira-rio
-    m_Metadata:
-      m_Items: []
   - m_Id: 96989101652336640
     m_Localized: Acordem, raposinhas!
     m_Metadata:
@@ -2730,6 +2726,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 96989101681696796
     m_Localized: "Voc\xEA n\xE3o faz ideia de como vou te inspecionar minuciosamente!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101511935816785920
+    m_Localized: Riverside
     m_Metadata:
       m_Items: []
   references:

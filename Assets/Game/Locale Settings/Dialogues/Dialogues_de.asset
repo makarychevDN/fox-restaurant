@@ -2613,10 +2613,6 @@ MonoBehaviour:
     m_Localized: Wir hatten nicht vor, in diesem gottverlassenen Ort zu bleiben...
     m_Metadata:
       m_Items: []
-  - m_Id: 96784338562211840
-    m_Localized: Flussufer
-    m_Metadata:
-      m_Items: []
   - m_Id: 96989101652336640
     m_Localized: "Aufwachen, ihr kleinen F\xFCchse!"
     m_Metadata:
@@ -2737,6 +2733,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 96989101681696796
     m_Localized: "Du ahnst nicht, wie gr\xFCndlich ich dich untersuchen werde!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101511935816785920
+    m_Localized: Flussufer
     m_Metadata:
       m_Items: []
   references:
