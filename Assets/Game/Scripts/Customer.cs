@@ -95,6 +95,10 @@ namespace foxRestaurant
             MaxHungerPoints = customerData.HungerPoints;
             HungerPoints = customerData.HungerPoints;
             Patience = customerData.Patience;
+
+            if(!customerData.IgnoreAdditionalPatienceFromDifficulty)
+                Patience += GameSettings.GetAdditionalPatienceForDifficulty();
+
             character.SetSprite(customerData.Sprite);
 
             foreach (ICustomerEffect effect in customerData.Effects)

@@ -9,6 +9,8 @@ namespace foxRestaurant
     {
         [field: SerializeField] public int HungerPoints { get; set; }
         [field: SerializeField] public float Patience { get; set; }
+        [field: SerializeField] public bool IgnoreAdditionalPatienceFromDifficulty { get; set; }
+
         [SerializeField] private List<ScriptableObject> effects;
 
         public IEnumerable<ICustomerEffect> Effects => effects.OfType<ICustomerEffect>();
