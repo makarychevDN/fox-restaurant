@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
@@ -20,6 +21,11 @@ namespace foxRestaurant
         [SerializeField] private LocalizedString normalDifficultyDescription;
         [SerializeField] private LocalizedString hardDifficultyDescription;
         [SerializeField] private LocalizeStringEvent difficultyDescriptionEvent;
+        [SerializeField] private TMP_Text CurrentCustomerPatienceLabel;
+        [SerializeField] private TMP_Text NextCustomerPatienceLabel;
+
+        private int defaultCurrentCustomerPatience = 60;
+        private int defaultNextCustomerPatience = 45;
 
         private void Awake()
         {
@@ -79,6 +85,7 @@ namespace foxRestaurant
             GameSettings.Difficulty = difficulty;
             PlayerPrefs.SetInt("Difficulty", (int)GameSettings.Difficulty);
             difficultyDescriptionEvent.StringReference = difficultyDescription;
+            UpdatePatienceLabels();
         }
 
         private void UpdateTogglesVisualization(Difficulty difficulty)
@@ -87,6 +94,8 @@ namespace foxRestaurant
             easyToggle.SetIsOnWithoutNotify(difficulty == Difficulty.Easy);
             normalToggle.SetIsOnWithoutNotify(difficulty == Difficulty.Normal);
             hardToggle.SetIsOnWithoutNotify(difficulty == Difficulty.Hard);
+
+            UpdatePatienceLabels();
 
             switch (GameSettings.Difficulty)
             {
@@ -103,6 +112,12 @@ namespace foxRestaurant
                     difficultyDescriptionEvent.StringReference = hardDifficultyDescription;
                     break;
             }
+        }
+
+        private void UpdatePatienceLabels()
+        {
+            CurrentCustomerPatienceLabel.text = (defaultCurrentCustomerPatience + GameSettings.GetAdditionalPatienceForDifficulty()).ToString();
+            NextCustomerPatienceLabel.text = (defaultNextCustomerPatience + GameSettings.GetAdditionalPatienceForDifficulty()).ToString();
         }
     }
 }

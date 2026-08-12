@@ -672,6 +672,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   difficultyDescriptionEvent: {fileID: 6220733230381443836}
+  CurrentCustomerPatienceLabel: {fileID: 9042365355685088698}
+  NextCustomerPatienceLabel: {fileID: 6635212227907496576}
   references:
     version: 2
     RefIds: []
