@@ -7,7 +7,6 @@ namespace foxRestaurant
 {
     public class DifficultySetupPanel : MonoBehaviour
     {
-        [SerializeField] private ContentSizeFittersRebilder contentSizeFittersRebilder;
         [SerializeField] private List<Toggle> difficultyToggles;
 
         [SerializeField] private Toggle storyModeToggle;
@@ -25,8 +24,6 @@ namespace foxRestaurant
 
         private void OnEnable()
         {
-            contentSizeFittersRebilder.Rebuild();
-
             var difficulty = GameSettings.Difficulty;
 
             if (difficulty == Difficulty.None)

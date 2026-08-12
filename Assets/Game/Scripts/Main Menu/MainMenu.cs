@@ -8,8 +8,10 @@ namespace foxRestaurant
     {
         [SerializeField] private List<EncountersListAsset> encounterListAssets;
         [SerializeField] private LevelLoader levelLoader;
-        [SerializeField] protected SupportAuthorMenuPanel supportAuthorMenuPanel;
-        [SerializeField] protected SelectLevelPanel selectLevelPanel;
+        [SerializeField] private SupportAuthorMenuPanel supportAuthorMenuPanel;
+        [SerializeField] private SelectLevelPanel selectLevelPanel;
+        [SerializeField] private InitDifficultySetupPanel initDifficultySetupPanel;
+
         private static bool appIsStartedAlready = false;
 
         protected override void Init()
@@ -34,7 +36,7 @@ namespace foxRestaurant
             selectLevelPanel.ContinueButton.gameObject.SetActive(thereIsSavedGame);
             titleMenuPanel.PlayButton.gameObject.SetActive(!thereIsSavedGame);
 
-            titleMenuPanel.PlayButton.onClick.AddListener(() => SwitchPanelsWithAnimation(titleMenuPanel, selectLevelPanel));
+            titleMenuPanel.PlayButton.onClick.AddListener(PlayButtonClickedHandler);
             titleMenuPanel.SelectLevelButton.onClick.AddListener(() => SwitchPanelsWithAnimation(titleMenuPanel, selectLevelPanel));
             titleMenuPanel.ResumeButton.onClick.AddListener(LaunchSavedLevel);
 
@@ -49,6 +51,8 @@ namespace foxRestaurant
                 int index = i;
                 selectLevelPanel.LevelButtons[i].onClick.AddListener(() => LaunchLevel(encounterListAssets[index], index, 0));
             }
+
+            initDifficultySetupPanel.ConfirmButton.onClick.AddListener(() => SwitchPanelsWithAnimation(initDifficultySetupPanel, selectLevelPanel));
         }
 
         private void LaunchSavedLevel()
@@ -58,12 +62,30 @@ namespace foxRestaurant
             LaunchLevel(encounterListAssets[savedLevelIndex], savedLevelIndex, startEncounterIndex);
         }
 
+        private void PlayButtonClickedHandler()
+        {
+            if(GameSettings.Difficulty == Difficulty.None)
+            {
+                SwitchPanelsWithAnimation(titleMenuPanel, initDifficultySetupPanel);
+                return;
+            }
+
+            SwitchPanelsWithAnimation(titleMenuPanel, selectLevelPanel);
+        }
+
         private async void LaunchLevel(EncountersListAsset encountersListAsset, int levelIndex, int startEncounterIndex)
         {
             PlayerPrefs.SetInt("SavedLevelIndex", levelIndex);
             levelLoader.SetupLevel(encountersListAsset, startEncounterIndex);
             await fading.FadeIn();
             levelLoader.LoadLevel();
+        }
+
+        [ContextMenu("Delete Saved Level")]
+        public void DeleteSavedLevel()
+        {
+            PlayerPrefs.DeleteKey("CurrentEncounterIndex");
+            PlayerPrefs.DeleteKey("SavedLevelIndex");
         }
     }
 }
