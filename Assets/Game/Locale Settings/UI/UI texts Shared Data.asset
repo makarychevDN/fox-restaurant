@@ -178,6 +178,34 @@ MonoBehaviour:
     m_Key: Hard difficulty description
     m_Metadata:
       m_Items: []
+  - m_Id: 101481180910739456
+    m_Key: Difficulty level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739457
+    m_Key: Story mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739458
+    m_Key: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739459
+    m_Key: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739460
+    m_Key: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739461
+    m_Key: The difficulty can be changed at any time in the Settings menu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101482013832404992
+    m_Key: Confirm
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

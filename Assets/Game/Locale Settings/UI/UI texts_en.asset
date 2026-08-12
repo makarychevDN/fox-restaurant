@@ -166,19 +166,48 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 101476330168803328
-    m_Localized: Story mode difficulty description
+    m_Localized: Choose Story mode if you simply want to enjoy the aesthetics and
+      story.
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163456
-    m_Localized: Easy difficulty description
+    m_Localized: The game is more relaxed and gives you more room for mistakes.
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163457
-    m_Localized: Normal difficulty description
+    m_Localized: The game offers a moderate, noticeable challenge.
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163458
-    m_Localized: Hard difficulty description
+    m_Localized: The game becomes demanding, requiring quick and precise decisions.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739456
+    m_Localized: Difficulty level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739457
+    m_Localized: Story\nmode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739458
+    m_Localized: Easy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739459
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739460
+    m_Localized: Hard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739461
+    m_Localized: The difficulty can be changed at any time in the Settings menu.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101482013832404992
+    m_Localized: Confirm
     m_Metadata:
       m_Items: []
   references:

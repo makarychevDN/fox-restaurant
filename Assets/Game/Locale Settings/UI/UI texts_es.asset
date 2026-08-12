@@ -167,19 +167,51 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 101476330168803328
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "Elige el modo Historia si simplemente quieres disfrutar de la est\xE9tica
+      y la trama."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163456
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "El juego es m\xE1s relajado y te da m\xE1s margen para cometer
+      errores."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163457
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "El juego ofrece un desaf\xEDo moderado y perceptible."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163458
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "El juego se vuelve exigente y requiere decisiones r\xE1pidas y
+      precisas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739456
+    m_Localized: Nivel de dificultad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739457
+    m_Localized: Modo\nhistoria
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739458
+    m_Localized: "F\xE1cil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739459
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739460
+    m_Localized: Duro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739461
+    m_Localized: "La dificultad se puede cambiar en cualquier momento en el men\xFA
+      de Ajustes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101482013832404992
+    m_Localized: Confirmar
     m_Metadata:
       m_Items: []
   references:

@@ -167,19 +167,48 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 101476330168803328
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "Escolha o Modo Hist\xF3ria se voc\xEA simplesmente quiser apreciar
+      a est\xE9tica e a narrativa."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163456
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "O jogo \xE9 mais tranquilo e d\xE1 mais espa\xE7o para erros."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163457
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "O jogo oferece um desafio moderado e percept\xEDvel."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163458
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "O jogo torna-se exigente, requerendo decis\xF5es r\xE1pidas e precisas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739456
+    m_Localized: "N\xEDvel de dificuldade"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739457
+    m_Localized: "Modo\\nhist\xF3ria"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739458
+    m_Localized: "F\xE1cil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739459
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739460
+    m_Localized: Duro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739461
+    m_Localized: "A dificuldade pode ser alterada a qualquer momento no menu Configura\xE7\xF5es."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101482013832404992
+    m_Localized: Confirmar
     m_Metadata:
       m_Items: []
   references:

@@ -8,7 +8,12 @@ namespace foxRestaurant
 
         public static int GetAdditionalPatienceForDifficulty()
         {
-            return Difficulty switch
+            return ConvertDifficultyToAdditionalPatience(Difficulty);
+        }
+
+        public static int ConvertDifficultyToAdditionalPatience(Difficulty difficulty)
+        {
+            return difficulty switch
             {
                 Difficulty.StoryMode => 60,
                 Difficulty.Easy => 30,

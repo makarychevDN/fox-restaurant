@@ -911,7 +911,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043B\u043E\u0436\u043D\u043E"
+  m_text: "\u0421\u0440\u0435\u0434\u043D\u0435"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b497ddc02fcf3a479c4466abfda1bfb, type: 2}
   m_sharedMaterial: {fileID: 2967061719477069572, guid: 8b497ddc02fcf3a479c4466abfda1bfb, type: 2}
@@ -999,7 +999,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
     m_TableEntryReference:
-      m_KeyId: 94068374921216
+      m_KeyId: 101481180910739459
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1279,7 +1279,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
     m_TableEntryReference:
-      m_KeyId: 94068374921216
+      m_KeyId: 101481180910739457
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1656,7 +1656,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
     m_TableEntryReference:
-      m_KeyId: 94068374921216
+      m_KeyId: 101481180910739460
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2252,6 +2252,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionHard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -2259,6 +2271,22 @@ MonoBehaviour:
         - m_Target: {fileID: 7238641596764133418}
           m_TargetAssemblyTypeName: foxRestaurant.GenericInteractiveUi, Assembly-CSharp
           m_MethodName: PlayClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionDueGameSettings
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2414,7 +2442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043B\u043E\u0436\u043D\u043E"
+  m_text: "\u041B\u0435\u0433\u043A\u043E"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b497ddc02fcf3a479c4466abfda1bfb, type: 2}
   m_sharedMaterial: {fileID: 2967061719477069572, guid: 8b497ddc02fcf3a479c4466abfda1bfb, type: 2}
@@ -2502,7 +2530,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:8af76d5f14b4c8a489e2abdf329769d6
     m_TableEntryReference:
-      m_KeyId: 94068374921216
+      m_KeyId: 101481180910739458
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2681,6 +2709,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionNormal
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -2688,6 +2728,22 @@ MonoBehaviour:
         - m_Target: {fileID: 2524787107510668942}
           m_TargetAssemblyTypeName: foxRestaurant.GenericInteractiveUi, Assembly-CSharp
           m_MethodName: PlayClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionDueGameSettings
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2826,6 +2882,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionEasy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -2833,6 +2901,22 @@ MonoBehaviour:
         - m_Target: {fileID: 7281610976087998345}
           m_TargetAssemblyTypeName: foxRestaurant.GenericInteractiveUi, Assembly-CSharp
           m_MethodName: PlayClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionDueGameSettings
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2971,6 +3055,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 1
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionStoryMode
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
   - eventID: 2
     callback:
       m_PersistentCalls:
@@ -2978,6 +3074,22 @@ MonoBehaviour:
         - m_Target: {fileID: 5357610170238877543}
           m_TargetAssemblyTypeName: foxRestaurant.GenericInteractiveUi, Assembly-CSharp
           m_MethodName: PlayClickSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 1
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8313326334511816238}
+          m_TargetAssemblyTypeName: foxRestaurant.DifficultySetupPanel, Assembly-CSharp
+          m_MethodName: UpdateDescriptionDueGameSettings
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

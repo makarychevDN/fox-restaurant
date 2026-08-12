@@ -85,7 +85,7 @@ namespace foxRestaurant
             GameSettings.Difficulty = difficulty;
             PlayerPrefs.SetInt("Difficulty", (int)GameSettings.Difficulty);
             difficultyDescriptionEvent.StringReference = difficultyDescription;
-            UpdatePatienceLabels();
+            UpdatePatienceLabelsDueGameSettings();
         }
 
         private void UpdateTogglesVisualization(Difficulty difficulty)
@@ -95,9 +95,30 @@ namespace foxRestaurant
             normalToggle.SetIsOnWithoutNotify(difficulty == Difficulty.Normal);
             hardToggle.SetIsOnWithoutNotify(difficulty == Difficulty.Hard);
 
-            UpdatePatienceLabels();
+            UpdateDescriptionDueGameSettings();
+        }
 
-            switch (GameSettings.Difficulty)
+        private void UpdatePatienceLabelsDueGameSettings()
+        {
+            CurrentCustomerPatienceLabel.text = (defaultCurrentCustomerPatience + GameSettings.GetAdditionalPatienceForDifficulty()).ToString();
+            NextCustomerPatienceLabel.text = (defaultNextCustomerPatience + GameSettings.GetAdditionalPatienceForDifficulty()).ToString();
+        }
+
+        public void UpdateDescriptionDueGameSettings()
+        {
+            UpdateDescription(GameSettings.Difficulty);
+        }
+
+        private void UpdatePatienceLabels(Difficulty difficulty)
+        {
+            CurrentCustomerPatienceLabel.text = (defaultCurrentCustomerPatience + GameSettings.ConvertDifficultyToAdditionalPatience(difficulty)).ToString();
+            NextCustomerPatienceLabel.text = (defaultNextCustomerPatience + GameSettings.ConvertDifficultyToAdditionalPatience(difficulty)).ToString();
+        }
+
+        public void UpdateDescription(Difficulty difficulty)
+        {
+            UpdatePatienceLabels(difficulty);
+            switch (difficulty)
             {
                 case Difficulty.StoryMode:
                     difficultyDescriptionEvent.StringReference = storyModeDifficultyDescription;
@@ -114,10 +135,9 @@ namespace foxRestaurant
             }
         }
 
-        private void UpdatePatienceLabels()
-        {
-            CurrentCustomerPatienceLabel.text = (defaultCurrentCustomerPatience + GameSettings.GetAdditionalPatienceForDifficulty()).ToString();
-            NextCustomerPatienceLabel.text = (defaultNextCustomerPatience + GameSettings.GetAdditionalPatienceForDifficulty()).ToString();
-        }
+        public void UpdateDescriptionStoryMode() => UpdateDescription(Difficulty.StoryMode);
+        public void UpdateDescriptionEasy() => UpdateDescription(Difficulty.Easy);
+        public void UpdateDescriptionNormal() => UpdateDescription(Difficulty.Normal);
+        public void UpdateDescriptionHard() => UpdateDescription(Difficulty.Hard);
     }
 }

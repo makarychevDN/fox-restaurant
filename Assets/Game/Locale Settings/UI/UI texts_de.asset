@@ -168,19 +168,50 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 101476330168803328
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "W\xE4hle den Story-Modus, wenn du einfach nur die \xC4sthetik und
+      die Geschichte genie\xDFen m\xF6chtest."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163456
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "Das Spiel ist entspannter und l\xE4sst mehr Raum f\xFCr Fehler."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163457
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "Das Spiel bietet eine moderate, aber sp\xFCrbare Herausforderung."
     m_Metadata:
       m_Items: []
   - m_Id: 101476330198163458
-    m_Localized: "\u043F\u0443\u043A"
+    m_Localized: "Das Spiel wird anspruchsvoll und erfordert schnelle und pr\xE4zise
+      Entscheidungen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739456
+    m_Localized: Schwierigkeitsgrad
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739457
+    m_Localized: Story\nModus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739458
+    m_Localized: Einfach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739459
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739460
+    m_Localized: Hart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101481180910739461
+    m_Localized: "Der Schwierigkeitsgrad kann jederzeit im Men\xFC \u201EEinstellungen\u201C
+      ge\xE4ndert werden."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101482013832404992
+    m_Localized: "Best\xE4tigen"
     m_Metadata:
       m_Items: []
   references:
