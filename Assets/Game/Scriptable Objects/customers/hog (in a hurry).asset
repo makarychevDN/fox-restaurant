@@ -16,4 +16,5 @@ MonoBehaviour:
   <Satiety>k__BackingField: 0
   <HungerPoints>k__BackingField: 1
   <Patience>k__BackingField: 25
+  <IgnoreAdditionalPatienceFromDifficulty>k__BackingField: 1
   effects: []
