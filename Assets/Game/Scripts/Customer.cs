@@ -143,12 +143,13 @@ namespace foxRestaurant
             {
                 OnAte.Invoke();
                 OnAteCertainFood.Invoke(item.ItemData);
-                MakeOrder();
                 RemoveHunger(food.Satiety);
             }
 
             if(item.ItemData == pretzel)
                 PretzelEatenHandler();
+            else if (!IsSatisfied)
+                MakeOrder();
         }
 
         public void AutoSatisfy()
