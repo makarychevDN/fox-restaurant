@@ -8,6 +8,8 @@ namespace foxRestaurant
         private readonly List<T> source;
         private readonly int copiesCount;
         private List<T> deck;
+        
+        public List<T> Elements => deck;
 
         public Deck(List<T> source, int copiesCount)
         {
