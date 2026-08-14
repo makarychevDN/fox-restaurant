@@ -15,5 +15,6 @@ MonoBehaviour:
   <Sprite>k__BackingField: {fileID: 21300000, guid: 778310e1ca25dcb4bb8859ca1ed763a2, type: 3}
   <Satiety>k__BackingField: 0
   <HungerPoints>k__BackingField: 1
-  <Patience>k__BackingField: 50
+  <Patience>k__BackingField: 60
+  <IgnoreAdditionalPatienceFromDifficulty>k__BackingField: 0
   effects: []

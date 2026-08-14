@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5b7c0f6bc450d49b0872880a331378, type: 3}
   m_Name: cold effect
   m_EditorClassIdentifier: Assembly-CSharp::foxRestaurant.ColdEffect
-  cooldown: 30
+  cooldown: 40
   additionalHunger: 1
   viewPrefab: {fileID: 7648464826878185303, guid: f3fd3af518425fc48aed501b88def83d, type: 3}
